@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  blog-terminal:
+    build: .
+    ports:
+      - "7681:7681"
+    volumes:
+      # Mount the entire project for live development
+      - .:/workspace
+      # Persist Claude Code configuration and agents
+      - claude-config:/root/.config/claude
+      # Persist bash history for convenience
+      - bash-history:/root/.bash_history
+      # Persist npm cache
+      - npm-cache:/root/.npm
+    environment:
+      - TERM=xterm-256color
+      - SHELL=/bin/bash
+      - PROJECT_ROOT=/workspace
+      
+      # Ghost Blog Configuration (Environment Variables)
+      - GHOST_SITE_URL=
+      - GHOST_ADMIN_API_KEY=
+      - GHOST_API_VERSION=
+      
+    # Basic auth for home network security
+    command: ["ttyd", "-p", "7681", "-i", "0.0.0.0", "-c", "blogger:write123", "bash"]
+    restart: unless-stopped
+    
+    # Security settings appropriate for home network
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    
+    # Health check to ensure the terminal is responsive
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7681"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  claude-config:
+  bash-history:
+  npm-cache:

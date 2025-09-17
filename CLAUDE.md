@@ -1,0 +1,220 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+This is Ang Hou Fu's personal website (alt-counsel.ghost.io), a ghost-based blog and newsletter focused on legal technology, programming, and personal projects.
+
+## Directory Structure
+- `/temp/` - Temporary folder to store work in progress
+- `/docs/` - Documentation for advanced Ghost workflows
+  - `/docs/ghost-admin-api.md` - Ghost Admin API reference
+  - `/docs/ghost-cards-reference.md` - Ghost cards for rich media reference
+- `/.claude/` - Claude Code agents and configuration
+- `/node_modules/` - Node.js dependencies (ignored by git)
+
+## Development Environment
+
+This project runs in a containerized environment using Docker for consistency and isolation.
+
+### Getting Started
+
+1. **Start the development environment:**
+   ```bash
+   docker-compose up -d
+   ```
+
+2. **Access the web terminal:**
+   - Open http://localhost:7681 in your browser
+   - Default credentials: `blogger:write123`
+
+3. **Set up Claude Code (first time only):**
+   ```bash
+   setup-claude
+   claude auth login
+   ```
+
+4. **Configure Ghost API:**
+   - Copy `docker-compose.yml.example` to `docker-compose.yml` and set environment variables, or
+   - For local Node.js: copy `.env.example` to `.env`
+
+### Available Commands
+
+#### Ghost API Tools
+- `blog-token` - Generate JWT token for Ghost API
+- `search-posts` - Search through blog posts
+- `token-examples` - Show API usage examples
+- `env-help` - Environment setup instructions
+
+#### Claude Code Agents (after authentication)
+- `new-post` - Generate blog post skeleton
+- `audit-post` - Quality audit content
+- `legal-review` - Legal tech focused review
+- `corp-review` - Corporate lawyer perspective review
+
+## Common Development Workflows
+
+### 1. Create a new post
+
+1. Figure out if it's meant to be a newsletter or blog post
+2. Ask the user questions on what is description of the post to get a better idea of what is the post going to be about. 
+3. Create a draft post in the `/temp/` folder in markdown, possibly with blog-skeleton-generator agent
+
+### 2. Search the blog based on a question or keyword
+
+1. Download the latest posts data from the server for client side searching
+2. Create the search logic and search across multiple fields
+3. Display the results
+
+### 3. Post to Ghost
+
+When posting to Ghost, use the lexical format for content. Ghost's modern editor uses lexical JSON format rather than mobiledoc.
+
+#### Creating Draft Posts
+
+```bash
+# Generate JWT token
+TOKEN=$(node ghost_jwt.js --quiet)
+
+# Create draft post with lexical content
+curl -H "Authorization: Ghost $TOKEN" \
+     -H "Accept-Version: v6.0" \
+     -H "Content-Type: application/json" \
+     -X POST \
+     "https://alt-counsel.ghost.io/ghost/api/admin/posts/" \
+     -d '{
+       "posts": [{
+         "title": "Post Title",
+         "status": "draft",
+         "newsletter": true,
+         "excerpt": "Brief description of the post",
+         "lexical": "LEXICAL_JSON_HERE"
+       }]
+     }'
+```
+
+#### Lexical Format Notes
+
+* Use `lexical` field instead of `mobiledoc` for modern Ghost installations
+* Lexical JSON structure contains a root object with children array
+* Each child represents a paragraph, heading, list, or other content block
+* Text formatting uses `format` field (0=normal, 1=italic, 2=bold, etc.)
+* Always escape quotes properly in the JSON structure 
+
+## Ghost Admin API Authentication
+
+### Setup for Claude Code
+
+1. Get your Admin API Key from Ghost:
+
+  * Go to Ghost Admin → Settings → Integrations
+  * Create "Custom Integration" and copy the Admin API Key
+
+2. Configure your Ghost credentials:
+
+  * For Docker: Edit environment variables in `docker-compose.yml`
+  * For local Node.js: Copy `.env.example` to `.env` and edit
+
+### JWT Token Generation
+
+Use the Node.js `ghost_jwt.js` script for all JWT token operations:
+
+```bash
+# Generate token with examples
+node ghost_jwt.js --examples
+# or use the alias:
+blog-token --examples
+
+# Get just the token (for scripting)
+node ghost_jwt.js --quiet
+# or:
+blog-token --quiet
+
+# Show HTTP headers for curl
+node ghost_jwt.js --print-headers
+
+# Environment variable setup help
+node ghost_jwt.js --env-help
+```
+
+### Configuration Options
+
+#### Option 1: Environment Variables (Recommended for Docker)
+```bash
+# Set in docker-compose.yml or .env file
+GHOST_SITE_URL=https://your-site.ghost.io
+GHOST_ADMIN_API_KEY=your_admin_api_key
+GHOST_API_VERSION=v6.0
+```
+
+#### Local Node.js Setup
+```bash
+# Copy environment file
+cp .env.example .env
+# Edit .env with your Ghost credentials
+```
+
+### Common API Operations
+
+```bash
+# Search for posts containing specific terms
+TOKEN=$(node ghost_jwt.js --quiet)
+curl -H "Authorization: Ghost $TOKEN" \
+     -H "Accept-Version: v6.0" \
+     "https://alt-counsel.ghost.io/ghost/api/admin/posts/?filter=title:~docassemble,plaintext:~docassemble"
+
+# Get all posts with tags
+curl -H "Authorization: Ghost $TOKEN" \
+     -H "Accept-Version: v6.0" \
+     "https://alt-counsel.ghost.io/ghost/api/admin/posts/?include=tags"
+
+# Get site information
+curl -H "Authorization: Ghost $TOKEN" \
+     -H "Accept-Version: v6.0" \
+     "https://alt-counsel.ghost.io/ghost/api/admin/site/"
+```
+
+### Key Points
+
+* Tokens expire in 5 minutes maximum
+* Use HS256 algorithm with hex-decoded secret
+* Admin API keys must be kept secure (server-side only)
+* Never commit credentials to version control
+* The application now uses Node.js instead of Python for better container compatibility
+* Environment variables are preferred over settings files in the containerized setup
+
+## Container Management
+
+### Docker Commands
+
+```bash
+# Start the development environment
+docker-compose up -d
+
+# Stop the environment
+docker-compose down
+
+# View logs
+docker-compose logs -f
+
+# Rebuild after changes
+docker-compose build --no-cache
+
+# Execute commands inside container
+docker-compose exec blog-terminal bash
+```
+
+### Persistent Data
+
+The following data persists between container restarts:
+- Claude Code configuration and agents
+- Bash history
+- NPM cache
+- Your project files (mounted as volume)
+
+### Security
+
+- Web terminal protected with basic auth (`blogger:write123`)
+- Container runs with minimal privileges
+- Secrets managed via environment variables
+- Appropriate security options enabled

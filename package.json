@@ -1,0 +1,36 @@
+{
+  "name": "blog-alt-counsel",
+  "version": "1.0.0",
+  "description": "A lightweight collection of Claude Code subagents that automate the entire lifecycle of a Ghost blog post",
+  "main": "ghost_jwt.js",
+  "scripts": {
+    "token": "node ghost_jwt.js",
+    "search": "node search_posts.js",
+    "token-quiet": "node ghost_jwt.js --quiet",
+    "token-headers": "node ghost_jwt.js --print-headers",
+    "token-examples": "node ghost_jwt.js --examples",
+    "env-help": "node ghost_jwt.js --env-help",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ghost-jwt": "./ghost_jwt.js",
+    "ghost-search": "./search_posts.js"
+  },
+  "keywords": [
+    "ghost",
+    "blog",
+    "jwt",
+    "api",
+    "claude",
+    "automation"
+  ],
+  "author": "Ang Hou Fu",
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
