@@ -26,6 +26,14 @@
   ],
   "author": "Ang Hou Fu",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/houfu/blog-alt-counsel.git"
+  },
+  "homepage": "https://github.com/houfu/blog-alt-counsel#readme",
+  "bugs": {
+    "url": "https://github.com/houfu/blog-alt-counsel/issues"
+  },
   "dependencies": {
     "jsonwebtoken": "^9.0.2"
   },
