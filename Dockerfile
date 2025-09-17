@@ -11,13 +11,20 @@ RUN apt-get update && apt-get install -y \
     jq \
     && rm -rf /var/lib/apt/lists/*
 
-# Install ttyd for web terminal
-RUN curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 \
-    && chmod +x /usr/local/bin/ttyd
+# Install ttyd for web terminal (multi-architecture support)
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64; \
+    elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then \
+        curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.aarch64; \
+    else \
+        echo "Unsupported architecture: $ARCH" && exit 1; \
+    fi && \
+    chmod +x /usr/local/bin/ttyd
 
-# Note: Claude Code installation moved to runtime setup
-# This ensures the container builds reliably
+# Install Claude Code during build for reliability and speed
 ENV PATH="/root/.local/bin:$PATH"
+RUN curl -fsSL https://claude.ai/install.sh | bash
 
 # Set working directory
 WORKDIR /workspace
@@ -55,10 +62,10 @@ RUN echo 'alias audit-post="claude --agent .claude/agents/content-quality-audito
 RUN echo 'alias legal-review="claude --agent .claude/agents/legal-tech-blog-reviewer.md"' >> /root/.bashrc
 RUN echo 'alias corp-review="claude --agent .claude/agents/corporate-lawyer-reviewer.md"' >> /root/.bashrc
 
-# Claude Code setup aliases (since we install at runtime)
-RUN echo 'alias setup-claude="curl -fsSL https://claude.ai/install.sh | bash && echo \"Claude Code installed! Run: claude auth login\""' >> /root/.bashrc
-RUN echo 'alias install-claude="setup-claude"' >> /root/.bashrc
-RUN echo 'alias claude-help="echo \"Run setup-claude to install Claude Code, then claude auth login to authenticate\""' >> /root/.bashrc
+# Claude Code authentication aliases (Claude Code pre-installed)
+RUN echo 'alias claude-login="claude auth login"' >> /root/.bashrc
+RUN echo 'alias claude-status="claude auth status"' >> /root/.bashrc
+RUN echo 'alias claude-help="echo \"Claude Code is pre-installed! Set ANTHROPIC_API_KEY or run: claude auth login\""' >> /root/.bashrc
 
 # Development convenience aliases
 RUN echo 'alias ll="ls -la"' >> /root/.bashrc

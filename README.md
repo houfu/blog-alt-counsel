@@ -59,7 +59,12 @@ open http://localhost:7681
 Once connected to the web terminal:
 
 ```bash
-# Authenticate with Claude Code (first time only)
+# Authenticate Claude Code (choose one method):
+
+# Option 1: Set API key in docker-compose.yml
+# ANTHROPIC_API_KEY=your_api_key_here
+
+# Option 2: Interactive login (persists in volume)
 claude auth login
 
 # Ghost API operations
@@ -114,8 +119,9 @@ The containerized environment is accessible from any device on your network:
 ### Benefits
 
 - ✅ **Unified runtime**: Node.js only (no Python/uv complexity)
-- ✅ **Faster builds**: ~50% reduction in container build time
-- ✅ **Smaller images**: ~400MB vs ~800MB
+- ✅ **Pre-installed Claude Code**: No runtime installation delays
+- ✅ **Persistent authentication**: Login once, works across restarts
+- ✅ **Multi-architecture**: Works on x86_64 and ARM64 (Raspberry Pi)
 - ✅ **Environment flexibility**: Docker-native configuration
 - ✅ **Team-friendly**: Identical setup across all machines
 - ✅ **AI-enhanced workflow**: Claude agents integrated into terminal

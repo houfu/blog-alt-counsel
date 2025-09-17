@@ -17,36 +17,31 @@ fi
 
 echo ""
 
-# Check if Claude Code is already installed
+# Check if Claude Code is installed (should be pre-installed in container)
 if command -v claude &> /dev/null; then
-    echo "✅ Claude Code is already installed"
-    
+    echo "✅ Claude Code is pre-installed"
+
     # Check if authenticated
     if claude auth status &> /dev/null; then
         echo "✅ Claude Code is authenticated"
         echo "🎉 Setup complete! Try: new-post \"test post\""
     else
         echo "🔑 Claude Code needs authentication"
-        echo "   Run: claude auth login"
+        echo ""
+        echo "Choose one authentication method:"
+        echo "   Option 1: Set API key in docker-compose.yml:"
+        echo "   ANTHROPIC_API_KEY=your_api_key_here"
+        echo ""
+        echo "   Option 2: Interactive login (persists in volume):"
+        echo "   claude auth login"
     fi
 else
-    echo "📦 Installing Claude Code..."
-    
-    # Install Claude Code
-    if curl -fsSL https://claude.ai/install.sh | bash; then
-        echo "✅ Claude Code installed successfully"
-        echo ""
-        echo "🔑 Next step: Authenticate Claude Code"
-        echo "   Run: claude auth login"
-        echo "   Follow the prompts to connect your account"
-    else
-        echo "❌ Claude Code installation failed"
-        echo ""
-        echo "💡 Manual installation options:"
-        echo "1. Try: curl -fsSL https://claude.ai/install.sh | bash"
-        echo "2. Visit: https://docs.claude.com/claude-code for manual setup"
-        echo "3. Continue without Claude Code (Ghost API tools still work)"
-    fi
+    echo "⚠️  Claude Code not found (should be pre-installed)"
+    echo ""
+    echo "💡 Troubleshooting:"
+    echo "1. Rebuild container: docker-compose build --no-cache"
+    echo "2. Manual install: curl -fsSL https://claude.ai/install.sh | bash"
+    echo "3. Continue without Claude Code (Ghost API tools still work)"
 fi
 
 echo ""

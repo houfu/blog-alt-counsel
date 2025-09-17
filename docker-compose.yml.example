@@ -8,8 +8,8 @@ services:
     volumes:
       # Mount the entire project for live development
       - .:/workspace
-      # Persist Claude Code configuration and agents
-      - claude-config:/root/.config/claude
+      # Persist Claude Code authentication and configuration
+      - claude-config:/root/.claude
       # Persist bash history for convenience
       - bash-history:/root/.bash_history
       # Persist npm cache
@@ -23,6 +23,10 @@ services:
       - GHOST_SITE_URL=
       - GHOST_ADMIN_API_KEY=
       - GHOST_API_VERSION=
+
+      # Claude Code Authentication (Optional - alternative to interactive login)
+      # Get your API key from: https://console.anthropic.com/settings/keys
+      - ANTHROPIC_API_KEY=
       
     # Basic auth for home network security
     command: ["ttyd", "-p", "7681", "-i", "0.0.0.0", "-c", "blogger:write123", "bash"]

@@ -28,15 +28,20 @@ This project runs in a containerized environment using Docker for consistency an
    - Open http://localhost:7681 in your browser
    - Default credentials: `blogger:write123`
 
-3. **Set up Claude Code (first time only):**
+3. **Authenticate Claude Code (choose one method):**
    ```bash
-   setup-claude
+   # Option 1: Set API key in docker-compose.yml
+   # ANTHROPIC_API_KEY=your_api_key_here
+
+   # Option 2: Interactive login (persists in volume)
    claude auth login
    ```
 
-4. **Configure Ghost API:**
-   - Copy `docker-compose.yml.example` to `docker-compose.yml` and set environment variables, or
-   - For local Node.js: copy `.env.example` to `.env`
+4. **Configure Ghost API and Claude Code:**
+   - Copy `docker-compose.yml.example` to `docker-compose.yml`
+   - Set Ghost credentials: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`
+   - Optional: Set `ANTHROPIC_API_KEY` for Claude Code
+   - Alternative for local Node.js: copy `.env.example` to `.env`
 
 ### Available Commands
 
