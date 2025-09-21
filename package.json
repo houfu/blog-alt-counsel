@@ -6,15 +6,21 @@
   "scripts": {
     "token": "node ghost_jwt.js",
     "search": "node search_posts.js",
+    "search-v2": "node search_posts_v2.js",
+    "create-post": "node create_post.js",
     "token-quiet": "node ghost_jwt.js --quiet",
     "token-headers": "node ghost_jwt.js --print-headers",
     "token-examples": "node ghost_jwt.js --examples",
     "env-help": "node ghost_jwt.js --env-help",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-api-client": "node temp/ghost_api_client_test.js",
+    "compare-api": "node temp/ghost_api_comparison.js"
   },
   "bin": {
     "ghost-jwt": "./ghost_jwt.js",
-    "ghost-search": "./search_posts.js"
+    "ghost-search": "./search_posts.js",
+    "ghost-search-v2": "./search_posts_v2.js",
+    "ghost-create-post": "./create_post.js"
   },
   "keywords": [
     "ghost",
@@ -35,10 +41,13 @@
     "url": "https://github.com/houfu/blog-alt-counsel/issues"
   },
   "dependencies": {
+    "@tryghost/admin-api": "^1.14.0",
     "jsonwebtoken": "^9.0.2"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "node-fetch": "^3.3.2"
   }
 }

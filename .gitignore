@@ -1,6 +1,7 @@
 # Configuration files with secrets
 docker-compose.yml
 .env
+settings.json
 
 # System files
 **/.DS_Store

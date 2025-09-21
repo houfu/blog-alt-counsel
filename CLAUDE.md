@@ -47,7 +47,9 @@ This project runs in a containerized environment using Docker for consistency an
 
 #### Ghost API Tools
 - `blog-token` - Generate JWT token for Ghost API
-- `search-posts` - Search through blog posts
+- `search-posts` - Search through blog posts (original)
+- `search-posts-v2` - Enhanced search with @tryghost/admin-api (recommended)
+- `create-post` - Create and publish Ghost posts
 - `token-examples` - Show API usage examples
 - `env-help` - Environment setup instructions
 
@@ -61,12 +63,26 @@ This project runs in a containerized environment using Docker for consistency an
 
 ### 1. Create a new post
 
+**Recommended workflow using enhanced tools:**
 1. Figure out if it's meant to be a newsletter or blog post
-2. Ask the user questions on what is description of the post to get a better idea of what is the post going to be about. 
-3. Create a draft post in the `/temp/` folder in markdown, possibly with blog-skeleton-generator agent
+2. Ask the user questions on what is description of the post to get a better idea of what is the post going to be about
+3. Use the interactive post creator: `npm run create-post --interactive`
+4. Or create from template: `npm run create-post --template newsletter --title "Title"`
+5. Alternatively, create a draft in `/temp/` folder in markdown, then use `npm run create-post --file temp/post.md`
 
 ### 2. Search the blog based on a question or keyword
 
+**Recommended approach using enhanced search:**
+```bash
+# Basic search
+npm run search-v2 docassemble
+
+# Advanced search with filters
+npm run search-v2 "legal tech" --limit 10 --published --format simple
+npm run search-v2 --tag javascript --featured
+```
+
+**Legacy approach (if needed):**
 1. Download the latest posts data from the server for client side searching
 2. Create the search logic and search across multiple fields
 3. Display the results
@@ -75,7 +91,27 @@ This project runs in a containerized environment using Docker for consistency an
 
 When posting to Ghost, use the lexical format for content. Ghost's modern editor uses lexical JSON format rather than mobiledoc.
 
-#### Creating Draft Posts
+#### Recommended: Using the Post Creation Script
+
+```bash
+# Interactive post creation (easiest)
+npm run create-post --interactive
+
+# Quick post creation
+npm run create-post --title "My Post" --content "Hello world" --publish
+
+# From markdown file
+npm run create-post --file post.md --tags "tech,legal" --featured
+
+# Using templates
+npm run create-post --template newsletter --title "Weekly Update"
+npm run create-post --template tech --title "API Guide"
+
+# Create draft
+npm run create-post --title "Draft Post" --content "Work in progress..." --draft
+```
+
+#### Legacy: Manual API Calls
 
 ```bash
 # Generate JWT token
@@ -105,6 +141,63 @@ curl -H "Authorization: Ghost $TOKEN" \
 * Each child represents a paragraph, heading, list, or other content block
 * Text formatting uses `format` field (0=normal, 1=italic, 2=bold, etc.)
 * Always escape quotes properly in the JSON structure 
+
+## Ghost Admin API Client
+
+This project now includes enhanced Ghost API scripts using the official `@tryghost/admin-api` JavaScript client for improved authentication stability and simplified operations.
+
+### Key Improvements
+
+- ✅ **Automatic token management** - No more 5-minute JWT expiry issues
+- ✅ **Promise-based API** - Clean async/await syntax
+- ✅ **Built-in error handling** - Better error messages and retry logic
+- ✅ **Advanced filtering** - Server-side Ghost API filters
+- ✅ **90% less code** - Simplified operations
+
+### Enhanced Scripts
+
+#### Search Posts v2 (`search_posts_v2.js`)
+```bash
+# Basic usage
+npm run search-v2 docassemble
+
+# Advanced filtering
+npm run search-v2 "legal tech" --limit 10 --published
+npm run search-v2 --tag javascript --format simple
+npm run search-v2 --author houfu --featured
+npm run search-v2 --filter "published_at:>2024-01-01"
+
+# Output formats: detailed (default), simple, json
+npm run search-v2 --tag tech --format json
+```
+
+#### Post Creation (`create_post.js`)
+```bash
+# Interactive mode (recommended)
+npm run create-post --interactive
+
+# Quick creation
+npm run create-post --title "My Post" --content "Hello world" --publish
+
+# From markdown file
+npm run create-post --file post.md --tags "tech,legal"
+
+# Templates: blog, newsletter, tech, legal
+npm run create-post --template newsletter --title "Weekly Update"
+
+# Update existing post
+npm run create-post --update POST_ID --publish
+```
+
+### Testing and Comparison
+
+```bash
+# Test the new API client
+npm run test-api-client
+
+# Compare old vs new approaches
+npm run compare-api
+```
 
 ## Ghost Admin API Authentication
 
@@ -223,3 +316,4 @@ The following data persists between container restarts:
 - Container runs with minimal privileges
 - Secrets managed via environment variables
 - Appropriate security options enabled
+- Always remove working files after posting a draft to ghost
