@@ -5,6 +5,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 This is Ang Hou Fu's personal website (alt-counsel.ghost.io), a ghost-based blog and newsletter focused on legal technology, programming, and personal projects.
 
+### Blog Mission & Content Strategy
+alt-counsel.com offers **alternative perspectives on legal technology and practice** specifically for solo counsels, small legal teams, and resource-constrained legal departments. Unlike typical legal tech content that assumes enterprise budgets and large teams, this blog focuses on:
+
+- **Practical solutions for real constraints** - $50 solutions that replace $50K systems
+- **Resource-conscious implementations** - Tools and workflows that work with limited budgets and time
+- **Singapore/ASEAN legal context** - Regional insights with global applicability  
+- **Builder-friendly content** - Serving both legal professionals and technical folks building legal solutions
+- **Honest assessments** - What actually works vs. what's marketed to work
+
+**Target Audience**: Solo counsels, small legal teams, in-house lawyers working with limited resources, and builders creating legal tech solutions.
+
+**Brand Position**: "The Solo Counsel's Tech Strategist" - practical problem-solver who helps resource-constrained legal departments leverage technology for real impact.
+
 ## Directory Structure
 - `/temp/` - Temporary folder to store work in progress
 - `/docs/` - Documentation for advanced Ghost workflows
