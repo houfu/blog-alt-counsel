@@ -79,9 +79,19 @@ This project runs in a containerized environment using Docker for consistency an
 **Recommended workflow using enhanced tools:**
 1. Figure out if it's meant to be a newsletter or blog post
 2. Ask the user questions on what is description of the post to get a better idea of what is the post going to be about
-3. Use the interactive post creator: `npm run create-post --interactive`
-4. Or create from template: `npm run create-post --template newsletter --title "Title"`
-5. Alternatively, create a draft in `/temp/` folder in markdown, then use `npm run create-post --file temp/post.md`
+3. **Use enhanced markdown features**: Include Ghost cards like callouts, toggles, and bookmarks for rich content
+4. **Create interactive content**: Use toggle cards for FAQs, callout cards for tips/warnings, bookmark cards for resources
+5. Use the interactive post creator: `npm run create-post --interactive`
+6. Or create from template: `npm run create-post --template newsletter --title "Title"`
+7. **Recommended**: Create a draft in `/temp/` folder using enhanced markdown with Ghost cards, then use `npm run create-post --file temp/post.md`
+
+**Content Enhancement Guidelines:**
+- Use **callout cards** for important tips, warnings, or key information
+- Use **toggle cards** for FAQ sections or detailed explanations
+- Use **bookmark cards** for external resources and references
+- Include **code blocks** with proper language tagging for syntax highlighting
+- Use **mixed formatting** in paragraphs (bold, italic, code, links)
+- Structure content with **proper heading hierarchy** (H1-H6)
 
 ### 2. Search the blog based on a question or keyword
 
@@ -147,13 +157,78 @@ curl -H "Authorization: Ghost $TOKEN" \
      }'
 ```
 
+#### Enhanced Markdown Features
+
+The post creation script now supports comprehensive markdown formatting and Ghost's powerful card system:
+
+**Text Formatting:**
+- **Bold**: `**text**` or `__text__`
+- *Italic*: `*text*` or `_text_`
+- `Inline code`: `` `code` ``
+- [Links]: `[link text](https://url.com)`
+
+**Structural Elements:**
+- Headings: `# H1` through `###### H6`
+- Lists: `- item` (unordered) or `1. item` (ordered)
+- Blockquotes: `> quote text`
+- Code blocks: `` ```language `` (auto-converted to Ghost code cards)
+- Horizontal rules: `---` or `***`
+
+**Ghost Cards (HTML Comments):**
+```markdown
+<!--kg-card-begin: callout-->
+{"calloutEmoji": "💡", "calloutText": "Important tip or information"}
+<!--kg-card-end: callout-->
+
+<!--kg-card-begin: toggle-->
+{"toggleHeading": "FAQ Question", "toggleContent": "<p>Detailed answer with <strong>HTML formatting</strong></p>"}
+<!--kg-card-end: toggle-->
+
+<!--kg-card-begin: bookmark-->
+{"url": "https://example.com", "title": "Page Title", "description": "Brief description"}
+<!--kg-card-end: bookmark-->
+```
+
+**Usage Examples:**
+
+```markdown
+# Technical Tutorial
+
+Learn how to use the **Ghost Admin API** with practical examples.
+
+<!--kg-card-begin: callout-->
+{"calloutEmoji": "📋", "calloutText": "Prerequisites: Node.js installed and Ghost API key"}
+<!--kg-card-end: callout-->
+
+## Authentication Setup
+
+Here's how to generate a JWT token:
+
+```javascript
+const jwt = require('jsonwebtoken');
+function generateToken(apiKey) {
+    // Implementation here
+}
+```
+
+<!--kg-card-begin: toggle-->
+{"toggleHeading": "Why do tokens expire so quickly?", "toggleContent": "<p>Ghost API tokens expire after 5 minutes for security:</p><ul><li>Reduced attack window</li><li>Forces fresh generation</li></ul>"}
+<!--kg-card-end: toggle-->
+
+## Additional Resources
+
+<!--kg-card-begin: bookmark-->
+{"url": "https://docs.ghost.org/admin-api/", "title": "Ghost Admin API Docs", "description": "Complete API reference and examples"}
+<!--kg-card-end: bookmark-->
+```
+
 #### Lexical Format Notes
 
 * Use `lexical` field instead of `mobiledoc` for modern Ghost installations
-* Lexical JSON structure contains a root object with children array
-* Each child represents a paragraph, heading, list, or other content block
-* Text formatting uses `format` field (0=normal, 1=italic, 2=bold, etc.)
-* Always escape quotes properly in the JSON structure 
+* Enhanced converter automatically handles all markdown formatting and Ghost cards
+* Text formatting uses proper format flags (bold=2, italic=1, code=16)
+* Ghost cards are preserved as HTML nodes in lexical structure
+* Mixed formatting in paragraphs is fully supported 
 
 ## Ghost Admin API Client
 
