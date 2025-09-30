@@ -81,9 +81,9 @@ This project runs in a containerized environment using Docker for consistency an
 2. Ask the user questions on what is description of the post to get a better idea of what is the post going to be about
 3. **Use enhanced markdown features**: Include Ghost cards like callouts, toggles, and bookmarks for rich content
 4. **Create interactive content**: Use toggle cards for FAQs, callout cards for tips/warnings, bookmark cards for resources
-5. Use the interactive post creator: `npm run create-post --interactive`
-6. Or create from template: `npm run create-post --template newsletter --title "Title"`
-7. **Recommended**: Create a draft in `/temp/` folder using enhanced markdown with Ghost cards, then use `npm run create-post --file temp/post.md`
+5. Use the interactive post creator: `npm run create-post -- --interactive`
+6. Or create from template: `npm run create-post -- --template newsletter --title "Title"`
+7. **Recommended**: Create a draft in `/temp/` folder using enhanced markdown with Ghost cards, then use `npm run create-post -- --file temp/post.md`
 
 **Content Enhancement Guidelines:**
 - Use **callout cards** for important tips, warnings, or key information
@@ -101,8 +101,8 @@ This project runs in a containerized environment using Docker for consistency an
 npm run search-v2 docassemble
 
 # Advanced search with filters
-npm run search-v2 "legal tech" --limit 10 --published --format simple
-npm run search-v2 --tag javascript --featured
+npm run search-v2 -- "legal tech" --limit 10 --published --format simple
+npm run search-v2 -- --tag javascript --featured
 ```
 
 **Legacy approach (if needed):**
@@ -118,20 +118,20 @@ When posting to Ghost, use the lexical format for content. Ghost's modern editor
 
 ```bash
 # Interactive post creation (easiest)
-npm run create-post --interactive
+npm run create-post -- --interactive
 
 # Quick post creation
-npm run create-post --title "My Post" --content "Hello world" --publish
+npm run create-post -- --title "My Post" --content "Hello world" --publish
 
 # From markdown file
-npm run create-post --file post.md --tags "tech,legal" --featured
+npm run create-post -- --file post.md --tags "tech,legal" --featured
 
 # Using templates
-npm run create-post --template newsletter --title "Weekly Update"
-npm run create-post --template tech --title "API Guide"
+npm run create-post -- --template newsletter --title "Weekly Update"
+npm run create-post -- --template tech --title "API Guide"
 
 # Create draft
-npm run create-post --title "Draft Post" --content "Work in progress..." --draft
+npm run create-post -- --title "Draft Post" --content "Work in progress..." --draft
 ```
 
 #### Legacy: Manual API Calls
@@ -250,31 +250,31 @@ This project now includes enhanced Ghost API scripts using the official `@trygho
 npm run search-v2 docassemble
 
 # Advanced filtering
-npm run search-v2 "legal tech" --limit 10 --published
-npm run search-v2 --tag javascript --format simple
-npm run search-v2 --author houfu --featured
-npm run search-v2 --filter "published_at:>2024-01-01"
+npm run search-v2 -- "legal tech" --limit 10 --published
+npm run search-v2 -- --tag javascript --format simple
+npm run search-v2 -- --author houfu --featured
+npm run search-v2 -- --filter "published_at:>2024-01-01"
 
 # Output formats: detailed (default), simple, json
-npm run search-v2 --tag tech --format json
+npm run search-v2 -- --tag tech --format json
 ```
 
 #### Post Creation (`create_post.js`)
 ```bash
 # Interactive mode (recommended)
-npm run create-post --interactive
+npm run create-post -- --interactive
 
 # Quick creation
-npm run create-post --title "My Post" --content "Hello world" --publish
+npm run create-post -- --title "My Post" --content "Hello world" --publish
 
 # From markdown file
-npm run create-post --file post.md --tags "tech,legal"
+npm run create-post -- --file post.md --tags "tech,legal"
 
 # Templates: blog, newsletter, tech, legal
-npm run create-post --template newsletter --title "Weekly Update"
+npm run create-post -- --template newsletter --title "Weekly Update"
 
 # Update existing post
-npm run create-post --update POST_ID --publish
+npm run create-post -- --update POST_ID --publish
 ```
 
 ### Testing and Comparison
