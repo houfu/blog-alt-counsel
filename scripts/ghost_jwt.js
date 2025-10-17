@@ -57,7 +57,7 @@ function loadConfigFromEnv() {
 /**
  * Load Ghost configuration from JSON file
  */
-function loadConfigFromFile(configFile = 'settings.json') {
+function loadConfigFromFile(configFile = '../settings.json') {
     const configPath = path.resolve(configFile);
     
     if (!fs.existsSync(configPath)) {

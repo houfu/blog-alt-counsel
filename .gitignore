@@ -10,7 +10,7 @@ settings.json
 node_modules/
 npm-debug.log*
 
-# Temporary files and work-in-progress
+# Temporary files 
 temp/*
 *.tmp
 *.log

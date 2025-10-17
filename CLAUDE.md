@@ -19,98 +19,47 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
 **Brand Position**: "The Solo Counsel's Tech Strategist" - practical problem-solver who helps resource-constrained legal departments leverage technology for real impact.
 
 ## Directory Structure
-- `/temp/` - Temporary folder to store work in progress
+- `/temp/` - Temporary folder
+- '/posts/' - Place to store posts and work in progress
+  - '{post-short-title}' - Each post is stored in its own folder using a short memorable title
+    - '{post-title}.md' - This file contains the content of the post and some metadata
+    - 'discussion.md' - This file stores the memories of claude involved in writing the post
+    - 'pitch.md' - This file stores the pitch of the post used to create the post.
+    - It also contains images, research documents and others relating to this post. 
 - `/docs/` - Documentation for advanced Ghost workflows
   - `/docs/ghost-admin-api.md` - Ghost Admin API reference
   - `/docs/ghost-cards-reference.md` - Ghost cards for rich media reference
 - `/.claude/` - Claude Code agents and configuration
+- `/skills/` - Skills documents
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
 ## Development Environment
 
 This project runs in a containerized environment using Docker for consistency and isolation.
 
-### Getting Started
+### Environment Variables
 
-1. **Start the development environment:**
-   ```bash
-   docker-compose up -d
-   ```
-
-2. **Access the web terminal:**
-   - Open http://localhost:7681 in your browser
-   - Default credentials: `blogger:write123`
-
-3. **Authenticate Claude Code (choose one method):**
-   ```bash
-   # Option 1: Set API key in docker-compose.yml
-   # ANTHROPIC_API_KEY=your_api_key_here
-
-   # Option 2: Interactive login (persists in volume)
-   claude auth login
-   ```
-
-4. **Configure Ghost API and Claude Code:**
-   - Copy `docker-compose.yml.example` to `docker-compose.yml`
-   - Set Ghost credentials: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`
-   - Optional: Set `ANTHROPIC_API_KEY` for Claude Code
-   - Alternative for local Node.js: copy `.env.example` to `.env`
-
-### Available Commands
-
-#### Ghost API Tools
-- `blog-token` - Generate JWT token for Ghost API
-- `search-posts` - Search through blog posts (original)
-- `search-posts-v2` - Enhanced search with @tryghost/admin-api (recommended)
-- `create-post` - Create and publish Ghost posts
-- `token-examples` - Show API usage examples
-- `env-help` - Environment setup instructions
-
-#### Claude Code Agents (after authentication)
-- `new-post` - Generate blog post skeleton
-- `audit-post` - Quality audit content
-- `legal-review` - Legal tech focused review
-- `corp-review` - Corporate lawyer perspective review
+Always use environment variables when using the Ghost API: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`.
+You can find them in the following places:
+- As an environment variable
+- Read the settings.json file
 
 ## Common Development Workflows
 
 ### 1. Create a new post
 
-**Recommended workflow using enhanced tools:**
-1. Figure out if it's meant to be a newsletter or blog post
-2. Ask the user questions on what is description of the post to get a better idea of what is the post going to be about
-3. **Use enhanced markdown features**: Include Ghost cards like callouts, toggles, and bookmarks for rich content
-4. **Create interactive content**: Use toggle cards for FAQs, callout cards for tips/warnings, bookmark cards for resources
-5. Use the interactive post creator: `npm run create-post -- --interactive`
-6. Or create from template: `npm run create-post -- --template newsletter --title "Title"`
-7. **Recommended**: Create a draft in `/temp/` folder using enhanced markdown with Ghost cards, then use `npm run create-post -- --file temp/post.md`
+1. I will tell you that we should write a blog post or newsletter article. I might give you a brief or detailed idea I have.
+2. Let us create a pitch based on my ideas, with additional brainstorming and feedback as required.
+3. We will write a pitch and save it in a new folder in the '/posts/' folder.
+4. Based on the pitch, we will draft an outline of the post.
+5. We will work on the outline, either with you or by myself. We may research and refine the pitch and outline.
+6. Once the post is completed, we will post it as a draft on my Ghost blog. 
 
-**Content Enhancement Guidelines:**
-- Use **callout cards** for important tips, warnings, or key information
-- Use **toggle cards** for FAQ sections or detailed explanations
-- Use **bookmark cards** for external resources and references
-- Include **code blocks** with proper language tagging for syntax highlighting
-- Use **mixed formatting** in paragraphs (bold, italic, code, links)
-- Structure content with **proper heading hierarchy** (H1-H6)
+Always create TodoWrite todos for checklists so we can track our progress.
 
-### 2. Search the blog based on a question or keyword
+After each conversation, always update the 'discussion.md' of the post to record our progress.
 
-**Recommended approach using enhanced search:**
-```bash
-# Basic search
-npm run search-v2 docassemble
-
-# Advanced search with filters
-npm run search-v2 -- "legal tech" --limit 10 --published --format simple
-npm run search-v2 -- --tag javascript --featured
-```
-
-**Legacy approach (if needed):**
-1. Download the latest posts data from the server for client side searching
-2. Create the search logic and search across multiple fields
-3. Display the results
-
-### 3. Post to Ghost
+### 2. Post to Ghost
 
 When posting to Ghost, use the lexical format for content. Ghost's modern editor uses lexical JSON format rather than mobiledoc.
 
@@ -132,29 +81,6 @@ npm run create-post -- --template tech --title "API Guide"
 
 # Create draft
 npm run create-post -- --title "Draft Post" --content "Work in progress..." --draft
-```
-
-#### Legacy: Manual API Calls
-
-```bash
-# Generate JWT token
-TOKEN=$(node ghost_jwt.js --quiet)
-
-# Create draft post with lexical content
-curl -H "Authorization: Ghost $TOKEN" \
-     -H "Accept-Version: v6.0" \
-     -H "Content-Type: application/json" \
-     -X POST \
-     "https://alt-counsel.ghost.io/ghost/api/admin/posts/" \
-     -d '{
-       "posts": [{
-         "title": "Post Title",
-         "status": "draft",
-         "newsletter": true,
-         "excerpt": "Brief description of the post",
-         "lexical": "LEXICAL_JSON_HERE"
-       }]
-     }'
 ```
 
 #### Enhanced Markdown Features
@@ -244,21 +170,6 @@ This project now includes enhanced Ghost API scripts using the official `@trygho
 
 ### Enhanced Scripts
 
-#### Search Posts v2 (`search_posts_v2.js`)
-```bash
-# Basic usage
-npm run search-v2 docassemble
-
-# Advanced filtering
-npm run search-v2 -- "legal tech" --limit 10 --published
-npm run search-v2 -- --tag javascript --format simple
-npm run search-v2 -- --author houfu --featured
-npm run search-v2 -- --filter "published_at:>2024-01-01"
-
-# Output formats: detailed (default), simple, json
-npm run search-v2 -- --tag tech --format json
-```
-
 #### Post Creation (`create_post.js`)
 ```bash
 # Interactive mode (recommended)
@@ -277,131 +188,99 @@ npm run create-post -- --template newsletter --title "Weekly Update"
 npm run create-post -- --update POST_ID --publish
 ```
 
-### Testing and Comparison
+# Getting Started with Skills
 
-```bash
-# Test the new API client
-npm run test-api-client
+## Critical Rules
 
-# Compare old vs new approaches
-npm run compare-api
-```
+1. **Use Read tool before announcing skill usage.** The session-start hook does NOT read skills for you. Announcing without calling Read = lying.
 
-## Ghost Admin API Authentication
+2. **Follow mandatory workflows.** Brainstorming before coding. Check for skills before ANY task.
 
-### Setup for Claude Code
+3. **Create TodoWrite todos for checklists.** Mental tracking = steps get skipped. Every time.
 
-1. Get your Admin API Key from Ghost:
 
-  * Go to Ghost Admin → Settings → Integrations
-  * Create "Custom Integration" and copy the Admin API Key
+## Mandatory Workflow: Before ANY Task
 
-2. Configure your Ghost credentials:
+**1. Check skills list** at session start, or run `find-skills [PATTERN]` to filter.
 
-  * For Docker: Edit environment variables in `docker-compose.yml`
-  * For local Node.js: Copy `.env.example` to `.env` and edit
+**2. If relevant skill exists, YOU MUST use it:**
 
-### JWT Token Generation
+- Use Read tool with full path: `skills/skill-name/SKILL.md`
+- Read ENTIRE file, not just frontmatter
+- Announce: "I've read [Skill Name] skill and I'm using it to [purpose]"
+- Follow it exactly
 
-Use the Node.js `ghost_jwt.js` script for all JWT token operations:
+**Don't rationalize:**
+- "I remember this skill" - Skills evolve. Read the current version.
+- "Session-start showed it to me" - That was using-skills/SKILL.md only. Read the actual skill.
+- "This doesn't count as a task" - It counts. Find and read skills.
 
-```bash
-# Generate token with examples
-node ghost_jwt.js --examples
-# or use the alias:
-blog-token --examples
+**Why:** Skills document proven techniques that save time and prevent mistakes. Not using available skills means repeating solved problems and making known errors.
 
-# Get just the token (for scripting)
-node ghost_jwt.js --quiet
-# or:
-blog-token --quiet
+If a skill for your task exists, you must use it or you will fail at your task.
 
-# Show HTTP headers for curl
-node ghost_jwt.js --print-headers
+## Skills with Checklists
 
-# Environment variable setup help
-node ghost_jwt.js --env-help
-```
+If a skill has a checklist, YOU MUST create TodoWrite todos for EACH item.
 
-### Configuration Options
+**Don't:**
+- Work through checklist mentally
+- Skip creating todos "to save time"
+- Batch multiple items into one todo
+- Mark complete without doing them
 
-#### Option 1: Environment Variables (Recommended for Docker)
-```bash
-# Set in docker-compose.yml or .env file
-GHOST_SITE_URL=https://your-site.ghost.io
-GHOST_ADMIN_API_KEY=your_admin_api_key
-GHOST_API_VERSION=v6.0
-```
+**Why:** Checklists without TodoWrite tracking = steps get skipped. Every time. The overhead of TodoWrite is tiny compared to the cost of missing steps.
 
-#### Local Node.js Setup
-```bash
-# Copy environment file
-cp .env.example .env
-# Edit .env with your Ghost credentials
-```
+**Examples:** skills/testing/test-driven-development/SKILL.md, skills/debugging/systematic-debugging/SKILL.md, skills/meta/writing-skills/SKILL.md
 
-### Common API Operations
+## Announcing Skill Usage
 
-```bash
-# Search for posts containing specific terms
-TOKEN=$(node ghost_jwt.js --quiet)
-curl -H "Authorization: Ghost $TOKEN" \
-     -H "Accept-Version: v6.0" \
-     "https://alt-counsel.ghost.io/ghost/api/admin/posts/?filter=title:~docassemble,plaintext:~docassemble"
+After you've read a skill with Read tool, announce you're using it:
 
-# Get all posts with tags
-curl -H "Authorization: Ghost $TOKEN" \
-     -H "Accept-Version: v6.0" \
-     "https://alt-counsel.ghost.io/ghost/api/admin/posts/?include=tags"
+"I've read the [Skill Name] skill and I'm using it to [what you're doing]."
 
-# Get site information
-curl -H "Authorization: Ghost $TOKEN" \
-     -H "Accept-Version: v6.0" \
-     "https://alt-counsel.ghost.io/ghost/api/admin/site/"
-```
+**Examples:**
+- "I've read the Brainstorming skill and I'm using it to refine your idea into a design."
+- "I've read the Test-Driven Development skill and I'm using it to implement this feature."
+- "I've read the Systematic Debugging skill and I'm using it to find the root cause."
 
-### Key Points
+**Why:** Transparency helps your human partner understand your process and catch errors early. It also confirms you actually read the skill.
 
-* Tokens expire in 5 minutes maximum
-* Use HS256 algorithm with hex-decoded secret
-* Admin API keys must be kept secure (server-side only)
-* Never commit credentials to version control
-* The application now uses Node.js instead of Python for better container compatibility
-* Environment variables are preferred over settings files in the containerized setup
+## How to Read a Skill
 
-## Container Management
+Every skill has the same structure:
 
-### Docker Commands
+1. **Frontmatter** - `when_to_use` tells you if this skill matches your situation
+2. **Overview** - Core principle in 1-2 sentences
+3. **Quick Reference** - Scan for your specific pattern
+4. **Implementation** - Full details and examples
+5. **Supporting files** - Load only when implementing
 
-```bash
-# Start the development environment
-docker-compose up -d
+**Many skills contain rigid rules (TDD, debugging, verification).** Follow them exactly. Don't adapt away the discipline.
 
-# Stop the environment
-docker-compose down
+**Some skills are flexible patterns (architecture, naming).** Adapt core principles to your context.
 
-# View logs
-docker-compose logs -f
+The skill itself tells you which type it is.
 
-# Rebuild after changes
-docker-compose build --no-cache
+## Instructions ≠ Permission to Skip Workflows
 
-# Execute commands inside container
-docker-compose exec blog-terminal bash
-```
+Your human partner's specific instructions describe WHAT to do, not HOW.
 
-### Persistent Data
+"Add X", "Fix Y" = the goal, NOT permission to skip brainstorming, TDD, or RED-GREEN-REFACTOR.
 
-The following data persists between container restarts:
-- Claude Code configuration and agents
-- Bash history
-- NPM cache
-- Your project files (mounted as volume)
+**Red flags:** "Instruction was specific" • "Seems simple" • "Workflow is overkill"
 
-### Security
+**Why:** Specific instructions mean clear requirements, which is when workflows matter MOST. Skipping process on "simple" tasks is how simple tasks become complex problems.
 
-- Web terminal protected with basic auth (`blogger:write123`)
-- Container runs with minimal privileges
-- Secrets managed via environment variables
-- Appropriate security options enabled
-- Always remove working files after posting a draft to ghost
+## Summary
+
+**Starting any task:**
+1. Run find-skills to check for relevant skills
+2. If relevant skill exists → Use Read tool with full path (includes /SKILL.md)
+3. Announce you're using it
+4. Follow what it says
+
+**Skill has checklist?** TodoWrite for every item.
+
+**Finding a relevant skill = mandatory to read and use it. Not optional.**
+

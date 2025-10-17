@@ -39,7 +39,7 @@ RUN npm install
 COPY . /workspace/
 
 # Make scripts executable
-RUN chmod +x ghost_jwt.js search_posts.js
+RUN chmod +x scripts/ghost_jwt.js scripts/search_posts.js scripts/create_post.js scripts/session_start.js
 
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
