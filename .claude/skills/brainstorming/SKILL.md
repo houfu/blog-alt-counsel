@@ -1,7 +1,6 @@
 ---
 name: Brainstorming Ideas Into Designs
-description: Interactive idea refinement using Socratic method to develop fully-formed designs
-when_to_use: when partner describes any blog or newsletter idea, before writing a pitch or articles
+description: Interactive idea refinement using Socratic method to develop fully-formed designs when partner describes any blog or newsletter idea, before writing a pitch or articles
 ---
 
 # Brainstorming Ideas Into Designs

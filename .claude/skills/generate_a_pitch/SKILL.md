@@ -1,7 +1,6 @@
 ---
 name: Generate a pitch
-description: Define the scope of an article or newsletter
-when_to_use: at the beginning of the drafting an article or newsletter
+description: Define the scope of an article or newsletter at the beginning of the drafting an article or newsletter
 ---
 
 # Generate a pitch

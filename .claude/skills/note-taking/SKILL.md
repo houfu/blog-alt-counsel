@@ -1,7 +1,6 @@
 ---
 name: Note Taking
-description: Record discussions in the posts folder on an ongoing basis
-when_to_use: When requested or at the end of significant events, like brainstorming, generating a pitch etc
+description: Record discussions in the posts folder on an ongoing basis when requested to, or at the end of significant events, like brainstorming, generating a pitch etc
 ---
 
 # Note Taking
