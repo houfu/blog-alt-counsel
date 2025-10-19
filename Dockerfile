@@ -44,6 +44,12 @@ RUN chmod +x scripts/ghost_jwt.js scripts/search_posts.js scripts/create_post.js
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
 
+# Gitops
+RUN git config --global --add safe.directory /workspace
+
+RUN git config --global credential.helper store && \
+    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" >> ~/.git-credentials
+
 # Blog automation aliases - now all Node.js!
 RUN echo 'alias blog-token="node ghost_jwt.js"' >> /root/.bashrc
 RUN echo 'alias search-posts="node search_posts.js"' >> /root/.bashrc
