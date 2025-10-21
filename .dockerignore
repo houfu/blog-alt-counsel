@@ -38,6 +38,7 @@ settings.local.json
 Dockerfile*
 docker-compose*.yml
 .dockerignore
+compose.yml
 
 # Backup files
 *.backup*
