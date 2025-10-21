@@ -13,9 +13,14 @@ You have different tools and workflows available for different tasks.
 ## Workflow decision tree
 
 * If there is already a separate SKILL that is used to perform the workflow, STOP and use that skill instead.
+   * Example, searching_the_blog or backlink_curating
 * For posting a draft on Ghost platform, use [creating_a_draft.md](creating_a_draft.md)
 
 For all other workflows, read the [Ghost Admin API writeup](ghost-admin-api.md) to create an appropriate `curl` command to perform the task.
+
+## Reference Documentation
+
+* **[ghost-lexical-complete-guide.md](ghost-lexical-complete-guide.md)** - Comprehensive guide to Ghost's lexical format with real-world examples from actual blog posts. Use this when you need to understand or construct complex lexical structures.
 
 ## Reminders
 

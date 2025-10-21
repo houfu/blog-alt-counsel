@@ -1,128 +1,191 @@
 # Post a draft to Ghost
 
+Before posting to Ghost, always ensure content quality auditor has gone through the post, and the 
+human partner has confirmed that all required issues have been resolved.
+
 When posting to Ghost, use the lexical format for content. Ghost's modern editor uses lexical JSON format rather than mobiledoc.
 
-#### Recommended: Using the Post Creation Script
+## Building Lexical Content
 
-```bash
-# Interactive post creation (easiest)
-npm run create-post -- --interactive
+The skill includes `scripts/ghost-lexical-single.js`, a fluent builder API for creating Ghost lexical format JSON. This makes it easy to programmatically construct Ghost posts with proper lexical structure.
 
-# Quick post creation
-npm run create-post -- --title "My Post" --content "Hello world" --publish
+**For detailed reference:** See [ghost-lexical-complete-guide.md](./ghost-lexical-complete-guide.md) for comprehensive documentation on Ghost's lexical format with real-world examples from actual blog posts.
 
-# From markdown file
-npm run create-post -- --file post.md --tags "tech,legal" --featured
-
-# Using templates
-npm run create-post -- --template newsletter --title "Weekly Update"
-npm run create-post -- --template tech --title "API Guide"
-
-# Create draft
-npm run create-post -- --title "Draft Post" --content "Work in progress..." --draft
-```
-
-#### Enhanced Markdown Features
-
-The post creation script now supports comprehensive markdown formatting and Ghost's powerful card system:
-
-**Text Formatting:**
-- **Bold**: `**text**` or `__text__`
-- *Italic*: `*text*` or `_text_`
-- `Inline code`: `` `code` ``
-- [Links]: `[link text](https://url.com)`
-
-**Structural Elements:**
-- Headings: `# H1` through `###### H6`
-- Lists: `- item` (unordered) or `1. item` (ordered)
-- Blockquotes: `> quote text`
-- Code blocks: `` ```language `` (auto-converted to Ghost code cards)
-- Horizontal rules: `---` or `***`
-
-**Ghost Cards (HTML Comments):**
-```markdown
-<!--kg-card-begin: callout-->
-{"calloutEmoji": "💡", "calloutText": "Important tip or information"}
-<!--kg-card-end: callout-->
-
-<!--kg-card-begin: toggle-->
-{"toggleHeading": "FAQ Question", "toggleContent": "<p>Detailed answer with <strong>HTML formatting</strong></p>"}
-<!--kg-card-end: toggle-->
-
-<!--kg-card-begin: bookmark-->
-{"url": "https://example.com", "title": "Page Title", "description": "Brief description"}
-<!--kg-card-end: bookmark-->
-```
-
-**Usage Examples:**
-
-```markdown
-# Technical Tutorial
-
-Learn how to use the **Ghost Admin API** with practical examples.
-
-<!--kg-card-begin: callout-->
-{"calloutEmoji": "📋", "calloutText": "Prerequisites: Node.js installed and Ghost API key"}
-<!--kg-card-end: callout-->
-
-## Authentication Setup
-
-Here's how to generate a JWT token:
+### Basic Usage
 
 ```javascript
-const jwt = require('jsonwebtoken');
-function generateToken(apiKey) {
-    // Implementation here
-}
+const { LexicalBuilder, text } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
+
+const content = new LexicalBuilder()
+  .h1('My First Post')
+  .paragraph('Hello, ', text.bold('world'), '!')
+  .h2('Features')
+  .bulletList(['Easy to use', 'One file', 'No dependencies'])
+  .build();
+
+console.log(JSON.stringify(content));
 ```
 
-<!--kg-card-begin: toggle-->
-{"toggleHeading": "Why do tokens expire so quickly?", "toggleContent": "<p>Ghost API tokens expire after 5 minutes for security:</p><ul><li>Reduced attack window</li><li>Forces fresh generation</li></ul>"}
-<!--kg-card-end: toggle-->
+### Available Methods
 
-## Additional Resources
+The `LexicalBuilder` class provides methods for common content elements:
 
-<!--kg-card-begin: bookmark-->
-{"url": "https://docs.ghost.org/admin-api/", "title": "Ghost Admin API Docs", "description": "Complete API reference and examples"}
-<!--kg-card-end: bookmark-->
+**Headings:**
+- `.h1(content)`, `.h2(content)`, `.h3(content)`, `.h4(content)`, `.h5(content)`, `.h6(content)`
+
+**Text blocks:**
+- `.paragraph(...items)` - accepts plain text strings and formatted text objects
+
+**Lists:**
+- `.bulletList(items)` - creates unordered list
+- `.numberedList(items)` - creates ordered list
+
+**Media & Cards:**
+- `.image(src, options)` - image card with optional caption, dimensions
+- `.codeBlock(code, language, caption)` - code block with syntax highlighting
+- `.bookmark(url, options)` - bookmark card with metadata
+- `.signupCard(options)` - newsletter signup card
+- `.toggle(heading, content)` - collapsible toggle/accordion
+
+**Other:**
+- `.lineBreak()` or `.hr()` - horizontal rule
+
+### Text Formatting
+
+Use the `text` helper object to add formatting within paragraphs:
+
+```javascript
+.paragraph(
+  'This is ',
+  text.bold('bold text'),
+  ' and this is ',
+  text.italic('italic text'),
+  ' and ',
+  text.code('code'),
+  '.'
+)
 ```
 
-#### Lexical Format Notes
+Available text formatting:
+- `text.normal(content)` - plain text
+- `text.bold(content)` - bold
+- `text.italic(content)` - italic
+- `text.boldItalic(content)` - bold and italic
+- `text.code(content)` - inline code
+- `text.underline(content)` - underlined
+- `text.strikethrough(content)` - strikethrough
 
-* Use `lexical` field instead of `mobiledoc` for modern Ghost installations
-* Enhanced converter automatically handles all markdown formatting and Ghost cards
-* Text formatting uses proper format flags (bold=2, italic=1, code=16)
-* Ghost cards are preserved as HTML nodes in lexical structure
-* Mixed formatting in paragraphs is fully supported 
+### Complete Example
 
-## Ghost Admin API Client
+```javascript
+const { LexicalBuilder, text, Link } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
 
-This project now includes enhanced Ghost API scripts using the official `@tryghost/admin-api` JavaScript client for improved authentication stability and simplified operations.
+const content = new LexicalBuilder()
+  .h1('Technical Deep Dive')
+  .paragraph('Welcome to this ', text.bold('comprehensive guide'), ' on legal tech.')
+  .h2('Key Features')
+  .bulletList([
+    'Easy to integrate',
+    'No external dependencies',
+    'Type-safe builder pattern'
+  ])
+  .h2('Code Example')
+  .codeBlock(
+    'function hello() {\n  console.log("Hello, world!");\n}',
+    'javascript',
+    'A simple example'
+  )
+  .h2('Learn More')
+  .paragraph(
+    'For more information, visit ',
+    Link.withText('https://example.com', 'our documentation'),
+    '.'
+  )
+  .build();
 
-### Key Improvements
-
-- ✅ **Automatic token management** - No more 5-minute JWT expiry issues
-- ✅ **Promise-based API** - Clean async/await syntax
-- ✅ **Built-in error handling** - Better error messages and retry logic
-- ✅ **Advanced filtering** - Server-side Ghost API filters
-- ✅ **90% less code** - Simplified operations
-
-### Enhanced Scripts
-
-#### Post Creation (`create_post.js`)
-```bash
-# Interactive mode (recommended)
-npm run create-post -- --interactive
-
-# Quick creation
-npm run create-post -- --title "My Post" --content "Hello world" --publish
-
-# From markdown file
-npm run create-post -- --file post.md --tags "tech,legal"
-
-# Templates: blog, newsletter, tech, legal
-npm run create-post -- --template newsletter --title "Weekly Update"
-
-# Update existing post
-npm run create-post -- --update POST_ID --publish
+// Use in Ghost API
+const lexical = JSON.stringify(content);
 ```
+
+## Adding Metadata
+
+Once you have the lexical content, combine it with metadata to create a complete post.
+
+### Auto-generating Missing Metadata
+
+**Important:** When creating a draft, the skill should check if required metadata is missing and generate it automatically:
+
+1. **Title**: If not provided, extract from the first heading (h1/h2) in the lexical content, or generate based on the post content
+2. **Custom Excerpt**: If not provided, generate a concise 1-2 sentence summary from the post content (aim for ~250-299 characters)
+3. **Tags**: If not provided, analyze the post content and suggest 2-4 relevant tags based on:
+   - Topic/subject matter
+   - Existing tags from the blog (check common tags like "Artificial Intelligence", "LegalTech", "Python", "Programming", etc.)
+   - Key themes in the content
+
+Before creating the post, always verify these three fields exist and generate them if missing.
+
+### Required and Key Fields
+
+```javascript
+const postData = {
+  // Required
+  title: "Your Post Title",
+  lexical: JSON.stringify(content),
+
+  // Key optional fields (with defaults)
+  status: "draft",                        // Default: "draft". Options: "draft", "published", "scheduled"
+  custom_excerpt: "",                     // Default: auto-generated from content
+  tags: [],                               // Default: no tags. Format: [{ name: "TagName" }]
+  visibility: "public",                   // Default: "public". Options: "public", "members", "paid"
+  featured: false                         // Default: false
+};
+```
+
+### Complete Example
+
+```javascript
+const GhostAdminAPI = require('@tryghost/admin-api');
+const { LexicalBuilder, text } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
+
+// Initialize Ghost API
+const api = new GhostAdminAPI({
+  url: process.env.GHOST_SITE_URL,
+  key: process.env.GHOST_ADMIN_API_KEY,
+  version: 'v6.0'
+});
+
+// Build content
+const content = new LexicalBuilder()
+  .h1('Lawyers Got Prompt Engineering Wrong')
+  .paragraph('At TechLawFest 2025, Singapore lawyers packed a workshop on prompt engineering.')
+  .h2('What Changed')
+  .paragraph('Meanwhile, the technology shifted: agent skills became available.')
+  .build();
+
+// Create post with metadata
+const postData = {
+  title: "Lawyers Got Prompt Engineering Wrong (And Why That Matters)",
+  lexical: JSON.stringify(content),
+  status: "draft",
+  custom_excerpt: "At TechLawFest 2025, Singapore lawyers packed a workshop on prompt engineering. Meanwhile, the technology shifted.",
+  tags: [
+    { name: "Artificial Intelligence" },
+    { name: "LegalTech" }
+  ],
+  visibility: "public",
+  featured: false
+};
+
+// Create the post
+api.posts.add(postData)
+  .then((response) => {
+    console.log('Post created:', response.url);
+    console.log('Post ID:', response.id);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+```
+
+## Recommended: Using the Post Creation Script
+

@@ -40,6 +40,7 @@ When reviewing content, you will systematically evaluate these critical areas:
 - Identify gaps in reasoning or missing connecting information
 - Check for abrupt topic changes without proper transitions
 - Verify examples support rather than distract from main points
+- Aggressively reduce the amount of repitition found in a post. If necessary, propose altering the structure of the post.
 
 For each issue you identify, provide:
 1. **Location**: Specific section/paragraph reference

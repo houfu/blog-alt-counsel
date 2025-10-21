@@ -29,8 +29,7 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
 - `/docs/` - Documentation for advanced Ghost workflows
   - `/docs/ghost-admin-api.md` - Ghost Admin API reference
   - `/docs/ghost-cards-reference.md` - Ghost cards for rich media reference
-- `/.claude/` - Claude Code agents and configuration
-- `/skills/` - Skills documents
+- `/.claude/` - Claude Code agents, skills and configuration
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
 ## Development Environment
@@ -44,6 +43,58 @@ You can find them in the following places:
 - As an environment variable
 - Read the settings.json file
 
+## Rich Content Elements for Ghost Blog Posts
+
+When drafting articles for Ghost, consider incorporating these rich content elements to enhance readability and engagement:
+
+### Basic Formatting
+- **Headings** (h1-h6) - Structure content hierarchically
+- **Paragraphs** - Standard text blocks with inline formatting (bold, italic, code)
+- **Lists** - Bullet points and numbered lists for scannable content
+- **Links** - Internal cross-references to other blog posts and external resources. Prefer bookmarks to inline links for key content and backlinks. 
+
+### Rich Media
+- **Images** - Screenshots, diagrams, illustrations with captions
+- **Code Blocks** - Syntax-highlighted code examples (especially for technical posts about Python, JavaScript, legal tech implementations)
+
+### Interactive Cards
+- **Bookmark Cards** - Visually rich links to external articles, documentation, or resources
+- **Toggle/Accordion** - Collapsible content for:
+  - Table of Contents
+  - FAQ sections
+  - Optional deep-dive content
+  - Long code examples or technical details
+
+### When to Use Each Element
+
+**Use Images when:**
+- Showing UI/UX examples from legal tech tools
+- Displaying data visualizations or charts
+- Providing visual proof (screenshots of GitHub stats, tool outputs)
+- Breaking up long text sections
+
+**Use Code Blocks when:**
+- Sharing implementation examples (Python, JavaScript, shell scripts)
+- Showing configuration files or API responses
+- Demonstrating command-line usage
+
+**Use Bookmark Cards when:**
+- Referencing external articles or documentation
+- Linking to related blog posts with rich previews
+- Citing sources with visual emphasis
+
+**Use Toggles when:**
+- Creating table of contents for long articles
+- Hiding technical details that not all readers need
+- Organizing FAQ sections
+- Providing expandable code examples
+
+**Place elements strategically:**
+1. Images: After introducing concepts, before deep explanations
+2. Code blocks: Within implementation sections, after explaining the concept
+3. Bookmark cards: At article end for "Further Reading" or inline when citing key sources
+4. Toggles: At article start (TOC), or hiding optional deep-dive content
+
 ## Common Development Workflows
 
 ### 1. Create a new post
@@ -53,7 +104,7 @@ You can find them in the following places:
 3. We will write a pitch and save it in a new folder in the '/posts/' folder.
 4. Based on the pitch, we will draft an outline of the post.
 5. We will work on the outline, either with you or by myself. We may research and refine the pitch and outline.
-6. Once the post is completed, we will post it as a draft on my Ghost blog. 
+6. Once the post is completed, we will post it as a draft on my Ghost blog.
 
 Always create TodoWrite todos for checklists so we can track our progress.
 
