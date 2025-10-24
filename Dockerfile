@@ -1,5 +1,11 @@
 FROM node:18-slim
 
+# Build arguments for GitOps
+ARG REPO_URL
+ARG BRANCH=main
+ARG GITHUB_USERNAME
+ARG GITHUB_PAT
+
 # Install system dependencies (much simpler now!)
 RUN apt-get update && apt-get install -y \
     curl \
@@ -29,26 +35,22 @@ RUN curl -fsSL https://claude.ai/install.sh | bash
 # Set working directory
 WORKDIR /workspace
 
-# Copy package.json first for better Docker layer caching
-COPY package*.json ./
+# Setup git credentials BEFORE cloning (GitOps)
+RUN git config --global credential.helper store && \
+    git config --global --add safe.directory /workspace && \
+    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" > /root/.git-credentials
+
+# Clone the repository instead of copying from workspace
+RUN git clone --branch ${BRANCH} ${REPO_URL} .
 
 # Install Node.js dependencies
 RUN npm install
-
-# Copy project files
-COPY . /workspace/
 
 # Make scripts executable
 RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js
 
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
-
-# Gitops
-RUN git config --global --add safe.directory /workspace
-
-RUN git config --global credential.helper store && \
-    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" >> ~/.git-credentials
 
 # Blog automation aliases - now all Node.js!
 RUN echo 'alias blog-token="node scripts/ghost_jwt.js"' >> /root/.bashrc
