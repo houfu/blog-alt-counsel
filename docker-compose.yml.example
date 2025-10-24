@@ -2,12 +2,21 @@ version: '3.8'
 
 services:
   blog-terminal:
-    build: .
+    build:
+      context: .
+      args:
+        # GitOps configuration - clone from remote repository
+        REPO_URL: ${REPO_URL:-https://github.com/houfu/blog-alt-counsel.git}
+        BRANCH: ${BRANCH:-main}
+        GITHUB_USERNAME: ${GITHUB_USERNAME}
+        GITHUB_PAT: ${GITHUB_PAT}
     ports:
       - "7681:7681"
     volumes:
-      # Mount the entire project for live development
-      - .:/workspace
+      # GitOps mode: Repository is cloned during build, not mounted from workspace
+      # If you need local development with live file changes, uncomment the line below:
+      # - .:/workspace
+
       # Persist Claude Code authentication and configuration
       - claude-config:/root/.claude
       # Persist bash history for convenience
