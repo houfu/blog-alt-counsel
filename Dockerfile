@@ -41,7 +41,7 @@ RUN git config --global credential.helper store && \
     echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" > /root/.git-credentials
 
 # Clone the repository instead of copying from workspace
-RUN git clone --branch ${BRANCH} ${REPO_URL} /workspace
+RUN git clone --branch ${BRANCH} ${REPO_URL} .
 
 # Install Node.js dependencies
 RUN npm install
