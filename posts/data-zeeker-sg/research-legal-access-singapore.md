@@ -250,6 +250,12 @@ Singapore is **better than US** for free access (no PACER fees, free statutes), 
 4. **Singapore Courts:** https://www.judiciary.gov.sg/judgments
 5. **nondescryptid blog post:** https://tomoe.asia/posts/2023-01-10-free-access-to-case-law-in-singapore/ (January 2023)
 6. **NUS LibGuides:** https://libguides.nus.edu.sg/Singaporelaw/databases
+7. **Jerrold Soh LinkedIn Post (SMU Centre for Digital Law Project Announcement):** https://www.linkedin.com/posts/jerroldsoh_the-smu-centre-for-digital-law-has-started-activity-7386283268515495937-FyP_ (October 21, 2025)
+   - Announces SMU's 3-year project to build "Singapore's first open empirical legal database"
+   - Hiring Research Engineer and Research Assistant for 2-3 years
+   - Launch event scheduled for November 18, 2025
+   - Inspired by international efforts and research challenges sourcing legal datasets
+   - Will function like data.gov but for legal research (cases, statutes, scholarly works)
 
 ---
 

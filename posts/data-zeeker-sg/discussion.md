@@ -289,4 +289,102 @@ Completed comprehensive research using blog-research skill:
 
 ---
 
-*This discussion captures the planning conversations on Oct 26-27, 2025, documenting how we arrived at the 3-post structure, refined the pitch, and completed necessary research.*
+## Session 3: Drafting Post 1 and Time Estimate Revision (Oct 27, 2025)
+
+### Initial Draft Completed
+- Created full draft of Post 1: "600 Hours, 346 Articles, Zero Known Users: Should I Renew?"
+- Initial length: 2,116 words (~10-11 min reading time)
+
+### Feedback: Too Bullet-Pointy and Long
+User feedback: "too bullet pointy and needs way more pruning"
+
+**Revisions made:**
+- Removed bullet-point lists throughout
+- Cut repetitive examples and sections
+- Merged redundant content
+- Eliminated "For Other Solo Builders" advice section
+- More narrative flow, tighter prose
+- **Reduced to 1,263 words (~5-6 min reading time)** - 40% cut
+
+### Critical Discovery: Time Estimate Was Wrong
+
+**Original estimate: 500-600 hours**
+Based on:
+- 250-300 hours coding (from git analysis using traditional LOC/hour)
+- 200-250 hours content curation (WRONG - assumed manual curation)
+- 100-150 hours everything else
+
+**Reality check revealed:**
+- Content is NOT manually curated - it's fully automated via RSS feeds
+- GenAI assistance (Claude, Claude Code) significantly reduced coding time
+- No time tracking data exists
+- Work done in evening/weekend sessions (1-4 hours each), not full workdays
+
+### New Estimate: Over 150 Hours
+
+**More accurate breakdown:**
+- 79 commits across 36 days
+- Typical evening sessions: 1-4 hours
+- Heavy days (7-9 commits): ~10 days × 4 hours = 40 hours
+- Medium days (3-6 commits): ~15 days × 2.5 hours = 37.5 hours
+- Light days (1-2 commits): ~11 days × 1.5 hours = 16.5 hours
+- Plus non-commit work (research, planning, failed experiments): 40-65 hours
+- **Total estimate: 150-200 hours**
+
+**Final decision:** Use "over 150 hours across several months"
+- Plausible, not conservative
+- Honest about uncertainty
+- Acknowledges AI's impact while showing work was still significant
+
+### Why This Is a Better Story
+
+**Old framing:**
+"GenAI enabled it but still took 600 hours"
+
+**New framing:**
+"GenAI cut this from ~650 hours (traditional) to ~150 hours - that's 70%+ reduction, but 150 hours is still 4-5 weeks of full-time work compressed into months of nights and weekends"
+
+**Advantages:**
+- More honest (admits no time tracking)
+- More impressive (shows AI's actual impact)
+- Better supports the argument (GenAI reduces but doesn't eliminate cost)
+- Focuses on qualitative cost (evenings/weekends, opportunity cost) over precise numbers
+
+### Files Created/Updated This Session
+- `600-hours-should-i-renew.md` - Complete draft of Post 1
+- `time-estimate-analysis.md` - Detailed analysis of time estimate methodology
+- Updated `discussion.md` - This file
+
+### Post 1 Final Stats
+- **Title:** "Over 150 Hours, 346 Articles, Zero Known Users: Should I Renew?"
+- **Word count:** 1,248 words (~6 min reading time)
+- **Key sections:**
+  - The problem I thought I was solving
+  - What 150+ hours built
+  - Where the time went
+  - The opportunity cost
+  - The silence (no usage data)
+  - The SMU question
+  - The real question (sustainability)
+  - What I'm learning
+  - The honest question (need vs. ego)
+  - Should I renew? (decision pending Nov 18)
+
+### Key Revisions Made
+1. ✅ Changed "600 hours" to "over 150 hours" throughout
+2. ✅ Clarified content is automated, not manually curated
+3. ✅ Emphasized GenAI assistance but remaining work
+4. ✅ Admitted uncertainty about exact hours
+5. ✅ Removed bullet-heavy sections
+6. ✅ Cut 40% of original length
+7. ✅ More narrative flow, less listy
+
+### Ready for Next Session
+- Post 1 draft complete and refined
+- Time estimate corrected and documented
+- Ready for final review or publication
+- Can proceed to Post 2 (Technical Lessons)
+
+---
+
+*This discussion captures the planning and drafting conversations on Oct 26-27, 2025, documenting the 3-post series development and the important discovery that our initial time estimate was significantly inflated.*
