@@ -2,15 +2,15 @@
 
 I posted this on Mastodon recently:
 
-> **My plan:** Let's make Claude work better with my library by creating an agent guide, examples, improve error messages, a new guide cli command etc
->
-> **How's it going:** Let's make the cli output json when it is invoked without commands.
+*[Mastodon embed: https://kopiti.am/@houfu/115420340362060354]*
 
 That captures the story of redlines v0.6.0 better than any technical documentation could.
 
 ## The Movement: Agents Need Different Interfaces
 
-Jason Morris argues that "AI is a different kind of user, that needs a different kind of software, with a different kind of interface." 
+[Jason Morris argues](https://www.linkedin.com/posts/jason-morris-09684023_ai-is-a-different-kind-of-user-that-needs-activity-7386963166594813952-K_bZ) that **"AI is a different kind of user, that needs a different kind of software, with a different kind of interface."**
+
+*[Bookmark card: Lawyers Got Prompt Engineering Wrong (And Why That Matters) - https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/]*
 
 Anthropic launched the Model Context Protocol (MCP) in November 2024 as "USB-C for AI applications." Companies like Block, Apollo, and Replit adopted it. InfoQ published patterns for building agent-friendly CLIs. VentureBeat estimates 16,000+ MCP servers deployed in just 10 months.
 
@@ -20,41 +20,47 @@ So for redlines v0.6.0, I built exactly that.
 
 ## What I Built (Following All the Patterns)
 
-Redlines is my Python library for text comparison—like track changes in Word. It's in the top 10% of PyPI packages with 177,000 monthly downloads. For v0.6.0, I adapted it specifically for AI agents following every recommended pattern:
+Redlines is my Python library for text comparison—like track changes in Word. It's in the top 10% of PyPI packages with 175,000 monthly downloads. For v0.6.0, I adapted it specifically for AI agents following every recommended pattern:
 
-**AGENT_GUIDE.md** with JSON schemas, decision matrices, and integration patterns—the MCP recommendation for dedicated agent documentation.
+*[Bookmark card: What Top 10% Actually Means (For a Lawyer Who Codes) - https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/]*
 
-**Discovery command**: `redlines guide` so agents can learn the interface dynamically—straight from MCP best practices.
-
-**JSON by default**: `redlines "old" "new"` outputs structured JSON automatically—InfoQ's "structured output for agents" pattern.
-
-**Enhanced error messages** with "What/Why/How" structure, clear descriptions, and code examples—the "tight feedback loops" best practice.
-
-**Subcommands for outputs**: `redlines markdown "old" "new"` for markdown, `redlines json` for explicit JSON, other formats available.
+- **AGENT_GUIDE.md** with JSON schemas, decision matrices, and integration patterns—the MCP recommendation for dedicated agent documentation.
+- **Discovery command**: `redlines guide` so agents can learn the interface dynamically—straight from MCP best practices.
+- **JSON by default**: `redlines "old" "new"` outputs structured JSON automatically—InfoQ's "structured output for agents" pattern.
+- **Enhanced error messages** with "What/Why/How" structure, clear descriptions, and code examples—the "tight feedback loops" best practice.
+- **Subcommands for outputs**: `redlines markdown "old" "new"` for markdown, `redlines json` for explicit JSON, other formats available.
 
 I even updated the GitHub repo image to show an agent workflow.
 
+*[Image: repository-open-graph-3.png - GitHub repo card showing agent workflow]*
+
 Everything by the book.
+
+*[Bookmark card: Open Source, AI, and Why October Matters - https://www.alt-counsel.com/open-source-ai-and-why-october-matters/]*
 
 ## What Claude Code Actually Does
 
-**It hallucinates a flag that doesn't exist.**
+*[Video: output.mp4 - 190 second demo showing Claude Code hallucinating flags and trying commands without checking documentation]*
+
+### It hallucinates a flag that doesn't exist.
 
 Claude invents `redlines "old" "new" --output markdown`. That flag doesn't exist. The actual command: `redlines markdown "old" "new"`.
 
 The AI doesn't "know" what redlines supports — it predicts commands based on training patterns. Since kubectl, aws cli, and jq use `--output`, Claude assumes redlines does too. Training data overrides documentation.
 
-Same failure mode: New York lawyers got fined $5,000 for submitting briefs with ChatGPT-hallucinated case citations. The AI confidently generates plausible-sounding answers, accurate or not. The scary part? It might still do this even if you gave it the material or the means to be right. 
+Same failure mode: New York lawyers got fined $5,000 for submitting briefs with ChatGPT-hallucinated case citations. The AI confidently generates plausible-sounding answers, accurate or not. The scary part? It might still do this even if you gave it the material or the means to be right.
 
-**It never runs the discovery command or read the documentation.**
+*[Bookmark card: Singapore Court Rules on AI Hallucination: A Reality Check for Small Firms - https://www.alt-counsel.com/singapore-court-rules-on-ai-hallucination-a-reality-check-for-small-firms/]*
+
+### It never runs the discovery command or read the documentation.
 
 I built `redlines guide` specifically for agents to learn the interface. AGENT_GUIDE.md sits there with schemas, examples, and patterns. In my Claude Code sessions, it never uses it. Not once.
 
-Training bias: Commands like `--help` appear millions of times in training data. A custom `guide` command? Unfamiliar, not an established pattern. AI defaults to what it's seen, not what you documented. Claude would rather stab at the problem repeatedly based on what it thinks CLI tools should look like than find out what to do next.
+**Training bias**: Commands like `--help` appear millions of times in training data. A custom `guide` command? Unfamiliar, not an established pattern. AI defaults to what it's seen, not what you documented. Claude would rather stab at the problem repeatedly based on what it thinks CLI tools should look like than find out what to do next.
 
 This matters beyond CLI tools: build custom workflows—templates, processes, document structures—and AI will impose generic patterns from elsewhere, not adapt to your practices.
 
-**It rarely explores beyond the default.**
+### It rarely explores beyond the default.
 
 Despite multiple subcommands for different outputs, Claude almost exclusively uses the commandless default: `redlines "old" "new"`. The sophisticated interface I built? Largely unused.
 
@@ -62,17 +68,17 @@ This isn't laziness—it's how tool calling works. Complex command chains have m
 
 For evaluating AI tools: vendors demo impressive multi-step workflows, but in production AI uses the simplest path. Budget for basic functionality, not sophisticated capabilities marketing shows.
 
-**But the most frustrating issue: same request, different results.**
+### But the most frustrating issue: same request, different results.
 
 Ask Claude to use redlines for markdown output. Sometimes it works. Sometimes it refuses. Same request, different behavior. You end up in "regenerate response hell"—clicking regenerate over and over, hoping this time it works.
 
-This is non-determinism. When AI models don't produce consistent outputs for identical inputs, it's unreliable.
+This is **non-determinism**. When AI models don't produce consistent outputs for identical inputs, it's unreliable.
 
 Monte Carlo Data captured this: "You are testing for hallucinations with evaluations that can hallucinate." You can't write a unit test for "agent uses tool correctly" when the agent might pass five times and fail the sixth with identical input.
 
 For practitioners: this unpredictability is why AI feels unreliable in production workflows. Document review, contract analysis, legal research—these need deterministic behavior. When you can't predict AI behavior document-to-document, you're stuck with expensive human verification on every output.
 
-**And then there's the display problem I literally cannot fix.**
+### And then there's the display problem I literally cannot fix.
 
 What's missing? Actual redlines output. Claude CLI can't properly display it. That's a platform limitation, not a redlines problem. As a closed source program, you're not going to know any better. You can't fix it or teach your agent how to fix it.
 
@@ -94,7 +100,9 @@ Until the MCP ecosystem matures with security audits and documentation, keep cli
 
 Morris is right that agents need different interfaces. But even when you follow all the patterns, agents still hallucinate based on training patterns, ignore purpose-built mechanisms, and face platform limitations you cannot fix.
 
-The industry will get better at this. MCP is 10 months old. Standards evolve. Agent behavior improves. But we're not there yet.
+The industry will get better at this. MCP is 10 months old. Skills was just released. Standards evolve. Agent behavior improves. But we're not there yet.
+
+*[Bookmark card: Why Prompt Engineering Felt Wrong (And What Skills Changed) - https://www.alt-counsel.com/why-prompt-engineering-felt-wrong-and-what-skills-changed/]*
 
 For solo counsels and legal tech builders with limited resources, these patterns have direct implications. You're working with sensitive client data, where hallucination has real consequences, and where security vulnerabilities aren't theoretical risks.
 

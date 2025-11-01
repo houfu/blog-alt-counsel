@@ -1144,3 +1144,154 @@ These could be future posts or added later. Current version has strong value.
 **Session 7 Method**: Brainstorming skill for ideation, parallel review agents for feedback, content-quality-auditor for final QC
 
 **Next Steps:** Commit changes and prepare for publication (tags, excerpt, feature image, scheduling)
+
+---
+
+## Session 8: Post-Publication Sync and Rich Media Documentation (November 1, 2025)
+
+### Session Overview
+
+Houfu reported that the post had been published. Checked the published version on Ghost and synchronized local files with the published content, documenting all rich media additions and formatting changes.
+
+### Discovery Process
+
+**Method:**
+1. Generated JWT token for Ghost Admin API authentication
+2. Fetched recent published posts using Ghost Admin API
+3. Retrieved full lexical format of "AI Tools for Agents" post
+4. Compared published version with local markdown file
+5. Documented all differences
+
+### Published Version Enhancements
+
+The published post included 8 rich media elements not present in the local markdown:
+
+#### Rich Media Elements Added
+
+1. **Mastodon Embed** (after opening paragraph)
+   - URL: https://kopiti.am/@houfu/115420340362060354
+   - Replaced the text quote with embedded iframe
+   - Shows the original Mastodon post about the plan vs. reality
+
+2. **Bookmark Card: "Lawyers Got Prompt Engineering Wrong"**
+   - Placement: After Jason Morris quote
+   - URL: https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/
+   - Context link about prompt engineering evolution
+
+3. **Bookmark Card: "What Top 10% Actually Means"**
+   - Placement: After redlines introduction (177K downloads mention)
+   - URL: https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/
+   - Direct backstory about redlines' success metrics
+
+4. **Image: GitHub Repository Card**
+   - Placement: After "I even updated the GitHub repo image..."
+   - File: repository-open-graph-3.png (1280x640)
+   - Shows agent workflow example on GitHub
+
+5. **Bookmark Card: "Open Source, AI, and Why October Matters"**
+   - Placement: After "Everything by the book."
+   - URL: https://www.alt-counsel.com/open-source-ai-and-why-october-matters/
+   - Backstory on adapting redlines for AI agents
+
+6. **Video: Claude Code Behavior Demo**
+   - Placement: Top of "What Claude Code Actually Does" section
+   - File: output.mp4 (2718x1306, 190 seconds duration)
+   - Caption: "A run on my computer that shows the skeddadling Claude Code did just to perform my request. At 00:55, Claude Code hallucinates the --output flag. From 1:00ff Claude Code reads --help but doesn't seek further help, preferring to try every command. Throughout the ordeal, no formatted redlines can be seen."
+   - Shows actual Claude Code behavior with hallucination
+
+7. **Bookmark Card: "Singapore Court Rules on AI Hallucination"**
+   - Placement: After NY lawyers fine paragraph
+   - URL: https://www.alt-counsel.com/singapore-court-rules-on-ai-hallucination-a-reality-check-for-small-firms/
+   - Regional context on AI hallucination legal cases
+
+8. **Bookmark Card: "Why Prompt Engineering Felt Wrong"**
+   - Placement: In "What This Means for Builders" section
+   - URL: https://www.alt-counsel.com/why-prompt-engineering-felt-wrong-and-what-skills-changed/
+   - About Skills release and technology shift
+
+### Formatting Changes in Published Version
+
+**Heading Structure:**
+- Subsections under "What Claude Code Actually Does" use h3 (###) instead of bold
+- Sections: "It hallucinates a flag that doesn't exist", "It never runs the discovery command", "It rarely explores beyond the default", "But the most frustrating issue", "And then there's the display problem"
+
+**List Formatting:**
+- Features in "What I Built" section formatted as bullet list with bold labels
+- More scannable for readers
+
+**Text Changes:**
+- Download count: Kept at "175,000 monthly downloads" (not 177,000 as appeared in some lexical text)
+- Added "Skills was just released" in one paragraph
+- Jason Morris quote now has hyperlink to LinkedIn post
+- Bold formatting added to "non-determinism" term
+
+### Files Updated
+
+**1. ai-tools-for-agents.md**
+- Added rich media placeholders (e.g., `*[Bookmark card: Title - URL]*`)
+- Updated subsection headings to h3 format
+- Converted features list to bullets with bold labels
+- Added hyperlink to Jason Morris LinkedIn post
+- Preserved all original content while documenting where rich elements appear
+
+**2. temp/published-changes.md** (new file)
+- Comprehensive changelog documenting all 8 rich media elements
+- Details on each bookmark card (title, URL, placement)
+- Video and image specifications
+- Text and formatting differences
+- Summary statistics
+
+### Key Insights from Published Version
+
+**Rich Media Strategy:**
+- 5 bookmark cards to other blog posts (strong internal linking)
+- 1 video demonstration (concrete proof of behavior)
+- 1 image (visual context)
+- 1 Mastodon embed (authentic voice)
+
+**Backlink Distribution:**
+- Early section: 2 backlinks (context setting)
+- Middle section: 3 backlinks (examples and backstory)
+- Later section: 1 backlink (related concepts)
+- Well-distributed throughout post
+
+**Video Placement:**
+- Positioned prominently at start of "What Claude Code Actually Does"
+- 190 seconds = significant investment
+- Concrete demonstration validates all claims about hallucination
+- Caption provides timestamp guide for key moments
+
+### Publication Quality Observations
+
+**Strengths:**
+- Rich media enhances readability and engagement
+- Backlinks support brand positioning (cross-referencing alt-counsel archive)
+- Video provides irrefutable evidence of claims
+- Regional context (Singapore court case) maintained
+
+**Local File Approach:**
+- Markdown uses placeholders for rich media (can't embed in .md)
+- Preserves clean text while documenting where Ghost adds rich elements
+- Allows tracking of content vs. presentation layer
+
+### Current Status
+
+**Files synchronized:**
+- ✅ Local markdown updated with rich media placeholders
+- ✅ Formatting aligned with published version
+- ✅ Detailed changelog created for reference
+- ✅ All backlinks documented
+
+**Post is live at:**
+- Slug: `i-built-cli-tools-for-claude-code-heres-what-i-learned-about-designing-for-ai-users`
+- Status: Published
+- Ghost ID: 690148693156dc0001b3a354
+
+### Session Metadata
+
+**Session 8 Date**: November 1, 2025
+**Session 8 Focus**: Post-publication sync, rich media documentation, local file updates
+**Session 8 Method**: Ghost Admin API fetch, lexical format analysis, markdown synchronization
+**Session 8 Output**: Updated ai-tools-for-agents.md with rich media placeholders, created published-changes.md changelog
+
+**Status**: Local files synchronized with published version, ready for any future updates
