@@ -19,12 +19,37 @@ Trigger this skill when the user requests:
 
 ## Research Workflow
 
+### Step 0: Verify Research Readiness
+
+Before beginning research, confirm the post has:
+
+**Required inputs:**
+- [ ] **Locked thesis** - One-sentence argument the post will make
+- [ ] **Section outline** - 3-5 main sections with their specific claims
+- [ ] **Evidence gaps** - Specific claims that need external validation
+
+**Stop and ask user if missing:**
+- "I see you want research on [topic], but I don't have your post outline yet."
+- "Which specific claims in your post need evidence?"
+- "What are you trying to prove with this research?"
+
+**Why this matters:** Research without structure leads to gathering interesting information that doesn't make the final cut. Lock the argument first, research second.
+
 ### Step 1: Understand the Research Need
 
-Clarify:
-- **Research query** - What specific information is needed?
-- **Post context** - What angle is the blog post taking?
-- **Post folder** - Which folder in `posts/` should receive research.md?
+**Critical question:** What needs external validation vs what's personal experience?
+
+Ask user to categorize each post section:
+- **Personal experience** (✍️) - No research needed, this is your story
+- **Needs validation** (🔍) - Your claim needs external support
+- **Needs context** (🌍) - Your experience needs broader context
+
+**Example:**
+- Section 2: "My 3-page prompt experience" = ✍️ (don't research this)
+- Section 3: "Agents changed in Sept 2025" = 🔍 (needs validation)
+- Section 4: "Singapore firms struggling too" = 🌍 (needs regional context)
+
+Only research the 🔍 and 🌍 sections.
 
 If the post folder is ambiguous, ask the user to specify (e.g., `posts/contract-automation-tools/`).
 
@@ -36,7 +61,63 @@ Before conducting research, read:
 
 These files provide critical context for effective research.
 
-### Step 3: Conduct Research with Regional Priority
+
+### Step 2.5: Generate Research Brief for Approval
+
+Before conducting searches, output a research brief:
+```markdown
+# Research Brief: [Post Title]
+
+**Locked thesis:** [One sentence]
+
+**Evidence needed:**
+1. Section X: [Specific claim] 
+   - Searching for: [What evidence would support this]
+   - Stop criteria: [When I have enough]
+   
+2. Section Y: [Specific claim]
+   - Searching for: [Evidence needed]
+   - Stop criteria: [When sufficient]
+
+**Not researching:**
+- Section Z: Personal experience (no validation needed)
+
+**Estimated searches:** [Number based on sections]
+**Stop when:** All sections adequately supported OR regional sources exhausted
+```
+
+**Ask user:** "Does this match what you need? Or should I adjust before starting searches?"
+```
+
+This creates the checkpoint you're currently missing.
+
+## Integration with Your Workflow
+
+Based on your process patterns, here's how the improved skill would work:
+
+### Current Problem (AI Tools Post):
+```
+Session 1: Broad research on MCP, CLI patterns, everything
+Session 2: More research on security, failures, Singapore (exploratory)
+Session 6: Cut 2/3 of research as redundant/not fitting
+
+= 3 sessions, high waste
+```
+
+### With Improved Skill:
+```
+Session 1: 
+- User: "I want to research for AI tools post"
+- Skill: "What's your locked outline? Which sections need evidence?"
+- User: Provides 3 sections that need validation
+- Skill: Generates research brief targeting those 3 specific claims
+- User: Approves brief
+- Skill: Executes focused research (6-9 searches, not 20+)
+- Output: Evidence mapped directly to 3 sections
+
+= 1 session, minimal waste
+
+### Step 3: Conduct Research
 
 Use web_search following this priority order:
 
@@ -52,10 +133,15 @@ Use web_search following this priority order:
 - Extract specific data points, quotes, and citations
 - Cross-reference information across multiple sources
 
-**Search Depth:**
-- Simple fact-checks: 2-3 searches
-- Topic overviews: 4-6 searches
-- Comprehensive research: 7-10+ searches
+**Search Depth (Evidence-Driven):**
+- **Per section claim:** 2-3 searches minimum
+  - Stop when: Claim is supported by 2+ credible sources OR you've exhausted regional sources
+  
+- **Total research session:** Based on outline
+  - 3 sections with specific claims = 6-9 searches
+  - Stop when: All sections have adequate evidence OR regional sources exhausted
+  
+**Red flag:** If doing 10+ searches and outline still has evidence gaps, the problem is likely the outline (claims too broad/unsupported), not insufficient research.
 
 ### Step 4: Evaluate Sources
 
@@ -76,14 +162,18 @@ For EVERY finding, assess:
 
 Flag jurisdictional concerns using the protocol from references/regional-considerations.md.
 
-### Step 6: Extract Alt-Counsel Insights
+### Step 6: Map Findings to Post Structure
 
-Consider the blog's mission:
-- **Practical solutions** - How does this relate to $50 vs $50K alternatives?
-- **Resource constraints** - What's relevant for solo counsels/small teams?
-- **Regional context** - Singapore/ASEAN applicability
-- **Builder perspective** - Technical implementation insights
-- **Honest assessment** - What actually works vs marketing claims
+For EACH section in the user's outline, identify:
+- **Section X claim:** [The specific point this section makes]
+- **Evidence needed:** [What this claim requires for support]
+- **Findings that support:** [Which research findings apply here]
+- **Findings that don't fit:** [Interesting but not relevant to this section]
+
+**Red flag if:** You have 5+ findings that don't map to any section.
+**Action:** Ask user: "I found [X], but it doesn't support your outlined sections. Should I continue researching or is this exploratory?"
+
+**Quality check:** Every finding should answer "Which section needs this?"
 
 ### Step 7: Format Research Output
 

@@ -12,23 +12,30 @@
 
 ---
 
-## Key Findings
+## Research Findings by Post Section
 
-### [Finding 1 - Descriptive Heading]
+### Section 1: [Section name from outline]
+**Claim being supported:** [Specific claim]
 
-[Detailed explanation of the finding with context and analysis]
+**Evidence found:**
+- [Finding 1] - Source: [X] | Regional Context: ✅
+- [Statistics/data supporting this claim]
+- [Expert quote supporting this claim]
 
-- **Source:** [Article/Report Title](URL) - [Publication Name/Author]
-- **Date:** [Publication Date]
-- **Regional Context:** ✅ Singapore/ASEAN | ⚠️ US/EU-centric | 🌍 Global
+**Confidence level:** Strong | Moderate | Weak
+**Gaps:** [What's still missing for this section?]
 
-### [Finding 2 - Descriptive Heading]
+---
 
-[Detailed explanation of the finding]
+### Section 2: [Section name]
+[Same structure]
 
-- **Source:** [Article/Report Title](URL) - [Publication Name]
-- **Date:** [Publication Date]
-- **Regional Context:** [Icon]
+---
+
+## Findings That Don't Fit Current Outline
+
+[List interesting findings that don't support any current section]
+**Note:** Consider whether these suggest outline changes or should be saved for future posts.
 
 ---
 
