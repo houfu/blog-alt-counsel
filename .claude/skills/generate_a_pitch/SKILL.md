@@ -34,6 +34,22 @@ From the idea, generate a pitch. You must imagine that we are in an elevator wit
 
 Present a draft title and pitch to the human partner and ask: "Does it look alright?" Once the human partner approves, we can move on to the next step.
 
+### Step 3: Authenticity Check
+
+It is important to interrogate what is my personal angle in every post to ensure that I am writing my blog and not AI. Let us avoid authenticity issues so that we don't need to conduct expensive rewrites.
+Ensure that the pitch is coming from me and not from others. 
+
+For each claim in pitch:
+- Is this true to my experience? (Not aspirational or third-person)
+- Can I cite a specific moment when I felt/learned this?
+- Am I framing someone else's work as mine?
+- Am I claiming expertise I don't have?
+
+Red flags:
+- "I learned that..." (Did you? Or did you always know this?)
+- "Others might think..." (Distancing language)
+- "One should..." (Who? Be specific)
+
 ### Step 3: Scaffold the post
 
 - Create the folder structure using the title, for example "posts/ai-vs-lawyers-newsletter"
