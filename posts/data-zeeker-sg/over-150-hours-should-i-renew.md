@@ -23,11 +23,13 @@ Legislation is actually fine - Singapore Statutes Online is comprehensive and fr
 
 I saw the gap and thought: someone should build this. Then I thought: I can build this with GenAI. Then I stopped thinking and started building.
 
-## What 600 Hours Built
+## What 150 Hours Built
 
-data.zeeker.sg is Singapore's first free public API for legal news. 346 professionally curated articles with full-text search, JSON and CSV exports, CC-BY-4.0 licensing that permits AI training. No registration barriers. 100% uptime since launch.
+data.zeeker.sg is Singapore's first free public API for legal news - and I mean **API**, not just another website. JSON exports. CSV downloads. Full-text search. CC-BY-4.0 licensing so developers can actually build with it and researchers can train AI models on it.
 
-I built it on Datasette and SQLite with GenAI assistance, exactly what I wished existed when I wanted to build legal tech tools. It works. It works well.
+When I looked for Singapore legal data infrastructure, I found Australia had AustLII since 1995. The US had Caselaw Access Project with 40 million cases. Singapore? HTML pages scattered across 40+ sources with no programmatic access.
+
+So I built what I couldn't find: 346 articles with structured data, automated pipelines, 100% uptime. Built on Datasette and SQLite with GenAI assistance. It works. It works well.
 
 ## Where the Time Went
 
@@ -51,7 +53,7 @@ Knowledge that served the project but serves nothing else. This is the hidden co
 
 I didn't build analytics. No tracking, no user accounts, no usage metrics. This was deliberate - I wanted zero barriers to access.
 
-But it means I have no idea if anyone uses this. A few GitHub stars. Occasional questions via email. Some downloads. No evidence of regular users. No stories of how it helped someone. No validation that 600 hours produced value for anyone but me.
+But it means I have no idea if anyone uses this. A few GitHub stars. Occasional questions via email. Some downloads. No evidence of regular users. No stories of how it helped someone. No validation that 150+ hours produced value for anyone but me.
 
 ## The SMU Question
 
@@ -69,9 +71,9 @@ This changes the calculation:
 
 Maybe data.zeeker.sg served its purpose: **proving the gap is real**. Institutions noticed. They're building something better with proper resources.
 
-Maybe my 600 hours validated that this infrastructure matters, even if my implementation doesn't survive.
+Maybe my 150+ hours validated that this infrastructure matters, even if my implementation doesn't survive.
 
-Or maybe I just spent 600 hours on something nobody wanted in the first place.
+Or maybe I just spent 150+ hours on something nobody wanted in the first place.
 
 ## The Real Question
 
@@ -118,7 +120,7 @@ What I know now: **Whatever I decide, I'm not discouraged.**
 
 The work proved something: Singapore needs public legal data infrastructure. The fact that institutions are now building it validates the gap was real.
 
-My 600 hours weren't wasted. They were reconnaissance. I explored territory and mapped what's needed.
+My 150+ hours weren't wasted. They were reconnaissance. I explored territory and mapped what's needed.
 
 Now institutions can do it properly with dedicated staff, sustainable funding, and long-term commitment.
 
@@ -145,3 +147,4 @@ The real cost isn't $30. It's everything else I didn't build with those 150+ hou
 
 **Update Log:**
 - October 27, 2025: Initial draft
+- November 3, 2025: Added structured data context to "What 150 Hours Built" section

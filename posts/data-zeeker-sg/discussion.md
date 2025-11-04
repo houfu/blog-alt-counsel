@@ -387,4 +387,178 @@ Based on:
 
 ---
 
-*This discussion captures the planning and drafting conversations on Oct 26-27, 2025, documenting the 3-post series development and the important discovery that our initial time estimate was significantly inflated.*
+## Session 4: Research Update - The Structured Data Gap (Nov 3, 2025)
+
+### Context
+User requested updating research to emphasize that the core problem isn't lack of *free* legal data, but lack of *structured* legal data. This was the real dream of data.zeeker.sg.
+
+### Research Conducted
+
+**1. The Structured Data Gap**
+- Researched difference between structured vs unstructured legal data
+- Found excellent legal-specific article from lawtomated.com (2019)
+- Key insight: 80% of legal data is unstructured (PDFs, HTML pages)
+- Problem: Human-readable but not machine-queryable
+- You can browse but can't build with it
+
+**2. LawNet Recent Developments (September 2025)**
+- SAL announced partnerships with LexisNexis, Thomson Reuters, vLex, Legora
+- **Critical finding**: These distribute Singapore content INTO commercial platforms
+- NOT providing open structured APIs
+- Launching LawNet 4.0 with AI search, but no public API announced
+- Commercial consolidation, not open data liberation
+
+**3. International Comparison**
+- **AustLII (Australia)**: Free structured API since 1995, 700k+ page views/day
+- **Caselaw Access Project (US/Harvard)**: 40M cases, REST API, bulk downloads
+- **CourtListener (US)**: REST APIs, bulk data, even database replication
+- **UK BAILII**: Free access but less API-focused
+
+### Key Insights
+
+**The Real Gap:**
+- Singapore has free legal info for *browsing*
+- Singapore lacks structured data for *building*
+- Even commercial platforms (LawNet 4.0) don't mention public APIs
+- International examples prove structured legal APIs are feasible and valuable
+
+**What This Means for data.zeeker.sg:**
+- You were trying to do for SG legal news what AustLII did for Australian case law
+- Not just aggregation - **structured, API-accessible, openly licensed**
+- Even countries with great case law APIs don't have structured legal news
+- Commercial partnerships validate demand while highlighting lack of open alternatives
+
+### Research Additions Made
+
+Added three major sections to `research-legal-access-singapore.md`:
+
+1. **Section 6: The Structured Data Gap**
+   - Explained structured vs unstructured data in legal context
+   - Created comparison table (browsing vs building use cases)
+   - Documented Singapore's landscape (all mostly unstructured)
+   - Highlighted what data.zeeker.sg uniquely provided
+
+2. **Section 7: LawNet Recent Developments (September 2025)**
+   - Documented SAL partnerships with 4 global providers
+   - Analyzed what this means (content distribution, not open APIs)
+   - Alt-counsel angle: benefits large firms, not solo builders
+   - Validates demand while highlighting gaps
+
+3. **Section 8: International Comparison**
+   - Detailed examples from Australia, US, UK
+   - Created comparison table showing Singapore gaps
+   - Proved structured legal APIs are technically feasible
+   - Showed data.zeeker.sg was filling a gap even international projects hadn't addressed
+
+### Updated Sections
+
+- **Executive Summary**: Reframed around structured data gap as core problem
+- **Additional Research Needed**: Marked completed items, noted what's pending
+- **Research metadata**: Updated date to Nov 3, 2025
+
+### Files Modified
+- `research-legal-access-singapore.md` - Expanded from ~270 lines to ~590 lines
+- `.mcp.json` - Configured JINA.ai MCP server for web research
+- `.env` - Stored JINA API key
+- `.gitignore` - Protected API keys
+
+### Technology Setup
+- Configured JINA.ai MCP server for enhanced web research capabilities
+- Used mcp__jina__search_web for 6 parallel searches
+- Used mcp__jina__read_url to extract detailed content from 6 key articles
+- Significantly faster and more comprehensive than manual research
+
+### Key Quotes Found
+
+From lawtomated.com:
+> "Transforming unstructured data into structured data is common within a legal context but **labour intensive**. Much effort is expended sorting, tagging and organising data into relevant subsets capable of interpretation."
+
+From CourtListener:
+> "Make the legal sector more innovative and equitable"
+
+From AustLII mission:
+> "Improve access to justice through better access to information"
+
+### Ready for Next Session
+
+The research now powerfully supports the blog post narrative:
+- **Post 1** can emphasize: "Free legal info exists, but you can't build with it"
+- **Post 2** (technical lessons) can highlight: "I built what AustLII built for Australia - structured APIs for legal news"
+- **Post 3** can compare: "SMU vs my approach vs international models"
+
+The structured data framing transforms the story from "I built something nobody wanted" to "I built open infrastructure while Singapore chose commercial consolidation."
+
+---
+
+## Session 5: Refining Post 1 with Structured Data Context (Nov 3, 2025)
+
+### Context
+After completing structured data gap research, needed to decide how to incorporate this insight into Post 1 without overwhelming the personal/decision-focused narrative.
+
+### Key Constraint Identified
+**Critical insight:** Most readers don't know about data.zeeker.sg yet. Their first introduction to the project will be SIMULTANEOUSLY hearing about it AND your consideration to shut it down. This creates unique framing challenge.
+
+### Decision
+**Approach:** Option B - Keep Post 1 personal/decision-focused, but add structured data context to make the accomplishment clearer.
+
+**Placement:** Expand "What 150 Hours Built" section rather than problem section - keeps emotional opening intact while clarifying what you actually built.
+
+### Brainstorming Three Approaches
+
+**Approach A: Technical Clarity** - Matter-of-fact tone, emphasized infrastructure
+**Approach B: Personal Discovery** - "Built what I couldn't find" narrative (SELECTED)
+**Approach C: Minimal Addition** - Lightest touch possible
+
+**Why Approach B Won:**
+- Maintains personal voice consistent with rest of post
+- Frames as builder journey (relatable) not technical achievement (bragging)
+- International comparison (AustLII, CAP) provides context without dwelling
+- "Built what I couldn't find" is simple, powerful, honest
+
+### Changes Made
+
+**Section Rewrite: "What 150 Hours Built"**
+
+Added:
+- Emphasis on "API, not just another website"
+- International comparison: Australia (AustLII since 1995), US (Caselaw Access Project with 40M cases)
+- Singapore context: "HTML pages scattered across 40+ sources with no programmatic access"
+- Personal framing: "So I built what I couldn't find"
+
+**Length:** 60 words → 110 words (50-word expansion)
+
+**Consistency Updates:**
+- Changed all remaining "600 hours" references to "150+ hours" throughout post
+- Updated 4 locations for consistency
+- Added update log entry
+
+### What This Achieves
+
+**For readers discovering the project:**
+- Quickly understand what makes it distinctive (structured API, not website)
+- See it in international context (this exists elsewhere, Singapore lacked it)
+- Understand the gap without technical jargon
+
+**For the narrative:**
+- Validates the work without sounding like bragging
+- Sets up contrast with SMU/institutional approaches (Post 3)
+- Provides technical preview that Post 2 will expand
+
+**What it avoids:**
+- Doesn't overcomplicate the decision narrative
+- Doesn't cannibalize Post 2's technical deep-dive
+- Doesn't lose the personal/vulnerable tone
+
+### Files Modified
+- `over-150-hours-should-i-renew.md` - Section rewrite + consistency fixes
+- `discussion.md` - This session record
+
+### Ready for Next Session
+- Post 1 now incorporates structured data insight while staying personal
+- Ready for final review or publication
+- Post 2 can go deeper on technical lessons and international comparison
+- Post 3 can compare your approach (open structured data) vs Singapore's choice (commercial consolidation)
+
+---
+
+*This discussion captures the planning and drafting conversations on Oct 26-27, 2025, documenting the 3-post series development and the important discovery that our initial time estimate was significantly inflated. Updated Nov 3, 2025 with structured data gap research and Post 1 refinement.*
