@@ -561,4 +561,144 @@ Added:
 
 ---
 
-*This discussion captures the planning and drafting conversations on Oct 26-27, 2025, documenting the 3-post series development and the important discovery that our initial time estimate was significantly inflated. Updated Nov 3, 2025 with structured data gap research and Post 1 refinement.*
+## Session 6: Major Reframe - From "Should I Renew?" to Framework for Passion Projects (Nov 4, 2025)
+
+### Context
+User provided critical feedback: the current draft (over-150-hours-should-i-renew.md) comes across as "whiny." Missing the core question. Missing zeeker suite context. Time for major reframe.
+
+### Brainstorming Process Using Brainstorming Skill
+
+**Phase 1: Understanding the Real Story**
+
+Through iterative questioning, discovered the actual narrative buried under the "should I renew?" framing:
+
+1. **Years-long vision exists:** Not just data.zeeker.sg - it's the full stack (data → apps → Harvey-style AI → tech-enabled law firm)
+2. **Stuck in aspiration (not execution):** Practicing lawyer coding on side, waiting for conditions to go all-in on the vision
+3. **Vision is achievable but greenfield:** Technical feasibility proven, but Singapore market isn't asking for this yet
+4. **The real uncertainty:** Will anyone value structured legal data? Will anyone want AI-powered law firm without face-to-face lawyers?
+5. **data.zeeker.sg is first test:** Built it, zero known users - but never really announced it
+
+**Phase 2: Uncovering the Constraints**
+
+**Key insight:** Scope-setting trap
+- cookies.zeeker.sg: Narrow scope (summarize headlines) → complete → announced
+- data.zeeker.sg: Broad scope ("collection of databases") → built ONE database → never felt "complete enough" to announce
+
+**Second insight:** Context switching constraint
+- Building (concrete, flow state) vs. Marketing (uncertain, different mental mode)
+- Limited time (practicing lawyer) always goes to building
+- "I can't split my thoughts between application and development, then I have other things to do"
+
+**Third insight:** Labour of love, not business
+- This is passion project, not day job
+- Different success criteria than startups
+- "I can keep doing it cos it's not my day job"
+
+**Phase 3: Finding the Real Framework**
+
+After exploring multiple angles (validation trap, perfectionism trap, context switching), landed on the actual decision framework:
+
+**"Continue vs. Stop When Institutions Enter Your Passion Project Space"**
+
+The decision depends on:
+1. What SMU is actually building (Nov 18 event will reveal)
+2. What gaps remain (same scope? different? complementary?)
+3. What this project means to you (business needing ROI vs. labour of love)
+
+For passion projects: "zero users" and "institutions can do it better" don't automatically mean quit.
+
+### Factual Corrections Identified
+
+- **Renewal cost:** $110 for 2 years (not $30)
+- **Time estimate:** Stick with 150+ hours (already corrected in previous session)
+- **Zeeker suite context:** Two operational pieces (data + cookies), broader vision includes chatbot, MCP server, eventually full stack
+- **User acquisition:** Tried for cookies, never really announced data (minimal effort)
+
+### Reviewer Feedback Summary
+
+Launched two reviewer agents (legal-tech-blog-reviewer and inhouse-lawyer-reviewer) on initial framework pitch.
+
+**Both agreed:**
+- Validation trap is compelling and relatable
+- Framework was incomplete (naming trap, not escaping it)
+- Need methodology, not just naming the problem
+
+**Key criticisms:**
+- Legal tech reviewer: "Need diagnostic framework - how do you distinguish wrong vision/timing/execution?"
+- Corporate lawyer: "Zero users + zero outreach = 'I never tested demand' - be honest about what you actually validated"
+- Both: Domain renewal ($110) is weak trigger compared to 150 hours invested
+
+**Insight that shifted approach:**
+Corporate lawyer asked: "Is this a post about WHETHER you should continue or HOW TO DIAGNOSE whether you should continue?"
+
+Answer: It's about WHETHER (for this specific project), which belongs in newsletter. Blog should be framework for others.
+
+### Content Strategy: Split Part 1
+
+**Decision made:** Split the personal journey from the framework
+
+**Newsletter: "I'm Still in Love With a Project Nobody Wants"**
+- Personal, vulnerable, emotional journey
+- The tension: love vs. pragmatism
+- My specific dilemma and decision process
+- Direct question to readers: have you faced this?
+
+**Blog Part 1: "When Institutions Enter Your Passion Project Space"**
+- Framework-focused for other solo builders
+- data.zeeker.sg as case study, not confessional
+- Diagnostic approach: assess overlap, identify gaps, clarify motivation
+- Actionable for readers facing similar decisions
+
+### New Pitches Created
+
+**Blog Pitch (one paragraph):**
+I've carried a vision for years: build structured legal data infrastructure for Singapore, create apps on top, eventually something bigger. data.zeeker.sg was my closest attempt - 150+ hours building Singapore's first public legal news API, one working app (cookies.zeeker.sg), proved it's technically feasible. Then SMU Centre for Digital Law announced they're building legal data infrastructure with institutional resources, multi-year timeline, dedicated staff - everything I tried to do solo. My domain renewal arrives December ($110 for 2 years), forcing the question: should I continue or stop? For passion projects, "zero known users" and "institutions can do it better" don't automatically mean quit. This post explores the framework: when institutions enter your space, how do you decide? Assess overlap (what are they actually building?), identify remaining gaps (can you modify approach or is there complementary work?), clarify motivation (is this business needing ROI or labour of love with different success criteria?). I don't have my answer yet - I'm attending SMU's Nov 18 event first - but this framework helps solo builders think through continue vs. stop when the big players arrive.
+
+**Newsletter Pitch (one paragraph):**
+I'm still in love with a project nobody wants. For years I've envisioned building the full stack - structured legal data, apps on top, AI assistant, eventually a tech-enabled law firm. data.zeeker.sg was my closest attempt: 150+ hours, Singapore's first public legal news API, working infrastructure. Zero known users. Then SMU announced they're building legal data infrastructure with real resources. My domain renewal ($110) arrives in December. The pragmatic side screams stop - zero validation, institutions can do it better, cut your losses. But I'm still in love with this vision. It's my labour of love, not my day job, so different success criteria apply. The question isn't really about $110 renewal - it's whether I finally let go of a vision I've loved for years when pragmatism says nobody wants it, or whether passion projects don't follow those rules. I'm attending SMU's event Nov 18 to understand what they're building, then deciding. This newsletter explores what I'm working through, and I'd love to hear: have you faced this? How did you decide?
+
+### Files Created This Session
+
+- `pitch-blog-part1-revised.md` - One-paragraph pitch for blog (framework approach)
+- `pitch-newsletter-part1.md` - One-paragraph pitch for newsletter (personal journey)
+- `when-institutions-enter-your-space.md` - Complete rewrite of Post 1 draft based on new framework
+
+### Key Changes in New Draft
+
+**Removed:**
+- "Whiny" tone and self-pity language
+- Excessive focus on personal suffering/silence
+- Unclear "should I renew?" question that appeared too late
+- Missing context about the vision
+
+**Added:**
+- Zeeker suite context and vision upfront
+- Framework for continue vs. stop decisions
+- Clarification that this is labour of love, not business
+- Honest admission about minimal user acquisition
+- cookies.zeeker.sg as comparison point (narrower scope, did announce)
+- Three-part decision framework: assess overlap, identify gaps, clarify motivation
+
+**Reframed:**
+- From "I spent 150 hours and have zero users, maybe I wasted my time"
+- To "When institutions enter your passion project space, here's how to think through continue vs. stop"
+- From confessional to diagnostic
+- From resolved (decision made) to open-ended (decision pending SMU event)
+
+### Series Structure Confirmed
+
+**Part 1 (Blog):** Framework for continuing vs. stopping when institutions enter
+**Part 1 (Newsletter):** Personal journey and emotional decision process
+**Part 2 (Blog):** Technical lessons from building
+**Part 3 (Blog):** SMU event insights + actual decision using framework
+
+### Ready for Next Session
+
+- New draft complete: `when-institutions-enter-your-space.md`
+- Both pitches saved (blog + newsletter)
+- Framework clarified and ready for user review
+- Can proceed to drafting newsletter version or getting feedback on blog version
+
+---
+
+*This discussion captures the planning and drafting conversations from Oct 26-Nov 4, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, and the major reframe from personal confession to actionable framework.*
