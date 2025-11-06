@@ -701,4 +701,76 @@ I'm still in love with a project nobody wants. For years I've envisioned buildin
 
 ---
 
-*This discussion captures the planning and drafting conversations from Oct 26-Nov 4, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, and the major reframe from personal confession to actionable framework.*
+## Session 7: Outline Brainstorming - Introspective Focus (Nov 6, 2025)
+
+### Context
+User feedback on current draft: "reads too bloggy and not instructional"
+
+Initial exploration of multiple outline structures (Problem→Framework→Application, Case Study, Framework-First) revealed we were approaching this wrong.
+
+### Key Pivot: Not Instructional, Introspective
+
+**User clarification:** "should not be too technical, should really focus on being introspective of what the project is and how to decide whether to continue"
+
+Part 1 is NOT:
+- Instructional framework teaching readers
+- Technical landscape analysis
+- Comprehensive ecosystem mapping
+
+Part 1 IS:
+- Introspective journey
+- Working through decision in public
+- Framework emerging from introspection (not teaching it)
+
+### Newsletter Version No Longer Needed
+
+Originally planned to split Part 1 into blog (framework) + newsletter (personal journey). The introspective blog approach absorbs both - no separate newsletter needed.
+
+### Approved Outline
+
+**Introduction: The $110 Question**
+- Domain renewal, but not about money
+- About the vision I've been carrying
+
+**What is data.zeeker.sg to me?**
+- The vision (not just a project)
+- What I built, proved, didn't do
+- Zero known users truth
+
+**Why I built it (introspection)**
+- What gap? (brief, not technical deep-dive)
+- Fuller vision beyond data
+
+**Then SMU announced**
+- What they're doing
+- Why this forces the question
+
+**Two voices in my head**
+- Pragmatic vs. Passion
+- How to decide?
+
+**Framework I'm using**
+(As "here's how I'm thinking" not "here's what you should do")
+1. Assess overlap
+2. Identify gaps
+3. Clarify motivation
+
+**Motivation question is hardest**
+- Business vs. passion project
+- What does success mean?
+- Honest questions I'm asking
+
+**I don't have the answer yet**
+- SMU event Nov 18
+- Decision by December
+- Series continues: Part 2 (technical), Part 3 (decision)
+
+### Ready for Rewrite
+
+- Focus: introspective + decision-making
+- Tone: working through this in public
+- Structure: personal journey with framework emerging from it
+
+---
+
+*This discussion captures the planning and drafting conversations from Oct 26-Nov 6, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, major reframe from confession to framework, and final pivot to introspective focus.*
