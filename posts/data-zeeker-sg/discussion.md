@@ -773,4 +773,180 @@ Originally planned to split Part 1 into blog (framework) + newsletter (personal 
 
 ---
 
-*This discussion captures the planning and drafting conversations from Oct 26-Nov 6, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, major reframe from confession to framework, and final pivot to introspective focus.*
+## Session 8: Final Refinements Based on Reviewer Feedback (Nov 7, 2025)
+
+### Context
+
+User asked me to evaluate changes made to the post since our last discussion (Nov 6), considering both the git history and current uncommitted changes. Then requested amendments for infographic placeholder and review from target audiences.
+
+### Git History Analysis
+
+**Two layers of changes identified:**
+
+**Layer 1: Committed Changes (403d25f - Nov 7 morning)**
+
+Emotional depth improvements:
+1. **Added law student origin story** (line 14)
+   - "Ever since I was a law student, I dreamt of a world where judgments were _data_, and that it was accessible to everyone including poor students like me."
+   - Grounds entire post in personal history and accessibility mission
+   - Humanizes the project immediately
+
+2. **Acknowledged SMU directly** (line 60)
+   - Added: "Wow! It's not a competition, and I do think they have a better shot at succeeding where I failed."
+   - Vulnerable admission, removes defensive posture
+
+3. **Removed ego questions**
+   - Deleted the "uncomfortable question underneath" section asking if this is about vision or ego
+   - Smart removal - interesting but risked making readers uncomfortable or defensive
+
+**Layer 2: Uncommitted Changes (working draft)**
+
+Structural improvements:
+1. Upgraded "Two Voices" to H3 headings for better hierarchy
+2. Completely restructured framework section with clear "Three Questions" header and intro
+3. Made each question a proper H3 subsection with "Key questions" bullets
+4. Cut repetitive vision paragraph
+5. Enhanced series setup with bold titles and descriptive subtitles
+6. Fixed typos throughout
+
+### Infographic Amendment
+
+Changed "Two Voices" section to accommodate planned infographic:
+
+**Before:**
+- Bullet lists under "The Pragmatic Voice" and "The Passion Project Voice"
+
+**After:**
+```
+Two voices keep arguing in my head:
+
+![Infographic with comprehensive alt text describing both voices' arguments]
+
+I don't know which voice is right. That's why I need a framework.
+```
+
+Alt text includes full content for accessibility, so works standalone until infographic is created.
+
+### Reviewer Feedback
+
+Used getting-feedback skill to get responses from both target audiences.
+
+**Consensus (both reviewers agreed):**
+- ✅ Introspective approach works well for this audience
+- ✅ Honesty about zero users is strength, not weakness
+- ✅ Framework (Three Questions) is genuinely useful and reusable
+- ✅ Infographic placeholder flows well with good alt text
+- ✅ Motivation section (four "Am I building this because..." bullets) is strongest part
+- ✅ Law student dream opening is good but could be tighter
+
+**Key Disagreements:**
+
+*Technical depth:*
+- Legal tech reviewer: Wants MORE technical detail (architecture, tools, database)
+- Corporate lawyer: Wants LESS technical jargon, more decision focus
+
+*Framework completeness:*
+- Legal tech reviewer: Suggests 4th question "What am I uniquely positioned to do?"
+- Corporate lawyer: Wants decision trees with "if X then Y" logic paths
+
+**Legal Tech Reviewer Highlights:**
+
+> "One caution: make sure Part 2 delivers technical depth. The introspective approach works for Part 1 because we know concrete lessons are coming."
+
+Flagged timing urgency: SMU event November 18, only 11 days away. Ship Part 1 fast or event will pass.
+
+Wants "What I Actually Built" section with 4-5 sentence technical overview.
+
+**Corporate Lawyer Highlights:**
+
+> "This resonates deeply. Not because I'm building legal tech infrastructure—I'm not—but because I face the same fundamental tension every week: passion projects versus pragmatic resource allocation."
+
+Wants "Resource Reality Check" section: monthly maintenance burden (time, mental overhead).
+
+Asked tough questions not addressed:
+- What's minimum viable maintenance? Could you "freeze" it rather than shut down?
+- What if SMU wants to absorb your work - would you hand over codebase?
+- What does "shutting down" actually mean mechanically?
+
+### Changes Made Based on Feedback
+
+**1. Added Resource Reality Check** (line 70, after infographic)
+```
+But first, the reality check: it's not really about the $110 renewal. It's the ongoing maintenance burden—monthly monitoring, dependency updates when something breaks, the mental overhead of "should I finally announce this or let it go?" That's the real cost I'm weighing.
+```
+
+**2. Sharpened Problem Statement** (line 44)
+Changed from abstract "HTML pages across 40+ sources" to concrete user journey:
+- Shows pain for users (hard to know what's out there)
+- Shows pain for developers (integration nightmare)
+- Specific example: reading news article → finding judgment → checking statute → seeing commentary (all scattered)
+- Much more visceral and relatable
+
+**3. Added Technical Context Paragraph** (line 48)
+```
+Over those months, I built Python scrapers that check 40+ legal news sources daily, store articles in a searchable database with full-text search, and serve them via a REST API. cookies.zeeker.sg was proof it worked—an app that consumes the API to summarize headlines. The infrastructure is simple: automatic daily updates, structured JSON data, machine-readable format that any developer could build with.
+```
+- Satisfies legal tech reviewer's curiosity without overwhelming corporate lawyer
+- Shows what "150+ hours" actually produced
+- Concrete but accessible
+
+**4. Added "What Shutting Down Means" Section** (line 132, before series setup)
+```
+And if I do stop? I've thought about what that would actually mean. Open-source the code so others can learn from it. Offer the data pipeline to SMU if they want it. Write a proper post-mortem documenting what worked and what didn't. Archive it with dignity rather than just letting the domain expire. Shutting down doesn't have to mean failure—it can mean intentional closure of one chapter before starting the next.
+```
+- Reframes closure as intentional, not failure
+- Addresses corporate lawyer's question about mechanics
+- Provides dignity to potential shutdown outcome
+
+**5. Updated Series Setup** (lines 138-140)
+- Removed date promises ("coming Nov 11" → "coming soon")
+- Enhanced Part 2 description: "The full technical stack, what worked, what didn't, and how AI tools made solo infrastructure building feasible—for builders who want the implementation details"
+- Part 3: "coming Nov 25" → "coming after Nov 18"
+- Signals technical depth coming in Part 2 without overwhelming Part 1
+
+### Audience Priority Decision
+
+**Resolved the technical depth tension:**
+- Keep Part 1 accessible and decision-focused (corporate lawyer wins)
+- Add one concrete paragraph of technical context (compromise)
+- Signal clearly that Part 2 delivers full technical deep-dive (legal tech reviewer satisfied)
+- Both audiences get what they need, just in different parts
+
+### Assessment Summary
+
+**Strengths after revisions:**
+- Opening is much stronger (law student dream immediately humanizes)
+- Framework section now scannable and useful
+- Less repetitive (cut redundant vision paragraph)
+- Better positioned ("not a how-to guide" manages expectations)
+- Cleaner ending (removed potentially alienating ego question)
+- Professional polish (typos fixed, series descriptions improved)
+- Concrete problem statement (user journey example)
+- Technical context without overwhelming
+
+**Flow with infographic:**
+Works well. Transition "Two voices keep arguing in my head:" → infographic → "I don't know which voice is right. That's why I need a framework." bridges smoothly into framework section.
+
+### Files Modified This Session
+
+- `when-institutions-enter-your-space.md` - All revisions above
+- `discussion.md` - This session record
+
+### Post Status
+
+**Ready for publication.** The post now:
+- Addresses both reviewers' core concerns
+- Maintains introspective, decision-focused tone
+- Provides enough technical context without overwhelming
+- Grounds decision in concrete ongoing costs
+- Reframes potential closure as intentional
+- Sets clear expectations for Parts 2 and 3
+
+**Next steps:**
+1. Create the "Two Voices" infographic
+2. Publish Part 1 soon (SMU event is November 18)
+3. Begin drafting Part 2 (technical lessons)
+
+---
+
+*This discussion captures the planning and drafting conversations from Oct 26-Nov 7, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, major reframe from confession to framework, pivot to introspective focus, and final refinements based on target audience feedback.*
