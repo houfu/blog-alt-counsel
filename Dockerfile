@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     htop \
     tree \
     jq \
+    tmux \
     && rm -rf /var/lib/apt/lists/*
 
 # Install ttyd for web terminal (multi-architecture support)
@@ -46,8 +47,11 @@ RUN git clone --branch ${BRANCH} ${REPO_URL} .
 # Install Node.js dependencies
 RUN npm install
 
+# Copy tmux configuration
+RUN cp .tmux.conf /root/.tmux.conf
+
 # Make scripts executable
-RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js
+RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js scripts/tmux-session.sh
 
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
@@ -80,6 +84,10 @@ RUN echo 'alias ll="ls -la"' >> /root/.bashrc
 RUN echo 'alias ..="cd .."' >> /root/.bashrc
 RUN echo 'alias logs="docker-compose logs -f"' >> /root/.bashrc
 
+# tmux session management aliases
+RUN echo 'alias tmux-list="tmux list-sessions"' >> /root/.bashrc
+RUN echo 'alias tmux-kill="tmux kill-session -t blog-workspace"' >> /root/.bashrc
+
 # Environment for blog automation
 ENV PROJECT_ROOT="/workspace"
 ENV NODE_ENV="development"
@@ -87,5 +95,5 @@ ENV NODE_ENV="development"
 # Expose ttyd port
 EXPOSE 7681
 
-# Start with project context
-CMD ["ttyd", "-p", "7681", "-i", "0.0.0.0", "bash"]
+# Start with tmux session for persistence
+CMD ["ttyd", "-p", "7681", "-i", "0.0.0.0", "/workspace/scripts/tmux-session.sh"]
