@@ -14,6 +14,8 @@ services:
       - bash-history:/root/.bash_history
       # Persist npm cache
       - npm-cache:/root/.npm
+      # Persist tmux sessions across container restarts
+      - tmux-sessions:/root/.tmux
     environment:
       - GITHUB_PAT=${GITHUB_PAT}
       - GITHUB_USERNAME=${GITHUB_USERNAME}
@@ -31,7 +33,8 @@ services:
       - ANTHROPIC_API_KEY=
       
     # Basic auth for home network security
-    command: ["ttyd", "-p", "7681", "-i", "0.0.0.0", "-c", "blogger:write123", "bash"]
+    # Start with tmux session for persistence across reconnections
+    command: ["ttyd", "-p", "7681", "-i", "0.0.0.0", "-c", "blogger:write123", "/workspace/scripts/tmux-session.sh"]
     restart: unless-stopped
     
     # Security settings appropriate for home network
@@ -57,3 +60,4 @@ volumes:
   claude-config:
   bash-history:
   npm-cache:
+  tmux-sessions:
