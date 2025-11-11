@@ -7,23 +7,28 @@ series: "data.zeeker.sg decision series"
 series_part: "2a"
 ---
 
-**[Introduction to be written]**
+In Part 1, I shared the decision dilemma: 150+ hours building Singapore's first public legal news API, zero known users, and institutions entering the space. Should I continue or stop?
 
-**What this post covers:**
-- The three-layer technical architecture (Data, API, UX)
-- Design decisions: Why SQLite, Datasette, and static deployment
-- How architectural choices enable solo building and open source contribution
-- Cost comparisons and infrastructure tradeoffs
+Before making that decision, I want to document what I learned building this infrastructure. Whether data.zeeker.sg continues or not, these technical lessons are worth sharing—for solo builders considering similar projects, for lawyers curious about what legal data infrastructure requires, and for anyone wondering what's feasible for one person in the AI era.
 
-**Who should read this:** Lawyers who code, legal technologists, solo builders considering similar infrastructure, anyone curious about what modern legal data platforms require.
+This post is technical. Not "read the code" technical, but "understand the architecture and tradeoffs" technical. If you're a lawyer who codes, a legal technologist, or a builder considering legal data infrastructure, this is for you. If you're purely interested in the decision-making process, skip to Part 3.
 
-**What comes next:** Part 2b covers lessons learned and AI-assisted development. Part 3 covers my decision about the project's future.
+**What you'll learn:**
+- The three-layer architecture that makes solo infrastructure building feasible
+- Why specific tools (SQLite, Datasette, CLI-based workflows) enabled this project
+- Design decisions that reduce ongoing maintenance burden
+- Cost comparisons: $6-12/month vs. $45-95/month for traditional architecture
+- How architectural choices enable open source contribution
+
+The technical details inform the decision. Understanding what this project required—and what it could become—shapes whether it should continue.
+
+Let's start with the architecture.
 
 ---
 
 ## Technical Architecture: Three Layers That Work Together
 
-Building data.zeeker.sg taught me that modern infrastructure for legal data isn't just about collecting information - it's about **making that data immediately useful** to different audiences without requiring technical expertise.
+Building data.zeeker.sg taught me something critical: modern infrastructure for legal data isn't just about collecting information. It's about **making that data immediately useful** to different audiences without requiring technical expertise.
 
 The architecture has three layers:
 
@@ -50,7 +55,7 @@ Without standardization, each new source means:
 - Setting up scheduling and deployment
 - Maintaining N different Python scripts in N different ways
 
-I built the zeeker CLI to solve this problem before it became unmanageable. **Standardize the pattern with one source, then scaling to many becomes trivial.**
+I built the zeeker CLI to solve this problem early. Standardize the pattern with one source first. Then scaling to many sources becomes trivial.
 
 **Why a CLI tool?**
 
@@ -59,10 +64,10 @@ Two critical reasons:
 **1. Standardization across all data sources**
 
 The CLI enforces one pattern for everything:
-- **Same interface**: Every source implements `fetch_data()` - that's it
-- **Same schema management**: Automatic table creation, type inference, conflict detection
-- **Same error handling**: Built into the framework, not reimplemented for each source
-- **Same metadata**: Every table gets the same tracking (last updated, record count, schema version)
+- **Unified interface**: Every source implements `fetch_data()` - that's it
+- **Automatic schema management**: Table creation, type inference, conflict detection
+- **Built-in error handling**: Framework handles errors, not reimplemented for each source
+- **Consistent metadata**: Every table gets identical tracking (last updated, record count, schema version)
 
 I built one source this way. Adding the second, third, or fortieth source? Copy the template, write scraping logic, done. No reinventing infrastructure.
 
@@ -84,7 +89,7 @@ Or schedule locally:
 
 **Human-friendly commands + machine-friendly automation = sustainable infrastructure**
 
-Without the CLI, continuous deployment means writing custom orchestration scripts. With the CLI, it's one line in a cron job or GitHub Action.
+Without the CLI, continuous deployment means writing custom orchestration scripts (code that coordinates multiple tasks). With the CLI, it's one line in a cron job or GitHub Action.
 
 **The complete workflow:**
 
@@ -142,13 +147,18 @@ def fetch_data(existing_table: Optional[Table]) -> List[Dict[str, Any]]:
 Traditional approach:
 - Run database server (PostgreSQL, MySQL)
 - Scrapers insert data into live database
-- Worry about concurrent writes, connection pooling, backups
+- Worry about concurrent writes, connection pooling (managing database connections efficiently), backups
 - Deploy database separately from application
 
 Zeeker approach:
 - Build SQLite file locally (`zeeker build` → `legal_news_sg.db`)
 - Push file to S3 (`zeeker deploy` → S3 static storage)
-- **Result**: No database server to maintain, atomic updates (new file replaces old), version history for free (S3 keeps old versions), cheap hosting (S3 storage costs, not running servers)
+
+**Results:**
+- No database server to maintain
+- Atomic updates (new file replaces old)
+- Version history for free (S3 keeps old versions)
+- Cheap hosting (S3 storage costs, not running servers)
 
 [Screenshot 4: Terminal showing zeeker deploy output and S3 bucket structure listing]
 
@@ -355,15 +365,17 @@ Datasette turns these SQLite advantages into developer and user advantages witho
 
 **Scaling characteristics:**
 
-Because Datasette serves static database files, read performance scales horizontally—add more containers (copies of the application running in parallel), put a CDN (content delivery network—essentially a global cache) in front. No database connection pooling issues, no write concurrency problems. Updates happen via file replacement (`zeeker deploy`). Static file serving is the cheapest compute pattern.
+Datasette serves static database files, so read performance scales horizontally (adding more machines, not bigger machines). You can:
+- Add more containers (copies of the application running in parallel)
+- Put a CDN in front (content delivery network—essentially a global cache)
+
+No database connection pooling issues. No write concurrency problems. Updates happen via file replacement (`zeeker deploy`). Static file serving is the cheapest compute pattern.
 
 For data.zeeker.sg with one source, a single container is plenty. If I scale to 40 sources with thousands of articles, I can add containers or put Cloudflare in front. The architecture scales without changing.
 
 **The limitation:** This is read-only by design. No writes through the API. For a legal news database, that's perfect—scrapers write (via zeeker build), users read (via Datasette). Clear separation of concerns.
 
-**For coders:** Source code at [github.com/simonw/datasette](https://github.com/simonw/datasette), extensive plugin ecosystem, can customize templates and styling.
-
-**For lawyers:** Think of it as a specialized web server that speaks database. You get a professional API and search interface without hiring a backend developer.
+Datasette's source code and extensive plugin ecosystem are available at [github.com/simonw/datasette](https://github.com/simonw/datasette)—developers can customize templates and styling as needed. For legal professionals, think of it as a specialized web server that speaks database, providing a professional API and search interface without needing to hire a backend developer.
 
 **Next layer:** Datasette gives you power, but it still expects users to understand tables, fields, and filters. How do you make this accessible to lawyers who don't know what "faceted browsing" means? That's where canned queries come in (Layer 3).
 
@@ -513,37 +525,18 @@ Every view has export options visible:
 /sglawwatch.db               → Full database download
 ```
 
-Lawyers can analyze in familiar tools (Excel). Developers can programmatically access.
-
-**For coders:**
-- Full SQL interface still available
-- API endpoints documented
-- JSON/CSV exports on every query
-- Copy-paste curl examples on homepage
+The interface serves both audiences simultaneously. Lawyers can search without knowing table names, click pre-built queries, export to Excel, and bookmark filtered searches—no SQL required for 90% of use cases. Developers still have the full SQL interface, documented API endpoints, and JSON/CSV exports on every query, plus copy-paste curl examples:
 
 ```bash
 # From homepage
 curl "https://data.zeeker.sg/-/search.json?q=contract+law"
 ```
 
-**For lawyers:**
-- Search without knowing table names
-- Click pre-built queries for common tasks
-- Export to Excel with one click
-- Bookmark filtered searches (every search = shareable URL)
-- No SQL required for 90% of use cases
-
 **The measurement:**
 
-Traditional Datasette: Requires understanding of relational databases, SQL syntax, API concepts.
+Traditional Datasette requires understanding of relational databases, SQL syntax, and API concepts. Enhanced for legal research, users can search, find trends, and export data with zero technical knowledge—SQL available when needed, invisible when not.
 
-Enhanced for legal: Can search, find trends, and export data with zero technical knowledge. SQL available when needed, invisible when not.
-
-**For lawyers:** "It looks like a professional legal database, not a developer tool."
-
-**For developers:** "It's still Datasette underneath - I can query anything I want."
-
-Both audiences served by the same infrastructure.
+Lawyers see a professional legal database, not a developer tool. Developers see Datasette underneath and can query anything they want. Both audiences served by the same infrastructure.
 
 **What this enabled:** Someone from a law firm could search legal news, export trends to Excel, and share filtered searches with colleagues—without emailing me for help. The interface guides them.
 
@@ -551,9 +544,9 @@ Both audiences served by the same infrastructure.
 
 ## Design Decisions: Why This Architecture?
 
-The three layers work together, but why these specific choices? Why SQLite instead of PostgreSQL? Why Datasette instead of building a custom API or using CKAN? Why static deployment instead of a live application server?
+I've shown you the three layers and how they work together. But why these specific tools? Why not PostgreSQL, FastAPI, or CKAN—the standard tools most developers would reach for?
 
-These weren't arbitrary decisions. Each choice optimized for a specific constraint: **solo builder, limited budget, legal documents (not just data), passion project sustainability.**
+Each decision optimized for a specific constraint: **solo builder, limited budget, legal documents (not just data), passion project sustainability.** Let me explain the reasoning.
 
 ### Why SQLite Instead of PostgreSQL?
 
@@ -677,16 +670,15 @@ Datasette + zeeker approach separates build from deployment:
 With Datasette, production is bulletproof—just serving a file. All the risky operations (scraping, data processing, database builds) happen elsewhere (locally, GitHub Actions). Deploy only when data is ready and validated.
 
 **CKAN infrastructure requirements:**
-- PostgreSQL + Solr (search engine) + Redis (caching layer) + NGINX (web server) + supervisord (process manager)
-- Minimum 4GB RAM, multiple services
+- Five separate services running simultaneously (database, search, caching, web server, process manager)
+- Minimum 4GB RAM
 - Needs reliable infrastructure for safe writes
 - Designed for institutional scale (hundreds of datasets, multiple organizations)
 - **Right tool for institutions with proper infrastructure**
 
 **Datasette infrastructure:**
-- SQLite (whatever schema you design)
 - Single service, read-only production
-- Works fine on minimal infrastructure
+- Works fine on minimal infrastructure (1-2GB RAM)
 - Build/process data anywhere, deploy finished product
 - **Right tool for solo builders with budget constraints**
 
@@ -864,7 +856,14 @@ Architecture choices that eliminate ongoing work. Static deployment means produc
 
 These aren't just cost savings—they're the difference between feasible and infeasible for a solo builder working evenings and weekends.
 
-**Part 2b continues with practical lessons:** What worked brilliantly, what I'd do differently, and how AI-assisted development changed what's possible for solo builders. The architecture is proven—the next question is how to build it efficiently and avoid common mistakes.
+**What's next in Part 2b:**
+- What worked brilliantly (and what to copy)
+- What didn't work (and expensive mistakes to avoid)
+- How AI-assisted development changed solo building—honest assessment of what it enabled vs. what it didn't
+- Practical lessons: composing tools vs. building everything, validating demand before scaling
+- The double-edged sword: AI enabled premature optimization
+
+The architecture is proven. Part 2b covers how to build it efficiently and avoid the mistakes I made.
 
 ---
 
@@ -876,4 +875,6 @@ These aren't just cost savings—they're the difference between feasible and inf
 ---
 
 **Update Log:**
+- November 11, 2025: Added transition paragraph before Design Decisions, simplified CKAN infrastructure section, added jargon explanations (orchestration scripts, connection pooling, horizontal scaling)
+- November 11, 2025: Quality control refinements - broke up long sentences, reduced "For coders/For lawyers" repetition, added Part 2b preview, improved readability
 - November 11, 2025: Split from combined Part 2, focused on architecture
