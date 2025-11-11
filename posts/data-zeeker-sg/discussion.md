@@ -949,4 +949,183 @@ Works well. Transition "Two voices keep arguing in my head:" → infographic →
 
 ---
 
-*This discussion captures the planning and drafting conversations from Oct 26-Nov 7, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, major reframe from confession to framework, pivot to introspective focus, and final refinements based on target audience feedback.*
+## Session 9: Brainstorming Part 2 Presentation - Three-Layer Architecture (Nov 10, 2025)
+
+### Context
+
+With Part 1 published, user wants to work on Part 2 (technical lessons). User identified three key innovations to present:
+1. Using Datasette
+2. A full-featured website
+3. A CLI tool which standardizes maintenance and resources
+
+Goal: Present these innovations in a way that's awesome for coders while followable by lawyer tech enthusiasts.
+
+### Clarifying the Innovations
+
+Through iterative questioning, clarified what each innovation actually means:
+
+**1. Datasette**
+- Turns SQLite into instant REST API + searchable web interface
+- Zero API code written - production-ready out of the box
+
+**2. Full-featured website = Enhanced Datasette interface**
+- NOT just the default Datasette UI
+- User enhanced it with **canned queries** (pre-written SQL)
+- Accessibility layer: lawyers can get insights without writing SQL
+- "model queries" = useful queries for common legal research needs
+
+**3. CLI tool = Full pipeline automation**
+- Scrapes 40+ legal news sources
+- Scaffolds SQLite database with proper schema
+- Deploys to S3 for continuous deployment
+- Can run on regular schedule
+- Key insight: SQLite file → S3 → Datasette reads from S3 = zero-ops infrastructure
+
+**The clever integration:** CLI builds fresh SQLite files, pushes to S3, Datasette serves updated data. Fully automated updates with static file hosting.
+
+### Three Presentation Approaches Explored
+
+**Approach 1: "Show the Journey" (Problem → Solution)**
+- Start with manual nightmare lawyers face
+- Each innovation solves a specific problem
+- Strengths: Relatable to lawyers, clear value
+- For coders: Technical details sprinkled throughout
+
+**Approach 2: "The Stack Walkthrough" (Architecture-first)** ✅ SELECTED
+- Present as three layers of technical stack:
+  - **Data Layer:** CLI tool (scraping, SQLite scaffolding, S3 deployment)
+  - **API Layer:** Datasette (instant REST API, full-text search)
+  - **UX Layer:** Canned queries (pre-built searches for legal research)
+- Strengths: Clear mental model, shows how pieces fit together
+- For lawyers: Concrete examples at each layer
+
+**Approach 3: "The Three Breakthroughs" (Innovation-focused)**
+- Frame each as paradigm shift enabled by modern tools
+- SQLite as deployment artifact + S3 = zero-ops
+- Datasette = zero API code
+- Standardized CLI = one pattern for 40+ sources
+- Strengths: Exciting for builders, shows what's newly possible
+
+### Decision: Approach 2 Selected
+
+User chose the three-layer stack walkthrough approach.
+
+### Progress Completed
+
+**Introduction Section - APPROVED**
+User response: "sounds ok"
+
+**Layer 1 (Data Layer) - COMPLETE**
+- Revised multiple times for accuracy
+- Important correction: Built 1 source, designed for 40+ (kept it honest)
+- Added cost comparison section ($6-12/month vs $45-95/month)
+- Added developer time comparison (2-4 hours vs 8-14 hours per source)
+- Emphasized standardization as key feature
+- Emphasized GitHub Actions serverless orchestration
+- 4 screenshot placeholders identified (user will create at home)
+
+**Layer 2 (API Layer - Datasette) - COMPLETE**
+- What Datasette is and does
+- Deployment architecture
+- Auto-generated API endpoints with examples
+- Web interface and FTS5 search
+- Scaling characteristics
+- Why SQLite + Datasette works
+- 3 screenshot placeholders (5, 6, 7)
+
+**Approach B Selected**
+After discussing pros/cons of three approaches (weave AI into layers, separate sections, hybrid), selected Approach B: clean layer separation first, then cross-cutting sections for design decisions, what worked/didn't, and AI assistance.
+
+**Layer 3 (UX Layer - Making It Accessible Without SQL) - COMPLETE**
+- Search-first interface (global search across all data)
+- Use-case driven query examples with clickable links
+- JavaScript enhancements (copy buttons, keyboard shortcuts, query helpers)
+- Progressive disclosure (3 access levels: Search → Guided SQL → Full SQL)
+- Professional visual design (2182 lines custom CSS, hero banner, glassmorphic cards)
+- Custom Datasette plugins (string manager, template filters)
+- Export-friendly (CSV/JSON/SQLite downloads everywhere)
+- 4 screenshot placeholders (8, 9, 10, 11)
+
+### Outstanding Work
+
+**Approach B Additional Sections** - NOT DRAFTED
+- Design Decisions: Why This Architecture? (will include CKAN comparison - KIV'd for this section)
+- What Worked: Technical Decisions to Copy
+- What Didn't Work: Expensive Mistakes to Avoid
+- AI-Assisted Development: What Changed
+
+### Files Created/Modified This Session
+
+- `part-2-technical-lessons-draft.md` - Draft with Layers 1, 2, & 3 complete, structure for remaining sections
+- Cloned `houfu/zeeker` CLI repo to `/workspace/temp/zeeker` for reference
+- Cloned `houfu/zeeker-datasette` site repo to `/workspace/temp/zeeker-datasette` for Layer 3
+- Updated `discussion.md` - This session record
+
+### Key Decisions Made
+
+1. ✅ Selected Approach B (clean layer separation, then cross-cutting sections)
+2. ✅ Corrected framing: 1 source built, architecture ready for 40+ (honest about what was actually built)
+3. ✅ Added cost comparison emphasizing serverless GitHub Actions advantage
+4. ✅ Added developer time savings from standardization (240-400 hours saved across 40 sources)
+5. ✅ Ground rule: Use code examples and screenshots wherever possible
+6. ✅ Identified overlap concerns between layers and resolved them (each layer has clear boundary)
+
+---
+
+*This discussion captures the planning and drafting conversations from Oct 26-Nov 10, 2025, documenting the 3-post series development, time estimate correction, structured data gap research, major reframe from confession to framework, pivot to introspective focus, final refinements based on target audience feedback, and Part 2 architecture presentation brainstorming.*
+
+## Session 10: Quality Control and Split Decision (Nov 11, 2025)
+
+### Context
+User requested quality control check on completed Part 2 draft. The draft was 1,070 lines covering three-layer architecture, design decisions, what worked/didn't work, and AI-assisted development.
+
+### Quality Control Review
+Launched content-quality-auditor agent for comprehensive review.
+
+**Grade: B+ (Very Good, Needs Focused Revision)**
+
+**Critical Issues:**
+- Missing introduction
+- Excessive repetition (costs/time repeated 3-4 times)
+- Accessibility issues (screenshot placeholders lack alt text)
+- Length concern (45 min read)
+
+**Strengths:**
+- Clear three-layer presentation
+- Good dual-audience handling
+- Honest assessments
+- Specific numbers
+
+### Decision: Split Part 2
+
+**Part 2a: Technical Architecture** (670 lines)
+- Three layers + design decisions
+- Improved alt text, reduced repetition
+- Professional tone adjustments
+
+**Part 2b: Lessons from AI-Assisted Development** (520 lines)
+- What worked/didn't work
+- Honest AI assessment
+- Validation-before-scaling emphasis
+
+### Key Improvements
+- Better focus (technical vs. lessons separated)
+- More digestible (~30 min each vs. 45 min combined)
+- Natural progression
+- Reduced repetition
+- Clear series structure
+
+### Files Created
+- `part-2a-architecture.md`
+- `part-2b-lessons-and-ai.md`
+- Original preserved as `part-2-technical-lessons-draft.md`
+
+### Series Structure
+- Part 1: Framework for decision (published)
+- Part 2a: Technical architecture (ready for intro)
+- Part 2b: Lessons and AI (ready for intro)
+- Part 3: SMU event + decision (after Nov 18)
+
+---
+
+*This discussion captures conversations from Oct 26-Nov 11, 2025, documenting the series development, research, reframing, Part 2 brainstorming, quality control, and split decision.*

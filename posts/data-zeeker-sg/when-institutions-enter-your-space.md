@@ -11,65 +11,61 @@ That's not the real cost. And the renewal isn't really the question.
 
 **This post isn't a how-to guide.** I don't have answers yet—I'm working through the decision in real-time. But if you're a solo builder facing similar crossroads, maybe walking through my thinking process will help you navigate yours.
 
-Ever since I was a law student, I dreamt of a world where judgments were _data_, and that it was accessible to everyone including poor students like me. That dream has taken me through sites like AustLII and several ways to collect data, from Wordpress, MongoDB, and ckan, and it definitely coursed through AI and technology. 
+Ever since I was a law student, I dreamt of a world where judgments were _data_, and that it was accessible to everyone including poor students like me. That dream has taken me through sites like AustLII and several ways to collect data, from Wordpress, MongoDB, and ckan, and it definitely coursed through AI and technology.
 
-data.zeeker.sg is my latest and closest attempt. Over 150 hours across several months building an API for legal information in Singapore the way I want it. I built the data pipeline, collected 346 legal articles, proved the technical stack works. Built one app on top (cookies.zeeker.sg), which summarizes Singapore Law Watch headlines. It works.
+data.zeeker.sg is my latest attempt. I built it. It works.
 
-Then SMU Centre for Digital Law announced they're launching a legal database project. November 18, 2025. Hiring a full-time Research Engineer and Research Assistant for 3 years. Building "Singapore's first open empirical legal database."
+Then SMU Centre for Digital Law announced they're launching a legal database project. Institutional resources doing what I tried to do solo.
 
-Institutional resources doing what I tried to do solo.
-
-The pragmatic voice in my head says: Stop. Zero known users. Institutions can do this better. Cut your losses.
+The pragmatic voice in my head says: Stop. Institutions can do this better.
 
 But I'm still in love with this vision.
 
 ## What This Project Means to Me
 
-This isn't just about data.zeeker.sg. It's about the full stack.
+This isn't just about data.zeeker.sg. It's about a full-stack vision for legal information infrastructure.
 
-The idea is that we start from data and work out the apps that we can create from it. Given a set of unstructured documents, we can create a website that displays a list of them and download them, maybe search based on metadata. But if we have a richer set of data, we can create graphs and more. cookies.zeeker.sg could be a daily aggregator, but it can also create weekly podcasts and end of year reviews based on different topics and audiences.
+The idea: start from structured data and build whatever apps you can imagine on top. A daily aggregator that becomes a weekly podcast. An end-of-year review generator. A chatbot. An MCP server for Claude Code integration. More data sources—not just legal news, but judgments, legislation, regulatory notices. Eventually: AI-powered legal services. Maybe even rethink what a law firm could be if it's built on this kind of infrastructure.
 
-The broader vision includes more. A chatbot. An MCP server for Claude Code integration. More data sources—not just legal news, but judgments, legislation, regulatory notices. Eventually: AI-powered legal services. Maybe even rethink what a law firm could be if it's built on this kind of infrastructure.
+That's the dream I've carried since law school. Not just making legal information accessible, but creating the foundation that lets anyone build tools on top of it.
 
-But I kept thinking "needs more resources before it's ready to announce."
-
-So I built but never really announced it. Minimal user acquisition effort. Zero known users.
-
-cookies.zeeker.sg had narrower scope—just summarize headlines—so I announced that one. But the data layer? Still waiting for it to feel "complete enough."
+But I never announced data.zeeker.sg. I kept thinking "needs more resources before it's ready." I built the infrastructure but waited for it to feel "complete enough" to share publicly. Zero known users because I never really tried to find them.
 
 Now renewal forces the question: If I'm not willing to announce it, why am I maintaining it?
 
+Is this vision still mine to pursue? Or have I been holding onto something I should let go?
+
 ## Why I Built This
 
-Singapore's legal information exists, but it's scattered. Say you read a legal news article about a recent employment case. You want to read the actual judgment—that's in LawNet or a PDF somewhere. You want to check the statute it interpreted—that's on a different government site. You want to see related commentary—that's scattered across 40+ different legal blogs and news sources. For developers trying to build tools that connect these dots, it's a nightmare of different formats and scraping challenges. For users, it's hard to even know what's actually out there unless you already know where to look. You can browse each source manually, but you can't build integrated tools that connect the pieces.
+Singapore's legal information exists, but it's scattered. Say you read a legal news article about a recent employment case. You want to read the actual judgment—that's in LawNet or a PDF somewhere. You want to check the statute it interpreted—that's on a different government site. You want to see related commentary—that's scattered across 40+ different legal blogs and news sources. For developers trying to build tools that connect these dots, it's a nightmare of different formats and scraping challenges. You can browse each source manually, but you can't build integrated tools that connect the pieces.
 
-I wanted to see if one person could create infrastructure that used to require teams. GenAI made it feasible—Claude helped me build the data pipeline, the API, the search functionality. 150+ hours across several months, mostly evenings and weekends while doing my day job full-time.
+I wanted to see if one person could create infrastructure that used to require teams. GenAI made it feasible—Claude helped me build it all.
 
-Over those months, I built Python scrapers that check 40+ legal news sources daily, store articles in a searchable database with full-text search, and serve them via a REST API. cookies.zeeker.sg was proof it worked—an app that consumes the API to summarize headlines. The infrastructure is simple: automatic daily updates, structured JSON data, machine-readable format that any developer could build with.
+The technical reality: Over 150 hours across several months (mostly evenings and weekends while working full-time), I built Python scrapers that check 40+ legal news sources daily, store articles in a searchable database with full-text search, and serve them via a REST API. I collected 346 legal articles and proved the stack works. cookies.zeeker.sg demonstrates it—an app that consumes the API to summarize Singapore Law Watch headlines daily. The infrastructure runs: automatic updates, structured JSON data, machine-readable format.
 
-I proved it's possible. You can build this solo now more than ever.
+I proved it's possible. One person can build this now.
 
-But possible doesn't mean needed. I never really validated demand. I built first, hoped to validate later. Kept waiting for the project to feel "complete enough" to announce.
-
-I'm a lawyer who codes on the side. The vision is years ahead of my execution capacity.
+But possible doesn't mean needed. I'm a lawyer who codes on the side. The vision is years ahead of my execution capacity.
 
 ## Then SMU Announced Their Project
 
-November 18, 2025. SMU Centre for Digital Law is launching their legal database project. Hiring full-time staff for 3 years. "Singapore's first open empirical legal database."
+SMU Centre for Digital Law is launching their legal database project. Hiring full-time staff for 3 years. "Singapore's first open empirical legal database."
 
-I don't know what they're actually building yet. Their scope, their approach, their technical infrastructure—all unknown until the event.
+I don't know what they're actually building yet. Their scope, their approach, their technical infrastructure—all unknown until their November 18 event.
 
-But institutional resources doing what I tried to do solo changes the equation. Wow! It's not a competition, and I do think they have a better shot at succeeding where I failed.
+But institutional resources doing what I tried to do solo changes the equation. It's not a competition, and I do think they have a better shot at succeeding where I failed.
 
 ## The Two Voices
 
 Two voices keep arguing in my head:
 
-![The Two Voices: Pragmatic vs. Passion - A comparison of arguments for stopping versus continuing the project. The pragmatic voice argues: 150+ hours with zero known users, never validated demand or announced properly, SMU has institutional backing with multi-year timeline and dedicated staff, the vision was always aspirational (tech-enabled law firm while practicing full-time?), you proved it's technically feasible and that's enough, time to let it go. The passion project voice argues: I'm still in love with this vision, this is labour of love not my day job so different success criteria apply, zero users might just mean poor distribution not bad vision, institutions existing doesn't automatically mean quit, I could pivot to focus on apps while they handle data infrastructure, or do complementary work with different data sources and audiences, 150 hours is sunk cost but the infrastructure exists and works.](two-voices-infographic.png)
+![A two-column comparison showing pragmatic arguments for stopping the project versus passion-driven arguments for continuing it](two-voices-infographic.png)
+
+**Pragmatic voice:** Over 150 hours with zero known users. Never validated demand. SMU has institutional backing and dedicated staff. You proved it's technically feasible—that's enough. Time to let it go.
+
+**Passion voice:** I'm still in love with this vision. This is labour of love with different success criteria. Zero users might mean poor distribution, not bad vision. Institutions existing doesn't mean quit. I could pivot to apps while they handle infrastructure, or do complementary work.
 
 I don't know which voice is right. That's why I need a framework.
-
-But first, the reality check: it's not really about the $110 renewal. It's the ongoing maintenance burden—monthly monitoring, dependency updates when something breaks, the mental overhead of "should I finally announce this or let it go?" That's the real cost I'm weighing.
 
 ## A Framework for Deciding: Three Questions
 
@@ -147,6 +143,7 @@ Whether I continue or stop, the technical lessons from building this solo are wo
 
 **Update Log:**
 
+-   November 7, 2025 (v3): Restructured intro/sections to eliminate repetition, improved accessibility (alt text), removed redundant paragraphs
 -   November 7, 2025 (v2): Added infographic placeholder, resource reality check, concrete problem statement, technical context paragraph, "what shutting down means" section, updated series setup based on reviewer feedback
 -   November 7, 2025 (v1): Structural improvements - added H3 headings, strengthened framework section, cut repetition, improved series setup
 -   November 6, 2025: Rewrite focusing on introspection and decision-making process
