@@ -1,29 +1,27 @@
 # Shpool Configuration for blog-alt-counsel
 # Session persistence tool for iPad-friendly terminal workflows
 
-# Autodaemonization - start daemon automatically when needed (no systemd required)
-# This is essential for Docker environments
-[daemon]
-autodaemon = true
+# Shell to use for sessions
+shell = "/bin/bash"
 
-# Session settings
-[session]
-# Time to live for sessions - keep them alive for 7 days
-ttl = "7d"
+# Enable autodaemonization (default behavior when nodaemonize is false/omitted)
+# This allows shpool to automatically start a background daemon when needed
+# Essential for Docker environments without systemd
+nodaemonize = false
 
-# Reattach mode - how to handle reconnection
-# "simple" mode just redraws the screen, which works well with ttyd
-reattach_mode = "simple"
+# Session restore mode - how reconnection works
+# "simple" mode issues SIGWINCH signals to trigger redraws (works well with ttyd)
+# "screen" mode (default) restores a full screenful of terminal history
+session_restore_mode = "simple"
 
-# Detach keybinding - Ctrl+Space then Ctrl+q
-# You can also detach via command: shpool detach
-[keybindings]
-detach = "ctrl-space ctrl-q"
+# Customize the prompt prefix to show session name
+# Default is "shpool:$SHPOOL_SESSION_NAME"
+prompt_prefix = "[$SHPOOL_SESSION_NAME] "
 
-# Shell settings - use bash as the default shell
-[shell]
-default = "/bin/bash"
-
-# Logging - helpful for debugging
-[logging]
-level = "info"
+# Detach keybinding - Ctrl+d d (more iPad-friendly alternative)
+# Note: On iPad, you can also:
+# 1. Just close the browser tab (session persists automatically)
+# 2. Type the command: shpool detach
+[[keybinding]]
+binding = "Ctrl-d d"
+action = "detach"
