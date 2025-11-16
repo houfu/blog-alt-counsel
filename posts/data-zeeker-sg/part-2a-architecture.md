@@ -1,19 +1,69 @@
 ---
 title: "Building data.zeeker.sg: Technical Architecture"
-date: TBD
-draft: true
-tags: [legal-tech, technical, datasette, sqlite, infrastructure, open-data]
+date: 2025-11-14
+published: true
+published_url: https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/
+tags: [zeeker, technical, datasette, sqlite, infrastructure, open-data, Architecture, Solo Builder, Singapore]
 series: "data.zeeker.sg decision series"
-series_part: "2a"
+series_part: "2"
+custom_excerpt: "The complete technical stack behind Singapore's first public legal news API: zeeker CLI standardizes data collection, Datasette serves SQLite straight from S3, and canned queries make legal research accessible without SQL. Built solo, runs on $6-12/month, designed to scale from 1 to many sources."
 ---
 
 In Part 1, I shared the decision dilemma: 150+ hours building Singapore's first public legal news API, zero known users, and institutions entering the space. Should I continue or stop?
 
+> **TOGGLE CARD: "The data.zeeker.sg series"**
+>
+> *This is Part 2 of a 3-part series on building and potentially closing down data.zeeker.sg:*
+>
+> 1. **[Part 1: When Institutions Enter Your Space](https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/)** *- The decision framework and where I am now*
+> 2. **Part 2: Technical Lessons (this post)** *- The full technical stack, what worked, what didn't, and how AI tools made solo infrastructure building feasible—for builders who want the implementation details*
+> 3. **Part 3: What I Learned at SMU + My Decision (coming after Nov 18)** *- What they're building, how I decided, and what happened next*
+
 Before making that decision, I want to document what I learned building this infrastructure. Whether data.zeeker.sg continues or not, these technical lessons are worth sharing—for solo builders considering similar projects, for lawyers curious about what legal data infrastructure requires, and for anyone wondering what's feasible for one person in the AI era.
 
-This post is technical. Not "read the code" technical, but "understand the architecture and tradeoffs" technical. If you're a lawyer who codes, a legal technologist, or a builder considering legal data infrastructure, this is for you. If you're purely interested in the decision-making process, skip to Part 3.
+---
 
-**What you'll learn:**
+## Who This Post Is For
+
+**Reading time:** 21-25 minutes
+
+This post is technical—not "read the code" technical, but "understand the architecture and tradeoffs" technical.
+
+**You should read this if you:**
+- Are a lawyer who codes or legal technologist
+- Build civic/legal tech with limited resources
+- Want to understand what one person can build
+- Are evaluating build vs. buy for legal data infrastructure
+
+**Skip to Part 3 if you:**
+- Want only the decision-making narrative without technical details
+- Prefer high-level insights over implementation specifics
+
+---
+
+## Reading Guide
+
+Choose your path based on your time and interest:
+
+**Quick Strategic Overview (~10 minutes)**
+- Read the "Three Layers" section summaries
+- Jump to "Design Decisions"
+- Read the Conclusion
+
+**Architecture Understanding (~15 minutes)**
+- Read "Three Layers That Work Together"
+- Read "Design Decisions: Why This Architecture?"
+- Skip the detailed code examples (they're in collapsible sections)
+
+**Full Technical Deep-Dive (~25 minutes)**
+- Read everything
+- Expand all code examples and technical details
+- Best for builders planning similar projects
+
+---
+
+## What You'll Learn
+
 - The three-layer architecture that makes solo infrastructure building feasible
 - Why specific tools (SQLite, Datasette, CLI-based workflows) enabled this project
 - Design decisions that reduce ongoing maintenance burden
@@ -22,6 +72,38 @@ This post is technical. Not "read the code" technical, but "understand the archi
 
 The technical details inform the decision. Understanding what this project required—and what it could become—shapes whether it should continue.
 
+---
+
+> **GHOST EDITOR NOTE:** Convert the following section to a **Toggle Card** with heading "📋 Table of Contents" when publishing
+
+### Table of Contents
+
+**Three Layers That Work Together**
+- Layer 1: Data Layer - The CLI Tool (~8 min)
+  - Why a CLI tool?
+  - Complete workflow & resource architecture
+  - Cost comparison: Infrastructure savings
+  - Multi-machine sync
+- Layer 2: API Layer - Datasette (~5 min)
+  - From SQLite to live API
+  - What you get automatically
+  - Continuous deployment flow
+- Layer 3: UX Layer - Making It Accessible (~4 min)
+  - Search-first interface
+  - Use-case driven examples
+  - Progressive disclosure
+
+**Design Decisions** (~6 min)
+- Why SQLite instead of PostgreSQL?
+- Why Datasette instead of custom API?
+- Why Datasette instead of CKAN?
+- Why static deployment?
+- Why this enables open source contribution
+
+**Conclusion** (~2 min)
+
+---
+
 Let's start with the architecture.
 
 ---
@@ -29,6 +111,15 @@ Let's start with the architecture.
 ## Technical Architecture: Three Layers That Work Together
 
 Building data.zeeker.sg taught me something critical: modern infrastructure for legal data isn't just about collecting information. It's about **making that data immediately useful** to different audiences without requiring technical expertise.
+
+> **GHOST EDITOR NOTE:** Convert the following to a **Callout Card** with emoji 💡
+
+**Key Metrics at a Glance:**
+- **Monthly cost:** $6-12 (vs. $45-95 traditional)
+- **Time per new source:** 2-4 hours (vs. 8-14 hours)
+- **Scaling to 40 sources:** 240-400 hours saved
+- **Maintenance:** Minimal (GitHub Actions automation)
+- **Infrastructure:** Read-only, corruption-proof
 
 The architecture has three layers:
 
@@ -44,7 +135,12 @@ Let me walk through what each layer does and why it matters.
 
 ### Layer 1: Data Layer - The CLI Tool
 
-**The problem: Scaling legal data sources without chaos**
+**How standardization saves 240-400 hours when scaling from 1 to 40 sources**
+
+> **VIDEO:** Demo of zeeker CLI workflow (0:49)
+> *Published URL: https://www.alt-counsel.com/content/media/2025/11/Video.mp4*
+
+*The problem: Scaling legal data sources without chaos*
 
 I started with one legal news aggregator, but I could already see the future problem: What happens when I want to add more sources?
 
@@ -90,6 +186,8 @@ Or schedule locally:
 **Human-friendly commands + machine-friendly automation = sustainable infrastructure**
 
 Without the CLI, continuous deployment means writing custom orchestration scripts (code that coordinates multiple tasks). With the CLI, it's one line in a cron job or GitHub Action.
+
+> **GHOST EDITOR NOTE:** Convert the following to a **Toggle Card** with heading "🔧 Complete CLI Workflow (expand for code examples)"
 
 **The complete workflow:**
 
@@ -142,6 +240,8 @@ def fetch_data(existing_table: Optional[Table]) -> List[Dict[str, Any]]:
 
 [Screenshot 3: Terminal showing zeeker build output with progress bars and metadata table creation]
 
+> **END TOGGLE CARD**
+
 **SQLite as deployment artifact - The key insight:**
 
 Traditional approach:
@@ -161,6 +261,8 @@ Zeeker approach:
 - Cheap hosting (S3 storage costs, not running servers)
 
 [Screenshot 4: Terminal showing zeeker deploy output and S3 bucket structure listing]
+
+> **GHOST EDITOR NOTE:** Convert the following to a **Callout Card** with emoji 💰
 
 **Cost Comparison: Why This Architecture Matters**
 
@@ -190,6 +292,10 @@ SQLite + S3 + GitHub Actions Approach (data.zeeker.sg):
 
 **The infrastructure saving:** No server running 24/7 just to run scrapers. GitHub Actions executes when needed, shuts down when done. Whether you have 1 source or 40, costs stay flat.
 
+> **END CALLOUT**
+
+> **GHOST EDITOR NOTE:** Convert the following to a **Callout Card** with emoji ⏱️
+
 **Developer Time: Adding a New Data Source**
 
 Traditional approach (without standardized tooling):
@@ -209,6 +315,8 @@ With zeeker CLI:
 **Scaling to 40 sources:** With standardization, that's 80-160 hours total vs. 320-560 hours without it. **240-400 hours saved** (6-10 weeks of full-time work) by building the right foundation first.
 
 For a solo builder working evenings and weekends, designing for standardization upfront—even with just one source—is what makes future scaling feasible at all.
+
+> **END CALLOUT**
 
 **Multi-machine sync for incremental updates:**
 
@@ -237,6 +345,7 @@ Same commands work on your laptop, on a server, in CI/CD. That's the power of st
 ---
 
 ### Layer 2: API Layer - Datasette
+*Zero-code API generation that saves 40-80 hours of development*
 
 **The handoff: From SQLite file to live API**
 
@@ -382,6 +491,7 @@ Datasette's source code and extensive plugin ecosystem are available at [github.
 ---
 
 ### Layer 3: UX Layer - Making It Accessible Without SQL
+*Progressive disclosure: Search-first for lawyers, full SQL for developers*
 
 **The handoff: From powerful API to lawyer-friendly interface**
 
@@ -441,6 +551,8 @@ ORDER BY month DESC
 
 [Screenshot 10: SQL query results page with data visualization]
 
+> **GHOST EDITOR NOTE:** Convert the following to a **Toggle Card** with heading "⚙️ JavaScript Enhancements (technical details)"
+
 **3. JavaScript Enhancements for Usability**
 
 Custom JavaScript adds accessibility features:
@@ -463,6 +575,8 @@ class ZeekerEnhancer {
 - Export URLs
 
 Legal researchers can copy-paste without selecting text.
+
+> **END TOGGLE CARD**
 
 **4. Progressive Disclosure of Complexity**
 
@@ -487,6 +601,8 @@ Full database access
 ```
 
 Most lawyers stay at Level 1-2. Researchers and developers use Level 3.
+
+> **GHOST EDITOR NOTE:** Convert the following to a **Toggle Card** with heading "🎨 Professional Visual Design (2182 lines of custom CSS)"
 
 **5. Professional Visual Design**
 
@@ -514,6 +630,8 @@ STRINGS = {
 env.filters["pluralize"] = pluralize_filter  # "1 result" vs "5 results"
 env.filters["filesizeformat"] = filesizeformat_filter  # "2.5 MB"
 ```
+
+> **END TOGGLE CARD**
 
 **6. Export-Friendly Everything**
 
@@ -549,6 +667,7 @@ I've shown you the three layers and how they work together. But why these specif
 Each decision optimized for a specific constraint: **solo builder, limited budget, legal documents (not just data), passion project sustainability.** Let me explain the reasoning.
 
 ### Why SQLite Instead of PostgreSQL?
+*Deployment as artifact + zero hosting cost = perfect for solo builders*
 
 **The standard approach for web applications:**
 - PostgreSQL database server
@@ -574,6 +693,7 @@ Each decision optimized for a specific constraint: **solo builder, limited budge
 **For solo builders:** SQLite means I can develop on my laptop, test everything locally, and deploy only when ready. PostgreSQL means maintaining a production database from day one.
 
 ### Why Datasette Instead of Custom API?
+*Automatic API generation saves 40-80 hours (1-2 weeks of full-time work)*
 
 **Building a custom REST API traditionally means:**
 - Writing endpoint code for every table (`GET /articles`, `GET /articles/:id`, etc.)
@@ -598,6 +718,7 @@ Each decision optimized for a specific constraint: **solo builder, limited budge
 **The flexibility:** Datasette is unopinionated about schema. I design the database structure that makes sense for legal news, Datasette serves it.
 
 ### Why Datasette Instead of CKAN?
+*Matching tool architecture to operational constraints: When your cloud machine sucks*
 
 I have experience with CKAN as a librarian and data science enthusiast—it's excellent infrastructure. SMU might well choose CKAN for their legal database project, and for empirical legal research (case statistics, court data, demographic analysis), it would be the right choice.
 
@@ -693,6 +814,7 @@ Solo builder on a budget with unreliable cloud machines? Datasette's read-only p
 This isn't about Datasette being "better"—it's about matching tool architecture to operational constraints. CKAN assumes institutional infrastructure. Datasette works even when your cloud machine sucks.
 
 ### Why Static Deployment?
+*Atomic updates, rollback for free, and corruption-proof production*
 
 **Traditional web application architecture:**
 - Application server running 24/7
@@ -724,6 +846,7 @@ This isn't about Datasette being "better"—it's about matching tool architectur
 **The tradeoff:** No real-time user writes. For legal news (scrapers write, users read), this is perfect.
 
 ### Why This Architecture Enables Open Source Contribution
+*Isolated development eliminates merge conflicts and dependency hell*
 
 **The fundamental problem with monolithic data platforms:**
 
@@ -875,6 +998,14 @@ The architecture is proven. Part 2b covers how to build it efficiently and avoid
 ---
 
 **Update Log:**
+- November 14, 2025: Published to Ghost at https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/
+  - Added series navigation toggle at beginning
+  - Added video demonstration of zeeker CLI workflow
+  - Added screenshots of deployment, GitHub Actions, Datasette interface
+  - Converted Ghost Editor notes to Toggle Cards and Callout Cards in Ghost editor
+  - Updated custom excerpt to match final version
 - November 11, 2025: Added transition paragraph before Design Decisions, simplified CKAN infrastructure section, added jargon explanations (orchestration scripts, connection pooling, horizontal scaling)
-- November 11, 2025: Quality control refinements - broke up long sentences, reduced "For coders/For lawyers" repetition, added Part 2b preview, improved readability
+- November 11, 2025: Quality control refinements - broke up long sentences, reduced "For coders/For lawyers" repetition, improved readability
 - November 11, 2025: Split from combined Part 2, focused on architecture
+
+**Note:** This markdown file represents the pre-publication draft. The published version on Ghost includes additional media (video, screenshots) and structural enhancements (toggle cards, callout boxes) that were added during final editing in Ghost's editor.

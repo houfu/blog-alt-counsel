@@ -1128,4 +1128,144 @@ Launched content-quality-auditor agent for comprehensive review.
 
 ---
 
-*This discussion captures conversations from Oct 26-Nov 11, 2025, documenting the series development, research, reframing, Part 2 brainstorming, quality control, and split decision.*
+## November 14, 2025: Making Part 2a More Navigable (continued)
+
+### Initial Question: Should We Make It More Concise?
+
+After completing Part 2a (5,249 words), considered approaches to make it more concise:
+1. **Architecture-First** (3,500 words, 33% cut) - Focus on concepts, cut code
+2. **Practical Builder's Guide** (3,800 words, 28% cut) - Keep code, cut theory
+3. **Decision-Focused** (3,200 words, 39% cut) - Emphasize tradeoffs, minimal implementation
+4. **Hybrid: Architecture + Economics** (4,000 words, 24% cut) - Balanced reduction
+
+### Audience Feedback Process
+
+Used two specialized reviewer agents to get target audience perspectives:
+
+**In-house Lawyer Perspective (resource-constrained):**
+- **Preference**: Approach 3 (Decision-Focused, 3,200 words)
+- **Reasoning**: Time is critical, needs "should I build" decision frameworks, not "how to build"
+- **Key critique**: Economic case incomplete - missing TIME investment, opportunity cost, maintenance burden
+- **Concern**: 5,249 words = bookmarked "for later" (means never read)
+- **Suggestion**: Shorter main post + technical appendices
+
+**Legal Tech Builder Perspective (lawyer who codes):**
+- **Preference**: Keep it at 5,249 words or use Approach 4 (minimal cuts)
+- **Reasoning**: Architecture deep-dives are legitimately 4,000-6,000 words
+- **Value**: Code examples prove real implementation, economic justifications are critical, pattern is reusable
+- **Defense**: "Don't cut this to fit arbitrary word count. Legal technologists will read 5,000 words if every paragraph delivers value. And yours do."
+- **Alternative**: Add reading guide to let readers self-select depth
+
+### Deep Analysis: Why Deep-Dive Content Matters
+
+Launched specialized research to understand value of technical depth:
+
+**Key findings:**
+1. **Your existing blog already embraces long-form**: Prompt engineering post was 2,870 words and successful
+2. **Legal professionals are trained skeptics**: Need evidence-based arguments, not assertions
+3. **Trust through transparency**: Showing 79 commits, 32K LOC, tool tradeoffs = persuasive brief
+4. **Enables adaptation, not just replication**: Readers can apply three-layer pattern to other legal domains
+5. **Industry patterns**: Technical architecture posts average 4,000-6,000 words
+6. **Your brand promise**: "Solo Counsel's Tech Strategist" requires showing HOW to save $30-80/month
+
+**What would be lost by cutting to 2,500 words:**
+- ❌ CKAN comparison → institutional readers don't know when approach fits
+- ❌ Design decision reasoning → becomes "here's what I used" not "here's how to decide"
+- ❌ Cost breakdown details → "$6/month" meaningless without architecture explanation
+- ❌ Dual-audience explanations → lose "For coders/For lawyers" advantage
+
+### Final Decision: Keep Length, Improve Navigation
+
+**Rationale:**
+- Depth IS the value for builder audience
+- Part 2a/2b split already addresses accessibility (readers self-select)
+- Better navigation serves time-constrained readers without sacrificing depth
+
+**Implementation approach:**
+1. Reading guide with three paths (10/15/25 min)
+2. Table of contents with time estimates (collapsible)
+3. Key metrics summary (scannable)
+4. Toggle cards for deep technical content (expand on demand)
+5. Callout boxes for economic comparisons (highlight key numbers)
+6. Enhanced section headers with value propositions
+
+### Structural Improvements Made
+
+See detailed list in November 14, 2025 entry above.
+
+**Result achieved:**
+- Same 5,249-word content (preserves builder value)
+- Multiple reading paths (serves different audiences)
+- Scannable structure (callouts, enhanced headers)
+- Collapsible details (toggles for technical depth)
+
+### Files Created
+- `ghost-editor-checklist.md` - Complete conversion guide for publishing
+- Updated `part-2a-architecture.md` with all structural improvements
+- Updated `discussion.md` with complete decision process
+
+### Key Lesson Learned
+
+**Quality vs. Brevity tradeoff:**
+For technical architecture content targeting builders, depth = credibility. The solution to "too long" isn't cutting substance—it's better navigation. Serve multiple reading paths in one comprehensive post rather than forcing everyone through a shallow overview.
+
+**Why this matters for alt-counsel.com:**
+Your blog's value proposition is showing resource-constrained teams exactly HOW to build with limited budgets. That requires implementation details, cost breakdowns, and decision frameworks. Surface-level content would undermine your credibility.
+
+---
+
+*This discussion captures conversations from Oct 26-Nov 14, 2025, documenting the series development, research, reframing, Part 2 brainstorming, quality control, split decision, and navigation improvements.*
+
+---
+
+## Session 11: Publishing Part 2a to Ghost (Nov 14-16, 2025)
+
+### Context
+User requested posting part-2a-architecture.md as a new draft to Ghost.
+
+### Script Creation (Nov 14)
+Created `post_part_2a_to_ghost.js` to automate posting to Ghost:
+- Reads markdown file and parses frontmatter
+- Converts markdown to Ghost Lexical JSON format
+- Handles headings, paragraphs, code blocks, lists, blockquotes
+- Fixed issue: Horizontal rules were causing conversion to stop - changed to skip them entirely
+- Posts via Ghost Admin API as draft
+
+### Initial Posting Issue
+First attempt created draft but conversion stopped after first section due to horizontal rules (`---`) being converted to line breaks. Fixed by skipping horizontal rules entirely.
+
+### Successful Draft Creation
+- **Draft created**: Nov 14, 2025, 8:42 AM SGT
+- **Post ID**: 69167aea4071650001610426
+- **Tags**: legal-tech, technical, datasette, sqlite, infrastructure, open-data, data.zeeker.sg, Architecture, Solo Builder
+- **Custom excerpt**: "The complete technical stack behind Singapore's first public legal news API: zeeker CLI standardizes data collection, Datasette serves SQLite straight from S3, and canned queries make legal research accessible without SQL."
+
+### Manual Conversion Steps (per ghost-editor-checklist.md)
+User completed in Ghost editor:
+1. Converted 4 Toggle Cards (TOC, CLI Workflow, JavaScript Enhancements, Visual Design)
+2. Converted 3 Callout Cards (Key Metrics, Cost Comparison, Developer Time Savings)
+3. Added screenshots (11 placeholders in original)
+4. Removed Ghost Editor Note comments
+5. Final review and adjustments
+
+### Publication (Nov 14)
+- **Published**: November 14, 2025, 11:36 PM SGT (15:36:28 UTC)
+- **Final URL**: https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/
+- **Final tags**: zeeker, technical, datasette, sqlite, infrastructure, open-data, Architecture, Solo Builder, Singapore
+- **Status**: Published and live
+
+### Series Structure Decision (Nov 16)
+**Important update**: User decided to postpone Part 2b (Lessons from AI-Assisted Development) out of the immediate series. It will be published on another date, not as part of the data.zeeker.sg decision series.
+
+**Revised series:**
+- ✅ Part 1: "When Institutions Enter Your Passion Project Space" (published)
+- ✅ Part 2: "Building data.zeeker.sg: Technical Architecture" (published Nov 14, 2025)
+- ⏳ Part 3: SMU event insights + decision (planned after Nov 18)
+- 📦 Part 2b: "Lessons from AI-Assisted Development" (postponed to separate publication)
+
+### Files Created
+- `posts/data-zeeker-sg/post_part_2a_to_ghost.js` - Ghost posting automation script
+
+---
+
+*Updated Nov 16, 2025 to reflect Part 2a publication and series structure change*
