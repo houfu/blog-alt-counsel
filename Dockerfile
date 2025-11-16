@@ -66,6 +66,9 @@ RUN mkdir -p /root/.config/shpool && \
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
 
+# Ensure PATH includes Claude Code and Cargo bins in interactive sessions
+RUN echo 'export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"' >> /root/.bashrc
+
 # Blog automation aliases - now all Node.js!
 RUN echo 'alias blog-token="node scripts/ghost_jwt.js"' >> /root/.bashrc
 RUN echo 'alias search-posts="node scripts/search_posts_v2.js"' >> /root/.bashrc

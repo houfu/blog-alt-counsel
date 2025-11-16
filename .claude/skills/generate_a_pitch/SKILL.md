@@ -24,7 +24,25 @@ Remember that this is at an early stage of writing, so even if we are unable to 
 
 ## The process
 
-### Step 1: An idea 
+### Step 0: Create TodoWrite task list
+
+Before starting pitch development, create a comprehensive todo list to track the entire post creation workflow:
+
+```
+- Develop pitch (brainstorming if needed)
+- Research supporting evidence
+- Draft content
+- Content quality audit
+- Target audience review
+- Backlink curation
+- Publish to Ghost
+- Check published post and sync repo
+- Update discussion notes
+```
+
+This ensures all quality checks are tracked from the start and never skipped.
+
+### Step 1: An idea
 
 The human partner has suggested an idea which is suitable for developing a pitch. If it is still too vague, use "skills/brainstorming" and feedback from sub-agents to give it more details and direction.
 
