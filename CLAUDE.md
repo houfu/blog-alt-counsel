@@ -43,61 +43,14 @@ You can find them in the following places:
 - As an environment variable
 - Read the settings.json file
 
-## Rich Content Elements for Ghost Blog Posts
+## Content Guidelines
 
-When drafting articles for Ghost, consider incorporating these rich content elements to enhance readability and engagement:
+**Critical rules:**
+- **NEVER use horizontal rules** (`---`, `***`, or `___`) in final blog post content (files that will be published to Ghost). These break the markdown to lexical conversion process. Use headings or spacing instead.
+  - *Note: You CAN use horizontal rules in draft/working documents (discussion.md, pitch.md, research.md) to organize content during writing.*
+- **Prefer bookmark cards over inline links** for key content and backlinks - they provide richer previews and visual emphasis.
 
-### Basic Formatting
-- **Headings** (h1-h6) - Structure content hierarchically
-- **Paragraphs** - Standard text blocks with inline formatting (bold, italic, code)
-- **Lists** - Bullet points and numbered lists for scannable content
-- **Links** - Internal cross-references to other blog posts and external resources. Prefer bookmarks to inline links for key content and backlinks.
-
-**IMPORTANT: NEVER use horizontal rules** (`---`, `***`, or `___`) **in final blog post content** (files that will be published to Ghost). These break the markdown to lexical conversion process. Use headings, spacing, or other formatting instead.
-
-*Note: You CAN use horizontal rules as section dividers in draft/working documents (discussion.md, pitch.md, research.md, etc.) to organize content during the writing process.* 
-
-### Rich Media
-- **Images** - Screenshots, diagrams, illustrations with captions
-- **Code Blocks** - Syntax-highlighted code examples (especially for technical posts about Python, JavaScript, legal tech implementations)
-
-### Interactive Cards
-- **Bookmark Cards** - Visually rich links to external articles, documentation, or resources
-- **Toggle/Accordion** - Collapsible content for:
-  - Table of Contents
-  - FAQ sections
-  - Optional deep-dive content
-  - Long code examples or technical details
-
-### When to Use Each Element
-
-**Use Images when:**
-- Showing UI/UX examples from legal tech tools
-- Displaying data visualizations or charts
-- Providing visual proof (screenshots of GitHub stats, tool outputs)
-- Breaking up long text sections
-
-**Use Code Blocks when:**
-- Sharing implementation examples (Python, JavaScript, shell scripts)
-- Showing configuration files or API responses
-- Demonstrating command-line usage
-
-**Use Bookmark Cards when:**
-- Referencing external articles or documentation
-- Linking to related blog posts with rich previews
-- Citing sources with visual emphasis
-
-**Use Toggles when:**
-- Creating table of contents for long articles
-- Hiding technical details that not all readers need
-- Organizing FAQ sections
-- Providing expandable code examples
-
-**Place elements strategically:**
-1. Images: After introducing concepts, before deep explanations
-2. Code blocks: Within implementation sections, after explaining the concept
-3. Bookmark cards: At article end for "Further Reading" or inline when citing key sources
-4. Toggles: At article start (TOC), or hiding optional deep-dive content
+**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions. See `docs/ghost-cards-reference.md` for detailed usage.
 
 ## Task Management with TodoWrite
 
