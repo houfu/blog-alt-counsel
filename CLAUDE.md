@@ -77,6 +77,7 @@ Mark todos as `in_progress` BEFORE starting work, and `completed` IMMEDIATELY af
 Available skills and when to use them:
 - **brainstorming** - Use at the START when ideas are vague or need refinement. Invoke automatically when user suggests a blog topic that needs development.
 - **generate_a_pitch** - Use when creating a new post. Always invoke to create the pitch before drafting.
+- **tag-registry** - Use when suggesting tags for posts (during pitch or before publishing). Ensures tags are consistent with the canonical registry and prevents tag sprawl.
 - **blog-research** - Use when fact-checking, gathering sources, finding statistics, or researching topics for posts.
 - **note-taking** - Use throughout conversations to record progress and decisions in discussion.md files.
 - **backlink_curating** - Use at final draft stage to find internal links to other blog posts.
@@ -93,11 +94,13 @@ Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are
 **Core phases: PITCH → WRITE → REVIEW → POST → CHECK**
 
 1. **PITCH** - Define scope and direction (use `generate_a_pitch` skill)
+   - Tags are suggested during pitch using `tag-registry` skill
 2. **WRITE** - Draft the content
 3. **REVIEW** - Quality checks and refinement:
    - Content quality audit (content-quality-auditor agent)
    - Target audience review (inhouse-lawyer-reviewer or legal-tech-blog-reviewer agent)
    - Backlink curation (backlink_curating skill)
+   - Tag validation (use `tag-registry` skill to verify tags before publishing)
 4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
 5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
 

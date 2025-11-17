@@ -120,12 +120,13 @@ Once you have the lexical content, combine it with metadata to create a complete
 
 1. **Title**: If not provided, extract from the first heading (h1/h2) in the lexical content, or generate based on the post content
 2. **Custom Excerpt**: If not provided, generate a concise 1-2 sentence summary from the post content (aim for ~250-299 characters)
-3. **Tags**: If not provided, analyze the post content and suggest 2-4 relevant tags based on:
-   - Topic/subject matter
-   - Existing tags from the blog (check common tags like "Artificial Intelligence", "LegalTech", "Python", "Programming", etc.)
-   - Key themes in the content
+3. **Tags**: If not provided or if tags need validation, **use the tag-registry skill** to:
+   - Suggest 3-4 appropriate tags from the canonical registry
+   - Validate that tags follow naming conventions
+   - Ensure at least 1 Core Topic tag is included
+   - Warn if proposing new tags not in the registry
 
-Before creating the post, always verify these three fields exist and generate them if missing.
+Before creating the post, always verify these three fields exist and generate them if missing. For tags specifically, invoke the tag-registry skill to ensure consistency and prevent tag sprawl.
 
 ### Required and Key Fields
 
