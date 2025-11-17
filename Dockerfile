@@ -63,6 +63,10 @@ RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post
 RUN mkdir -p /root/.config/shpool && \
     cp .config/shpool/config.toml /root/.config/shpool/config.toml
 
+# Copy Claude MCP server configuration
+RUN mkdir -p /root/.config/claude && \
+    cp .claude/mcp.json /root/.config/claude/mcp.json
+
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
 
