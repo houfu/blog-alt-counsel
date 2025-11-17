@@ -24,7 +24,25 @@ Remember that this is at an early stage of writing, so even if we are unable to 
 
 ## The process
 
-### Step 1: An idea 
+### Step 0: Create TodoWrite task list
+
+Before starting pitch development, create a comprehensive todo list to track the entire post creation workflow:
+
+```
+- Develop pitch (brainstorming if needed)
+- Research supporting evidence
+- Draft content
+- Content quality audit
+- Target audience review
+- Backlink curation
+- Publish to Ghost
+- Check published post and sync repo
+- Update discussion notes
+```
+
+This ensures all quality checks are tracked from the start and never skipped.
+
+### Step 1: An idea
 
 The human partner has suggested an idea which is suitable for developing a pitch. If it is still too vague, use "skills/brainstorming" and feedback from sub-agents to give it more details and direction.
 
@@ -33,6 +51,22 @@ The human partner has suggested an idea which is suitable for developing a pitch
 From the idea, generate a pitch. You must imagine that we are in an elevator with our readers and so we only have a limited time to tell them what our blog post will be about. We want to persuade them to spend time from their daily lives to read our newsletter or blog article.
 
 Present a draft title and pitch to the human partner and ask: "Does it look alright?" Once the human partner approves, we can move on to the next step.
+
+### Step 3: Authenticity Check
+
+It is important to interrogate what is my personal angle in every post to ensure that I am writing my blog and not AI. Let us avoid authenticity issues so that we don't need to conduct expensive rewrites.
+Ensure that the pitch is coming from me and not from others. 
+
+For each claim in pitch:
+- Is this true to my experience? (Not aspirational or third-person)
+- Can I cite a specific moment when I felt/learned this?
+- Am I framing someone else's work as mine?
+- Am I claiming expertise I don't have?
+
+Red flags:
+- "I learned that..." (Did you? Or did you always know this?)
+- "Others might think..." (Distancing language)
+- "One should..." (Who? Be specific)
 
 ### Step 3: Scaffold the post
 

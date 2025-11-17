@@ -1,5 +1,11 @@
 FROM node:18-slim
 
+# Build arguments for GitOps
+ARG REPO_URL
+ARG BRANCH=main
+ARG GITHUB_USERNAME
+ARG GITHUB_PAT
+
 # Install system dependencies (much simpler now!)
 RUN apt-get update && apt-get install -y \
     curl \
@@ -9,7 +15,17 @@ RUN apt-get update && apt-get install -y \
     htop \
     tree \
     jq \
+    build-essential \
+    pkg-config \
+    libssl-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Rust toolchain for building shpool
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:$PATH"
+
+# Install shpool for session persistence
+RUN cargo install shpool
 
 # Install ttyd for web terminal (multi-architecture support)
 RUN ARCH=$(uname -m) && \
@@ -29,26 +45,33 @@ RUN curl -fsSL https://claude.ai/install.sh | bash
 # Set working directory
 WORKDIR /workspace
 
-# Copy package.json first for better Docker layer caching
-COPY package*.json ./
+# Setup git credentials BEFORE cloning (GitOps)
+RUN git config --global credential.helper store && \
+    git config --global --add safe.directory /workspace && \
+    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" > /root/.git-credentials
+
+# Clone the repository instead of copying from workspace
+RUN git clone --branch ${BRANCH} ${REPO_URL} .
 
 # Install Node.js dependencies
 RUN npm install
 
-# Copy project files
-COPY . /workspace/
-
 # Make scripts executable
-RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js
+RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js scripts/shpool-session.sh
+
+# Copy shpool configuration
+RUN mkdir -p /root/.config/shpool && \
+    cp .config/shpool/config.toml /root/.config/shpool/config.toml
+
+# Copy Claude MCP server configuration
+RUN mkdir -p /root/.config/claude && \
+    cp .claude/mcp.json /root/.config/claude/mcp.json
 
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
 
-# Gitops
-RUN git config --global --add safe.directory /workspace
-
-RUN git config --global credential.helper store && \
-    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" >> ~/.git-credentials
+# Ensure PATH includes Claude Code and Cargo bins in interactive sessions
+RUN echo 'export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"' >> /root/.bashrc
 
 # Blog automation aliases - now all Node.js!
 RUN echo 'alias blog-token="node scripts/ghost_jwt.js"' >> /root/.bashrc
@@ -78,6 +101,11 @@ RUN echo 'alias ll="ls -la"' >> /root/.bashrc
 RUN echo 'alias ..="cd .."' >> /root/.bashrc
 RUN echo 'alias logs="docker-compose logs -f"' >> /root/.bashrc
 
+# shpool session management aliases
+RUN echo 'alias session-list="shpool list"' >> /root/.bashrc
+RUN echo 'alias session-kill="shpool kill blog-workspace"' >> /root/.bashrc
+RUN echo 'alias session-detach="shpool detach"' >> /root/.bashrc
+
 # Environment for blog automation
 ENV PROJECT_ROOT="/workspace"
 ENV NODE_ENV="development"
@@ -85,5 +113,5 @@ ENV NODE_ENV="development"
 # Expose ttyd port
 EXPOSE 7681
 
-# Start with project context
-CMD ["ttyd", "-p", "7681", "-i", "0.0.0.0", "bash"]
+# Start with shpool session for persistence
+CMD ["ttyd", "-p", "7681", "-i", "0.0.0.0", "/workspace/scripts/shpool-session.sh"]

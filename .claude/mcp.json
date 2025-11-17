@@ -1,0 +1,15 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/mcp.json",
+  "mcpServers": {
+    "jina": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jinaai/mcp-server-jina"
+      ],
+      "env": {
+        "JINA_API_KEY": "${JINA_API_KEY}"
+      }
+    }
+  }
+}

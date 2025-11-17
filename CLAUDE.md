@@ -43,69 +43,69 @@ You can find them in the following places:
 - As an environment variable
 - Read the settings.json file
 
-## Rich Content Elements for Ghost Blog Posts
+## Content Guidelines
 
-When drafting articles for Ghost, consider incorporating these rich content elements to enhance readability and engagement:
+**Critical rules:**
+- **NEVER use horizontal rules** (`---`, `***`, or `___`) in final blog post content (files that will be published to Ghost). These break the markdown to lexical conversion process. Use headings or spacing instead.
+  - *Note: You CAN use horizontal rules in draft/working documents (discussion.md, pitch.md, research.md) to organize content during writing.*
+- **Prefer bookmark cards over inline links** for key content and backlinks - they provide richer previews and visual emphasis.
 
-### Basic Formatting
-- **Headings** (h1-h6) - Structure content hierarchically
-- **Paragraphs** - Standard text blocks with inline formatting (bold, italic, code)
-- **Lists** - Bullet points and numbered lists for scannable content
-- **Links** - Internal cross-references to other blog posts and external resources. Prefer bookmarks to inline links for key content and backlinks. 
+**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions. See `docs/ghost-cards-reference.md` for detailed usage.
 
-### Rich Media
-- **Images** - Screenshots, diagrams, illustrations with captions
-- **Code Blocks** - Syntax-highlighted code examples (especially for technical posts about Python, JavaScript, legal tech implementations)
+## Task Management with TodoWrite
 
-### Interactive Cards
-- **Bookmark Cards** - Visually rich links to external articles, documentation, or resources
-- **Toggle/Accordion** - Collapsible content for:
-  - Table of Contents
-  - FAQ sections
-  - Optional deep-dive content
-  - Long code examples or technical details
+**CRITICAL: Use TodoWrite for ALL multi-step workflows, especially content creation.** This ensures quality checks are never skipped and progress is visible.
 
-### When to Use Each Element
+**Always create TodoWrite todos when:**
+- Starting any blog post or newsletter workflow
+- Beginning research or content quality work
+- Working on tasks with 3+ steps
+- Quality checks need to be tracked (content audit, legal review, etc.)
 
-**Use Images when:**
-- Showing UI/UX examples from legal tech tools
-- Displaying data visualizations or charts
-- Providing visual proof (screenshots of GitHub stats, tool outputs)
-- Breaking up long text sections
+**Quality check todos are mandatory** - Include these in your todo list for content workflows:
+- Content quality audit (using content-quality-auditor agent)
+- Target audience review (using inhouse-lawyer-reviewer or legal-tech-blog-reviewer agent)
+- Backlink curation
+- Final proofreading before publishing
 
-**Use Code Blocks when:**
-- Sharing implementation examples (Python, JavaScript, shell scripts)
-- Showing configuration files or API responses
-- Demonstrating command-line usage
+Mark todos as `in_progress` BEFORE starting work, and `completed` IMMEDIATELY after finishing. This keeps the user informed of progress.
 
-**Use Bookmark Cards when:**
-- Referencing external articles or documentation
-- Linking to related blog posts with rich previews
-- Citing sources with visual emphasis
+## Skills Usage Policy
 
-**Use Toggles when:**
-- Creating table of contents for long articles
-- Hiding technical details that not all readers need
-- Organizing FAQ sections
-- Providing expandable code examples
+**CRITICAL: Always use skills when available for their intended purposes.** Do not wait for explicit user requests - proactively invoke the appropriate skill based on the task at hand.
 
-**Place elements strategically:**
-1. Images: After introducing concepts, before deep explanations
-2. Code blocks: Within implementation sections, after explaining the concept
-3. Bookmark cards: At article end for "Further Reading" or inline when citing key sources
-4. Toggles: At article start (TOC), or hiding optional deep-dive content
+Available skills and when to use them:
+- **brainstorming** - Use at the START when ideas are vague or need refinement. Invoke automatically when user suggests a blog topic that needs development.
+- **generate_a_pitch** - Use when creating a new post. Always invoke to create the pitch before drafting.
+- **blog-research** - Use when fact-checking, gathering sources, finding statistics, or researching topics for posts.
+- **note-taking** - Use throughout conversations to record progress and decisions in discussion.md files.
+- **backlink_curating** - Use at final draft stage to find internal links to other blog posts.
+- **getting-feedback** - Use when the user needs audience feedback on ideas or questions.
+- **using-ghost-admin-api** - Use for all Ghost CMS operations (creating drafts, editing posts, accessing content).
+- **searching_the_blog** - Use when questions involve past blog posts or content.
+
+Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are designed to be invoked automatically as part of the natural workflow.
 
 ## Common Development Workflows
 
 ### 1. Create a new post
 
-1. I will tell you that we should write a blog post or newsletter article. I might give you a brief or detailed idea I have.
-2. Let us create a pitch based on my ideas, with additional brainstorming and feedback as required.
-3. We will write a pitch and save it in a new folder in the '/posts/' folder.
-4. Based on the pitch, we will draft an outline of the post.
-5. We will work on the outline, either with you or by myself. We may research and refine the pitch and outline.
-6. Once the post is completed, we will post it as a draft on my Ghost blog.
+**Core phases: PITCH → WRITE → REVIEW → POST → CHECK**
 
-Always create TodoWrite todos for checklists so we can track our progress.
+1. **PITCH** - Define scope and direction (use `generate_a_pitch` skill)
+2. **WRITE** - Draft the content
+3. **REVIEW** - Quality checks and refinement:
+   - Content quality audit (content-quality-auditor agent)
+   - Target audience review (inhouse-lawyer-reviewer or legal-tech-blog-reviewer agent)
+   - Backlink curation (backlink_curating skill)
+4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
+5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
 
-After each conversation, always update the 'discussion.md' of the post to record our progress.
+**Throughout the process (use as needed):**
+- **BRAINSTORM** (use `brainstorming` skill) - Refine pitch, overcome writer's block on difficult sections, develop structure
+- **RESEARCH** (use `blog-research` skill) - Gather sources, facts, statistics (can happen before pitch, after pitch, or when outline is clear)
+
+**Always:**
+- Create TodoWrite todos at the start to track each phase
+- Use `note-taking` skill to update discussion.md throughout the process
+- Mark todos completed immediately after each step

@@ -1,9 +1,13 @@
 # Post a draft to Ghost
 
-Before posting to Ghost, always ensure content quality auditor has gone through the post, and the 
+Before posting to Ghost, always ensure content quality auditor has gone through the post, and the
 human partner has confirmed that all required issues have been resolved.
 
 When posting to Ghost, use the lexical format for content. Ghost's modern editor uses lexical JSON format rather than mobiledoc.
+
+**Content Guidelines:**
+- Do NOT use horizontal rules to organize posts - use headings, spacing, or other formatting instead
+- Horizontal rules break markdown to lexical conversion and aren't part of alt-counsel's content style
 
 ## Building Lexical Content
 
@@ -47,8 +51,7 @@ The `LexicalBuilder` class provides methods for common content elements:
 - `.signupCard(options)` - newsletter signup card
 - `.toggle(heading, content)` - collapsible toggle/accordion
 
-**Other:**
-- `.lineBreak()` or `.hr()` - horizontal rule
+**IMPORTANT:** Do NOT use horizontal rules (`.hr()` or `.lineBreak()`) to organize posts in final drafts. Use headings, spacing, or other formatting instead. Horizontal rules are not part of alt-counsel's content style.
 
 ### Text Formatting
 
