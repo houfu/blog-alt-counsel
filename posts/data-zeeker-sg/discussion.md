@@ -1268,4 +1268,95 @@ User completed in Ghost editor:
 
 ---
 
-*Updated Nov 16, 2025 to reflect Part 2a publication and series structure change*
+## Session 12: Newsletter for Part 2a (Nov 18, 2025)
+
+### Context
+User requested creating a short newsletter highlighting Part 2a (Technical Architecture) for the legal tech audience. Newsletter should extol the highlights and incorporate insights about the writing process.
+
+### Process
+
+**1. Initial Research**
+Used legal-tech-blog-reviewer agent to get target audience feedback:
+- Lead with solo builder scaling challenge (universal pain point)
+- Emphasize contrarian architecture choices (SQLite, static files) that succeed
+- Frame as "builder sharing field notes" not "expert dispensing wisdom"
+- Hook: "How I built with 'wrong' technology"
+
+**2. First Draft**
+Created initial newsletter (~450 words):
+- Opened with scaling problem
+- Presented "wrong" technology choices
+- Provided concrete results (240-400 hours saved, $6-12/month)
+- Explained why patterns work for legal data
+- Included open source contribution model
+
+**3. Quality Control Audit**
+Launched content-quality-auditor agent, identified critical issues:
+- **Triple repetition:** Same concepts covered 2-3 times (numbers/architecture/why it works)
+- **Defensive tone:** Too much "wrong choices" framing undermined expertise
+- **Buried lead:** Took too long to get to the payoff
+- **Length:** 620 words after adding process insights
+
+**Grade:** Needed restructuring
+
+**4. Incorporating Writing Process Insights**
+User identified that writing Part 2a was hard. Added insights about:
+- Conflicting reviewer advice (5,200 words too long vs. depth is differentiator)
+- Three presentation approaches brainstormed (Problem→Solution, Stack Walkthrough, Three Breakthroughs)
+- Split decision (Part 2 → 2a + 2b to separate concerns)
+- Learning: For builders, depth = credibility
+
+**5. Quality-Controlled Revision**
+Applied audit recommendations:
+- **Led with payoff:** Results in opening paragraph (40 sources, $6-12/month, non-developer contribution)
+- **Eliminated repetition:** Consolidated into one "How it works" section with 4 numbered points
+- **Confident tone:** Changed from defensive ("wrong") to confident ("fail textbook reviews" - owns unconventional)
+- **Compressed process insights:** Kept the interesting parts but tightened significantly
+- **Final length:** ~380 words (down from 620)
+
+**6. Publishing to Ghost**
+Initial attempt: Created custom script using mobiledoc format (old format) - **WRONG APPROACH**
+
+User correctly pointed out: Should use the `using-ghost-admin-api` skill.
+
+Corrected approach:
+- Deleted old draft
+- Used skill's LexicalBuilder to create proper lexical format
+- Used @tryghost/admin-api library for posting
+- Proper heading hierarchy, numbered lists, bold formatting, hyperlinks
+
+**7. Publication**
+User published newsletter via Ghost editor.
+
+### Files Created/Modified
+
+- `newsletter-part-2a.md` - Newsletter content (380 words)
+- `create_newsletter_draft.js` - Proper Ghost posting script using LexicalBuilder
+- `post_newsletter_to_ghost.js` - Initial script (incorrect mobiledoc approach - deprecated)
+- Updated `discussion.md` - This session record
+
+### Key Decisions
+
+1. ✅ Lead with results, not problem (fail textbook reviews → 40 sources at $6-12/month)
+2. ✅ Include writing process meta-commentary (writing harder than building)
+3. ✅ Consolidate repetitive structure into tight numbered list
+4. ✅ Reframe from defensive to confident
+5. ✅ Use proper Ghost skill (LexicalBuilder) not custom script
+6. ✅ Target length: ~380 words for newsletter format
+
+### Newsletter Final Structure
+
+1. **Hook:** Surprising architecture choices + immediate results
+2. **Writing meta:** Harder than building, conflicting advice
+3. **How it works:** 4-point numbered list of technical stack
+4. **Unexpected benefit:** Contribution model
+5. **Writing challenge:** Dual-audience problem, split decision
+6. **CTA:** Link to full Part 2a post
+
+### Key Lesson Learned
+
+**Skills usage:** Always use available skills for their intended purposes. The `using-ghost-admin-api` skill exists specifically for Ghost operations and uses proper lexical format. Custom scripts bypass the project's established workflows and may use outdated formats (mobiledoc vs lexical).
+
+---
+
+*Updated Nov 18, 2025 to reflect newsletter creation and publication*
