@@ -1461,3 +1461,172 @@ Launched legal-tech-blog-reviewer agent for detailed assessment.
 ---
 
 *Updated Nov 19, 2025 to reflect Part 3 pitch revision and decision to continue*
+
+---
+
+## Session 14: Research, Drafting, and Editing Part 3 (Nov 19, 2025)
+
+### Context
+
+User switched to data-zeeker-sg branch and requested review of Part 3 pitch. After pitch revision (Session 13), user asked to research SMU announcements and draft Part 3.
+
+### SMU SOLID Research
+
+**Research task:** Check if SMU made any public announcements since Nov 18, 2025 event
+
+**Findings:**
+- SMU published official press release on Nov 18, 2025 (same day as event)
+- **Project name:** Singapore Open Legal Informatics Database (SOLID)
+- **Scope:** Structured empirical data (court decisions, statutes, legal scholarship statistics)
+- **Key distinction:** NOT full-text content - structured metadata for quantitative research
+- **Timeline:** 3-year project, early iteration Q4 2026, full launch Q1 2028
+- **Team:** Asst Prof Jerrold Soh (PI), Asst Prof Dirk Hartung (Co-PI), research engineers
+- **Backing:** Ministry of Law support
+
+**Critical insight from user:**
+> "i understand solid is at least for now more focused on empirical data. zeeker does intend to scrape text data so yeah"
+
+This clarified the complementary distinction:
+- **SOLID:** "How many cases?" (quantitative/statistical)
+- **data.zeeker.sg:** "What did it say?" (qualitative/full-text)
+
+**Files created:**
+- `research-smu-solid.md` - Complete research documentation with comparison table
+
+### Part 3 Drafting
+
+**Initial draft stats:**
+- 2,450 words (~12 minutes read time)
+- User concern: "12 minutes is a bit long, can we qa?"
+
+**Structure:**
+1. Introduction - Decision revealed upfront
+2. What SMU Actually Announced - SOLID details
+3. Applying the Framework - All three questions from Part 1
+4. What Surprised Me - Three surprises
+5. The Bigger Lesson - Individuals prototype, institutions consolidate
+6. My Decision - What continuing means in practice
+7. For Other Solo Builders - Actionable framework
+8. What's Next - Series conclusion
+
+### Content Quality Audit
+
+Launched content-quality-auditor agent for comprehensive review.
+
+**Grade: B+** (Very Good, Needs Focused Revision)
+
+**Critical issues identified:**
+1. **Repetition (HIGH PRIORITY):** Core concepts repeated 3-4 times
+   - "Full-text vs. empirical data" explained 4 times
+   - "Institutions sustain, solo builders prototype" repeated 3 times
+   - "Zero users / labour of love" repeated 3 times
+
+2. **"The Bigger Lesson" section entirely redundant** - 260 words of pure repetition
+
+3. **"For Other Solo Builders" too generic** - 340 words of advice already covered
+
+4. **Length concern:** Could cut ~600-800 words without losing narrative
+
+**Recommended approach:**
+- **Phase 1 (Easy wins):** Delete redundant sections (-540 words)
+- **Phase 2 (Consolidation):** Remove repetition, merge overlapping content (-250 words)
+- **Target:** 1,600-1,800 words (8-9 min read)
+
+### Editing Process
+
+User requested: "lets do both" (Phase 1 and Phase 2)
+
+**Phase 1 edits (completed):**
+
+1. **Deleted "The Bigger Lesson" section entirely** (-260 words)
+   - Content already covered in Question 2
+   - Changed transition to jump directly to decision
+
+2. **Trimmed "For Other Solo Builders"** (340 → 120 words)
+   - Kept only concrete, non-obvious advice:
+     - "Do the research first"
+     - "Give yourself time" (12 days from invoice to renewal)
+     - "Use framework diagnostically"
+   - Removed generic points already covered
+
+3. **Tightened SMU announcement** (-60 words)
+   - Condensed bullet lists to essential facts
+   - Removed elaboration, kept core information
+
+**Phase 2 edits (completed):**
+
+4. **Removed repetition of full-text vs. empirical distinction**
+   - Kept comprehensive explanation in Question 1 only
+   - Deleted "What Surprised Me #1" (restated same concept)
+   - Removed repetition in Decision section
+
+5. **Consolidated Questions 1 & 2** to reduce overlap
+   - Merged into "What Are They Building vs. What I'm Building?"
+   - Moved complementary strengths discussion into Question 1
+   - Question 2 became tighter "What's Still Missing?"
+   - Saved ~200 words, improved narrative flow
+
+6. **Improved sentence readability**
+   - Broke up complex sentences
+   - Simplified conditionals
+   - Better flow between sections
+
+### Final Results
+
+**Before editing:** 2,450 words (12 min read)
+**After editing:** 1,514 words (7.5 min read)
+**Total reduction:** 936 words (38% cut)
+
+**What was preserved:**
+- ✅ All three framework questions clearly applied
+- ✅ Emotional authenticity ("I'm not done" motivation)
+- ✅ Clear complementary positioning (not competition)
+- ✅ Actionable insights for readers
+- ✅ Complete narrative arc from uncertainty to decision
+- ✅ SMU research findings and comparison
+
+**What was removed:**
+- ❌ Repetitive explanations of core concepts
+- ❌ Generic advice already implied by the framework
+- ❌ Redundant "Bigger Lesson" section
+- ❌ Overlapping content between Questions 1 & 2
+
+### Key Decisions Made
+
+1. ✅ **Full-text vs. empirical data is THE key distinction** - Explain once, thoroughly, in Question 1
+2. ✅ **Framework application is the structure** - Not just referenced, but shown in action
+3. ✅ **Delete entire sections when redundant** - "Bigger Lesson" added no new information
+4. ✅ **Merge overlapping questions** - Questions 1 & 2 work better consolidated
+5. ✅ **Tighter = stronger** - 38% reduction with zero narrative loss
+
+### Files Created/Modified This Session
+
+- `research-smu-solid.md` - SMU SOLID research documentation
+- `part-3-smu-and-decision.md` - Complete draft (1,514 words, edited)
+- `discussion.md` - This session record
+
+### Quality Assessment
+
+**Strengths of final draft:**
+- Clear three-question framework application from Part 1
+- Honest about zero users and lack of validation
+- Strong complementary positioning (different data types, different use cases)
+- Authentic emotional core ("I'm not done exploring")
+- Actionable for readers facing similar decisions
+- Proper length for decision/reflection post
+
+**Ready for:**
+- User final review
+- Potential quality checks (content-quality-auditor, target audience reviewers)
+- Publication preparation
+
+### Series Status
+
+- ✅ Part 1: "When Institutions Enter Your Passion Project Space" (published)
+- ✅ Part 2a: "Building data.zeeker.sg: Technical Architecture" (published Nov 14, 2025)
+- ⏳ Part 3: "What I Learned at SMU's Legal Database Launch" (drafted, 1,514 words, ready for review)
+- 📦 Part 2b: "Lessons from AI-Assisted Development" (postponed to separate publication)
+
+---
+
+*Updated Nov 19, 2025 to reflect research, drafting, and editing of Part 3*
