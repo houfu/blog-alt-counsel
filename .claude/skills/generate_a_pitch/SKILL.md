@@ -68,10 +68,21 @@ Red flags:
 - "Others might think..." (Distancing language)
 - "One should..." (Who? Be specific)
 
-### Step 3: Scaffold the post
+### Step 4: Suggest Tags
+
+After the pitch is approved, use the **tag-registry** skill to suggest appropriate tags:
+
+- Analyze the pitch content to identify themes and topics
+- Suggest 3-4 tags from the canonical registry
+- Ensure at least 1 Core Topic tag is included
+- Include the suggested tags in the pitch.md file
+
+This early tag planning helps maintain consistency and prevents tag sprawl during publishing.
+
+### Step 5: Scaffold the post
 
 - Create the folder structure using the title, for example "posts/ai-vs-lawyers-newsletter"
-- Save the pitch in that folder under the file "pitch.md"
+- Save the pitch in that folder under the file "pitch.md" (including suggested tags)
 - Save the discussion using "skills/note-taking" under the file "note-taking.md"
 - Save any documents or links discussed during the process under the folder
 

@@ -73,6 +73,16 @@ RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ 
 # Ensure PATH includes Claude Code and Cargo bins in interactive sessions
 RUN echo 'export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"' >> /root/.bashrc
 
+# Environment variables for blog automation
+# These inherit from Docker environment if set, otherwise use defaults
+RUN echo 'export GHOST_SITE_URL="${GHOST_SITE_URL:-}"' >> /root/.bashrc
+RUN echo 'export GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY:-}"' >> /root/.bashrc
+RUN echo 'export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"' >> /root/.bashrc
+RUN echo 'export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"' >> /root/.bashrc
+RUN echo 'export JINA_API_KEY="${JINA_API_KEY:-}"' >> /root/.bashrc
+RUN echo 'export GITHUB_USERNAME="${GITHUB_USERNAME:-}"' >> /root/.bashrc
+RUN echo 'export GITHUB_PAT="${GITHUB_PAT:-}"' >> /root/.bashrc
+
 # Blog automation aliases - now all Node.js!
 RUN echo 'alias blog-token="node scripts/ghost_jwt.js"' >> /root/.bashrc
 RUN echo 'alias search-posts="node scripts/search_posts_v2.js"' >> /root/.bashrc
