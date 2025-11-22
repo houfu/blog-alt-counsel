@@ -87,6 +87,26 @@ Available skills and when to use them:
 
 Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are designed to be invoked automatically as part of the natural workflow.
 
+## Before Working on Posts
+
+**CRITICAL: Always read discussion.md before working on any post-related task.** This ensures context awareness and prevents repetition across series posts.
+
+**Pre-work checklist:**
+- [ ] Read the post's `discussion.md` file (at least the last 2-3 sessions)
+- [ ] For series work: Read all previously published parts
+- [ ] Check what's already established in previous posts
+- [ ] Identify what can be referenced vs. what needs re-explaining
+
+**When to read discussion.md:**
+- Before drafting new content
+- Before making revisions
+- Before adding to a series
+- Before publishing to Ghost
+- Before any substantial work on the post
+
+**Why this matters:**
+For series posts, each part should build on previous parts, not repeat them. Reading discussion.md helps you understand what's already been covered and maintain a holistic view across the entire series.
+
 ## Common Development Workflows
 
 ### 1. Create a new post

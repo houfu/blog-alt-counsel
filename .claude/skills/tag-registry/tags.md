@@ -1,7 +1,7 @@
 # Canonical Tag Registry
 
-**Last Updated**: 2025-11-17
-**Total Tags**: 45 canonical tags (consolidated from 100 Ghost tags)
+**Last Updated**: 2025-11-22
+**Total Tags**: 46 canonical tags (consolidated from 100 Ghost tags)
 **Total Posts Tagged**: 382 post-tag associations
 
 This is the authoritative list of approved tags for alt-counsel.com. All blog posts and newsletters should use tags from this registry.
@@ -56,6 +56,7 @@ Legal tech events and community initiatives.
 
 - **TechLawFest** - Tech Law Fest conference (11 posts)
 - **FutureLaw** - FutureLaw initiative (8 posts)
+- **SOLID** - Singapore Open Legal Informatics Database (SMU project) (1 post)
 
 ### Content Type
 Type or format of the content.
@@ -205,6 +206,12 @@ These represent planned content areas even if not yet published.
 - **NO spaces, hyphens, or underscores** in canonical tags
 
 ## Tag Maintenance Log
+
+### 2025-11-22
+- ✅ Added **SOLID** tag to Events & Communities category
+- **Justification**: SMU's Singapore Open Legal Informatics Database project (launched Nov 18, 2025)
+- **Reusability**: Will apply to future posts about SOLID's development, comparisons with data.zeeker.sg, and open legal data discussions
+- **Total tags**: 45 → 46
 
 ### 2025-11-17
 - ✅ Initial audit completed - 100 tags found in Ghost

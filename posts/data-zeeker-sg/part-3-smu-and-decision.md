@@ -1,14 +1,22 @@
 ---
-title: "What I Learned at SMU's Legal Database Launch (And My Decision About data.zeeker.sg)"
-date: 2025-11-20
-draft: true
-tags: [legal-tech, sustainability, solo-builders, passion-projects, open-data, SOLID, SMU, Singapore]
+title: "What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)"
+date: 2025-11-22
+draft: false
+tags: [LegalTech, SoloBuilder, Singapore, SOLID]
 excerpt: "After 150+ hours building data.zeeker.sg, I attended SMU's SOLID database launch to see institutional legal data infrastructure in action. I applied my decision framework and made my choice: I'm continuing. Here's what I learned about when solo builders should persist alongside institutions."
+published_at: 2025-11-22T20:32:39
 ---
+
+<!--
+Note: In Ghost editor, a toggle card "The data.zeeker.sg series" was added after the first paragraph with links to:
+- Part 1: When Institutions Enter Your Space
+- Part 2: Technical Lessons
+- Part 3: This post
+-->
 
 My domain renewal invoice arrived last week. Another two years of zeeker.sg: $110.
 
-In [Part 1](../when-institutions-enter-your-space/), I laid out the tension: I'd spent 150+ hours building data.zeeker.sg while working full-time as a lawyer. Zero known users. Then SMU Centre for Digital Law announced they're building legal data infrastructure with institutional resources—dedicated staff, 3-year funding, Ministry of Law backing.
+In [Part 1](https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/), I laid out the tension: I'd spent 150+ hours building data.zeeker.sg while working full-time as a lawyer. Zero known users. Then SMU Centre for Digital Law announced they're building legal data infrastructure with institutional resources—dedicated staff, 3-year funding, Ministry of Law backing.
 
 Should I continue or stop?
 

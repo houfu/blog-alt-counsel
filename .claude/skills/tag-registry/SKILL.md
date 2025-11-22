@@ -78,6 +78,57 @@ Check that the suggested tags meet these criteria:
 - ✅ No duplicate concepts
 - ✅ All tags exist in registry OR user explicitly approved new tag
 
+### Step 6: Add New Tag to Registry (If Approved)
+
+**IMPORTANT:** If the user approves a new tag, you MUST update `tags.md` immediately using the Edit tool.
+
+**Required updates to tags.md:**
+
+1. **Add tag to appropriate category** (choose based on tag purpose):
+   - Core Topics - Primary themes (LegalTech, AI, Programming, etc.)
+   - Technical Topics - Languages, frameworks, tools
+   - Legal Practice & Compliance - Legal domains
+   - Tools & Frameworks - Specific tools frequently discussed
+   - Regional Focus - Geographic/jurisdictional tags
+   - Events & Communities - Legal tech events, initiatives, projects
+   - Content Type - Format of content
+   - Professional Topics - Career and work themes
+
+2. **Update metadata at top of file:**
+   - Update "Last Updated" date to today (YYYY-MM-DD format)
+   - Increment "Total Tags" count by 1
+
+3. **Add maintenance log entry:**
+   ```markdown
+   ### YYYY-MM-DD
+   - ✅ Added **[TagName]** tag to [Category] category
+   - **Justification**: [Why this tag is needed]
+   - **Reusability**: [Where else this tag will apply]
+   - **Total tags**: [Old count] → [New count]
+   ```
+
+**Example of adding a new tag:**
+
+```markdown
+# User approved new tag: "SOLID"
+
+# Step 1: Add to Events & Communities category
+- **SOLID** - Singapore Open Legal Informatics Database (SMU project) (1 post)
+
+# Step 2: Update metadata
+**Last Updated**: 2025-11-22
+**Total Tags**: 46 canonical tags (consolidated from 100 Ghost tags)
+
+# Step 3: Add maintenance log entry
+### 2025-11-22
+- ✅ Added **SOLID** tag to Events & Communities category
+- **Justification**: SMU's Singapore Open Legal Informatics Database project (launched Nov 18, 2025)
+- **Reusability**: Will apply to future posts about SOLID's development, comparisons with data.zeeker.sg, and open legal data discussions
+- **Total tags**: 45 → 46
+```
+
+**Use the Edit tool three times** (once for each section) to make these changes atomically.
+
 ## Tag Naming Standards
 
 Follow these conventions (detailed in `naming-standards.md`):
@@ -107,7 +158,11 @@ The canonical registry is stored in `tags.md`. It should be updated when:
 - Tag usage patterns change significantly
 - Tags need to be consolidated or deprecated
 
-**Do NOT** automatically add tags to the registry. Always get user approval first.
+**Process for adding new tags:**
+1. Get user approval first (never add tags without confirmation)
+2. Once approved, immediately update `tags.md` using Step 6 instructions above
+3. Make three edits: add to category, update metadata, add log entry
+4. Confirm to user that tag has been added to registry
 
 ## Example Usage
 

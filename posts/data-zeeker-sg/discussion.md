@@ -1867,3 +1867,171 @@ All critical issues addressed.
 ---
 
 *Updated Nov 22, 2025 after final Part 3 revisions based on comprehensive content reviews*
+
+## Session 16: Publishing Part 3 to Ghost and Backlink Curation (Nov 22, 2025)
+
+### Context
+
+User requested posting Part 3 as a draft to Ghost, with tag validation first, then attempting to curate backlinks. After scheduling the post for publication tonight, updated the repo version to match what will be published.
+
+### Tag Validation and Cleanup
+
+**Original tags in draft:**
+```
+legal-tech, sustainability, solo-builders, passion-projects,
+open-data, SOLID, SMU, Singapore
+```
+
+**Issues identified:**
+1. **Too many tags:** 8 tags (maximum should be 4-5)
+2. **Naming convention violations:**
+   - `legal-tech` → Should be **LegalTech** (PascalCase, no hyphen)
+   - `solo-builders` → Should be **SoloBuilder** (PascalCase, no hyphen)
+   - `open-data`, `passion-projects` → Not in canonical registry
+3. **Institution-specific tags:** SOLID, SMU too specific for reuse
+
+**Applied tag-registry skill:**
+- Validated against canonical tag registry
+- Recommended canonical naming
+- User chose minimal new tags approach
+
+**Final canonical tags:**
+```
+LegalTech, SoloBuilder, Singapore, SOLID
+```
+
+**Decision:** Added SOLID as new tag to registry (justified by: will apply to future posts about SMU's project, open legal data discussions, and data.zeeker.sg comparisons).
+
+### Ghost Draft Creation
+
+**Workflow used:**
+1. Created `/temp/create_part3_draft.js` script
+2. Used existing `markdownToLexical()` function from `scripts/create_post.js`
+3. Parsed frontmatter to extract metadata
+4. Posted via Ghost Admin API
+
+**Draft created successfully:**
+- **Post ID:** 692121a5acb37300016227a2
+- **Title:** "What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)"
+- **Status:** Draft
+- **Tags:** LegalTech, SoloBuilder, Singapore, SOLID
+- **Admin URL:** https://alt-counsel.ghost.io/ghost/#/editor/post/692121a5acb37300016227a2
+- **Created:** Nov 22, 2025, 10:36 AM SGT
+
+**Title change during Ghost editing:** User shortened title from "data.zeeker.sg" to "zeeker.sg" in Ghost editor.
+
+### Backlink Curation Attempt
+
+**Process:**
+1. Launched `backlink_curating` skill
+2. Used `searching_the_blog` skill with multiple search terms
+3. Ran 4 parallel searches for: zeeker, legal data, GenAI/RAG, solo builders
+
+**Search results found:**
+
+**Zeeker-related:**
+1. Building data.zeeker.sg: Technical Architecture (Part 2a)
+2. When Institutions Enter Your Passion Project Space (Part 1)
+3. Introducing: zeekerscrapers
+
+**Legal data:**
+1. How Data and the Law Interact: A Book Review
+
+**GenAI/RAG:**
+1. Lawyers Got Prompt Engineering Wrong (And Why That Matters)
+2. Why Prompt Engineering Felt Wrong (And What Skills Changed)
+3. Singapore Court Rules on AI Hallucination
+4. I Built CLI Tools for Claude Code
+
+**Solo builder:**
+1. When Institutions Enter Your Passion Project Space (Part 1 again)
+2. Beyond the Harvey Drama: The Real Lessons for Solo Counsel
+3. The Solo Counsel Reality: What MinLaw's AI Guidelines Miss
+
+**Backlink recommendations provided:** 5 backlinks distributed throughout post:
+- Part 1 (already linked ✓)
+- Technical Architecture (line 146-154, chunking section)
+- Zeekerscrapers (line 98, cookies.zeeker.sg mention)
+- Prompt engineering post (line 172, RAG bot experiment)
+- Solo Counsel Reality (line 188-200, "For Other Solo Builders" section)
+
+**User decision:** Did not add backlinks to draft ("no").
+
+### Publication and Repo Sync
+
+**User scheduled post:**
+- Scheduled for: Nov 22, 2025, 8:32 PM SGT
+- Status changed from draft to scheduled
+
+**Repo synchronization:**
+User requested updating repo version to match what will be published.
+
+**Changes made to local file:**
+1. **Title:** "data.zeeker.sg" → "zeeker.sg"
+2. **Date:** 2025-11-20 → 2025-11-22 (publish date)
+3. **Draft:** true → false (scheduled for publication)
+4. **Tags:** Updated to canonical format [LegalTech, SoloBuilder, Singapore, SOLID]
+5. **Published_at:** Added timestamp 2025-11-22T20:32:39
+6. **Part 1 link:** Updated from relative path `../when-institutions-enter-your-space/` to full URL `https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/`
+7. **Added comment:** Documented toggle card added in Ghost editor (series navigation)
+
+### Series Completion
+
+**Final series structure:**
+- ✅ **Part 1:** "When Institutions Enter Your Passion Project Space" (published Nov 7)
+- ✅ **Part 2:** "Building data.zeeker.sg: Technical Architecture" (published Nov 14)
+- ✅ **Part 3:** "What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)" (scheduled Nov 22)
+
+**Timeline:**
+- Oct 26: Series planning
+- Nov 7: Part 1 published
+- Nov 14: Part 2a published
+- Nov 18: Attended SMU SOLID launch event
+- Nov 20: Drafted Part 3
+- Nov 22: Part 3 published
+
+Total: 27 days from conception to completion.
+
+### Files Created
+
+- `/temp/create_part3_draft.js` - Script to post Part 3 to Ghost
+- `/temp/sync_post_from_ghost.js` - Script to fetch from Ghost (attempted but conversion failed)
+- `/temp/fetch_ghost_post.js` - Script to view Ghost post details
+
+### Key Decisions Made
+
+1. ✅ Used tag-registry skill proactively (before posting)
+2. ✅ Added SOLID as new canonical tag (justified by reusability)
+3. ✅ Reduced tags from 8 to 4 (within guidelines)
+4. ✅ Did not add backlinks (user choice)
+5. ✅ Synchronized repo with Ghost edits (title change, metadata updates)
+6. ✅ Series completed on schedule
+
+### Technical Notes
+
+**Lexical conversion challenge:**
+- Attempted automatic sync from Ghost using custom lexical-to-markdown converter
+- Conversion was incomplete (only extracted 21 lines instead of 200+)
+- Manually documented Ghost changes instead (more reliable for this case)
+
+**Better approach for future:**
+- For metadata changes: Manual sync is fast and accurate
+- For content changes: Fetch HTML from Ghost, convert to markdown with proper tool
+- Don't rely on simple custom lexical converter for complex posts
+
+### Workflow Reflection
+
+**What worked well:**
+- Tag-registry skill caught naming issues early
+- Ghost Admin API posting was straightforward
+- Backlink search found relevant posts efficiently
+- Parallel search agents saved time
+
+**What could improve:**
+- Lexical-to-markdown conversion needs better tooling
+- Could automate frontmatter extraction from markdown
+- Backlink recommendations table format worked well for decision-making
+
+---
+
+*Updated Nov 22, 2025 after publishing Part 3 to Ghost and completing the series*
