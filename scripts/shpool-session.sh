@@ -16,7 +16,11 @@ if [ -e "$SHPOOL_SOCKET" ]; then
 fi
 
 # Export environment variables so they're inherited by shpool session
-# These are passed from docker-compose.yml
+# Priority order:
+# 1. Docker environment variables (from docker-compose.yml)
+# 2. Local .env file (if exists, for quick development overrides)
+
+# First, export Docker environment variables
 export GHOST_SITE_URL="${GHOST_SITE_URL}"
 export GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY}"
 export GHOST_API_VERSION="${GHOST_API_VERSION}"
@@ -25,6 +29,14 @@ export GITHUB_PAT="${GITHUB_PAT}"
 export JINA_API_KEY="${JINA_API_KEY}"
 export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY}"
 export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
+
+# Then, source .env file if it exists (allows local overrides)
+if [ -f "/workspace/.env" ]; then
+    echo "Loading environment from /workspace/.env"
+    set -a  # Mark variables for export
+    source /workspace/.env
+    set +a  # Unmark
+fi
 
 # shpool attach will create the session if it doesn't exist
 # The -f flag forces creation if needed

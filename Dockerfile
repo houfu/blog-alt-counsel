@@ -70,6 +70,12 @@ RUN mkdir -p /root/.config/claude && \
 # Setup blog-specific shell aliases and environment
 RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
 
+# Auto-navigate to /workspace in shpool sessions
+RUN echo '# Change to /workspace if in shpool session and not already there' >> /root/.bashrc
+RUN echo 'if [ -n "$SHPOOL_SESSION_NAME" ] && [ "$PWD" != "/workspace" ] && [[ "$PWD" != /workspace/* ]]; then' >> /root/.bashrc
+RUN echo '    cd /workspace' >> /root/.bashrc
+RUN echo 'fi' >> /root/.bashrc
+
 # Ensure PATH includes Claude Code and Cargo bins in interactive sessions
 RUN echo 'export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"' >> /root/.bashrc
 
@@ -115,6 +121,11 @@ RUN echo 'alias logs="docker-compose logs -f"' >> /root/.bashrc
 RUN echo 'alias session-list="shpool list"' >> /root/.bashrc
 RUN echo 'alias session-kill="shpool kill blog-workspace"' >> /root/.bashrc
 RUN echo 'alias session-detach="shpool detach"' >> /root/.bashrc
+
+# Environment reload aliases (hybrid approach)
+RUN echo 'alias reload-env="set -a && source /workspace/.env && set +a && echo \"Environment reloaded from .env\""' >> /root/.bashrc
+RUN echo 'alias reload-env-full="echo \"Detaching from shpool session. Reattach to get fresh Docker environment.\" && shpool detach"' >> /root/.bashrc
+RUN echo 'alias reload-env-help="echo \"reload-env: Quick reload from .env file\" && echo \"reload-env-full: Full reset (detach and reattach for Docker env changes)\""' >> /root/.bashrc
 
 # Environment for blog automation
 ENV PROJECT_ROOT="/workspace"
