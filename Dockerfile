@@ -47,8 +47,12 @@ RUN ARCH=$(uname -m) && \
     chmod +x /usr/local/bin/ttyd
 
 # Install Claude Code during build for reliability and speed
+RUN curl -fsSL https://claude.ai/install.sh | bash && \
+    # Verify installation (explicit path since ENV might not be active yet)
+    /root/.local/bin/claude --version || { echo "Claude Code installation failed"; exit 1; }
+
+# Set PATH to include Claude Code
 ENV PATH="/root/.local/bin:$PATH"
-RUN curl -fsSL https://claude.ai/install.sh | bash
 
 # Set working directory
 WORKDIR /workspace
