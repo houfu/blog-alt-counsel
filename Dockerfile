@@ -13,7 +13,7 @@ RUN cargo install shpool
 # ============================================================================
 # Stage 2: Final runtime image
 # ============================================================================
-FROM node:18-slim-bookworm
+FROM node:18-bookworm-slim
 
 # Build arguments for GitOps
 ARG REPO_URL
