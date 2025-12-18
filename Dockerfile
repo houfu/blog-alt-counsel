@@ -1,7 +1,7 @@
 # ============================================================================
 # Stage 1: Build shpool binary
 # ============================================================================
-FROM rust:1.75-slim AS shpool-builder
+FROM rust:1.75-slim-bookworm AS shpool-builder
 
 RUN apt-get update && apt-get install -y \
     pkg-config \
@@ -13,7 +13,7 @@ RUN cargo install shpool
 # ============================================================================
 # Stage 2: Final runtime image
 # ============================================================================
-FROM node:18-slim
+FROM node:18-slim-bookworm
 
 # Build arguments for GitOps
 ARG REPO_URL
