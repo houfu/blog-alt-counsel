@@ -46,12 +46,12 @@ RUN ARCH=$(uname -m) && \
     fi && \
     chmod +x /usr/local/bin/ttyd
 
-# Install Claude Code during build for reliability and speed
-RUN curl -fsSL https://claude.ai/install.sh | bash
-# Note: Verification happens at runtime via aliases in .bashrc
+# Install Claude Code via npm for better Docker compatibility
+RUN npm install -g @anthropic-ai/claude-code && \
+    claude --version
 
-# Set PATH to include Claude Code
-ENV PATH="/root/.local/bin:$PATH"
+# Set PATH to include npm global binaries (already set by Node.js image)
+ENV PATH="/usr/local/bin:$PATH"
 
 # Set working directory
 WORKDIR /workspace
@@ -88,8 +88,8 @@ if [ -n "$SHPOOL_SESSION_NAME" ] && [ "$PWD" != "/workspace" ] && [[ "$PWD" != /
     cd /workspace
 fi
 
-# Ensure PATH includes Claude Code and Cargo bins
-export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
+# Ensure PATH includes npm global binaries (claude) and Cargo bins
+export PATH="/usr/local/bin:/root/.cargo/bin:$PATH"
 
 # Environment variables for blog automation (inherit from Docker environment)
 export GHOST_SITE_URL="${GHOST_SITE_URL:-}"
