@@ -1,7 +1,7 @@
 # ============================================================================
 # Stage 1: Build shpool binary
 # ============================================================================
-FROM rust:1.75-slim-bookworm AS shpool-builder
+FROM rust:slim-bookworm AS shpool-builder
 
 RUN apt-get update && apt-get install -y \
     pkg-config \
