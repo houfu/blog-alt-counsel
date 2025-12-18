@@ -1,3 +1,18 @@
+# ============================================================================
+# Stage 1: Build shpool binary
+# ============================================================================
+FROM rust:1.75-slim AS shpool-builder
+
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN cargo install shpool
+
+# ============================================================================
+# Stage 2: Final runtime image
+# ============================================================================
 FROM node:18-slim
 
 # Build arguments for GitOps
@@ -6,7 +21,7 @@ ARG BRANCH=main
 ARG GITHUB_USERNAME
 ARG GITHUB_PAT
 
-# Install system dependencies (much simpler now!)
+# Install runtime dependencies only (no build tools!)
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
@@ -15,17 +30,10 @@ RUN apt-get update && apt-get install -y \
     htop \
     tree \
     jq \
-    build-essential \
-    pkg-config \
-    libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rust toolchain for building shpool
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="/root/.cargo/bin:$PATH"
-
-# Install shpool for session persistence
-RUN cargo install shpool
+# Copy shpool binary from builder stage
+COPY --from=shpool-builder /usr/local/cargo/bin/shpool /usr/local/bin/shpool
 
 # Install ttyd for web terminal (multi-architecture support)
 RUN ARCH=$(uname -m) && \
@@ -39,8 +47,12 @@ RUN ARCH=$(uname -m) && \
     chmod +x /usr/local/bin/ttyd
 
 # Install Claude Code during build for reliability and speed
+RUN curl -fsSL https://claude.ai/install.sh | bash && \
+    # Verify installation (explicit path since ENV might not be active yet)
+    /root/.local/bin/claude --version || { echo "Claude Code installation failed"; exit 1; }
+
+# Set PATH to include Claude Code
 ENV PATH="/root/.local/bin:$PATH"
-RUN curl -fsSL https://claude.ai/install.sh | bash
 
 # Set working directory
 WORKDIR /workspace
@@ -67,65 +79,66 @@ RUN mkdir -p /root/.config/shpool && \
 RUN mkdir -p /root/.config/claude && \
     cp .claude/mcp.json /root/.config/claude/mcp.json
 
-# Setup blog-specific shell aliases and environment
-RUN echo 'export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "' >> /root/.bashrc
+# Setup blog-specific shell environment, aliases and auto-navigation
+RUN cat >> /root/.bashrc <<'BASHRC_EOF'
+# Custom PS1 prompt
+export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "
 
 # Auto-navigate to /workspace in shpool sessions
-RUN echo '# Change to /workspace if in shpool session and not already there' >> /root/.bashrc
-RUN echo 'if [ -n "$SHPOOL_SESSION_NAME" ] && [ "$PWD" != "/workspace" ] && [[ "$PWD" != /workspace/* ]]; then' >> /root/.bashrc
-RUN echo '    cd /workspace' >> /root/.bashrc
-RUN echo 'fi' >> /root/.bashrc
+if [ -n "$SHPOOL_SESSION_NAME" ] && [ "$PWD" != "/workspace" ] && [[ "$PWD" != /workspace/* ]]; then
+    cd /workspace
+fi
 
-# Ensure PATH includes Claude Code and Cargo bins in interactive sessions
-RUN echo 'export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"' >> /root/.bashrc
+# Ensure PATH includes Claude Code and Cargo bins
+export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
 
-# Environment variables for blog automation
-# These inherit from Docker environment if set, otherwise use defaults
-RUN echo 'export GHOST_SITE_URL="${GHOST_SITE_URL:-}"' >> /root/.bashrc
-RUN echo 'export GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY:-}"' >> /root/.bashrc
-RUN echo 'export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"' >> /root/.bashrc
-RUN echo 'export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"' >> /root/.bashrc
-RUN echo 'export JINA_API_KEY="${JINA_API_KEY:-}"' >> /root/.bashrc
-RUN echo 'export GITHUB_USERNAME="${GITHUB_USERNAME:-}"' >> /root/.bashrc
-RUN echo 'export GITHUB_PAT="${GITHUB_PAT:-}"' >> /root/.bashrc
+# Environment variables for blog automation (inherit from Docker environment)
+export GHOST_SITE_URL="${GHOST_SITE_URL:-}"
+export GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY:-}"
+export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"
+export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
+export JINA_API_KEY="${JINA_API_KEY:-}"
+export GITHUB_USERNAME="${GITHUB_USERNAME:-}"
+export GITHUB_PAT="${GITHUB_PAT:-}"
 
-# Blog automation aliases - now all Node.js!
-RUN echo 'alias blog-token="node scripts/ghost_jwt.js"' >> /root/.bashrc
-RUN echo 'alias search-posts="node scripts/search_posts_v2.js"' >> /root/.bashrc
-RUN echo 'alias list-agents="ls -la .claude/agents/"' >> /root/.bashrc
-RUN echo 'alias list-skills="ls -la .claude/skills/"' >> /root/.bashrc
-RUN echo 'alias ghost-docs="cat .claude/skills/using-ghost-admin-api/ghost-admin-api.md"' >> /root/.bashrc
+# Blog automation aliases
+alias blog-token="node scripts/ghost_jwt.js"
+alias search-posts="node scripts/search_posts_v2.js"
+alias list-agents="ls -la .claude/agents/"
+alias list-skills="ls -la .claude/skills/"
+alias ghost-docs="cat .claude/skills/using-ghost-admin-api/ghost-admin-api.md"
 
 # Enhanced blog workflow aliases
-RUN echo 'alias token-headers="node scripts/ghost_jwt.js --print-headers"' >> /root/.bashrc
-RUN echo 'alias token-examples="node scripts/ghost_jwt.js --examples"' >> /root/.bashrc
-RUN echo 'alias token-quiet="node scripts/ghost_jwt.js --quiet"' >> /root/.bashrc
-RUN echo 'alias env-help="node scripts/ghost_jwt.js --env-help"' >> /root/.bashrc
+alias token-headers="node scripts/ghost_jwt.js --print-headers"
+alias token-examples="node scripts/ghost_jwt.js --examples"
+alias token-quiet="node scripts/ghost_jwt.js --quiet"
+alias env-help="node scripts/ghost_jwt.js --env-help"
 
-# Claude Code blog automation aliases (using skills now)
-RUN echo 'alias audit-post="claude --agent .claude/agents/content-quality-auditor.md"' >> /root/.bashrc
-RUN echo 'alias legal-review="claude --agent .claude/agents/legal-tech-blog-reviewer.md"' >> /root/.bashrc
-RUN echo 'alias corp-review="claude --agent .claude/agents/corporate-lawyer-reviewer.md"' >> /root/.bashrc
+# Claude Code blog automation aliases
+alias audit-post="claude --agent .claude/agents/content-quality-auditor.md"
+alias legal-review="claude --agent .claude/agents/legal-tech-blog-reviewer.md"
+alias corp-review="claude --agent .claude/agents/corporate-lawyer-reviewer.md"
 
-# Claude Code authentication aliases (Claude Code pre-installed)
-RUN echo 'alias claude-login="claude auth login"' >> /root/.bashrc
-RUN echo 'alias claude-status="claude auth status"' >> /root/.bashrc
-RUN echo 'alias claude-help="echo \"Claude Code is pre-installed! Set ANTHROPIC_API_KEY or run: claude auth login\""' >> /root/.bashrc
+# Claude Code authentication aliases
+alias claude-login="claude auth login"
+alias claude-status="claude auth status"
+alias claude-help="echo \"Claude Code is pre-installed! Set ANTHROPIC_API_KEY or run: claude auth login\""
 
 # Development convenience aliases
-RUN echo 'alias ll="ls -la"' >> /root/.bashrc
-RUN echo 'alias ..="cd .."' >> /root/.bashrc
-RUN echo 'alias logs="docker-compose logs -f"' >> /root/.bashrc
+alias ll="ls -la"
+alias ..="cd .."
+alias logs="docker-compose logs -f"
 
 # shpool session management aliases
-RUN echo 'alias session-list="shpool list"' >> /root/.bashrc
-RUN echo 'alias session-kill="shpool kill blog-workspace"' >> /root/.bashrc
-RUN echo 'alias session-detach="shpool detach"' >> /root/.bashrc
+alias session-list="shpool list"
+alias session-kill="shpool kill blog-workspace"
+alias session-detach="shpool detach"
 
 # Environment reload aliases (hybrid approach)
-RUN echo 'alias reload-env="set -a && source /workspace/.env && set +a && echo \"Environment reloaded from .env\""' >> /root/.bashrc
-RUN echo 'alias reload-env-full="echo \"Detaching from shpool session. Reattach to get fresh Docker environment.\" && shpool detach"' >> /root/.bashrc
-RUN echo 'alias reload-env-help="echo \"reload-env: Quick reload from .env file\" && echo \"reload-env-full: Full reset (detach and reattach for Docker env changes)\""' >> /root/.bashrc
+alias reload-env="set -a && source /workspace/.env && set +a && echo \"Environment reloaded from .env\""
+alias reload-env-full="echo \"Detaching from shpool session. Reattach to get fresh Docker environment.\" && shpool detach"
+alias reload-env-help="echo \"reload-env: Quick reload from .env file\" && echo \"reload-env-full: Full reset (detach and reattach for Docker env changes)\""
+BASHRC_EOF
 
 # Environment for blog automation
 ENV PROJECT_ROOT="/workspace"
