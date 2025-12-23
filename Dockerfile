@@ -67,14 +67,9 @@ RUN git clone --branch ${BRANCH} ${REPO_URL} .
 # Install Node.js dependencies
 RUN npm install
 
-# Copy .env file from build context if available
-RUN --mount=type=bind,source=.,target=/tmp/build \
-    if [ -f /tmp/build/.env ]; then \
-        cp /tmp/build/.env . && \
-        echo ".env file copied successfully"; \
-    else \
-        echo "No .env file found in build context (this is optional)"; \
-    fi
+# Note: .env file should be mounted at runtime via volume
+# In Synology Container Manager: Add volume mapping for .env file
+# Host path: /path/to/your/.env -> Container path: /workspace/.env
 
 # Make scripts executable
 RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js scripts/shpool-session.sh
