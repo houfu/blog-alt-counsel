@@ -1,7 +1,7 @@
 # ============================================================================
 # Stage 1: Build shpool binary
 # ============================================================================
-FROM rust:1.75-slim AS shpool-builder
+FROM rust:slim-bookworm AS shpool-builder
 
 RUN apt-get update && apt-get install -y \
     pkg-config \
@@ -13,7 +13,7 @@ RUN cargo install shpool
 # ============================================================================
 # Stage 2: Final runtime image
 # ============================================================================
-FROM node:18-slim
+FROM node:20-bookworm-slim
 
 # Build arguments for GitOps
 ARG REPO_URL
@@ -46,13 +46,12 @@ RUN ARCH=$(uname -m) && \
     fi && \
     chmod +x /usr/local/bin/ttyd
 
-# Install Claude Code during build for reliability and speed
-RUN curl -fsSL https://claude.ai/install.sh | bash && \
-    # Verify installation (explicit path since ENV might not be active yet)
-    /root/.local/bin/claude --version || { echo "Claude Code installation failed"; exit 1; }
+# Install Claude Code via npm for better Docker compatibility
+RUN npm install -g @anthropic-ai/claude-code && \
+    claude --version
 
-# Set PATH to include Claude Code
-ENV PATH="/root/.local/bin:$PATH"
+# Set PATH to include npm global binaries (already set by Node.js image)
+ENV PATH="/usr/local/bin:$PATH"
 
 # Set working directory
 WORKDIR /workspace
@@ -67,6 +66,15 @@ RUN git clone --branch ${BRANCH} ${REPO_URL} .
 
 # Install Node.js dependencies
 RUN npm install
+
+# Copy .env file from build context if available
+RUN --mount=type=bind,source=.,target=/tmp/build \
+    if [ -f /tmp/build/.env ]; then \
+        cp /tmp/build/.env . && \
+        echo ".env file copied successfully"; \
+    else \
+        echo "No .env file found in build context (this is optional)"; \
+    fi
 
 # Make scripts executable
 RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js scripts/shpool-session.sh
@@ -89,8 +97,8 @@ if [ -n "$SHPOOL_SESSION_NAME" ] && [ "$PWD" != "/workspace" ] && [[ "$PWD" != /
     cd /workspace
 fi
 
-# Ensure PATH includes Claude Code and Cargo bins
-export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
+# Ensure PATH includes npm global binaries (claude) and Cargo bins
+export PATH="/usr/local/bin:/root/.cargo/bin:$PATH"
 
 # Environment variables for blog automation (inherit from Docker environment)
 export GHOST_SITE_URL="${GHOST_SITE_URL:-}"
