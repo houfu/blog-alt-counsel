@@ -244,3 +244,242 @@ While we found excellent examples of single-serving software philosophy (Fordon)
 
 **For the article:**
 User's own planned experiments with single-serving legal software for Singapore practice could be the unique contribution - demonstrating the concept in local context.
+
+---
+
+## UPDATED RESEARCH (2025-12-23) - Jina Deep Search
+
+**Research Method:** Used Jina MCP server for enhanced web search and content extraction
+**Focus:** Filling pitch gaps - concrete examples, failure modes, practical implementation
+
+---
+
+### Theme 3: Concrete Step-by-Step Examples (Addresses Pitch Gap #1)
+
+**Sam Harden - "The Legal UI Revolution" (Full Article Content):**
+
+1. **Living Will & Health Care Proxy Interactive Tool**
+   - **Time to build:** ~15 minutes
+   - **Platform:** Google Gemini (vibecoding platform of choice)
+   - **What it does:**
+     - Educates clients on why they need these documents
+     - Interactive form completion (not just static PDFs)
+     - Client-facing web app
+   - **Key insight:** "Both of these could easily have taken 6 months and 5 figures of development cost just 4-5 years ago. But now it takes just a half hour"
+   - Source: [The Legal UI Revolution](https://samharden.substack.com/p/the-legal-ui-revolution) | ✅ Florida-based but globally applicable
+
+2. **Ladybird Deed vs Living Trust Visualizer**
+   - **Time to build:** ~30 minutes
+   - **What it does:**
+     - Visual pros/cons comparison
+     - Decision tree taking different scenarios into account
+     - Shareable webpage for clients
+   - **Harden's note:** "No change orders, no asking a developer to circle back, none of that. There's no need to even make it replicable - it's a single-serving"
+   - Source: [The Legal UI Revolution](https://samharden.substack.com/p/the-legal-ui-revolution)
+
+**Rebecca Fordon - Latest Article (Nov 27, 2025) - "Thanksgiving Vibe-Coding and the Case for 'Single-Serving' Legal Software":**
+
+**Real Example She Actually Built:**
+
+**Thanksgiving Checklist with Auto-Reschedule Feature**
+   - **Problem:** Six dishes, tight timeline, guests running late
+   - **Initial build:** Static timeline from AI
+   - **Feature request:** "Add a feature where I adjust what time I've finished something so the rest will update"
+   - **Result:** React-based interactive checklist with "I Finished This Just Now" button → entire remaining schedule auto-shifts
+   - **Outcome:** Dinner only 15 min late (vs usual "at least an hour late")
+   - **Key quote:** "My Thanksgiving experiment proves that the barrier to entry for building 'Micro-Tools' has collapsed"
+   - Source: [Thanksgiving Vibe-Coding](https://www.ailawlibrarians.com/2025/11/27/thanksgiving-vibe-coding-and-the-case-for-single-serving-legal-software) | ✅ Nov 2025
+
+**Legal Hypothetical Examples from Fordon (Nov 2025):**
+
+1. **"Witness Wrangler" (Litigation)**
+   - **Problem:** 15 witnesses, flights/prep/hostile witnesses, schedules depend on previous witness finishing
+   - **Solution:** Dynamic dashboard shared with paralegal team
+   - **Key feature:** Click "Witness A ran long; pushed to tomorrow" → app auto-alerts Witness B, updates car service pickup
+   - **Gap it fills:** "Human logistics of a trial" that standard case management doesn't handle
+
+2. **"Non-Standard Closing" (Ranch Sale)**
+   - **Problem:** Closing checklist includes physical events: "Transfer Water Rights," "Inspect Cattle," "Repair Barn Roof"
+   - **Solution:** Logic-based checklist where "Cattle Inspection" locked until "Barn Roof Repair" marked Complete
+   - **Key feature:** If roof crew delayed → inspection auto-reschedules, alerts all parties
+
+3. **"Toxic Plume Intake" (Mass Torts)**
+   - **Problem:** Only sign clients in specific jagged geographic zone (1995-1998)
+   - **Solution:** Simple web form with map
+   - **Logic:** Point-in-polygon check against toxic plume map → instantly returns "Qualified" or "Out of Zone"
+   - **Benefit:** "Saving hours of manual review"
+
+**Fordon's MVP Philosophy:**
+1. **Build** specific, hard-coded app for Jones v. Smith
+2. **Validate** that it actually saved time (e.g., paralegal saved 10 hours)
+3. **Generalize** only AFTER it proves value → use for Doe v. Roe
+
+> "You don't start with the platform. You start with the problem."
+
+---
+
+### Theme 4: Failure Modes & Limits (Addresses Pitch Gap #2)
+
+**Boris Cherny - Creator of Claude Code (Dec 15, 2025):**
+
+**When Vibe Coding Works:**
+- ✅ "Throwaway code and prototypes, code that's not in the critical path"
+- ✅ "I do this all the time"
+
+**When It Doesn't:**
+- ❌ "You want maintainable code sometimes. You want to be very thoughtful about every line sometimes"
+- ❌ Models are still "not great at coding"
+- ❌ "There's still so much room to improve, and this is the worst it's ever going to be"
+
+**Cherny's Actual Workflow for Critical Tasks:**
+1. Ask AI model to generate a **plan**
+2. Iterate on implementation in **small steps**
+3. "I might ask it to improve the code or clean it up"
+4. For parts with **strong technical opinions** → write code **by hand**
+
+**Key Quote:**
+> "It works well for 'throwaway code and prototypes, code that's not in the critical path.' I do this all the time, but it's definitely not the thing you want to do all the time."
+
+Source: [Claude Code's creator explains the limits of vibe coding](https://www.businessinsider.com/claude-code-creator-vibe-coding-limits-boris-cherny-anthropic-2025-12) | ✅ Dec 2025
+
+**Other Tech Leaders on Limits:**
+
+- **Sundar Pichai (Google):** "I'm not working on large codebases where you really have to get it right, the security has to be there" (Nov 2025)
+- **Andrew Ng (Google Brain founder):** It's "fantastic" how quickly developers can write software, sometimes "barely looking at the code" - but this is noted as a CONCERN (May 2025)
+- **General caution:** AI-generated code could contain mistakes, be overly verbose, or lack proper structure
+
+**"The Dark Side of Vibe-Coding" - Arbisoft (Aug 8, 2025):**
+
+**Cost of Failure:**
+- Fixing defects **after deployment** costs **up to 30x more** than addressing during development
+- Source: Research by Capers Jones & CAST Software analysis
+
+**Where AI-Generated Code Fails:**
+- ✅ "Can appear correct, pass initial tests, and integrate quickly"
+- ❌ But "fail under uncommon runtime conditions"
+- ❌ "AI models generate code probabilistically, not deterministically"
+- ❌ Production failures in: authentication flows, data serialization, API integration layers
+
+**Common Pitfalls:**
+- Incorrect edge case handling (insufficient contextual understanding)
+- API misuse (outdated/incomplete training data)
+- Silent security flaws (improper input validation, insecure cryptography defaults)
+
+**Technical Debt Hidden in AI Code:**
+- "Syntactically correct and stylistically consistent" → maintainers overlook logic flaws
+- Increased onboarding time (unclear decision rationale)
+- Reduced test coverage (teams assume generated code is correct)
+- Elevated bug rates in areas with dense AI contributions
+
+**Security & Compliance Risks:**
+- OWASP Top 5 vulnerabilities: Injection flaws, XSS, insecure direct object references, insecure deserialization
+- Compliance costs for GDPR, HIPAA, PCI DSS violations
+- "AI-generated code increases risk when it reuses insecure patterns from public repositories"
+
+Source: [The Dark Side of Vibe-Coding](https://arbisoft.com/blogs/the-dark-side-of-vibe-coding-debugging-technical-debt-and-security-risks) | ✅ Aug 2025
+
+---
+
+### Theme 5: Practical Implementation - Security & Tools (Addresses Pitch Gap #3)
+
+**Security/Compliance Concerns (Rebecca Fordon, Nov 2025):**
+
+**Solution for "No Data Leaves Firm":**
+- "Single HTML file that you can then save and run entirely locally on your machine—no data leaves the browser"
+- Enterprise LLM versions: "Your inputs remain within the firm's secure boundary"
+
+**Platform Agnostic:**
+- "Whether you use Gemini, ChatGPT, or Claude, the ability to turn a prompt into a working React or HTML artifact is now a standard feature"
+- "The power lies not in the specific model, but in your willingness to **ask for code instead of text**"
+
+Source: [Thanksgiving Vibe-Coding](https://www.ailawlibrarians.com/2025/11/27/thanksgiving-vibe-coding-and-the-case-for-single-serving-legal-software)
+
+**Sam Harden on Tools (Dec 2025):**
+- Gemini = "my vibecoding platform of choice"
+- Note on testing: "Granted for these little apps you're not doing unit tests, integration tests, or user acceptance testing. But keep in mind tools like Antigravity and others now run their own tests during development"
+- **Confidentiality caveat:** "Confidentiality would be a concern if you did this with vanilla Gemini (non-enterprise). I did this for the sake of example. Read the privacy policies!"
+
+Source: [The Legal UI Revolution](https://samharden.substack.com/p/the-legal-ui-revolution)
+
+**Arbisoft on Governance (Aug 2025):**
+
+**AI Code Security Guardrails:**
+- Redact sensitive data before providing context to AI tools
+- Apply automated static analysis (SAST) and dynamic analysis (DAST) on all generated code
+- Manual security review for: authentication, encryption, data persistence
+
+**Governance Tactics:**
+- Define clear policy for AI usage scope within team
+- Track AI contribution ratios and correlate with defect density metrics
+- Schedule recurring codebase audits to refactor high-risk areas
+- Tag AI-generated sections in version control for traceability
+
+Source: [The Dark Side of Vibe-Coding](https://arbisoft.com/blogs/the-dark-side-of-vibe-coding-debugging-technical-debt-and-security-risks)
+
+---
+
+### Theme 6: ROI & Measurement (Addresses Pitch Gap #4)
+
+**Arbisoft on Measuring AI ROI (Aug 2025):**
+
+**Engineering Metrics to Track:**
+- Mean time to resolution (MTTR) for defects
+- Deployment frequency without quality degradation
+- Defect escape rate from staging to production
+
+**Recommendation:**
+- Combine DORA metrics with defect classification data specific to AI-generated components
+- Allows leaders to make informed investment and policy decisions
+
+**Incremental Adoption Path:**
+1. Pilot AI usage in **low-risk modules**
+2. Embed continuous security and quality checks
+3. Train developers in secure prompt design and validation
+4. Monitor technical debt metrics tied specifically to AI-generated code
+
+Source: [The Dark Side of Vibe-Coding](https://arbisoft.com/blogs/the-dark-side-of-vibe-coding-debugging-technical-debt-and-security-risks)
+
+**Rebecca Fordon's Validation Approach (Nov 2025):**
+- Build tool → **Validate it actually saved time** → Then generalize
+- Example: "Validate that the 'Witness Rescheduler' actually saved the paralegal 10 hours"
+
+---
+
+### Additional Expert Quotes (New)
+
+> "We are no longer just the consumers of legal software; we are the architects. We can now build the infrastructure to manage our own chaos."
+>
+> — Rebecca Fordon, Nov 27, 2025
+
+> "For lawyers, part of our job is helping our clients understand their position, rights, responsibilities, and the potential upsides and downsides of decisions. We can still do that with a set of documents and a conversation. We can also do that now with micro-tools and interactive dashboards, customized to the client's needs, created in minutes."
+>
+> — Sam Harden, Dec 2025
+
+> "It works well for 'throwaway code and prototypes, code that's not in the critical path.' I do this all the time, but it's definitely not the thing you want to do all the time. You want maintainable code sometimes."
+>
+> — Boris Cherny, Creator of Claude Code, Dec 15, 2025
+
+> "AI-accelerated coding shortens creation time but can inadvertently extend debugging and remediation cycles. When debugging AI-generated code becomes a recurring requirement, sprint predictability suffers."
+>
+> — Arbisoft, "The Dark Side of Vibe-Coding," Aug 8, 2025
+
+---
+
+## Jina Research Summary: Key Improvements Over Original Search
+
+**What Jina Found That WebSearch Missed:**
+
+1. **Full article content** from Sam Harden (not just references)
+2. **Rebecca Fordon's latest article** (Nov 27, 2025) - published AFTER original research
+3. **Boris Cherny interview** (Claude Code creator) - direct insight on failure modes
+4. **Quantitative cost data** (30x more expensive to fix post-deployment)
+5. **Specific security solutions** (single HTML file, local execution)
+6. **Step-by-step examples** with actual time estimates (15-30 minutes)
+7. **Concrete legal hypotheticals** with implementation details
+
+**Direct Mapping to Pitch Gaps:**
+
+✅ **Concrete Examples:** Sam Harden's two tools + Fordon's Thanksgiving app + 3 legal hypotheticals
+✅ **Failure Modes:** Boris Cherny's limits + Arbisoft's technical debt analysis + 30x cost data
+✅ **Practical Implementation:** Security (local HTML), compliance (enterprise LLMs), tools (platform agnostic)
+✅ **Measurement Framework:** DORA metrics + defect tracking + Fordon's "validate then generalize" approach
