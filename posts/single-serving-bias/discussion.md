@@ -141,6 +141,30 @@ More precise articulation of what AI solved (technical barrier) vs. what remains
 
 ---
 
+### Decision: Refine Title to Capture Core Paradox (2025-12-25, Session 5)
+
+**Claude's Analysis:**
+- Evaluated "The Single-Serving Software Uncertainty: Why We Need Permission to Experiment" against content
+- Identified "single-serving software" wasn't strongly established in the piece
+- Stronger themes: uncertainty, permission to experiment, validation gap
+- Presented two options: strengthen single-serving concept OR adjust title to emphasize validation uncertainty
+
+**Claude's Recommendation:**
+Option 2 - Adjust title to emphasize validation uncertainty:
+- "When Building Gets Cheap But Knowing Stays Expensive"
+- Better captures the paradox: AI solved technical constraint but not validation constraint
+
+**User Decision:**
+Chose Option 2: "When Building Gets Cheap But Knowing Stays Expensive"
+
+**Rationale:**
+More concrete and attention-grabbing. Precisely captures core argument without requiring readers to know "single-serving software" terminology.
+
+**Outcome:**
+✅ Title now immediately communicates the article's central insight: AI made creation cheap but validation remains expensive
+
+---
+
 ### Decision: Complete Quality Control for Publication (2025-12-24, Session 4)
 
 **Claude's Analysis:**
@@ -188,6 +212,9 @@ Standard quality control process before publication. Article must be professiona
 - Identified that neutral client feedback creates validation gap
 - BREAKTHROUGH INSIGHT: User's perspective evolution shows fundamental question shifted from "Will this work?" (technical feasibility) to "Does this actually help clients?" (client value) (Session 4)
 - Identified AI eliminated the wrong constraint: solved technical barrier but not validation barrier
+- Evaluated title/subheader alignment with content (Session 5)
+- Identified "single-serving software" wasn't strongly established; stronger themes were uncertainty and validation gap
+- Analyzed each subheader for content match and identified generic phrasing
 
 ### Writing
 - Developed pitch through multiple iterations (Session 1)
@@ -199,6 +226,8 @@ Standard quality control process before publication. Article must be professiona
   - Added "AI Eliminated the Wrong Constraint" subsection to Section 2
   - Strengthened transitions in Section 5 ("AI removed the technical barrier. Now I need to address the validation gap.")
   - Rewrote Section 6 opening ("AI didn't eliminate uncertainty—it made uncertainty affordable.")
+- TITLE REFINEMENT: Changed from "The Single-Serving Software Uncertainty" to "When Building Gets Cheap But Knowing Stays Expensive" (Session 5)
+- Updated subheader 4 from generic "The Quick Version" to specific "How to Build Your First Experimental Tool"
 
 ### Quality Control
 - Used getting-feedback skill to validate revised pitch with two reviewer personas (Session 3)
@@ -208,6 +237,9 @@ Standard quality control process before publication. Article must be professiona
 - Fixed heading hierarchy, repetition, and grammar issues
 - Curated backlinks using backlink_curating skill - identified 3 relevant internal posts (Session 4)
 - Final proofreading caught 2 critical typos and spelling consistency issues (Session 4)
+- Used tag-registry skill to suggest canonical tags (Session 5)
+- Suggested 3 tags within limits: AI, LegalTech, SoloBuilder
+- All tags from canonical registry, preventing tag sprawl
 
 ### Technical
 - Created branch: `single-serving-bias`
@@ -217,6 +249,11 @@ Standard quality control process before publication. Article must be professiona
 - Completely rewrote pitch.md with uncertainty paradox framing (Session 3)
 - Created settings.json for Ghost Admin API with correct structure (Session 4)
 - Successfully tested blog search functionality for backlink curation (Session 4)
+- Created markdown-to-lexical parser script for Ghost draft creation (Session 5)
+- Built `/workspace/temp/create-draft.js` with support for headings, paragraphs, lists, code blocks, inline formatting
+- Created `/workspace/temp/update-tags-safe.js` with concurrent edit protection
+- Successfully posted draft to Ghost (Post ID: 694cb4d6fe727e0001bb2ab9)
+- Successfully updated Ghost draft with canonical tags
 
 ## WHAT WORKED / DIDN'T WORK
 
@@ -243,6 +280,11 @@ Standard quality control process before publication. Article must be professiona
 | Created Ghost API settings.json through iterations (Session 4) | Corrected structure to proper format | Blog search functionality enabled for backlink curation |
 | Curated backlinks distributed throughout article (Session 4) | Added 3 relevant internal links | Enhanced value and SEO, connected to previous work |
 | Final proofreading caught typos before publication (Session 4) | Fixed 2 critical typos, 4 spelling issues, 1 grammar fix | Article now error-free and publication-ready |
+| Analyzed title against content themes (Session 5) | Chose new title emphasizing validation paradox | "When Building Gets Cheap But Knowing Stays Expensive" immediately communicates core insight |
+| Identified generic subheader (Session 5) | Fixed to "How to Build Your First Experimental Tool" | More specific and actionable, matches punchy style |
+| Created markdown-to-lexical parser for Ghost (Session 5) | Successfully posted draft with proper formatting | Draft created with title, excerpt, proper structure |
+| Suggested 3 tags from canonical registry (Session 5) | Approved AI, LegalTech, SoloBuilder | Within limits, covers themes, prevents tag sprawl |
+| Built concurrent edit protection for tag updates (Session 5) | Successfully updated tags despite Ghost protection | Tags added without conflicts |
 
 ### Didn't Work ❌
 
@@ -989,3 +1031,281 @@ After incorporating the "eliminated wrong constraint" insight and fixing the acc
 - Get reviewer feedback on updated "Getting Started" section (waiting for agent limit reset at 6pm UTC)
 - Publish to Ghost when ready
 - Document this session in discussion.md (current task)
+
+---
+
+## Session 5: Title Refinement & Ghost Publication (2025-12-25)
+
+### Context
+
+With the article complete and quality-controlled, user wanted to verify title and subheaders fit the content, then publish draft to Ghost with appropriate tags.
+
+### What Claude Did
+
+**Analysis:**
+1. Read the draft to analyze title and subheader alignment
+2. Evaluated "The Single-Serving Software Uncertainty: Why We Need Permission to Experiment" against content themes
+3. Identified that "single-serving software" wasn't strongly established in the piece
+4. Assessed each of 5 subheaders for content match:
+   - "When Tools Take 30 Minutes to Finish, Everything Changes" ✅
+   - "AI Eliminated the Wrong Constraint" ✅✅ (strongest)
+   - "My 2026 Resolution: Build and Measure" ✅
+   - "Getting Started: The Quick Version" ⚠️ (too generic)
+   - "The Permission We've Been Waiting For" ✅
+5. Presented two options:
+   - Option 1: Keep title but strengthen "single-serving" concept in content
+   - Option 2: Adjust title to emphasize validation uncertainty more clearly
+
+**Writing:**
+1. User chose Option 2: "When Building Gets Cheap But Knowing Stays Expensive"
+2. Updated title in draft
+3. Updated subheader 4 from "Getting Started: The Quick Version" to "How to Build Your First Experimental Tool"
+
+**Technical - Ghost Publication:**
+1. Created `/workspace/temp/create-draft.js` script to post markdown to Ghost
+2. Built markdown-to-lexical parser with support for:
+   - Headings (H1-H6)
+   - Paragraphs with inline formatting (bold, italic, code, links)
+   - Bullet lists and numbered lists
+   - Code blocks
+3. Generated title from first H1
+4. Generated custom excerpt from first paragraph (~250-299 characters)
+5. Encountered environment variable issue (GHOST_SITE_URL not set)
+6. Read .env file to get credentials
+7. Exported environment variables and successfully posted draft
+8. Post created: ID `694cb4d6fe727e0001bb2ab9`
+
+**Quality Control - Tags:**
+1. User requested tags using tag-registry skill
+2. Read canonical tag registry
+3. Analyzed post content against registry
+4. Suggested 3 tags:
+   - **AI** (Core topic - entire post about how AI changed building economics)
+   - **LegalTech** (Core topic - building legal technology applications)
+   - **SoloBuilder** (Professional perspective - solo counsel experimentation)
+5. Created `/workspace/temp/update-tags-safe.js` to handle Ghost's concurrent edit protection
+6. Fetched current post state first, then updated with proper timestamp
+7. Successfully added tags to Ghost draft
+
+**Recording:**
+- Used note-taking skill to document this session (current task)
+
+### User Decisions
+
+**Decision 1: Choose New Title**
+- Selected Option 2: "When Building Gets Cheap But Knowing Stays Expensive"
+- Rejected Option 1 (strengthening single-serving concept in content)
+- Rationale: Better captures core argument - AI solved technical constraint but not validation constraint
+
+**Decision 2: Fix Generic Subheader**
+- Approved changing "Getting Started: The Quick Version" to "How to Build Your First Experimental Tool"
+- Rationale: More specific and matches punchy style of other subheaders
+
+**Decision 3: Post Draft to Ghost**
+- Requested Ghost publication
+- Rationale: Article is complete and ready for final review in Ghost editor
+
+**Decision 4: Approve Suggested Tags**
+- Approved AI, LegalTech, SoloBuilder tags
+- Rationale: All three tags from canonical registry, cover core themes, within 3-4 tag limit
+
+**Decision 5: Document Session**
+- Requested note-taking
+- Rationale: Preserve work done on title refinement and publication process
+
+### Outcomes
+
+**✅ What worked:**
+
+| What Claude Did | User Decision | Outcome |
+|-----------------|---------------|---------|
+| Analyzed title against content themes | Chose Option 2 (new title) | Title now precisely captures core argument: "building gets cheap but knowing stays expensive" |
+| Identified generic subheader | Fixed to specific actionable version | Subheader 4 now matches punchy style and reader expectations |
+| Created markdown-to-lexical parser script | Approved Ghost draft creation | Draft successfully posted with proper formatting |
+| Handled environment variable issue gracefully | N/A | Found credentials in .env and exported for script execution |
+| Suggested 3 tags from canonical registry | Approved all tags | Tags added: AI, LegalTech, SoloBuilder (within limits, covers themes) |
+| Created safe tag update script with concurrent edit handling | N/A | Successfully updated tags despite Ghost's edit protection |
+
+**Title Evolution:**
+- Original: "The Single-Serving Software Uncertainty: Why We Need Permission to Experiment"
+- Final: "When Building Gets Cheap But Knowing Stays Expensive"
+- Improvement: More concrete, captures the paradox AI created, attention-grabbing
+
+**Subheader Improvement:**
+- Original: "Getting Started: The Quick Version"
+- Final: "How to Build Your First Experimental Tool"
+- Improvement: More specific, actionable, matches reader expectations
+
+**Ghost Draft Details:**
+- Post ID: `694cb4d6fe727e0001bb2ab9`
+- Admin URL: `https://alt-counsel.ghost.io/ghost/#/editor/post/694cb4d6fe727e0001bb2ab9`
+- Title: "When Building Gets Cheap But Knowing Stays Expensive"
+- Custom Excerpt: First paragraph (3-page prompt story)
+- Tags: AI, LegalTech, SoloBuilder
+- Status: Draft
+
+**Files created:**
+- `/workspace/temp/create-draft.js` - Ghost draft creation script with markdown-to-lexical parser
+- `/workspace/temp/update-tags-safe.js` - Tag update script with concurrent edit protection
+
+**Files modified:**
+- `/workspace/posts/single-serving-bias/single-serving-bias-draft.md` - Title and subheader updates
+- `/workspace/posts/single-serving-bias/discussion.md` - This file
+
+### Next Steps
+
+- Review draft in Ghost editor
+- Publish when ready
+- Verify published post
+- Sync any Ghost editor changes back to repo (CHECK phase)
+
+---
+
+## Session 6: Post-Publication Sync, Post-Mortem & Process Improvements (2025-12-26)
+
+### Context
+
+After user published the post to Ghost, needed to sync the local draft with images added in Ghost editor. Then user requested comprehensive post-mortem analysis of the entire writing process, followed by recommendations for improving skills and CLAUDE.md based on lessons learned.
+
+### What Claude Did
+
+**Technical - Syncing Published Post:**
+1. Created `/workspace/temp/fetch-post.js` to retrieve published post from Ghost API
+2. Fetched post with lexical format to see exact content
+3. Identified 2 images added in Ghost editor:
+   - Term sheet screenshot (after opening paragraph)
+   - GenAI interface screenshot (in "How to Build" section with caption)
+4. Updated local draft to include both images with proper markdown syntax
+5. Confirmed sync complete
+
+**Analysis - Post-Mortem:**
+1. Analyzed entire writing process across 5 sessions (Dec 23-26)
+2. Identified 3 critical turning points:
+   - Session 3: Breakthrough question that revealed uncertainty paradox
+   - Session 4: "AI eliminated wrong constraint" insight from perspective analysis
+   - Session 5: Title refinement to capture core paradox
+3. Evaluated what worked exceptionally well:
+   - Questioning premises when user pushed back
+   - Using reviewer agents to validate major pivots
+   - Comprehensive blog search for perspective analysis
+   - Concrete examples documented early
+   - Multi-pass quality control workflow
+   - Proactive skill usage throughout
+4. Identified missteps:
+   - Accepted abstraction bias framing too quickly (Sessions 1-2)
+   - Initial search for Sam Harden article in wrong location
+   - "For months..." inaccuracy that user caught
+5. Extracted process insights and meta-lessons
+6. Compiled statistics (5 sessions, 2 major pivots, 7 skills used, 3 quality passes)
+
+**Recommendations - Skills & CLAUDE.md Improvements:**
+1. **CLAUDE.md additions:**
+   - "Test the Diagnosis" guidance for when user offers self-diagnosis
+   - Require concrete examples in PITCH phase
+   - Consolidate multi-pass quality control workflow
+   - Add "Pattern Recognition" section for perspective analysis
+2. **Skill-specific improvements:**
+   - brainstorming: Emphasize questioning user's diagnosis with concrete patterns
+   - getting-feedback: Expand to validate major framing decisions, not just final drafts
+   - searching_the_blog: Add "perspective analysis" as explicit proactive use case
+   - generate_a_pitch: Require gathering concrete example before finalizing
+   - note-taking: Emphasize capturing "why" behind decisions
+3. Meta-lesson: Process should encode "test assumptions, gather concrete evidence, pivot when needed"
+
+**Recording:**
+- Using note-taking skill to document Session 6 (current task)
+
+### User Decisions
+
+**Decision 1: Publish Post to Ghost**
+- Published draft created in Session 5
+- Added 2 screenshots in Ghost editor for visual enhancement
+- Rationale: Article complete and ready for publication
+
+**Decision 2: Sync Local Draft**
+- Requested update of local draft with Ghost changes
+- Rationale: Keep repo in sync with published version
+
+**Decision 3: Request Post-Mortem Analysis**
+- Asked for comprehensive review of writing process
+- Rationale: Learn from this experience to improve future workflows
+
+**Decision 4: Request Process Improvement Recommendations**
+- Asked: "any thoughts on what to revise for the skills and claude.md?"
+- Rationale: Capture lessons learned in procedural documentation for future posts
+
+**Decision 5: Document Session and Commit**
+- Requested: "note take, commit and push"
+- Rationale: Preserve complete audit trail before closing this project
+
+### Outcomes
+
+**✅ What worked:**
+
+| What Claude Did | User Decision | Outcome |
+|-----------------|---------------|---------|
+| Created fetch script to retrieve published post | Approved sync | Local draft now matches published version with images |
+| Identified 2 images added in Ghost editor | N/A | Images properly documented in local markdown |
+| Comprehensive post-mortem analysis across 5 sessions | Requested analysis | Clear understanding of what worked and what didn't |
+| Identified 3 critical turning points in process | N/A | Pattern recognition: questioning premises leads to breakthroughs |
+| Analyzed missteps and extracted lessons | N/A | Specific improvements identified for future posts |
+| Detailed recommendations for skills and CLAUDE.md | Requested improvements | Concrete actionable changes to encode learnings |
+
+**Post-Mortem Key Findings:**
+
+**Critical Turning Points:**
+1. **Session 3 breakthrough** - Questioning "abstraction bias" revealed real issue: uncertainty about client value
+2. **Session 4 insight** - Blog search revealed perspective shift from "Will this work?" to "Does this help clients?"
+3. **Session 5 refinement** - Title changed to immediately communicate paradox without jargon
+
+**What Worked Exceptionally Well:**
+- Questioning premises instead of defending them
+- Using reviewer agents to validate major pivots
+- Analyzing user's past work to surface patterns
+- Gathering concrete examples to test framing
+- Multi-pass quality control (3 passes caught all issues)
+- Proactive skill usage integrated into natural workflow
+
+**Missteps:**
+- Built on untested "abstraction bias" diagnosis for 2 sessions before testing it
+- Should have gathered concrete examples in Session 1, not Session 3
+- Embellished timeline ("for months") vs. actual experience (same-day)
+
+**Meta-Insight:**
+The article's process mirrored its content - both advocated for admitting uncertainty and being willing to experiment/pivot rather than committing to untested assumptions.
+
+**Recommended Improvements:**
+
+**CLAUDE.md:**
+1. Add "Test the Diagnosis" guidance - probe user's self-diagnosis before building on it
+2. Require concrete examples in PITCH phase - ground framing in actual experience
+3. Consolidate multi-pass quality control - make 4-pass workflow standard
+4. Add "Pattern Recognition" section - proactively search past posts for perspective analysis
+
+**Skills:**
+1. brainstorming: Question user's diagnosis with specific patterns (good vs. bad questions)
+2. getting-feedback: Expand to validate framing pivots, not just final drafts
+3. searching_the_blog: Make perspective analysis explicit, proactive use case
+4. generate_a_pitch: Require concrete example before finalizing pitch
+5. note-taking: Emphasize capturing "why" rationale behind every decision
+
+**Files created:**
+- `/workspace/temp/fetch-post.js` - Script to retrieve published post from Ghost
+
+**Files modified:**
+- `/workspace/posts/single-serving-bias/single-serving-bias-draft.md` - Added 2 images to match published version
+- `/workspace/posts/single-serving-bias/discussion.md` - This file (Session 6 documentation)
+
+**Publication Details:**
+- **URL:** https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/
+- **Published:** 2025-12-26 at 04:25:23 UTC
+- **Status:** Published
+- **Tags:** AI, LegalTech, SoloBuilder
+- **Post ID:** 694cb4d6fe727e0001bb2ab9
+- **Images:** 2 (term sheet screenshot, GenAI interface screenshot)
+
+### Next Steps
+
+- Commit and push all changes to repo
+- Implement recommended improvements to CLAUDE.md and skills (future work)
+- Apply lessons learned to next article workflow

@@ -1,6 +1,8 @@
-# The Single-Serving Software Uncertainty: Why We Need Permission to Experiment
+# When Building Gets Cheap But Knowing Stays Expensive
 
 In 2024, I spent hours crafting a 3-page prompt to generate an M&A term sheet for a legal tech competition. The result was a 4-page HTML document with timeline diagrams, color-coded risk tables (red/yellow/green), and professional typography that no standard Word template could match.
+
+![](https://www.alt-counsel.com/content/images/2025/12/Screenshot-2025-12-25-at-12.06.36---PM.png)
 
 It felt wasteful. All that time for a prompt that I was only going to use once.
 
@@ -75,7 +77,7 @@ Client education tools, decision support for low-stakes choices, process managem
 
 The goal isn't to prove that bespoke is always better. It's to **run experiments, not declare best practices**.
 
-## Getting Started: The Quick Version
+## How to Build Your First Experimental Tool
 
 Here's a quick tip on how to use your favorite GenAI to get started:
 
@@ -83,9 +85,11 @@ Here's a quick tip on how to use your favorite GenAI to get started:
 - Start describing what you want in plain English. 
   - If I want a term sheet that made use of web technologies, the prompt was “Output the term sheet in the form of a HTML page.” 
   - For my color coded risk table, I started by describing the table and then the color coding. "The output of this section is a table with 4 columns: S/N, Clause, Description and key Legal Risk. Add a row for each key agreement term, and include all of them in the table. Color code the entire row based on the risks levels: Red (High Risk), Yellow (Neutral), Green (Low Risk). Add a legend to describe the color coding used."
-  - You might not get it right the first time. ([I learned this building CLI tools that AI agents actually use](https://www.alt-counsel.com/i-built-cli-tools-for-claude-code-heres-what-i-learned-about-designing-for-ai-users/)—AI doesn't always work the way you expect.) Think carefully about what you might be missing. If you're writing a web page, you may have to use web design language such as "Use a responsive, modern page design." The leading GenAI solution now provide a "canvas" which allows you to see your output in a side bar and specify any changes you want to the output. 
+  - You might not get it right the first time. ([I learned this building CLI tools that AI agents actually use](https://www.alt-counsel.com/i-built-cli-tools-for-claude-code-heres-what-i-learned-about-designing-for-ai-users/)—AI doesn't always work the way you expect.) Think carefully about what you might be missing. If you're writing a web page, you may have to use web design language such as "Use a responsive, modern page design." The leading GenAI solution now provide a "canvas" which allows you to see your output in a side bar and specify any changes you want to the output.
 
-**Security note:** I mentioned in passing what you should do if you are concerned with client confidentiality. But really, I would be focusing on “toys”. Start with low-stakes educational tools or internal process documentation before client-facing deliverables.
+![Leading GenAI interfaces often allow you to preview the output next to your chat, so you can give feedback easily to the AI. Once you're satisfied with it, you can download or publish it. (See the top right buttons for Claude)](https://www.alt-counsel.com/content/images/2025/12/Screenshot-2025-12-25-at-12.11.09---PM.png)
+
+**Security note:** I mentioned in passing what you should do if you are concerned with client confidentiality. But really, I would be focusing on "toys". Start with low-stakes educational tools or internal process documentation before client-facing deliverables.
 
 **When experiments fail:** Some tools will take longer than expected. Some clients will prefer the traditional memo. That's fine - you're learning what works for the people around you, not committing to a permanent change. If your first attempt doesn't work, try a simpler version or a different client. The point is affordable experimentation, not perfect execution.
 
