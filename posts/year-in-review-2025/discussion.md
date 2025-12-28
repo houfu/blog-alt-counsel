@@ -725,3 +725,538 @@ Post is now ready for publication:
 
 **Publication Status:** ✅ READY (9.2/10 quality, all blockers removed)
 
+---
+
+## Session 5: Publication to Ghost and Sync (December 28, 2025, 9:00 PM SGT)
+
+### Tasks Completed
+
+**1. Posted draft to Ghost CMS**
+- Created post-to-ghost.js script following proven pattern from existing posts
+- Converted markdown to Ghost lexical format using LexicalBuilder
+- Tagged with: AI, LegalTech, Singapore, zeeker (validated via tag-registry skill)
+- Custom excerpt: "On October 3, 2025, a Singapore lawyer paid $800 after an AI hallucination reached court. That single sanction flipped legal coverage from 89% adoption focus to 82% accountability warnings in eight weeks." (249 chars)
+- Post ID: 69512c9acad1da0001e2595f
+- Status: Scheduled for 2025-12-31 00:03:08 UTC
+
+**2. Synced published version back to local repo**
+- Created sync-from-ghost.js script to fetch and convert lexical back to markdown
+- User made edits in Ghost editor before publishing:
+  - Added 3 images:
+    * keyword_timeline_chart.png (with alt text: "A chart showing keyword mentions relating to AI adoption vs AI accountability from April 2025 to December 2025...")
+    * Screenshot of Straits Times article about training (with alt text)
+    * Screenshot of AI-powered search engine article (no alt text initially)
+  - Removed H1 title (handled by Ghost metadata)
+  - Trimmed some explanatory paragraphs in "Trade-Off Solo Counsel" section
+  - Removed full SQL code blocks (simplified to problem descriptions)
+  - Reordered May 2025 articles list
+  - Minor text edits ("solicitor" → "lawyer")
+- Updated local draft.md to match published version
+- Net change: -87 lines (113 removed, 26 added)
+
+**3. Tag validation and metadata**
+- Used tag-registry skill to suggest tags from canonical registry
+- Recommended 4 tags (within 3-4 range):
+  1. AI (Core Topic) - Primary theme about AI accountability
+  2. LegalTech (Core Topic) - Legal technology implications
+  3. Singapore (Regional) - Singapore-specific legal context
+  4. zeeker (Specialized Tool) - Showcases data.zeeker.sg capabilities
+- All tags validated from canonical registry ✅
+- No new tags created ✅
+
+### Scripts Created
+
+1. **posts/year-in-review-2025/scripts/post-to-ghost.js**
+   - Converts markdown to Ghost lexical format
+   - Posts draft with metadata and tags
+   - Based on proven pattern from data-zeeker-sg posts
+
+2. **posts/year-in-review-2025/scripts/sync-from-ghost.js**
+   - Fetches published post from Ghost API
+   - Converts lexical JSON back to markdown
+   - Updates local draft.md to match published version
+
+### Files Modified
+
+- **draft.md**: Synced with published version (includes image references, trimmed content)
+
+### Publication Details
+
+- **Post URL**: https://www.alt-counsel.com/p/e421e04f-65a7-47f5-996e-6f8fbb943405/
+- **Scheduled**: December 31, 2025, 00:03 UTC
+- **Title**: October 3 Changed Everything: How One $800 Fine Flipped Singapore's AI Coverage from Adoption to Accountability
+- **Slug**: year-in-review-2025-ai-accountability
+
+### Next Steps
+
+1. ✅ Draft posted to Ghost
+2. ✅ Published version synced back to repo
+3. ⏳ Review and commit changes to git
+4. ⏳ Monitor post publication on Dec 31
+
+**Status:** ✅ PUBLISHED (scheduled), LOCAL REPO SYNCED
+
+---
+
+## POST-MORTEM: Year-in-Review 2025 Drafting Experience
+
+### Overview
+
+This post-mortem analyzes the complete drafting process for "October 3 Changed Everything," from initial brainstorming on December 28, 2025 through publication the same day. Total time: ~12 hours across 5 sessions.
+
+**Final Stats:**
+- **Post length**: ~3,900 words (23,882 characters original draft → 20,236 after Ghost edits)
+- **Sessions**: 5 (brainstorming, data analysis, drafting, quality audit, publication)
+- **Major pivots**: 1 (complete pitch rewrite after data verification)
+- **Quality score**: 9.2/10 (post-audit, up from 7.8/10 initial draft)
+- **Backlinks integrated**: 11+ to existing 2025 AI coverage
+- **Scripts created**: 3 (chart generation, Ghost posting, Ghost sync)
+
+---
+
+### What Worked Exceptionally Well
+
+#### 1. **Data-First Methodology Caught a Critical Error Early**
+
+**What happened:**
+- Session 1: User pitched analysis based on "444 articles" showing "gradual Q2-Q4 shift"
+- Session 3: When we ran actual SQL queries, found only 27 relevant articles with a sudden October spike, not gradual shift
+- User immediately pivoted: "We have to follow the data"
+
+**Why it worked:**
+- Caught credibility-destroying error BEFORE publishing
+- Transformed vague "quarterly trend" into precise "October 3 inflection point" narrative
+- Made the post more defensible and fact-checkable
+
+**Lesson:** Running the analysis yourself (not just describing it) catches assumption errors that ruin credibility.
+
+#### 2. **Multi-Reviewer Feedback (Legal Tech + Corporate Lawyer) Validated Risky Structural Choice**
+
+**What happened:**
+- Used `getting-feedback` and `legal-tech-blog-reviewer` skills to get two perspectives
+- Both independently recommended Approach B (finding first, method second)
+- Corporate lawyer warned: "60-70% will bounce if methodology leads"
+
+**Why it worked:**
+- Gave confidence to commit to counterintuitive structure (method-heavy post with finding up front)
+- Prevented "bury the lede" mistake that would have lost practitioners
+- Validated that dual-audience approach (practitioners + technologists) was viable
+
+**Lesson:** When making risky structural decisions, get feedback from BOTH target audiences before committing.
+
+#### 3. **Content Quality Auditor Systematically Elevated Draft from 7.8→9.2**
+
+**What happened:**
+- Session 4: Ran comprehensive 27-issue audit across 8 priority tiers
+- Fixed everything from accessibility (alt text, heading structure) to professional tone
+- User reviewed and approved: "Implement all fixes"
+
+**Why it worked:**
+- Systematic approach ensured no quality issues slipped through
+- Prioritization (P1-P8) let us focus on blockers first
+- Preserved author's voice while improving professionalism
+
+**Lesson:** Content quality audit as a SEPARATE phase (not during drafting) catches issues you're blind to when writing.
+
+#### 4. **Backlink Curation Skill Integrated Post into Existing Body of Work**
+
+**What happened:**
+- User requested: "This makes many appearances in my blog. Can you search and integrate?"
+- `backlink_curating` skill found 11+ related posts from 2025
+- Wove them throughout naturally, positioning post as synthesis not standalone
+
+**Why it worked:**
+- Transformed standalone analysis into capstone of year-long coverage
+- Provided navigation paths for readers ("if you're interested in X, see this post")
+- SEO benefit + demonstrates depth of coverage
+
+**Lesson:** For year-in-review or synthesis posts, backlink integration should be a REQUIRED step, not optional.
+
+#### 5. **Tag Registry Skill Prevented Tag Sprawl**
+
+**What happened:**
+- Before posting, used `tag-registry` skill to validate tags against canonical list
+- Suggested: AI, LegalTech, Singapore, zeeker (all from registry)
+- No new tags created, consistent with existing taxonomy
+
+**Why it worked:**
+- Avoided "year-in-review" or "2025" tags that would only apply once
+- Maintained discoverability through established topic tags
+- Prevented future tag consolidation cleanup
+
+**Lesson:** Tag validation BEFORE posting (not after) prevents one-off tags.
+
+---
+
+### What Could Be Improved
+
+#### 1. **Initial Pitch Was Based on Assumptions, Not Data**
+
+**The problem:**
+- User arrived with pitch based on Opus analysis and assumptions
+- Claimed "444 articles" (actually 27), "gradual shift" (actually sudden), "January data" (doesn't exist)
+- Required complete rewrite in Session 3 after running actual queries
+
+**Why it happened:**
+- User worked from memory of previous Opus conversation
+- Didn't re-run queries before drafting pitch
+- Assumed prior analysis was accurate
+
+**Cost:**
+- Wasted 2-3 hours on initial pitch and partial draft
+- Had to re-explain methodology after pivot
+- Could have undermined credibility if not caught
+
+**How to prevent:**
+- ALWAYS re-run analysis before writing pitch (even if done previously)
+- Treat pitch as "hypothesis to verify" not "confirmed finding"
+- Build verification step into brainstorming phase
+
+#### 2. **Folder Structure Reorganization Mid-Project Caused Path Confusion**
+
+**The problem:**
+- Session 3: User reorganized folder (created data/, images/, scripts/, research/ subdirectories)
+- Scripts broke because paths changed
+- Had to update chart generation script paths
+
+**Why it happened:**
+- Folder cleanup happened during active development
+- No path abstraction in scripts (hardcoded relative paths)
+
+**Cost:**
+- 15-20 minutes debugging path issues
+- Script re-runs to verify fixes
+
+**How to prevent:**
+- Do folder reorganization BEFORE or AFTER active development, not during
+- Use path variables at top of scripts for easier updates
+- Consider keeping flat structure until post is complete
+
+#### 3. **Chart Generation Required Manual Debugging**
+
+**The problem:**
+- UV inline script failed initially due to package imports
+- Had to adjust matplotlib/pandas versions
+- Chart needed refinement (legend positioning, transparency)
+
+**Why it happened:**
+- UV inline scripts don't have package dependency management
+- First attempt at chart generation for this post
+
+**Cost:**
+- 30-45 minutes debugging and refining chart
+- Multiple iterations to get visual right
+
+**How to prevent:**
+- Create reusable chart templates for common visualizations
+- Document working UV inline script patterns for future posts
+- Consider moving complex visualizations to standalone scripts
+
+#### 4. **SQL Code Blocks Were Too Long for Final Post**
+
+**The problem:**
+- Initial draft included full SQL queries (20+ lines each)
+- Ghost editor: User trimmed these to problem descriptions
+- Local draft diverged from published version
+
+**Why it happened:**
+- Assumed technical audience wanted full queries
+- Didn't consider that GitHub repo already has queries
+- Over-indexed on "show your work"
+
+**Cost:**
+- Extra editing work in Ghost editor
+- Content length bloat in draft
+
+**How to prevent:**
+- For posts with companion GitHub repo: link to full queries, show only key excerpts in post
+- Ask during drafting: "Should I include full code or just concepts + link?"
+- Consider audience signposting: "For full queries, see GitHub"
+
+#### 5. **Missing Alt Text on One Image**
+
+**The problem:**
+- Screenshot of AI-powered search engine article initially had no alt text
+- Noticed during sync review
+
+**Why it happened:**
+- User added image manually in Ghost editor
+- No systematic alt text checklist during Ghost editing
+
+**Cost:**
+- Accessibility issue (minor, since user likely fixed)
+
+**How to prevent:**
+- Create Ghost editor checklist: [ ] All images have alt text
+- Add reminder in post-to-ghost.js output
+- Consider making alt text a blocking requirement in content quality audit
+
+---
+
+### Key Insights & Learnings
+
+#### 1. **Structured Data + AI Analysis = Pattern Discovery Traditional Research Misses**
+
+The post itself proves this: keyword frequency analysis revealed the October 3 inflection point that wasn't visible reading articles individually. This meta-finding validates the entire zeeker.sg infrastructure investment.
+
+**Implication for future posts:**
+- More data-driven analyses are possible and valuable
+- zeeker.sg should be mined for quarterly pattern posts
+- Similar methodology applicable to other legal domains (scams, money laundering, corporate governance)
+
+#### 2. **"Follow the Data" Discipline Prevents Credibility Collapse**
+
+The willingness to scrap the initial pitch when data didn't support it was crucial. Publishing "444 articles analyzed" when only 27 were relevant would have destroyed trust.
+
+**Implication for workflow:**
+- Data verification must happen BEFORE pitch finalization, not after
+- Better to delay publication than publish inaccurate claims
+- Build falsifiability into analysis (show what DIDN'T work, not just what did)
+
+#### 3. **Dual-Audience Posts Require Explicit Signposting**
+
+The "Two ways to read this post" section successfully bifurcated audiences. Practitioners could skip to takeaways, technologists could dive into methodology.
+
+**Implication for future posts:**
+- More posts can serve dual audiences if signposted clearly
+- Don't force everyone through the same reading path
+- Consider "choose your own adventure" structures for complex topics
+
+#### 4. **Year-in-Review Posts Need Early Planning for Data Collection**
+
+This post was only possible because zeeker.sg captured structured data throughout 2025. Without that infrastructure, the analysis would be impossible.
+
+**Implication for 2026:**
+- Plan year-in-review posts in January, not December
+- Identify data collection needs up front
+- Build dashboards/queries throughout year, not retroactively
+
+#### 5. **Content Quality Audit as Separate Phase Catches Blindspots**
+
+Writing and editing use different cognitive modes. The 27-issue audit caught problems (inconsistent terminology, accessibility issues, tonal shifts) that weren't visible during drafting.
+
+**Implication for workflow:**
+- Make content quality audit a MANDATORY phase for all significant posts
+- Don't audit your own writing immediately after drafting (blind to flaws)
+- Use systematic checklists, not just "does this feel right?"
+
+---
+
+### Workflow & Tools Performance
+
+#### Skills Used (Ranked by Impact)
+
+**🥇 High Impact - Essential for Post Success:**
+
+1. **content-quality-auditor** (Session 4)
+   - Caught 27 issues across 8 priority tiers
+   - Elevated quality from 7.8→9.2
+   - Would recommend for ALL significant posts
+
+2. **backlink_curating** (Session 4)
+   - Integrated 11+ backlinks, positioned post as synthesis
+   - Transformed standalone piece into capstone
+   - Essential for year-in-review/synthesis posts
+
+3. **tag-registry** (Session 5)
+   - Prevented tag sprawl, maintained consistency
+   - Quick validation against canonical list
+   - Should be used for EVERY post
+
+**🥈 Medium Impact - Valuable but Not Critical:**
+
+4. **legal-tech-blog-reviewer** (Session 1)
+   - Validated risky structural choice (Approach B)
+   - Confirmed dual-audience approach viable
+   - Useful for posts with uncertain audience fit
+
+5. **getting-feedback** (Session 1, as corporate lawyer reviewer)
+   - Warned about methodology-first danger
+   - Validated practitioner perspective
+   - Helpful for posts targeting resource-constrained practitioners
+
+**🥉 Low Impact - Informational but Not Decision-Changing:**
+
+6. **using-ghost-admin-api** (Session 5)
+   - Streamlined posting process
+   - Sync-back script useful for reference
+   - More utility than editorial value
+
+7. **note-taking** (Sessions 1-5)
+   - Captured decisions and rationale
+   - Useful for post-mortem (like this!)
+   - Background utility, not directly impacting post quality
+
+#### Scripts Created (Ranked by Reusability)
+
+**High Reuse Potential:**
+
+1. **sync-from-ghost.js** ⭐
+   - Fetches published posts and converts lexical→markdown
+   - Reusable for ANY post sync workflow
+   - Should be moved to project-level scripts/
+
+2. **post-to-ghost.js** ⭐
+   - Converts markdown→lexical and posts drafts
+   - Pattern applicable to all future posts
+   - Consider templating for easy customization
+
+**Medium Reuse Potential:**
+
+3. **generate_keyword_timeline_chart.py** (UV inline)
+   - Generates adoption vs accountability chart
+   - Pattern reusable for time-series comparisons
+   - Needs abstraction for general use
+
+**Low Reuse Potential:**
+- SQL queries (highly specific to this analysis)
+- Data extraction scripts (zeeker.sg-specific)
+
+#### Process Phases (Ranked by Time Spent)
+
+1. **Session 3: Data Verification & Drafting** (~4 hours)
+   - SQL query iteration
+   - Keyword frequency analysis
+   - Chart generation and refinement
+   - Initial draft writing
+
+2. **Session 4: Blog Integration & Quality Audit** (~3 hours)
+   - Backlink curation and weaving
+   - 27-issue content quality audit implementation
+   - POV alignment fixes
+
+3. **Session 1: Brainstorming & Pitch** (~2 hours)
+   - Multi-reviewer feedback
+   - Structural approach decision
+   - Initial pitch drafting
+
+4. **Session 5: Publication & Sync** (~1.5 hours)
+   - Script creation (post-to-ghost, sync-from-ghost)
+   - Posting and scheduling
+   - Sync and documentation
+
+5. **Session 2: Initial Data Gathering** (~1 hour)
+   - File organization
+   - Data consolidation
+   - Prep for analysis
+
+**Total: ~11.5 hours** (brainstorm → published draft)
+
+---
+
+### Recommendations for Future Posts
+
+#### Do More Of (Keep):
+
+✅ **Multi-reviewer feedback for risky structural decisions**
+- Legal tech reviewer + target audience reviewer
+- Prevents "seemed like a good idea" mistakes
+- Especially valuable for dual-audience posts
+
+✅ **Systematic content quality audit as separate phase**
+- Not optional for significant posts
+- Use checklist-based approach (accessibility, readability, tone, structure)
+- Catches issues invisible during drafting
+
+✅ **Tag validation before posting**
+- Use tag-registry skill EVERY time
+- Prevents one-off tags and future cleanup
+- 5-minute investment prevents long-term mess
+
+✅ **Backlink integration for synthesis posts**
+- Positions new post in context of existing work
+- Provides reader navigation paths
+- SEO + demonstrates topical depth
+
+✅ **Data verification before pitch finalization**
+- Re-run analysis even if done previously
+- Treat pitch as hypothesis to verify
+- Prevents credibility-destroying errors
+
+#### Do Less Of (Reduce/Eliminate):
+
+❌ **Assumption-based pitches without data verification**
+- Caused complete rewrite mid-project
+- Wasted 2-3 hours on invalid pitch
+- Always verify data BEFORE pitch
+
+❌ **Full SQL code blocks in posts with GitHub repos**
+- Bloats post length
+- Readers who want full code will check GitHub
+- Show problem + link to solution instead
+
+❌ **Folder reorganization during active development**
+- Breaks scripts, causes path confusion
+- Do cleanup before or after, not during
+- If necessary, update all scripts immediately
+
+❌ **Manual image editing in Ghost without alt text checklist**
+- Accessibility issues slip through
+- Add systematic alt text check to Ghost editing phase
+
+#### New Practices to Try:
+
+🆕 **Year-in-review planning in January, not December**
+- Identify data collection needs up front
+- Build dashboards throughout year
+- Makes December writing faster
+
+🆕 **Reusable chart templates for common visualizations**
+- Time series comparisons
+- Keyword frequency analysis
+- Before/after comparisons
+
+🆕 **Ghost editor checklist for manual edits**
+- [ ] All images have alt text
+- [ ] Blockquotes converted to appropriate cards (if applicable)
+- [ ] Bookmark cards for key backlinks
+- [ ] Anchor links tested (if applicable)
+
+🆕 **"Hypothesis to verify" framing for data-driven posts**
+- State assumption up front
+- Show what you expected vs. what you found
+- Builds trust by showing intellectual honesty
+
+---
+
+### Overall Assessment
+
+**Success Metrics:**
+
+✅ **Quality**: 9.2/10 (post-audit) - high-quality, publication-ready
+✅ **Accuracy**: Data-verified, credible analysis
+✅ **Integration**: 11+ backlinks, positioned as synthesis
+✅ **Audience**: Dual-audience served with clear signposting
+✅ **Reusability**: Scripts created for future posts
+✅ **Timeline**: 12 hours from idea to scheduled publication
+
+**Key Success Factors:**
+
+1. Willingness to pivot when data contradicted assumptions
+2. Multi-reviewer feedback validated risky structural choice
+3. Systematic content quality audit caught blindspots
+4. Existing zeeker.sg infrastructure enabled analysis
+5. Clear author voice preserved through POV alignment
+
+**Key Learning:**
+
+The most valuable moment was Session 3's "we have to follow the data" pivot. That decision prevented a credibility-destroying error and transformed a vague "gradual trend" story into a precise "October 3 inflection point" narrative. **Data integrity > narrative convenience.**
+
+**Would Do Again:**
+
+This post demonstrates that data-driven legal analysis is both feasible and valuable for solo practitioners. The methodology (structured data + SQL + keyword analysis) is replicable for other legal domains. The zeeker.sg infrastructure investment is paying off.
+
+**Recommendation:**
+
+Apply this methodology quarterly in 2026:
+- Q1 2026: Scam enforcement rhetoric analysis
+- Q2 2026: Corporate governance compliance language shifts
+- Q3 2026: Cross-border transaction coverage patterns
+- Q4 2026: Year-in-review 2026
+
+Each would validate zeeker.sg value proposition while building topical expertise.
+
+---
+
+**POST-MORTEM COMPLETED: December 28, 2025, 10:30 PM SGT**
+
