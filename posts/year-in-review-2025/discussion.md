@@ -69,7 +69,37 @@ Expand analysis period to include January 2026 data
 More complete trend, captures post-holiday continuation
 
 **Outcome:**
-✅ Pitch updated to reflect April 2025 - January 2026 timeframe
+❌ Reversed in Session 3 - January 2026 doesn't exist yet
+
+---
+
+### Decision 4: Follow the Data, Not the Hypothesis (2025-12-28, Session 3)
+
+**Claude's Analysis:**
+- Initial search `%AI%` caught false positives (13 articles)
+- Revised search with explicit terms found 27 articles (not 444)
+- Manual classification showed 89% → 82% tone flip (not volume increase)
+- Keyword frequency analysis: 395% accountability increase post-October
+- Discovered October 3, 2025 as precise inflection point
+
+**Claude's Recommendation:**
+Revise entire pitch to match actual data:
+- 27 articles analyzed (not "444 articles reveal")
+- October 3 as watershed moment (not gradual Q2→Q4 shift)
+- Tone shift (89%→82%) not volume shift
+- Remove January 2026 data (doesn't exist)
+
+**User Decision:**
+"We have to follow the data"
+
+**Rationale:**
+Credibility requires accuracy. Better to have precise finding with 27 articles than impressive-sounding "444 articles" that's misleading.
+
+**Outcome:**
+✅ Complete rewrite of pitch and draft
+✅ More accurate, credible story: "October 3 Changed Everything"
+✅ 395% increase statistic from keyword analysis
+✅ Professional visualization with filled areas showing "territory" shift
 
 ---
 
@@ -80,6 +110,9 @@ More complete trend, captures post-holiday continuation
 - Read data.zeeker.sg project documentation and discussion notes
 - Extracted text from sglawwatch_2025_analysis.docx (444 articles, Apr-Dec 2025)
 - Analyzed two data visualizations (sglawwatch_analysis.png, sglawwatch_full_2025.png)
+- **Session 3:** Created and iterated SQL verification queries (4 versions)
+- **Session 3:** Analyzed 27 AI articles manually for tone classification
+- **Session 3:** Performed keyword frequency analysis across 8 months
 
 ### Feedback & Analysis
 - Created feedback-context.md explaining the two angle options
@@ -99,12 +132,23 @@ More complete trend, captures post-holiday continuation
 - Revised pitch to include January data
 - Created comprehensive pitch.md with structure, audience, value proposition
 - Created feedback-context.md for reviewers
+- **Session 3:** Revised pitch based on actual data (27 articles, October 3 focus)
+- **Session 3:** Wrote complete 3,000-word draft (40% findings, 60% methodology)
+- **Session 3:** Documented 4-iteration SQL query evolution transparently
+
+### Technical
+- **Session 3:** Created generate_chart.py with inline uv dependencies
+- **Session 3:** Generated professional visualization with Plotly (filled areas, annotations)
+- **Session 3:** Reorganized folder into clean structure (data/, images/, scripts/, research/)
+- **Session 3:** Created comprehensive README documentation
+- **Session 3:** Updated all script paths to use relative imports
 
 ### Process Management
 - Set up git branch workflow (claude/year-in-review-post-HkiTe)
 - Created post folder structure
 - Used brainstorming skill to develop concept iteratively
 - Used getting-feedback skill for dual reviewer perspectives
+- **Session 3:** Used note-taking skill to record session progress
 
 ---
 
@@ -118,6 +162,10 @@ More complete trend, captures post-holiday continuation
 | Got feedback from two different reviewer perspectives | Chose Approach B endorsed by both | Consensus validated structure |
 | Asked clarifying questions one at a time | User revealed key insight about "how to with AI" | Found unique hook |
 | Created git branch workflow for file uploads | User uploaded analysis files smoothly | Efficient collaboration |
+| **Iterated SQL queries 4 times** | **User: "We have to follow the data"** | **Found accurate 27-article dataset** |
+| **Documented query evolution transparently** | **User approved showing failures** | **Methodology became teaching tool** |
+| **Added filled area visualization** | **User: "Color the area below"** | **Dramatic "territory" shift visible** |
+| **Reorganized folder on request** | **User: "This looks messy"** | **Clean structure, easy navigation** |
 
 ### Didn't Work ❌
 
@@ -125,6 +173,9 @@ More complete trend, captures post-holiday continuation
 |-----------------|---------|--------|
 | WebFetch to claude.ai conversation | Network blocked claude.ai domain | Use file extraction methods instead |
 | Tried to read .docx with Read tool | Binary file not supported | Use unzip/sed extraction for docx |
+| **Initial `%AI%` search pattern** | **Caught false positives (flail, Thailand)** | **Use explicit terms for accuracy** |
+| **Assumed 444 articles analysis** | **Only 27 were AI-specific** | **Verify assumptions with queries** |
+| **add_vline() with categorical x-axis** | **Plotly error on string x values** | **Use add_shape() for categorical axes** |
 
 ---
 
@@ -324,3 +375,190 @@ All data needed for both findings (40%) and methodology (60%) sections
 
 #### Next Steps
 User taking break. When resuming: begin drafting the post.
+
+---
+
+### Session 3: Data Verification, Draft Writing & Visualization (2025-12-28)
+
+#### Context
+Continued from different machine. User requested: "try git pull" to sync latest changes.
+
+Critical discovery: The storyline needed verification against actual query results, not assumptions from initial Opus analysis.
+
+#### What Claude Did
+
+**Data Verification Phase (Following the Data):**
+
+1. **Created SQL verification queries** (verification-queries.sql):
+   - Query 1: Count AI articles by month
+   - Initial search with `%AI%` caught false positives ("flail", "Thailand")
+   - Result: Only 13 articles - too narrow
+
+2. **Revised search strategy** (Query 1a):
+   - Removed standalone `%AI%` pattern
+   - Added explicit terms: ChatGPT, GPT, LLM, machine learning, deepfake, hallucination, legal tech
+   - Result: 27 articles (Apr-Dec 2025) - more complete
+   - Monthly breakdown: Apr(2), May(6), Jun(1), Jul(2), Aug(2), Sep(3), Oct(4), Nov(5), Dec(2)
+
+3. **Retrieved full article content** (Query 2):
+   - Exported all 27 articles with dates, titles, summaries, URLs
+   - User uploaded: sglawwatch_query2.csv
+   - Manual classification revealed tone shift, not just volume shift
+
+4. **Analyzed the real pattern:**
+   - Before Oct 3: 15 articles (89% adoption-focused)
+   - After Oct 3: 12 articles (82% accountability-focused)
+   - NOT "444 articles" - that was total database, not AI-specific
+   - Discovered October 3, 2025 as precise watershed moment
+
+5. **Keyword frequency analysis** (Query 4):
+   - Counted adoption keywords (training, innovation, efficiency, opportunity, launch)
+   - Counted accountability keywords (accountability, discipline, sanctions, verification, oversight, misuse, dismissal)
+   - Tracked month-by-month to prove qualitative shift quantitatively
+   - Result: 395% increase in accountability keywords post-October
+
+**Key Finding - Following the Data:**
+- **May 2025:** Peak Adoption (12 adoption mentions, 3 accountability mentions)
+- **October 2025:** The Crossover (8 adoption, 18 accountability - 3x spike!)
+- **Inflection Point:** October 3 $800 fine for AI hallucination
+
+**Pitch Revision Phase:**
+
+User correctly insisted: "We have to follow the data"
+
+Claude revised pitch to match actual findings:
+- Changed title from "What 444 Articles Reveal" → "October 3 Changed Everything"
+- Corrected article count: 27 AI/legal tech articles (not 444 total database)
+- Removed January 2026 data (doesn't exist yet)
+- Made finding more precise: "On October 3, 2025, a Singapore lawyer was ordered to pay $800..."
+- Quantified the shift: "Before Oct 3: 89% adoption. After Oct 3: 82% accountability"
+
+**Draft Writing Phase:**
+
+Created complete 3,000-word draft (draft.md) following 40/60 structure:
+
+*Part 1 (40%): The Finding*
+- Hook: October 3 watershed moment
+- Data visualization: keyword crossover
+- Three phases: Adoption Era → Inflection Point → Accountability Era
+- Timeline with 6 key articles and dates
+- Practical implications for solo counsels
+
+*Part 2 (60%): The Method*
+- Step 1: Wrong first query (false positives)
+- Step 2: Expanding the search (27 articles found)
+- Step 3: Manual classification (tone vs volume)
+- Step 4: Keyword frequency (quantifying the shift)
+- "Try it yourself" invitation with actual SQL
+
+**Visualization Phase:**
+
+1. **Created chart generation script** (generate_chart.py):
+   - Used Plotly for modern, publication-quality charts
+   - Inline dependencies for uv (`uv run generate_chart.py`)
+   - Reads sglawwatch_query4.csv
+   - Dual trend lines (adoption vs accountability)
+   - October 3 vertical marker
+   - Annotations for peak moments
+
+2. **User feedback:** "I wonder if we can color the area below the chart based on whether adoption or accountability was higher"
+
+3. **Enhanced visualization:**
+   - Added filled areas under both lines (20% transparency)
+   - Purple "adoption territory" visible Apr-Sep
+   - Red "accountability territory" explodes Oct onwards
+   - Visual crossover dramatically shows the shift
+
+4. **Generated final chart:**
+   - High-res PNG (2400x1200px, 2x scale for retina)
+   - Also created interactive HTML preview
+   - Summary stats: 395% increase, Pre-Oct avg 3.2 → Post-Oct avg 15.7
+
+**Folder Reorganization Phase:**
+
+User: "This folder looks a bit messy. Can you refactor so that it looks more organised?"
+
+Reorganized into clean structure:
+```
+year-in-review-2025/
+├── README.md           # Documentation
+├── draft.md            # Main post
+├── pitch.md            # Pitch
+├── discussion.md       # This file
+├── data/               # All CSV and analysis files (5 files)
+├── images/             # All visualizations (3 files)
+├── scripts/            # generate_chart.py + SQL queries
+└── research/           # Working documents (4 files)
+```
+
+Updated script paths to use relative imports (works from any directory)
+
+Created comprehensive README documenting:
+- Folder structure
+- Quick start (`uv run scripts/generate_chart.py`)
+- Key findings (395% increase)
+- Next steps
+
+#### User Decisions
+
+**Decision 1:** Correct search terms after false positives
+Rationale: "I removed 'ai' because a word search like that brought wrong articles like flail"
+Outcome: ✅ Found complete 27-article dataset
+
+**Decision 2:** Follow the data, not the hypothesis
+User: "We have to follow the data"
+Rationale: Initial pitch claimed "444 articles" but only 27 were AI-related
+Outcome: ✅ More accurate, credible story: "October 3 Changed Everything"
+
+**Decision 3:** Use filled area chart
+User: "I wonder if we can color the area below the chart"
+Rationale: Makes the "territory" shift visually dramatic
+Outcome: ✅ Much more impactful visualization
+
+**Decision 4:** Reorganize folder structure
+User: "This folder looks a bit messy"
+Rationale: 17 files in flat structure getting hard to navigate
+Outcome: ✅ Clean categorical organization
+
+#### Outcomes
+
+✅ **Data-verified story:**
+- 27 articles (not 444)
+- October 3, 2025 as precise inflection point
+- 89% → 82% tone flip quantified
+- 395% increase in accountability keywords
+
+✅ **Complete draft:**
+- 3,000 words
+- 40% findings, 60% methodology
+- All SQL queries documented
+- Transparent about iterations (4 query revisions shown)
+
+✅ **Professional visualization:**
+- Filled-area chart showing "territory" shift
+- High-res PNG ready for blog
+- Interactive HTML preview
+- Clear annotations
+
+✅ **Organized project:**
+- Clean folder structure (data/, images/, scripts/, research/)
+- README documentation
+- Relative paths (works anywhere)
+- Ready for next steps
+
+**Files created/modified:**
+- verification-queries.sql (documented 4 iterations)
+- draft.md (complete 3,000-word post)
+- generate_chart.py (uv inline script)
+- keyword_timeline_chart.png (final visualization)
+- README.md (project documentation)
+- Reorganized 17 files into 4 directories
+
+#### Next Steps
+
+1. Get actual article URLs from data.zeeker.sg (replace placeholders)
+2. Optional: Run content quality audit
+3. Optional: Run target audience review
+4. Curate backlinks to related posts
+5. Validate tags
+6. Publish to Ghost
