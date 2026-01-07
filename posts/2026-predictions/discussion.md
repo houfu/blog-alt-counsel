@@ -264,3 +264,147 @@ User wanted to make 2026 predictions after researching what others are predictin
 5. **Most AI adoption will be performative theater**
    - Success: Learn to recognize real innovation pockets vs. checkbox exercises
    - Doing: Call out examples publicly, develop pattern recognition framework
+
+## Session 2: De-Slop, Feedback, and Final Polish (2026-01-07)
+
+### Context
+Post was drafted and reached 2,800 words with comprehensive content, but user identified concern: "too much AI produced slop" - overly helpful formatting made it look AI-generated. Session focused on cutting length, addressing feedback, and final quality polish.
+
+### What Claude Did
+
+**De-Slopping & Length Reduction:**
+- Cut from 2,800 words to 1,799 words (1,000+ word reduction)
+- Deleted entire "What You Can Do Now" interim guidance section (~400 words)
+- Deleted detailed three workflows breakdown in Prediction #4 (~200 words)
+- Deleted checkbox-format red flags in Prediction #5 (~200 words)
+- Converted all "What I'm doing" bullet lists to conversational paragraphs
+- Removed formulaic transition phrases between sections
+- Compressed accountability section and "What I'm Not Predicting" section
+
+**Backlink Curation:**
+- Used backlink_curating skill to search blog for relevant posts
+- Added 3 new bookmark cards:
+  1. "AI Just Beat Lawyers" → Prediction #1
+  2. "The Solo Counsel Reality" → Prediction #3
+  3. "When AI Makes You Look Busy" → Prediction #5
+- Total: 6 bookmark cards well-distributed across predictions
+
+**Tag Validation:**
+- Used tag-registry skill to validate tags
+- Fixed naming conventions: legal-tech → LegalTech, ai → AI, singapore → Singapore
+- Removed non-canonical tags: predictions, productivity, legal-practice
+- Final tags: AI, LegalTech, Singapore (3 canonical tags)
+
+**User Edits Review:**
+- Got feedback from both reviewer agents on user's personal edits
+- Key user changes:
+  1. Replaced "AI Just Beat Lawyers" bookmark with personal explanation (lines 19-22)
+  2. Changed $50K to $500K for enterprise systems
+  3. Added "OR NOT!" to hallucination heading
+  4. Simplified success criteria to focus on personal accountability
+  5. Changed tracking from #2026Predictions to Github PR updates
+
+**Audience Feedback Synthesis:**
+- Legal tech reviewer: Keep personal explanation, fix $500K→$50K, clarify Github mechanics
+- Corporate lawyer: Restore evidence link, $500K hurts credibility, Github excludes non-technical lawyers
+- Consensus: $500K→$50K critical for credibility, Github-only approach excludes broader audience
+
+**Applied Fixes from Feedback:**
+- Changed $500K back to $50K (critical for credibility)
+- Restored "AI Just Beat Lawyers" bookmark + kept tightened personal explanation (Option B)
+- Changed from "Github PR only" to hybrid: blog posts + Github for raw data
+- Removed "brutally honest" performance language
+
+**Content Quality Audit:**
+- Ran comprehensive content-quality-auditor agent
+- Fixed critical accessibility issue: Expanded agentic AI explanation
+- Strengthened Prediction #5 with concrete examples (theater: ChatGPT wrapper; innovation: GitHub workflow)
+- Specified three approaches for hallucination management
+- Varied "December 2026" repetition (8 instances → varied phrasing)
+- Fixed tone issues: "Totally boring" → "Nothing sexy, just reality"
+- Fixed tone issues: "bullshit detector" → "spot the difference between real innovation and checkbox theater"
+- Improved RAG paradox explanation for clarity
+- Final word count: 1,887 words
+
+### User Decisions
+
+**Major Decisions:**
+1. **De-slop aggressively:** Cut 1,000+ words, delete entire sections of instructional scaffolding
+2. **$500K → $50K:** After feedback showing $500K damages credibility, changed back to $50K
+3. **Evidence + Personal Voice (Option B):** Restore bookmark card for credibility + keep personal technical explanation
+4. **Hybrid tracking approach:** Blog posts tagged #2026Predictions + Github for raw data (serves both audiences)
+5. **Fix all audit issues:** Address all critical, moderate, and minor issues from quality audit
+
+**Specific Edits Made:**
+- Lines 19-22: Restored "AI Just Beat Lawyers" bookmark + tightened personal explanation about agents
+- Line 8: Changed $500K back to $50K
+- Lines 119, 129: Changed from "monthly" to regular updates (doesn't control schedule)
+- Line 10: "Totally boring" → "Nothing sexy, just reality"
+- Line 37: Expanded agentic AI definition for non-technical lawyers
+- Line 47: Broke long 52-word sentence into two paragraphs
+- Line 65: "post-October 3" → "after October 3's AI hallucination sanctions in Singapore"
+- Line 79: Expanded RAG paradox explanation
+- Lines 83-87: Specified three hallucination management approaches with bullets
+- Lines 104-106: Added concrete theater and innovation examples
+- Line 100: "bullshit detector" → "spot the difference"
+- Varied "December 2026" repetition throughout
+
+### Outcomes
+
+**Files Modified:**
+- `/workspace/posts/2026-predictions/2026-legal-ai-predictions.md` - Final polished post (1,887 words)
+- `/workspace/posts/2026-predictions/discussion.md` - This file (session notes)
+
+**Quality Improvements:**
+- ✅ Cut AI-slop from 2,800 to final 1,887 words
+- ✅ Added 3 strategic backlinks (6 total bookmark cards)
+- ✅ Validated and corrected tags to canonical registry
+- ✅ Fixed critical accessibility issues (agentic AI definition)
+- ✅ Strengthened weakest prediction (#5) with concrete examples
+- ✅ Addressed all audience feedback concerns
+- ✅ Upgraded quality rating from B+ to A-
+
+**Git Actions:**
+- Working in branch: single-serving-bias
+- Changes ready to commit after Ghost publication
+
+**What Worked:**
+- ✅ Aggressive de-slopping preserved substance while removing AI formality
+- ✅ Audience feedback identified critical credibility issue ($500K) before publication
+- ✅ Hybrid tracking approach (blog + Github) serves both audience segments
+- ✅ Option B (evidence + personal voice) satisfied both reviewers' concerns
+- ✅ Quality audit caught remaining issues and improved accessibility
+
+**What Didn't Work:**
+- ❌ Initial user edit ($500K) damaged credibility - caught by audience feedback
+- ❌ Github-only tracking would have excluded 70-80% of target audience
+- ❌ Some tone choices ("bullshit detector") too informal for professional context
+
+### Next Steps
+1. ✅ De-slop complete
+2. ✅ Backlinks curated
+3. ✅ Tags validated
+4. ✅ Audience feedback addressed
+5. ✅ Quality audit issues fixed
+6. ✅ Publish draft to Ghost
+7. ✅ Verify Ghost publication
+
+**Ghost Publication:**
+- Draft created successfully on 2026-01-07
+- Post ID: 695e594d8be18900017b93d4
+- Edit URL: https://alt-counsel.ghost.io/ghost/#/editor/post/695e594d8be18900017b93d4
+- Preview URL: https://www.alt-counsel.com/p/d69d0bbc-9500-49e3-9874-69910db2ae91/
+- All 6 bookmark cards converted successfully to Ghost format
+- Tags applied: AI, LegalTech, Singapore
+- Status: Draft (ready for review and publish)
+
+## Post Metrics (Final)
+
+- **Word count:** 1,887 words (from 2,800 → 1,799 → 1,887 with quality fixes)
+- **Bookmark cards:** 6 well-distributed
+- **Tags:** AI, LegalTech, Singapore (3 canonical)
+- **Quality rating:** A- (all critical/moderate issues resolved)
+- **Tone:** Wry observer maintained throughout
+- **Accessibility:** Non-technical lawyers can understand all concepts
+- **Credibility:** Evidence-backed with honest uncertainty
+- **Accountability:** Clear success criteria, December 2026 scorecard, $500 stakes
