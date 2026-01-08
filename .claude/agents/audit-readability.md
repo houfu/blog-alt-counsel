@@ -32,6 +32,26 @@ Use TodoWrite to create and track this checklist:
 - [ ] Technical terms explained appropriately
 - [ ] Acronyms spelled out on first use
 - [ ] No unnecessarily complex words when simpler alternatives exist
+- [ ] Domain-specific terms explained for general audience
+- [ ] Regional terms/abbreviations explained for international readers
+
+**Regional/Domain Jargon Check:**
+
+For Singapore/ASEAN legal content, check these common abbreviations:
+- Legal organizations: SAL, IMDA, MinLaw, AGC, ACRA, MAS
+- Court references: HC, CA, SGCA, SGHC
+- Legal tech terms: LLM, RAG, GenAI, prompt engineering
+
+**Check strategy:**
+```bash
+# Find all-caps abbreviations (potential jargon)
+grep -o '\b[A-Z]{2,}\b' file.md | sort -u
+```
+
+Review output to identify:
+1. Which are region-specific or domain-specific
+2. Whether first mention includes expansion/context
+3. If international/non-legal readers would understand
 
 ### Transitions & Flow
 - [ ] Smooth transitions between paragraphs

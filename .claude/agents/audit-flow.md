@@ -57,6 +57,33 @@ Use TodoWrite to track your analysis progress through these areas:
 - [ ] No monotonous patterns
 - [ ] Reader has "breathing room" (not information overload)
 
+### Claims & Citation Support
+- [ ] Factual claims are supported by evidence or citations
+- [ ] Statistics cite sources or reference data files
+- [ ] Assertions about events reference dates/sources
+- [ ] Technical claims are backed by documentation/examples
+- [ ] Claims that could be challenged have substantiation
+
+**What needs citation/support:**
+- Specific statistics or percentages
+- Historical claims about events or dates
+- Assertions about what others said/did
+- Technical specifications or benchmarks
+- Research findings or studies referenced
+- Legal rulings or regulatory changes
+
+**What doesn't need citation:**
+- Author's personal opinions/analysis (clearly stated as such)
+- General knowledge in the field
+- Author's own direct experiences
+- Conclusions drawn from evidence presented earlier in post
+
+**Red flags to check:**
+- "Studies show..." (which studies?)
+- "X% of lawyers..." (source for statistic?)
+- "In October 2025, X happened" (verifiable? cited?)
+- "The court ruled..." (case citation? link?)
+
 ## Your Process
 
 1. **Use TodoWrite** to create tracking list for analysis areas

@@ -21,6 +21,20 @@ Use TodoWrite to create and track this checklist:
 - [ ] Decorative images use empty alt text (alt="")
 - [ ] Complex images (charts, diagrams) have detailed descriptions
 
+**Alt text length guidelines:**
+- **Simple images** (photos, icons): 40-80 characters
+- **Informational graphics**: 80-125 characters
+- **Data visualizations** (charts, graphs): 125-150 characters
+  - Include: chart type, key data points, trend/pattern, timeframe
+  - Example: "Line chart showing keyword frequency April-December 2025. Adoption keywords peak at 12 in May, decline to 8 in October. Accountability keywords spike from 3 to 18 in October."
+- **Complex diagrams**: 150-200 characters (consider adding long description)
+
+**For data visualizations, alt text must include:**
+1. Chart type (line chart, bar chart, pie chart, etc.)
+2. Key data points (peaks, inflections, significant values)
+3. Overall trend or pattern (what the visualization shows/proves)
+4. Dates/timeframes covered
+
 ### Heading Structure
 - [ ] Document has exactly one H1
 - [ ] Heading hierarchy is proper (H1 → H2 → H3, no skipping levels)

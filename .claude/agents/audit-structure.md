@@ -53,6 +53,21 @@ Use TodoWrite to create and track this checklist:
 - [ ] Important points get adequate coverage
 - [ ] Minor points don't get disproportionate space
 
+### Ghost Publishing Requirements (CRITICAL)
+- [ ] No horizontal rules (`---`, `***`, or `___`) in final content
+- [ ] Section breaks use headings or spacing instead of horizontal rules
+- [ ] Content follows CLAUDE.md publishing guidelines
+
+**Why this matters:** Horizontal rules break Ghost's markdown-to-lexical conversion process. CLAUDE.md explicitly forbids them in published blog posts.
+
+**Check strategy:**
+```bash
+# Search for horizontal rules in content
+grep -n "^---$\|^\*\*\*$\|^___$" file.md
+```
+
+If found, flag as CRITICAL and recommend removal or replacement with section headings.
+
 ## Your Process
 
 1. **Use TodoWrite** to create the checklist above
