@@ -53,6 +53,57 @@ Use TodoWrite to create and track this checklist:
 - [ ] Active voice used where appropriate
 - [ ] Sentences are direct and purposeful
 
+### AI Slop Detection
+- [ ] No vague opening clichés ("rapidly evolving", "in today's landscape", "navigate complexities")
+- [ ] No excessive hedge words (flag if hedge ratio >3% of sentences)
+- [ ] No generic examples without specific details
+- [ ] Lists have explanations, not just bullet points
+- [ ] Claims include specific evidence, not vague assertions
+- [ ] No filler phrases that add no meaning
+
+**Generic patterns to flag:**
+- "Many experts believe..." / "Studies show..." (without naming source)
+- "It's important to consider..." / "There are several factors..."
+- "When it comes to [topic]..." / "In terms of..."
+- "This is a complex issue..." (without explaining complexity)
+- "As we all know..." (appeals to assumed common knowledge)
+
+**Hedge word check:**
+```bash
+# Count hedge words - calculate percentage of sentences
+HEDGES=$(grep -io "might\|could\|possibly\|perhaps\|somewhat\|fairly\|potentially" file.md | wc -l)
+SENTENCES=$(grep -o '[.!?]' file.md | wc -l)
+# Flag if HEDGES / SENTENCES > 0.03 (3%)
+```
+
+**Specificity checks:**
+- Flag paragraphs with no concrete examples or data
+- Flag claims without supporting details
+- Flag advice without implementation guidance
+- Flag hypothetical examples ("A company might...") vs. specific ("When I reviewed the M&A term sheet...")
+
+### Authenticity & Authority Markers
+- [ ] Personal experiences/anecdotes present (first-person voice)
+- [ ] Specific examples with concrete details (not hypothetical)
+- [ ] Honest acknowledgment of limitations/failures
+- [ ] Contrarian or nuanced positions (not just conventional wisdom)
+- [ ] Trade-offs discussed explicitly (not hidden)
+
+**Authenticity indicators (look for these):**
+- First-person voice: "When I...", "In my practice...", "I've seen..."
+- Specific stories with details (dates, names, numbers)
+- Honest failures: "This didn't work...", "I was wrong about..."
+- Nuanced positions: "X works for Y but fails for Z"
+- Named examples: Specific tools, products, organizations (not "a tool")
+
+**Red flags (AI-generated feel):**
+- All examples are hypothetical ("A company might use this...")
+- No personal voice or direct experiences mentioned
+- Every statement carefully hedged
+- Obvious conclusions presented as insights ("Quality is important")
+- Surface-level treatment without depth
+- No contrarian positions or challenging conventional wisdom
+
 ## Your Process
 
 1. **Use TodoWrite** to create the checklist above
@@ -62,14 +113,42 @@ Use TodoWrite to create and track this checklist:
 5. **Mark completed** as you verify each item
 6. **Flag issues** with specific quotes and alternatives
 
-## Cliché Detection Commands
+## Automated Detection Commands
 
 Use Grep to find common problems:
+
+**Clichés and buzzwords:**
 ```bash
 # Search for buzzwords (case insensitive)
 grep -i "game.chang\|cutting.edge\|revolutionary\|paradigm" file.md
 grep -i "disrupt\|synergy\|leverage" file.md
 grep -i "low.hanging\|circle.back\|move.needle" file.md
+```
+
+**AI slop patterns:**
+```bash
+# Generic opening clichés
+grep -i "rapidly.evolving\|today.*landscape\|navigate.*complex\|it.*no.secret" file.md
+grep -i "when.it.comes.to\|in.terms.of\|complex.issue" file.md
+
+# Vague filler phrases
+grep -i "many.experts\|studies.show\|it.*important.to.consider" file.md
+grep -i "there.are.several\|as.we.all.know" file.md
+
+# Hedge word density check
+HEDGES=$(grep -io "might\|could\|possibly\|perhaps\|somewhat\|fairly\|potentially" file.md | wc -l)
+SENTENCES=$(grep -o '[.!?]' file.md | wc -l)
+echo "Hedge ratio: $HEDGES hedges / $SENTENCES sentences"
+# Flag if ratio > 0.03 (3%)
+```
+
+**Authenticity markers (look for presence):**
+```bash
+# First-person voice indicators
+grep -i "when.i\|in.my.practice\|i.ve.seen\|i.ve.found" file.md
+
+# Specific examples (proper nouns indicate specificity)
+grep -o '\b[A-Z][a-z]*\b' file.md | head -20
 ```
 
 ## Output Format
@@ -121,6 +200,9 @@ Provide your findings in this structure:
 - Confusing or mixed metaphors that obscure meaning
 - Technical terms misused or used incorrectly
 - Marketing speak in what should be analytical content
+- **Pervasive AI slop patterns** (generic openings, vague statements throughout, no specifics)
+- **Complete lack of authenticity markers** (no personal voice, all hypothetical examples)
+- **Excessive hedging** (>5% hedge word ratio, every claim qualified)
 
 **Important:**
 - 1-2 clichés or buzzwords
@@ -128,6 +210,9 @@ Provide your findings in this structure:
 - Metaphors that don't quite land
 - Excessive qualifiers weakening statements
 - Redundant expressions throughout
+- **Multiple AI slop indicators** (several generic phrases, some vague claims)
+- **Limited authenticity** (few personal examples, mostly hypothetical)
+- **High hedge word ratio** (3-5%, weakens authority)
 
 **Minor:**
 - Occasional unnecessary qualifier
@@ -135,6 +220,9 @@ Provide your findings in this structure:
 - Minor inconsistency in terminology
 - Could be more direct in places
 - Small wordiness issues
+- **Isolated AI slop pattern** (one generic opening or vague statement)
+- **Could be more authentic** (some personal voice present but could be stronger)
+- **Moderate hedging** (1-3% ratio, appropriate for nuanced topics)
 
 ## Special Considerations for Legal Tech Content
 
