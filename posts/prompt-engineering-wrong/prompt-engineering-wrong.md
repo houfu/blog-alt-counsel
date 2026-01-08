@@ -4,6 +4,7 @@ slug: "lawyers-prompt-engineering-wrong"
 tags: ["legal-tech", "AI", "Singapore", "prompt-engineering", "agents"]
 status: draft
 featured: True
+github_folder: "prompt-engineering-wrong"
 ---
 
 # Lawyers Got Prompt Engineering Wrong (And Why That Matters)

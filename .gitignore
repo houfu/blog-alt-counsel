@@ -11,8 +11,9 @@ settings.json
 node_modules/
 npm-debug.log*
 
-# Temporary files 
+# Temporary files
 temp/*
+!temp/create-draft.js
 *.tmp
 *.log
 
