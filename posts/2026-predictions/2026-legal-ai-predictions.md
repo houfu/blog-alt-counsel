@@ -127,7 +127,7 @@ In December 2026, I'll publish the scorecard: what I predicted vs. what actually
 
 ## Your Turn
 
-I'll publish updates as blog posts tagged #2026Predictions, with raw data available on Github for anyone who wants to dig deeper. If you're running similar experiments, share your results—email, blog comments, or Github PR all work. December 2026, I'll compile findings with full attribution.
+I'll publish updates as blog posts tagged #2026Predictions, with raw data tracked publicly on [Github PR #8](https://github.com/houfu/blog-alt-counsel/pull/8). Throughout 2026, I'll commit updates showing contract review results, usage percentages, hallucination workflow tests, and theater vs. innovation callouts. If you're running similar experiments, share your results—email, blog comments, or PR submissions all work. December 2026, I'll compile findings with full attribution.
 
 **Where I'm probably wrong:** Prediction #1 (agentic AI working feels too optimistic) and #5 (no framework yet for spotting theater).
 
@@ -137,4 +137,4 @@ If you think I'm completely wrong, save this post. We'll find out together in De
 
 See you in December with the data.
 
-**Want to follow along?** Subscribe to get updates, or watch the Github repo for raw data. Happy new year!
+**Want to follow along?** Subscribe to get updates, or watch [PR #8](https://github.com/houfu/blog-alt-counsel/pull/8) for data commits. Happy new year!
