@@ -32,6 +32,43 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
 - `/.claude/` - Claude Code agents, skills and configuration
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
+## Post Structure and Metadata
+
+Each blog post markdown file includes YAML frontmatter with metadata fields:
+
+```yaml
+---
+title: "Post Title"
+slug: "url-slug"
+tags: ["tag1", "tag2", "tag3"]
+status: draft
+featured: false
+github_folder: "post-folder-name"  # Optional: folder name in /posts/ directory
+---
+```
+
+### GitHub Integration
+
+Posts can link to their source folder in the GitHub repository by adding the `github_folder` field to frontmatter. When this field is present, a GitHub footer section is automatically added when publishing the post with:
+
+- Visual separator (horizontal rule)
+- "View on GitHub" heading
+- Explanatory text about open source content
+- Rich bookmark card linking to the GitHub folder
+
+**Example:**
+```yaml
+---
+title: "My Post About Legal Tech"
+github_folder: "prompt-engineering-wrong"
+---
+```
+
+This will add a footer linking to:
+`https://github.com/houfu/blog-alt-counsel/tree/main/posts/prompt-engineering-wrong`
+
+**Note:** The `github_folder` field should contain only the folder name, not the full path.
+
 ## Development Environment
 
 This project runs in a containerized environment using Docker for consistency and isolation.
