@@ -821,8 +821,8 @@ function addGitHubFooter(builder, folderName) {
 
   return builder
     .hr()  // Visual separator (creates LineBreak card, not markdown ---)
-    .h3('View on GitHub')
-    .paragraph('This post is open source. View the source files, images, and research notes in the GitHub repository.')
+    .h3('Behind the Scenes')
+    .paragraph('See how this post evolved from initial pitch to final draft. Includes research sources, iterations, and decisions along the way.')
     .bookmark(githubUrl, {
       metadata: {
         title: `${folderName} - blog-alt-counsel`,
