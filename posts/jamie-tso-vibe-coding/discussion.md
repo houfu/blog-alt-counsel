@@ -105,3 +105,160 @@ All sources compiled with full citations in research.md.
 - No Singapore-specific adoption examples
 
 **Overall:** Strong foundation for a post. Gaps are nice-to-haves, not blockers.
+
+---
+
+## Session 2: Pitch Development - 2026-01-12
+
+### The Pivotal Question
+
+User asked: **"Why is Jamie able to vibe code while I haven't been as productive as he is?"**
+
+This shifted the angle from "profile of Jamie Tso" to **introspective comparison**: What am I not thinking about correctly regarding vibe coding?
+
+### Deep Analysis: Comparing Approaches
+
+Conducted comprehensive comparison by:
+1. Reading user's published blog posts using Jina MCP:
+   - "What Top 10% Actually Means (For a Lawyer Who Codes)"
+   - "Building data.zeeker.sg: Technical Architecture"
+   - "When Building Gets Cheap But Knowing Stays Expensive"
+2. Analyzing user's development philosophy from these posts
+3. Comparing to Jamie's known approach
+
+### The Core Insight: Tool vs Infrastructure Mindset
+
+**Jamie builds disposable tools:**
+- Solves immediate pain points for Clifford Chance team
+- Ships when 5 colleagues say it works
+- Quality bar: "Does it work?"
+- If it breaks, rebuild
+- Development time: days to weeks
+
+**User builds permanent infrastructure:**
+- Solves long-term problems for Singapore legal community
+- Ships when production-ready (top 10% of PyPI)
+- Quality bar: "Every line of code is a long-term liability"
+- If it breaks, 177K users suffer
+- Development time: months
+
+**The difference isn't skill or process—it's philosophy.**
+
+### Evidence from User's Blog Posts
+
+**From "What Top 10% Actually Means":**
+> "Scope is your most important feature... I've been tempted by features that seem obvious. I even opened issues for PDF, HTML, and Word document handling myself. They remain open because I haven't found a way to implement them that preserves redlines' core reliability—and that's the discipline narrow scope requires."
+
+> "Every line of code is a long-term liability. Every 'yes' today means maintenance forever."
+
+**From "Building data.zeeker.sg":**
+- 150+ hours building Singapore's first public legal news API
+- Careful architectural decisions for long-term sustainability
+- "What makes this sustainable for solo builders: Architecture choices that eliminate ongoing work."
+
+**From "When Building Gets Cheap But Knowing Stays Expensive":**
+> "AI made building cheap—but it didn't make validation cheap."
+
+User's 2026 resolution: Shift from infrastructure thinking to tool thinking for appropriate problems.
+
+### GitHub Repo Deep Dive
+
+**Major discovery:** Analyzed Jamie's actual repos (RedlineNow, SignaturePacketIDE, Tabular_Review) using Jina MCP.
+
+**Shocking timeline correction:**
+- Initial assumption: "4 tools in 2 years"
+- **Reality from commit history: 4 tools in 2-3 MONTHS (Nov-Dec 2025)**
+
+**Evidence:**
+
+**RedlineNow:**
+- First commit: Dec 6, 2025
+- Latest commit: Dec 7, 2025
+- Total commits: 5
+- Development time: ~2 days
+- Infrastructure: No tests, no CI/CD
+
+**SignaturePacketIDE:**
+- Total commits: 5
+- 14 forks (most forked - proves real usage)
+
+**Tabular_Review:**
+- First commit: Nov 23, 2025
+- Total commits: 8
+- Development time: ~6 days
+- Has Docker, but still no tests
+
+**Pattern:** Ship-when-it-works. No iterative refinement. Tools appear "done" after initial commits.
+
+**Velocity comparison:**
+- Jamie's RedlineNow: 5 commits in 2 days
+- User's redlines: Hundreds of commits over 3 years
+- **30-90x velocity difference**
+
+### Why Lawyers Hesitate to Vibe Code
+
+Most lawyers get paralyzed by infrastructure questions:
+- "What if this needs to scale?"
+- "What about edge cases?"
+- "Should this be reusable?"
+
+**These are infrastructure questions applied to tool problems.**
+
+Legal training emphasizes precedent, reliability, edge cases, professional responsibility → defaults to infrastructure thinking.
+
+**Jamie doesn't carry this weight.** He asks tool questions:
+- "Does this solve my team's problem today?"
+- "Can I ship by Friday?"
+
+### The Angle Pivot
+
+**Original:** "Profile of Jamie Tso and vibe coding"
+**New (approved):** "What makes Jamie's vibe coding work, and what am I not thinking about correctly?"
+
+More introspective, more useful, more actionable.
+
+### Pitch Development
+
+**Working Title:**
+"I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing."
+
+**Approved Pitch (180 words):**
+
+I compared my GitHub to Jamie Tso's and felt unproductive. Me: 70 repos, 177K monthly downloads, top 10% of PyPI. Him: 4 tools in 2-3 months, all built with vibe coding (LLMs generating TypeScript). Then I realized: I'm not slower—I apply infrastructure thinking to problems that need tool thinking. Jamie builds disposable tools for his Clifford Chance team: RedlineNow ships when it helps 5 colleagues close deals faster. I build permanent infrastructure for Singapore's legal community: my redlines library carries the weight of "every line of code is a long-term liability." When I want to build a contract review helper, I ask infrastructure questions: "What if others need this? What about edge cases?" Jamie asks tool questions: "Does this solve my team's problem today? Can I ship by Friday?" Most solo counsels need tools, not infrastructure. But legal training (precedent, edge cases, professional responsibility) makes us default to infrastructure thinking—even for quick weekend projects. This post unpacks the tool vs infrastructure mindset, when vibe coding works, and the mental model shift I need to actually use it.
+
+**Authenticity check:** Passed. All claims verified from user's actual blog posts.
+
+**Timeline correction applied:** Changed "2 years" to "2-3 months" based on commit history.
+
+### Structure Outline (5 sections, ~2,500 words)
+
+1. **The Comparison** (500w) - My GitHub vs Jamie's, realized it's philosophy not capability
+2. **Two Mindsets** (600w) - Tool vs infrastructure thinking, why lawyers default to infrastructure
+3. **What Makes Jamie's Vibe Coding Work** (500w) - Evidence from repos, 5 commits in 2 days
+4. **What I'm Missing** (500w) - My unconscious infrastructure questions, mental model shift needed
+5. **Decision Framework** (400w) - When to vibe code vs traditional programming
+
+### Key Evidence for Post
+
+**From repos:**
+- RedlineNow: 5 commits in 2 days (December 2025)
+- No tests across all repos
+- 14 forks on SignaturePacketIDE (disposable tools still get used)
+
+**Comparison quote:**
+> "Jamie's RedlineNow has 5 commits total, created over 2 days. My redlines library has hundreds of commits over 3 years. His ships when it helps 5 colleagues. Mine ships when 177K monthly users can depend on it. Neither is wrong—we're building for different timelines."
+
+### Files Created
+
+1. **research.md** - Initial exploratory research (Session 1)
+2. **comparative-analysis.md** - Deep comparison using user's blog posts
+3. **jamie-repos-analysis.md** - GitHub commit history analysis
+4. **discussion.md** (this file) - Session notes
+
+### Next Steps
+
+1. ✅ Pitch approved
+2. ⏭️ Suggest tags
+3. ⏭️ Scaffold post folder structure
+4. ⏭️ Develop outline
+5. ⏭️ Draft content
