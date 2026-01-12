@@ -82,6 +82,12 @@ corp-review                         # Corporate lawyer review
 token-examples         # Show API usage examples
 env-help              # Environment variable setup help
 list-agents           # Show available Claude agents
+
+# GitHub CLI operations
+gh-status             # Check GitHub authentication status
+gh-repo               # View current repository information
+gh-pr-create          # Create pull requests
+gh-issue-list         # List repository issues
 ```
 
 ### Configuration
