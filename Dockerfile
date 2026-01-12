@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
     git \
+    gh \
     vim \
     htop \
     tree \
@@ -127,7 +128,21 @@ alias claude-login="claude auth login"
 alias claude-status="claude auth status"
 alias claude-help="echo \"Claude Code is pre-installed! Set ANTHROPIC_API_KEY or run: claude auth login\""
 
-# Development convenience aliases
+# GitHub CLI aliases and configuration
+alias gh-status="gh auth status"
+alias gh-login="gh auth login"
+alias gh-repo="gh repo view"
+alias gh-pr-create="gh pr create"
+alias gh-issue-list="gh issue list"
+
+# Auto-configure GitHub CLI if credentials are available
+if [ -n "$GITHUB_USERNAME" ] && [ -n "$GITHUB_PAT" ]; then
+    # Configure gh CLI with existing credentials
+    echo "${GITHUB_PAT}" | gh auth login --with-token
+    gh config set git_protocol https
+fi
+
+
 alias ll="ls -la"
 alias ..="cd .."
 alias logs="docker-compose logs -f"

@@ -80,7 +80,22 @@ You can find them in the following places:
 - As an environment variable
 - Read the settings.json file
 
-## Content Guidelines
+
+## GitHub CLI Integration
+
+The container includes GitHub CLI (\`gh\`) pre-installed and auto-configured:
+
+### Available Aliases
+- \`gh-status\` - Check GitHub authentication status
+- \`gh-login\` - Interactive GitHub login
+- \`gh-repo\` - View current repository information
+- \`gh-pr-create\` - Create pull requests
+- \`gh-issue-list\` - List repository issues
+
+### Authentication
+GitHub CLI is automatically configured using existing \`GITHUB_USERNAME\` and \`GITHUB_PAT\` environment variables. Manual login is also supported via \`gh auth login\`.
+
+
 
 **Critical rules:**
 - **NEVER use horizontal rules** (`---`, `***`, or `___`) in final blog post content (files that will be published to Ghost). These break the markdown to lexical conversion process. Use headings or spacing instead.
