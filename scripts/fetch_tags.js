@@ -6,7 +6,8 @@
  */
 
 const GhostAdminAPI = require('@tryghost/admin-api');
-const { loadConfigFromEnv, loadConfigFromFile } = require('./ghost_jwt.js');
+const { loadConfigFromEnv, loadConfigFromDotEnv, loadConfigFromFile } = require('./ghost_jwt.js');
+const fs = require('fs');
 
 // Load configuration using shared functions
 function loadConfig() {
@@ -20,6 +21,20 @@ function loadConfig() {
     };
   }
 
+  // Try .env file
+  if (fs.existsSync('.env')) {
+    try {
+      config = loadConfigFromDotEnv('.env');
+      return {
+        url: config.site_url,
+        key: config.admin_api_key,
+        version: config.api_version || 'v6.0'
+      };
+    } catch (error) {
+      // Continue to try settings.json
+    }
+  }
+
   // Try settings.json
   try {
     config = loadConfigFromFile('settings.json');
@@ -29,7 +44,7 @@ function loadConfig() {
       version: config.api_version || 'v6.0'
     };
   } catch (error) {
-    throw new Error('Ghost API credentials not found. Set GHOST_SITE_URL and GHOST_ADMIN_API_KEY environment variables or create settings.json');
+    throw new Error('Ghost API credentials not found. Set GHOST_SITE_URL and GHOST_ADMIN_API_KEY environment variables, create .env file, or create settings.json');
   }
 }
 

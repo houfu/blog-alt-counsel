@@ -2,17 +2,18 @@
 
 /**
  * Ghost Admin API JWT Token Generator - Pure Node.js
- * 
+ *
  * Generates JWT tokens for Ghost Admin API authentication.
- * Supports both environment variables and settings.json configuration.
- * 
+ * Supports environment variables, .env file, and settings.json configuration.
+ *
  * Environment Variables (preferred for Docker):
  *   GHOST_SITE_URL          - Your Ghost site URL (e.g., https://yourblog.com)
  *   GHOST_ADMIN_API_KEY     - Your Ghost Admin API key (id:secret format)
  *   GHOST_API_VERSION       - API version (default: v6.0)
- * 
+ *
  * Usage:
- *   node ghost_jwt.js                    # Generate token using env vars or settings.json
+ *   node ghost_jwt.js                    # Generate token using env vars or .env file
+ *   node ghost_jwt.js --config .env      # Use .env file explicitly
  *   node ghost_jwt.js --config custom.json  # Use custom config file
  *   node ghost_jwt.js --print-headers    # Print HTTP headers for curl
  *   node ghost_jwt.js --examples         # Show usage examples
@@ -55,31 +56,89 @@ function loadConfigFromEnv() {
 }
 
 /**
+ * Load Ghost configuration from .env file
+ */
+function loadConfigFromDotEnv(envFile = '.env') {
+    const envPath = path.resolve(envFile);
+
+    if (!fs.existsSync(envPath)) {
+        throw new Error(`Environment file '${envFile}' not found`);
+    }
+
+    try {
+        const envContent = fs.readFileSync(envPath, 'utf8');
+        const envVars = {};
+
+        // Parse .env file
+        envContent.split('\n').forEach(line => {
+            // Skip comments and empty lines
+            const trimmed = line.trim();
+            if (!trimmed || trimmed.startsWith('#')) {
+                return;
+            }
+
+            // Parse KEY=VALUE
+            const match = trimmed.match(/^([^=]+)=(.*)$/);
+            if (match) {
+                const key = match[1].trim();
+                let value = match[2].trim();
+
+                // Remove quotes if present
+                if ((value.startsWith('"') && value.endsWith('"')) ||
+                    (value.startsWith("'") && value.endsWith("'"))) {
+                    value = value.slice(1, -1);
+                }
+
+                envVars[key] = value;
+            }
+        });
+
+        // Check for required Ghost variables
+        if (!envVars.GHOST_SITE_URL || !envVars.GHOST_ADMIN_API_KEY) {
+            throw new Error('.env file must contain GHOST_SITE_URL and GHOST_ADMIN_API_KEY');
+        }
+
+        return {
+            site_url: envVars.GHOST_SITE_URL,
+            admin_api_key: envVars.GHOST_ADMIN_API_KEY,
+            api_version: envVars.GHOST_API_VERSION || 'v6.0',
+            admin_api_url: envVars.GHOST_ADMIN_API_URL ||
+                          `${envVars.GHOST_SITE_URL}/ghost/api/admin`
+        };
+    } catch (error) {
+        if (error.message.includes('.env file must contain')) {
+            throw error;
+        }
+        throw new Error(`Failed to parse .env file: ${error.message}`);
+    }
+}
+
+/**
  * Load Ghost configuration from JSON file
  */
 function loadConfigFromFile(configFile = '../settings.json') {
     const configPath = path.resolve(configFile);
-    
+
     if (!fs.existsSync(configPath)) {
         throw new Error(`Configuration file '${configFile}' not found`);
     }
-    
+
     try {
         const settings = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        
+
         if (!settings.ghost) {
             throw new Error("Configuration file must contain 'ghost' section");
         }
-        
+
         const ghostConfig = settings.ghost;
         const requiredKeys = ['admin_api_key', 'site_url'];
-        
+
         for (const key of requiredKeys) {
             if (!ghostConfig[key]) {
                 throw new Error(`Ghost configuration must contain '${key}'`);
             }
         }
-        
+
         return ghostConfig;
     } catch (error) {
         if (error instanceof SyntaxError) {
@@ -101,13 +160,34 @@ function loadConfig(configFile = null) {
         }
         return envConfig;
     }
-    
-    // Fall back to file
-    const file = configFile || 'settings.json';
-    if (!process.argv.includes('--quiet')) {
-        console.error(`📄 Using configuration from ${file}`);
+
+    // If a specific config file is requested, load it
+    if (configFile) {
+        const isEnvFile = configFile.endsWith('.env') || configFile === '.env';
+        if (!process.argv.includes('--quiet')) {
+            console.error(`📄 Using configuration from ${configFile}`);
+        }
+        return isEnvFile ? loadConfigFromDotEnv(configFile) : loadConfigFromFile(configFile);
     }
-    return loadConfigFromFile(file);
+
+    // Auto-detect: try .env file if it exists
+    if (fs.existsSync('.env')) {
+        try {
+            const dotEnvConfig = loadConfigFromDotEnv('.env');
+            if (!process.argv.includes('--quiet')) {
+                console.error('📄 Using configuration from .env file');
+            }
+            return dotEnvConfig;
+        } catch (error) {
+            // Continue to try settings.json
+        }
+    }
+
+    // Fall back to settings.json
+    if (!process.argv.includes('--quiet')) {
+        console.error('📄 Using configuration from settings.json');
+    }
+    return loadConfigFromFile('settings.json');
 }
 
 /**
@@ -336,7 +416,9 @@ function main() {
             console.error('   export GHOST_SITE_URL="https://yourblog.com"');
             console.error('   export GHOST_ADMIN_API_KEY="your_id:your_secret"');
             console.error('');
-            console.error('2. Create settings.json with your Ghost credentials');
+            console.error('2. Create .env file with your Ghost credentials');
+            console.error('   cp .env.example .env');
+            console.error('   # Then edit .env with your values');
             console.error('');
             console.error('3. Use --config to specify a different config file');
             console.error('');
@@ -357,5 +439,6 @@ module.exports = {
     generateJwtToken,
     loadConfig,
     loadConfigFromEnv,
+    loadConfigFromDotEnv,
     loadConfigFromFile
 };
