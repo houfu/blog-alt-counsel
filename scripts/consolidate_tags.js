@@ -11,30 +11,46 @@
  */
 
 const GhostAdminAPI = require('@tryghost/admin-api');
+const { loadConfigFromEnv, loadConfigFromDotEnv, loadConfigFromFile } = require('./ghost_jwt.js');
 const fs = require('fs');
-const path = require('path');
 
-// Load configuration
+// Load configuration using shared functions
 function loadConfig() {
-  if (process.env.GHOST_SITE_URL && process.env.GHOST_ADMIN_API_KEY) {
+  // Try environment variables first
+  let config = loadConfigFromEnv();
+  if (config) {
     return {
-      url: process.env.GHOST_SITE_URL,
-      key: process.env.GHOST_ADMIN_API_KEY,
-      version: process.env.GHOST_API_VERSION || 'v5.0'
+      url: config.site_url,
+      key: config.admin_api_key,
+      version: config.api_version || 'v6.0'
     };
   }
 
-  const settingsPath = path.join(__dirname, '..', 'settings.json');
-  if (fs.existsSync(settingsPath)) {
-    const settings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
-    return {
-      url: settings.GHOST_SITE_URL,
-      key: settings.GHOST_ADMIN_API_KEY,
-      version: settings.GHOST_API_VERSION || 'v5.0'
-    };
+  // Try .env file
+  if (fs.existsSync('.env')) {
+    try {
+      config = loadConfigFromDotEnv('.env');
+      return {
+        url: config.site_url,
+        key: config.admin_api_key,
+        version: config.api_version || 'v6.0'
+      };
+    } catch (error) {
+      // Continue to try settings.json
+    }
   }
 
-  throw new Error('Ghost API credentials not found');
+  // Try settings.json
+  try {
+    config = loadConfigFromFile('settings.json');
+    return {
+      url: config.site_url,
+      key: config.admin_api_key,
+      version: config.api_version || 'v6.0'
+    };
+  } catch (error) {
+    throw new Error('Ghost API credentials not found. Set GHOST_SITE_URL and GHOST_ADMIN_API_KEY environment variables, create .env file, or create settings.json');
+  }
 }
 
 // Parse command line arguments
