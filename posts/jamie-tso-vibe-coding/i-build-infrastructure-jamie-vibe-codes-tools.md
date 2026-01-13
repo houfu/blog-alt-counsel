@@ -13,9 +13,9 @@ My profile: 70 repositories, a redlines library with 148 stars and 177,000 month
 
 His profile: 4 tools built in 2-3 months using "vibe coding"—LLMs generating TypeScript code from natural language descriptions.
 
-The velocity gap was stark. RedlineNow, his instant redline tool with AI summaries: 5 commits over 2 days in December 2025. Done. Shipped. Thirty stars and 11 forks.
+The velocity gap was stark. RedlineNow, his instant redline tool: 5 commits over 2 days in December 2025. Done. Shipped. Thirty stars and 11 forks.
 
-My redlines library: hundreds of commits over 3 years. Continuous refinement, edge case handling, API documentation.
+My redlines library: hundreds of commits over 3 years.
 
 **30-90x velocity difference.**
 
@@ -25,7 +25,7 @@ Then I read my own blog post about the redlines library:
 
 > "Every line of code is a long-term liability. Every 'yes' today means maintenance forever... Scope is your most important feature. I've been tempted by features that seem obvious. They remain open because I haven't found a way to implement them that preserves redlines' core reliability."
 
-I realized: This isn't a productivity problem. It's a philosophy problem.
+I realized: This isn't a productivity problem. It's a question of what we're building for—and how long it needs to last.
 
 **I build infrastructure. Jamie builds tools.** Neither is wrong. But applying the wrong mindset to the wrong problem kills velocity.
 
@@ -80,11 +80,12 @@ The redlines library:
 - 177,000 monthly downloads
 - Top 10% quality ranking
 
-I wrote about this:
+I wrote about this ([What Top 10% Actually Means](https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/)):
 
 > "Scope is your most important feature... I've been tempted by features that seem obvious. I even opened issues for PDF, HTML, and Word document handling myself. They remain open because I haven't found a way to implement them that preserves redlines' core reliability—and that's the discipline narrow scope requires."
 
-Or take data.zeeker.sg—Singapore's first public legal news API. One hundred fifty hours over months building:
+Or take [data.zeeker.sg](https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/)—Singapore's first public legal news API. One hundred fifty hours over months building:
+
 - 346 legal articles professionally summarized
 - Full-text search and SQL interface
 - REST API with multiple export formats
@@ -105,20 +106,22 @@ Legal training hammers certain habits into us:
 These instincts serve us well in legal practice. They kill velocity in tool building.
 
 When I think about building a contract review helper, my automatic questions:
+
 - "What if other firms need this?" → Start designing for everyone
 - "What about edge cases?" → Catalog 47 contract types
 - "Should this be reusable?" → Build a library, not a tool
 - "What about security compliance?" → Research SOC 2 requirements
 - "How do I maintain this long-term?" → Agonize over technical debt
 
-Result: Three months of planning. Nothing shipped.
+**Result:** Three months of planning. Nothing shipped.
 
 Jamie asks different questions:
+
 - "Does it review MY contracts?"
 - "Will it help my team THIS WEEK?"
 - "Can 5 colleagues use it?"
 
-Result: Ships in 3 days. Team uses it 20 times per week.
+**Result:** Ships in 3 days. Team uses it 20 times per week.
 
 **The paralysis comes from asking infrastructure questions about tool problems.**
 
@@ -142,21 +145,14 @@ This is vibe coding in action:
 4. Ship when they confirm it works
 5. Move to next tool
 
-Why is it fast?
+**Why is it fast?** He avoids every infrastructure decision. When building RedlineNow, Jamie doesn't ask:
 
-**He avoids every infrastructure decision:**
-- No tests (works for his team's use case)
-- No CI/CD (deploys manually when needed)
-- No edge case handling (team knows the constraints)
-- No documentation (team understands context)
-- No maintenance burden (rebuild if it breaks)
-
-When building RedlineNow, Jamie doesn't ask:
 - ❌ "What if users have different file formats?"
 - ❌ "What if this needs to scale to 1,000 users?"
 - ❌ "Should I write unit tests?"
 
 He asks:
+
 - ✅ "Does it redline the contracts my team reviews?"
 - ✅ "Can I ship by Friday?"
 - ✅ "Do 5 colleagues find it useful?"
@@ -167,15 +163,15 @@ The fourteen forks on SignaturePacketIDE suggest others find value. But if Jamie
 
 ## What I'm Missing
 
-My unconscious infrastructure questions kill velocity on projects that need tool thinking.
+My infrastructure questions slow me down on projects meant to be disposable—but they're necessary for projects meant to last.
 
 Real example: I wanted to build a contract review helper for my work.
 
 **What I did (infrastructure thinking):**
 
-First, I researched similar tools. Cataloged requirements from multiple firms. Designed a flexible architecture that could handle various contract types. Sketched out a plugin system for custom review rules. Investigated security compliance requirements.
+First, I researched similar tools. Designed a flexible architecture for multiple contract types. Investigated security compliance. Sketched a plugin system for custom rules.
 
-Three months later: Comprehensive design document. Zero lines of working code.
+Three months later: Comprehensive design document. Zero working code.
 
 **What I should have done (tool thinking):**
 
@@ -206,27 +202,33 @@ Consider data.zeeker.sg again. Did that need infrastructure thinking?
 
 Infrastructure thinking was **correct** here. One hundred fifty hours well spent.
 
-But what if I just needed to analyze legal news for MY research?
-
-**Tool approach:**
-- Weekend script that downloads 50 recent articles
-- Basic keyword analysis and trend detection
-- Throwaway code, serves immediate need
-- Could vibe code in 2 days
-
-I would have applied infrastructure thinking: proper data models, API design, error handling, documentation. Two months later, over-engineered solution for a simple problem.
+But what if I just needed to analyze legal news for MY research? A weekend script that downloads 50 recent articles with basic keyword analysis—throwaway code serving immediate needs. I would have applied infrastructure thinking: proper data models, API design, error handling. Two months later, over-engineered solution for a simple problem.
 
 ### What This Costs Me
 
-**Velocity:** 30-90x slower than Jamie on tools
-**Projects:** Ideas die in planning phase (overthinking infrastructure questions)
-**Impact:** Could have built 20 weekend tools instead of agonizing over 1 perfect library
+**Velocity:** 30-90x slower than Jamie on tools. Ideas die in planning phase. Could have built 20 weekend tools instead of agonizing over 1 perfect library.
 
 The redlines library earned its infrastructure approach—177,000 monthly downloads justify the effort. data.zeeker.sg serves Singapore's legal community—worth the 150 hours.
 
-But every internal tool doesn't need that standard.
+But I've been building infrastructure when I sometimes just needed tools.
 
-I've been building infrastructure when I sometimes just needed tools.
+## The Maintenance Reality I've Learned
+
+But here's what the vibe coding narrative doesn't tell you.
+
+I run firm-wide IT infrastructure using Docker and stable software choices. Even with best practices, maintenance isn't zero—it's a few hours per year. That's sustainable. That's manageable.
+
+When I examined RedlineNow, Jamie's instant redline tool, it uses diff-match-patch—a library Google abandoned years ago. When dependencies break, these tools will stop working. Jamie will rebuild or abandon them. That's fine for internal BigLaw tools built for immediate needs.
+
+But for open source contributions serving the community? Sustainability matters.
+
+My redlines library takes months to build because I choose maintained dependencies. I spend a few hours yearly on maintenance because I design for stability. I say no to features because every yes is a long-term liability.
+
+That's not infrastructure thinking slowing me down. That's the cost of building things that last—things 177,000 monthly users can depend on.
+
+Jamie's approach works for disposable internal tools. Mine works for sustainable open source. Neither is wrong, but for community contributions, there's only one choice.
+
+I wrote about [why prompt engineering shifted from turn-by-turn prompts to reusable frameworks](https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/)—this is the same shift from disposable to sustainable thinking.
 
 ## Decision Framework
 
@@ -249,6 +251,10 @@ Before starting your next project, ask 4 questions. Your answers determine every
 **4. Am I solving my problem or everyone's?**
 - My problem → TOOL
 - Everyone's problem → INFRASTRUCTURE
+
+**4b. How long must this work?**
+- This week/month, then rebuild or abandon → TOOL
+- Years, with community depending on it → INFRASTRUCTURE (choose maintained dependencies)
 
 ### What To Do With Your Answers
 
@@ -280,7 +286,7 @@ Approach:
 - Case law tracker for my specific practice area
 - Client intake form generator for our standard questions
 
-These need tool thinking: Fast, disposable, team-specific. Perfect for vibe coding.
+Fast, disposable, team-specific—perfect for vibe coding.
 
 ### When I Should Build Infrastructure
 
@@ -289,7 +295,7 @@ These need tool thinking: Fast, disposable, team-specific. Perfect for vibe codi
 - data.zeeker.sg (Singapore's legal data backbone) ✅
 - prompt-engineering-lawyers course (educational infrastructure) ✅
 
-These needed infrastructure thinking: Permanent, public, high quality standards. Traditional programming was correct.
+Permanent, public, high quality—traditional programming was correct.
 
 ### The Mindset Shift
 
@@ -297,9 +303,9 @@ These needed infrastructure thinking: Permanent, public, high quality standards.
 
 **New approach:** Consciously choose tool vs infrastructure mindset BEFORE starting
 
-**Jamie's advantage:** He naturally uses tool thinking for tool problems. He works at Clifford Chance—infrastructure already exists (IT department, compliance frameworks, enterprise tools). He fills gaps with disposable tools.
+**Jamie's advantage:** He naturally uses tool thinking for tool problems. Works at Clifford Chance where infrastructure already exists—he fills gaps with disposable tools.
 
-**My challenge:** I've been building public infrastructure (redlines, data.zeeker.sg) for Singapore's legal community. I naturally default to infrastructure thinking. Now I need to consciously switch to tool thinking for internal projects.
+**My challenge:** Building public infrastructure for Singapore's legal community, I default to infrastructure thinking. Need to consciously switch for internal projects.
 
 ## Conclusion
 
@@ -313,7 +319,9 @@ The solution: Ask the 4 questions. Choose your mindset consciously.
 
 **For solo counsels and small teams:** You probably need MORE tools, LESS infrastructure. You shouldn't carry the weight of 177,000 monthly downloads. Build tools for your team's immediate needs. Vibe code without guilt. Ship in weekends, not months.
 
-**My goal for 2026:** Keep building infrastructure where it matters—redlines and data.zeeker.sg serve real needs that justify the effort. But for internal tools? Switch to tool thinking. Ship in weekends, not months.
+**My goal for 2026:** Keep building infrastructure where it matters—redlines and data.zeeker.sg serve real needs that justify the effort. I built [CLI tools for Claude Code agents](https://www.alt-counsel.com/claude-code-cli-tools-for-ai-agents/) following this principle. But for internal tools? Switch to tool thinking. Ship in weekends, not months.
+
+For internal tools you'll rebuild or abandon? Jamie's approach works. For open source serving the community? Infrastructure thinking is the only sustainable choice. The question isn't "should I think like Jamie" but "what am I building and for whom?"
 
 The question that changes everything: **Am I building a tool or infrastructure?**
 
