@@ -398,3 +398,358 @@ Post ready for:
 2. ⏭️ Target audience review (legal-tech-blog-reviewer agent)
 3. ⏭️ Backlink curation (backlink_curating skill)
 4. ⏭️ Publishing to Ghost (using-ghost-admin-api skill)
+
+---
+
+## Session 4: Post-Review Refinements - 2026-01-14
+
+### Context
+
+User made manual edits to the post adding personal examples (contract generator details). Claude then ran comprehensive feedback analysis using two reviewer perspectives:
+1. Legal tech blog reviewer
+2. Corporate lawyer (in-house) reviewer
+
+Both reviewers strongly endorsed the post but identified one critical gap: Missing "What Could Go Wrong" section showing realistic failure modes.
+
+### User's Core Insight
+
+User clarified the main thesis: **"Long term maintenance becomes an issue. It will break at some time. Then it will test your programming skills (if you vibed it, you might not know how to fix it)."**
+
+This refined the focus from "tools break when you're busy" to "tools WILL break eventually, and you won't be able to fix code you never understood."
+
+### What Claude Did
+
+#### Initial Analysis (Feedback Reviews)
+- Ran content-quality-auditor agent: Found critical issue (duplicate Question 4/4b), repetition issues, structural improvements
+- Ran legal-tech-blog-reviewer agent: Post rated 8.5/10, wanted more technical depth, code examples, failure modes
+- Ran inhouse-lawyer-reviewer agent: Post rated 9/10 for relevance, 6/10 for actionability; wanted step-by-step examples, risk frameworks
+
+**Consensus from both reviewers:**
+- Framework is valuable and immediately useful
+- Personal examples compelling
+- Missing practical "what could go wrong" section (~200 words)
+- Need one concrete step-by-step example
+
+#### Content Quality Fixes
+Fixed 8 issues from content audit:
+1. ✅ Removed duplicate Question 4b (was redundant with Question 2)
+2. ✅ Reduced "30-90x velocity" repetition (kept first mention, rephrased others)
+3. ✅ Improved Maintenance Reality transition ("Here's what examining Jamie's code revealed")
+4. ✅ Removed redundant conclusion opening
+5. ✅ Converted passive voice to active in contract generator example
+6. ✅ Removed awkward parenthetical about leaving company
+7. ✅ Strengthened time reference: "When dependencies break—and they will"
+8. ✅ Fixed run-on sentence (missing period)
+
+Word count impact: 2,126 → 2,011 words (trimmed 115 words)
+
+#### Data.zeeker.sg Removal
+User requested complete removal of data.zeeker.sg references (not a good example for this post):
+- Removed from line 192 (What This Costs Me section)
+- Removed from line 280 (Infrastructure I've Built list)
+- Removed from line 305 (2026 goals)
+
+Verified: No remaining references
+
+#### Brainstorming "What Could Go Wrong" Section
+**Constraint:** <200 words
+
+**Three approaches explored:**
+1. **Approach A**: The Dependency Trap (organizational risk focus)
+2. **Approach B**: The "Future You" Problem (technical knowledge gap)
+3. **Approach C**: When It Breaks - And It Will (inevitable maintenance moment)
+
+**User decision:** Combine B's setup with C's ending
+
+**Final section (185 words):** "When Vibe Coding Breaks - And It Will"
+- Core thesis: LLM-generated code you never understood → Breaks 6 months later → Can't debug it
+- Divergence point: Infrastructure (understood code, can fix) vs vibe coding (opaque code, stuck)
+- Context gap: Jamie has IT support, solo counsels debug at 9pm during deals
+- Prevention: Keep tools disposable, document manual backup
+
+**Placement:** After "The Maintenance Reality I've Learned" section, before "Decision Framework"
+
+### Outcomes
+
+✅ **Content quality fixes successful:**
+- Eliminated structural confusion (duplicate questions)
+- Reduced repetition while maintaining impact
+- Improved transitions and tone
+
+✅ **New section addresses both reviewer concerns:**
+- Legal tech reviewer: Gets technical failure mode (can't debug LLM code)
+- Corporate lawyer: Gets realistic scenario (breaks during critical period)
+- Both: Gets actionable prevention advice
+
+✅ **Post now more complete:**
+- Framework: ✅ Strong
+- Personal examples: ✅ Compelling
+- Failure modes: ✅ Now addressed
+- Actionability: Improved (still needs step-by-step example per reviewers)
+
+### Files Modified
+
+1. **`i-build-infrastructure-jamie-vibe-codes-tools.md`**
+   - Fixed 8 content quality issues
+   - Removed 3 data.zeeker.sg references
+   - Added "When Vibe Coding Breaks" section (185 words)
+   - Net impact: 2,011 → 2,196 words
+
+### Reviewer Assessment Summary
+
+**Legal Tech Reviewer (8.5/10):**
+- "This post works. The framework is immediately useful, your technical investigation is credible."
+- "The sustainability critique is the post's unique contribution."
+- Wants: Code example, dependency evaluation guide, worked framework example
+
+**Corporate Lawyer (9/10 relevance, 6/10 actionability):**
+- "This post hits HOME. You've articulated something I've felt but couldn't name."
+- "There's a gap between 'I understand this framework' and 'I can actually execute vibe coding.'"
+- Wants: Step-by-step example, risk framework, time/cost reality checks, "what could go wrong"
+
+**Consensus recommendation:** PUBLISH with targeted enhancements. Post is 90% there; final 10% is showing readers how to take the first step.
+
+### Key Decision: What Could Go Wrong Section
+
+**User's thesis clarification was critical:**
+> "The main thesis of this post is that long term maintenance becomes an issue. It will break at some time. Then it will test your programming skills (if you vibed it, you might not know how to fix it)."
+
+This shifted focus from "organizational dependency trap" to "knowledge gap creates maintenance crisis."
+
+**Why this matters:**
+- Aligns with post's core argument about sustainability
+- Addresses both audiences' fears (technical + practical)
+- Reinforces the tool vs infrastructure decision framework
+- Shows why Jamie's context (BigLaw support) differs from solo counsel reality
+
+### Next Steps
+
+Remaining reviewer suggestions (optional enhancements):
+1. ⏭️ Add one step-by-step vibe coding example (200-300 words)
+2. ⏭️ Add solo counsel risk framework (150 words)
+3. ⏭️ Strengthen conclusion with specific call-to-action (50 words)
+
+Current state: Publication-ready post that will resonate with target audience
+
+---
+
+## Session 5: Publishing to Ghost CMS - 2026-01-14
+
+### Context
+
+User requested to publish the post to Ghost CMS after completing content revisions and quality reviews.
+
+### What Claude Did
+
+#### Infrastructure Setup
+1. Created comprehensive publishing script (`publish-post.js`) for Ghost Admin API integration
+   - Parses markdown frontmatter using gray-matter
+   - Converts markdown to HTML (Ghost auto-converts to lexical format)
+   - Adds GitHub footer automatically when `github_folder` is present
+   - Uses Ghost Admin API with proper authentication
+
+2. Installed missing dependency (dotenv) for environment variable management
+
+3. Fixed API call structure to match @tryghost/admin-api expectations
+   - Initial error: Wrapped post data in `{ posts: [postData] }` array
+   - Solution: Pass post object directly to `api.posts.add()`
+
+#### Publishing Execution
+- Successfully published post as DRAFT to Ghost CMS
+- Post ID: `6966f4c3b20ad70001e1ddb4`
+- Slug: `tool-vs-infrastructure-mindset`
+- Status: draft (ready for final review before publishing)
+
+#### Verification
+Created and ran verification script to confirm:
+- ✅ Post successfully retrieved from Ghost API
+- ✅ Title, slug, tags all correct
+- ✅ Content length: 14,203 characters
+- ✅ GitHub footer present in content
+- ✅ 3 internal backlinks to alt-counsel.com found
+- ✅ All metadata preserved correctly
+
+### Outcomes
+
+✅ **Post successfully published to Ghost:**
+- **Admin URL:** https://alt-counsel.ghost.io/ghost/#/editor/post/6966f4c3b20ad70001e1ddb4
+- **Public URL (when published):** https://www.alt-counsel.com/tool-vs-infrastructure-mindset/
+- **Current status:** Draft (awaiting final review)
+
+✅ **Reusable infrastructure created:**
+- `publish-post.js` script can be used for future posts
+- Handles frontmatter parsing, GitHub footer, tags, and all metadata
+- Uses `?source=html` to leverage Ghost's markdown-to-lexical conversion
+
+### Technical Notes
+
+**GitHub Footer Implementation:**
+The script automatically adds a footer section when `github_folder` is present in frontmatter:
+```markdown
+---
+
+## View on GitHub
+
+This post is open source. View the source files, discussion notes, and revision history on GitHub.
+
+[View on GitHub](https://github.com/houfu/blog-alt-counsel/tree/main/posts/jamie-tso-vibe-coding)
+```
+
+**Ghost API Pattern:**
+- Using `?source=html` parameter lets Ghost handle markdown-to-lexical conversion
+- Simpler than manually building lexical JSON structure
+- Ghost's parser handles markdown formatting correctly
+
+### Next Steps
+
+Post is live as DRAFT in Ghost CMS. User can now:
+1. ✅ Review post in Ghost editor for final formatting check
+2. ✅ Verify all backlinks render correctly
+3. ✅ Check GitHub footer appearance
+4. ⏭️ Change status from "draft" to "published" when ready to go live
+5. ⏭️ Optional: Share on social media, newsletter, etc.
+
+Repository sync pending to commit publishing infrastructure and session notes.
+
+---
+
+## Session 6: Final Publishing and Ghost Edits - 2026-01-14
+
+### Context
+
+After initial publishing with lexical formatting, user made extensive edits in Ghost editor to enhance the post with visual elements and refine content. User then requested sync back to local repository.
+
+### What User Did in Ghost Editor
+
+#### Visual Enhancements
+1. **Added 3 infographic images:**
+   - The Tool Mindset (showing 5 characteristics with icons)
+   - The Infrastructure Mindset (showing 5 characteristics with icons)
+   - The 4 Questions decision framework
+   - All images include detailed alt text for accessibility
+
+2. **Added 2 bookmark cards** (rich previews):
+   - Artificial Lawyer interview with Jamie Tso (after his philosophy quote)
+   - Jamie's GitHub profile (after listing his projects)
+   - Both include captions explaining relevance
+
+3. **Changed GitHub footer** from plain text to styled CTA card with button
+
+#### Content Improvements
+1. **Formatting changes:**
+   - "30-90x velocity difference" → italics (was bold)
+   - "I build infrastructure. Jamie builds tools." → italics (was bold)
+
+2. **Content additions:**
+   - Added: "(NB: Last week, redlines finally reads basic PDF documents.)" - timely update about redlines library
+   - Added to contract generator example: "Repeatedly remind everyone that Legal is still around, and legal is still checking." - more realistic detail about internal tool adoption
+   - Added to vibe coding failure scenario: "It's downright embarrassing when a fancy tool you made yourself fails in front of your clients or bosses." - emotional reality
+   - Added practical detail: "Use Gemini (like Jamie) or your favourite LLM with a IDE you are comfortable with" - specific tool recommendation
+
+3. **Structural changes:**
+   - Removed "Why Lawyers Default to Infrastructure Thinking" as standalone section
+   - Merged that content into "What I'm Missing" section for better flow
+   - Changed "six months" to "a few months" in vibe coding failure scenario
+
+4. **Metadata:**
+   - Added custom excerpt (Claude's Option 1 recommendation)
+   - Changed status from "draft" to "scheduled"
+
+### What Claude Did
+
+#### Created Publishing Infrastructure
+1. **Markdown-to-Lexical conversion script** (`post-to-ghost.js`)
+   - Parses frontmatter with gray-matter
+   - Converts markdown to Ghost's lexical JSON format
+   - Handles bold, italic, code, links, lists, headings, blockquotes
+   - Automatically adds GitHub footer
+   - Uses LexicalBuilder from ghost-lexical-single.js
+
+2. **Successfully published post** to Ghost CMS:
+   - Post ID: `6966f9bfb20ad70001e1ddbc`
+   - Slug: `tool-vs-infrastructure-mindset`
+   - Status: scheduled (ready to publish)
+   - Admin URL: https://alt-counsel.ghost.io/ghost/#/editor/post/6966f9bfb20ad70001e1ddbc
+
+#### Synced Ghost Edits Back to Repository
+1. Fetched published post from Ghost API (HTML + Lexical formats)
+2. Converted HTML back to markdown format
+3. Updated local markdown file with all Ghost edits:
+   - Image references with alt text
+   - Bookmark card notations
+   - Content improvements
+   - Formatting changes
+   - Updated metadata (status, excerpt)
+
+### Key Learnings
+
+**Lexical format works better than HTML conversion:**
+- Previous attempt used `?source=html` which produced poor formatting
+- Direct lexical JSON from markdown parser produced proper formatting
+- Headings, paragraphs, lists, and formatting all rendered correctly
+
+**Ghost editor is ideal for visual enhancements:**
+- Easier to add images, bookmark cards, and styling in Ghost UI
+- User can see real-time preview
+- Alt text and captions easier to write in context
+- Then sync changes back to repository for version control
+
+**Two-way sync workflow:**
+1. Draft in markdown locally (version controlled, easy to edit)
+2. Publish to Ghost with lexical script (proper formatting)
+3. Enhance visually in Ghost editor (images, cards, final polish)
+4. Fetch from Ghost API and update local file (maintain sync)
+5. Commit to repository (preserve history)
+
+### Files Created/Modified This Session
+
+**Created:**
+- `/posts/jamie-tso-vibe-coding/post-to-ghost.js` - Publishing script
+- `/posts/jamie-tso-vibe-coding/update-ghost-draft.js` - Update script (unused)
+- `/.claude/skills/using-ghost-admin-api/scripts/publish-post.js` - Generic publishing script (HTML-based, had issues)
+
+**Modified:**
+- `/posts/jamie-tso-vibe-coding/i-build-infrastructure-jamie-vibe-codes-tools.md` - Synced with Ghost edits
+- `/posts/jamie-tso-vibe-coding/discussion.md` - This file
+
+**Dependencies added:**
+- `dotenv` - Environment variable management
+- `marked` - Markdown parser (installed but not used, lexical approach worked better)
+
+### Post Status
+
+✅ **SCHEDULED FOR PUBLICATION**
+
+**Final metadata:**
+- Title: "I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing."
+- Slug: `tool-vs-infrastructure-mindset`
+- Tags: LegalTech, Programming, AI
+- Status: Scheduled
+- Featured: No
+- Custom excerpt: 252 characters
+- GitHub folder linked: Yes (CTA button)
+
+**Visual elements:**
+- 3 infographic images
+- 2 bookmark cards (external links)
+- 3 internal backlinks (inline)
+- Styled GitHub CTA footer
+
+**Post metrics:**
+- 2,227 words (estimated from markdown)
+- 18,212 characters HTML
+- Ready for publication
+
+### Next Steps
+
+User can now:
+1. ✅ Set publish date/time in Ghost
+2. ✅ Publish when ready
+3. ⏭️ Share on social media
+4. ⏭️ Consider newsletter distribution
+5. ⏭️ Monitor engagement and feedback
+
+Repository ready to commit with:
+- Updated post markdown
+- Publishing scripts
+- Session documentation
