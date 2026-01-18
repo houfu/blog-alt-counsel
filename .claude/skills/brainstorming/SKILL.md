@@ -56,3 +56,5 @@ Create or update the 'discussion.md' in the post folder using recorder skill.
 - Present incrementally, validate as you go
 - Go backward when needed - flexibility > rigid progression
 - Announce skill usage at start
+- For blog posts and newsletters, reference `/docs/Houfu_Voice_Guide.md` when exploring approaches
+- Houfu's voice favors: frameworks over advice, nuance over binary thinking, vulnerable admissions over polished authority

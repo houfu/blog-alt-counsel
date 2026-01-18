@@ -159,6 +159,70 @@ Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are
 **Why this matters:**
 For series posts, each part should build on previous parts, not repeat them. Reading discussion.md helps you understand what's already been covered and maintain a holistic view across the entire series.
 
+## Writing Voice & Style
+
+**CRITICAL: Houfu's distinctive voice must be present in all blog content.** This voice is what differentiates alt-counsel from generic legal tech content.
+
+### Voice Guide Reference
+
+The comprehensive **Houfu Voice Guide** is available at `/docs/Houfu_Voice_Guide.md`. This 5-part guide defines:
+
+1. **Voice Patterns** - Opening moves, "neither is wrong" framing, specific numbers, vulnerable admissions
+2. **Structural Patterns** - Bullet point rules, paragraph length, header style
+3. **Anti-Patterns** - What Houfu never does (jargon, humble-bragging, false certainty)
+4. **Templates** - News commentary, learning in public, LinkedIn posts
+5. **Quick Reference Checklist** - Pre-publishing verification
+
+### When to Apply the Voice Guide
+
+**During PITCH (generate_a_pitch skill):**
+- Read Part 4 (Templates) to understand post structure
+- Ensure title follows voice patterns (conversational, not academic)
+- Check that pitch opens with feeling/vulnerability, not throat-clearing
+
+**During WRITE (drafting content):**
+- REQUIRED: Read the entire Voice Guide before drafting blog posts
+- Reference Part 1 (Voice Patterns) while writing opening paragraphs
+- Use Part 2 (Structural Patterns) for formatting decisions
+- Apply Part 5 (Quick Reference Checklist) during self-review
+
+**During REVIEW (quality checks):**
+- The audit-tone agent will check voice consistency using the guide
+- Target audience reviewers reference voice patterns in their feedback
+
+### Content Type Distinctions
+
+**Voice guide applies to:**
+- Blog posts (full application)
+- Newsletter articles (full application)
+- LinkedIn posts (use Part 4 template)
+
+**Voice guide does NOT apply to:**
+- discussion.md files (working notes)
+- pitch.md files (internal planning)
+- research.md files (source collection)
+- Technical documentation
+
+### Key Voice Principles (Quick Reference)
+
+If you need to write quickly without reading the full guide, these core principles maintain Houfu's voice:
+
+1. **Open with feeling, not fact** - "I compared my GitHub to Jamie's and felt unproductive" (not "This article discusses...")
+
+2. **Specific numbers as anchors** - "148 stars and 177,000 monthly downloads" (not "significant traction")
+
+3. **Vulnerable admissions** - Admit gaps, failures, uncertainties early in the piece
+
+4. **The "neither is wrong" move** - Resist binary framing, embrace nuance. Formula: [Position A] vs [Position B]. Neither is wrong. But [the nuance that actually matters].
+
+5. **Return to solo counsel reality** - Every post circles back to resource-constrained practitioners: "For solo counsels and small teams..."
+
+6. **Short paragraphs, varied rhythm** - 2-5 sentences typically, punch with single-sentence paragraphs after buildup
+
+7. **Frameworks over advice** - Present questions/criteria, not prescriptions. "Before starting, ask 4 questions..." rather than "You should always..."
+
+**Remember:** Professional tone doesn't mean boring. Houfu's voice is honest, specific, nuanced, and framework-oriented.
+
 ## Common Development Workflows
 
 ### 1. Create a new post
@@ -166,10 +230,13 @@ For series posts, each part should build on previous parts, not repeat them. Rea
 **Core phases: PITCH → WRITE → REVIEW → POST → CHECK**
 
 1. **PITCH** - Define scope and direction (use `generate_a_pitch` skill)
+   - Read Voice Guide Part 4 (Templates) before developing pitch
    - Tags are suggested during pitch using `tag-registry` skill
 2. **WRITE** - Draft the content
+   - **CRITICAL: Read `/docs/Houfu_Voice_Guide.md` before writing blog posts**
+   - Apply voice patterns from guide during drafting
 3. **REVIEW** - Quality checks and refinement:
-   - Content quality audit (content-quality-auditor agent)
+   - Content quality audit (content-quality-auditor agent - includes voice check via audit-tone)
    - Target audience review (inhouse-lawyer-reviewer or legal-tech-blog-reviewer agent)
    - Backlink curation (backlink_curating skill)
    - Tag validation (use `tag-registry` skill to verify tags before publishing)
