@@ -3,6 +3,7 @@ Analyse this post and give feedback on its contents to improve its quality.
 Use the following subagents to analyse the post from different perspectives:
 1. legal tech blog reviewer
 2. corporate lawyer reviewer
+3. lawyer coder reviewer
 
 You should produce a short summary of the post in the following format.
 * Overview
@@ -17,7 +18,17 @@ You should produce a short summary of the post in the following format.
   * Specific recommendations
   * Notable quotes or observations
 * Reviewer B Perspective
-  ...
+  * Overall rating/assessment
+  * Key strengths identified
+  * Main concerns or weaknesses
+  * Specific recommendations
+  * Notable quotes or observations
+* Reviewer C Perspective (Lawyer-Coder Reviewer)
+  * Overall rating/assessment
+  * Key strengths identified
+  * Main concerns or weaknesses
+  * Specific recommendations
+  * Notable quotes or observations
 * Recommendations 
   * Immediate areas of improvement
   * Longer-term improvements
