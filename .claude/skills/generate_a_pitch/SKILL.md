@@ -46,6 +46,15 @@ This ensures all quality checks are tracked from the start and never skipped.
 
 The human partner has suggested an idea which is suitable for developing a pitch. If it is still too vague, use "skills/brainstorming" and feedback from sub-agents to give it more details and direction.
 
+### Step 1.5: Read Voice Guide for Blog Posts and Newsletters
+
+If developing a pitch for a blog post or newsletter, read `/docs/Houfu_Voice_Guide.md` Part 4 (Templates) to understand:
+- How Houfu structures "News Commentary" posts vs "Learning in Public" posts
+- What kind of openings resonate (feeling-first, not fact-first)
+- How to frame the pitch in Houfu's voice
+
+This ensures the pitch sets up the right structure and tone from the start.
+
 ### Step 2: Develop the pitch
 
 From the idea, generate a pitch. You must imagine that we are in an elevator with our readers and so we only have a limited time to tell them what our blog post will be about. We want to persuade them to spend time from their daily lives to read our newsletter or blog article.
