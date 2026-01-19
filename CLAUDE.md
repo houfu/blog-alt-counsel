@@ -116,7 +116,7 @@ GitHub CLI is automatically configured using existing \`GITHUB_USERNAME\` and \`
 
 **Quality check todos are mandatory** - Include these in your todo list for content workflows:
 - Content quality audit (using content-quality-auditor agent)
-- Target audience review (using inhouse-lawyer-reviewer or legal-tech-blog-reviewer agent)
+- Target audience review (using inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
 - Backlink curation
 - Final proofreading before publishing
 
@@ -223,6 +223,56 @@ If you need to write quickly without reading the full guide, these core principl
 
 **Remember:** Professional tone doesn't mean boring. Houfu's voice is honest, specific, nuanced, and framework-oriented.
 
+## Audience Reviewers Guide
+
+The blog serves three overlapping but distinct audience segments:
+
+### 1. Legal Tech Blog Reviewer
+**Persona**: Seasoned legal technologist (10+ years, JD + significant programming)
+**Use for**: Technical implementations, open source projects, honest post-mortems
+**Key values**: Technical depth, community knowledge sharing, authenticity
+
+### 2. Corporate Lawyer Reviewer (Sarah Chen)
+**Persona**: Solo corporate lawyer at 150-person manufacturing company ($150/month budget)
+**Use for**: Tool evaluations, budget-conscious solutions, pragmatic workflows
+**Key values**: Affordability, realistic time estimates, practical relevance
+
+### 3. Lawyer-Coder Reviewer
+**Persona**: Senior Legal Counsel at Series B fintech (lawyer who codes, 5-10 hours/week side projects)
+**Use for**: Personal project struggles, learning journeys, build vs. buy decisions, identity questions
+**Key values**: Vulnerability, specificity, "I'm not alone" validation, frameworks for decision-making
+
+**Full persona details**: `/docs/personas/wei-lin-persona.md`
+
+### When to Use Each Reviewer
+
+**Use individual reviewers** when content clearly targets one segment:
+- **legal-tech-blog-reviewer**: "How I built an open source legal document parser"
+- **corporate-lawyer-reviewer**: "Evaluating contract management tools under $200/month"
+- **lawyer-coder-reviewer**: "Why I abandoned my side project after 150 hours"
+
+**Use /feedback command (all three)** when:
+- Content has broad appeal across segments
+- You want comprehensive triangulated feedback
+- Unsure which audience will resonate most
+
+### Key Distinctions
+
+**Technical Capability:**
+- Legal Tech Reviewer: Seasoned practitioner, wants deep implementation details
+- Sarah Chen: Non-technical, needs explanations for assumptions
+- Lawyer-Coder: Self-taught coder, questions execution not capability
+
+**Emotional State:**
+- Legal Tech Reviewer: Confident veteran, values honest failures
+- Sarah Chen: Pragmatic skeptic, values solutions that work
+- Lawyer-Coder: Imposter syndrome, isolation, validation-seeking, guilt about unfinished projects
+
+**Content Preferences:**
+- Legal Tech Reviewer: Code, architecture, open source
+- Sarah Chen: Affordability, practical steps, backup plans
+- Lawyer-Coder: Vulnerability, specific numbers, constraint acknowledgment, decision frameworks
+
 ## Common Development Workflows
 
 ### 1. Create a new post
@@ -237,7 +287,7 @@ If you need to write quickly without reading the full guide, these core principl
    - Apply voice patterns from guide during drafting
 3. **REVIEW** - Quality checks and refinement:
    - Content quality audit (content-quality-auditor agent - includes voice check via audit-tone)
-   - Target audience review (inhouse-lawyer-reviewer or legal-tech-blog-reviewer agent)
+   - Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
    - Backlink curation (backlink_curating skill)
    - Tag validation (use `tag-registry` skill to verify tags before publishing)
 4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
