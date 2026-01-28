@@ -77,8 +77,9 @@ This project runs in a containerized environment using Docker for consistency an
 
 Always use environment variables when using the Ghost API: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`.
 You can find them in the following places:
-- As an environment variable
-- Read the settings.json file
+- As an environment variable (highest priority)
+- Read the .env file (recommended for Docker)
+- Read the settings.json file (deprecated, legacy fallback)
 
 
 ## GitHub CLI Integration

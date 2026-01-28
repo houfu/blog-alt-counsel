@@ -47,12 +47,14 @@ RUN ARCH=$(uname -m) && \
     fi && \
     chmod +x /usr/local/bin/ttyd
 
-# Install Claude Code via npm for better Docker compatibility
-RUN npm install -g @anthropic-ai/claude-code && \
+# Install Claude Code using the official native installer (recommended method)
+# npm installation is deprecated - using curl installer instead
+RUN curl -fsSL https://claude.ai/install.sh | bash && \
+    export PATH="/root/.local/bin:$PATH" && \
     claude --version
 
-# Set PATH to include npm global binaries (already set by Node.js image)
-ENV PATH="/usr/local/bin:$PATH"
+# Set PATH to include Claude Code binary and npm global binaries
+ENV PATH="/root/.local/bin:/usr/local/bin:$PATH"
 
 # Set working directory
 WORKDIR /workspace
@@ -93,8 +95,8 @@ if [ -n "$SHPOOL_SESSION_NAME" ] && [ "$PWD" != "/workspace" ] && [[ "$PWD" != /
     cd /workspace
 fi
 
-# Ensure PATH includes npm global binaries (claude) and Cargo bins
-export PATH="/usr/local/bin:/root/.cargo/bin:$PATH"
+# Ensure PATH includes Claude Code binary, npm global binaries, and Cargo bins
+export PATH="/root/.local/bin:/usr/local/bin:/root/.cargo/bin:$PATH"
 
 # Environment variables for blog automation (inherit from Docker environment)
 export GHOST_SITE_URL="${GHOST_SITE_URL:-}"
