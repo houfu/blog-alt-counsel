@@ -183,9 +183,9 @@ function loadConfig(configFile = null) {
         }
     }
 
-    // Fall back to settings.json
+    // Fall back to settings.json (deprecated)
     if (!process.argv.includes('--quiet')) {
-        console.error('📄 Using configuration from settings.json');
+        console.error('⚠️  Using deprecated settings.json (consider migrating to .env file)');
     }
     return loadConfigFromFile('settings.json');
 }

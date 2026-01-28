@@ -24,7 +24,7 @@
  */
 
 const GhostAdminAPI = require('@tryghost/admin-api');
-const { loadConfigFromEnv, loadConfigFromFile } = require('./ghost_jwt.js');
+const { loadConfig } = require('./ghost_jwt.js');
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
@@ -34,12 +34,8 @@ const readline = require('readline');
  */
 function initializeGhostAPI() {
     try {
-        // Try environment variables first
-        let config = loadConfigFromEnv();
-        if (!config) {
-            // Fall back to settings.json
-            config = loadConfigFromFile('settings.json');
-        }
+        // Load config (tries env vars, then .env file, then settings.json)
+        const config = loadConfig();
 
         const api = new GhostAdminAPI({
             url: config.site_url,
