@@ -98,14 +98,27 @@ fi
 # Ensure PATH includes Claude Code binary, npm global binaries, and Cargo bins
 export PATH="/root/.local/bin:/usr/local/bin:/root/.cargo/bin:$PATH"
 
-# Environment variables for blog automation (inherit from Docker environment)
-export GHOST_SITE_URL="${GHOST_SITE_URL:-}"
-export GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY:-}"
+# Environment variables for blog automation
+# Priority: Docker ENV (inherited) > .env file (fallback)
+# Source .env as fallback when Docker ENV was not inherited
+# (happens when shpool daemon loses environment during auto-daemonization)
+if [ -f "/workspace/.env" ]; then
+    # Only source .env for vars not already set by Docker ENV
+    while IFS='=' read -r key value; do
+        # Skip comments and empty lines
+        [[ "$key" =~ ^#.*$ || -z "$key" ]] && continue
+        # Remove surrounding quotes from value
+        value="${value%\"}"
+        value="${value#\"}"
+        value="${value%\'}"
+        value="${value#\'}"
+        # Only set if not already in environment (Docker ENV takes priority)
+        if [ -z "${!key}" ]; then
+            export "$key=$value"
+        fi
+    done < /workspace/.env
+fi
 export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"
-export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
-export JINA_API_KEY="${JINA_API_KEY:-}"
-export GITHUB_USERNAME="${GITHUB_USERNAME:-}"
-export GITHUB_PAT="${GITHUB_PAT:-}"
 
 # Blog automation aliases
 alias blog-token="node scripts/ghost_jwt.js"
