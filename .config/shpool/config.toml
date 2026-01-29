@@ -2,7 +2,10 @@
 # Session persistence tool for iPad-friendly terminal workflows
 
 # Shell to use for sessions
-shell = "/bin/bash"
+# Use login shell (-l) so .profile is sourced, ensuring PATH includes
+# Claude Code and other tool directories even if .bashrc's non-interactive
+# guard ([ -z "$PS1" ] && return) exits early
+shell = "/bin/bash -l"
 
 # Enable autodaemonization (default behavior when nodaemonize is false/omitted)
 # This allows shpool to automatically start a background daemon when needed
