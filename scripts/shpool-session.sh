@@ -28,7 +28,7 @@ export GITHUB_USERNAME="${GITHUB_USERNAME}"
 export GITHUB_PAT="${GITHUB_PAT}"
 export JINA_API_KEY="${JINA_API_KEY}"
 export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY}"
-export PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
+export PATH="/root/.local/bin:/usr/local/bin:/root/.cargo/bin:$PATH"
 
 # Then, source .env file if it exists (allows local overrides)
 if [ -f "/workspace/.env" ]; then
