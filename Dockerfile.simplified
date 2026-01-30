@@ -1,0 +1,135 @@
+# ============================================================================
+# Simplified Dockerfile for blog-alt-counsel
+# Based on official claude-code devcontainer patterns
+# ============================================================================
+FROM node:20-bookworm-slim
+
+# Build arguments
+ARG REPO_URL
+ARG BRANCH=main
+ARG GITHUB_USERNAME
+ARG GITHUB_PAT
+
+# Install core dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    ca-certificates \
+    git \
+    gh \
+    vim \
+    nano \
+    htop \
+    tree \
+    jq \
+    tmux \
+    sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install ttyd for web terminal
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64; \
+    elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then \
+        curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.aarch64; \
+    else \
+        echo "Unsupported architecture: $ARCH" && exit 1; \
+    fi && \
+    chmod +x /usr/local/bin/ttyd
+
+# Create non-root user (following official devcontainer pattern)
+RUN useradd -m -s /bin/bash node && \
+    echo "node ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    mkdir -p /workspace && \
+    chown -R node:node /workspace
+
+# Switch to non-root user for remaining operations
+USER node
+WORKDIR /home/node
+
+# Install Claude Code using npm (official method, more stable than curl)
+RUN npm install -g @anthropic-ai/claude-code@latest
+
+# Setup git config as node user
+RUN git config --global credential.helper store && \
+    git config --global --add safe.directory /workspace && \
+    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" > /home/node/.git-credentials
+
+# Clone repository
+WORKDIR /workspace
+RUN git clone --branch ${BRANCH} ${REPO_URL} . 2>/dev/null || true
+
+# Install Node.js dependencies
+RUN npm install 2>/dev/null || true
+
+# Make scripts executable
+RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js 2>/dev/null || true
+
+# Copy configurations if they exist
+RUN mkdir -p /home/node/.config/claude && \
+    cp .claude/mcp.json /home/node/.config/claude/mcp.json 2>/dev/null || true
+
+# Setup minimal .bashrc with essentials
+RUN cat > /home/node/.bashrc <<'BASHRC_EOF'
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Source .env file if it exists
+if [ -f "/workspace/.env" ]; then
+    set -a
+    source /workspace/.env 2>/dev/null
+    set +a
+fi
+
+# Default API version
+export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"
+
+# Custom prompt
+export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "
+
+# Start in workspace directory
+cd /workspace 2>/dev/null || true
+
+# Blog automation aliases
+alias blog-token="node scripts/ghost_jwt.js"
+alias search-posts="node scripts/search_posts_v2.js"
+alias ll="ls -la"
+alias ..="cd .."
+
+# tmux session management
+alias session-attach="tmux attach -t blog || tmux new -s blog"
+alias session-detach="tmux detach"
+alias session-list="tmux ls"
+BASHRC_EOF
+
+# Create simple tmux configuration for better persistence
+RUN cat > /home/node/.tmux.conf <<'TMUX_EOF'
+# Enable mouse support
+set -g mouse on
+
+# Increase scrollback buffer
+set-option -g history-limit 10000
+
+# Don't exit tmux when a session is destroyed
+set-option -g detach-on-destroy off
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Status bar
+set -g status-style bg=blue,fg=white
+set -g status-left '[blog-workspace] '
+set -g status-right '%Y-%m-%d %H:%M'
+TMUX_EOF
+
+# Environment variables
+ENV PROJECT_ROOT="/workspace"
+ENV NODE_ENV="development"
+
+# Expose ttyd port
+EXPOSE 7681
+
+# Start ttyd with tmux for session persistence
+# tmux will auto-create session named 'blog' on first connect
+# and allow reconnecting to it after disconnections
+CMD ["ttyd", "-p", "7681", "-i", "0.0.0.0", "tmux", "new-session", "-A", "-s", "blog"]
