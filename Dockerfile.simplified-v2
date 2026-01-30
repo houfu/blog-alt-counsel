@@ -1,0 +1,211 @@
+# ============================================================================
+# Simplified Dockerfile for blog-alt-counsel (v2 - Fixed ENV handling)
+# Based on official claude-code devcontainer patterns
+# ============================================================================
+FROM node:20-bookworm-slim
+
+# Build arguments
+ARG REPO_URL
+ARG BRANCH=main
+ARG GITHUB_USERNAME
+ARG GITHUB_PAT
+
+# Install core dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    ca-certificates \
+    git \
+    gh \
+    vim \
+    nano \
+    htop \
+    tree \
+    jq \
+    tmux \
+    sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install ttyd for web terminal
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then \
+        curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64; \
+    elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then \
+        curl -Lo /usr/local/bin/ttyd https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.aarch64; \
+    else \
+        echo "Unsupported architecture: $ARCH" && exit 1; \
+    fi && \
+    chmod +x /usr/local/bin/ttyd
+
+# Create non-root user (following official devcontainer pattern)
+RUN useradd -m -s /bin/bash node && \
+    echo "node ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    mkdir -p /workspace && \
+    chown -R node:node /workspace
+
+# Switch to non-root user for remaining operations
+USER node
+WORKDIR /home/node
+
+# Configure npm to use a specific global directory
+# This ensures npm global packages go to a known location in PATH
+RUN mkdir -p /home/node/.npm-global && \
+    npm config set prefix '/home/node/.npm-global'
+
+# Install Claude Code using npm (official method, more stable than curl)
+RUN npm install -g @anthropic-ai/claude-code@latest
+
+# Setup git config as node user
+RUN git config --global credential.helper store && \
+    git config --global --add safe.directory /workspace && \
+    echo "https://${GITHUB_USERNAME}:${GITHUB_PAT}@github.com" > /home/node/.git-credentials
+
+# Clone repository
+WORKDIR /workspace
+RUN git clone --branch ${BRANCH} ${REPO_URL} . 2>/dev/null || true
+
+# Install Node.js dependencies
+RUN npm install 2>/dev/null || true
+
+# Make scripts executable
+RUN chmod +x scripts/ghost_jwt.js scripts/search_posts_v2.js scripts/create_post.js 2>/dev/null || true
+
+# Copy configurations if they exist
+RUN mkdir -p /home/node/.config/claude && \
+    cp .claude/mcp.json /home/node/.config/claude/mcp.json 2>/dev/null || true
+
+# Setup .bashrc with proper environment handling
+# This ensures PATH and docker-compose ENV vars work correctly even in tmux sessions
+RUN cat > /home/node/.bashrc <<'BASHRC_EOF'
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# ============================================================================
+# CRITICAL: Environment Setup (must run before anything else)
+# ============================================================================
+
+# 1. Set PATH to include npm global packages and Claude Code
+export PATH="/home/node/.npm-global/bin:$PATH"
+
+# 2. Source docker-compose ENV vars (captured on container start)
+# This ensures tmux sessions get fresh ENV even after reconnecting
+if [ -f "/tmp/docker-env.sh" ]; then
+    source /tmp/docker-env.sh 2>/dev/null
+fi
+
+# 3. Source .env file if it exists (can override docker-compose vars)
+if [ -f "/workspace/.env" ]; then
+    set -a
+    source /workspace/.env 2>/dev/null
+    set +a
+fi
+
+# 4. Set defaults
+export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"
+export PROJECT_ROOT="${PROJECT_ROOT:-/workspace}"
+export NODE_ENV="${NODE_ENV:-development}"
+
+# ============================================================================
+# Shell Customization
+# ============================================================================
+
+# Custom prompt
+export PS1="\[\e[36m\]blog-alt-counsel\[\e[m\] \[\e[32m\]\w\[\e[m\] $ "
+
+# Start in workspace directory
+cd /workspace 2>/dev/null || true
+
+# ============================================================================
+# Aliases
+# ============================================================================
+
+# Blog automation
+alias blog-token="node scripts/ghost_jwt.js"
+alias search-posts="node scripts/search_posts_v2.js"
+
+# Navigation
+alias ll="ls -la"
+alias ..="cd .."
+
+# tmux session management
+alias session-attach="tmux attach -t blog || tmux new -s blog"
+alias session-detach="tmux detach"
+alias session-list="tmux ls"
+
+# Environment debugging
+alias show-env="env | sort"
+alias show-path="echo \$PATH | tr ':' '\n'"
+alias check-claude="which claude && claude --version"
+BASHRC_EOF
+
+# Create simple tmux configuration for better persistence
+RUN cat > /home/node/.tmux.conf <<'TMUX_EOF'
+# Enable mouse support
+set -g mouse on
+
+# Increase scrollback buffer
+set-option -g history-limit 10000
+
+# Don't exit tmux when a session is destroyed
+set-option -g detach-on-destroy off
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Status bar
+set -g status-style bg=blue,fg=white
+set -g status-left '[blog-workspace] '
+set -g status-right '%Y-%m-%d %H:%M'
+
+# Update environment variables when attaching
+# This helps tmux pick up changes, though .bashrc handles the main work
+set-option -g update-environment "GHOST_SITE_URL GHOST_ADMIN_API_KEY ANTHROPIC_API_KEY GITHUB_USERNAME GITHUB_PAT"
+TMUX_EOF
+
+# Create entrypoint script that captures docker-compose ENV vars
+# This runs EVERY TIME the container starts, so tmux sessions always get fresh ENV
+RUN cat > /home/node/entrypoint.sh <<'ENTRYPOINT_EOF'
+#!/bin/bash
+set -e
+
+# Capture current environment to a file that .bashrc will source
+# This ensures tmux sessions can reload ENV even after reconnecting
+cat > /tmp/docker-env.sh <<ENV_EXPORT_EOF
+# Docker-compose environment variables (captured on container start)
+# This file is regenerated every time the container starts
+
+# Export all current ENV vars that might come from docker-compose
+export GHOST_SITE_URL="${GHOST_SITE_URL:-}"
+export GHOST_ADMIN_API_KEY="${GHOST_ADMIN_API_KEY:-}"
+export GHOST_API_VERSION="${GHOST_API_VERSION:-v6.0}"
+export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
+export GITHUB_USERNAME="${GITHUB_USERNAME:-}"
+export GITHUB_PAT="${GITHUB_PAT:-}"
+export PROJECT_ROOT="${PROJECT_ROOT:-/workspace}"
+export NODE_ENV="${NODE_ENV:-development}"
+ENV_EXPORT_EOF
+
+chmod 644 /tmp/docker-env.sh
+
+echo "=== Blog Alt-Counsel Container Starting ==="
+echo "Environment captured to /tmp/docker-env.sh"
+echo "Tmux sessions will reload ENV from this file"
+echo "Starting ttyd on port 7681..."
+echo "==========================================="
+
+# Start ttyd with tmux
+exec ttyd -p 7681 -i 0.0.0.0 tmux new-session -A -s blog
+ENTRYPOINT_EOF
+
+RUN chmod +x /home/node/entrypoint.sh
+
+# Environment variables (these are defaults, can be overridden by docker-compose)
+ENV PROJECT_ROOT="/workspace"
+ENV NODE_ENV="development"
+
+# Expose ttyd port
+EXPOSE 7681
+
+# Use entrypoint script instead of direct CMD
+# This captures docker-compose ENV vars on every container start
+ENTRYPOINT ["/home/node/entrypoint.sh"]
