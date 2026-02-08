@@ -1,302 +1,225 @@
 ---
-title: "Making Claude's Legal Plugin Actually Yours"
-slug: "claude-legal-plugin-guide"
+title: "So you want to Claude Cowork the Legal Plugin?: A Guide"
+slug: "so-you-want-to-claude-cowork-the-legal-plugin-a-guide"
 tags: ["LegalTech", "OpenSource", "PDPA", "Tutorial"]
-status: draft
+status: scheduled
 featured: false
 github_folder: "legal-plugin-guide"
 ---
 
-This guide walks you through installing Claude Cowork, setting up the legal plugin, and creating your first custom template. By the end, you'll have a working PDPA-specific response template and understand how to build more.
+Legal Tech LinkedIn went nuts lately when they noticed Anthropic's legal plugin tucked away in their "knowledge workers" repository. The markets also took notice as many "traditional" legal tech vendors saw their stock prices drop, including Thomson Reuters which saw a drop of 16% in a single day.
 
-**Time required:** 30-45 minutes for setup; 20 minutes per custom template
+So is this panic justified? Is this the end of the world for legal tech now that Anthropic has eaten their lunch?
 
-**What you'll need:**
-- A computer running macOS or Windows
-- A Claude Pro, Team, or Enterprise subscription
-- A text editor (VS Code, Notepad, TextEdit—anything works)
+Here's what no one's talking about: the plugin is open source. You can look inside. You can modify it. You can make it work for your purposes and jurisdiction.
 
-## What is Claude Cowork?
+The templates it ships with are US/EU-centric. For a Singapore or any other practitioner, that's a starting point, not a solution.
+
+I spent the weekend actually using it. This guide walks you through getting it running, then shows you how to create your first custom template: a PDPA-specific data subject access request response. No coding required—just markdown files you can read and edit.
+
+## A primer on Claude Cowork and Plugins
+
+Let's set the stage first.
 
 Claude Cowork is Anthropic's desktop application for running AI-powered workflows. Think of it as Claude with superpowers: it can read files on your computer, execute multi-step tasks, and work with specialized plugins.
 
-If you've heard of Claude Code (the terminal-based coding tool), Cowork is its friendlier sibling—designed for knowledge workers who want AI assistance without writing code.
-
-[SCREENSHOT: Claude Cowork main interface showing Chat, Code, and Cowork tabs]
-
-## What are Plugins?
-
 Plugins are pre-built skill packages that teach Claude how to do specific jobs. Anthropic released 11 open-source plugins covering areas like sales, marketing, finance, and—most relevant to us—legal work.
 
-Each plugin includes:
-- **Commands**: Actions you trigger explicitly (like `/review-contract`)
-- **Skills**: Knowledge Claude draws on automatically when relevant
-- **Connectors**: Integrations with tools like Slack, Box, or Microsoft 365
+The legal plugin gives you five slash commands:
 
-The legal plugin specifically includes commands for contract review, NDA triage, legal briefings, and templated responses.
+* `/review-contract` — clause-by-clause review against your playbook
+* `/triage-nda` — quick categorization: auto-approve, review, or escalate
+* `/vendor-check` — status check on vendor agreements
+* `/brief` — daily briefings, topic research, incident response prep
+* `/respond` — templated responses for DSARs, legal holds, common inquiries
+For solo counsels and small teams, these commands offer a new way to use AI without specialized tools or enterprise platforms.
+
+## What you'll need
+
+**Time required:** 30-45 minutes for setup; about 2-2.5 hours to follow the full walkthrough including validation and branding
+
+**What you'll need:**
+
+* A computer running macOS
+* A Claude Pro, Team, or Enterprise subscription ($20/month for Pro)
+* Some familiarity with creating folders and editing text files
+Don't be daunted by that last requirement. The customizations are in plain text, not code. If you can find your way around your computer using Finder on macOS, you can customize these skills.
+
+<details>
+<summary>A note before you start</summary>
+
+I'm skeptical about Cowork as a daily workflow tool. Integration friction (copy-paste between systems) and data security concerns make it impractical for confidential legal work. Use public documents only (like the VIMA NDA in this guide) until you've completed your organization's vendor assessment for Anthropic.
+
+But the *meta-prompting* techniques you'll learn here—creating reusable instruction sets that guide AI behavior—apply beyond Cowork. These patterns work in Claude Code, API implementations, and other tools that adopt similar approaches.
+</details>
+
+<details>
+<summary>The trade-off with Vendor tools</summary>
+
+Vendor tools like Harvey or CoCounsel come with enterprise support, compliance teams, and predetermined workflows. Custom skills and templates require more self-reliance but give you control over the decision-making logic. For solo counsels and small teams working on internal processes, custom approaches are manageable. For client-facing work requiring compliance certification, vendor tools often make more sense—at least until you build confidence on lower-risk tasks.
+
+That's what makes this worth your time: learning how to program your own systems, not just work within someone else's.
+</details>
 
 ## Step 1: Install Claude Cowork
 
-**1.1** Go to [claude.ai/download](https://claude.ai/download) and download the desktop app for your operating system.
+**1.1** Go to [](https://claude.ai/download) and download the desktop app for macOS.
 
-[SCREENSHOT: Download page showing macOS and Windows options]
+![Claude download page showing macOS download options and system requirements](Claude_MacOS_Download.png)
 
-**1.2** Install the application:
-- **macOS**: Open the .dmg file and drag Claude to your Applications folder
-- **Windows**: Run the installer and follow the prompts
+**1.2** Install the application by opening the .dmg file and dragging Claude to your Applications folder.
 
 **1.3** Open Claude and sign in with your account. You need a Pro, Team, or Enterprise subscription—Cowork isn't available on the free tier.
 
-[SCREENSHOT: Sign-in screen]
-
 **1.4** Once signed in, you'll see three tabs at the top: **Chat**, **Code**, and **Cowork**. Click **Cowork**.
 
-[SCREENSHOT: Main interface with Cowork tab highlighted]
+![Claude desktop app main interface with Cowork tab highlighted in the top navigation](Highlight_Cowork_Tab.png)
+
+If you've set up your account and followed the steps above, you'll arrive at this interface:
+
+![Cowork landing page showing task history and customize with plugins button](Cowork-Screen.png)
 
 ## Step 2: Install the Legal Plugin
 
-**2.1** In Cowork, click the **Plugins** button in the sidebar (or go to Settings → Plugins).
+There are several ways to install plugins (including via terminal), but let's use the quickest method.
 
-[SCREENSHOT: Cowork sidebar with Plugins button highlighted]
+**2.1** In Cowork, click on the `+ Customize with plugins` button.
+
+![Cowork interface with plugins button highlighted in the sidebar](Cowork-Screen-with-plugins-higlighted.png)
 
 **2.2** You'll see the plugin marketplace. Find **Legal** in the list and click **Install**.
 
-[SCREENSHOT: Plugin marketplace showing Legal plugin with Install button]
+![Plugin marketplace showing available plugins including the Legal plugin with install butto](Cowork_browse_plugins.png)
 
 **2.3** The plugin will download and activate automatically. You should see a confirmation message.
 
-[SCREENSHOT: Installation confirmation]
+**2.4** When you return to the Cowork screen, you should see the available legal commands:
 
-**2.4** To verify it's working, type `/legal` in the Cowork chat. You should see the available legal commands:
-- `/review-contract`
-- `/triage-nda`
-- `/vendor-check`
-- `/brief`
-- `/respond`
+![owork chat interface showing slash command menu with legal plugin commands like review-contract, triage-nda, and respond.](Cowork_with_legal_slash_commands.png)
 
-[SCREENSHOT: Slash command menu showing legal plugin commands]
+You now have Cowork with the legal plugin enabled.
 
-## Step 3: Try the /respond Command
+## Step 3: Quick Demo - NDA Review
 
-Before we customize anything, let's see what the plugin can do out of the box.
+Before we customize anything, let's see what the plugin does out of the box.
 
-**3.1** In Cowork, type:
+**3.1** Download the [VIMA 2.0 Model Non-Disclosure Agreement ](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.svca.org.sg/sites/default/files/2022-09/VIMA%25202.0%2520Model%2520Non-Disclosure%2520Agreement%2520%25282019%2520updated%2529.docx&ved=2ahUKEwjyx5DNu8aSAxXyxzgGHU2BLg8QFnoECAwQAQ&usg=AOvVaw1tvG4_VmRdot2xTBM6gcxC)to your computer (probably your Downloads folder).
 
-```
-/respond to a data subject access request from Jane Smith dated January 15
-```
+**3.2** In Cowork, click the `+` button next to `Work in a folder` and add the NDA file to your session.
 
-**3.2** Claude will generate a response using the built-in GDPR template.
-
-[SCREENSHOT: Generated DSAR response]
-
-This works fine for EU practitioners. But notice the template assumes GDPR—Article 15, one-month timeline, no mention of fees. For Singapore's PDPA, we need something different.
-
-## Step 4: Find the Plugin Files
-
-Here's where open source becomes practical. The legal plugin isn't a black box—it's a folder of files you can read and edit.
-
-**4.1** Open your Cowork sandbox folder:
-- **macOS**: `~/Library/Application Support/Claude/cowork/plugins/legal/`
-- **Windows**: `%APPDATA%\Claude\cowork\plugins\legal\`
-
-**Tip:** In Cowork, you can also type `/open plugin folder legal` to open it directly.
-
-[SCREENSHOT: File explorer showing legal plugin folder]
-
-**4.2** You'll see this structure:
+**3.3** Type this command:
 
 ```
-legal/
-├── .claude-plugin/
-│   └── plugin.json
-├── .mcp.json
-├── commands/
-│   ├── review-contract/
-│   ├── triage-nda/
-│   ├── vendor-check/
-│   ├── brief/
-│   └── respond/
-└── skills/
-    ├── contract-review/
-    ├── nda-triage/
-    ├── compliance/
-    ├── canned-responses/    ← This is where templates live
-    ├── legal-risk-assessment/
-    └── meeting-briefing/
-```
-
-**4.3** Navigate to `skills/canned-responses/templates/`. This folder contains the response templates:
 
 ```
-templates/
-├── dsar-response.md
-├── legal-hold.md
-├── vendor-inquiry.md
-└── discovery-request.md
-```
 
-[SCREENSHOT: Templates folder contents]
+You should see the `/review-contract` command highlighted. Click `Let's Go`.
 
-**4.4** Open `dsar-response.md` in your text editor. You'll see a markdown file with sections for "When to use," "Template," and "Variables."
+It may take a while to process, but Claude will deliver a risk assessment with warnings and negotiation priorities.
 
-[SCREENSHOT: dsar-response.md open in text editor]
+![Claude Cowork output showing NDA risk assessment with red/yellow/green flags and negotiation prioritie](Risk_Summary.png)
 
-This is all it is—a text file. No special format. No proprietary encoding. Just markdown you can read and edit.
+That's useful. But it's generic advice—the kind you'd get from Claude chat. The real value comes from customization.
 
-## Step 5: Create a PDPA Template
+## Customizing for Your Jurisdiction: PDPA DSAR Template
 
-Now let's create a template for Singapore's Personal Data Protection Act.
+Here's where it gets interesting. The plugin ships with templates for common legal tasks, but they're built for US/EU contexts. If you work in Singapore, you need PDPA-compliant responses, not GDPR templates.
 
-**5.1** In the `templates/` folder, create a new file called `pdpa-access-request.md`.
+This is where solo counsels get leverage. Let's create a Singapore-specific data subject access request (DSAR) response template.
 
-[SCREENSHOT: Creating new file in templates folder]
+## Understanding the `/respond` command
 
-**5.2** Copy this content into the file:
+The legal plugin includes a `/respond` command that uses template files to generate responses for:
+
+* Data subject access requests (DSARs)
+* Legal holds
+* Vendor inquiries
+* Common legal questions
+These templates live in markdown files you can read and modify.
+
+### Step 1: Set up your workspace
+
+**1.1** Create a new folder somewhere accessible—I'll use `Documents/Legal-Skills`.
+
+![macOS Finder window showing creation of new folder named Legal-Skills in Documents directory](Create_Legal_Skills_folder.png)
+
+**1.2** Inside this folder, create a new text file called `PDPA DSAR Response.md`.
+
+Open TextEdit (included with macOS) and save the file as 'PDPA DSAR Response.md' in the folder you created. Make sure to select 'Plain Text' mode in TextEdit's Format menu before saving—this ensures the file is saved as plain text, not Rich Text format.
+
+### Step 2: Build the PDPA DSAR template
+
+Open `PDPA DSAR Response.md` in your text editor and paste this template:
 
 ```markdown
-# PDPA Access Request Response
-
-## When to use
-Responding to access requests under Singapore's Personal Data Protection Act 2012, Section 21.
-
-## Key differences from GDPR
-- 30-day response deadline (extendable to 60 days for complex requests)
-- Organization can charge a reasonable fee for access
-- Different exemptions apply (e.g., Section 32 for evaluative purposes)
-
-## Template
-
-Dear [Requester Name],
-
-Thank you for your request dated [Request Date] to access your personal data held by [Organization Name].
-
-We acknowledge receipt of your request under Section 21 of the Personal Data Protection Act 2012 (PDPA).
-
-**Timeline**: We will respond to your request within 30 days from the date of this acknowledgment. If we require additional time due to the complexity of your request, we will notify you of the extension.
-
-**Fee**: [If applicable: A fee of S$[Amount] is required to process this request, reflecting the reasonable costs of responding. / No fee is required for this request.]
-
-**Scope of response**: We will provide you with:
-- Personal data about you that is in our possession or control
-- Information about how your data has been used or disclosed in the past year
-
-**Exemptions**: Please note that certain data may be excluded from disclosure under Section 32 of the PDPA, including data subject to legal privilege or data that could reveal personal data about other individuals.
-
-If you have questions about this process, please contact [Contact Person] at [Contact Email].
-
-Yours sincerely,
-[DPO Name]
-Data Protection Officer
-[Organization Name]
-
-## Variables
-- Requester Name
-- Request Date
-- Organization Name
-- Amount (if fee applicable)
-- Contact Person
-- Contact Email
-- DPO Name
-
-## Notes for Claude
-- Always verify the request date to calculate 30-day deadline
-- Check if organization charges access fees (policy-dependent)
-- Flag if request appears to fall under Section 32 exemptions
-- Suggest scheduling follow-up reminder at day 25 if response not sent
-```
-
-**5.3** Save the file.
-
-[SCREENSHOT: Saved pdpa-access-request.md file]
-
-## Step 6: Register Your Template
-
-Claude needs to know your new template exists.
-
-**6.1** In the `skills/canned-responses/` folder, open `SKILL.md`.
-
-[SCREENSHOT: SKILL.md location in folder structure]
-
-**6.2** Find the "Available Templates" section and add your new template:
-
-```markdown
-## Available Templates
-
-- dsar-response.md — GDPR data subject access requests
-- pdpa-access-request.md — Singapore PDPA access requests
-- legal-hold.md — Litigation hold notices
-- vendor-inquiry.md — Standard vendor information requests
-- discovery-request.md — E-discovery responses
-```
-
-**6.3** Save the file.
-
-[SCREENSHOT: Updated SKILL.md with new template listed]
-
-## Step 7: Test Your Template
-
-**7.1** Go back to Cowork. You may need to reload the plugin:
-- Type `/reload plugin legal` or
-- Close and reopen Cowork
-
-**7.2** Now try your new template:
 
 ```
-/respond to a PDPA access request from John Tan dated February 3
+
+### Step 3: Validate Against Regulatory Guidance
+
+**3.1** Download [the guide from the PDPC](https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/other-guides/guide-to-handling-access-requests-v1-0-(090616).pdf) which details the regulator's recommendations on how to handle DSARs.
+
+**3.2** In a new Cowork session, click the `+` button and add both the PDPC guide and your `PDPA DSAR Response.md` file to the chat.
+
+**3.3** Type this command: `Review @PDPA DSAR response.md after reading the attached guide.`
+
+![Cowork interface showing command to review PDPA DSAR template against PDPC regulatory guide with both files attached](Review-the-guide.png)
+
+Claude Cowork will now read the documents and provide some recommendations. Give it a read, and review Claude's suggestions carefully before accepting them.
+
+In my case, Claude caught three gaps after reviewing the PDPC guide:
+
+* **Missing timeline clarity**: The original template didn't specify that the 30-day timeline starts from a *complete* request, not initial inquiry. Claude added this distinction (critical for organizations receiving incomplete DSARs).
+* **Exemption detail**: The template listed Section 21(3) exemptions but didn't explain *when* they apply. Claude added context about third-party personal data redaction requirements.
+* **Fee policy disclosure**: The PDPC guide recommends informing requestors about potential fees upfront. Claude added this to the acknowledgment letter template.
+Claude will take some time to update the template, but once done, you'll have a template that incorporates the PDPC's recommendations.
+
+Your template file is updated in the folder after this action. Every time you use this folder in Cowork, you'll use the updated template. You can also share the folder contents with your team so they have access to the same validated template.
+
+### Bonus: Add Your Office Branding
+
+The regulatory validation ensures compliance. But to make responses look like they came from *your* office, you can also customize the formatting. So let's add a letterhead. I've created a letterhead with Canva and saved it in my Legal Skills folder. Then I type `I would like a draft @PDPA DSAR response.md using @Letterhead.docx`.
+
+![Side-by-side comparison showing original Canva letterhead and Claude-generated DSAR response with matching branding and formatting](Comparison---of-_letterheads.png)
+
+Claude Cowork analyzes your letterhead document and applies the formatting and branding to the PDPA SAR response. It looks like it got most of the details from the letterhead right!
+
+### Step 4: Use your custom template
+
+**4.1** Go back to Claude Cowork and start a new session (click `New Task`).
+
+**4.2** Click `Work in a folder` and select your `Legal-Skills` folder. Click `Allow` when prompted.
+
+**4.3** In the chat, describe a sample DSAR scenario:
+
 ```
 
-**7.3** Claude should generate a response using your PDPA template—with the 30-day timeline, fee provisions, and Section 32 exemptions.
+```
 
-[SCREENSHOT: Generated PDPA response using custom template]
+**4.4** Claude will find your `PDPA DSAR Response.md` template and letterhead and use it to generate a Singapore-specific response letter.
 
-If it works, congratulations—you've just customized an AI legal tool for your jurisdiction.
+![Claude Cowork output showing complete PDPA-compliant DSAR response letter for John Tan with letterhead, Singapore-specific terminology, and regulatory references](DSAR_John_tan_final_result.png)
 
-## Troubleshooting
+You created a jurisdiction-specific template that Claude can use repeatedly. Instead of generic GDPR responses, you now have PDPA-compliant outputs that reference the right legislation, use Singapore terminology (NRIC/FIN), and cite the correct timeline and exemptions.
 
-**Template not appearing?**
-- Check the filename matches exactly what you added to SKILL.md
-- Make sure the file is saved in the `templates/` folder (not one level up)
-- Try `/reload plugin legal` to refresh
+## The Real Value: Encoding Your Decision-Making Logic
 
-**Claude using wrong template?**
-- Be specific in your request: "PDPA access request" not just "access request"
-- Check your "When to use" section clearly distinguishes from other templates
+As I mentioned earlier, I'm skeptical about Cowork itself as a daily workflow tool. But the techniques you've learned represent a fundamental shift in how you work with AI.
 
-**Can't find the plugin folder?**
-- Use `/open plugin folder legal` in Cowork
-- On macOS, the Library folder is hidden by default—press Cmd+Shift+G in Finder and paste the path
+**This isn't just better prompting. It's programming decision-making logic.**
 
-## What to Build Next
+When you created that PDPA DSAR template, you weren't writing a one-time prompt. You encoded your judgment:
 
-You've learned the pattern: create a markdown file, define when to use it, write the template, register it in SKILL.md. Here are ideas for expanding your template library:
+* When timeline requirements apply (complete request vs initial inquiry)
+* Which exemptions to check for (Section 21(3) specifics)
+* What to include in every response (PDPC complaint process)
+* How to structure the output (professional but clear)
+That's not a prompt that works once. That's a system that applies your expertise repeatedly.
 
-**More PDPA templates:**
-- Correction request response (Section 22)
-- Withdrawal of consent acknowledgment (Section 16)
-- Data breach notification
+The techniques you learned here—defining instructions, validating against regulatory sources, composing templates—work in Claude Code, API implementations, and any tool that adopts similar patterns. Given the market reaction to this plugin, I'm sure all the respectable legal tech companies are figuring out how to implement these patterns right now.
 
-**Corporate counsel templates:**
-- Employment offer letter (Singapore Employment Act compliance)
-- Vendor quote acknowledgment
-- Contract review status update
-- Board resolution for director appointments
+What would you build for your practice? Leave a comment below.
 
-**Singapore-specific legal holds:**
-- References to local court procedures
-- Statutory retention periods
-- Local custodian identification
 
-Each template takes about 20 minutes once you know the pattern. The legal research to get the content right may take longer—but you only do that once per template type.
 
-## Going Further
 
-**Share your templates.** The plugin is open source. If you create templates that would help other Singapore practitioners, consider contributing them back to the community on GitHub.
-
-**Connect external tools.** The `.mcp.json` file in the plugin folder configures integrations with Slack, Box, Jira, and Microsoft 365. That's a topic for another guide.
-
-**Explore other commands.** We focused on `/respond` because it has the lowest barrier to entry. Once you're comfortable, `/triage-nda` and `/brief` are natural next steps—they use similar file-based configuration.
-
-The real value here isn't any single template. It's understanding that these AI tools aren't black boxes you're locked out of. They're folders of text files you can read, modify, and make your own.
-
-That's what open source means for legal practice.
