@@ -15,11 +15,45 @@ The government is putting real money behind this. 400% tax deductions on AI spen
 
 I don't want to be ungrateful. But something nags at me.
 
-## The Thought Experiment
+## Credit Where Due
 
-Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. Harvey, CoCounsel, whatever the flavour of the month is. Licences paid. Training done. Desktop icons gleaming.
+Budget season is a great time to take stock of all the initiatives that are ongoing. To be fair, there's a lot going on. Budget 2026 delivers:
 
-What actually happens?
+| Initiative | Details | Link |
+|------------|---------|------|
+| **400% Tax Deduction** | On qualifying AI expenses (capped at $50,000/year) under expanded Enterprise Innovation Scheme | [Enterprise Innovation Scheme](https://www.enterprisesg.gov.sg/) |
+| **Champions of AI Programme** | For firms seeking comprehensive AI transformation | [MinLaw AI](https://www.mlaw.gov.sg/) |
+| **Expanded PSG-Legal** | Covering wider range of digital and AI-enabled solutions, 70% government co-payment | [PSG-Legal](https://www.mlaw.gov.sg/) |
+| **TeSA Extension** | Specifically to accountancy and legal professions | [TeSA](https://www.tesa.org.sg/) |
+| **Free Premium AI Tools** | Six months' access for workers who enrol in selected AI courses | [SkillsFuture](https://www.skillsfuture.sg/) |
+
+And this sits on top of initiatives already in motion:
+
+| Initiative | Details | Link |
+|------------|---------|------|
+| **LIFT Pilot** | Deploying legaltech consultants directly into law firms | [LIFT](https://www.mlaw.gov.sg/) |
+| **Legal Technology Platform** | Microsoft Copilot integration for law firms | [Microsoft Singapore](https://www.microsoft.com/en-sg/) |
+| **Judiciary + Harvey AI** | Case summarisation for Small Claims Tribunals | [Harvey AI](https://www.harvey.ai/) |
+
+The professional bodies have been active too:
+
+| Initiative | Details | Link |
+|------------|---------|------|
+| **MinLaw GenAI Guide** | Establishes "lawyer in the loop" principle (Sept 2025 public consultation) | [MinLaw](https://www.mlaw.gov.sg/) |
+| **SAL + Microsoft Prompt Engineering Guide** | Free, Creative Commons-licensed, accessed 1,500+ times | [SAL](https://www.sal.org.sg/) |
+| **LawNet 4.0** | AI-powered legal research trained on Singapore's legal context, serving 10,000+ users | [LawNet](https://www.lawnet.gov.sg/) |
+
+And at OLY 2026, a **new committee co-led by CJ Sundaresh Menon and Law Minister Edwin Tong** was established to address AI's impact on legal work — with representation from the judiciary, AGC, MinLaw, SAL, Law Society, SCCA, and academia.
+
+That is a coordinated, well-funded, serious effort. I mean it when I say credit where due.
+
+## So what if every lawyer had a Premium AI tool?
+
+But let's think deeper about this. 
+
+Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. I am not talking about a crummy six month subscription to crummy ChatGPT Plus. We are talking about Harvey, CoCounsel, whatever the flavour of the month is. Real LegalTech. Licences paid. Training done. Desktop icons gleaming.
+
+What would actually happen?
 
 If global data is any guide: not much. The ABA's 2025 Legal Industry Report surveyed 2,800+ legal professionals. The headline number: 79% "use AI." But dig deeper. Only 31% of lawyers and 21% of firms actually use generative AI. For firms with 50 or fewer lawyers — which is most of Singapore's legal profession — gen AI adoption sits at roughly 20%.
 
@@ -31,26 +65,6 @@ Law Society president Prof Tan Cheng Han raised exactly this at the Opening of t
 
 The tool is not the transformation. The tool is the starting point.
 
-## Credit Where Due
-
-Before I get to what's nagging me, I want to acknowledge what Singapore has actually built. Because it's substantial.
-
-The government has created real adoption infrastructure. Budget 2026 alone delivers:
-
-- **400% tax deduction** on qualifying AI expenses (capped at $50,000/year) under the expanded Enterprise Innovation Scheme
-- **Champions of AI programme** for firms seeking comprehensive AI transformation
-- **Expanded PSG-Legal** covering a wider range of digital and AI-enabled solutions, with 70% government co-payment
-- **TeSA extension** specifically to accountancy and legal professions
-- **Free premium AI tools** — six months' access for workers who enrol in selected AI courses
-
-And this sits on top of initiatives already in motion: the **LIFT pilot** deploying legaltech consultants directly into law firms. The **Legal Technology Platform** with Microsoft Copilot integration. The judiciary's **collaboration with Harvey AI** on case summarisation for Small Claims Tribunals.
-
-The professional bodies have been active too. MinLaw's **GenAI Guide** (September 2025 public consultation) establishes the "lawyer in the loop" principle. SAL and Microsoft published a **Prompt Engineering Guide for Lawyers** — free, Creative Commons-licensed, accessed 1,500+ times. Their framing: "Copilot, not autopilot." **LawNet 4.0** now runs AI-powered legal research trained on Singapore's legal context, serving 10,000+ users.
-
-And at OLY 2026, a **new committee co-led by CJ Sundaresh Menon and Law Minister Edwin Tong** was established to address AI's impact on legal work — with representation from the judiciary, AGC, MinLaw, SAL, Law Society, SCCA, and academia.
-
-That is a coordinated, well-funded, serious effort. I mean it when I say credit where due.
-
 ## What's Not on the Menu
 
 Here's what I keep looking for and can't find: an innovation ecosystem.
@@ -61,7 +75,7 @@ Neither is wrong. You can't run before you walk. But adoption infrastructure wit
 
 Three things I keep coming back to:
 
-**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Not because I wanted to be a hero. Because official legal data sources in Singapore don't have public APIs. LawNet 4.0 has AI-powered search (impressive), but no APIs for developers to build on. The SMU SOLID database project promises open legal data with APIs — target launch: Q1 2028. That's two years away.
+**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Not because I wanted to be a hero. Because official legal data sources in Singapore don't have public APIs. LawNet 4.0 has AI-powered search (impressive), but no publicly available APIs for developers to build on. The SMU SOLID database project promises open legal data with APIs — target launch: Q1 2028. That's two years away.
 
 If I wanted to experiment with Singapore legal data today — build a prototype, test an idea, see if something works — I'd have to build the data infrastructure first. I did. Most lawyers won't.
 
@@ -97,7 +111,7 @@ For solo counsels and small legal teams, this is especially sharp.
 
 You probably can't afford the premium tier of most legal AI tools. You might qualify for PSG-Legal subsidies, but the tools on offer are vendor-selected, vendor-designed. If the vendor pivots, you pivot. If the vendor's AI hallucinates — and at 17-34% for even bespoke tools, it will — you're the one who catches the consequences.
 
-The Budget 2026 measures genuinely help. Take the tax deductions. Take the free training. Use LawNet 4.0's AI search. Read SAL's prompt engineering guide — it's good, and it's free.
+The Budget 2026 measures genuinely help. Take the tax deductions. Take the free training. Read SAL's prompt engineering guide — it's good, and it's free.
 
 But also: start building. Even small things. A template that automates your most repetitive task. A workflow that connects two tools you already use. A prompt library for your specific practice area. Not because the government told you to. Because you're curious about what's possible.
 
