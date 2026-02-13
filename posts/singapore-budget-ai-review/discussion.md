@@ -70,6 +70,9 @@ Pending — will inform pitch and writing.
 - Searched Singapore legal technology adoption statistics
 - Searched TeSA (TechSkills Accelerator) programmes relevant to legal profession
 - Compiled findings on government initiatives: PSG-Legal, LIFT, Tech-celerate for Law, Court Guide on GenAI, SAL + Microsoft prompt engineering guide, Harvey/judiciary collaboration
+- Round 2 web research covering AI adoption stats (ABA 2025, Clio 2025), hallucination data (Stanford HAI, Damien Charlotin database), Harvey pricing/market position, OLY 2026 speeches (CJ Menon, Law Society President Tan Cheng Han), MinLaw GenAI Guide, SAL-Microsoft PE Guide, LawNet 4.0, SCCA involvement
+- Added 5 new Section 3 initiatives (items 9-13) to research.md
+- Corrected "declining digital adoption" claim — IMDA data shows adoption rising, not declining
 
 ### Brainstorming
 - Session 2: Guided refinement from generic "tools ≠ transformation" to specific "adoption infrastructure vs innovation ecosystem"
@@ -77,7 +80,9 @@ Pending — will inform pitch and writing.
 - Identified personal proof points (data.zeeker.sg, builder community absence)
 
 ### Writing
-- (None yet — brainstorming phase)
+- Drafted ~1,800 word blog post following Voice Guide patterns
+- Structure: Open (feeling) → Thought experiment (global stats) → Credit where due (13 initiatives) → The gap (3 components) → The uncomfortable part (PM's logic) → Solo counsel reality
+- Applied key voice patterns: opened with feeling ("grateful? nervous? both"), specific numbers throughout, "neither is wrong" framing for adoption vs innovation, solo counsel return in final section
 
 ### Quality Control
 - (None yet)
@@ -92,6 +97,8 @@ Pending — will inform pitch and writing.
 |-----------------|---------------|---------|
 | Presented 3 distinct approaches with clear structure | User chose A (modified) quickly | Clean decision, clear direction |
 | Research surfaced specific stats (28% adoption, 18% integration, declining digital adoption) | User confirmed skepticism was well-founded | Strong evidence base for the piece |
+| Voice guide patterns translated well to policy commentary piece | N/A — writing decision | Patterns (feeling opener, specific numbers, "neither is wrong") fit naturally into budget analysis |
+| "Neither is wrong" framing perfect for the adoption-vs-innovation tension | N/A — writing decision | Avoids binary framing; lets reader hold both truths simultaneously |
 
 ### Didn't Work
 | What Claude Did | Problem | Lesson |
@@ -188,3 +195,44 @@ User returned to refine the core argument before moving to pitch. The original p
 - Update pitch.md with refined argument
 - Move to research phase
 - Draft content
+
+## Session 3: Drafting (2026-02-13)
+
+### Context
+Moving from brainstorming/research to drafting phase. Core argument (adoption infrastructure vs innovation ecosystem) and pitch were established in Sessions 1-2. This session focused on conducting Round 2 research and writing the first draft.
+
+### What Claude Did
+
+**Research (Round 2):**
+- Web research covering AI adoption stats (ABA 2025, Clio 2025), hallucination data (Stanford HAI, Damien Charlotin database), Harvey pricing/market position, OLY 2026 speeches (CJ Menon, Law Society President Tan Cheng Han), MinLaw GenAI Guide, SAL-Microsoft PE Guide, LawNet 4.0, SCCA involvement
+- Added 5 new Section 3 initiatives (items 9-13) to research.md
+- Corrected "declining digital adoption" claim — IMDA data shows adoption rising, not declining
+
+**Writing:**
+- Drafted ~1,800 word blog post following Voice Guide patterns
+- Structure: Open (feeling) → Thought experiment (global stats) → Credit where due (13 initiatives) → The gap (3 components) → The uncomfortable part (PM's logic) → Solo counsel reality
+- Applied key voice patterns: opened with feeling ("grateful? nervous? both"), specific numbers throughout, "neither is wrong" framing for adoption vs innovation, solo counsel return in final section
+
+### Key Writing Decisions
+- Merged "the gap" and "personal proof" sections from pitch into one section ("What's Not on the Menu") for better flow
+- Used "The Uncomfortable Part" instead of "The Irony" — softer framing per tone guidance
+- Kept Credit Where Due section deliberately long with bullet lists (voice guide allows this for data/specs)
+- Used global adoption stats (US-centric) for thought experiment but framed as "if global data is any guide" — honest about jurisdictional limitation
+
+### Files Created
+- `budget-2026-lawyers-ai-drivers-seat.md`
+
+### Files Modified
+- `research.md` (major expansion with Round 2 research)
+
+### Outcomes
+- ✅ First draft completed (~1,800 words)
+- ✅ Voice guide patterns applied throughout
+- ✅ Research base expanded and corrected
+
+### Next Steps
+- Content quality audit (content-quality-auditor agent)
+- Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or /feedback for all three)
+- Backlink curation (backlink_curating skill)
+- Final revision
+- Publish to Ghost
