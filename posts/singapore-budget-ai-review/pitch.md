@@ -1,29 +1,20 @@
-# Pitch: If Every Lawyer in Singapore Got Harvey Tomorrow
+# Pitch: Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?
 
 ## Title
-If Every Lawyer in Singapore Got Harvey Tomorrow
+Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?
 
-## Hook
-Singapore's Budget 2026 goes big on AI — a PM-chaired National AI Council, 400% tax deductions for AI spending, free premium tools after training, a Champions of AI programme. But here's what caught my attention: within minutes of announcing these AI ambitions, PM Wong laid out the fear. AI is already reshaping white-collar and cognitive work. And the two professions he named first? Accountancy and legal.
+## Pitch
 
-The government is worried about our jobs.
-
-## Core argument
-"To support workers through this transition, we will help them build practical AI capabilities. Because AI is already reshaping many forms of white-collar and cognitive work, we will start with the accountancy and legal professions, and progressively extend them to other fields."
-
-That's a direct quote from the Budget speech. Legal is on the list — not as a sector getting its own National AI Mission (those go to manufacturing, finance, healthcare, and connectivity), but as a profession the government thinks needs help surviving the transition.
-
-Here's the thought experiment that keeps nagging me: if you gave every lawyer in Singapore access to Harvey right now, what would actually happen? The Law Society president flagged at the Opening of Legal Year 2026 that many lawyers can't effectively access or use technology — and that this affects access to justice.
-
-The government deserves credit for what's been built — LIFT, PSG-Legal, the Legal Technology Platform with Copilot, LegalTechGoWhere. But the gap between "here's a tool" and "here's what's gonna happen to your job" remains wide. This post walks through the thought experiment, maps the real landscape, and asks what a transformation-first approach would actually look like.
+PM Wong named legal as one of the first professions needing AI transition support in Budget 2026 — right after warning that AI will displace white-collar jobs. The government's response is real money and real intent: 400% tax deductions, free premium tools after training, a Champions of AI programme. I don't want to be ungrateful. But something nags at me. Everything on offer is adoption infrastructure — subsidies, courses, vendor tools. What's missing is an innovation ecosystem. When I built data.zeeker.sg, I used my own time and money because official legal data sources don't have APIs. I couldn't experiment through official channels. How many lawyers in Singapore are actually building with AI? Sharing what works? Or are most just using it because their boss said to, because the government said to? The PM warns AI will reshape our profession. But if lawyers are just accepting whatever the next vendor update gives them — not building, not experimenting, not in the driver's seat — then when that reshaping comes, we won't have any say in how it happens.
 
 ## Structure
-1. **Open**: The Budget 2026 moment — PM names legal as a profession needing AI transition support. The fear is now official.
-2. **The thought experiment**: If every lawyer got Harvey tomorrow — what would actually happen? (Use adoption stats, Law Society president's concerns, real friction points)
-3. **Credit where due**: Walk through what government/MinLaw/Law Society/SCCA have built (LIFT, PSG-Legal, LTP + Copilot, LegalTechGoWhere, MinLaw GenAI Guide, Court Guide on GenAI)
-4. **The gap**: Tool procurement ≠ transformation. 28% adoption. Desktop-first friction. Junior lawyer training erosion. Digital adoption among small businesses actually declined.
-5. **The landing**: What would a transformation-first approach look like? Not just "here's a tool" but "here's how your practice changes."
-6. **Solo counsel reality check**: What this means for resource-constrained practitioners specifically.
+1. **Open**: Budget 2026 moment — PM names legal, warns about displacement. The fear is official.
+2. **The thought experiment**: If every lawyer got Harvey/premium AI tomorrow — what actually happens? (Adoption stats, Law Society president's OLY 2026 concerns, friction points)
+3. **Credit where due**: What government/MinLaw/Law Society/SCCA have built (LIFT, PSG-Legal, LTP + Copilot, LegalTechGoWhere, MinLaw GenAI Guide, training programmes)
+4. **The gap — adoption infrastructure vs innovation ecosystem**: Tool procurement + training ≠ transformation. No open data/APIs for experimentation. No visible builder community. Compliance culture, not curiosity culture.
+5. **Personal proof**: data.zeeker.sg — had to build public legal infrastructure with own time and money. The absent builder community.
+6. **The irony**: PM warns displacement → government response puts lawyers in passenger seat of vendor tools → when displacement comes, lawyers have no agency over how it reshapes the profession
+7. **Solo counsel reality**: What this means for resource-constrained practitioners who can't afford to just be passive consumers
 
 ## Target audience
 - Primary: Solo counsels and small legal teams (Sarah Chen persona)
@@ -37,7 +28,7 @@ The government deserves credit for what's been built — LIFT, PSG-Legal, the Le
 - Government Policy
 
 ## Tone
-Give credit. Don't be a takedown piece. But be honest about the gap between tool access and practice transformation. The PM himself acknowledged the fear — lean into that honesty.
+Give credit. Don't be a takedown piece. But be honest about the gap between adoption infrastructure and innovation ecosystem. The PM himself acknowledged the fear — lean into that honesty. Use personal experience as evidence, not policy prescriptions.
 
 ## Key quote to anchor
 "To support workers through this transition, we will help them build practical AI capabilities. Because AI is already reshaping many forms of white-collar and cognitive work, we will start with the accountancy and legal professions."
