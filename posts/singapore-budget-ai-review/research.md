@@ -9,6 +9,7 @@
 ## Quick Navigation
 
 - [Summary](#summary)
+- [Thought Experiment](#section-2-the-thought-experiment---if-every-lawyer-got-ai-tomorrow)
 - [Government Initiatives](#section-3-credit-where-due---government-initiatives)
 - [Innovation Gap](#section-4-the-gap---adoption-infrastructure-vs-innovation-ecosystem)
 - [Statistics & Data Points](#statistics--data-points)
@@ -22,11 +23,60 @@
 
 ## Summary
 
-Budget 2026 delivered significant adoption infrastructure for AI in Singapore, including 400% tax deductions, Champions of AI programme, expanded PSG-Legal, LIFT pilot, and free premium AI tools for training. However, evidence suggests a gap in innovation ecosystem — limited visible builder communities among Singapore lawyers, absence of open legal data APIs for experimentation, and legal tech ecosystem focused on consumption rather than building. The government's response to PM Wong's displacement warning puts lawyers in passenger seat of vendor tools rather than driver's seat of innovation.
+Budget 2026 delivered significant adoption infrastructure for AI in Singapore, including 400% tax deductions, Champions of AI programme, expanded PSG-Legal, LIFT pilot, and free premium AI tools for training. The broader ecosystem is also active: OLY 2026 established a joint CJ-Law Minister committee on AI and attrition, SAL launched a prompt engineering guide with Microsoft, MinLaw published a GenAI Guide for the legal sector, and LawNet 4.0 deployed AI-powered search for 10,000+ users.
+
+However, evidence suggests a gap between adoption infrastructure and innovation ecosystem — limited visible builder communities among Singapore lawyers, absence of open legal data APIs for experimentation, and a legal tech ecosystem focused on consumption rather than building. Global data reinforces the thought experiment: even with tools available, only ~20% of small firms use gen AI, hallucination rates remain significant (17-34% for bespoke legal tools), and most firms lack AI usage policies.
+
+The government's response to PM Wong's displacement warning puts lawyers in the passenger seat of vendor tools rather than the driver's seat of innovation.
 
 ---
 
 ## Research Findings by Post Section
+
+### Section 2: The Thought Experiment - If Every Lawyer Got AI Tomorrow
+**Claim being supported:** Even with universal AI access, friction points and adoption barriers mean tool deployment ≠ transformation
+
+**Evidence found:**
+
+1. **Global AI Adoption Rates in Law (2025)**
+    - **Source:** [2025 Legal Industry Report](https://www.americanbar.org/groups/law_practice/resources/law-technology-today/2025/the-legal-industry-report-2025/) (AffiniPay/ABA, 2,800+ professionals surveyed) | [2025 Clio Legal Trends Report](https://www.2civility.org/2025-clio-legal-trends-report/) (2,400+ professionals) | Regional Context: ⚠️ US-centric
+    - **Finding:** Headline numbers overstate real integration. 79% of legal professionals "use AI" — but only 31% of lawyers and 21% of firms use generative AI specifically. Large firms (87%) adopt far more than solo firms (71%). Firms with 51+ lawyers have 39% gen AI adoption; firms with 50 or fewer are at ~20%.
+    - **Key stat:** Corporate legal AI adoption doubled in one year (23% → 52%), per ACC/Everlaw GenAI Survey.
+    - **Barriers:** Data privacy/confidentiality (56%), cost (47%), need for education (34%), hallucination risk (31%). Only 32.9% of firms have AI usage policies; only 14.1% review sensitive AI-generated content.
+    - **Confidence level:** Strong (multiple large surveys corroborate)
+    - **Cross-reference:** See [Harvey AI Market Position](#3-harvey-ai-market-position--pricing) for vendor-specific friction
+
+2. **AI Hallucinations in Legal Practice — Scale of Problem**
+    - **Source:** [AI Hallucination Cases Database](https://www.damiencharlotin.com/hallucinations/) (Damien Charlotin) | [Stanford HAI](https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries) | Regional Context: ⚠️ Primarily US/global
+    - **Finding:** 729+ documented cases of lawyers filing pleadings with fabricated legal authorities. 90% occurred in 2025. Rate: 2-6 new cases per day as of Dec 2025 (up from 2 per week in early 2025).
+    - **Hallucination rates for legal AI tools:** Even bespoke legal AI tools hallucinate significantly — Lexis+ AI and Ask Practical Law AI >17% of the time; Westlaw AI-Assisted Research >34%. General-purpose chatbots hallucinate 58-82% on legal queries.
+    - **Sanctions:** Range from $2,000 to $31,000+ per case. Career-ending suspensions and bar referrals becoming routine.
+    - **Harvey's claim:** Reduced hallucination rates to ~0.2% in internal evaluations; developing agentic workflows for real-time hallucination correction.
+    - **Confidence level:** Strong
+    - **Cross-reference:** See [MinLaw GenAI Guide](#9-minlaw-guide-for-using-generative-ai-in-the-legal-sector) for Singapore's response to hallucination risk
+
+3. **Harvey AI Market Position & Pricing**
+    - **Source:** [Contrary Research](https://research.contrary.com/company/harvey) | [Artificial Lawyer](https://www.artificiallawyer.com/2025/06/30/harvey-lexisnexis-the-potential-pricing-impact/) (Jun 30, 2025) | [Purple Law](https://purple.law/blog/harvey-vs-legora-pricing/) | Regional Context: ⚠️ US/global
+    - **Finding:** Harvey raised $300M Series D (Feb 2025, $3B valuation) then $300M Series E (May 2025, $5B valuation). 500+ customers, 42% of Am Law 100. Base pricing ~$1.2K/seat/year; LexisNexis bundle could push to $400-600/seat or $3K premium tier.
+    - **Client pushback dynamics:** Clients now *demand* AI adoption for cost savings — "2026 is the year we want to start putting more pressure on outside counsel." 64% of in-house teams expect to depend less on outside counsel because of AI.
+    - **Pricing red flag:** A top law firm was quoted £200+/lawyer for a major AI platform; after one email the price was slashed 60%.
+    - **Confidence level:** Strong
+    - **Cross-reference:** See [Harvey AI Collaboration with Judiciary](#8-harvey-ai-collaboration-with-judiciary) for Singapore-specific deployment
+
+4. **The "Thought Experiment" Friction Points**
+    - **Source:** Multiple (see above) | Regional Context: Mixed
+    - **Synthesis for post:** Even if every Singapore lawyer got Harvey tomorrow:
+      - Only ~20% of small firm lawyers would actually use gen AI meaningfully (based on firm-size adoption data)
+      - 56% would cite confidentiality concerns before uploading client documents
+      - Only 33% of firms have policies telling lawyers *how* to use it
+      - Hallucination rates for even the best tools mean every output needs human verification
+      - Clients are now *demanding* AI-driven savings, but lawyers lack the infrastructure to deliver
+    - **Confidence level:** Strong (synthesized from multiple verified data points)
+
+**Confidence level:** Strong
+**Gaps:** Most adoption data is US-centric. Singapore-specific law firm AI adoption rates not found in major surveys. The OLY 2026 speeches suggest Singapore is concerned but no published Singapore-specific survey data found.
+
+---
 
 ### Section 3: Credit Where Due - Government Initiatives
 **Claim being supported:** Government has built significant adoption infrastructure (LIFT, PSG-Legal, tax deductions, etc.)
@@ -89,8 +139,46 @@ Budget 2026 delivered significant adoption infrastructure for AI in Singapore, i
     - **Updates since Feb 2026:** Tool rolled out, individuals can use from Nov 2025
     - **Cross-reference:** See [Legal Tech Ecosystem Activity](#5-legal-tech-ecosystem-activity---consumption-focus) for related ecosystem context
 
+9. **MinLaw Guide for Using Generative AI in the Legal Sector**
+    - **Source:** [MinLaw Public Consultation](https://www.mlaw.gov.sg/public-consultation-on-guide-for-using-generative-artificial-intelligence-in-the-legal-sector/) (Sep 2025) | [Guide PDF](https://www.mlaw.gov.sg/files/Guide_for_Using_Generative_AI_in_the_Legal_Sector.pdf) | Regional Context: ✅
+    - **Finding:** Draft guide released for public consultation Sep 1-30, 2025. Developed with SAL, Law Society, and SCCA. Key principle: "lawyer in the loop" — all AI-generated output must be verified by legal professionals.
+    - **Details:** Provides guidance for safe, ethical, and effective adoption of GenAI in the legal sector. Addresses ethical obligations, confidentiality, and verification responsibilities.
+    - **Updates since Feb 2026:** Public consultation completed; final version pending
+    - **Cross-reference:** See [SAL + Microsoft Prompt Engineering Guide](#10-sal--microsoft-prompt-engineering-guide) for practitioner-level training
+
+10. **SAL + Microsoft Prompt Engineering Guide**
+    - **Source:** [SAL-Microsoft PE Guide PDF](https://sal.org.sg/wp-content/uploads/2025/02/SAL-Microsoft-PE-Guide.pdf) (2025) | [SAL Newsroom](https://sal.sg/index.php/newsroom/SAL-Microsoft) | Regional Context: ✅
+    - **Quote:** "Copilot, not autopilot" — the guide stresses AI works best when you provide substantive content and context. "You are responsible for your work product, even when using generative AI."
+    - **Details:** MOU signed at TechLaw.Fest 2024 between SAL CEO Yeong Zee Kin and Microsoft VP Mike Yeh. Guide covers chain-of-thought prompting, confidentiality safeguards, best practices. Licensed under Creative Commons (CC BY-NC-ND 4.0). Accessed 1,500+ times since Sep launch. Complemented by foundational GenAI course from SAL.
+    - **Updates since Feb 2026:** Guide available free on SAL website
+    - **Cross-reference:** See [MinLaw GenAI Guide](#9-minlaw-guide-for-using-generative-ai-in-the-legal-sector) for sector-wide policy context
+
+11. **Opening of Legal Year 2026 — Committee on AI and Attrition**
+    - **Source:** [Judiciary](https://www.judiciary.gov.sg/news-and-resources/news/news-details/chief-justice-sundaresh-menon--response-delivered-at-the-opening-of-the-legal-year-2026) (Jan 12, 2026) | [Singapore Law Watch](https://www.singaporelawwatch.sg/Headlines/law-minister-and-chief-justice-to-co-lead-committee-to-tackle-lawyer-attrition-rates-impact-of-ai) | [Law Gazette](https://lawgazette.com.sg/news/updates/opening-of-the-legal-year-2026-speech-president/) | Regional Context: ✅
+    - **Finding:** New committee co-led by CJ Sundaresh Menon and Law Minister Edwin Tong to address professional attrition *and* AI's impact on legal work. Members from judiciary, AGC, MinLaw, SAL, Law Society, SCCA, and academia.
+    - **Key stat:** ~60% of newly qualified lawyers plan to leave legal practice within 5 years (2024-2025 mass call surveys)
+    - **Four strategic workstreams:** (1) Legal education reform, (2) AI management and training, (3) Mental well-being, (4) International legal opportunities
+    - **Law Society President's concerns:** Prof Tan Cheng Han warned AI will reduce demand for routine legal work done by junior lawyers. Limited access to tech tools could further erode clients' access to justice. Has asked Generative AI Committee (chair: Jeremy Lua) and IT Committee (co-chairs: Rachel Wong, Dharma Sadasivan) to propose solutions for enhanced access to tech tools.
+    - **CJ Menon:** "Gen AI will upend the practice of law and the way lawyers are trained." Warned that ~60% attrition plan threatens the pipeline of experienced legal professionals.
+    - **Updates since Feb 2026:** Committee established, workstreams underway
+    - **Cross-reference:** See [TeSA Extension](#6-tesa-techskills-accelerator-extension) for related training; links directly to Budget 2026 AI measures
+
+12. **LawNet 4.0 AI-Powered Search (IMDA + SAL)**
+    - **Source:** [IMDA Factsheet](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2025/imda-and-sal-launched-ai-powered-search-engine-in-lawnet) (2025) | Regional Context: ✅
+    - **Finding:** IMDA and SAL launched GPT-Legal Q&A model in LawNet 4.0. Trained on Singapore legal context (judgments, Singapore Law Reports, legislation, books). Tuned for contract law. Provides real-time, precisely referenced answers to complex legal research questions.
+    - **Key stat:** Benefits ~10,000 LawNet users, including 75%+ of Singapore lawyers in private practice
+    - **Updates since Feb 2026:** Operational, contract law focus
+    - **Cross-reference:** See [Open Legal Data State - Current Barriers](#4-open-legal-data-state---current-barriers) for the API gap despite this deployment
+
+13. **SCCA (Singapore Corporate Counsel Association) Involvement**
+    - **Source:** [SCCA](https://www.scca.org.sg/) | [SCCA 2025 events](https://www.scca.org.sg/2025) | [Law.asia](https://law.asia/scca-official-recognition-in-house-counsel/) | Regional Context: ✅
+    - **Finding:** SCCA set for official government recognition as national body for in-house counsel. Law Minister K. Shanmugam announced government will "support the SCCA to significantly scale up its capacity and play a more central role in the professional development of the in-house counsel community."
+    - **Details:** APAC Legal Congress 2025 (600 delegates, Apr 23-24); APAC Legal Congress 2026 planned (1,600+ delegates, Apr 8-9). AI/data privacy discussions at congresses. SCCA is member of the new OLY 2026 Committee on AI and Attrition.
+    - **Updates since Feb 2026:** Formal recognition pending, Congress 2026 upcoming
+    - **Cross-reference:** See [OLY 2026 Committee](#11-opening-of-legal-year-2026--committee-on-ai-and-attrition) for SCCA's role in sector-wide AI response
+
 **Confidence level:** Strong
-**Gaps:** None - all core initiatives verified with exact quotes and details
+**Gaps:** None — all core initiatives verified with exact quotes and details. New additions (items 9-13) complete the picture of Law Society, SCCA, SAL, and judiciary involvement.
 
 ---
 
@@ -156,16 +244,21 @@ Budget 2026 delivered significant adoption infrastructure for AI in Singapore, i
 
 2. **AI Park at one-north** - New AI park to bring together AI founders, practitioners, researchers, and innovators. Not specific to legal tech or builder communities.
 
-3. **Harvey AI pushback globally** - Harvey AI pricing slashed 60% due to pushback, hallucinations, pricing concerns. This is global context, not specific to Singapore innovation gap.
+3. ~~**Harvey AI pushback globally**~~ - **Now fits in Section 2** (thought experiment). Harvey pricing, hallucination data, and client pushback dynamics are now part of the thought experiment evidence.
 
-4. **SOLID database timeline** - Three-year project with full launch in 1Q 2028. This is future-oriented, not current state of innovation ecosystem.
+4. **SOLID database timeline** - Three-year project with full launch in 1Q 2028. This is future-oriented, not current state of innovation ecosystem. However, the timeline itself supports the innovation gap argument (builders can't wait 2 years for APIs).
 
-**Note:** Consider whether these suggest outline changes or should be saved for future posts.
+5. **Model AI Governance Framework for Agentic AI** - Singapore unveiled MGF at WEF 2026 (Jan 22, 2026). Broader AI governance, not specific to legal profession but shows Singapore's positioning as AI governance leader.
+
+6. **Singapore ranked 3rd globally on Tortoise Media's Global AI Index** (below US and China). Context for Singapore's overall AI ambition, but not directly relevant to the legal innovation gap argument.
+
+**Note:** Items 1, 2, 5, 6 are broader context that could be a single sentence in the post. Item 4 is usable in Section 4 (the gap).
 
 ---
 
 ## Statistics & Data Points
 
+### Budget 2026 & Government Initiatives
 - **400% Tax Deduction:** Capped at $50,000 SGD per year for 2027-2028 ([Straits Times](https://www.straitstimes.com/singapore/budget-2026-companies-to-receive-tax-deductions-on-ai-spending-more-support?ref=latest-headlines), Feb 12, 2026)
 - **Champions of AI Programme:** Tailored support for comprehensive AI transformation, includes enterprise transformation and workforce training ([Business Times](https://www.businesstimes.com.sg/singapore/budget-2026-highlights-ai-champions-foreign-worker-policy-tweaks-more-cdc-vouchers), Feb 12, 2026)
 - **PSG-Legal Expansion:** Expanded to support wider range of digital and AI-enabled solutions ([Straits Times](https://www.straitstimes.com/singapore/budget-2026-companies-to-receive-tax-deductions-on-ai-spending-more-support?ref=latest-headlines), Feb 12, 2026)
@@ -173,13 +266,51 @@ Budget 2026 delivered significant adoption infrastructure for AI in Singapore, i
 - **Free Premium AI Tools:** 6 months free access to premium AI tools for selected AI courses ([Straits Times](https://www.straitstimes.com/singapore/budget-2026-workers-to-get-help-building-practical-ai-capabilities-starting-with-accountancy-and-law?ref=latest), Feb 12, 2026)
 - **TeSA Extension:** Work starts with accountancy and legal professions ([Straits Times](https://www.straitstimes.com/singapore/budget-2026-workers-to-get-help-building-practical-ai-capabilities-starting-with-accountancy-and-law?ref=latest), Feb 12, 2026)
 - **Harvey AI Collaboration:** Tool rolled out Sep 2025, individuals can use from Nov 2025 onwards ([Judiciary](https://www.judiciary.gov.sg/news-and-resources/news/news-details/media-release--new-generative-ai-powered-case-summarisation-tool-to-help-small-claims-tribunals-users), Sep 10, 2025)
+
+### OLY 2026 & Professional Bodies
+- **Lawyer Attrition:** ~60% of newly qualified lawyers plan to leave practice within 5 years ([Singapore Law Watch](https://www.singaporelawwatch.sg/Headlines/law-minister-and-chief-justice-to-co-lead-committee-to-tackle-lawyer-attrition-rates-impact-of-ai), Jan 12, 2026)
+- **LawNet 4.0 Reach:** Benefits ~10,000 users, including 75%+ of Singapore lawyers in private practice ([IMDA](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2025/imda-and-sal-launched-ai-powered-search-engine-in-lawnet), 2025)
+- **SAL-Microsoft PE Guide:** Accessed 1,500+ times since Sep launch ([SAL](https://sal.sg/index.php/newsroom/SAL-Microsoft), 2025)
+- **SCCA Congress 2025:** 600 delegates ([SCCA](https://www.scca.org.sg/2025), Apr 2025)
+- **SCCA Congress 2026:** 1,600+ delegates expected ([SCCA](https://scca.glueup.com/event/asia-pacific-apac-legal-congress-2026-161421/), Apr 2026)
+
+### Global AI Adoption in Law (for thought experiment)
+- **Overall AI use:** 79% of legal professionals "use AI," but only 31% of lawyers and 21% of firms use generative AI ([ABA/AffiniPay Legal Industry Report 2025](https://www.americanbar.org/groups/law_practice/resources/law-technology-today/2025/the-legal-industry-report-2025/))
+- **Firm size gap:** Large firms 87% AI adoption vs solo firms 71%; 51+ lawyer firms 39% gen AI adoption vs ≤50 lawyer firms ~20% ([Clio Legal Trends 2025](https://www.2civility.org/2025-clio-legal-trends-report/))
+- **Corporate legal doubled:** In-house AI adoption jumped 23% → 52% in one year (ACC/Everlaw GenAI Survey)
+- **Barriers:** Privacy/confidentiality 56%, cost 47%, education needed 34%, hallucination risk 31% ([ABA/AffiniPay](https://www.mycase.com/blog/ai/ai-adoption-in-law-firms/))
+- **Policy gap:** Only 32.9% of firms have AI policies, 14.1% review sensitive AI content ([ABA/AffiniPay](https://www.mycase.com/blog/ai/ai-adoption-in-law-firms/))
+- **In-house power shift:** 64% of in-house teams expect to depend less on outside counsel due to AI ([National Law Review](https://natlawreview.com/article/ten-ai-predictions-2026-what-leading-analysts-say-legal-teams-should-expect))
+
+### AI Hallucinations & Risk
+- **Documented hallucination cases:** 729+ globally, 90% in 2025. Rate: 2-6 new cases/day as of Dec 2025 ([Damien Charlotin Database](https://www.damiencharlotin.com/hallucinations/))
+- **Legal AI hallucination rates:** Lexis+ AI and Ask Practical Law AI >17%; Westlaw AI-Assisted Research >34%; general chatbots 58-82% on legal queries ([Stanford HAI](https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries))
+- **Sanctions:** $2,000 to $31,000+ per case ([Trends Buzzer](https://www.trendsbuzzer.com/million-dollar-mistakes-lawyers-are-making-with-chatgpt/))
+- **Harvey's claim:** Internal hallucination rate ~0.2% ([Harvey/Contrary Research](https://research.contrary.com/company/harvey))
+
+### Harvey AI Market
+- **Valuation:** $5B (May 2025 Series E, $300M raised) ([Contrary Research](https://research.contrary.com/company/harvey))
+- **Market share:** 500+ customers, 42% of Am Law 100 (Aug 2025) ([Contrary Research](https://research.contrary.com/company/harvey))
+- **Pricing:** Base ~$1.2K/seat/year; LexisNexis bundle could push $400-600/seat or $3K premium ([Artificial Lawyer](https://www.artificiallawyer.com/2025/06/30/harvey-lexisnexis-the-potential-pricing-impact/))
+- **Pricing red flag:** Top law firm quoted £200+/lawyer, price slashed 60% after one email ([Purple Law](https://purple.law/blog/harvey-vs-legora-pricing/))
+
+### Innovation Gap
 - **SOLID Database:** Three-year project, early iteration 4Q 2026, full launch 1Q 2028 ([SMU](https://news.smu.edu.sg/news/2025/11/18/smu-build-open-legal-database-support-ministry-law), Nov 18, 2025)
 - **Legal Tech Startups:** 94 legal tech startups in Singapore ([Tracxn](https://tracxn.com/d/explore/legal-tech-startups-in-singapore/__BO0PKGjkPZUkexQjXOniy58RNkPoH1XEXUCz8kAHDzM/companies), Oct 29, 2025)
 - **Alpha LegalTech:** Founded by lawyers, CompareNow platform ([Clifford Chance](https://www.cliffordchance.com/news/news/2020/03/clifford-chance-partners-with-singapore-start-up-alpha-legaltech.html), Mar 26, 2020)
 - **LegalComet:** Acquired by Rajah & Tann, e-discovery startup ([Law.asia](https://law.asia/ai-legaltech-adoption-asia), Oct 3, 2024)
+
+### Events & Community
 - **TechLaw.Fest 2025:** Asia's premier law and tech conference, 10-11 Sep 2025 ([TechLaw.Fest](https://www.techlawfest.com/))
 - **SMU LIT Hackathon:** Annual legal tech hackathon, 13-14 Sep 2025 ([SMU LIT](https://www.smulit.org/lit-hackathon-2025))
 - **Law & Technology Meetup:** Monthly meetup at Coffee Hive cafe, Feb 14, 2026 ([Meetup.com](https://www.meetup.com/topics/lawtech/sg))
+
+### Singapore Digital Economy (context)
+- **SME digital adoption:** 95.1% adopted at least one digital area in 2024 (up from 94.5% in 2023) ([IMDA](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy))
+- **SME AI adoption tripled:** 4.2% → 14.5% ([IMDA](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy))
+- **Digital economy:** S$128.1B, 18.6% of GDP in 2024 ([IMDA](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy))
+- **Worker AI usage:** 73.8% use AI tools at work; 85% report productivity improvements ([IMDA](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy))
+- **Note:** Earlier brainstorming referenced "declining digital adoption" — this is **not supported** by IMDA data. SME digital adoption has been increasing. Do NOT use this claim in the post.
 
 ---
 
@@ -205,11 +336,33 @@ Budget 2026 delivered significant adoption infrastructure for AI in Singapore, i
 >
 > — Mr Winston Weinberg, CEO of Harvey.AI ([Judiciary](https://www.judiciary.gov.sg/news-and-resources/news/news-details/media-release--new-generative-ai-powered-case-summarisation-tool-to-help-small-claims-tribunals-users), Sep 10, 2025)
 
+> [AI will] reduce demand for routine legal work typically undertaken by junior lawyers. [...] If many lawyers do not understand or are unable to have reasonable access to technological tools, this affects their clients' access to justice.
+>
+> — Professor Tan Cheng Han, President of the Law Society of Singapore, OLY 2026 speech ([Law Gazette](https://lawgazette.com.sg/news/updates/opening-of-the-legal-year-2026-speech-president/), Jan 12, 2026)
+
+> Gen AI will upend the practice of law and the way lawyers are trained. [...] Ensuring the profession is ready to harness new technology responsibly will improve the public's access to justice.
+>
+> — Chief Justice Sundaresh Menon, OLY 2026 response ([Judiciary](https://www.judiciary.gov.sg/news-and-resources/news/news-details/chief-justice-sundaresh-menon--response-delivered-at-the-opening-of-the-legal-year-2026), Jan 12, 2026)
+
+> We will support the SCCA to significantly scale up its capacity and play a more central role in the professional development of the in-house counsel community as a whole.
+>
+> — Law Minister K. Shanmugam, APAC Legal Congress ([Law.asia](https://law.asia/scca-official-recognition-in-house-counsel/))
+
+> Copilot, not autopilot. [...] You are responsible for your work product, even when using generative AI. [...] Do not rely on an authority that you have not read.
+>
+> — SAL + Microsoft Prompt Engineering Guide for Lawyers ([SAL](https://sal.org.sg/wp-content/uploads/2025/02/SAL-Microsoft-PE-Guide.pdf), 2025)
+
 ---
 
 ## Jurisdictional Flags
 
-⚠️ **US/EU Context** - Harvey AI pushback pricing concerns (60% price slash) and hallucination issues are US/EU-centric. Singapore judiciary collaboration with Harvey AI is a specific case, but broader legal tech adoption challenges may differ regionally.
+⚠️ **US/EU Context — Adoption Stats** - AI adoption rates (79% use, 31% gen AI, firm-size gaps) are from US surveys (ABA/AffiniPay, Clio). Singapore-specific law firm AI adoption rates not available. Use for thought experiment framing but note the jurisdictional gap.
+
+⚠️ **US/EU Context — Hallucinations** - 729+ documented hallucination cases are primarily US courts. Singapore has its own hallucination concerns (MinLaw GenAI Guide addresses this) but no published Singapore-specific incident count. Harvey's 0.2% claim is from internal evaluation.
+
+⚠️ **US/EU Context — Harvey Pricing** - Harvey's $1.2K/seat pricing and 60% price slash are US/UK market data. Singapore pricing for Harvey (judiciary collaboration) likely different. Client pushback dynamics ("2026 is the year we put pressure on outside counsel") are US in-house trends.
+
+⚠️ **Corrected: Digital Adoption** - Earlier brainstorming notes referenced "declining digital adoption among small businesses." IMDA data shows the opposite: SME digital adoption rose from 94.5% to 95.1%, and AI adoption tripled (4.2% → 14.5%). Do NOT use the "declining" claim.
 
 ⚠️ **Limited Singapore/ASEAN-specific data** - Builder community evidence is limited. Most legal tech activity appears to be consumption-focused (firms adopting tools) rather than building-focused (lawyers building tools). Need more specific evidence of Singapore lawyer-coders.
 
@@ -250,14 +403,29 @@ Budget 2026 delivered significant adoption infrastructure for AI in Singapore, i
 
 ## Additional Sources for Follow-Up
 
-### Primary Sources
+### Primary Sources — Singapore
 - **Singapore Budget 2026 Speech** - Full transcript from PM Lawrence Wong (Feb 12, 2026)
 - **MinLaw Press Releases** - [LIFT initiative](https://www.mlaw.gov.sg/driving-the-next-stage-of-digitalisation-through-lift), [Legal Technology Platform](https://www.mlaw.gov.sg/driving-the-next-stage-of-digitalisation-through-lift) (Jun 30, 2025)
-- **Singapore Judiciary Media Releases** - [Harvey AI collaboration](https://www.judiciary.gov.sg/news-and-resources/news/news-details/media-release--new-generative-ai-powered-case-summarisation-tool-to-help-small-claims-tribunals-users) (Sep 10, 2025)
+- **MinLaw GenAI Guide** - [Public consultation](https://www.mlaw.gov.sg/public-consultation-on-guide-for-using-generative-artificial-intelligence-in-the-legal-sector/) | [Guide PDF](https://www.mlaw.gov.sg/files/Guide_for_Using_Generative_AI_in_the_Legal_Sector.pdf) (Sep 2025)
+- **Singapore Judiciary** - [Harvey AI collaboration](https://www.judiciary.gov.sg/news-and-resources/news/news-details/media-release--new-generative-ai-powered-case-summarisation-tool-to-help-small-claims-tribunals-users) (Sep 10, 2025) | [CJ Menon OLY 2026 speech](https://www.judiciary.gov.sg/news-and-resources/news/news-details/chief-justice-sundaresh-menon--response-delivered-at-the-opening-of-the-legal-year-2026) (Jan 12, 2026)
+- **Singapore Law Gazette** - [Law Society President OLY 2026 speech](https://lawgazette.com.sg/news/updates/opening-of-the-legal-year-2026-speech-president/) | [AG OLY 2026 speech](https://lawgazette.com.sg/news/updates/opening-of-the-legal-year-2026-speech-attorney-general/) (Jan 12, 2026)
+- **Singapore Law Watch** - [Committee on attrition and AI](https://www.singaporelawwatch.sg/Headlines/law-minister-and-chief-justice-to-co-lead-committee-to-tackle-lawyer-attrition-rates-impact-of-ai) (Jan 12, 2026)
+- **SAL** - [Microsoft PE Guide](https://sal.org.sg/wp-content/uploads/2025/02/SAL-Microsoft-PE-Guide.pdf) | [Newsroom](https://sal.sg/index.php/newsroom/SAL-Microsoft) (2025)
+- **IMDA** - [LawNet 4.0 AI search](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2025/imda-and-sal-launched-ai-powered-search-engine-in-lawnet) | [Digital Economy Report 2025](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy)
 - **SMU Centre for Digital Law** - [SOLID database project](https://news.smu.edu.sg/news/2025/11/18/smu-build-open-legal-database-support-ministry-law) (Nov 18, 2025)
+- **SCCA** - [Official site](https://www.scca.org.sg/) | [Government recognition](https://law.asia/scca-official-recognition-in-house-counsel/) | [APAC Congress 2026](https://scca.glueup.com/event/asia-pacific-apac-legal-congress-2026-161421/)
 - **Straits Times** - [Budget 2026 coverage](https://www.straitstimes.com/singapore/budget-2026-workers-to-get-help-building-practical-ai-capabilities-starting-with-accountancy-and-law?ref=latest) (Feb 12, 2026)
 - **Business Times** - [Budget 2026 highlights](https://www.businesstimes.com.sg/singapore/budget-2026-highlights-ai-champions-foreign-worker-policy-tweaks-more-cdc-vouchers) (Feb 12, 2026)
 - **CNBC** - [Singapore Budget 2026 AI measures](https://www.cnbc.com/2026/02/12/singapore-2026-budget-ai-measures-ai-support-workers-companies.html) (Feb 12, 2026)
+
+### Primary Sources — Global (for thought experiment)
+- **ABA/AffiniPay** - [Legal Industry Report 2025](https://www.americanbar.org/groups/law_practice/resources/law-technology-today/2025/the-legal-industry-report-2025/) (2,800+ professionals surveyed)
+- **Clio** - [Legal Trends Report 2025](https://www.2civility.org/2025-clio-legal-trends-report/) | [AI adoption in solo/small/mid firms](https://www.clio.com/blog/2025-ai-adoption-solo-small-mid-sized-firms/) (2,400+ professionals)
+- **Stanford HAI** - [Legal AI hallucination benchmarking](https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries)
+- **Damien Charlotin** - [AI Hallucination Cases Database](https://www.damiencharlotin.com/hallucinations/) (729+ documented cases)
+- **Contrary Research** - [Harvey business breakdown](https://research.contrary.com/company/harvey)
+- **Artificial Lawyer** - [Harvey + LexisNexis pricing impact](https://www.artificiallawyer.com/2025/06/30/harvey-lexisnexis-the-potential-pricing-impact/) (Jun 30, 2025)
+- **National Law Review** - [10 AI predictions for 2026](https://natlawreview.com/article/ten-ai-predictions-2026-what-leading-analysts-say-legal-teams-should-expect)
 
 ### Background Reading
 - **TechLaw.Fest 2025** - [Asia's premier law and tech conference](https://www.techlawfest.com/) (Sep 10-11, 2025)
@@ -266,91 +434,110 @@ Budget 2026 delivered significant adoption infrastructure for AI in Singapore, i
 - **Tracxn Legal Tech Startups Singapore** - [Startup landscape](https://tracxn.com/d/explore/legal-tech-startups-in-singapore/__BO0PKGjkPZUkexQjXOniy58RNkPoH1XEXUCz8kAHDzM/companies) (Oct 29, 2025)
 - **Alpha LegalTech** - [Lawyer-founded legal tech startup](https://www.cliffordchance.com/news/news/2020/03/clifford-chance-partners-with-singapore-start-up-alpha-legaltech.html) (Clifford Chance, Mar 26, 2020)
 - **LegalComet** - [E-discovery startup acquired by Rajah & Tann](https://law.asia/ai-legaltech-adoption-asia) (Law.asia, Oct 3, 2024)
+- **Bloomberg Law** - [Clients push Big Law to use AI for cost savings](https://news.bloomberglaw.com/business-and-practice/clients-push-big-law-firms-to-use-generative-ai-for-cost-savings)
+- **Purple Law** - [Harvey vs Legora pricing analysis](https://purple.law/blog/harvey-vs-legora-pricing/)
 
 ---
 
 ## Research Notes
 
 ### Search Strategy Used
+
+**Round 1 (initial research agent):**
 1. **Government Initiatives (6 searches):**
-   - [Singapore Budget 2026 AI measures](https://www.straitstimes.com/singapore/budget-2026-workers-to-get-help-building-practical-ai-capabilities-starting-with-accountancy-and-law?ref=latest)
-   - [PSG-Legal Legal Technology Platform Copilot](https://sg.lupl.com/pricing)
-   - [LIFT Legal Industry Transformation Programme](https://www.mlaw.gov.sg/driving-the-next-stage-of-digitalisation-through-lift)
-   - [LegalTechGoWhere programme](https://luma.com/920jraii)
-   - [Champions of AI programme](https://www.businesstimes.com.sg/singapore/budget-2026-highlights-ai-champions-foreign-worker-policy-tweaks-more-cdc-vouchers)
-   - [Harvey AI collaboration with judiciary](https://www.judiciary.gov.sg/news-and-resources/news/news-details/media-release--new-generative-ai-powered-case-summarisation-tool-to-help-small-claims-tribunals-users)
+   - Singapore Budget 2026 AI measures
+   - PSG-Legal Legal Technology Platform Copilot
+   - LIFT Legal Industry Transformation Programme
+   - LegalTechGoWhere programme
+   - Champions of AI programme
+   - Harvey AI collaboration with judiciary
 
 2. **Innovation Gap (4 searches):**
-   - [Singapore legal data APIs open legal information](https://news.smu.edu.sg/news/2025/11/18/smu-build-open-legal-database-support-ministry-law)
-   - [Singapore legal tech builder community lawyers building](https://www.meetup.com/topics/lawtech/sg)
-   - [Singapore legal tech startups founded by lawyers](https://tracxn.com/d/explore/legal-tech-startups-in-singapore/__BO0PKGjkPZUkexQjXOniy58RNkPoH1XEXUCz8kAHDzM/companies)
-   - [Singapore legal tech community meetup](https://www.meetup.com/topics/lawtech/sg)
+   - Singapore legal data APIs open legal information
+   - Singapore legal tech builder community lawyers building
+   - Singapore legal tech startups founded by lawyers
+   - Singapore legal tech community meetup
+
+**Round 2 (follow-up research, Feb 13 2026):**
+3. **Adoption Stats & Thought Experiment (2 searches):**
+   - Law firm AI adoption rate 2025 2026 statistics survey
+   - Harvey AI pushback pricing hallucinations law firms 2025 2026
+
+4. **Professional Bodies & OLY 2026 (5 searches):**
+   - Singapore Law Society AI initiatives 2025 2026
+   - Singapore Corporate Counsel Association SCCA AI legal technology 2025 2026
+   - Singapore Opening Legal Year 2026 Chief Justice AI attrition committee
+   - SAL Singapore Academy of Law Microsoft prompt engineering guide lawyers AI
+   - Law Society president Tan Cheng Han Opening Legal Year 2026 speech
+
+5. **Verification & Gaps (2 searches):**
+   - AI hallucinated citations court sanctions lawyers 2025 2026 statistics
+   - Singapore digital adoption small business declined 2025 IMDA survey (result: claim NOT supported; adoption rising)
 
 ### Key Findings Summary
-- **Government initiatives:** All 8 core initiatives verified with exact quotes, funding details, timelines, and updates since Feb 2026
-- **Builder communities:** Limited evidence of visible builder communities among Singapore lawyers. Meetups exist but focus on consumption/collaboration, not building. Hackathons exist but primarily student/academic participation.
-- **Open legal data:** SOLID database being built but 1-2 years away. LawNet 4.0 has no public APIs. Current state: limited experimentation opportunities.
-- **Legal tech ecosystem:** 94 startups in Singapore, but limited evidence of lawyer-founded startups. Alpha LegalTech (2020) and LegalComet (2018) are notable examples. Ecosystem appears consumption-focused rather than building-focused.
+- **Government initiatives:** All 13 initiatives now verified (original 8 + MinLaw GenAI Guide, SAL-Microsoft PE Guide, OLY 2026 Committee, LawNet 4.0 AI search, SCCA involvement)
+- **Thought experiment data:** Global adoption stats support the "giving everyone tools ≠ transformation" argument. Only ~20% of small firms use gen AI; 56% cite privacy concerns; 33% have policies; hallucination rates 17-34% for bespoke legal AI.
+- **OLY 2026:** Major anchor event — CJ Menon + Law Minister committee, 60% junior attrition stat, Law Society president's AI + access to justice concerns
+- **Builder communities:** Limited evidence of visible builder communities among Singapore lawyers. Ecosystem is consumption-focused.
+- **Open legal data:** SOLID database 1-2 years away. LawNet 4.0 has no public APIs despite AI-powered search.
+- **Corrected claim:** "Declining digital adoption" is NOT supported by IMDA data. SME adoption is increasing.
 
 ### Dead Ends Encountered
-- **Limited Singapore lawyer-coder evidence:** Searches for "lawyer-coders Singapore" and "lawyers building legal tech Singapore" returned few specific results. Most legal tech activity appears to be consumption-focused (firms adopting tools) rather than building-focused (lawyers building tools).
-- **No visible builder community:** Despite multiple searches, no clear evidence of an active Singapore lawyer builder community focused on building legal tech tools. Meetups exist but appear to be general legal tech discussions, not builder communities.
-- **Open legal data APIs:** Limited evidence of public APIs for legal data experimentation. SOLID database is the only major initiative, but it's 1-2 years away.
+- **Limited Singapore lawyer-coder evidence:** Searches for "lawyer-coders Singapore" and "lawyers building legal tech Singapore" returned few specific results.
+- **No visible builder community:** No clear evidence of an active Singapore lawyer builder community focused on building legal tech tools.
+- **Open legal data APIs:** Limited evidence of public APIs for legal data experimentation. SOLID is the only major initiative.
+- **Singapore-specific law firm AI adoption rates:** No Singapore-equivalent of the ABA/Clio surveys found. OLY 2026 speeches express concern but cite no published data.
+- **"Declining digital adoption":** IMDA data contradicts this claim. The source in brainstorming notes is unverified — do not use.
 
 ### Suggestions for Further Research
-1. **Lawyer-coder specific evidence:** Search for [Singapore lawyers who code](https://www.linkedin.com/posts/singapore-academy-of-law_legaltech-futureoflaw-innovationinlaw-activity-7358813444009086977-lvqg), open source contributions from legal professionals, lawyer-led hackathon projects
-2. **Builder community depth:** Investigate [LegalTechSG](https://www.meetup.com/topics/lawtech/sg), [ASEAN LegalTech](https://www.meetup.com/topics/legal-technology), and other communities for builder-focused activities
-3. **Open source legal tech:** Search for Singapore legal tech open source projects, lawyer contributions to open source legal tools
-4. **Legal tech accelerator programs:** Search for legal tech accelerators in Singapore, lawyer participation rates
-5. **Government builder programs:** Search for government programs specifically supporting legal tech building (not just adoption)
+1. **Lawyer-coder specific evidence:** Search for Singapore lawyers who code, open source contributions from legal professionals
+2. **Builder community depth:** Investigate LegalTechSG, ASEAN LegalTech, and other communities for builder-focused activities
+3. **Singapore law firm AI adoption data:** Check if Law Society or MinLaw have published any firm-level AI adoption surveys
+4. **MinLaw GenAI Guide final version:** Check if final version has been published post-consultation
+5. **OLY 2026 Committee progress:** Track workstream outputs as they become available
 
 ---
 
-**Research complete:** All core government initiatives verified. Innovation gap evidence gathered but limited on builder community depth. Research supports core argument: Singapore built adoption infrastructure but missing innovation ecosystem.
+**Research status:** Comprehensive. All post sections now have supporting evidence. Section 2 (thought experiment) and Section 3 (credit where due) are now fully supported. Section 4 (innovation gap) evidence is moderate but sufficient with personal proof points.
 
 ## How to Use This Research File
 
 ### For Writing Your Post:
 
-1. **Section 3 (Government Initiatives):** Use the 8 initiatives with exact quotes and URLs. Cross-reference related initiatives (e.g., tax deductions ↔ Champions of AI).
+1. **Section 2 (Thought Experiment):** Use global adoption stats, hallucination rates, Harvey pricing/pushback, and the "friction points synthesis" to build the thought experiment. Flag US-centric data with a disclaimer.
 
-2. **Section 4 (Innovation Gap):** Use the builder community, open data, and ecosystem evidence. Cross-reference between related findings (e.g., SOLID database ↔ LawNet 4.0 APIs).
+2. **Section 3 (Government Initiatives):** Use all 13 initiatives with exact quotes and URLs. The OLY 2026 Committee and Law Society president's speech are particularly strong anchors — they show the profession itself acknowledges the challenge.
 
-3. **Statistics & Data Points:** Use the compiled statistics with direct URLs for verification.
+3. **Section 4 (Innovation Gap):** Use the builder community, open data, and ecosystem evidence. The contrast between LawNet 4.0 (AI-powered search, no APIs) and SOLID (APIs promised, 2 years away) is particularly sharp.
 
-4. **Expert Quotes:** Use the quotes with attribution and URLs for credibility.
+4. **Statistics & Data Points:** Organized by topic. Use the compiled statistics with direct URLs for verification.
 
-5. **Alt-Counsel Angle:** Use the $50 vs $50K insight and compliance vs curiosity culture comparison.
+5. **Expert Quotes:** 10 quotes now available. PM Wong, CJ Menon, Law Society President, and SAL "Copilot not autopilot" are the strongest for the post.
+
+6. **Alt-Counsel Angle:** Use the $50 vs $50K insight and compliance vs curiosity culture comparison.
 
 ### For Verification:
 
-- **All sources have clickable URLs** - click to verify original content
+- **All sources have clickable URLs** — click to verify original content
 - **Cross-references** link related findings together
 - **Regional context flags** (✅ Singapore/ASEAN, ⚠️ US/EU-centric) help you identify jurisdictional relevance
-- **Updates since Feb 2026** section shows what's changed since budget announcement
-
-### For Follow-Up Research:
-
-- **Suggestions for Further Research** section lists 5 specific areas to investigate
-- **Additional Sources** section provides primary and background reading URLs
-- **Research Notes** section documents search strategy and dead ends
+- **Jurisdictional Flags section** now includes corrected claims (declining digital adoption debunked)
 
 ### File Structure:
 
 ```
 research.md
-├── Quick Navigation (clickable links to all sections)
-├── Summary (executive summary)
+├── Quick Navigation
+├── Summary
 ├── Research Findings by Post Section
-│   ├── Section 3: Government Initiatives (8 initiatives with URLs)
-│   └── Section 4: Innovation Gap (6 findings with URLs)
-├── Findings That Don't Fit Current Outline
-├── Statistics & Data Points (14 stats with URLs)
-├── Expert Quotes & Perspectives (5 quotes with URLs)
-├── Jurisdictional Flags (3 flags with explanations)
-├── Alt-Counsel Angle (5 insights with context)
-├── Additional Sources for Follow-Up (primary + background)
-└── Research Notes (search strategy, dead ends, suggestions)
+│   ├── Section 2: Thought Experiment (4 findings — adoption stats, hallucinations, Harvey, friction synthesis)
+│   ├── Section 3: Government Initiatives (13 initiatives)
+│   └── Section 4: Innovation Gap (6 findings)
+├── Findings That Don't Fit Current Outline (6 items)
+├── Statistics & Data Points (7 categories, 30+ stats with URLs)
+├── Expert Quotes & Perspectives (10 quotes with URLs)
+├── Jurisdictional Flags (6 flags with explanations)
+├── Alt-Counsel Angle (5 insights)
+├── Additional Sources (Singapore primary + global primary + background)
+└── Research Notes (search strategy, findings summary, dead ends, suggestions)
 ```
-
-**Note:** All URLs are verified and clickable. Cross-references help you see connections between findings. Regional context flags help you identify Singapore/ASEAN-specific vs US/EU-centric content.
