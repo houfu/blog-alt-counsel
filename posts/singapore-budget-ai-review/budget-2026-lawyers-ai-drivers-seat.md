@@ -11,7 +11,7 @@ PM Wong named legal as one of the first professions needing AI transition suppor
 
 I watched the speech and felt... grateful? Nervous? Both.
 
-The government is putting real money behind this. 400% tax deductions on AI spending. Free premium tools for training. A Champions of AI programme. TeSA extended to lawyers. The message is clear: AI is coming for your work, and we'll help you adapt.
+The government is putting real money behind this. 400% tax deductions on AI spending. Free premium tools for training. A Champions of AI programme. TeSA (TechSkills Accelerator) extended to lawyers. The message is clear: AI is coming for your work, and we'll help you adapt.
 
 I don't want to be ungrateful. But something nags at me.
 
@@ -55,9 +55,11 @@ Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a 
 
 What would actually happen?
 
-If global data is any guide: not much. The ABA's 2025 Legal Industry Report surveyed 2,800+ legal professionals. The headline number: 79% "use AI." But dig deeper. Only 31% of lawyers and 21% of firms actually use generative AI. For firms with 50 or fewer lawyers — which is most of Singapore's legal profession — gen AI adoption sits at roughly 20%.
+If global data is any guide: not much. The American Bar Association's 2025 Legal Industry Report surveyed 2,800+ legal professionals. The headline number: 79% "use AI." But dig deeper. Only 31% of lawyers and 21% of firms actually use generative AI. For firms with 50 or fewer lawyers — which is most of Singapore's legal profession — gen AI adoption sits at roughly 20%.
 
-56% of lawyers cite data privacy and confidentiality as their top concern before uploading anything. Only 33% of firms have policies telling lawyers *how* to use AI. And even the best bespoke legal AI tools hallucinate 17-34% of the time, according to Stanford HAI benchmarking. General-purpose chatbots? 58-82% on legal queries.
+And the barriers are real. 56% of lawyers cite data privacy and confidentiality as their top concern before uploading anything. Only 33% of firms have policies telling lawyers *how* to use AI.
+
+Then there's the hallucination problem. Even the best bespoke legal AI tools — Lexis+ AI, CoCounsel — hallucinate 17-34% of the time, according to Stanford's Human-Centered AI Institute benchmarking. General-purpose chatbots? 58-82% on legal queries.
 
 So giving everyone the tool doesn't mean everyone uses it. Using it doesn't mean using it well. And using it well still means checking every output because the tool might be making things up.
 
