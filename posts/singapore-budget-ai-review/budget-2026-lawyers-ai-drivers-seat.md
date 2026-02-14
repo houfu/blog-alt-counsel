@@ -51,7 +51,7 @@ That is a coordinated, well-funded, serious effort. I mean it when I say credit 
 
 But let's think deeper about this. 
 
-Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. I am not talking about a crummy six month subscription to crummy ChatGPT Plus. We are talking about Harvey, CoCounsel, whatever the flavour of the month is. Real LegalTech. Licences paid. Training done. Desktop icons gleaming.
+Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. I am not talking about a crummy six month subscription to ChatGPT Plus. We are talking about Harvey, CoCounsel, whatever the flavour of the month is. Real LegalTech. Licences paid. Training done. Desktop icons gleaming.
 
 What would actually happen?
 
@@ -59,7 +59,7 @@ If global data is any guide: not much. Clio's 2025 Legal Trends Report says 79% 
 
 And the barriers are real. 56% of lawyers cite data privacy and confidentiality as their top concern before uploading anything. Only 33% of firms have policies telling lawyers *how* to use AI.
 
-Then there's the hallucination problem. Even the best bespoke legal AI tools — Lexis+ AI, CoCounsel — hallucinate 17-34% of the time, according to Stanford's Human-Centered AI Institute benchmarking. General-purpose chatbots? 58-82% on legal queries.
+Then there's the hallucination problem. Even the best bespoke legal AI tools — Lexis+ AI, CoCounsel — hallucinate 17-33% of the time, according to Stanford's Human-Centered AI Institute benchmarking. General-purpose chatbots? 58-82% on legal queries. [1]
 
 So giving everyone the tool doesn't mean everyone uses it. Using it doesn't mean using it well. And using it well still means checking every output because the tool might be making things up.
 
@@ -77,7 +77,11 @@ Neither is wrong. You can't run before you walk. But adoption infrastructure wit
 
 Three things I keep coming back to:
 
-**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Not because I wanted to be a hero. Because official legal data sources in Singapore don't have public APIs. LawNet 4.0 has AI-powered search (impressive), but no publicly available APIs for developers to build on. The SMU SOLID database project promises open legal data with APIs — target launch: Q1 2028. That's two years away.
+1. Open legal data with APIs for experimentation
+2. A visible builder community
+3. Curiosity vs compliance
+
+**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Validated my idea, but also frustrated me — I'd built something useful, but it was just me and my laptop. When SMU announced SOLID, I felt a mix of validation and frustration — validation that someone else was thinking about this, frustration that I'd spent 6 months building the same thing. LawNet 4.0 has AI-powered search (impressive), but no publicly available APIs for developers to build on. The SMU SOLID database project promises open legal data with APIs — target launch: Q1 2028. That's two years away.
 
 If I wanted to experiment with Singapore legal data today — build a prototype, test an idea, see if something works — I'd have to build the data infrastructure first. I did. Most lawyers won't.
 
@@ -89,19 +93,19 @@ I can't find one.
 
 **Curiosity vs compliance.** There's a difference between using AI because your boss said to, because the government said to, because there's a grant for it — and using AI because you're genuinely curious about what's possible. The first gives you adoption. The second gives you innovation.
 
-I know the difference because I've felt both. The government programmes are excellent at cultivating the first. I haven't seen anything designed to cultivate the second.
+I know the difference because I've felt both. The first time I adopted a tool because my boss said to — I got faster. The first time I built something because I was curious — I understood how AI actually works. One gave me tools. The other gave me agency.
 
 ## The Uncomfortable Part
 
 Follow the PM's own logic for a moment.
 
-Step 1: AI will displace white-collar jobs. The PM said it. The fear is official.
+1. AI will displace white-collar jobs. The PM said it. The fear is official.
 
-Step 2: Government responds — train lawyers to use vendor tools. Subsidise adoption. Write guidelines.
+2. Government responds — train lawyers to use vendor tools. Subsidise adoption. Write guidelines.
 
-Step 3: Lawyers become skilled consumers of whatever Harvey, or Microsoft, or the next platform offers.
+3. Lawyers become skilled consumers of whatever Harvey, or Microsoft, or the next platform offers.
 
-Step 4: When AI actually reshapes the legal profession — and it will — lawyers have no agency over how it happens. They can use the tools. They can't shape them. They can't build alternatives. They can't even experiment freely, because the data isn't open and the builder community doesn't exist.
+4. When AI actually reshapes the legal profession — and it will — lawyers have no agency over how it happens. They can use the tools. They can't shape them. They can't build alternatives. They can't even experiment freely, because the data isn't open and the builder community doesn't exist.
 
 The PM warned about displacement. The response makes lawyers more efficient passengers.
 
@@ -111,7 +115,9 @@ I don't think this is anyone's fault. Building adoption infrastructure is the ra
 
 For solo counsels and small legal teams, this is especially sharp.
 
-You probably can't afford the premium tier of most legal AI tools. You might qualify for PSG-Legal subsidies, but the tools on offer are vendor-selected, vendor-designed. If the vendor pivots, you pivot. If the vendor's AI hallucinates — and at 17-34% for even bespoke tools, it will — you're the one who catches the consequences.
+You probably can't afford the premium tier of most legal AI tools. You might qualify for PSG-Legal subsidies, but the tools on offer are vendor-selected, vendor-designed. PSG-Legal's 70% co-pay and $50K tax deduction cap? Those thresholds assume firms spending $500K+ on AI. Most solo counsels won't hit them. These programmes are aimed at larger corporations, not individual spending. Six months of free premium tools? Nice. But what happens after? Renewal pricing for tools that cost $800-1,200/seat/month — and most small firms don't have that cash flow.
+
+If the vendor pivots, you pivot. Microsoft changes Copilot pricing from $30 to $50/seat next quarter? You can't switch. Your workflow history is locked in. Your team's prompts are locked in. You're stuck with whatever the vendor decides to charge. If the vendor's AI hallucinates — and at 17-33% for even bespoke tools, it will — you're the one who catches the consequences.
 
 The Budget 2026 measures genuinely help. Take the tax deductions. Take the free training. Read SAL's prompt engineering guide — it's good, and it's free.
 
@@ -120,3 +126,9 @@ But also: start building. Even small things. A template that automates your most
 The lawyers who'll thrive aren't the ones who adopt AI fastest. They're the ones who understand it deeply enough to shape how it works for them.
 
 That's the difference between the passenger seat and the driver's seat.
+
+---
+
+**Footnotes**
+
+[1] Varun Magesh et al., "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools," *Journal of Empirical Legal Studies* (2025), https://dho.stanford.edu/wp-content/uploads/Legal_RAG_Hallucinations.pdf
