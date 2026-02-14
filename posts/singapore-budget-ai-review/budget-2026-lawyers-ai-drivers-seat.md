@@ -1,10 +1,11 @@
 ---
 title: "Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?"
 slug: "budget-2026-lawyers-ai-drivers-seat"
-tags: ["Singapore Legal", "Legal Technology", "AI", "Budget 2026", "Government Policy"]
-status: draft
+tags: ["AI", "LegalTech", "Singapore", "Government"]
+status: scheduled
 featured: false
 github_folder: "singapore-budget-ai-review"
+custom_excerpt: "PM Wong named legal as one of the first professions needing AI transition support in Budget 2026. The government is putting real money behind this - 400% tax deductions, free premium tools, Champions of AI programme. But is this adoption infrastructure, or does it keep lawyers in the passenger seat?"
 ---
 
 PM Wong named legal as one of the first professions needing AI transition support in Budget 2026. Right after warning that AI will displace white-collar jobs.
@@ -49,7 +50,7 @@ That is a coordinated, well-funded, serious effort. I mean it when I say credit 
 
 ## So what if every lawyer had a Premium AI tool?
 
-Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. I am not talking about a crummy six month subscription to ChatGPT Plus. We are talking about Harvey, CoCounsel, whatever the flavour of the month is. Real LegalTech. Licences paid. Training done. Desktop icons gleaming.
+Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. I am not talking about a crummy six month subscription to ChatGPT Plus. We are talking about Harvey, CoCounsel, whatever the flavour of the month is. Real LegalTech. Licences paid. Training done. Desktop icons gleaming. [Beyond the Harvey Drama: The Real Lessons for Solo Counsel](https://www.alt-counsel.com/beyond-the-harvey-drama-the-real-lessons-for-solo-counsel/)
 
 What would actually happen?
 
@@ -61,7 +62,7 @@ Then there's the hallucination problem. Even the best bespoke legal AI tools —
 
 So giving everyone the tool doesn't mean everyone uses it. Using it doesn't mean using it well. And using it well still means checking every output because the tool might be making things up.
 
-Law Society president Prof Tan Cheng Han raised exactly this at the Opening of the Legal Year 2026: AI will "reduce demand for routine legal work typically undertaken by junior lawyers." And if lawyers can't access or understand these tools effectively, "this affects their clients' access to justice."
+Law Society president Prof Tan Cheng Han raised exactly this at the Opening of the Legal Year 2026: AI will "reduce demand for routine legal work typically undertaken by junior lawyers." And if lawyers can't access or understand these tools effectively, "this affects their clients' access to justice." [Legal AI's Real Value: Autonomy, Not Automation](https://www.alt-counsel.com/legal-ai-autonomy/)
 
 The tool is not the transformation. The tool is the starting point.
 
@@ -69,7 +70,7 @@ The tool is not the transformation. The tool is the starting point.
 
 Here's what I keep looking for and can't find: an innovation ecosystem.
 
-Everything above is adoption infrastructure. It helps lawyers *use* AI tools that someone else built. Learn prompting techniques that someone else designed. Follow guidelines that someone else wrote.
+Everything above is adoption infrastructure. It helps lawyers *use* AI tools that someone else built. Learn prompting techniques that someone else designed. Follow guidelines that someone else wrote. [I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing.](https://www.alt-counsel.com/tool-vs-infrastructure-mindset/)
 
 Neither is wrong. You can't run before you walk. But adoption infrastructure without an innovation ecosystem means lawyers stay in the passenger seat. Permanently.
 
@@ -79,7 +80,7 @@ Three things I keep coming back to:
 2. A visible builder community
 3. Curiosity vs compliance
 
-**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Validated my idea, but also frustrated me — I'd built something useful, but it was just me and my laptop.
+**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Validated my idea, but also frustrated me — I'd built something useful, but it was just me and my laptop. [What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)](https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/)
 
 When SMU announced SOLID, I felt a mix of validation and frustration — validation that someone else was thinking about this, frustration that I'd spent 6 months building the same thing.
 

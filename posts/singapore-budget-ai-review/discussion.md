@@ -128,7 +128,12 @@ Both are real, specific, Singapore-relevant. The SAL guide is already credited i
 - Applied 7 fixes based on reviewer feedback and content audit
 
 ### Technical
-- (None yet)
+- Created `scripts/publish-lexical.js` - markdown to Ghost lexical converter script
+  - Converts markdown to Ghost's lexical JSON format
+  - Handles: headings, paragraphs, lists, code blocks, images, tables (as HTML cards), bookmark cards, inline links, text formatting
+  - Adds GitHub footer automatically
+- Added custom excerpt via Ghost API (curl workaround)
+- Updated local markdown with published metadata
 
 ## WHAT WORKED / DIDN'T WORK
 
@@ -341,3 +346,46 @@ Post had been through initial drafting (Session 3) and user had made significant
 - Backlink curation (backlink_curating skill)
 - Final proofread
 - Publish to Ghost
+
+## Session 5: Publishing to Ghost (2026-02-14)
+
+### Context
+Post completed revisions and ready for publishing. User requested a lexical-based posting script to preserve rich content formatting.
+
+### What Claude Did
+
+**Technical:**
+- Created new script `scripts/publish-lexical.js` that:
+  - Parses markdown with frontmatter
+  - Converts markdown to Ghost lexical JSON format (not HTML)
+  - Handles: headings, paragraphs, lists, code blocks, images, tables (as HTML cards), bookmark cards for notable links, inline links, text formatting
+  - Adds GitHub footer automatically if `github_folder` specified
+- Tested script with the Budget 2026 post
+- Successfully created draft post in Ghost (Post ID: 69906b3c6787a3000184f8df)
+
+**Metadata:**
+- Added custom excerpt via Ghost API (had to use curl due to library issues)
+- Excerpt: "PM Wong named legal as one of the first professions needing AI transition support in Budget 2026. The government is putting real money behind this - 400% tax deductions, free premium tools, Champions of AI programme. But is this adoption infrastructure, or does it keep lawyers in the passenger seat?"
+
+**Repo Sync:**
+- Updated local markdown file frontmatter:
+  - Changed `status: draft` to `status: scheduled`
+  - Added `custom_excerpt` field
+  - Tags simplified by Ghost: ["AI", "LegalTech", "Singapore", "Government"]
+
+### User Decisions
+- Decision 1: Use lexical-based posting (not HTML) to preserve rich formatting
+- Decision 2: Convert notable links (alt-counsel.com, government sites) to bookmark cards
+
+### Outcomes
+- ✅ New script created: `scripts/publish-lexical.js`
+- ✅ Draft post created in Ghost
+- ✅ Custom excerpt added
+- ✅ Local markdown file updated with published metadata
+- Post URL: https://www.alt-counsel.com/p/b54e500f-829d-40ca-89a6-6cf7a38409a8/
+- Post status: scheduled
+
+### Next Steps
+- User will review scheduled post in Ghost
+- Publish when ready
+- Verify final post and sync any changes back to repo
