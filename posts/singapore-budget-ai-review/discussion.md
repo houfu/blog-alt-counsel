@@ -61,6 +61,43 @@ Budget/policy content resonates most with resource-constrained practitioners (au
 **Outcome:**
 Pending — will inform pitch and writing.
 
+### Decision: "Start Tinkering" Over "Start Building" (2026-02-14, Session 4)
+
+**Claude's Analysis:**
+- Reviewers flagged "start building" as too high a bar for primary audience (solo counsels)
+- Presented 3 alternatives: "start noticing," "start asking," "start tinkering"
+
+**Claude's Recommendation:**
+Offered all three; "start tinkering" as middle ground
+
+**User Decision:**
+"Start tinkering." User clarified: "building" sets too high an ability bar. Should mean "getting involved, learning about what others do with AI and technology" — not writing code.
+
+**Rationale:**
+Primary audience (Sarah Chen) doesn't code. Entry point needs to be accessible: attend meetups, ask colleagues, understand system prompts — not build tools.
+
+**Outcome:**
+✅ Reframed closing section with non-coding examples and "You don't need a free weekend. You need thirty minutes of curiosity."
+
+### Decision: Concrete Curiosity vs Compliance Story (2026-02-14, Session 4)
+
+**Claude's Analysis:**
+- Reviewers (2 of 3) flagged curiosity vs compliance section as too abstract
+- Brainstormed concrete examples; asked user for real compliance and curiosity moments
+
+**Claude's Recommendation:**
+Asked user for specific personal experiences to replace abstract framing
+
+**User Decision:**
+- Compliance: SAL + Microsoft Prompt Engineering Guide — downloaded it, tried to follow it, too cumbersome and time-consuming, dropped it
+- Curiosity: Wanted to know how LLMs work under the hood — system prompts, token prediction, what's happening underneath. Led to picking up Claude Code and cutting-edge tools. Also able to evaluate legal tech beyond "just a wrapper"
+
+**Rationale:**
+Both are real, specific, Singapore-relevant. The SAL guide is already credited in the tables, so critiquing it is honest, not ungrateful. The LLM curiosity directly connects to the driver's seat argument.
+
+**Outcome:**
+✅ Replaced abstract "boss said to / curious" with vivid SAL guide → LLM under-the-hood contrast
+
 ## WHAT CLAUDE DID (Contributions)
 
 ### Research
@@ -85,7 +122,10 @@ Pending — will inform pitch and writing.
 - Applied key voice patterns: opened with feeling ("grateful? nervous? both"), specific numbers throughout, "neither is wrong" framing for adoption vs innovation, solo counsel return in final section
 
 ### Quality Control
-- (None yet)
+- Ran content quality audit (content-quality-auditor): 8.5/10
+- Ran 3 audience reviewers: Legal Tech (8.5/10), Corporate Lawyer (8/10), Lawyer-Coder (7.5/10)
+- Synthesized cross-reviewer feedback report identifying consensus, unique catches, and disagreements
+- Applied 7 fixes based on reviewer feedback and content audit
 
 ### Technical
 - (None yet)
@@ -99,6 +139,8 @@ Pending — will inform pitch and writing.
 | Research surfaced specific stats (28% adoption, 18% integration, declining digital adoption) | User confirmed skepticism was well-founded | Strong evidence base for the piece |
 | Voice guide patterns translated well to policy commentary piece | N/A — writing decision | Patterns (feeling opener, specific numbers, "neither is wrong") fit naturally into budget analysis |
 | "Neither is wrong" framing perfect for the adoption-vs-innovation tension | N/A — writing decision | Avoids binary framing; lets reader hold both truths simultaneously |
+| Cross-reviewer synthesis identified unique catches per reviewer | User could see what each audience valued | Efficient review: legal-tech caught number clustering, corporate-lawyer caught defensive tone, lawyer-coder caught policy-over-personal lean |
+| Brainstormed curiosity vs compliance with concrete options | User chose SAL guide + LLM under-the-hood | Vivid, Singapore-specific contrast that connects to driver's seat argument |
 
 ### Didn't Work
 | What Claude Did | Problem | Lesson |
@@ -235,4 +277,67 @@ Moving from brainstorming/research to drafting phase. Core argument (adoption in
 - Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or /feedback for all three)
 - Backlink curation (backlink_curating skill)
 - Final revision
+- Publish to Ghost
+
+## Session 4: Revisions (2026-02-14)
+
+### Context
+Post had been through initial drafting (Session 3) and user had made significant structural edits between sessions: restructured Credit Where Due with tables, moved it before thought experiment, expanded data.zeeker.sg with SMU SOLID emotional context, added cost analysis to What This Means for You, added numbered innovation pillars, added Stanford footnote, refined curiosity vs compliance with personal contrast. This session focused on running reviews and applying feedback.
+
+### What Claude Did
+
+**Quality Control:**
+- Pulled latest user changes from remote
+- Ran content quality audit (content-quality-auditor): scored 8.5/10
+- Ran 3 audience reviewers in parallel:
+  - Legal Tech Blog Reviewer: 8.5/10
+  - Corporate Lawyer (Sarah Chen): 8/10
+  - Lawyer-Coder (Wei Lin): 7.5/10
+- Synthesized cross-reviewer feedback report with consensus points, unique catches, disagreements, and prioritized recommendations
+
+**Brainstorming:**
+- Brainstormed concrete curiosity vs compliance story
+- Presented options for "start building" alternatives (noticing, asking, tinkering)
+
+**Writing:**
+- Applied 7 fixes based on reviewer feedback and content audit:
+  1. Removed horizontal rule (line 130) — Ghost CMS breaking issue
+  2. Broke up dense data.zeeker.sg paragraph into 3 shorter ones
+  3. Replaced abstract curiosity vs compliance with SAL guide + LLM under-the-hood story
+  4. Removed "But let's think deeper about this" throat-clearing
+  5. Removed defensive "I don't want to be ungrateful"
+  6. Reframed "start building" as "start tinkering" with non-coding examples
+  7. Expanded PSG-Legal and OLY acronyms on first use
+
+### User Decisions
+- Decision 1: Curiosity vs compliance concrete story — SAL prompt engineering guide (compliance: downloaded, tried, too cumbersome, dropped) vs learning LLMs under the hood (curiosity: system prompts, token prediction, led to Claude Code and evaluating legal tech beyond wrappers)
+- Decision 2: "Start tinkering" not "start building" — building sets too high an ability bar; should mean getting involved, learning about what others do with AI and technology
+
+### Key Reviewer Insights
+
+**Consensus (all 3 agreed):**
+- Opening works beautifully
+- "The tool is not the transformation. The tool is the starting point." — pull quote
+- data.zeeker.sg paragraph too dense
+- "Start building" needs lower barrier
+
+**Unique catches:**
+- Legal Tech: Numbers arrive too late; cluster in opening
+- Corporate Lawyer: "I don't want to be ungrateful" sounds defensive, undercuts critique
+- Lawyer-Coder: Post reads more as policy commentary than personal narrative; tables before personal story loses engagement
+
+**Disagreement:**
+- Credit tables: Legal Tech loved them ("brilliant"), Lawyer-Coder wanted them shorter
+- Post length: Legal Tech wanted +150 words, Lawyer-Coder wanted net restructure
+
+### Outcomes
+- ✅ All essential and high-value reviewer fixes applied
+- ✅ Concrete curiosity vs compliance story adds vivid, Singapore-specific detail
+- ✅ "Start tinkering" framing accessible to non-coding primary audience
+- ✅ Ghost CMS horizontal rule issue resolved
+- Files modified: `budget-2026-lawyers-ai-drivers-seat.md`, `discussion.md`
+
+### Next Steps
+- Backlink curation (backlink_curating skill)
+- Final proofread
 - Publish to Ghost
