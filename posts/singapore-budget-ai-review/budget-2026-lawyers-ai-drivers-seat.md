@@ -13,7 +13,7 @@ I watched the speech and felt... grateful? Nervous? Both.
 
 The government is putting real money behind this. 400% tax deductions on AI spending. Free premium tools for training. A Champions of AI programme. TeSA (TechSkills Accelerator) extended to lawyers. The message is clear: AI is coming for your work, and we'll help you adapt.
 
-I don't want to be ungrateful. But something nags at me.
+But something nags at me.
 
 ## Credit Where Due
 
@@ -23,7 +23,7 @@ Budget season is a great time to take stock of all the initiatives that are ongo
 |------------|---------|------|
 | **400% Tax Deduction** | On qualifying AI expenses (capped at $50,000/year) under expanded Enterprise Innovation Scheme | [Enterprise Innovation Scheme](https://www.enterprisesg.gov.sg/) |
 | **Champions of AI Programme** | For firms seeking comprehensive AI transformation | [MinLaw AI](https://www.mlaw.gov.sg/) |
-| **Expanded PSG-Legal** | Covering wider range of digital and AI-enabled solutions, 70% government co-payment | [PSG-Legal](https://www.mlaw.gov.sg/) |
+| **Expanded PSG-Legal (Productivity Solutions Grant)** | Covering wider range of digital and AI-enabled solutions, 70% government co-payment | [PSG-Legal](https://www.mlaw.gov.sg/) |
 | **TeSA Extension** | Specifically to accountancy and legal professions | [TeSA](https://www.tesa.org.sg/) |
 | **Free Premium AI Tools** | Six months' access for workers who enrol in selected AI courses | [SkillsFuture](https://www.skillsfuture.sg/) |
 
@@ -43,13 +43,11 @@ The professional bodies have been active too:
 | **SAL + Microsoft Prompt Engineering Guide** | Free, Creative Commons-licensed, accessed 1,500+ times | [SAL](https://www.sal.org.sg/) |
 | **LawNet 4.0** | AI-powered legal research trained on Singapore's legal context, serving 10,000+ users | [LawNet](https://www.lawnet.gov.sg/) |
 
-And at OLY 2026, a **new committee co-led by CJ Sundaresh Menon and Law Minister Edwin Tong** was established to address AI's impact on legal work — with representation from the judiciary, AGC, MinLaw, SAL, Law Society, SCCA, and academia.
+And at the Opening of the Legal Year (OLY) 2026, a **new committee co-led by CJ Sundaresh Menon and Law Minister Edwin Tong** was established to address AI's impact on legal work — with representation from the judiciary, AGC, MinLaw, SAL, Law Society, SCCA, and academia.
 
 That is a coordinated, well-funded, serious effort. I mean it when I say credit where due.
 
 ## So what if every lawyer had a Premium AI tool?
-
-But let's think deeper about this. 
 
 Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a premium AI tool. I am not talking about a crummy six month subscription to ChatGPT Plus. We are talking about Harvey, CoCounsel, whatever the flavour of the month is. Real LegalTech. Licences paid. Training done. Desktop icons gleaming.
 
@@ -81,7 +79,11 @@ Three things I keep coming back to:
 2. A visible builder community
 3. Curiosity vs compliance
 
-**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Validated my idea, but also frustrated me — I'd built something useful, but it was just me and my laptop. When SMU announced SOLID, I felt a mix of validation and frustration — validation that someone else was thinking about this, frustration that I'd spent 6 months building the same thing. LawNet 4.0 has AI-powered search (impressive), but no publicly available APIs for developers to build on. The SMU SOLID database project promises open legal data with APIs — target launch: Q1 2028. That's two years away.
+**Open legal data with APIs for experimentation.** When I built [data.zeeker.sg](https://data.zeeker.sg) — a platform for structured Singapore legal data — I used my own time and money. Validated my idea, but also frustrated me — I'd built something useful, but it was just me and my laptop.
+
+When SMU announced SOLID, I felt a mix of validation and frustration — validation that someone else was thinking about this, frustration that I'd spent 6 months building the same thing.
+
+LawNet 4.0 has AI-powered search (impressive), but no publicly available APIs for developers to build on. The SMU SOLID database project promises open legal data with APIs — target launch: Q1 2028. That's two years away.
 
 If I wanted to experiment with Singapore legal data today — build a prototype, test an idea, see if something works — I'd have to build the data infrastructure first. I did. Most lawyers won't.
 
@@ -91,9 +93,13 @@ I can't find one.
 
 94 legal tech startups in Singapore, according to Tracxn. But lawyer-founded ones? Alpha LegalTech (2020) and LegalComet (acquired by Rajah & Tann, 2018) are the notable examples. The ecosystem is consumption-focused. Lawyers buy tools. They don't build them.
 
-**Curiosity vs compliance.** There's a difference between using AI because your boss said to, because the government said to, because there's a grant for it — and using AI because you're genuinely curious about what's possible. The first gives you adoption. The second gives you innovation.
+**Curiosity vs compliance.** SAL and Microsoft published a prompt engineering guide — free, Creative Commons-licensed. I downloaded it. Tried to follow it. Too cumbersome, too time-consuming for my workflow. I dropped it.
 
-I know the difference because I've felt both. The first time I adopted a tool because my boss said to — I got faster. The first time I built something because I was curious — I understood how AI actually works. One gave me tools. The other gave me agency.
+Then I got curious about how LLMs actually work under the hood. System prompts. Token prediction. What's really happening underneath the chatbot interface. Nobody told me to learn this. I just wanted to know.
+
+That knowledge translated fast. I could pick up Claude Code and other cutting-edge tools because I understood what was underneath. I could look at legal tech products and tell which ones were just wrappers and which ones were doing something real.
+
+One was compliance — someone else's framework for someone else's workflow. The other was curiosity — my own questions, on my own terms. I dropped the guide. The understanding I use every day.
 
 ## The Uncomfortable Part
 
@@ -121,13 +127,13 @@ If the vendor pivots, you pivot. Microsoft changes Copilot pricing from $30 to $
 
 The Budget 2026 measures genuinely help. Take the tax deductions. Take the free training. Read SAL's prompt engineering guide — it's good, and it's free.
 
-But also: start building. Even small things. A template that automates your most repetitive task. A workflow that connects two tools you already use. A prompt library for your specific practice area. Not because the government told you to. Because you're curious about what's possible.
+But also: start tinkering. You don't need to write code. Spend an hour understanding what a system prompt actually does. Ask a colleague what they've tried with AI — and share what you've tried. Attend a legal tech meetup. Try automating your most repetitive task with whatever tools you already have. Build a prompt library for your specific practice area, even if it's just a shared document.
+
+You don't need a free weekend. You need thirty minutes of curiosity.
 
 The lawyers who'll thrive aren't the ones who adopt AI fastest. They're the ones who understand it deeply enough to shape how it works for them.
 
 That's the difference between the passenger seat and the driver's seat.
-
----
 
 **Footnotes**
 
