@@ -55,7 +55,7 @@ Here's a thought experiment. Imagine tomorrow, every lawyer in Singapore gets a 
 
 What would actually happen?
 
-If global data is any guide: not much. The American Bar Association's 2025 Legal Industry Report surveyed 2,800+ legal professionals. The headline number: 79% "use AI." But dig deeper. Only 31% of lawyers and 21% of firms actually use generative AI. For firms with 50 or fewer lawyers — which is most of Singapore's legal profession — gen AI adoption sits at roughly 20%.
+If global data is any guide: not much. Clio's 2025 Legal Trends Report says 79% of legal professionals "use AI." But dig deeper. The American Bar Association's 2025 Legal Industry Report — surveying 2,800+ professionals — found only 31% of lawyers and 21% of firms actually use generative AI. For firms with 50 or fewer lawyers — which is most of Singapore's legal profession — gen AI adoption sits at roughly 20%.
 
 And the barriers are real. 56% of lawyers cite data privacy and confidentiality as their top concern before uploading anything. Only 33% of firms have policies telling lawyers *how* to use AI.
 

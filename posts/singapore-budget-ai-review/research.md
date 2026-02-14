@@ -275,7 +275,7 @@ The government's response to PM Wong's displacement warning puts lawyers in the 
 - **SCCA Congress 2026:** 1,600+ delegates expected ([SCCA](https://scca.glueup.com/event/asia-pacific-apac-legal-congress-2026-161421/), Apr 2026)
 
 ### Global AI Adoption in Law (for thought experiment)
-- **Overall AI use:** 79% of legal professionals "use AI," but only 31% of lawyers and 21% of firms use generative AI ([ABA/AffiniPay Legal Industry Report 2025](https://www.americanbar.org/groups/law_practice/resources/law-technology-today/2025/the-legal-industry-report-2025/))
+- **Overall AI use:** 79% of legal professionals "use AI" ([Clio Legal Trends Report 2025](https://www.2civility.org/2025-clio-legal-trends-report/)), but only 31% of lawyers and 21% of firms use generative AI ([ABA/AffiniPay Legal Industry Report 2025](https://www.americanbar.org/groups/law_practice/resources/law-technology-today/2025/the-legal-industry-report-2025/))
 - **Firm size gap:** Large firms 87% AI adoption vs solo firms 71%; 51+ lawyer firms 39% gen AI adoption vs ≤50 lawyer firms ~20% ([Clio Legal Trends 2025](https://www.2civility.org/2025-clio-legal-trends-report/))
 - **Corporate legal doubled:** In-house AI adoption jumped 23% → 52% in one year (ACC/Everlaw GenAI Survey)
 - **Barriers:** Privacy/confidentiality 56%, cost 47%, education needed 34%, hallucination risk 31% ([ABA/AffiniPay](https://www.mycase.com/blog/ai/ai-adoption-in-law-firms/))
