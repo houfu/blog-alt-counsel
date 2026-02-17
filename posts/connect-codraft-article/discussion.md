@@ -74,12 +74,18 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 - Read contract-review-skill pitch for CoDraft background
 - Read prompt-engineering-to-skills pitch for series context
 - Read Houfu Voice Guide Part 4 (Templates) for pitch structure
+- (Session 2) Read full Voice Guide before drafting
+- (Session 2) Read Part 1 published post to avoid repetition and ensure bridge
+- (Session 2) Searched for actual CoDraft v1 files — confirmed not in this repo
+- (Session 2) Read research.md for technical accuracy on CLAUDE.md and skills
 
 ### Analysis
 - Synthesized feedback across three reviewer rounds (9 total reviews)
 - Identified key disagreements between reviewers (Sarah wouldn't click, others would)
 - Extracted sharpest critique (Sarah's "gap problem") as the most actionable feedback
 - Compared "Learning in Public" template to post concept — good fit
+- (Session 2) Identified developer analogies (AGENTS.md, package.json) would alienate lawyer audience
+- (Session 2) Translated technical concepts to lawyer-friendly analogies: briefing note, checklist, matter folder
 
 ### Writing
 - Drafted 3 pitch iterations, each incorporating reviewer feedback:
@@ -87,6 +93,9 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
   2. "Turn a Project Folder into a Cowork Workflow" — better framing, missing vulnerability
   3. Final version — incorporates "poor man's Claude Code" vulnerability from user
 - Created pitch.md with metadata, tags, and series context
+- (Session 2) Drafted full blog post (~1,800 words) with tutorial structure
+- (Session 2) Created contract intake workflow as concrete tutorial example
+- (Session 2) Placed 6 screenshot markers throughout tutorial
 
 ### Quality Control
 - Ran all three audience reviewers (legal-tech, corporate-lawyer, lawyer-coder) — twice
@@ -156,6 +165,100 @@ User wants to write the second post in a Cowork series. Part 1 ("Making Claude's
 - Develop outline of the article
 - Research: How Cowork reads CLAUDE.md and skill files (technical details)
 - Draft the post
+- Content quality audit
+- Target audience review
+- Backlink curation
+- Publish to Ghost
+
+### Decision: Use lawyer-friendly analogies, not developer jargon (2026-02-17, Session 2)
+
+**Claude's Analysis:**
+- Research found AGENTS.md (60,000+ open source projects), `.github/copilot-instructions.md`, and `package.json` as analogies for the "folder as program" pattern
+- These were included in research.md as supporting evidence
+
+**Claude's Recommendation:**
+Initially planned to use these developer analogies to show the pattern is established.
+
+**User Decision:**
+Rejected developer analogies for the post. "For a lawyer audience, the idea of AGENTS.md etc is relatively unheard of. The point was that this is a well established pattern." The data point (60,000+ projects) is useful as proof the pattern is legit, but the specific filenames mean nothing to lawyers.
+
+**Rationale:**
+- AGENTS.md, package.json, copilot-instructions.md are developer concepts — citing them replaces one unfamiliar concept with another
+- The audience needs the *confidence* that the pattern is proven, not the technical details of how
+- Better analogies: matter briefing note (for CLAUDE.md), standard operating procedure/checklist (for skills)
+
+**Outcome:**
+✅ Draft uses lawyer-friendly analogies throughout: "briefing note" for CLAUDE.md, "checklist" for skills, "matter folder" for the overall pattern. The 60,000+ projects stat is mentioned briefly as evidence without naming specific files.
+
+### Decision: Include screenshot placement for tutorial (2026-02-17, Session 2)
+
+**Claude's Analysis:**
+- User flagged need to think about screenshots for tutorial format
+- Claude proposed 6 potential screenshot moments: folder structure, opening in Cowork, CLAUDE.md loading, slash command appearing, running the skill, before/after output
+
+**User Decision:**
+Agreed screenshots needed. Claude marked 6 placement spots in draft with HTML comments. User to capture actual screenshots from Cowork UI.
+
+**Rationale:**
+- Tutorial format needs visual aids for readers to follow along
+- Screenshots at key "aha" moments help non-technical readers verify they're on track
+- Actual screenshots must come from user since Claude can't access Cowork UI
+
+**Outcome:**
+✅ Draft includes 6 `<!-- 📸 SCREENSHOT -->` markers at key steps.
+
+## Session 2: First Draft (2026-02-17)
+
+### Context
+User gave two key pieces of feedback before drafting:
+1. Developer analogies (AGENTS.md, package.json) are meaningless to lawyer audience — use the *confidence* that the pattern is established, not the jargon
+2. Need to plan screenshot placement for the tutorial format
+
+### What Claude Did
+- **Research**:
+  - Re-read discussion.md, pitch.md, research.md for full context
+  - Read Voice Guide (all 5 parts) before drafting
+  - Read Part 1 post (legal-plugin-guide.md) to avoid repetition and ensure bridge
+  - Searched for actual CoDraft v1 files — not in this repo (separate project)
+  - Read contract-review-skill pitch for CoDraft background
+
+- **Writing**:
+  - Drafted full post (~1,800 words) following "Learning in Public" template
+  - Opening: "poor man's Claude Code" vulnerability as approved in pitch
+  - Used lawyer-friendly analogies: "briefing note" for CLAUDE.md, "checklist/procedure" for skills
+  - Created concrete tutorial example: contract intake workflow (not CoDraft itself, since files aren't available)
+  - Bridged from Part 1: "In the last post, you edited someone else's skill files. This post shows you how to create your own."
+  - Included 6 screenshot placement markers as HTML comments
+  - Closing "neither is wrong" move: enterprise tools vs. folder workflows
+
+- **Voice Application**:
+  - Opens with feeling (underestimating Cowork)
+  - Specific numbers (two text files, 90 minutes, 60,000+ projects, $500-$2,000/month)
+  - Vulnerable admission in paragraph one
+  - Short paragraphs, varied rhythm
+  - Return to solo counsel reality in closing
+  - "Neither is wrong" framing at the end
+
+### User Decisions
+- **Decision 1**: Developer analogies replaced with lawyer-friendly ones
+- **Decision 2**: Screenshot placements marked for user to capture
+
+### Outcomes
+- ✅ First draft completed
+- Files created:
+  - `/posts/connect-codraft-article/connect-codraft-article.md`
+- Files updated:
+  - `/posts/connect-codraft-article/discussion.md` (this file)
+
+### Open Questions
+- User needs to provide/confirm: actual CoDraft v1 file contents (draft uses a generic contract intake example instead)
+- User needs to capture screenshots from Cowork UI
+- Draft uses a made-up example (contract intake) since actual CoDraft files aren't in this repo — user may want to replace with real CoDraft content
+
+### Next Steps
+- User review of draft
+- Replace generic example with actual CoDraft v1 content (if desired)
+- Capture screenshots
 - Content quality audit
 - Target audience review
 - Backlink curation
