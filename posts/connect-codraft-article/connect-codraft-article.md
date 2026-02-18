@@ -376,7 +376,9 @@ After delivering the output, always add the following reminder:
 
 You will notice that even though there was hardly any structure in my prompt, Claude manage to write up a 5 step process for our contract review.
 
-One thing to watch out for: see those paths in Step 2 — `/sessions/jolly-exciting-bardeen/mnt/.skills/skills/pdf/SKILL.md`? Those are internal Cowork paths specific to my session, pointing to where Cowork's built-in pdf and docx skills lived at the time. Claude wrote them in because it was trying to be helpful, but they're session-specific. In a new session, Claude may try to find those skills at the wrong location and start hunting around your folder structure looking for them. (Something like a bug in Claude's behaviour, honestly.) The fix: when you run this tutorial, build the skill fresh using your own prompt rather than copying mine. Claude will generate paths appropriate to your session. Unfortunately, editing this file by hand is less convenient -- you have to show hidden files in your OS (either through Finder for macOS or Explorer on Windows) and navigate to the skills folder. If you want to adjust the skill, you might be better off asking Claude to do it for you. You can give it a list to requests. Claude is smart enough to work on multiple edits in one prompt. 
+One thing to watch out for: Claude sometimes saves the skill file to the parent folder rather than your workspace folder. In Cowork, only files inside your workspace folder persist between sessions — so if the skill ends up one level up, it simply won't be there next time you open the folder.
+
+The fix is straightforward. After Claude creates the skill, ask it to confirm where it saved the file. If it saved to the wrong location, tell Claude to move it into your workspace folder. Easy enough to catch, easy enough to fix.
 
 ### Step 4: Invoke the folder in Cowork
 
