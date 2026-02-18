@@ -93,7 +93,9 @@ This is what I missed when I dismissed Cowork as a "poor man's Claude Code."
 
 In Claude Code, you write code that runs. There are several things that are essential for such a project. For example, if you wrote in Typescript, there will usually be a `package.json` file. You will, depending on your coding style, have a `src` directory where you keep your source code. Then you will also have a version control system (usually git) to track changes and progress. Claude Code understands your project structure and details through `CLAUDE.md`, so you can have a coding assistant.
 
-However, if you think about it, none of the above is essential for Claude to be useful. What you really need is a way to tell Claude what to do and for Claude to remember how to do it. That's essentially your folder. Arguably, this is already possible with Claude Code. However, Claude Cowork makes this paradigm more obvious. Claude Cowork is Zen.
+However, if you think about it, none of the above is essential for Claude to be useful. What you really need is a way to tell Claude what to do and for Claude to remember how to do it. That's essentially your folder.
+
+I called it a poor man's Claude Code. That was wrong. It's a stripped-down model. Claude Code for people who don't need to build software — just direct it. Claude Cowork is Zen.
 
 Once you start going down this line, many interesting scenarios become possible. The one that gnaws at me currently is that in order to share your Cowork setup with others, you don't need to ask them to install a plugin or check their systems. Like passing your friends a floppy disk containing a PC game, you will zip up your folder and send it to them. Once they unzip the folder, all they just need to do is to point Cowork at it to start using it. Neato, right?
 
@@ -372,7 +374,9 @@ After delivering the output, always add the following reminder:
 > **Note:** This review is a preliminary analysis prepared to assist the Legal department. It does not constitute legal advice. Please consult a qualified lawyer in the Legal department before taking any action in reliance on this review.
 ```
 
-You will notice that even though there was hardly any structure in my prompt, Claude manage to write up a 5 step process for our contract review. Unfortunately, editing this file by hand is less convenient -- you have to show hidden files in your OS (either through Finder for macOS or Explorer on Windows) and navigate to the skills folder. If you want to adjust the skill, you might be better off asking Claude to do it for you. You can give it a list to requests. Claude is smart enough to work on multiple edits in one prompt. 
+You will notice that even though there was hardly any structure in my prompt, Claude manage to write up a 5 step process for our contract review.
+
+One thing to watch out for: see those paths in Step 2 — `/sessions/jolly-exciting-bardeen/mnt/.skills/skills/pdf/SKILL.md`? Those are internal Cowork paths specific to my session, pointing to where Cowork's built-in pdf and docx skills lived at the time. Claude wrote them in because it was trying to be helpful, but they're session-specific. In a new session, Claude may try to find those skills at the wrong location and start hunting around your folder structure looking for them. (Something like a bug in Claude's behaviour, honestly.) The fix: when you run this tutorial, build the skill fresh using your own prompt rather than copying mine. Claude will generate paths appropriate to your session. Unfortunately, editing this file by hand is less convenient -- you have to show hidden files in your OS (either through Finder for macOS or Explorer on Windows) and navigate to the skills folder. If you want to adjust the skill, you might be better off asking Claude to do it for you. You can give it a list to requests. Claude is smart enough to work on multiple edits in one prompt. 
 
 ### Step 4: Invoke the folder in Cowork
 
