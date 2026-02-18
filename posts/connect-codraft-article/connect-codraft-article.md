@@ -73,7 +73,9 @@ That's the entire architecture. A briefing note and a checklist. Two text files 
 
 If they are all text files and meant to be read by Claude Cowork, what's the point in separating them and keeping the skill in a strange place like under a `.claude` folder? The issue is when such such instructions are read by Claude Cowork. Project instructions, that is the `CLAUDE.md` file is always read. Whereas skills are only read when they are requested. You might only need to review a contract when the user asks to review the same (so the skill should be loaded). However, for details such as where your company is from or instructions not to give legal advice, these details apply all the time. They should be in your project instructions. 
 
-The need to manage Claude Cowork's context become more important when your project becomes bigger and more ambitious. While models have made improvements on the amount of information they can hold,  you would always want Claude Cowork to only remember the information it needs to perform the task, and leave enough space for Claude Cowork to generate its result. 
+When you open a folder in Cowork, it scans the `.claude/skills/` directory. Each subfolder it finds becomes a slash command you can invoke. That's the entire discovery mechanism — put a skill file in the right folder, and Cowork knows it exists.
+
+The need to manage Claude Cowork's context become more important when your project becomes bigger and more ambitious. While models have made improvements on the amount of information they can hold,  you would always want Claude Cowork to only remember the information it needs to perform the task, and leave enough space for Claude Cowork to generate its result.
 
 ## Why this works: the pattern behind it
 

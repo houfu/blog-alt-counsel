@@ -10,7 +10,7 @@ I'll be honest: I thought Cowork was a poor man's Claude Code. Install a plugin 
 
 Building CoDraft changed that. CoDraft is a document assembly tool I've been working on. Version 1 is two text files in a folder: one skill and a CLAUDE.md. But when someone opens that folder in Cowork, they get a complete workflow — a slash command, context about the project, and Claude knows what to do without being told twice. You're distributing a program as text files in a folder. All without leaving the Cowork interface.
 
-In the last post, you edited someone else's skill files. This post shows you how to create your own — and explains how Cowork actually reads a project folder. What's CLAUDE.md doing? How do skills get discovered? Following along takes about 90 minutes. By the end, you'll know enough to turn any folder into a workflow you can share with your team.
+In the last post, you edited someone else's skill files. This post shows you how to create your own — and explains how Cowork actually reads a project folder. What's CLAUDE.md doing? How do skills get discovered? Following along takes about 30 minutes. By the end, you'll know enough to turn any folder into a workflow you can share with your team.
 
 ## Suggested Tags
 
