@@ -7,11 +7,11 @@ featured: false
 github_folder: "connect-codraft-article"
 ---
 
-I'll be honest: I thought Cowork was a poor man's Claude Code. A simplified version for non-coders. You get the comfortable chat interface of Claude or ChatGPT, but now you can install plugins and work on a bunch of documents. I showed in the [last post](https://alt-counsel.com/so-you-want-to-claude-cowork-the-legal-plugin-a-guide/) that you can easily run Cowork and use Anthropic's legal plugin to do some NDA review and generate canned responses. Useful, but limited.
+I'll be honest: I thought Cowork was a poor man's Claude Code. A simplified version for non-coders. You get the comfortable chat interface of Claude or ChatGPT, but now you can install plugins and work on a bunch of documents. I showed in the [last post](https://alt-counsel.com/so-you-want-to-claude-cowork-the-legal-plugin-a-guide/) that you can run Cowork with Anthropic's legal plugin. You get NDA review and canned responses. Useful, but limited.
 
 Then I built CoDraft.
 
-CoDraft is a contract generator tool I've been working on. The inspiration was docassemble — a proper coding framework where you write Python to build document assembly interviews. I'd used it before and thought: could I recreate that algorithm in Cowork? Template discovery, field interviews, document rendering — the whole pipeline?
+CoDraft is a contract generator tool I've been working on. The inspiration was docassemble — an open-source tool for building automated legal documents. It's a proper coding framework where you write Python to build document assembly interviews. I'd used it before and thought: could I recreate that algorithm in Cowork? Template discovery, field interviews, document rendering — the whole pipeline?
 
 Version 1 is primarily two text files in a folder. That's the whole thing. No Python. No framework. Two text files. But when someone opens that folder in Cowork, they get a working workflow: ask Cowork to prepare an NDA, and it goes searching for an NDA template in your folder, and asks you questions in order to fill it. The best part: I created v1 using Cowork itself. Yes, that "comfortable" chat interface.
 
@@ -91,7 +91,9 @@ It's legit. It's actually one of the most well-established patterns in software 
 
 Every major AI coding tool — GitHub Copilot, Cursor, Gemini, Claude Code — has adopted the same approach: drop a markdown file into a project folder, and the AI reads it automatically. The file names differ, but the principle is identical. Tens of thousands of software projects already use this pattern.
 
-The reason it's everywhere? It solves a fundamental problem: AI has no memory between sessions. Every conversation starts from zero. A context file in the folder is the fix. It's external memory that loads automatically.
+The reason it's everywhere? It solves a fundamental problem: AI has no memory between sessions. Every conversation starts from zero.
+
+A context file in the folder is the fix. It's external memory that loads automatically.
 
 For solo counsels and small teams, this is the important bit: you don't need to learn a new framework or write code. You need to write a good briefing note. If you can write instructions that a new paralegal would understand on their first day, you can write a `CLAUDE.md`.
 
@@ -111,10 +113,11 @@ However, for most people, the best way to use Cowork is to start small and build
 
 What workflow would you build first?
 
+Let me show you how. In the next section, we'll build one together — a contract review assistant that flags risks before legal review. If you can follow a recipe, you can do this.
 
 ## Building it yourself: step by step
 
-In this part of the post, we'll build a simple project together. Let's create a legal chatbot that summarises contracts and does a preliminary flag of certain risks before legal review. You'll create a folder with a `CLAUDE.md` and one skill. By the end, you'll have a working Cowork workflow you can share with anyone on your team.
+Let's create a legal chatbot that summarises contracts and does a preliminary flag of certain risks before legal review. You'll create a folder with a `CLAUDE.md` and one skill. By the end, you'll have a working Cowork workflow you can share with anyone on your team.
 
 **Time required:** About 30 minutes.
 
@@ -172,7 +175,9 @@ Pretty neat! Claude definitely wrote more words than I usually would for a simpl
 
 For example, I do notice that it did not say that it should not give legal advice, and that it should refer to legal for such tasks. (This folder is going to be shared with others, so it's good to remind others that this doesn't replace legal review.) You could ask Claude nicely again to input this instruction, but it's probably faster for me to do this myself.
 
-Because project instructions are very important, you can access the file and edit it directly from Cowork's interface. Click on the file in the right sidebar and add that instruction as a new bullet point under General Behaviour. Then save it. 
+Because project instructions are very important, you can access the file and edit it directly from Cowork's interface. Click on the file in the right sidebar and add that instruction as a new bullet point under General Behaviour. Then save it.
+
+For solo counsels without coding experience, this is the revelation: you're not writing code. You're writing a briefing note that Claude can understand. The same skill you use to onboard a paralegal works here.
 
 <!-- 📸 SCREENSHOT:  Location of CLAUDE.md file in Cowork interface for editing. -->
 
@@ -394,7 +399,7 @@ Let's put our new folder to the work. Start a new session (or a "New Task") in t
 
 Then upload a contract and ask Claude Cowork to "review this". I will be using the VIMA Model NDA we referred to in my first exercise. 
 
- Once the task is started, you will note that Claude Cowork read the new skill you created. Because of Step 1, it decided to ask more question to gather more about the context. (A point for improvement: Questions about your company can be saved in the project instructions so you don't have to repeat them all the time.) 
+Once the task starts, watch what happens. Claude Cowork reads your new skill file. Then, because of Step 1 in the skill, it asks clarifying questions about the contract context before diving in. (A point for improvement: questions about your company can be saved in the project instructions so you don't have to repeat them every time.)
  
  <!-- 📸 SCREENSHOT:  Cowork reads the skill file and asks some question. -->
  
@@ -410,7 +415,7 @@ Because we instructed in the skill for the result to be saved as a word document
  
  <!-- 📸 SCREENSHOT:  Results of Cowork using the skill. -->
 
-That's it. Two files. A working workflow.
+That's it. Two files. A working workflow. No contract management system. No document automation platform. Two text files and 30 minutes of your time.
 
 ## What you can do from here
 
@@ -424,4 +429,6 @@ The contract review summary example is deliberately simple — a starting point,
 
 **Put it on GitHub.** If you're comfortable with version control, the folder works as a repository. Your team clones it, opens it in Cowork, and everyone's working from the same playbook. Updates propagate when they pull.
 
-More importantly, we've let Claude wrote most of the instructions here, but you will have your own opinions on what should be done based on how you work. (Should Claude really spend more time on review? Are some issues more important than others? Should Claude give the user some instructions on what to do from here?) Go ahead and make it your own. Spending some time practicising and learning how to use Cowork will help you to get better results with AI. What will you build today?
+More importantly, we let Claude write most of the instructions here, but you will have your own opinions on what should be done based on how you work. Should Claude spend more time on review? Are some issues more important than others? Should Claude give the user instructions on what to do next? Go ahead and make it your own. Spending some time practising and learning how to use Cowork will help you get better results with AI.
+
+What workflow would you automate first? A contract review checklist? A standard response library? A playbook for recurring tasks? For resource-constrained practitioners, two text files might be enough to get started.
