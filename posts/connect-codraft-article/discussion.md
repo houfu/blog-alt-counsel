@@ -101,6 +101,7 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 - Ran all three audience reviewers (legal-tech, corporate-lawyer, lawyer-coder) — twice
 - Ran authenticity check on final pitch — all claims verified authentic
 - Suggested tags from canonical registry (LegalTech, AI, OpenSource, Tutorial)
+- (Session 3) Fetched and reviewed all user revisions; identified open issues in revised draft
 
 ## WHAT WORKED / DIDN'T WORK
 
@@ -190,6 +191,49 @@ Rejected developer analogies for the post. "For a lawyer audience, the idea of A
 **Outcome:**
 ✅ Draft uses lawyer-friendly analogies throughout: "briefing note" for CLAUDE.md, "checklist" for skills, "matter folder" for the overall pattern. The 60,000+ projects stat is mentioned briefly as evidence without naming specific files.
 
+### Decision: Tutorial example changed to real "my-first-chatbot" contract review (2026-02-18, Session 3)
+
+**Claude's Analysis:**
+- Session 2 draft used a generic, made-up contract intake example because actual CoDraft v1 files weren't in this repo
+- Brainstorming session explored 4 directions: (A) contract summary, (B) clause checker, (C) CoDraft itself, (D) something more surprising
+- User introduced a new constraint: tutorial would be created *through chat* — telling Claude to write the files, never leaving Cowork interface
+- User confirmed: goal is pattern comprehension, not a take-home tool; output should be immediately visible
+
+**Claude's Recommendation:**
+Contract summary direction (Option A) — universally relatable, output immediately verifiable, different from Part 1's DSAR exercise.
+
+**User Decision:**
+Implemented a real contract review workflow (`my-first-chatbot`) built and run in Cowork. Used the VIMA NDA from Part 1 as the test document. Tutorial shows actual prompts typed, actual CLAUDE.md and SKILL.md that Claude generated, and actual output (15 issues found, saved as .docx).
+
+**Rationale:**
+- "Created through chat" reframes the tutorial: reader never opens a text editor
+- Showing real prompts and real outputs is more honest than hypothetical examples
+- Reusing the VIMA NDA from Part 1 creates continuity across the series
+- Demonstrates pattern comprehension without requiring readers to understand file structure
+
+**Outcome:**
+✅ Tutorial completely rewritten with real files, real prompts, real output. `my-first-chatbot/` folder added to repo with CLAUDE.md, SKILL.md, and NDA_Review_2026-02-18.docx.
+
+### Decision: Always-loaded vs. on-demand distinction made explicit (2026-02-18, Session 3)
+
+**Claude's Analysis:**
+- Session 2 draft explained CLAUDE.md as "briefing note" and skill as "checklist" — lawyer-friendly analogies
+- The deeper question (why two files instead of one?) wasn't directly addressed
+
+**Claude's Recommendation:**
+Separate what's always loaded from what's loaded on demand. Frame this as context management, not just file organisation.
+
+**User Decision:**
+Added explicit "The difference between project instructions and a skill" section. CLAUDE.md = always read, applies at all times. Skill = only read when invoked, for task-specific procedures. Tied this to a practical point about context management as projects grow.
+
+**Rationale:**
+- This is the core architectural lesson of the post
+- Lawyers understand the concept of "standing instructions" vs. "task-specific procedures"
+- Context management angle is honest about why the pattern matters beyond convenience
+
+**Outcome:**
+✅ New section added between the two file explanations. Becomes the conceptual centrepiece of the mechanics explainer.
+
 ### Decision: Include screenshot placement for tutorial (2026-02-17, Session 2)
 
 **Claude's Analysis:**
@@ -259,6 +303,83 @@ User gave two key pieces of feedback before drafting:
 - User review of draft
 - Replace generic example with actual CoDraft v1 content (if desired)
 - Capture screenshots
+- Content quality audit
+- Target audience review
+- Backlink curation
+- Publish to Ghost
+
+## Session 3: User Revision — Real Tutorial with Real Files (2026-02-18)
+
+### Context
+After Session 2's draft, user brainstormed the tutorial example with Claude (via chat). Key new constraint emerged: the tutorial should be created *through chat* — the user tells Cowork to write the files, never opening a text editor. Goal confirmed as pattern comprehension, not a take-home tool. Output must be immediately visible.
+
+User then independently revised the entire draft and ran the tutorial exercise for real in Cowork, producing actual files and output.
+
+### What Claude Did
+- **Brainstorming**: Proposed 4 example directions (contract summary, clause checker, CoDraft itself, surprising option). Laid out tutorial flow step by step with screenshot placement suggestions.
+- **Analysis**: Identified CLAUDE.md vs. skill split as the core teaching moment — "always-loaded context vs. on-demand procedure." Suggested this framing for the tutorial.
+- **Notes**: Fetched and pulled latest changes; summarised all revisions; updated discussion.md with Session 3.
+
+### What User Did (Independent Revision)
+This session's substantive work was done by the user, not Claude. Key changes:
+
+**Opening revised:**
+- CoDraft described as "contract generator tool" (not generic document assembly)
+- Added: "I created v1 using Cowork itself" — closes the loop on the vulnerability and sets up the tutorial
+- Removed Claude's multi-paragraph opening; tighter and more direct
+
+**New section added:**
+- "The difference between project instructions and a skill" — explicit explanation of always-loaded vs. on-demand; context management framing
+
+**"The folder is the program" section restructured:**
+- Moved before the tutorial (not after) — establishes the conceptual framing first
+- Rewritten to compare Claude Code's structure (package.json, src/, git) to Cowork's simpler paradigm
+- New closing metaphor: "like passing your friends a floppy disk containing a PC game"
+- Removed the "neither is wrong" enterprise comparison from closing
+
+**Tutorial completely rewritten:**
+- Time: 30 minutes (down from 90)
+- No text editor required — everything done through Cowork chat
+- Shows real prompts the user typed
+- Shows actual CLAUDE.md and SKILL.md that Claude generated
+- Uses VIMA NDA from Part 1 as test document
+- Result: 15 issues found, output saved as NDA_Review_2026-02-18.docx
+- Screenshot count: 4 markers (down from 6, more targeted)
+- Added toggle/accordion for hidden files note on macOS/Windows (removed — replaced with inline note)
+
+**Structure reordered:**
+Old: Opening → What's inside → Why it works → Tutorial → What next → The folder is the program
+New: Opening → What changed → What's inside → Why it works → The folder is the program → Tutorial → What next
+
+### User Decisions
+- **Decision 1**: Tutorial created through chat (Cowork writes the files, user never opens a text editor)
+- **Decision 2**: Use real prompts and real outputs, not hypothetical examples
+- **Decision 3**: Reuse VIMA NDA from Part 1 for continuity
+- **Decision 4**: Always-loaded vs. on-demand distinction made explicit as its own section
+- **Decision 5**: "The folder is the program" section moved before tutorial as conceptual setup
+- **Decision 6**: Time estimate reduced to 30 minutes
+
+### Outcomes
+- ✅ Draft substantially revised — more authentic, more concrete, better structured
+- ✅ Real files committed to repo
+- Files created by user:
+  - `my-first-chatbot/CLAUDE.md` (actual project instructions generated by Claude in Cowork)
+  - `my-first-chatbot/.claude/skills/contract-review/SKILL.md` (actual skill generated by Claude in Cowork)
+  - `my-first-chatbot/NDA_Review_2026-02-18.docx` (actual output from the tutorial run)
+  - `Starting_screen_for_cowork.png`
+  - `cowork_process_our_initial_prompt.png`
+  - `location_of_claudemd_in_cowork_interface.png`
+  - `Cowork_reads_the_skill_file.png`
+  - `results_cowork.png`
+
+### Open Questions / Issues Noted
+- SKILL.md contains a hardcoded session path (`/sessions/jolly-exciting-bardeen/mnt/...`) in the file reading instructions — this will break for other users. May need a note in the post or a correction to the skill.
+- The `package.json` reference in "The folder is the program" section may still be developer jargon — worth reviewing on next pass.
+- No "neither is wrong" framing in the closing anymore — the post ends on a more open note ("What will you build today?"). Check whether this feels too abrupt for the target audience.
+
+### Next Steps
+- Review remaining developer jargon in the draft
+- Address the hardcoded session path in SKILL.md (note in post or fix the file)
 - Content quality audit
 - Target audience review
 - Backlink curation
