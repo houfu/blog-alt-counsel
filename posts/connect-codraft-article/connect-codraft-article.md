@@ -11,9 +11,13 @@ I'll be honest: I thought Cowork was a poor man's Claude Code. A simplified vers
 
 Then I built CoDraft.
 
-CoDraft is a contract generator tool I've been working on. Version 1 is primarily two text files in a folder. That's the whole thing. But when someone opens that folder in Cowork, they get a working workflow: ask Cowork to prepare an NDA, and it goes searching for an NDA template in your folder, and asks you questions in order to fill it. The best part: I created v1 using Cowork itself. Yes, that "comfortable" chat interface. 
+CoDraft is a contract generator tool I've been working on. The inspiration was docassemble — a proper coding framework where you write Python to build document assembly interviews. I'd used it before and thought: could I recreate that algorithm in Cowork? Template discovery, field interviews, document rendering — the whole pipeline?
 
-In this post, I'll tell you about how two text files in a bunch of folders created a complete workflow. In the end, I wasn't simplifying Cowork. I was underestimating it.
+Version 1 is primarily two text files in a folder. That's the whole thing. No Python. No framework. Two text files. But when someone opens that folder in Cowork, they get a working workflow: ask Cowork to prepare an NDA, and it goes searching for an NDA template in your folder, and asks you questions in order to fill it. The best part: I created v1 using Cowork itself. Yes, that "comfortable" chat interface.
+
+The fact that it worked at all changed how I saw Cowork. I was trying to replicate an algorithm that needed a real coding framework, and two text files got me there. That's when I stopped thinking of Cowork as Claude Code for non-coders and started seeing what it actually was.
+
+In this post, I'll tell you about how two text files in a bunch of folders created a complete workflow.
 
 ## What changed
 
@@ -71,11 +75,13 @@ That's the entire architecture. A briefing note and a checklist. Two text files 
 
 **The difference between project instructions and a skill**
 
-If they are all text files and meant to be read by Claude Cowork, what's the point in separating them and keeping the skill in a strange place like under a `.claude` folder? The issue is when such such instructions are read by Claude Cowork. Project instructions, that is the `CLAUDE.md` file is always read. Whereas skills are only read when they are requested. You might only need to review a contract when the user asks to review the same (so the skill should be loaded). However, for details such as where your company is from or instructions not to give legal advice, these details apply all the time. They should be in your project instructions. 
+If they are all text files and meant to be read by Claude Cowork, what's the point in separating them and keeping the skill in a strange place like under a `.claude` folder?
 
-When you open a folder in Cowork, it scans the `.claude/skills/` directory. Each subfolder it finds becomes a slash command you can invoke. That's the entire discovery mechanism — put a skill file in the right folder, and Cowork knows it exists.
+It comes down to when they're read. Project instructions (`CLAUDE.md`) are always read — every session, automatically. Skills are only read when they're requested. You might only need to review a contract when someone asks to review one, so the skill should only be loaded then. But details like where your company is based or instructions not to give legal advice — those apply all the time. They belong in your project instructions.
 
-The need to manage Claude Cowork's context become more important when your project becomes bigger and more ambitious. While models have made improvements on the amount of information they can hold,  you would always want Claude Cowork to only remember the information it needs to perform the task, and leave enough space for Claude Cowork to generate its result.
+**How skills get discovered.** When you open a folder in Cowork, it scans the `.claude/skills/` directory. Each subfolder it finds becomes a slash command you can invoke. The subfolder name determines the command name — so a skill inside `.claude/skills/contract-review/` becomes the `/contract-review` command. That's the entire discovery mechanism. Put a skill file in the right folder, and Cowork knows it exists. No registration. No configuration file. Just the folder structure.
+
+This separation becomes more important as your project grows. You want Claude Cowork to only load the information it needs for the task at hand, and leave enough space in its context to generate a good result.
 
 ## Why this works: the pattern behind it
 
@@ -83,7 +89,7 @@ You might be wondering: is this pattern legit? Or is it a hack that happens to w
 
 It's legit. It's actually one of the most well-established patterns in software right now.
 
-Every major AI coding tool — GitHub Copilot, Cursor, Gemini, Claude Code — has adopted the same approach: drop a markdown file into a project folder, and the AI reads it automatically. The file names differ (`CLAUDE.md`, `AGENTS.md`, `copilot-instructions.md`), but the principle is identical. Over 60,000 open source projects already use this pattern.
+Every major AI coding tool — GitHub Copilot, Cursor, Gemini, Claude Code — has adopted the same approach: drop a markdown file into a project folder, and the AI reads it automatically. The file names differ, but the principle is identical. Tens of thousands of software projects already use this pattern.
 
 The reason it's everywhere? It solves a fundamental problem: AI has no memory between sessions. Every conversation starts from zero. A context file in the folder is the fix. It's external memory that loads automatically.
 
@@ -376,13 +382,13 @@ After delivering the output, always add the following reminder:
 > **Note:** This review is a preliminary analysis prepared to assist the Legal department. It does not constitute legal advice. Please consult a qualified lawyer in the Legal department before taking any action in reliance on this review.
 ```
 
-You will notice that even though there was hardly any structure in my prompt, Claude manage to write up a 5 step process for our contract review.
+You will notice that even though there was hardly any structure in my prompt, Claude managed to write up a 5 step process for our contract review.
 
-One thing to watch out for: Claude sometimes saves the skill file to the parent folder rather than your workspace folder. In Cowork, only files inside your workspace folder persist between sessions — so if the skill ends up one level up, it simply won't be there next time you open the folder.
+**Verify the file location.** After Claude creates the skill, ask it to confirm where it saved the file. In Cowork, only files inside your workspace folder persist between sessions — if the skill ends up one level above your workspace, it won't be there next time you open the folder. If Claude saved it to the wrong location, ask it to move the file into your workspace folder. Easy enough to catch, easy enough to fix.
 
-The fix is straightforward. After Claude creates the skill, ask it to confirm where it saved the file. If it saved to the wrong location, tell Claude to move it into your workspace folder. Easy enough to catch, easy enough to fix.
+### Step 4: Test it with a real contract
 
-### Step 4: Invoke the folder in Cowork
+Before you upload anything, a word on data. When you use Cowork, your files are processed by Anthropic's systems. Check [Anthropic's usage policy](https://www.anthropic.com/policies/usage-policy) for how your data is handled, and check with your organisation's AI usage policy before uploading confidential or client documents. For this tutorial, consider using a publicly available template or a non-sensitive document.
 
 Let's put our new folder to the work. Start a new session (or a "New Task") in that folder.
 
@@ -392,7 +398,15 @@ Then upload a contract and ask Claude Cowork to "review this". I will be using t
  
  <!-- 📸 SCREENSHOT:  Cowork reads the skill file and asks some question. -->
  
- Now it engages in a conversation with the user to complete the task, including using Claude's DOCX skill to read the NDA. In my session, it located 15 issues, including some "unfilled" and choices that have to be made as required by the template. Because we instructed in the skill for the result to be saved as a word document, it saved the review in the folder. Now AI has reviewed a document and given you a summary, which will save the legal department some time identifying the issues. 
+ Now it engages in a conversation with the user to complete the task, including using Claude's DOCX skill to read the NDA. In my session, it located 15 issues, including some "unfilled" and choices that have to be made as required by the template. Here's a sample of what the output looked like:
+
+| S/N | Issue | Description | Possible Action |
+|-----|-------|-------------|-----------------|
+| 2 | No Post-Termination Survival of Confidentiality Obligations | The NDA terminates on the earlier of completion of the Proposed Transaction or expiry of the term. There is no survival clause. Once the NDA terminates, the confidentiality obligations arguably fall away. | Negotiate insertion of a survival clause: "Clauses 2, 3, 4, 5, 6 and 9 shall survive the termination of this Agreement for a period of [3–5] years." |
+| 5 | No Data Protection / PDPA Provisions | The NDA contains no data protection clause. Due diligence materials are likely to include personal data. Both parties are subject to the PDPA. | Request insertion of a PDPA-compliant data protection clause addressing obligations to handle personal data in accordance with PDPA and data breach notification obligations. |
+| 10 | Non-Solicitation: One-Sided, Open Duration, Broad Scope | The non-solicitation clause restricts only the Receiving Party. Duration is blank. The restriction covers all employees, officers and directors of the Disclosing Party. | Negotiate a reasonable duration (6–12 months), mutuality, and limitation to senior employees rather than all staff. |
+
+Because we instructed in the skill for the result to be saved as a word document, it saved the full review in the folder. Now AI has reviewed a document and given you a summary, which will save the legal department some time identifying the issues.
  
  <!-- 📸 SCREENSHOT:  Results of Cowork using the skill. -->
 

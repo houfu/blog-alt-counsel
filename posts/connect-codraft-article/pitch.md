@@ -34,4 +34,4 @@ Blog post (9+ minutes reading time)
 - Concrete example: CoDraft v1 (one skill + one CLAUDE.md)
 - Mechanics explainer: how CLAUDE.md works, how skills get discovered
 - Outcome: readers can turn any folder into a shareable Cowork workflow
-- Time estimate: ~90 minutes to follow along
+- Time estimate: ~30 minutes to follow along
