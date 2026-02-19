@@ -62,6 +62,7 @@ Use TodoWrite to create and track this checklist:
 - [ ] Trade-offs discussed explicitly (not hidden or glossed over)
 - [ ] Contrarian or nuanced positions present (not just conventional wisdom)
 - [ ] Shows intellectual sophistication (resists binary thinking)
+- [ ] **Manufactured Vulnerability Detection:** If the opening contains a first-person emotional admission ("I felt...", "I was wrong...", "I couldn't believe..."), verify that the body of the post contains at least one specific named example, concrete number, or dated detail that grounds that emotion within the next 3-5 paragraphs. Flag if emotional opening exists but no specific grounding detail follows.
 
 **Voice Anti-Patterns to Flag:**
 - [ ] NO jargon without explanation
@@ -278,6 +279,7 @@ Provide your findings in this structure:
 - **Multiple AI slop indicators** (several generic phrases, some vague claims)
 - **Limited authenticity** (few personal examples, mostly hypothetical)
 - **High hedge word ratio** (3-5%, weakens authority)
+- **Manufactured vulnerability** (emotional opening without specific grounding details in following paragraphs)
 
 **Minor:**
 - Occasional unnecessary qualifier

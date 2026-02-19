@@ -55,6 +55,17 @@ If developing a pitch for a blog post or newsletter, read `/docs/Houfu_Voice_Gui
 
 This ensures the pitch sets up the right structure and tone from the start.
 
+### Step 1.7: Ask for the User's Genuine Experience
+
+Before drafting the pitch, ask ONE question:
+"What's the specific personal experience, feeling, or moment that's driving this post? What happened — or what did you feel — that made you want to write this?"
+
+Wait for the user's answer. This response is the source for the vulnerability hook and opening framing.
+
+**Do NOT invent a vulnerability hook.** The emotional opening must come from the user's real experience. If the answer is vague ("I thought it was interesting"), ask a follow-up: "Can you be more specific — what exactly happened, or what did you notice?"
+
+The pitch opening should be grounded in this real experience, not constructed from the post topic.
+
 ### Step 2: Develop the pitch
 
 From the idea, generate a pitch. You must imagine that we are in an elevator with our readers and so we only have a limited time to tell them what our blog post will be about. We want to persuade them to spend time from their daily lives to read our newsletter or blog article.

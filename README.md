@@ -1,145 +1,72 @@
 # Alt + Counsel Blog
 
-> *A lightweight collection of **Claude Code** subagents that automate the entire lifecycle of a Ghost‑blog post – from outline generation to quality control and publishing.*
+A system of Claude Code agents and skills that automate the entire lifecycle of a Ghost blog post: pitch development, drafting, quality auditing, and publishing. Built for [alt-counsel.com](https://alt-counsel.com), a blog focused on legal technology for solo counsels and small teams.
 
-> **TL;DR**: Create an outline → auto‑generate a draft → edit it with agents → publish as a Ghost “draft” → schedule or post.
+## Quick Start
 
----
-
-## Table of Contents
-
-
-
----
-
-## What Is This?
-
-Alt + Counsel Blog is a toolkit that lets you write, edit, audit, and publish Ghost posts entirely from your terminal or a single HTTP request.  
-The core idea: *Treat every step of the writing process as an agent that can be invoked, chained, or overridden.*
-
-Key features:
-
-- **Outline Generation** – Claude auto‑creates a topical outline from a keyword or brief.
-- **Draft Creation** – Generates Markdown with structure, sub‑headings, and placeholder content.
-- **Quality Control** – Spell‑check, grammar check, SEO audit, tone consistency, and plagiarism scan.
-- **Backlink Search** – Finds authoritative sources to cite (via a simple web‑scraping subagent).
-- **Ghost API Integration** – Pushes the final draft to Ghost as a *Draft* or *Published* post.
-
-**NB**: I created this for my own blog, so you may need to adjust for your own content accordingly.
-
----
-
-## 🐳 Containerized Development Environment
-
-This project includes a fully containerized development environment with:
-- **ttyd**: Web-based terminal access
-- **Claude Code**: AI-powered development assistance  
-- **Pure Node.js**: Simplified runtime (no Python dependencies)
-- **Environment variable configuration**: Docker-friendly setup
-
-### Quick Start
+**Prerequisites:** Node.js >= 16, [Claude Code](https://docs.anthropic.com/en/docs/claude-code), a Ghost blog with Admin API access.
 
 ```bash
-# Clone or navigate to the project
+# Clone the repository
+git clone https://github.com/houfu/blog-alt-counsel.git
 cd blog-alt-counsel
 
-# Install Node.js dependencies
+# Install dependencies
 npm install
 
-# Build and start the containerized environment
-docker-compose up -d
-
-# Access the web terminal
-open http://localhost:7681
-# Login: blogger / write123
-```
-
-### Enhanced Blog Automation Commands
-
-Once connected to the web terminal:
-
-```bash
-# Authenticate Claude Code (choose one method):
-
-# Option 1: Set API key in docker-compose.yml
-# ANTHROPIC_API_KEY=your_api_key_here
-
-# Option 2: Interactive login (persists in volume)
-claude auth login
-
-# Ghost API operations
-blog-token              # Generate Ghost JWT token
-search-posts           # Search existing blog posts
-search-posts "AI law"   # Search for specific terms
-
-# Blog content creation with Claude agents
-new-post "AI contract automation"    # Generate post skeleton
-audit-post                          # Quality audit
-legal-review                        # Legal tech review
-corp-review                         # Corporate lawyer review
-
-# Development helpers
-token-examples         # Show API usage examples
-env-help              # Environment variable setup help
-list-agents           # Show available Claude agents
-
-# GitHub CLI operations
-gh-status             # Check GitHub authentication status
-gh-repo               # View current repository information
-gh-pr-create          # Create pull requests
-gh-issue-list         # List repository issues
-```
-
-### Configuration
-
-Choose one of these two simple setup methods:
-
-**Option 1: Docker Setup (Recommended)**
-```bash
-# Copy the example file
-cp docker-compose.yml.example docker-compose.yml
-
-# Edit docker-compose.yml and set your Ghost credentials in the environment section:
-environment:
-  - GHOST_SITE_URL=https://yourblog.com
-  - GHOST_ADMIN_API_KEY=your_id:your_secret_hex
-  - GHOST_API_VERSION=v6.0
-```
-
-**Option 2: Local Node.js Setup**
-```bash
-# Copy the environment file
+# Configure environment
 cp .env.example .env
+# Edit .env with your Ghost credentials (see Environment Variables below)
 
-# Edit .env with your Ghost credentials
-# Then run: node ghost_jwt.js or npm run token
+# Install git hooks
+npm run setup-hooks
 ```
 
-### Cross-Device Blog Writing
+## Environment Variables
 
-The containerized environment is accessible from any device on your network:
-- **Desktop**: `http://localhost:7681`
-- **Mobile/Tablet**: `http://your-machine-ip:7681`
-- **Optimized for touch**: Responsive terminal interface
+Create a `.env` file from `.env.example` and fill in your values.
 
-### Benefits
+**Required:**
 
-- ✅ **Unified runtime**: Node.js only (no Python/uv complexity)
-- ✅ **Pre-installed Claude Code**: No runtime installation delays
-- ✅ **Persistent authentication**: Login once, works across restarts
-- ✅ **Multi-architecture**: Works on x86_64 and ARM64 (Raspberry Pi)
-- ✅ **Environment flexibility**: Docker-native configuration
-- ✅ **Team-friendly**: Identical setup across all machines
-- ✅ **AI-enhanced workflow**: Claude agents integrated into terminal
+| Variable | Description |
+|---|---|
+| `GHOST_SITE_URL` | Your Ghost site URL (e.g. `https://yourblog.com`) |
+| `GHOST_ADMIN_API_KEY` | Ghost Admin API key in `id:secret` format |
+| `GHOST_API_VERSION` | Ghost API version (e.g. `v6.0`) |
 
----
+**Optional:**
+
+| Variable | Description |
+|---|---|
+| `JINA_API_KEY` | Enables web search via Jina AI MCP server |
+
+## Key npm Scripts
+
+| Command | Description |
+|---|---|
+| `npm run token` | Generate a Ghost Admin API JWT token |
+| `npm run search` | Search existing blog posts |
+| `npm run sync-ghost <slug>` | Sync a published Ghost post back to the local repo |
+| `npm run setup-hooks` | Install the pre-commit git hook |
+
+## How It Works
+
+The blog automation follows a five-phase workflow:
+
+1. **PITCH** -- Define scope, direction, and tags for a new post.
+2. **WRITE** -- Draft the content using Houfu's voice guide and structural patterns.
+3. **REVIEW** -- Run quality checks: content audit, audience review, backlink curation, and proofreading.
+4. **POST** -- Publish the draft to Ghost via the Admin API.
+5. **CHECK** -- Verify the published post and sync the repo.
+
+Three audience reviewer personas provide targeted feedback during the review phase:
+
+- **Marcus Tan** (Legal Tech Reviewer) -- Seasoned legal technologist evaluating technical depth and community value.
+- **Sarah Chen** (Corporate Lawyer) -- Solo corporate lawyer testing for affordability and practical relevance.
+- **Wei Lin** (Lawyer-Coder) -- Senior legal counsel who codes, checking for vulnerability and specificity.
+
+See [CLAUDE.md](./CLAUDE.md) for the full workflow details, writing voice guide, and agent configuration.
 
 ## License
 
-MIT © 2025 Ang Hou Fu
-
-See [LICENSE](./LICENSE) for details.
-
----
-
-Happy writing! 🚀
+MIT (c) 2025 Ang Hou Fu. See [LICENSE](./LICENSE) for details.

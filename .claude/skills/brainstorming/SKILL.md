@@ -24,6 +24,11 @@ Transform rough ideas into fully-formed designs through structured questioning a
 ### Phase 2: Exploration
 - Propose 2-3 different approaches
 - For each: Core architecture, trade-offs, complexity assessment
+
+**For blog posts — vulnerability framing:**
+When exploring emotional hooks or opening angles, FIRST ask: "What personal experience from your own life connects to this topic?"
+Use the user's answer as the source. Do not construct a vulnerability from the subject matter itself — it must come from a real experience the user shares.
+
 - Ask your human partner which approach resonates
 
 ### Phase 3: Presentation

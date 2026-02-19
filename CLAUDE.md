@@ -74,14 +74,14 @@ This will add a footer linking to:
 
 ## Development Environment
 
-This project runs in a containerized environment using Docker for consistency and isolation.
+This is a local Node.js project. Install dependencies with `npm install` and configure environment via a `.env` file.
 
 ### Environment Variables
 
 Always use environment variables when using the Ghost API: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`.
 You can find them in the following places:
 - As an environment variable (highest priority)
-- Read the .env file (recommended for Docker)
+- Read the .env file (recommended — copy `.env.example` to `.env` and fill in your values)
 - Read the settings.json file (deprecated, legacy fallback)
 
 ### Pre-Commit Hook
@@ -97,17 +97,10 @@ The hook is non-blocking (exits 0) — it warns but never prevents a commit.
 
 ## GitHub CLI Integration
 
-The container includes GitHub CLI (\`gh\`) pre-installed and auto-configured:
-
-### Available Aliases
-- \`gh-status\` - Check GitHub authentication status
-- \`gh-login\` - Interactive GitHub login
-- \`gh-repo\` - View current repository information
-- \`gh-pr-create\` - Create pull requests
-- \`gh-issue-list\` - List repository issues
+GitHub CLI (`gh`) is used for repository operations including creating pull requests and managing issues.
 
 ### Authentication
-GitHub CLI is automatically configured using existing \`GITHUB_USERNAME\` and \`GITHUB_PAT\` environment variables. Manual login is also supported via \`gh auth login\`.
+Run `gh auth login` to authenticate, or set `GITHUB_TOKEN` as an environment variable.
 
 
 
