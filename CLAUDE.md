@@ -26,9 +26,7 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
     - 'discussion.md' - This file stores the memories of claude involved in writing the post
     - 'pitch.md' - This file stores the pitch of the post used to create the post.
     - It also contains images, research documents and others relating to this post. 
-- `/docs/` - Documentation for advanced Ghost workflows
-  - `/docs/ghost-admin-api.md` - Ghost Admin API reference
-  - `/docs/ghost-cards-reference.md` - Ghost cards for rich media reference
+- `/docs/` - Documentation and analysis
   - `/docs/personas/` - Full persona documents for the three audience reviewer agents
     - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
     - `wei-lin-persona.md` - Lawyer-Coder Reviewer
@@ -109,7 +107,7 @@ Run `gh auth login` to authenticate, or set `GITHUB_TOKEN` as an environment var
   - *Note: You CAN use horizontal rules in draft/working documents (discussion.md, pitch.md, research.md) to organize content during writing.*
 - **Prefer bookmark cards over inline links** for key content and backlinks - they provide richer previews and visual emphasis.
 
-**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions. See `docs/ghost-cards-reference.md` for detailed usage.
+**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions.
 
 ## Task Management with TodoWrite
 
