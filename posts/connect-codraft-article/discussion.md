@@ -67,6 +67,56 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 **Outcome:**
 ✅ Post scope narrowed. Pitch now leads with "Version 1 is two text files in a folder."
 
+### Decision: Vulnerability arc completed with real insight from brainstorm (2026-02-19, Session 4)
+
+**Claude's Analysis:**
+- All three audience reviewers (Session 4) flagged missing emotional texture in vulnerability arc
+- Draft said "The fact that it worked at all changed how I saw Cowork" but never explained *what* the shift felt like
+- User provided screenshot from an actual brainstorm conversation showing the real moment
+
+**Claude's Recommendation:**
+Replace generic "changed how I saw Cowork" with specific texture from the brainstorm screenshot.
+
+**User Decision:**
+Approved. Key framing from screenshot: "I had a mental model from docassemble: interviews, logic blocks, Python, real infrastructure. I expected to hit a wall somewhere in Cowork. Two text files later, it worked. I hadn't been wrong about Cowork. The rules had changed, and I hadn't noticed."
+
+**Rationale:**
+- The actual insight is not "I was wrong" — it's "the rules changed and I didn't notice"
+- Docassemble mental model is the correct contrast: real infrastructure expectations vs. two text files
+- Specific and honest; couldn't be manufactured, came from user's genuine experience
+
+**Outcome:**
+✅ Vulnerability arc now complete. Reviewers' top "essential" fix addressed.
+
+### Decision: Docassemble scope corrected mid-edit (2026-02-19, Session 4)
+
+**Claude's Analysis:**
+- Applied "CoDraft running" fix — wrote: "Template discovery, field interviews, document rendering — the whole pipeline?"
+- This implies CoDraft replicates all of docassemble
+
+**User Decision:**
+Corrected immediately: "docassemble is a full, battle tested system and codraft currently only implements one small part."
+
+**Outcome:**
+✅ Both the intro description and CoDraft demo paragraph corrected to say "One small part of what docassemble can do." Docassemble described accurately as "battle-tested open-source system for automated legal documents."
+
+### Decision: Post published as Ghost draft before screenshots added (2026-02-19, Session 4)
+
+**Claude's Analysis:**
+- Five screenshot HTML comment placeholders remain in draft
+- Post is otherwise complete — all fixes applied, all reviewer feedback addressed
+
+**User Decision:**
+"Go straight to publish as a draft" — post to Ghost with screenshot placeholders, add screenshots in Ghost editor later.
+
+**Rationale:**
+- Screenshots can be added in Ghost editor directly
+- No point delaying the draft creation
+- Post ID will be saved to frontmatter for reference
+
+**Outcome:**
+✅ Draft created: post ID `6995e87d7d346400014549a1`. Admin URL: https://alt-counsel.ghost.io/ghost/#/editor/post/6995e87d7d346400014549a1
+
 ## WHAT CLAUDE DID (Contributions)
 
 ### Research
@@ -78,6 +128,7 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 - (Session 2) Read Part 1 published post to avoid repetition and ensure bridge
 - (Session 2) Searched for actual CoDraft v1 files — confirmed not in this repo
 - (Session 2) Read research.md for technical accuracy on CLAUDE.md and skills
+- (Session 4) Read brainstorm screenshot (vulnerability arc insight) provided by user
 
 ### Analysis
 - Synthesized feedback across three reviewer rounds (9 total reviews)
@@ -86,6 +137,9 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 - Compared "Learning in Public" template to post concept — good fit
 - (Session 2) Identified developer analogies (AGENTS.md, package.json) would alienate lawyer audience
 - (Session 2) Translated technical concepts to lawyer-friendly analogies: briefing note, checklist, matter folder
+- (Session 4) Ran content-quality-auditor agent; synthesized 13 actionable fixes
+- (Session 4) Ran all three audience reviewers in parallel; identified 4 essential fixes
+- (Session 4) Ran backlink curation; found 6 candidate posts
 
 ### Writing
 - Drafted 3 pitch iterations, each incorporating reviewer feedback:
@@ -96,12 +150,21 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 - (Session 2) Drafted full blog post (~1,800 words) with tutorial structure
 - (Session 2) Created contract intake workflow as concrete tutorial example
 - (Session 2) Placed 6 screenshot markers throughout tutorial
+- (Session 4) Applied 13 content quality audit fixes
+- (Session 4) Applied 4 essential reviewer fixes (vulnerability arc, CoDraft demo, CLAUDE.md load mechanism, gasps removal)
+- (Session 4) Fixed 3 Session 3 open issues (hardcoded path note, package.json jargon, neither-is-wrong closing)
 
 ### Quality Control
 - Ran all three audience reviewers (legal-tech, corporate-lawyer, lawyer-coder) — twice
 - Ran authenticity check on final pitch — all claims verified authentic
 - Suggested tags from canonical registry (LegalTech, AI, OpenSource, Tutorial)
 - (Session 3) Fetched and reviewed all user revisions; identified open issues in revised draft
+- (Session 4) Full content quality audit via content-quality-auditor agent (13 fixes applied)
+- (Session 4) Third round of all three audience reviewers; synthesized 4 essential + 3 high-value fixes
+
+### Technical
+- (Session 4) Created `post-to-ghost.js` with: table→HTML card conversion, screenshot comment skipping, GitHub footer as bookmark card
+- (Session 4) Published post as Ghost draft (post ID `6995e87d7d346400014549a1`)
 
 ## WHAT WORKED / DIDN'T WORK
 
@@ -112,6 +175,9 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 | Surfaced Sarah's "gap problem" critique | User clarified CoDraft v1 = two files | Resolved scope concern entirely |
 | Suggested "Turn a Project Folder into a Cowork Workflow" title | User approved | Final title |
 | Suggested leading with outcome first | User incorporated | Pitch opens with CoDraft working, then explains why |
+| (Session 4) Content quality audit flagged 13 issues | Applied all 13 fixes | Post substantially tightened |
+| (Session 4) All three reviewers flagged incomplete vulnerability arc | User provided screenshot with real insight | Strongest section of the post now fully realised |
+| (Session 4) Created post-to-ghost.js with table+screenshot handling | User ran it | Draft published successfully |
 
 ### Didn't Work ❌
 | What Claude Did | Problem | Lesson |
@@ -119,6 +185,8 @@ Clarified that CoDraft v1 is literally one skill and one CLAUDE.md file. "It sho
 | Initial pitch: "Building Cowork Apps" | Too developer-oriented; Sarah wouldn't click | Avoid "building" language for non-technical audience |
 | Suggested overbuilding vulnerability | Manufactured — user didn't actually overbuild | Don't invent vulnerabilities; ask user for their genuine experience |
 | Title suggestions like "Two Files That Make a Folder Smart" | Too clever, unclear benefit | Keep titles functional and outcome-oriented |
+| (Session 4) CoDraft demo wrote "whole pipeline" claim | Overstated scope vs. docassemble | Check scope claims with user before writing; CoDraft = one small part, not full docassemble |
+| (Session 4) post-to-ghost.js used `builder._nodes` | `_nodes` doesn't exist; property is `nodes` | Check LexicalBuilder source before referencing internal state |
 
 ## SESSIONS (Chronological Detail)
 
@@ -402,3 +470,115 @@ New: Opening → What changed → What's inside → Why it works → The folder 
 - **Legal Tech**: Lead with the surprising simplicity, then explain mechanics
 - **Wei Lin**: Needs vulnerability to feel validated; wants time estimate and decision framework
 - **All three**: Missing "so what" — connect mechanics to what readers can DO after
+
+## Session 4: Full Review, Essential Fixes, and Ghost Publication (2026-02-19)
+
+### Context
+Continued from Session 3 which had identified 3 open issues in the revised draft. This session completed the post through the full REVIEW → POST pipeline.
+
+### What Claude Did
+- **Pre-work**: Checked todos (none), read discussion.md to understand Session 3 state and open issues
+- **Fixes (Session 3 open issues)**:
+  1. Added note after SKILL.md code block about hardcoded session path breaking for other users
+  2. Rewrote "The folder is the program" paragraph to remove package.json/src/git jargon
+  3. Added "neither is wrong" paragraph before final question — post now closes with genuine nuance
+- **Content quality audit**: Ran content-quality-auditor agent. 13 actionable fixes applied:
+  - "What changed" section → "Building vs. customising — and why it matters"
+  - "Tens of thousands" → qualified claim ("Across open source repositories, hundreds of thousands...")
+  - "Neato, right?" → "That's the part that genuinely surprised me."
+  - Removed duplicate CTA question at end
+  - Time estimate caveat added: "(budget more if you want to iterate on the instructions)"
+  - Removed "(Duh!)" from permission explanation
+  - "So let go of your fears" → "Most people who try it are surprised how far plain text gets them"
+  - "fairly advanced prompting technique in order to" → "Time for a sophisticated prompting technique:"
+  - Fixed typo "This the project" → "This is the project"
+  - Added pre-code-block signal before SKILL.md: "It's a long file — feel free to skim..."
+  - Added post-code-block re-entry paragraph
+  - VIMA expansion added (Singapore's Venture Investment Model Agreement initiative)
+  - DMS expansion added (Document Management System)
+  - Series note added to intro (Part 2 context)
+- **Audience review**: Ran all three reviewers in parallel; ran backlink curation simultaneously. Consensus:
+  - Tutorial is the post's strongest section
+  - Vulnerability arc incomplete — "changed that" never given texture
+  - "Building vs. customising" section weakest (gasps line)
+  - CoDraft never shown running
+  - Closing needed better "neither is wrong" placement
+- **Essential fixes (4 applied)**:
+  1. **Vulnerability arc**: User provided screenshot from brainstorm conversation with real insight: "I hadn't been wrong about Cowork. The rules had changed, and I hadn't noticed." Applied verbatim + docassemble mental model framing
+  2. **CoDraft running demo**: Added paragraph showing reader what happens when you open CoDraft folder in Cowork
+  3. **CLAUDE.md load mechanism**: Added explicit explanation of automatic loading before first message
+  4. **Gasps removal**: Replaced "I can hear gasps" with "The whole thing is text..."
+- **Docassemble correction** (mid-edit): User corrected overstatement — CoDraft only implements "one small part" of docassemble's algorithm. Applied correction throughout
+- **Technical**: Created `post-to-ghost.js` — handles markdown tables (→ HTML card), screenshot comments (skip), GitHub footer (bookmark card). Fixed `builder._nodes` → `builder.nodes` bug. Ran with `node -r dotenv/config`. Published successfully on second attempt.
+
+### User Decisions
+- **Decision 1**: Apply all 13 content quality audit fixes
+- **Decision 2**: "Fix all the essentials" — four fixes from reviewer consensus
+- **Decision 3**: Corrected docassemble scope mid-edit (CoDraft = one small part, not full pipeline)
+- **Decision 4**: "Go straight to publish as a draft" — publish to Ghost with 5 screenshot placeholders still present; add screenshots in Ghost editor
+
+### Outcomes
+- ✅ All three Session 3 open issues resolved
+- ✅ Content quality audit complete — 13 fixes applied
+- ✅ All three audience reviewers run — 4 essential fixes applied
+- ✅ Vulnerability arc complete and authentic
+- ✅ Ghost draft published: post ID `6995e87d7d346400014549a1`
+- Files created/modified:
+  - `/posts/connect-codraft-article/connect-codraft-article.md` (extensively revised)
+  - `/posts/connect-codraft-article/post-to-ghost.js` (new publishing script)
+
+### Open Items Before Publishing
+- Review backlink candidates (6 found — see backlink curation output)
+
+## Session 5: Ghost → Repo Sync and Commit Prep (2026-02-19)
+
+### Context
+Post was scheduled in Ghost with major edits made in the Ghost editor (screenshots added, sections cut, content condensed). Needed to sync Ghost version back to local markdown and stage for commit.
+
+### What Claude Did
+- **Fetched Ghost post metadata**: Confirmed new title, slug, status, and published_at date via Admin API
+- **Inspected Ghost HTML**: Found 4 uploaded screenshots and 1 Part 1 bookmark card; confirmed all screenshot HTML comment placeholders replaced
+- **Updated local markdown** (`connect-codraft-article.md`):
+  - Frontmatter: new title, new slug, `status: scheduled`, `published_at: 2026-02-24T01:29:09.000Z`
+  - Replaced body to match Ghost version (see Ghost content changes below)
+- **Updated discussion.md** with this Session 5 entry
+- **Staged files** for user review before commit
+
+### Ghost Content Changes (vs. Session 4 local markdown)
+
+**Removed entirely:**
+- Italic Part 1 series note at top (replaced by bookmark card in Ghost after first paragraph)
+- "Building vs. customising — and why it matters" section
+- "Why this works: the pattern behind it" section
+- CoDraft running demo paragraph
+- "How skills get discovered" subsection
+- Full CLAUDE.md code block in Step 2 (replaced with descriptive paragraph)
+- Full SKILL.md code block in Step 3 (replaced with 5-step summary)
+- "Share the folder" and "Put it on GitHub" bullet points from closing
+- "More importantly, we let Claude write most of the instructions here..." paragraph
+
+**Changed:**
+- docassemble description: "system for building automated legal documents" → "system for guided interviews and document assembly. It's a proper web application with Python"
+- Final sentence of intro: "the same way" → "using nothing but Cowork's chat"
+- "What's inside CoDraft v1" opening: now "CoDraft v1 is at its core two files. That's it." (was longer)
+- Step 2 intro: "Time for a sophisticated prompting technique: asking Claude nicely." → "Here's what I typed:"
+- Step 3 intro condensed from 3 paragraphs to 2 sentences
+- "A note on file paths" and "Verify the file location" notes converted to Ghost toggle cards
+
+**Added in Ghost:**
+- Part 1 bookmark card (after first paragraph)
+- 4 screenshot images: `cowork_process_our_initial_prompt.png`, `location_of_claudemd_in_cowork_interface.png`, `Cowork_reads_the_skill_file.png`, `results_cowork.png`
+- `<!--members-only-->` divider before Step 1
+- Signup card (after "The folder is the program" section)
+- CTA card (after closing paragraph)
+- GitHub footer bookmark card
+
+### User Decisions
+- **Decision 1**: Title finalised as "Two Files, One Workflow. No Code. Just Cowork." (changed from "Turn a Project Folder into a Cowork Workflow")
+- **Decision 2**: Post scheduled for publication 2026-02-24T01:29:09.000Z
+- **Decision 3**: Screenshots added directly in Ghost editor; significant sections cut for concision
+
+### Outcomes
+- ✅ Local markdown updated to match Ghost version
+- ✅ discussion.md updated with Session 5
+- ✅ Files staged for commit (user to review before committing)
