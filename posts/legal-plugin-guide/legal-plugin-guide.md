@@ -40,10 +40,10 @@ For solo counsels and small teams, these commands offer a new way to use AI with
 
 **What you'll need:**
 
-* A computer running macOS
+* A computer running macOS or Windows (Windows 10 or higher)
 * A Claude Pro, Team, or Enterprise subscription ($20/month for Pro)
 * Some familiarity with creating folders and editing text files
-Don't be daunted by that last requirement. The customizations are in plain text, not code. If you can find your way around your computer using Finder on macOS, you can customize these skills.
+Don't be daunted by that last requirement. The customizations are in plain text, not code. If you can find your way around your computer using Finder (macOS) or File Explorer (Windows), you can customize these skills.
 
 <details>
 <summary>A note before you start</summary>
@@ -63,17 +63,21 @@ That's what makes this worth your time: learning how to program your own systems
 
 ## Step 1: Install Claude Cowork
 
-**1.1** Go to [](https://claude.ai/download) and download the desktop app for macOS.
+**1.1** Go to [](https://claude.ai/download) and download the desktop app for your operating system (macOS or Windows).
 
-![Claude download page showing macOS download options and system requirements](Claude_MacOS_Download.png)
+![Claude download page showing macOS and Windows download options and system requirements](Claude_MacOS_Download.png)
 
-**1.2** Install the application by opening the .dmg file and dragging Claude to your Applications folder.
+**1.2** Install the application:
+- **macOS**: Open the .dmg file and drag Claude to your Applications folder
+- **Windows**: Run the .exe installer and follow the installation prompts
 
 **1.3** Open Claude and sign in with your account. You need a Pro, Team, or Enterprise subscription—Cowork isn't available on the free tier.
 
 **1.4** Once signed in, you'll see three tabs at the top: **Chat**, **Code**, and **Cowork**. Click **Cowork**.
 
 ![Claude desktop app main interface with Cowork tab highlighted in the top navigation](Highlight_Cowork_Tab.png)
+
+*Note: The interface looks identical on both macOS and Windows, so these screenshots apply regardless of your operating system.*
 
 If you've set up your account and followed the steps above, you'll arrive at this interface:
 
@@ -141,11 +145,11 @@ These templates live in markdown files you can read and modify.
 
 **1.1** Create a new folder somewhere accessible—I'll use `Documents/Legal-Skills`.
 
-![macOS Finder window showing creation of new folder named Legal-Skills in Documents directory](Create_Legal_Skills_folder.png)
+![Finder window showing creation of new folder named Legal-Skills in Documents directory](Create_Legal_Skills_folder.png)
 
 **1.2** Inside this folder, create a new text file called `PDPA DSAR Response.md`.
 
-Open TextEdit (included with macOS) and save the file as 'PDPA DSAR Response.md' in the folder you created. Make sure to select 'Plain Text' mode in TextEdit's Format menu before saving—this ensures the file is saved as plain text, not Rich Text format.
+Open a plain text editor (like TextEdit on macOS or Notepad on Windows) and save the file as 'PDPA DSAR Response.md' in the folder you created. Make sure to save as plain text format—not Rich Text or other formatted text.
 
 ### Step 2: Build the PDPA DSAR template
 
