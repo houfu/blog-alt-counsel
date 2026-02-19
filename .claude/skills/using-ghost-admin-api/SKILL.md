@@ -15,7 +15,7 @@ You have different tools and workflows available for different tasks.
 * If there is already a separate SKILL that is used to perform the workflow, STOP and use that skill instead.
    * Example, searching_the_blog or backlink_curating
 * For posting a draft on Ghost platform, use [creating_a_draft.md](creating_a_draft.md)
-* For checking published posts and syncing to repo (CHECK phase), fetch the post from Ghost API and update the local markdown file with any edits made in Ghost's editor
+* For syncing Ghost post metadata back to local markdown (CHECK phase), run `npm run sync-ghost <slug>` — this updates frontmatter from Ghost without touching the markdown body.
 
 For all other workflows, read the [Ghost Admin API writeup](ghost-admin-api.md) to create an appropriate `curl` command to perform the task.
 

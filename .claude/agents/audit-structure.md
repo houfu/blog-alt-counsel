@@ -15,6 +15,21 @@ You will receive a file path to audit. Read the content and systematically check
 
 Use TodoWrite to create and track this checklist:
 
+### Pitch Compliance (when pitch.md exists)
+
+Before checking structural elements, look for a `pitch.md` file in the same folder as the post being audited. If one exists, read it and perform these checks:
+
+- [ ] Draft's opening delivers on the pitch's stated hook/promise
+- [ ] Main sections are aligned with the pitch outline (compare section-by-section)
+- [ ] Conclusion circles back to the pitch's central argument
+- [ ] Draft direction has not diverged substantially from what the pitch promised
+
+**If pitch.md does not exist, skip this section entirely.**
+
+**Severity:** Flag as **Critical** if the draft direction diverged substantially from the pitch (e.g., the pitch promised a PDPA walkthrough but the draft covers NDA review instead). Flag as **Important** if individual sections drifted but the overall direction is intact.
+
+**Why this matters:** The discussion analysis found that pitch-to-draft drift is a recurring problem. In one case, the approved pitch was about PDPA DSAR but the draft became NDA review/triage, and all three reviewers flagged it. Catching this early prevents wasted review cycles.
+
 ### Document Outline
 - [ ] Document has clear beginning, middle, end
 - [ ] Logical progression from introduction to conclusion

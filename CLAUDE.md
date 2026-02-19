@@ -26,9 +26,10 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
     - 'discussion.md' - This file stores the memories of claude involved in writing the post
     - 'pitch.md' - This file stores the pitch of the post used to create the post.
     - It also contains images, research documents and others relating to this post. 
-- `/docs/` - Documentation for advanced Ghost workflows
-  - `/docs/ghost-admin-api.md` - Ghost Admin API reference
-  - `/docs/ghost-cards-reference.md` - Ghost cards for rich media reference
+- `/docs/` - Documentation and analysis
+  - `/docs/personas/` - Full persona documents for the three audience reviewer agents
+    - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
+    - `wei-lin-persona.md` - Lawyer-Coder Reviewer
 - `/.claude/` - Claude Code agents, skills and configuration
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
@@ -71,30 +72,33 @@ This will add a footer linking to:
 
 ## Development Environment
 
-This project runs in a containerized environment using Docker for consistency and isolation.
+This is a local Node.js project. Install dependencies with `npm install` and configure environment via a `.env` file.
 
 ### Environment Variables
 
 Always use environment variables when using the Ghost API: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`.
 You can find them in the following places:
 - As an environment variable (highest priority)
-- Read the .env file (recommended for Docker)
+- Read the .env file (recommended — copy `.env.example` to `.env` and fill in your values)
 - Read the settings.json file (deprecated, legacy fallback)
+
+### Pre-Commit Hook
+
+A pre-commit hook warns when a post file is staged without also staging `discussion.md`. Install it once with:
+
+```bash
+npm run setup-hooks
+```
+
+The hook is non-blocking (exits 0) — it warns but never prevents a commit.
 
 
 ## GitHub CLI Integration
 
-The container includes GitHub CLI (\`gh\`) pre-installed and auto-configured:
-
-### Available Aliases
-- \`gh-status\` - Check GitHub authentication status
-- \`gh-login\` - Interactive GitHub login
-- \`gh-repo\` - View current repository information
-- \`gh-pr-create\` - Create pull requests
-- \`gh-issue-list\` - List repository issues
+GitHub CLI (`gh`) is used for repository operations including creating pull requests and managing issues.
 
 ### Authentication
-GitHub CLI is automatically configured using existing \`GITHUB_USERNAME\` and \`GITHUB_PAT\` environment variables. Manual login is also supported via \`gh auth login\`.
+Run `gh auth login` to authenticate, or set `GITHUB_TOKEN` as an environment variable.
 
 
 
@@ -103,7 +107,7 @@ GitHub CLI is automatically configured using existing \`GITHUB_USERNAME\` and \`
   - *Note: You CAN use horizontal rules in draft/working documents (discussion.md, pitch.md, research.md) to organize content during writing.*
 - **Prefer bookmark cards over inline links** for key content and backlinks - they provide richer previews and visual emphasis.
 
-**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions. See `docs/ghost-cards-reference.md` for detailed usage.
+**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions.
 
 ## Task Management with TodoWrite
 
@@ -222,23 +226,27 @@ If you need to write quickly without reading the full guide, these core principl
 
 7. **Frameworks over advice** - Present questions/criteria, not prescriptions. "Before starting, ask 4 questions..." rather than "You should always..."
 
+8. **User leads on vulnerability** — The emotional opening and core vulnerability must come from the user's real experience. Ask for it; don't invent it. Claude's role is to build the pitch from what the user provides, not to construct an emotional frame from the topic.
+
 **Remember:** Professional tone doesn't mean boring. Houfu's voice is honest, specific, nuanced, and framework-oriented.
 
 ## Audience Reviewers Guide
 
 The blog serves three overlapping but distinct audience segments:
 
-### 1. Legal Tech Blog Reviewer
-**Persona**: Seasoned legal technologist (10+ years, JD + significant programming)
+### 1. Legal Tech Blog Reviewer (Marcus Tan)
+**Persona**: Legal Technology Director, Singapore-based, 10+ years shipping production legal tech systems across ASEAN; speaks at conferences, contributes to open source
 **Use for**: Technical implementations, open source projects, honest post-mortems
-**Key values**: Technical depth, community knowledge sharing, authenticity
+**Key values**: Technical depth, community knowledge sharing, authenticity — has a high bar and can tell if you've shipped something real
+
+**Full persona details**: `/docs/personas/marcus-tan-persona.md`
 
 ### 2. Corporate Lawyer Reviewer (Sarah Chen)
 **Persona**: Solo corporate lawyer at 150-person manufacturing company ($150/month budget)
 **Use for**: Tool evaluations, budget-conscious solutions, pragmatic workflows
 **Key values**: Affordability, realistic time estimates, practical relevance
 
-### 3. Lawyer-Coder Reviewer
+### 3. Lawyer-Coder Reviewer (Wei Lin)
 **Persona**: Senior Legal Counsel at Series B fintech (lawyer who codes, 5-10 hours/week side projects)
 **Use for**: Personal project struggles, learning journeys, build vs. buy decisions, identity questions
 **Key values**: Vulnerability, specificity, "I'm not alone" validation, frameworks for decision-making
@@ -256,6 +264,21 @@ The blog serves three overlapping but distinct audience segments:
 - Content has broad appeal across segments
 - You want comprehensive triangulated feedback
 - Unsure which audience will resonate most
+
+**Default to 1-2 reviewers based on content type. Use all 3 only when content explicitly addresses all three audience segments. Running all 3 on every post produces diminishing returns after round 1.**
+
+### Reviewer Routing Table
+
+| Content Type | Recommended Reviewers | Rationale |
+|---|---|---|
+| Policy/budget commentary | Sarah + Legal Tech | Practical impact + technical depth |
+| Tutorial / how-to guide | Sarah + Legal Tech | Accessibility + technical accuracy |
+| Build vs. buy decision | Wei Lin + Legal Tech | Identity resonance + technical depth |
+| Learning in public / personal struggle | Wei Lin | Validates the emotional journey |
+| Open source project / post-mortem | Legal Tech | Technical community resonance |
+| Tool evaluation (budget focus) | Sarah | Cost/practicality is the core concern |
+| Identity / "am I wasting my time" | Wei Lin | Core persona concern |
+| Broad appeal (spans all segments) | All 3 | Only when all 3 segments clearly addressed |
 
 ### Key Distinctions
 
@@ -291,8 +314,11 @@ The blog serves three overlapping but distinct audience segments:
    - Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
    - Backlink curation (backlink_curating skill)
    - Tag validation (use `tag-registry` skill to verify tags before publishing)
+   - **Review round limit**: Maximum 2 rounds of reviewer feedback. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
 4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
+   - Always use `scripts/publish-lexical.js` — do not create per-post publishing scripts. Improve the canonical script if a feature is missing.
 5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
+   - Use `npm run sync-ghost <slug>` to sync Ghost metadata back to local markdown frontmatter automatically.
 
 **Throughout the process (use as needed):**
 - **BRAINSTORM** (use `brainstorming` skill) - Refine pitch, overcome writer's block on difficult sections, develop structure

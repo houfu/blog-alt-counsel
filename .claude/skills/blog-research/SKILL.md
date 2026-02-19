@@ -23,6 +23,11 @@ Trigger this skill when the user requests:
 
 Before beginning research, confirm the post has:
 
+**Before anything else — check the blog archive:**
+Use the searching_the_blog skill to check if any existing posts on this topic already exist.
+This prevents: assuming a post exists when it doesn't, repeating content already covered, and missing series context.
+Do NOT assume prior posts exist based on topic relevance alone.
+
 **Required inputs:**
 - [ ] **Locked thesis** - One-sentence argument the post will make
 - [ ] **Section outline** - 3-5 main sections with their specific claims
@@ -229,6 +234,7 @@ Create research.md in the specified post folder:
 - Pure US content without regional context
 - Vague claims without specific examples
 - Missing citations or broken links
+- Unverified statistics from memory (always web-search to confirm data before writing it into drafts)
 
 ## Example Research Queries
 

@@ -193,3 +193,30 @@ api.posts.add(postData)
 
 ## Recommended: Using the Post Creation Script
 
+The canonical publishing script is `scripts/publish-lexical.js` at the repository root. Always use this script — do NOT create per-post publishing scripts.
+
+### Usage
+
+```bash
+node -r dotenv/config scripts/publish-lexical.js posts/{post-folder}/{post-file}.md
+```
+
+The script handles:
+- Parsing markdown frontmatter (title, slug, tags, status, custom_excerpt, github_folder)
+- Converting markdown to Ghost lexical JSON format
+- Tables → HTML cards
+- Bookmark card syntax → Ghost bookmark cards
+- Adding GitHub footer automatically when `github_folder` is in frontmatter
+- Skipping HTML comment placeholders (e.g., `<!-- 📸 SCREENSHOT -->`)
+
+### Before running
+
+Ensure your `.env` file has: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`
+
+### After running
+
+The script outputs the post ID and admin URL. Update the post's markdown frontmatter with the returned `post_id`.
+
+### If the canonical script is missing a feature
+
+Improve `scripts/publish-lexical.js` directly rather than creating a new per-post script.

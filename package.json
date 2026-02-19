@@ -11,7 +11,8 @@
     "token-headers": "node scripts/ghost_jwt.js --print-headers",
     "token-examples": "node scripts/ghost_jwt.js --examples",
     "env-help": "node scripts/ghost_jwt.js --env-help",
-    "session-start": "node scripts/session_start.js"
+    "setup-hooks": "ln -sf ../../.claude/hooks/pre-commit .git/hooks/pre-commit && echo 'Pre-commit hook installed successfully.'",
+    "sync-ghost": "node -r dotenv/config scripts/sync-from-ghost.js"
   },
   "bin": {
     "ghost-jwt": "./scripts/ghost_jwt.js",

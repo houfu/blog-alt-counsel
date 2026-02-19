@@ -53,9 +53,7 @@ To add a new MCP server:
    }
    ```
 
-2. Add any required environment variables to:
-   - `docker-compose.yml` (environment section)
-   - `scripts/shpool-session.sh` (export statements)
+2. Add any required environment variables to your `.env` file
 
 3. Update permissions in `.claude/settings.local.json` if needed
 

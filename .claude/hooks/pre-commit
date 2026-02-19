@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+#
+# Pre-commit hook: Reminds to update discussion.md when post content changes.
+# This is a NON-BLOCKING reminder (always exits 0).
+#
+
+# Get list of staged files
+staged_files=$(git diff --cached --name-only)
+
+# Track which post folders have content changes but no discussion.md staged
+folders_needing_notes=()
+
+# Find staged post content files (posts/*/*.md), excluding meta files
+while IFS= read -r file; do
+    # Skip empty lines
+    [[ -z "$file" ]] && continue
+
+    # Only look at markdown files directly inside posts/{folder}/
+    if [[ "$file" =~ ^posts/([^/]+)/[^/]+\.md$ ]]; then
+        folder="${BASH_REMATCH[1]}"
+        basename=$(basename "$file")
+
+        # Skip meta files — these are not "post content"
+        case "$basename" in
+            discussion.md|pitch.md|research.md|research-*.md)
+                continue
+                ;;
+        esac
+
+        # This is a post content file — check if discussion.md is also staged
+        discussion_file="posts/${folder}/discussion.md"
+        if ! echo "$staged_files" | grep -qx "$discussion_file"; then
+            # Only add the folder once
+            if [[ ! " ${folders_needing_notes[*]} " =~ " ${folder} " ]]; then
+                folders_needing_notes+=("$folder")
+            fi
+        fi
+    fi
+done <<< "$staged_files"
+
+# Print reminder if any post folders need discussion.md updates
+if [[ ${#folders_needing_notes[@]} -gt 0 ]]; then
+    echo "" >&2
+    echo "=== Note-Taking Reminder ===" >&2
+    echo "" >&2
+    echo "You have post content changes staged, but discussion.md is not" >&2
+    echo "staged for the following post(s):" >&2
+    echo "" >&2
+    for folder in "${folders_needing_notes[@]}"; do
+        echo "  - posts/${folder}/" >&2
+    done
+    echo "" >&2
+    echo "Consider using the note-taking skill to document this session" >&2
+    echo "in discussion.md before committing." >&2
+    echo "" >&2
+fi
+
+# Always exit 0 — this is a reminder, not a gate
+exit 0

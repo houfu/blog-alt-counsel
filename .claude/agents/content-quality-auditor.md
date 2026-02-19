@@ -88,12 +88,13 @@ The specialist sub-agents systematically evaluate these critical areas:
 - All images have descriptive alt text that conveys meaning
 - Headings follow proper hierarchical structure (H1 → H2 → H3, no skipping)
 - Links have descriptive text (not 'click here' or 'read more')
-- Color contrast and readability considerations
+- Code blocks have surrounding context sentences
+- Tables have header rows
 
 **READABILITY & CLARITY** (audit-readability agent):
-- 18-year-old readability standard compliance
-- Sentence length (target 15-20 words maximum)
-- Jargon explained on first use
+- Clear to a non-technical legal professional
+- Sentence length (target 20-25 words average)
+- Legal jargon acceptable; coding/tech jargon must be explained
 - Paragraph length (3-5 sentences maximum)
 - Logical flow and smooth transitions
 
@@ -105,6 +106,7 @@ The specialist sub-agents systematically evaluate these critical areas:
 - Technical terms introduced before use
 
 **STRUCTURAL INTEGRITY** (audit-structure agent):
+- Pitch compliance check (when pitch.md exists in same folder)
 - Headings accurately reflect section content
 - Logical information hierarchy
 - Conclusions follow from presented information
