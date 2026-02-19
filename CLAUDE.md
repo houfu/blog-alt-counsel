@@ -29,6 +29,9 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
 - `/docs/` - Documentation for advanced Ghost workflows
   - `/docs/ghost-admin-api.md` - Ghost Admin API reference
   - `/docs/ghost-cards-reference.md` - Ghost cards for rich media reference
+  - `/docs/personas/` - Full persona documents for the three audience reviewer agents
+    - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
+    - `wei-lin-persona.md` - Lawyer-Coder Reviewer
 - `/.claude/` - Claude Code agents, skills and configuration
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
@@ -80,6 +83,16 @@ You can find them in the following places:
 - As an environment variable (highest priority)
 - Read the .env file (recommended for Docker)
 - Read the settings.json file (deprecated, legacy fallback)
+
+### Pre-Commit Hook
+
+A pre-commit hook warns when a post file is staged without also staging `discussion.md`. Install it once with:
+
+```bash
+npm run setup-hooks
+```
+
+The hook is non-blocking (exits 0) — it warns but never prevents a commit.
 
 
 ## GitHub CLI Integration
