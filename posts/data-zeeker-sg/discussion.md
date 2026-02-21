@@ -2034,4 +2034,74 @@ Total: 27 days from conception to completion.
 
 ---
 
+## Session: Tag Cleanup + zeeker.sg Projects Page Intro (2026-02-21)
+
+### Context
+
+Post-series maintenance session. All three zeeker posts published. Goal: ensure consistent "zeeker" tag across all posts in Ghost for discoverability, and draft 3–4 intro paragraphs for a zeeker.sg projects page on the blog.
+
+### What Claude Did
+
+**Tag Audit:**
+- Fetched all three published zeeker posts from Ghost Admin API via JWT auth
+- Also discovered a 4th related post: "How I Built Singapore's Legal Data API with 'Wrong' Technology" (newsletter, Nov 17, sent status)
+- Audited current tags on each post
+
+**Tag Findings:**
+| Post | Ghost Tags | Has zeeker? |
+|------|------------|-------------|
+| Part 1: When Institutions Enter | LegalTech, zeeker | ✅ Already present |
+| Nov 17 newsletter | newsletter, zeeker, technical, architecture | ✅ Already present |
+| Part 2a: Technical Architecture | zeeker, technical, datasette, sqlite, infrastructure, open-data, architecture, Solo Builder, Singapore | ✅ Already present |
+| Part 3: SMU Decision | LegalTech, SoloBuilder, Singapore, SOLID | ❌ Missing — added |
+
+**Tag Update:**
+- Added "zeeker" tag to Part 3 in Ghost via PUT API call
+- Updated `/posts/data-zeeker-sg/part-3-smu-and-decision.md` frontmatter to match
+- Part 1 and Part 2a already had "zeeker" — no changes needed
+
+**Projects Page Intro Draft:**
+Drafted 4 paragraphs for a zeeker.sg projects page using Houfu's voice guide patterns (open with feeling, specific numbers, vulnerable admission, "neither is wrong" move):
+
+---
+
+*Para 1 — Origin story:*
+
+Ever since law school, I dreamt of a world where Singapore's legal information was *data* — structured, searchable, accessible to everyone, including poor students who couldn't afford LawNet. That dream survived Wordpress, MongoDB, ckan, and several false starts. When GenAI made solo infrastructure feasible, I built it. 150+ hours across evenings and weekends while working full-time as a lawyer. Then I never told anyone about it.
+
+*Para 2 — What it is:*
+
+zeeker.sg is Singapore's first public legal news API. Python scrapers check 40+ legal news sources daily, store articles in a searchable SQLite database with full-text search, and serve them as structured JSON through a Datasette REST API — all for $6–12/month on S3. The first source took 150 hours to figure out; the second took 2–4 hours. That's what investing in the right infrastructure does. To date: 346+ legal articles collected, machine-readable format, automatic daily updates. cookies.zeeker.sg demonstrates it in action — a daily Singapore Law Watch summaries app built on top of the API in a matter of weeks.
+
+*Para 3 — The decision moment:*
+
+When SMU Centre for Digital Law announced SOLID — Singapore's first open empirical legal database, with Ministry of Law backing and a three-year roadmap — the pragmatic voice in my head said: stop. Institutions can do this better. But sitting in that roundtable, I realised we were building different things. SOLID asks "how many?" — historical datasets for researchers analysing judicial patterns and training legal AI on authoritative texts. zeeker.sg asks "what did it say?" — real-time legal news feeds for practitioners who can't read 40 sources daily, and for builders who want to feed current legal awareness into their GenAI systems. Neither approach is wrong. They're different paradigms solving different problems.
+
+*Para 4 — Vision and invitation:*
+
+The full vision is still years ahead: structured data → apps → AI services → whatever comes next. data.zeeker.sg doesn't need to please stakeholders or satisfy validated market needs. It can try weird things — command-line legal agents, experimental formats, ideas that might fail. By the time SOLID launches, I'll have tried a dozen strange things. That's what solo builders can do: fail fast, discover what nobody knew they wanted. If you're building something in the Singapore legal data space, the API is open. Come build something strange.
+
+---
+
+### User Decisions
+
+- Pending: User to review intro paragraphs and decide whether to use as-is or revise
+- Pending: User to decide where these paragraphs live (dedicated projects page vs. zeeker.sg landing content)
+
+### Outcomes
+
+- ✅ "zeeker" tag now consistent across all 4 published zeeker-related posts in Ghost
+- ✅ Part 3 local markdown frontmatter updated to match Ghost
+- ✅ Intro paragraphs drafted in Houfu's voice
+
+### Files Modified
+
+- `/posts/data-zeeker-sg/part-3-smu-and-decision.md` — added "zeeker" to tags frontmatter
+
+### Next Steps
+
+- Review intro paragraphs and refine voice if needed
+- Decide where the projects page will live (Ghost page vs. blog post)
+- Consider adding a zeeker.sg bookmark card link to the intro
+
 *Updated Nov 22, 2025 after publishing Part 3 to Ghost and completing the series*

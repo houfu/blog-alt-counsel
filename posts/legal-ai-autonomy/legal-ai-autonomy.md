@@ -1,13 +1,23 @@
 ---
-title: "Legal AI's Real Value: Autonomy, Not Automation"
-slug: "legal-ai-autonomy"
-tags: ["AI", "LegalTech", "Singapore", "WorkLifeBalance"]
-status: scheduled
-published_at: "2026-01-22T00:56:21.000Z"
+title: 'Legal AI''s Real Value: Autonomy, Not Automation'
+slug: legal-ai-autonomy
+tags:
+  - AI
+  - LegalTech
+  - Singapore
+  - WorkLifeBalance
+status: published
+published_at: '2026-01-22T00:56:21.000Z'
 featured: false
-feature_image: "https://www.alt-counsel.com/content/images/2026/01/photo-1704655295066-681e61ecca6b.jpeg"
-custom_excerpt: "Before AI, fear forced me to compromise. When a client's case didn't fit the template, I knew the optimal approach—but pursuing it meant hours of risk. AI didn't just save time. It gave me the autonomy to make the right decision, not just the safe one."
-github_folder: "legal-ai-autonomy"
+feature_image: >-
+  https://www.alt-counsel.com/content/images/2026/01/photo-1704655295066-681e61ecca6b.jpeg
+custom_excerpt: >-
+  Before AI, fear forced me to compromise. When a client's case didn't fit the
+  template, I knew the optimal approach—but pursuing it meant hours of risk. AI
+  didn't just save time. It gave me the autonomy to make the right decision, not
+  just the safe one.
+github_folder: legal-ai-autonomy
+post_id: 6970fe4ff183ad000141da29
 ---
 
 It's the start of a new legal year, but some things have stayed the same. In Singapore, 60% of newly minted lawyers say they're likely to leave the profession within five years. The government just [formed a committee - co-led by the Law Minister and Chief Justice](https://www.straitstimes.com/singapore/courts-crime/law-minister-and-chief-justice-to-co-lead-committee-to-tackle-lawyer-attrition-rates-impact-of-ai) - to address this crisis. It's even been given a cold lifeless name — *attrition rate* — like tiny bits separating from a large uncaring rock.

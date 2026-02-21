@@ -1,11 +1,22 @@
 ---
-title: "I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing."
-slug: "tool-vs-infrastructure-mindset"
-tags: ["LegalTech", "Programming", "AI"]
-status: scheduled
+title: I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing.
+slug: tool-vs-infrastructure-mindset
+tags:
+  - LegalTech
+  - Programming
+  - AI
+status: published
 featured: false
-github_folder: "jamie-tso-vibe-coding"
-custom_excerpt: "Jamie Tso built 4 legal AI tools in 2-3 months using vibe coding. My redlines library took 3 years. The 30-90x velocity gap comes down to one question: am I building a tool or infrastructure? Most lawyers ask infrastructure questions for tool problems."
+github_folder: jamie-tso-vibe-coding
+custom_excerpt: >-
+  Jamie Tso built 4 legal AI tools in 2-3 months using vibe coding. My redlines
+  library took 3 years. The 30-90x velocity gap comes down to one question: am I
+  building a tool or infrastructure? Most lawyers ask infrastructure questions
+  for tool problems.
+post_id: 6966f9bfb20ad70001e1ddbc
+published_at: '2026-01-15T00:10:58.000Z'
+feature_image: >-
+  https://www.alt-counsel.com/content/images/2026/01/photo-1642420776022-c0f63ee8272a.jpeg
 ---
 
 I compared my GitHub to Jamie Tso's and felt unproductive.
