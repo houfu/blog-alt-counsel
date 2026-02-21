@@ -1,6 +1,15 @@
-# My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)
+---
+title: "My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)"
+slug: "my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom"
+tags: ["AI", "LegalTech", "Singapore"]
+status: published
+published_at: "2026-01-08T00:33:52.000Z"
+post_id: "695e594d8be18900017b93d4"
+visibility: public
+featured: false
+---
 
-**Published:** [Draft]
+# My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)
 **Tags:** AI, LegalTech, Singapore
 
 Stanford HAI faculty predict we're entering AI's "measurement era"—more realism, less hype. Forbes predicts agentic AI will transform legal workflows. Above the Law warns about 700+ hallucination cases. Salesforce thinks ASEAN will leapfrog with AI adoption.

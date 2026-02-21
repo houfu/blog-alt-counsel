@@ -1,3 +1,14 @@
+---
+title: "October 3 Changed Everything: How One $800 Fine Flipped Singapore's AI Coverage from Adoption to Accountability"
+slug: "year-in-review-2025-ai-accountability"
+tags: ["AI", "LegalTech", "Singapore", "zeeker"]
+status: published
+published_at: "2025-12-31T00:03:08.000Z"
+post_id: "69512c9acad1da0001e2595f"
+visibility: public
+featured: true
+---
+
 ## The Shift Nobody Saw Coming
 
 On October 3, 2025, a Singapore lawyer was ordered to pay $800 after a junior associate used AI to generate a non-existent case citation. That single sanction changed everything.

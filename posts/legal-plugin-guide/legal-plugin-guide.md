@@ -1,10 +1,23 @@
 ---
-title: "So you want to Claude Cowork the Legal Plugin?: A Guide"
-slug: "so-you-want-to-claude-cowork-the-legal-plugin-a-guide"
-tags: ["LegalTech", "OpenSource", "PDPA", "Tutorial"]
-status: scheduled
+title: 'So you want to Claude Cowork the Legal Plugin?: A Guide'
+slug: so-you-want-to-claude-cowork-the-legal-plugin-a-guide
+tags:
+  - LegalTech
+  - OpenSource
+  - PDPA
+  - Tutorial
+status: published
 featured: false
-github_folder: "legal-plugin-guide"
+github_folder: legal-plugin-guide
+post_id: 69889fe6fbb6fe0001120c1e
+published_at: '2026-02-09T00:21:45.000Z'
+feature_image: >-
+  https://www.alt-counsel.com/content/images/2026/02/photo-1698047681710-0edc06169789.jpeg
+custom_excerpt: >-
+  Legal Tech panicked when Anthropic released their legal plugin, but missed the
+  real story: it's open source and customizable. This hands-on guide shows you
+  how to create jurisdiction-specific templates—like a Singapore PDPA DSAR
+  response—and encode your own decision-making logic.
 ---
 
 Legal Tech LinkedIn went nuts lately when they noticed Anthropic's legal plugin tucked away in their "knowledge workers" repository. The markets also took notice as many "traditional" legal tech vendors saw their stock prices drop, including Thomson Reuters which saw a drop of 16% in a single day.

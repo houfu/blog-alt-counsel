@@ -1,9 +1,17 @@
+---
+title: "How I Built Singapore's Legal Data API with \"Wrong\" Technology"
+slug: "how-i-built-singapores-legal-data-api-with-wrong-technology"
+tags: ["newsletter", "zeeker", "technical", "architecture"]
+status: sent
+published_at: "2025-11-17T13:25:32.000Z"
+post_id: "691b215de40e8100018920f1"
+email_only: true
+visibility: public
+---
+
 # Newsletter: How I Built Singapore's Legal News API with "Wrong" Technology
 
 **Subject line:** SQLite in production: 40 data sources, $6/month, zero regrets
-
-**Status:** Published (Nov 18, 2025)
-**Ghost Post ID:** 691b215de40e8100018920f1
 **Word count:** ~380 words
 
 ---

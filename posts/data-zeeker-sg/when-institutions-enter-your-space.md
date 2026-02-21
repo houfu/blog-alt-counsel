@@ -1,8 +1,19 @@
 ---
-title: "When Institutions Enter Your Passion Project Space"
-date: 2025-11-06
+title: When Institutions Enter Your Passion Project Space
+date: 2025-11-06T00:00:00.000Z
 draft: true
-tags: [legal-tech, sustainability, solo-builders, passion-projects, open-data]
+tags:
+  - LegalTech
+  - zeeker
+slug: when-institutions-enter-your-passion-project-space
+status: published
+post_id: 690e09fb88ddf30001db7e71
+published_at: '2025-11-10T00:35:44.000Z'
+feature_image: 'https://www.alt-counsel.com/content/images/2025/11/Pixar-s--Up--House.jpg'
+custom_excerpt: >-
+  Domain renewal: $110. But the real cost is over 150 hours and zero users. Now
+  SMU is building what I tried solo. Here's my framework for deciding: continue,
+  collaborate, or gracefully close.
 ---
 
 My domain renewal invoice will arrive soon. Another two years of zeeker.sg: $110.

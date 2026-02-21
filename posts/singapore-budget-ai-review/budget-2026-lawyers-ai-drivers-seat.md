@@ -1,11 +1,23 @@
 ---
-title: "Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?"
-slug: "budget-2026-lawyers-ai-drivers-seat"
-tags: ["AI", "LegalTech", "Singapore", "Government"]
-status: scheduled
+title: Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?
+slug: budget-2026-lawyers-ai-drivers-seat
+tags:
+  - AI
+  - LegalTech
+  - Singapore
+  - Government
+status: published
 featured: false
-github_folder: "singapore-budget-ai-review"
-custom_excerpt: "PM Wong named legal as one of the first professions needing AI transition support in Budget 2026. The government is putting real money behind this - 400% tax deductions, free premium tools, Champions of AI programme. But is this adoption infrastructure, or does it keep lawyers in the passenger seat?"
+github_folder: singapore-budget-ai-review
+custom_excerpt: >-
+  PM Wong named legal as one of the first professions needing AI transition
+  support in Budget 2026. The government is putting real money behind this -
+  400% tax deductions, free premium tools, Champions of AI programme. But is
+  this adoption infrastructure, or does it keep lawyers in the passenger seat?
+post_id: 69906b3c6787a3000184f8df
+published_at: '2026-02-16T01:02:41.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1497781351393-2fce139ef4cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDE0fHxkcml2ZXJ8ZW58MHx8fHwxNzcwOTg5MTI2fDA&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
 PM Wong named legal as one of the first professions needing AI transition support in Budget 2026. Right after warning that AI will displace white-collar jobs.
