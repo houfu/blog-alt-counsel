@@ -1,11 +1,11 @@
 ---
 title: When Institutions Enter Your Passion Project Space
 date: 2025-11-06T00:00:00.000Z
-draft: true
 tags:
   - LegalTech
   - zeeker
 slug: when-institutions-enter-your-passion-project-space
+github_folder: data-zeeker-sg
 status: published
 post_id: 690e09fb88ddf30001db7e71
 published_at: '2025-11-10T00:35:44.000Z'
