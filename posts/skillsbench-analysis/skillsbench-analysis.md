@@ -9,9 +9,9 @@ custom_excerpt: "SkillsBench tested 84 tasks across 7,308 agent runs and found c
 post_id: "69a6d5c6a327510001324998"
 ---
 
-I thought I was getting good at writing skills. I’ve been using GenAI way before when “thinking in steps” was a magic phrase and found my experience still useful. So I built nine for this blog already and they’re buzzing along nicely. 
+I thought I was getting good at writing skills. I’d built nine for this blog already and they were buzzing along nicely.
 
-Then I worked on [CoDraft project](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — a contract generator workflow I've been building in Claude Cowork — and still there were new things to learn and old habits to undo.
+Then [CoDraft](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — a contract generator workflow I’ve been building in Claude Cowork — taught me there were still new things to learn and old habits to undo.
 
 One of the tasks Codraft has to perform is to print an PDF document out of Word templates. There are subtle differences in a Cowork environment compared to others like Claude Code. One of them is that you can’t install certain programs like soffice and use it to print docx to PDF. Claude then made a hack to run soffice and spelt it out in its in built docx and pdf skills.
 
@@ -53,9 +53,11 @@ The worst example in the benchmark: taxonomy-tree-merge, where skills dropped pe
 
 I had my own taxonomy-tree-merge moment. I just didn't have a benchmark to tell me. (I'd already seen a version of this when [building CLI tools for Claude Code](https://www.alt-counsel.com/i-built-cli-tools-for-claude-code-heres-what-i-learned-about-designing-for-ai-users/) — Claude ignored the documentation I wrote and hallucinated flags based on training data patterns. Strong priors override instructions.)
 
-**The lesson:** Before writing a skill, ask: does the model already do this well without one? If yes, you're not adding — you're confusing.
+The lesson wasn't just that my skill was wrong. It was that no skill was the right answer.
 
-### 2. You’ve got to study what’s in it 
+**The lesson:** Before writing a skill, run the task without one first. If the model already handles it well, you're not adding capability — you're adding confusion. Sometimes the best skill is no skill at all.
+
+### 2. The longer the skill, the less it helps
 
 Codraft started out very simple. It just had to find variables and ask the user questions to fill them in.  As I started considering new features, it started to blossom in size. With example templates, more instructions and more things to consider, executing a task started to slow down. You could literally watch the agent read my files. 
 
@@ -126,4 +128,4 @@ The SkillsBench data and my own experience converge on a set of questions worth 
 7. Have you tested with and without the skill? The paper calls this "paired evaluation" and considers it essential. Single-condition testing misses the interaction between skills and model capabilities.
 8. Have you tested across models? A skill that works with Opus might perform differently for  Haiku, and if you plan to share them with others, you need to take that into account.
 
-I hope this helps you to build better skills. I'd interested to know more about your experience too: which ones helped, which ones got in the way, and whether anyone has actually done the paired testing.
+I hope this helps you build better skills. One thing I still haven't done: paired testing — running the same task with and without the skill to measure the difference. Have you? I'd genuinely like to know.
