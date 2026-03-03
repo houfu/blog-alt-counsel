@@ -1,7 +1,7 @@
 # Canonical Tag Registry
 
 **Last Updated**: 2025-11-22
-**Total Tags**: 46 canonical tags (consolidated from 100 Ghost tags)
+**Total Tags**: 47 canonical tags (consolidated from 100 Ghost tags)
 **Total Posts Tagged**: 382 post-tag associations
 
 This is the authoritative list of approved tags for alt-counsel.com. All blog posts and newsletters should use tags from this registry.
@@ -57,6 +57,7 @@ Legal tech events and community initiatives.
 - **TechLawFest** - Tech Law Fest conference (11 posts)
 - **FutureLaw** - FutureLaw initiative (8 posts)
 - **SOLID** - Singapore Open Legal Informatics Database (SMU project) (1 post)
+- **CoDraft** - CoDraft project (Claude Code-based document drafting workflow) (1 post)
 
 ### Content Type
 Type or format of the content.
@@ -206,6 +207,12 @@ These represent planned content areas even if not yet published.
 - **NO spaces, hyphens, or underscores** in canonical tags
 
 ## Tag Maintenance Log
+
+### 2026-03-03
+- ✅ Added **CoDraft** tag to Events & Communities category
+- **Justification**: CoDraft is an ongoing project with a published post and multiple future posts planned covering skills implementation, document workflows, and Claude Code integrations
+- **Reusability**: Will apply to existing connect-codraft-article post, this SkillsBench analysis post, and future CoDraft development posts
+- **Total tags**: 46 → 47
 
 ### 2025-11-22
 - ✅ Added **SOLID** tag to Events & Communities category
