@@ -5,6 +5,7 @@ tags: ["AI", "Programming", "CoDraft", "Article"]
 status: draft
 featured: false
 github_folder: "skillsbench-analysis"
+custom_excerpt: "SkillsBench tested 84 tasks across 7,308 agent runs and found curated skills boost performance by 16pp — but 19% of tasks got worse. I made three of the exact mistakes the data predicted."
 ---
 
 I thought I was getting good at writing skills. I've built nine of them for this blog alone — pitching posts, researching topics, curating backlinks, managing tags. Each one grew from a real frustration. Each one replaced something I used to do manually, badly.
