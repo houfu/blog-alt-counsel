@@ -46,14 +46,24 @@ Sufficient reusability — existing post, this post, and confirmed future posts.
 - Searched existing posts for content arc (found 5 related posts on skills/agents)
 - Checked CoDraft references across posts (found in 4 files)
 - Read Voice Guide for pitch tone/structure
+- Deep research into SkillsBench paper via web search (arXiv, HuggingFace, skillsbench.ai)
+- Explored full codebase for personal experience data (9 skills, CoDraft, ai-tools-for-agents, prompt-engineering-wrong)
+- Searched blog for backlink candidates (4 search queries)
 
 ### Writing
 - Drafted initial pitch (revised once for framing tone)
 - Created pitch.md with title, pitch paragraph, and suggested tags
+- Drafted full post (~2,100 words) using Learning in Public template
+- Revised draft incorporating feedback from 3 reviewers + content quality audit
+- Added custom excerpt for Ghost publishing
 
 ### Quality Control
 - Tag registry lookup and validation
 - Added CoDraft tag with full registry maintenance (category, metadata, log)
+- Content quality audit (5 specialist agents: accessibility, readability, tone, structure, flow)
+- Legal Tech Blog reviewer (Marcus Tan) feedback
+- Lawyer-Coder reviewer (Wei Lin) feedback
+- Backlink curation: 3 internal links distributed across the post
 
 ## WHAT WORKED / DIDN'T WORK
 
@@ -62,11 +72,19 @@ Sufficient reusability — existing post, this post, and confirmed future posts.
 |-----------------|---------------|---------|
 | Drafted pitch with "wish I'd known" framing | User corrected to experiential framing | Revised pitch approved |
 | Suggested 3 canonical tags + 1 new tag | User confirmed CoDraft tag needed | 4-tag set approved |
+| First draft structure (Learning in Public template) | User approved | Structure held through revisions |
+| Ran 3 reviewers in parallel | Reviewers aligned on key fixes | Efficient single-pass revision |
+| Full model table (Marcus feedback) | Incorporated | More honest, more interesting analysis |
+| Legal domain connection (Marcus feedback) | Incorporated | Made post directly actionable for legal tech audience |
+| Expanded emotional weight (Wei Lin feedback) | Incorporated | Post went from "useful analysis" to "felt seen" |
+| Closing question (all reviewers) | Incorporated | Opens conversation, matches Learning in Public template |
 
 ### Didn't Work
 | What Claude Did | Problem | Lesson |
 |-----------------|---------|--------|
 | Initial pitch used "I wish I'd known" closing | Too retrospective/regretful for Houfu's voice | Frame from experience, not hindsight |
+| First draft showed only Claude Code rows in model table | Selective framing — looked misleading | Always show full comparison data |
+| First draft lacked emotional specificity | "Not comfortable to read" too vague | Name the specific discomfort |
 
 ## SESSIONS (Chronological Detail)
 
@@ -107,3 +125,60 @@ User has been working with SkillsBench paper (Li et al., 2026) and has personal 
 - Research: Deep dive into SkillsBench paper for specific data points
 - Draft: Outline and write the post using Learning in Public template
 - Review: Content quality audit + target audience feedback
+
+## Session 2: Research, Draft, Review, and Backlinks (2026-03-03)
+
+### Context
+Continuation of Session 1. User shared SkillsBench blog link (skillsbench.ai, returned 403). Proceeded with web search and arxiv data.
+
+### What Claude Did
+- Research: 4 web searches extracting SkillsBench data (methodology, model comparison table, failure modes, domain breakdown, recommendations)
+- Research: Full codebase exploration via subagent — found 10 relevant posts and all 9 blog skills with specific failure examples
+- Writing: Drafted ~1,800 word post following Learning in Public template from Voice Guide
+- Review: Ran 3 agents in parallel (content quality audit, Marcus Tan, Wei Lin)
+- Revision: Single-pass incorporating all feedback (10 changes)
+- Backlinks: Searched blog (4 queries), selected 3 posts distributed across the draft
+- Publishing: Attempted Ghost API publish — blocked by 418 error (API connectivity issue)
+
+### User Decisions
+- Decision 1: Approved proceeding with web search data when skillsbench.ai returned 403
+- Decision 2: Approved publishing to Ghost as draft
+
+### Reviewer Feedback Summary
+
+**Content Quality Audit (5 agents):** No critical issues. 4 important, 5 minor. Key fixes: link the paper, spell out "pp", close with question.
+
+**Marcus Tan (Legal Tech):** "I'd forward this to the community." Key fixes: show full model table (not just Claude Code), add legal domain connection, clarify portability vs authoring distinction, cut summary paragraph, add closing question.
+
+**Wei Lin (Lawyer-Coder):** "One draft revision away from sharing without caveats." Key fixes: expand emotional discomfort, name specific skills in "still figuring out," give CoDraft context, expand testing gap paragraph.
+
+### Changes Made (Round 1 Revision)
+1. Added CoDraft context sentence in opening
+2. Expanded "not comfortable to read" into 3 specific sentences
+3. Added legal domain paragraph (healthcare/SE variance → legal)
+4. Full 7-row model table (was 3 Claude Code rows)
+5. Added harness-matters observation
+6. Clarified portability vs authoring capability in AI-generated section
+7. Named `generate_a_pitch` as the specific worried-about skill
+8. Expanded testing gap from 1 sentence to full paragraph
+9. Added closing question
+10. Cut "For anyone building skills" summary paragraph
+
+### Backlinks Added
+1. **Two Files, One Workflow** → opening paragraph (CoDraft context)
+2. **I Built CLI Tools for Claude Code** → section 1 (strong priors callback)
+3. **Lawyers Got Prompt Engineering Wrong** → closing (45-line skill origin)
+
+### Outcomes
+- ✅ Post fully drafted and revised (~2,100 words)
+- ✅ All reviewer feedback incorporated in single pass
+- ✅ 3 backlinks distributed across post
+- ✅ Custom excerpt added
+- ❌ Ghost API returning 418 — publish blocked
+- Files modified: skillsbench-analysis.md
+- Files created: research.md
+
+### Next Steps
+- Publish to Ghost when API is available: `node -r dotenv/config scripts/publish-lexical.js posts/skillsbench-analysis/skillsbench-analysis.md`
+- Run `npm run sync-ghost skillsbench-analysis` after publishing
+- Update frontmatter with post_id
