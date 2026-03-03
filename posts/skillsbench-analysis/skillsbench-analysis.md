@@ -9,7 +9,7 @@ github_folder: "skillsbench-analysis"
 
 I thought I was getting good at writing skills. I've built nine of them for this blog alone — pitching posts, researching topics, curating backlinks, managing tags. Each one grew from a real frustration. Each one replaced something I used to do manually, badly.
 
-Then my CoDraft project — a contract review workflow I've been building in Claude Cowork — started failing on a task Claude could already do.
+Then my [CoDraft project](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — a contract review workflow I've been building in Claude Cowork — started failing on a task Claude could already do.
 
 The skill told Claude to read a Word document by invoking a specific DOCX skill at a hardcoded path. Claude already knows how to read Word documents. My skill didn't add knowledge — it added a conflicting instruction that broke the workflow. The fix was deleting six lines.
 
@@ -45,7 +45,7 @@ The SkillsBench data explains why this backfires. Tasks where skills hurt perfor
 
 The worst example in the benchmark: taxonomy-tree-merge, where skills dropped performance by 39.3 percentage points. The model already knew how to merge taxonomy trees. The skill got in the way.
 
-I had my own taxonomy-tree-merge moment. I just didn't have a benchmark to tell me.
+I had my own taxonomy-tree-merge moment. I just didn't have a benchmark to tell me. (I'd already seen a version of this when [building CLI tools for Claude Code](https://www.alt-counsel.com/i-built-cli-tools-for-claude-code-heres-what-i-learned-about-designing-for-ai-users/) — Claude ignored the documentation I wrote and hallucinated flags based on training data patterns. Strong priors override instructions.)
 
 **The lesson:** Before writing a skill, ask: does the model already do this well without one? If yes, you're not adding — you're overriding.
 
@@ -128,6 +128,6 @@ The SkillsBench data suggests my `tag-registry` skill is closer to the ideal: lo
 
 I also haven't solved the testing problem. The paper insists on paired evaluation — testing with and without skills — and considers it essential. I've never done that. Not once. I add a skill, it seems to work, I move on. The paper ran 7,308 trajectories with deterministic verifiers. My testing methodology is "did it seem better this time?" That gap between rigorous evaluation and weekend-builder guesswork is something I think about but haven't bridged. When you're building alone in the evenings, "run it both ways and compare" competes with "ship it and move on." Ship usually wins.
 
-The 45-line skill that replaced my 3-page prompt was one of the most satisfying things I've built. SkillsBench suggests that satisfaction wasn't misplaced — but that the instinct to keep adding to it might be.
+The [45-line skill that replaced my 3-page prompt](https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/) was one of the most satisfying things I've built. SkillsBench suggests that satisfaction wasn't misplaced — but that the instinct to keep adding to it might be.
 
 Have you been building skills? I'd genuinely like to know: which ones helped, which ones got in the way, and whether anyone has actually done the paired testing I keep avoiding.
