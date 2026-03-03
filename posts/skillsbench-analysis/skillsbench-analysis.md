@@ -9,21 +9,23 @@ github_folder: "skillsbench-analysis"
 
 I thought I was getting good at writing skills. I've built nine of them for this blog alone — pitching posts, researching topics, curating backlinks, managing tags. Each one grew from a real frustration. Each one replaced something I used to do manually, badly.
 
-Then my CoDraft project started failing on a task Claude could already do.
+Then my CoDraft project — a contract review workflow I've been building in Claude Cowork — started failing on a task Claude could already do.
 
 The skill told Claude to read a Word document by invoking a specific DOCX skill at a hardcoded path. Claude already knows how to read Word documents. My skill didn't add knowledge — it added a conflicting instruction that broke the workflow. The fix was deleting six lines.
 
-That experience made me pay attention when SkillsBench dropped in February. It's the first large-scale benchmark measuring whether Agent Skills actually improve performance — 84 tasks across 11 domains, 7,308 agent runs, three commercial agent harnesses (Claude Code, Gemini CLI, Codex CLI), seven frontier models. Not opinions about skills. Data.
+That experience made me pay attention when [SkillsBench](https://arxiv.org/abs/2602.12670) dropped in February 2026. It's the first large-scale benchmark measuring whether Agent Skills actually improve performance — 84 tasks across 11 domains, 7,308 agent runs, three commercial agent harnesses (Claude Code, Gemini CLI, Codex CLI), seven frontier models. Not opinions about skills. Data.
 
-The headline finding: curated skills improve performance by 16.2 percentage points on average. But 16 of 84 tasks got *worse* with skills. And AI-generated skills? On average, they made things worse too.
+The headline finding: curated skills improve performance by 16.2 percentage points (pp) on average. But 16 of 84 tasks got *worse* with skills. And AI-generated skills? On average, they made things worse too.
 
-That matched my experience exactly. Not all of it was comfortable to read.
+That matched my experience exactly. Not all of it was comfortable to read. The "less is more" finding stung — I'd spent months making my skills longer, more thorough, more comprehensive. The self-generated skills finding was worse. I'd shipped one of those. It was 192 lines of instructions that looked impressive and broke for everyone except me.
 
 ## What the Data Actually Shows
 
 SkillsBench tested each task under three conditions: no skills, curated skills, and self-generated skills (where the model writes its own instructions before attempting the task). The results break some assumptions.
 
-**Curated skills help — but not universally.** The average gain is +16.2 percentage points, but that average hides enormous variation. Healthcare tasks improved by +51.9pp. Software engineering tasks? Just +4.5pp. For 16 tasks, skills actively hurt performance, with the worst case dropping 39.3 percentage points.
+**Curated skills help — but not universally.** The average gain is +16.2pp, but that average hides enormous variation. Healthcare tasks improved by +51.9pp. Software engineering tasks? Just +4.5pp. For 16 tasks, skills actively hurt performance, with the worst case dropping 39.3pp.
+
+The pattern matters: skills add the most value where models have the weakest priors. Healthcare has specialized workflows and brittle formats that models haven't seen enough of. Software engineering? Models have strong priors from massive training data — skills are more likely to conflict than help. Legal work maps closer to healthcare on this axis. Contract review against jurisdiction-specific statutes, PDPA compliance checks, document classification for Singapore regulatory filings — these are exactly the domains where models lack strong priors and a focused skill can add the most value.
 
 **Self-generated skills are useless — or worse.** When models were prompted to generate their own procedural knowledge before solving tasks, the average effect was -1.3pp. Not helpful. Slightly harmful. Only one model (Opus 4.6) showed a modest positive effect (+1.4pp). Codex with GPT-5.2 degraded by -5.6pp.
 
@@ -65,9 +67,9 @@ I haven't pruned my 100-line skill yet. But I'm looking at it differently now.
 
 When I first set up CoDraft in Cowork, Claude generated the initial skill for me. It was 192 lines of detailed instructions covering a 5-step contract review workflow across 19 categories. Looked impressive.
 
-It also contained hardcoded session paths like `/sessions/jolly-exciting-bardeen/mnt/.skills/skills/pdf/SKILL.md`. That path works in exactly one session on exactly one machine. Anyone else copying the skill gets a broken workflow.
+It also contained hardcoded session paths like `/sessions/jolly-exciting-bardeen/mnt/.skills/skills/pdf/SKILL.md`. That path works in exactly one session on exactly one machine. Anyone else copying the skill gets a broken workflow. That's a portability failure — a failure mode the benchmark doesn't directly test, but one that matters in practice.
 
-The SkillsBench data validates this at scale. Self-generated skills produced -1.3pp on average — slightly worse than no skills at all. The paper's conclusion is blunt: "models cannot reliably author the procedural knowledge they benefit from consuming."
+What the SkillsBench data *does* validate at scale is the authoring problem. Self-generated skills produced -1.3pp on average — slightly worse than no skills at all. The paper's conclusion is blunt: "models cannot reliably author the procedural knowledge they benefit from consuming."
 
 That's worth sitting with. The same model that benefits enormously from well-written skills (+16.2pp) cannot write those skills for itself. Generating skills and using skills are fundamentally different capabilities.
 
@@ -79,11 +81,17 @@ One finding I didn't expect: skills don't flatten the gap between models. They w
 
 | Config | No Skills | With Skills | Gain |
 |---|---|---|---|
+| Gemini CLI + Flash | 31.3% | 48.7% | +25.3pp |
 | Claude Code + Opus 4.5 | 22.0% | 45.3% | +23.3pp |
-| Claude Code + Sonnet 4.5 | 17.3% | 31.8% | +17.5pp |
+| Codex + GPT-5.2 | 30.6% | 44.7% | +20.3pp |
+| Claude Code + Opus 4.6 | 30.6% | 44.5% | +20.0pp |
+| Gemini CLI + Pro | 27.6% | 41.2% | +18.8pp |
 | Claude Code + Haiku 4.5 | 11.0% | 27.7% | +18.8pp |
+| Claude Code + Sonnet 4.5 | 17.3% | 31.8% | +17.5pp |
 
-Opus 4.5 gained 23.3 percentage points from skills. Haiku 4.5 gained 18.8pp. The absolute gap between them grew from 11pp (without skills) to 17.6pp (with skills). Better models extract more value from the same skills.
+The full picture is more interesting than any single harness. Gemini Flash actually had the highest absolute pass rate with skills (48.7%), while Claude Code + Opus 4.5 had the largest gain (+23.3pp). Harness design matters as much as model capability — the same model through different harnesses produces different results.
+
+But zoom into the Claude Code rows, where I have personal experience. Opus 4.5 gained 23.3pp from skills. Haiku 4.5 gained 18.8pp. The absolute gap between them grew from 11pp (without skills) to 17.6pp (with skills). Better models extract more value from the same skills.
 
 But here's the nuance: Haiku *with* skills (27.7%) outperformed Opus *without* skills (22.0%). The paper frames this as "smaller models with Skills can match larger models without them." That's the economic argument for investing in skill quality — good skills can partially compensate for model capacity limitations.
 
@@ -114,14 +122,12 @@ The SkillsBench data and my own experience converge on a set of questions worth 
 
 ## What I'm Still Figuring Out
 
-I have nine skills running this blog. Some of them are clearly better than others. The `tag-registry` skill is focused — look up tags, suggest canonical ones, prevent sprawl. It does one thing. The `generate_a_pitch` skill has grown into a mini-framework with seven steps and multiple sub-invocations.
+I have nine skills running this blog. The one I'm most worried about is `generate_a_pitch`. It started as 45 focused lines and now has seven steps, multiple sub-skill invocations, an authenticity check, a tag validation step, and a post scaffolding step. It does one thing — generate a pitch — but it orchestrates five other concerns along the way. Every addition came from a real failure. I still haven't pruned it, because I can point to the specific incident that justified each addition.
 
-The SkillsBench data suggests the tag registry is closer to the ideal. But the pitch skill's complexity came from real failures, not theoretical completeness. Every addition solved a problem that actually happened.
+The SkillsBench data suggests my `tag-registry` skill is closer to the ideal: look up tags, suggest canonical ones, prevent sprawl. One thing. The pitch skill's complexity came from real problems, not theoretical completeness. But maybe that's the trap — the paper's 4x difference between compact and comprehensive isn't about intentions. It's about what models can actually hold in context.
 
-Maybe the answer isn't "keep it short" but "keep it focused." A 100-line skill that does one thing well might outperform a 30-line skill that tries to do three things. The paper tested line count and module count, but the relationship between the two isn't perfectly clear.
-
-I also haven't solved the testing problem. The paper insists on paired evaluation — testing with and without skills. I've never done that systematically. I add a skill, it seems to work, I move on. That's anecdotal, not measured. The paper's 7,308 trajectories make my sample size look embarrassing.
-
-For anyone building skills — whether for a blog workflow or a contract review pipeline or a legal research process — the data from SkillsBench is the first rigorous evidence we have. It confirms some intuitions (focused beats comprehensive), challenges others (more guidance doesn't mean better results), and raises questions I haven't answered yet (when exactly does a skill cross from helpful to harmful?).
+I also haven't solved the testing problem. The paper insists on paired evaluation — testing with and without skills — and considers it essential. I've never done that. Not once. I add a skill, it seems to work, I move on. The paper ran 7,308 trajectories with deterministic verifiers. My testing methodology is "did it seem better this time?" That gap between rigorous evaluation and weekend-builder guesswork is something I think about but haven't bridged. When you're building alone in the evenings, "run it both ways and compare" competes with "ship it and move on." Ship usually wins.
 
 The 45-line skill that replaced my 3-page prompt was one of the most satisfying things I've built. SkillsBench suggests that satisfaction wasn't misplaced — but that the instinct to keep adding to it might be.
+
+Have you been building skills? I'd genuinely like to know: which ones helped, which ones got in the way, and whether anyone has actually done the paired testing I keep avoiding.
