@@ -13,15 +13,15 @@ I thought I was getting good at writing skills. I’d built nine for this blog a
 
 Then [CoDraft](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — a contract generator workflow I’ve been building in Claude Cowork — taught me there were still new things to learn and old habits to undo.
 
-One of the tasks CoDraft has to perform is to print an PDF document out of Word templates. There are subtle differences in a Cowork environment compared to others like Claude Code. One of them is that you can’t install certain programs like soffice and use it to print docx to PDF. Claude then made a hack to run soffice and spelt it out in its in built docx and pdf skills.
+One of CoDraft’s tasks is converting Word documents to PDF. In Cowork, you can’t install tools like `soffice` — the library most agents use for that conversion. Claude didn’t know this, so it wrote a skill that tried to use `soffice` anyway.
 
-It turns out that if you wrote a specific process in your skill, Cowork runs it and once it fails, it starts stabbing at other random suboptimal solutions. So instead you tell it not to install soffice and just use the in built skills. It obeys your command, but once it reaches the in built skills and finds it has to install soffice again, it obeys your instructions and starts stabbing at others again. It looks like Cowork can’t print a PDF from word when it can. 
+The result was a loop. The skill told Claude to use `soffice`. That failed. Claude tried random alternatives instead of stopping. I updated the skill to say "don’t install `soffice`, just use the built-in tools." But the built-in tools also tried to call `soffice` under the hood. So Claude obeyed my instruction, hit the same wall, and started guessing again. From the outside, it looked like Cowork couldn’t convert documents — when it actually could.
 
 That experience made me pay attention when [SkillsBench](https://arxiv.org/abs/2602.12670) dropped in February 2026. It's the first large-scale benchmark measuring whether Agent Skills actually improve performance — 84 tasks across 11 domains, 7,308 agent runs, three commercial agent harnesses (Claude Code, Gemini CLI, Codex CLI), seven frontier models. Not opinions about skills. Data.
 
 The headline finding: curated skills improve performance by 16.2 percentage points (pp) on average. But 16 of 84 tasks got *worse* with skills. And AI-generated skills? On average, they made things worse too.
 
-That matched my experience exactly. Not all of it was comfortable to read. The "less is more" finding stung — every “prompt engineering” course tells you to be detailed and specific, to lay it out as much as you can so that you would have control over the model’s output. Instead you were drowning your AI agent, causing it to stab everything. 
+That matched my experience exactly. Not all of it was comfortable to read. The “less is more” finding stung — every prompt engineering course tells you to be detailed and specific, to lay it out as much as you can so that you control the model’s output. Instead you were drowning your AI agent in instructions it couldn’t use.
 
 ## What the Data Actually Shows
 
