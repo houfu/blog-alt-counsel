@@ -582,7 +582,16 @@ async function publishPost(filePath, status = 'draft') {
 
     console.log('\n🚀 Publishing to Ghost...');
 
-    const post = await api.posts.add(postData);
+    let post;
+    if (frontmatter.post_id) {
+      // Update existing post — fetch it first to get updated_at
+      console.log('   Updating existing post:', frontmatter.post_id);
+      const existing = await api.posts.read({ id: frontmatter.post_id });
+      postData.updated_at = existing.updated_at;
+      post = await api.posts.edit({ id: frontmatter.post_id, ...postData });
+    } else {
+      post = await api.posts.add(postData);
+    }
 
     console.log('\n✅ Post published successfully!');
     console.log('   Post ID:', post.id);
