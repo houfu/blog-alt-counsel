@@ -13,7 +13,7 @@ I thought I was getting good at writing skills. I’d built nine for this blog a
 
 Then [CoDraft](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — a contract generator workflow I’ve been building in Claude Cowork — taught me there were still new things to learn and old habits to undo.
 
-One of the tasks Codraft has to perform is to print an PDF document out of Word templates. There are subtle differences in a Cowork environment compared to others like Claude Code. One of them is that you can’t install certain programs like soffice and use it to print docx to PDF. Claude then made a hack to run soffice and spelt it out in its in built docx and pdf skills.
+One of the tasks CoDraft has to perform is to print an PDF document out of Word templates. There are subtle differences in a Cowork environment compared to others like Claude Code. One of them is that you can’t install certain programs like soffice and use it to print docx to PDF. Claude then made a hack to run soffice and spelt it out in its in built docx and pdf skills.
 
 It turns out that if you wrote a specific process in your skill, Cowork runs it and once it fails, it starts stabbing at other random suboptimal solutions. So instead you tell it not to install soffice and just use the in built skills. It obeys your command, but once it reaches the in built skills and finds it has to install soffice again, it obeys your instructions and starts stabbing at others again. It looks like Cowork can’t print a PDF from word when it can. 
 
@@ -59,21 +59,21 @@ The lesson wasn't just that my skill was wrong. It was that no skill was the rig
 
 ### 2. The longer the skill, the less it helps
 
-Codraft started out very simple. It just had to find variables and ask the user questions to fill them in.  As I started considering new features, it started to blossom in size. With example templates, more instructions and more things to consider, executing a task started to slow down. You could literally watch the agent read my files. 
+CoDraft started out very simple. It just had to find variables and ask the user questions to fill them in. As I started considering new features, it started to blossom in size. With example templates, more instructions and more things to consider, executing a task started to slow down. You could literally watch the agent read my files. 
 
-I imagined Codraft to be distributed in email attachments and Teams and Slack messages. More importantly, I wanted it to fit in a floppy disk. 185kb? it’s too much. When I started mowing down the numbers of lines in my skills by about 50%, I stumbled onto a startling discovery. The skills ran faster, without noticeable decreases in quality. 
+I imagined CoDraft to be distributed in email attachments and Teams and Slack messages. I wanted it small enough to share without thinking twice. At 185kb, it had grown unwieldy. When I started mowing down the numbers of lines in my skills by about 50%, I stumbled onto a startling discovery. The skills ran faster, without noticeable decreases in quality. 
 
 The SkillsBench data makes that clear too: compact skills (+18.9pp) outperform comprehensive documentation (+5.7pp) by nearly 4x. Agents struggle to extract relevant information from lengthy content. The finding is counterintuitive — more guidance should help, right? It doesn't.
 
 The paper's explanation: context burden. Every additional instruction competes for the model's attention. After 2-3 focused procedures, you hit diminishing returns. Four or more skills per task dropped from +20.0pp to +5.2pp.
 
-**The lesson:** Size does matter. Brevity is the wit of a legal quant’s soul. Make every word in your context count. 
+**The lesson:** Brevity isn’t just elegance. It’s performance. Make every word in your context count.
 
 ### 3. AI-generated skills can’t take you far
 
 In my post on Cowork, I encouraged readers to take the plunge into writing their skills by asking Claude to write them for you. To be frank, I don’t write any of these skills by hand. I trusted AI to optimise itself. 
 
-At some level, that advice is ridiculous. If AI can write all this stuff by itself, why doesn’t AI just do it already? Again the training data and jagged line of competence rears its head again. When the AI does not know, it cannot create out of thin air.
+At some level, that advice is ridiculous. If AI can write all this stuff by itself, why doesn’t AI just do it already? This is the jagged frontier of AI capability — models can be expert-level at using skills but completely unable to write good ones. When the AI does not know, it cannot create out of thin air.
 
 The SkillsBench data demonstrates this problem at scale. Self-generated skills produced -1.3pp on average — slightly worse than no skills at all. The paper's conclusion is blunt: "models cannot reliably author the procedural knowledge they benefit from consuming."
 
@@ -114,7 +114,7 @@ The SkillsBench data and my own experience converge on a set of questions worth 
 **Before you write the skill:**
 
 1. Does the model already do this well without a skill? Run the task without one first. If it works 80% of the time, a skill might hurt more than help.
-2. Can you describe what the skill does in sentences? If you need a paragraphs and pages, you have to think harder about the content and structure of the skill. 
+2. Can you describe what the skill does in sentences? If you need paragraphs and pages, you have to think harder about the content and structure of the skill.
 3. Is this procedural knowledge the model lacks, or general knowledge it already has? Skills work best for domain-specific workflows, not general capabilities.
 
 **While writing the skill:**
