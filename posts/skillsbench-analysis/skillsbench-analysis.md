@@ -2,11 +2,13 @@
 title: "What 7,308 Agent Runs Taught Me About Writing Better Skills"
 slug: "skillsbench-analysis"
 tags: ["AI", "Programming", "CoDraft", "Article"]
-status: draft
+status: published
 featured: false
 github_folder: "skillsbench-analysis"
 custom_excerpt: "SkillsBench tested 84 tasks across 7,308 agent runs and found curated skills boost performance by 16pp — but 19% of tasks got worse. It is a great backdrop to the things I have learnt too."
 post_id: "69a6d5c6a327510001324998"
+published_at: "2026-03-04T04:05:06.000Z"
+feature_image: "https://www.alt-counsel.com/content/images/2026/03/photo-1554825959-e9a6670d4f18.jpeg"
 ---
 
 I thought I was getting good at writing skills. I’d built nine for this blog already and they were buzzing along nicely.
