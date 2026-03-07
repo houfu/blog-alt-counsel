@@ -172,3 +172,19 @@ Full research saved to research.md.
 - Honest about remaining gaps (implementation support)
 
 **Next steps:** Content quality audit, then audience review
+
+## Session 2 — 2026-03-07
+
+### Repository Setup
+- Created branch `blog/minlaw-consultation-followup` and committed all post files
+- Removed third-party guide PDFs from git tracking (draft guide, final guide) — these are copyrighted MinLaw documents
+- Kept Houfu's own consultation submission PDF in the repo
+- Added local `.gitignore` in the post folder for the excluded PDFs
+
+### Status Check
+- **Research**: Complete. Well-sourced with consultation stats, media coverage, contributors analysis, public submissions comparison, and draft-vs-final structural comparison.
+- **Pitch**: Approved. Title: "From Draft to Final: What Changed in MinLaw's AI Guide (And What It Means for You)". Tags: AI, LegalTech, Singapore, Government.
+- **Draft**: First draft complete (~1,950 words, ~7-8 min read). Structure follows pitch arc: vulnerability opening → consultation stats → AI literacy comparison → consumer tools comparison → broader changes → solo counsel assessment → closing.
+
+### Next steps
+Content quality audit, then audience review (per reviewer routing table: Sarah + Legal Tech — this is policy/budget commentary with technical depth).
