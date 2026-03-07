@@ -188,3 +188,57 @@ Full research saved to research.md.
 
 ### Next steps
 Content quality audit, then audience review (per reviewer routing table: Sarah + Legal Tech — this is policy/budget commentary with technical depth).
+
+## Session 3 — 2026-03-07
+
+### Draft Restructure
+Houfu noted the first draft followed research results too closely rather than the pitch. Rewrote draft to make draft-vs-final comparison the backbone, with the personal submission as subplot (mentioned in 1-2 sentences per section) rather than centrepiece with forensic textual mapping.
+
+### New Material Added
+- **Edwin Tong speech** (Straits Times, 6 Mar 2026): "legally strong and digitally fluent" quote added as blockquote in AI Literacy section. Reinforces why AI literacy requirement matters — it's the practical expression of the minister's vision.
+- **[2026] SGHC 49** — *Tan Hai Peng Micheal v Tan Cheong Joo* (6 Mar 2026, same day as guide launch): Two small-firm solicitors cited fictitious AI-generated case authorities. $5,000 personal costs each. Placed in "Does It Work for Solo Counsel Now?" section to illustrate that solo counsels are most exposed to AI risk and least equipped to manage it.
+- Also researched CJ Menon's Opening of Legal Year 2026 speech (Jan 2026) — relevant paragraphs on AI literacy and skills degradation (paras 18, 20, 21, 24(c)) — but not used in draft.
+
+### Audience Review (Round 1)
+All three reviewers (Legal Tech, Corporate Lawyer, Lawyer-Coder) assessed the draft.
+
+**Consensus:** Draft delivers on pitch promise. Close to publishable after light revision.
+
+**Essential fixes identified:**
+1. Add the "discovery moment" — the beat where Houfu asks Claude to compare and it turns out to be real (~40-60 words, end of opening)
+2. Add one concrete action sentence in solo counsel section — point practitioners to most useful annex
+
+**High-value fixes:**
+3. Tighten "What Else Changed" — cut junior lawyer development, expand templates point
+4. Consider removing Straits Times bookmark card (interrupts flow mid-argument)
+
+**Optional:**
+5. Trim Edwin Tong explanatory follow-up — let quote do more work
+6. Rename "The Consultation Process Works" header (gives away conclusion)
+7. Briefly explain what LIFT is
+
+**Best line identified:** "A lawyer who doesn't know that AI confidently fabricates citations isn't exercising professional judgment — they're exercising professional trust."
+
+### Reviewer Feedback Implemented (all 7 suggestions)
+1. Added discovery moment — "asked Claude to compare... half-expecting hallucinated matches. It wasn't hallucinating."
+2. Added concrete action sentence — "If you have two hours this month, start with paragraph 23(d)... then Annex C"
+3. Tightened "What Else Changed" — cut junior lawyers, expanded templates, renamed to "Beyond the Submission: What the Guide Got Right on Its Own"
+4. Removed Straits Times bookmark card (interrupted flow)
+5. Trimmed Edwin Tong explanatory follow-up
+6. Renamed closing header to "What I Keep Coming Back To"
+7. Added LIFT explanation
+
+### Content Quality Audit
+Ran full 5-agent audit (accessibility, readability, structure, flow, tone). Key findings and fixes applied:
+1. Removed repeated "written for firms with innovation labs" phrase (appeared twice in 4 sentences in "Does It Work" section)
+2. Clarified 44% statistic attribution — changed to "citing estimates that" to signal it's the Minister citing a study
+3. Split SGHC 49 paragraph into two — case facts separate from solo firm implication. "$5,000 out of pocket" now punches as its own paragraph
+4. Converted SGHC 49 bookmark card to inline link — reduces external bookmark count to 1 (within Voice Guide)
+5. Expanded LIFT acronym (Legal Industry Framework for Transformation)
+6. Kept "ChatGPTs and Claudes" — Claude is a major GenAI tool practitioners use; changing it would be inaccurate
+
+### Current Draft State
+~2,000 words, ~8 min read. All reviewer and audit feedback implemented. Draft is publication-ready.
+
+### Next steps
+Backlink curation, then publish to Ghost.
