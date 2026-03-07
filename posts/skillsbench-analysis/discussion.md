@@ -65,6 +65,10 @@ Sufficient reusability — existing post, this post, and confirmed future posts.
 - Lawyer-Coder reviewer (Wei Lin) feedback
 - Backlink curation: 3 internal links distributed across the post
 
+### Post-Publish
+- Synced Ghost HTML back to local markdown (Session 3)
+- Verified all formatting, images, bookmark cards, and table match Ghost
+
 ## WHAT WORKED / DIDN'T WORK
 
 ### Worked Well
@@ -182,3 +186,36 @@ Continuation of Session 1. User shared SkillsBench blog link (skillsbench.ai, re
 - Publish to Ghost when API is available: `node -r dotenv/config scripts/publish-lexical.js posts/skillsbench-analysis/skillsbench-analysis.md`
 - Run `npm run sync-ghost skillsbench-analysis` after publishing
 - Update frontmatter with post_id
+
+## Session 3: Ghost Sync & PR Prep (2026-03-07)
+
+### Context
+Post was published to Ghost between sessions. User returned to sync local markdown with the Ghost published version and prepare for merging the feature branch.
+
+### What Claude Did
+- Fetched raw HTML from Ghost Admin API to compare against local markdown
+- Identified all differences between Ghost and local versions
+- Applied 7 categories of changes to match Ghost:
+  1. Reworded CoDraft intro paragraph (inline link → bookmark card link)
+  2. Replaced CLI tools inline link paragraph with bookmark card link
+  3. Added floppy disk Unsplash image with caption (section 2)
+  4. Updated table: added Δ abs (pp) and g (%) columns, corrected row order
+  5. Flattened framework section (removed bold subheaders, made flat numbered list)
+  6. Fixed bold/italic formatting throughout (bold→italic for section leads and lesson callouts, italic→bold for emphasis words)
+  7. Small wording fixes ("I then updated" vs "I updated")
+- Committed and pushed to `claude/check-branch-status-wMjzK`
+- Drafted PR title and description for the main skillsbench branch
+
+### User Decisions
+- Decision 1: Approved syncing local markdown to match Ghost (Ghost is source of truth for published content)
+- Decision 2: Merged the check-branch PR (#25) into the skillsbench feature branch
+
+### Outcomes
+- ✅ Local markdown now matches Ghost published version exactly
+- ✅ PR #25 merged into skillsbench feature branch
+- ✅ PR title/description drafted for main skillsbench branch
+- Files modified: skillsbench-analysis.md (32 insertions, 33 deletions)
+
+### Next Steps
+- Create PR for main skillsbench feature branch (`claude/skillsbench-analysis-post-dYVDG`) → master
+- Merge when ready
