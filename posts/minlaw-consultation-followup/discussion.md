@@ -242,3 +242,29 @@ Ran full 5-agent audit (accessibility, readability, structure, flow, tone). Key 
 
 ### Next steps
 Backlink curation, then publish to Ghost.
+
+## Session 4 — 2026-03-08
+
+### Published to Ghost
+- Posted draft to Ghost using `scripts/publish-lexical.js`
+- Post ID: `69ac4d6a1fe4720001852e6b`
+- Added `custom_excerpt` and `post_id` to frontmatter
+
+### Houfu's Ghost Edits
+Houfu edited the post directly in Ghost and scheduled it. Changes made:
+- `featured: true`, `status: scheduled`
+- Added bookmark card for original blog post after first paragraph
+- Linked "the final guide landed" to MinLaw launch page
+- Added "You know, just trying to be sycophant." to the Claude comparison sentence
+- Added bookmark card for MinLaw launch page
+- Removed "It wasn't hallucinating." standalone line
+- Linked Murali Pillai speech to MinLaw parliamentary speech page
+- Consumer tools section: replaced paraphrased summary with blockquote excerpt of actual paragraph 23(d) from the guide
+- Trimmed "Again, some of this language..." paragraph (removed "I checked twice" and attribution disclaimer)
+- Simplified "Beyond the Submission" intro
+- Changed Budget 2026 inline link to bookmark card
+- Removed final two bookmark cards and GitHub footer
+
+### Repo Sync
+- Synced local `draft.md` to match Ghost version
+- Committed and pushed to `blog/minlaw-consultation-followup` branch
