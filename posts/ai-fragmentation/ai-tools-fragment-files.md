@@ -13,7 +13,7 @@ Git repos? All on GitHub. Documents? Nextcloud — my self-hosted cloud sync —
 
 Then I opened my iPad to actually work.
 
-Presentation drafts I'd been building through [Claude Cowork](https://www.infoq.com/news/2026/01/claude-cowork/) — Anthropic's desktop AI agent that works with your local files? Stranded in a local folder. A blog post sitting at 30%? Same story. I went looking for files I was sure existed and kept hitting walls.
+Presentation drafts I'd been building through [Claude Cowork](https://www.infoq.com/news/2026/01/claude-cowork/), Anthropic's desktop AI agent that works with your local files? Stranded in a local folder. A blog post sitting at 30%? Same story. I went looking for files I was sure existed and kept hitting walls.
 
 I checked Nextcloud. There it was — a sync error on my Mac that I'd missed. Or rather, it had shown a cryptic warning I hadn't investigated. Turns out the sync had silently broken weeks ago. The cause was almost funny: I'd used Cowork to build a reveal.js presentation, which spun up a local server and generated a `node_modules` folder. Thousands of tiny files, sitting inside my Nextcloud directory, choking the sync engine. One tool's artifacts broke another tool's backup chain.
 
@@ -29,7 +29,7 @@ But somewhere in the last few months, that map stopped being accurate — and I 
 
 When I actually sat down and traced where my files had ended up, the list was longer than I expected. Claude.ai conversations holding research and draft paragraphs that never made it into a document. The sandboxed folder I'd pointed Cowork at for that reveal.js presentation. All local. All outside my backup chain.
 
-I've [written before about building workflows inside Cowork](https://alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — it's a genuinely useful tool. But the more I looked at it now, the more I realised how much trust I'd been placing in layers I didn't fully understand. Cowork doesn't just run on your machine — it runs inside a full virtual machine, sandboxed from your operating system. Your shared folder gets mounted into that VM, and files are supposed to sync back to your host filesystem as they're written. But that bridge between the sandbox and your actual files isn't as solid as it feels. If a task fails mid-execution, or the cloud connection drops while the AI is still working, incomplete outputs may never make it out of the VM. There are [reports of workspaces getting bricked](https://github.com/anthropics/claude-code/issues/25663) after a single bad task — the only fix being to delete the entire `.cowork` folder and start over. And anything Cowork builds for itself during a session — skills, settings, memory — lives in [ephemeral session directories that get permanently deleted on cleanup](https://github.com/anthropics/claude-code/issues/31422). Your work product might survive. Cowork's context about how it was helping you won't.
+I've [written before about building workflows inside Cowork](https://alt-counsel.com/two-files-one-workflow-no-code-just-cowork/) — it's a genuinely useful tool. But the more I looked at it now, the more I realised how much trust I'd been placing in layers I didn't understand. Cowork runs your work inside a sandboxed environment on your machine. Files are supposed to sync back to your filesystem as they're written — but if a task fails mid-execution, or the cloud connection drops while the AI is still working, incomplete outputs may never make it back. There are [reports of workspaces getting bricked](https://github.com/anthropics/claude-code/issues/25663) after a single bad task — the only fix being to delete everything and start over. And anything Cowork builds for itself during a session — skills, settings, memory — lives in [ephemeral directories that get permanently deleted on cleanup](https://github.com/anthropics/claude-code/issues/31422). Your work product might survive. Cowork's context about how it was helping you won't.
 
 Claude Code has a similar hidden layer: a `~/.claude/` folder storing session histories, auto-memory, and todos — none of which syncs anywhere. After months of Claude learning my project patterns, that accumulated context isn't nothing. But at least those files persist between sessions. With Cowork, even that isn't guaranteed.
 
@@ -45,7 +45,7 @@ Our security and compliance instincts don't update that fast. Nobody's do. I [an
 
 A recent [HBR study](https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry) coined the term **"brain fry"** for this: the most draining part of using AI wasn't the AI itself — it was the oversight, the constant managing of where outputs go and what's saved where. That cognitive overhead concentrates at the seams between tools, where no single system tracks what another creates. It's exactly what happened to me.
 
-## So what am I doing about it?
+## What I'm doing about it
 
 I'm still re-mapping. But the process has taught me that four questions help cut through the noise:
 
@@ -67,6 +67,4 @@ And for practitioners, this isn't just about lost work. It's about whether you c
 
 The question isn't "what's the best AI tool?" It's: **"do I know where my work actually is?"**
 
-I wrote this post on my iPad, connected to Claude Code through Remote Control — the very tool whose persistence assumptions caught me off guard. The irony isn't lost on me.
-
-I'm still re-mapping mine. If you haven't checked yours recently, now might be a good time.
+I wrote this post on my iPad, connected to Claude Code through Remote Control — the very tool whose persistence assumptions caught me off guard. The irony isn't lost on me. If you haven't checked your own map recently, now might be a good time.
