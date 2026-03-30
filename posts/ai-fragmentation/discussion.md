@@ -50,6 +50,25 @@ Adds a systemic dimension beyond personal anecdote. Makes the post more broadly 
 **Outcome:**
 ✅ Strengthened the pitch's core argument.
 
+### Decision: Rewrite Draft as Narrative (2026-03-30, Session 3)
+
+**Claude's Analysis:**
+- First draft had narrative opening but shifted to expository mode (bulleted lists, research citations, numbered framework)
+- Proposed two alternatives: A) Full narrative (no structured section), B) Narrative spine with structured framework at end
+- Recommended B as balancing story with practical takeaway
+
+**Claude's Recommendation:**
+Approach B — narrative spine with structured framework at the end
+
+**User Decision:**
+Chose B. Reason: "I am doing most of this myself, and the story is the angle I would have wrote this in, almost like a rant."
+
+**Rationale:**
+The user's natural writing voice is narrative/story-driven, not analytical. The first draft felt too much like Claude wrote it. The rewrite keeps the user's voice throughout while preserving the framework as a useful takeaway.
+
+**Outcome:**
+✅ Draft rewritten. Removed bulleted env list (woven into story), changed headers to personal voice ("My mental model was wrong", "So what am I doing about it?"), removed standalone "Neither is wrong" section, framework introduced as personal process not prescriptive advice.
+
 ### Decision: Framework Approach for Advice Section (2026-03-30, Session 1 Brainstorming)
 
 **Claude's Analysis:**
@@ -88,6 +107,8 @@ Framework grounded in user's real experience, not generic advice. Ends honestly 
 - Iteration 1: Initial draft from user's idea brief
 - Iteration 2: Added Claude Code cloud vs local blind spot (user feedback)
 - Iteration 3: Added frontier pain / pace of change angle (user feedback)
+- First full draft (~1100 words, expository style)
+- Rewrote as narrative spine + structured framework (user preferred rant-like storytelling over exposition)
 
 ### Quality Control
 - Ran authenticity check on all claims in pitch — all passed
@@ -105,9 +126,12 @@ Framework grounded in user's real experience, not generic advice. Ends honestly 
 | Drafted pitch from detailed brief | Approved with additions | Good base to iterate on |
 | Asked for genuine experience moment | User shared "asked Claude to audit, assumed fine, discovered gaps when working" | Grounded the opening |
 | Suggested removing SCCE | User flagged it first | Caught potential disclosure issue |
+| Rewrote draft as narrative | User approved | Closer to natural voice |
 
 ### Didn't Work ❌
-(Nothing notable yet — pitch phase went smoothly)
+| What Claude Did | Problem | Lesson |
+|-----------------|---------|--------|
+| First draft in expository style | User felt it was too analytical, not their voice | User's natural style is narrative/rant — lean into story, not analysis |
 
 ## SESSIONS (Chronological Detail)
 
@@ -189,3 +213,35 @@ Continuation of Session 1. Completed research phase and brainstormed the practic
 - Content quality audit
 - Target audience review (Wei Lin + Legal Tech recommended)
 - Backlink curation
+
+## Session 3: Drafting & Review Launch (2026-03-30)
+
+### Context
+Moved from brainstorming to drafting. First draft written, user requested narrative rewrite, then launched quality audit and audience reviews.
+
+### What Claude Did
+- Writing: First full draft (~1100 words) in expository style with bulleted lists and numbered sections
+- Writing: Complete rewrite as narrative spine + structured framework after user feedback
+- Analysis: Proposed two narrative approaches (full narrative vs narrative spine + framework)
+- Quality: Launched 3 parallel review agents (content-quality-auditor, lawyer-coder-reviewer Wei Lin, legal-tech-blog-reviewer Marcus Tan)
+
+### User Decisions
+- Decision 1: First draft too expository — wanted narrative/rant-like style
+- Decision 2: Chose approach B (narrative spine + structured framework) over full narrative
+- Decision 3: Important context — post is being written on Claude Code on the web in a purpose-built environment; the irony is real, not constructed
+
+### Key Insight for Future Writing
+User's natural writing voice is storytelling/rant-like, not analytical. Future drafts should lead with narrative and weave analysis into the story rather than presenting it separately. "The story is the angle I would have wrote this in."
+
+### Outcomes
+- ✅ First draft completed
+- ❌ First draft too expository — didn't match user's voice
+- ✅ Narrative rewrite completed and approved
+- ⏳ Quality audit and audience reviews running in background
+- Files modified: ai-tools-fragment-files.md (2 versions), discussion.md
+
+### Next Steps
+- Review feedback from content-quality-auditor, Wei Lin, and Marcus Tan
+- Apply revisions based on feedback
+- Curate backlinks
+- Publish to Ghost
