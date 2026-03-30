@@ -5,6 +5,7 @@ tags: ["AI", "LegalTech", "CloudComputing"]
 status: draft
 featured: false
 github_folder: "ai-fragmentation"
+custom_excerpt: "I sent my laptop for repair and assumed everything was backed up. Then I opened my iPad to work and discovered how many places AI tools had quietly scattered my files."
 ---
 
 I sent my laptop for repair last week and felt nothing. No anxiety, no scramble.
