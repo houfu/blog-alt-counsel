@@ -100,7 +100,8 @@ Framework grounded in user's real experience, not generic advice. Ends honestly 
 - Cowork/Remote Control timeline — confirmed Jan 12 and Feb 25, 2026 (~6 weeks apart)
 - Knowledge fragmentation data — McKinsey/Glean (3.6 hrs/day searching), Gartner (47% can't find info)
 - .claude folder contents — session histories, memory, todos all local; Cowork projects in ~/Documents/Claude/Projects/
-- Blog archive search — found 5+ posts for potential backlinks
+- Cowork VM architecture — Apple Virtualization Framework, virtiofs binding, ephemeral sessions, bricked workspace risks
+- Blog archive search — found 14 candidates for backlinks, selected 3
 
 ### Writing
 - Drafted 3 iterations of the pitch paragraph
@@ -109,10 +110,18 @@ Framework grounded in user's real experience, not generic advice. Ends honestly 
 - Iteration 3: Added frontier pain / pace of change angle (user feedback)
 - First full draft (~1100 words, expository style)
 - Rewrote as narrative spine + structured framework (user preferred rant-like storytelling over exposition)
+- Applied Wei Lin + Marcus Tan feedback (trimmed HBR, added emotional beat, compliance angle, strengthened framework)
+- Rewrote Cowork section twice (technical → practical per final audit)
+- Added 5 external research links and 3 internal backlinks
+- Generated custom excerpt for Ghost
 
 ### Quality Control
 - Ran authenticity check on all claims in pitch — all passed
 - Verified no SCCE disclosure in final pitch
+- Ran content quality audit (round 1) — 3 items flagged
+- Ran Wei Lin and Marcus Tan audience reviews in parallel
+- Ran final content quality audit — 3 minor items, all fixed
+- Attempted Ghost publish — API unavailable (418), script confirmed working
 
 ### Brainstorming
 - Proposed 3 framework approaches for advice section
@@ -245,3 +254,61 @@ User's natural writing voice is storytelling/rant-like, not analytical. Future d
 - Apply revisions based on feedback
 - Curate backlinks
 - Publish to Ghost
+
+## Session 4: Reviews, Revisions, Links & Publishing (2026-03-30)
+
+### Context
+Received all three review results (Wei Lin, Marcus Tan, content quality audit). Applied revisions, did additional Cowork research, added inline links and backlinks, ran final audit, and attempted Ghost publishing.
+
+### What Claude Did
+- Research: Cowork VM architecture (Apple Virtualization Framework, virtiofs binding, ephemeral session dirs)
+- Research: .claude folder contents (session histories, auto-memory, todos, history.jsonl)
+- Research: Blog archive search for backlinks (found 14 candidates, selected 3)
+- Writing: Applied Wei Lin feedback (trimmed HBR section, added emotional beat, expanded ~/.claude/)
+- Writing: Applied Marcus Tan feedback (synthesis sentence, strengthened Q2, added compliance angle)
+- Writing: Rewrote Cowork section twice — first technical (VM detail), then practical (per final audit)
+- Writing: Added inline research links (5 external) and backlinks (3 internal) throughout post
+- Quality: Ran 2 content quality audits (round 1 + final round)
+- Quality: Ran Wei Lin and Marcus Tan audience reviews in parallel
+- Publishing: Attempted Ghost publish via canonical script — API returned 418 (unavailable)
+
+### Review Feedback Summary
+
+**Wei Lin (lawyer-coder):**
+- Strong positive: opening hook, node_modules story, "still inside the problem" honesty
+- Key fix: Cut HBR section to ~1 sentence (personal story is already legitimate)
+- Key fix: Add emotional beat to "mental model was wrong" section
+- Key fix: Give ~/.claude/ more weight
+- Would bookmark and share with coding colleagues
+
+**Marcus Tan (legal tech):**
+- Strong positive: root cause analysis, UX-masking observation, specific dates, honest ending
+- Key fix: Add synthesis sentence bridging HBR research and personal story
+- Key fix: Strengthen Q2 with "treat as local-only" default
+- Key fix: Add compliance/professional conduct dimension to solo counsel section
+- "One revision away" from forwarding
+
+**Final content quality audit:**
+- Critical: Trim Cowork VM paragraph for newsletter audience
+- Important: Fix Cowork introduction sentence structure
+- Minor: Tighten closing from 3 beats to 1
+
+### User Decisions
+- Decision 1: Focus Cowork detail over ~/.claude/ — more interesting to target audience
+- Decision 2: Approved all link placements (3 backlinks + 5 external research links)
+- Decision 3: Approved publishing to Ghost
+
+### Outcomes
+- ✅ All reviewer feedback applied (round 1 — no round 2 needed)
+- ✅ Final audit passed with 3 minor fixes applied
+- ✅ 8 links added (5 external research, 3 internal backlinks)
+- ✅ Custom excerpt generated
+- ❌ Ghost API unavailable (418) — post ready to publish when accessible
+- Files modified: ai-tools-fragment-files.md (multiple revisions), discussion.md
+
+### Publishing Instructions
+When Ghost API is available, run:
+```bash
+node -r dotenv/config scripts/publish-lexical.js posts/ai-fragmentation/ai-tools-fragment-files.md
+```
+Then run `npm run sync-ghost ai-tools-fragment-files` to sync metadata back.
