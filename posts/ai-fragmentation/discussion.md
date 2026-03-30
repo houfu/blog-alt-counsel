@@ -50,11 +50,38 @@ Adds a systemic dimension beyond personal anecdote. Makes the post more broadly 
 **Outcome:**
 ✅ Strengthened the pitch's core argument.
 
+### Decision: Framework Approach for Advice Section (2026-03-30, Session 1 Brainstorming)
+
+**Claude's Analysis:**
+- Proposed three framework approaches:
+  - A) "Three questions to ask about every AI tool" — simple, repeatable, tool-agnostic
+  - B) "Map your work zones and find the gaps" — built from user's actual mental model (git zone, Nextcloud zone), find where AI tools don't fit
+  - C) "What I'm doing differently now" — honest field notes, not prescriptive
+- Recommended B with C's honesty factor
+
+**User Decision:**
+Approved combined B+C approach: "Your mental model is outdated — here's how to update it." Four steps:
+1. Name your zones (where you think your work lives)
+2. List your AI tools and ask: which zone? "I'm not sure" = blind spot
+3. Check for silent failures (verify sync/backup actually works)
+4. Accept the map needs regular updating (tools keep shipping)
+
+**Rationale:**
+Framework grounded in user's real experience, not generic advice. Ends honestly — user hasn't fully re-mapped yet.
+
+**Outcome:**
+✅ Brainstorming complete. Ready for drafting.
+
 ## WHAT CLAUDE DID (Contributions)
 
 ### Research
 - Read Voice Guide Part 4 (Templates) for pitch structure guidance
 - Read canonical tag registry for tag suggestions
+- HBR "Brain Fry" study — found BCG/UC Riverside research, key stats (14% brain fry, 19% info overload, 12% more fatigue from oversight)
+- Cowork/Remote Control timeline — confirmed Jan 12 and Feb 25, 2026 (~6 weeks apart)
+- Knowledge fragmentation data — McKinsey/Glean (3.6 hrs/day searching), Gartner (47% can't find info)
+- .claude folder contents — session histories, memory, todos all local; Cowork projects in ~/Documents/Claude/Projects/
+- Blog archive search — found 5+ posts for potential backlinks
 
 ### Writing
 - Drafted 3 iterations of the pitch paragraph
@@ -65,6 +92,10 @@ Adds a systemic dimension beyond personal anecdote. Makes the post more broadly 
 ### Quality Control
 - Ran authenticity check on all claims in pitch — all passed
 - Verified no SCCE disclosure in final pitch
+
+### Brainstorming
+- Proposed 3 framework approaches for advice section
+- Refined into 4-step framework based on user's mental model experience
 
 ## WHAT WORKED / DIDN'T WORK
 
@@ -119,3 +150,42 @@ User came with a well-developed blog idea about AI tools fragmenting where work 
 - Draft the newsletter article
 - Content quality audit
 - Target audience review
+
+## Session 2: Research & Brainstorming (2026-03-30)
+
+### Context
+Continuation of Session 1. Completed research phase and brainstormed the practical advice framework.
+
+### What Claude Did
+- Research: HBR "Brain Fry" study (BCG/UC Riverside, 1,488 workers, March 2026)
+- Research: Confirmed Cowork (Jan 12) and Remote Control (Feb 25) timeline — ~6 weeks apart
+- Research: Knowledge fragmentation data (McKinsey, Gartner, Glean)
+- Research: .claude folder contents and Cowork local storage locations
+- Research: Searched blog archive for related posts (found 5+ backlink candidates)
+- Brainstorming: Proposed 3 framework approaches, refined to 4-step "update your mental model"
+- Saved research.md with all findings, sources, and citations
+
+### User Decisions
+- Decision 1: Approved four-step "update your mental model" framework
+- Decision 2: Post ends as "still in progress" journey — user hasn't fully re-mapped yet
+- Decision 3: Nextcloud/node_modules interaction is a key story detail (tools don't fail individually — interactions create blind spots)
+- Decision 4: User still needs to investigate own .claude folder — ongoing, not completed
+
+### Key Story Details Added
+- Nextcloud sync broke because Cowork-generated node_modules (from reveal.js presentation) couldn't be synced. Mac client showed error but didn't explain clearly. The *interaction* between tools created the blind spot.
+- User's mental model had two zones: git/GitHub for code, Nextcloud for everything else. AI tools created locations that fit neither zone.
+- The real vulnerability wasn't carelessness — the mental model was outdated because tools changed faster than the model was updated.
+- Three invisible local stores not in the mental map: ~/.claude/, ~/Documents/Claude/Projects/, and Cowork sandbox folders
+
+### Outcomes
+- ✅ Research complete — saved to research.md
+- ✅ Framework brainstormed and approved
+- ✅ All story details captured
+- Files created: research.md
+- Files modified: discussion.md
+
+### Next Steps
+- Draft the newsletter article (~6 min, Learning in Public template)
+- Content quality audit
+- Target audience review (Wei Lin + Legal Tech recommended)
+- Backlink curation
