@@ -312,3 +312,62 @@ When Ghost API is available, run:
 node -r dotenv/config scripts/publish-lexical.js posts/ai-fragmentation/ai-tools-fragment-files.md
 ```
 Then run `npm run sync-ghost ai-tools-fragment-files` to sync metadata back.
+
+## Session 5: Ghost Publish, Reviewer Feedback on Published Version & Sync (2026-03-30)
+
+### Context
+Ghost API still unavailable from Claude Code environment (418 error). User pasted content directly into Ghost editor on iPad, then requested reviewer feedback on the published preview. All three reviewers ran against the live preview URL.
+
+### What Claude Did
+- Publishing workaround: Provided full post body for manual paste into Ghost editor
+- Quality: Ran all 3 reviewer agents (Marcus Tan, Sarah Chen, Wei Lin) against published preview
+- Sync: Fetched published version from Ghost preview URL, diffed against local, applied 10 edits to match
+
+### User's Ghost Edits (Changes Made by User)
+1. New opening scene — Genius Bar conversation with Fred, bent MacBook, personal backstory
+2. "weeks" → "days" (sync broken duration, 2 locations)
+3. Removed italics on "interaction"
+4. "years" → "a long while"
+5. Split long Cowork paragraph into three for rhythm
+6. Claude Code: "on the web" instead of "on the cloud", added "to my phone"
+7. Added "I needed to learn how to use these new tools" — personal ownership
+8. Q1 zones expanded: "a few zones: my Macbook, git and Nextcloud" (three, not two)
+9. Q3 closing rewritten: "Everything continues to work, but you only realise backup doesn't work when it doesn't"
+10. Closing: "using Claude Code on the web" instead of "connected to Claude Code through Remote Control"
+
+### Round 2 Reviewer Feedback (Post-Publication)
+
+**Marcus Tan (legal tech) — "Worth forwarding":**
+- All positives from round 1 confirmed in published version
+- Two non-blocking suggestions: (1) add one sentence on ~/.claude/ contents, (2) calibrate Cowork failure frequency ("uncommon but unrecoverable")
+- Minor: HBR attribution is BCG/UC Riverside reported by HBR — distinction matters for workshop citations
+
+**Sarah Chen (corporate lawyer) — "I'm going through those four questions today":**
+- Node_modules interaction story is "the best part of the post"
+- Professional conduct reframing gives her "language I can use internally"
+- Top priority: add practical verification step to Q3 (what does "verify" look like?)
+- Suggested explaining ~/.claude/ for non-technical readers ("a hidden folder...")
+- Wanted recovery loop closed — were the stranded files recovered?
+
+**Wei Lin (lawyer-coder) — "I would bookmark this. I would share it.":**
+- Embarrassment admission ("How did I miss this?") is "the moment where I feel seen"
+- ~/.claude/ folder is "genuinely new information — this is why I read this blog"
+- Top priority: name what was actually lost and what it cost to reconstruct
+- Would cut HBR paragraph entirely — "I don't need HBR's permission to believe this is real"
+- Genius Bar scene borders on sentimental — real hook is "Then I opened my iPad"
+
+**Consensus items across all 3:**
+- Close the recovery loop (what happened to the stranded files?)
+- Calibrate "bricked workspace" risk frequency
+- HBR section could be trimmed further or restructured
+
+### User Decisions
+- Decision 1: User published post directly to Ghost via iPad paste (workaround for 418 API error)
+- Decision 2: User made 10 editorial changes in Ghost editor before requesting review
+- Decision 3: Requested sync of repo copy with Ghost version, discussion update, and merge preparation
+
+### Outcomes
+- ✅ Post published to Ghost (draft state, preview accessible)
+- ✅ All 3 reviewers ran against published preview
+- ✅ Local markdown synced with Ghost version (10 edits applied)
+- ⏳ Preparing merge to main
