@@ -2,27 +2,13 @@
   "name": "blog-alt-counsel",
   "version": "1.0.0",
   "description": "A lightweight collection of Claude Code subagents that automate the entire lifecycle of a Ghost blog post",
-  "main": "ghost_jwt.js",
   "scripts": {
-    "token": "node scripts/ghost_jwt.js",
-    "search": "node scripts/search_posts_v2.js",
-    "create-post": "node scripts/create_post.js",
-    "token-quiet": "node scripts/ghost_jwt.js --quiet",
-    "token-headers": "node scripts/ghost_jwt.js --print-headers",
-    "token-examples": "node scripts/ghost_jwt.js --examples",
-    "env-help": "node scripts/ghost_jwt.js --env-help",
     "setup-hooks": "ln -sf ../../.claude/hooks/pre-commit .git/hooks/pre-commit && echo 'Pre-commit hook installed successfully.'",
     "sync-ghost": "node -r dotenv/config scripts/sync-from-ghost.js"
-  },
-  "bin": {
-    "ghost-jwt": "./scripts/ghost_jwt.js",
-    "ghost-search": "./scripts/search_posts_v2.js",
-    "ghost-create-post": "./scripts/create_post.js"
   },
   "keywords": [
     "ghost",
     "blog",
-    "jwt",
     "api",
     "claude",
     "automation"
@@ -39,8 +25,7 @@
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.14.4",
-    "gray-matter": "^4.0.3",
-    "jsonwebtoken": "^9.0.2"
+    "gray-matter": "^4.0.3"
   },
   "engines": {
     "node": ">=16.0.0"
