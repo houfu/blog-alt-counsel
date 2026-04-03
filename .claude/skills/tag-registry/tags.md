@@ -227,33 +227,25 @@ These represent planned content areas even if not yet published.
 - ⏳ Pending: Execute consolidation scripts to clean up Ghost database
 - ⏳ Pending: Update existing posts with canonical tag names
 
-### Consolidation Commands (To Execute)
+### Pending Consolidations
 
-```bash
-# High Priority Consolidations
-node scripts/consolidate_tags.js --from "Artificial Intelligence" --to "AI" --dry-run
-node scripts/consolidate_tags.js --from "Artifical Intelligence" --to "AI" --dry-run
-node scripts/consolidate_tags.js --from "machine learning" --to "AI" --dry-run
-node scripts/consolidate_tags.js --from "Data Science" --to "DataScience" --dry-run
-node scripts/consolidate_tags.js --from "Natural Language Processing" --to "NLP" --dry-run
-node scripts/consolidate_tags.js --from "PDPC-Decisions" --to "PDPA" --dry-run
-node scripts/consolidate_tags.js --from "Personal Data Protection Act" --to "PDPA" --dry-run
-node scripts/consolidate_tags.js --from "Personal Data Protection Commission" --to "PDPA" --dry-run
+Use ghst MCP tools (`ghost_tag_list`, `ghost_post_list`, `ghost_post_update`, `ghost_tag_delete`) or the `ghst` CLI to execute these consolidations:
 
-# Medium Priority
-node scripts/consolidate_tags.js --from "Microsoft Word" --to "MicrosoftOffice" --dry-run
-node scripts/consolidate_tags.js --from "Open Source" --to "OpenSource" --dry-run
-node scripts/consolidate_tags.js --from "Web Scraping" --to "WebScraping" --dry-run
-node scripts/consolidate_tags.js --from "Cloud Computing" --to "CloudComputing" --dry-run
-node scripts/consolidate_tags.js --from "Work Life Balance" --to "WorkLifeBalance" --dry-run
-node scripts/consolidate_tags.js --from "Book Review" --to "BookReview" --dry-run
-```
+**High Priority:**
+- "Artificial Intelligence" / "Artifical Intelligence" / "machine learning" -> **AI**
+- "Data Science" -> **DataScience**
+- "Natural Language Processing" -> **NLP**
+- "PDPC-Decisions" / "Personal Data Protection Act" / "Personal Data Protection Commission" -> **PDPA**
 
----
+**Medium Priority:**
+- "Microsoft Word" -> **MicrosoftOffice**
+- "Open Source" -> **OpenSource**
+- "Web Scraping" -> **WebScraping**
+- "Cloud Computing" -> **CloudComputing**
+- "Work Life Balance" -> **WorkLifeBalance**
+- "Book Review" -> **BookReview**
 
 **Next Steps**:
 1. ✅ Tag audit complete
-2. ⏳ Review consolidation plan with user
-3. ⏳ Execute consolidation scripts (with --dry-run first)
-4. ⏳ Test tag-registry skill with canonical tags
-5. ⏳ Update CLAUDE.md to enforce tag validation in workflow
+2. Execute consolidations using ghst MCP tools
+3. Test tag-registry skill with canonical tags

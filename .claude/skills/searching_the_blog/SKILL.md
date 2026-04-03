@@ -8,7 +8,7 @@ when_to_use: anytime when the partner has a question or request that concerns po
 
 ## Overview
 
-Search archived posts using the Ghost API.
+Search archived posts using the Ghost MCP tools.
 
 **Core principle**: The human partner has maintained a blog for several years, so it contains a wealth of information and experience. It defines our human partner's personality online.
 
@@ -32,23 +32,25 @@ Don't search the blog when:
 
 Based on the query or context, try to think of 2-3 angles to search so that you can comprehensively cover as much ground as possible.
 
-Always use sub-agents to search.
+**Primary tool:** `ghost_search` MCP tool
 
-Tool: `npm run search`
+```
+ghost_search(query: "your search term", limit: 10)
+```
 
-Example:
-```bash
-# Basic usage
-npm run search -- docassemble
+For parallel multi-angle searches, call the MCP tool multiple times in a single message:
 
-# Advanced filtering
-npm run search -- "legal tech" --limit 10 --published
-npm run search -- --tag javascript --format simple
-npm run search -- --author houfu --featured
-npm run search -- --filter "published_at:>2024-01-01"
+```
+ghost_search(query: "legal tech")
+ghost_search(query: "solo counsel technology")  
+ghost_search(query: "in-house lawyer tools")
+```
 
-# Output formats: detailed (default), simple, json
-npm run search -- --tag tech --format json
+**For filtering by status or tag**, use `ghost_post_list` with NQL filters:
+
+```
+ghost_post_list(filter: "tag:ai", status: "published", limit: 20)
+ghost_post_list(filter: "published_at:>'2025-01-01'", status: "published")
 ```
 
 Format all posts as a list with detailed information to answer the query.

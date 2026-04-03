@@ -78,38 +78,6 @@ Available text formatting:
 - `text.underline(content)` - underlined
 - `text.strikethrough(content)` - strikethrough
 
-### Complete Example
-
-```javascript
-const { LexicalBuilder, text, Link } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
-
-const content = new LexicalBuilder()
-  .h1('Technical Deep Dive')
-  .paragraph('Welcome to this ', text.bold('comprehensive guide'), ' on legal tech.')
-  .h2('Key Features')
-  .bulletList([
-    'Easy to integrate',
-    'No external dependencies',
-    'Type-safe builder pattern'
-  ])
-  .h2('Code Example')
-  .codeBlock(
-    'function hello() {\n  console.log("Hello, world!");\n}',
-    'javascript',
-    'A simple example'
-  )
-  .h2('Learn More')
-  .paragraph(
-    'For more information, visit ',
-    Link.withText('https://example.com', 'our documentation'),
-    '.'
-  )
-  .build();
-
-// Use in Ghost API
-const lexical = JSON.stringify(content);
-```
-
 ## Adding Metadata
 
 Once you have the lexical content, combine it with metadata to create a complete post.
@@ -128,69 +96,6 @@ Once you have the lexical content, combine it with metadata to create a complete
 
 Before creating the post, always verify these three fields exist and generate them if missing. For tags specifically, invoke the tag-registry skill to ensure consistency and prevent tag sprawl.
 
-### Required and Key Fields
-
-```javascript
-const postData = {
-  // Required
-  title: "Your Post Title",
-  lexical: JSON.stringify(content),
-
-  // Key optional fields (with defaults)
-  status: "draft",                        // Default: "draft". Options: "draft", "published", "scheduled"
-  custom_excerpt: "",                     // Default: auto-generated from content
-  tags: [],                               // Default: no tags. Format: [{ name: "TagName" }]
-  visibility: "public",                   // Default: "public". Options: "public", "members", "paid"
-  featured: false                         // Default: false
-};
-```
-
-### Complete Example
-
-```javascript
-const GhostAdminAPI = require('@tryghost/admin-api');
-const { LexicalBuilder, text } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
-
-// Initialize Ghost API
-const api = new GhostAdminAPI({
-  url: process.env.GHOST_SITE_URL,
-  key: process.env.GHOST_ADMIN_API_KEY,
-  version: 'v6.0'
-});
-
-// Build content
-const content = new LexicalBuilder()
-  .h1('Lawyers Got Prompt Engineering Wrong')
-  .paragraph('At TechLawFest 2025, Singapore lawyers packed a workshop on prompt engineering.')
-  .h2('What Changed')
-  .paragraph('Meanwhile, the technology shifted: agent skills became available.')
-  .build();
-
-// Create post with metadata
-const postData = {
-  title: "Lawyers Got Prompt Engineering Wrong (And Why That Matters)",
-  lexical: JSON.stringify(content),
-  status: "draft",
-  custom_excerpt: "At TechLawFest 2025, Singapore lawyers packed a workshop on prompt engineering. Meanwhile, the technology shifted.",
-  tags: [
-    { name: "Artificial Intelligence" },
-    { name: "LegalTech" }
-  ],
-  visibility: "public",
-  featured: false
-};
-
-// Create the post
-api.posts.add(postData)
-  .then((response) => {
-    console.log('Post created:', response.url);
-    console.log('Post ID:', response.id);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-```
-
 ## Recommended: Using the Post Creation Script
 
 The canonical publishing script is `scripts/publish-lexical.js` at the repository root. Always use this script — do NOT create per-post publishing scripts.
@@ -204,8 +109,8 @@ node -r dotenv/config scripts/publish-lexical.js posts/{post-folder}/{post-file}
 The script handles:
 - Parsing markdown frontmatter (title, slug, tags, status, custom_excerpt, github_folder)
 - Converting markdown to Ghost lexical JSON format
-- Tables → HTML cards
-- Bookmark card syntax → Ghost bookmark cards
+- Tables to HTML cards
+- Bookmark card syntax to Ghost bookmark cards
 - Adding GitHub footer automatically when `github_folder` is in frontmatter
 - Skipping HTML comment placeholders (e.g., `<!-- 📸 SCREENSHOT -->`)
 

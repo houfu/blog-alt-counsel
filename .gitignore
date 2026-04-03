@@ -3,6 +3,7 @@ docker-compose.yml
 compose.yml
 .env
 settings.json
+!.claude/settings.json
 
 # System files
 **/.DS_Store

@@ -10,6 +10,15 @@
       "env": {
         "JINA_API_KEY": "jina_d3ae2244fa484163a6f3d55a73be965bHj72FX-zHqjHas5O7u5BM637lBQN"
       }
+    },
+    "ghost": {
+      "command": "ghst",
+      "args": [
+        "mcp",
+        "stdio",
+        "--tools",
+        "all"
+      ]
     }
   }
 }

@@ -74,13 +74,29 @@ This will add a footer linking to:
 
 This is a local Node.js project. Install dependencies with `npm install` and configure environment via a `.env` file.
 
+### Ghost MCP Integration
+
+Most Ghost CMS operations are handled via **ghst MCP tools** — native tools available directly in Claude Code. This includes searching posts, managing tags, viewing analytics, creating/updating posts, and managing members.
+
+**Setup:**
+```bash
+npm install -g @tryghost/ghst
+ghst auth login --url $GHOST_SITE_URL --staff-token $GHOST_ADMIN_API_KEY --site alt-counsel
+claude mcp add ghost -- ghst mcp stdio --tools all
+```
+
+**Custom scripts still used:**
+- `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion)
+- `scripts/sync-from-ghost.js` — Syncs Ghost metadata back to local markdown frontmatter (`npm run sync-ghost <slug>`)
+
 ### Environment Variables
 
-Always use environment variables when using the Ghost API: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`.
-You can find them in the following places:
-- As an environment variable (highest priority)
-- Read the .env file (recommended — copy `.env.example` to `.env` and fill in your values)
-- Read the settings.json file (deprecated, legacy fallback)
+Ghost API credentials are needed for `publish-lexical.js`, `sync-from-ghost.js`, and ghst authentication:
+- `GHOST_SITE_URL` — Your Ghost site URL
+- `GHOST_ADMIN_API_KEY` — Admin API key in `id:secret` format (also used as ghst staff token)
+- `GHOST_API_VERSION` — API version (e.g. `v6.0`)
+
+Copy `.env.example` to `.env` and fill in your values.
 
 ### Pre-Commit Hook
 
@@ -139,8 +155,8 @@ Available skills and when to use them:
 - **note-taking** - Use throughout conversations to record progress and decisions in discussion.md files.
 - **backlink_curating** - Use at final draft stage to find internal links to other blog posts.
 - **getting-feedback** - Use when the user needs audience feedback on ideas or questions.
-- **using-ghost-admin-api** - Use for all Ghost CMS operations (creating drafts, editing posts, accessing content).
-- **searching_the_blog** - Use when questions involve past blog posts or content.
+- **using-ghost-admin-api** - Use for Ghost CMS operations. Most read/query operations use ghst MCP tools directly; use the skill for creating drafts from markdown via `publish-lexical.js`.
+- **searching_the_blog** - Use when questions involve past blog posts or content. Uses `ghost_search` MCP tool.
 
 Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are designed to be invoked automatically as part of the natural workflow.
 

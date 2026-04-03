@@ -15,7 +15,7 @@ value of reading my blog, and apparently some SEO thing.
 
 1. Read the post and its pitch to get a clear understanding of what the post is about and its structure.
 2. Generate some search terms. 
-3. Use the searching_the_blog skill in multiagent mode to uncover relevant posts. When searching posts, always get a summary or excerpt of the post.
+3. Use the `ghost_search` MCP tool to search for relevant posts. Run multiple searches in parallel with different terms. When searching, always get a summary or excerpt of the post (use `ghost_post_get` with a slug if needed for more detail).
 4. Aim for about 3 relevant posts. If necessary, limit the number of related posts to 5 posts. 
 5. Present your report to your human partner in the form of a table. For each related post, create a row with the columns, "Post title", "Relevance", "Link", and "Where to put this".
 
