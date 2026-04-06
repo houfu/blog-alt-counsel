@@ -84,17 +84,17 @@ From whatever survived Step 2, pick the thing that's:
 - Low-risk enough that failures won't break anything important
 - Well-defined enough that you can tell if the agent did it correctly
 
-For Zeeker, this turned out to be a subset of the GitOps work — specific, repeatable tasks rather than the ambitious "manage all my infrastructure" vision I started with.
+For Zeeker, this pointed me toward a subset of the GitOps work — specific, repeatable tasks rather than the ambitious "manage all my infrastructure" vision I started with.
 
-## The Results So Far
+The other thing the framework made clear: you have to think long-term. You can't just install OpenClaw and throw a complex task at it on day one. You need to build up the agent's capabilities in a series of steps — start with simple skills, let it learn your codebase and workflows, layer on more complex automations over time. It's a long-term investment, not a quick win. And every step in that build-up costs tokens.
 
-I'm going to be honest: the results are mixed.
+## Where I Am Now
 
-The agent can handle well-defined, repetitive tasks. When I narrowed the scope to specific GitOps operations with clear inputs and outputs, it worked. Not perfectly — it needed guidance and corrections — but it worked in a way that saved me time.
+I'm going to be honest: I haven't gotten this off the ground yet.
 
-The harder, more ambiguous tasks? Not yet. Anything that requires judgment about infrastructure decisions, or understanding the *why* behind a configuration choice, still needs a human. The agent executes well but doesn't strategise well.
+The framework helped me think clearly about what I need. The setup was smooth. The vision is clear. But actually getting from "I know what I want to automate" to "the agent is doing it reliably" — I'm not there. The harness decisions, the token costs of experimentation, the long build-up of agent capabilities — it all takes more time and knowledge than I expected.
 
-And the token costs are real. Every experiment, every failed attempt, every "let me try that differently" conversation eats into your budget. For someone still figuring out what to use the agent for, this is a significant friction.
+I'm still at it. But I'm not going to pretend I have results to show.
 
 ## The Bigger Picture
 
@@ -102,11 +102,11 @@ Some people claim OpenClaw is perfect for solos. My Legal Academy has deployed i
 
 I'm not so sure.
 
-The harness knowledge alone — where to host, which model, how to manage tokens, how to define skills — is a barrier that most lawyers won't clear easily. And I say this as someone who codes regularly and maintains open source projects. If it's hard for me, it's going to be harder for someone who doesn't live in a terminal.
+The harness knowledge alone — where to host, which model, how to manage tokens, how to define skills, how to build up capabilities incrementally — is a barrier that most lawyers won't clear easily. And I say this as someone who codes regularly and maintains open source projects. If it's hard for me, it's going to be harder for someone who doesn't live in a terminal or have an infrastructure team.
 
 What I *am* sure about: the vision is compelling. OpenAI didn't acquire Peter Steinberger for fun. Autonomous agents that work while you sleep, that remember context across sessions, that you can message from your phone — that's where we're heading. The question isn't whether this will be useful. It's whether the current product is ready for people without dedicated teams to set up the harness.
 
-For solo counsels and small teams: keep watching this space. The ideas are genuinely exciting. But go in with your eyes open about what "getting started" actually requires. It's not just downloading an app.
+For solo counsels and anyone trying this at home: keep watching this space. The ideas are genuinely exciting. But go in with your eyes open about what "getting started" actually requires. It's not just downloading an app.
 
 I'm still plugging at it. More field notes to come.
 
