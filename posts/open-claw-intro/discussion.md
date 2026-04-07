@@ -63,6 +63,43 @@ User still hasn't gotten OpenClaw working. Honesty is stronger than fabricated o
 **Outcome:**
 ✅ Post is more authentic and the thesis ("great for solos is premature") is stronger when the author — a lawyer who codes — admits they haven't cracked it
 
+### Decision: Fold stability concerns into post (2026-04-07, Session 3)
+
+**Claude's Analysis:**
+- User reported he had "soured a bit again" on OpenClaw — claimed it "breaks too easily"
+- Ran web research via Jina MCP confirming widespread stability complaints (13 March releases = constant breaking changes, gateway crashes every 50 min, "OpenClaw breaks more easily than glass")
+- Presented 3 options: fold into existing draft / save for Part 2 / research first then decide
+
+**User Decision:**
+Research first, then fold. Added stability section, Claude Code router attempt anecdote, Claude Code meetup observation.
+
+**Outcome:**
+✅ Strengthens thesis; tone darkened appropriately to match real experience
+
+### Decision: Keep Claude Code feature bullets despite audit warning (2026-04-07, Session 3)
+
+**Claude's Analysis:**
+- Round 3 audit flagged Claude Code bullet list as functionally a returned "Bonus" section that fragments the closing arc
+- Recommended option A (move before Bigger Picture) or B (collapse to prose)
+- User chose option C (keep as-is)
+
+**Rationale:**
+User wants concrete preview content for readers interested in Part 2 alternatives.
+
+**Outcome:**
+✅ User's call — bullets stay. Closing question still present but no longer the final note.
+
+### Decision: Restart frustration opening over token limit framing (2026-04-07, Session 3, user revision)
+
+**Context:**
+User revised opening directly via vim, replacing "I hit the token limit for the third time that week" with "When I entered `/new` to restart OpenClaw for the third time one morning, I knew I had enough."
+
+**Rationale:**
+More universally legible, more visceral, grounds the post in actual experience rather than a technical failure.
+
+**Outcome:**
+✅ Audit Round 3 confirmed this is stronger than the original
+
 ## WHAT CLAUDE DID (Contributions)
 
 ### Research
@@ -209,3 +246,86 @@ Returning after ~10 days. Drafted the full post, updated research, then revised 
 - Target audience review (Wei Lin + Legal Tech reviewer)
 - Backlink curation
 - Publish to Ghost
+
+## Session 4: Research Refresh, Stability Pivot, and 3 Audit Rounds (2026-04-07)
+
+### Context
+Returning the next day. Checked if OpenClaw research was stale (10+ days). Significant new findings. User had also "soured a bit again" after finding OpenClaw breaks too easily. Multiple draft revisions and 3 audit rounds followed.
+
+### What Claude Did
+- Research: Used both general-purpose agent and Jina MCP to refresh OpenClaw research. Confirmed earlier findings, surfaced new ones
+- Research: Investigated the OpenClaw Singapore Legal Meetup (April 7, Joshua Ng from Providence Law Asia presenting) — saved as KIV for Part 2
+- Research: Verified Joshua Ng's background (commercial litigator with Advanced Cert in Law and Tech, SMU grad, Tech & Innovation Committee member)
+- Research: Stability research confirmed widespread complaints — 13 March releases, gateway crashes every 50 min, "breaks more easily than glass"
+- Research: New lawyer usage examples found — 37-skill anonymous lawyer, 3-attorney firm via consultant, Pat Veilleux's simpler approach, Stephen Smith's pivot to Claude Code
+- Writing: Folded stability concerns into draft (new section after caffeinate tip)
+- Writing: Added Claude Code router attempt anecdote (kept breaking)
+- Writing: Added Claude Code meetup observation (impressive demos vs. daily reality)
+- Writing: Added LQClaw/WhatsApp paragraph
+- Writing: Darkened tone in Bigger Picture (Stephen Smith pivot, Pat Veilleux simpler approach, setup consultants prove the harness is hard)
+- Quality: Ran 3 content quality audit rounds with content-quality-auditor agent, applied fixes after each
+
+### Audit Round 1 fixes (11 issues)
+1. Broke up 95-word run-on in Bigger Picture
+2. Cut Bonus section
+3. Defined GitOps and CI/CD parenthetically
+4. Moved LQClaw to Where I Am Now as concession
+5. Added "neither is wrong" framing
+6. Added specific failure details to Where I Am Now
+7. Moved caffeinate tip into Where do you install it
+8. Reordered opening so acquisition leads
+9. Renamed barriers section to "Where Things Got Hard"
+10. Removed SSH/quantisation/race condition jargon
+11. Single closing question instead of multiple
+
+### Audit Round 2 fixes (3 issues)
+1. Bridged opening to capability explanation
+2. Punched up "neither is wrong" sentence
+3. Smoothed LQClaw concession entry
+
+### User's vim revisions
+- Replaced opening with restart frustration framing ("/new for the third time")
+- Replaced Step 1 example with personal harness audit (VPS, Claude API, MacBook running Gemma 4 27B, $20/month question)
+- Replaced removed Bonus with detailed Claude Code feature bullets (Dispatch, Cowork, Channels with /remote-control)
+- Pulled "uncomfortable truth" line out as blockquote
+- Changed "hard like a tricky coding problem" line
+
+### Claude fixed user's typos and smart quotes
+- "figuring out how to OpenClaw" → "figuring out OpenClaw"
+- Smart quotes normalised throughout
+- "as you long you keep" → "as long as you keep your computer awake"
+- "you can great access" → "you get great access"
+- "$20 a month too much for this?" connected with framing sentence
+
+### Audit Round 3 fixes (6 of 10 issues)
+1. Broke Stephen Smith / Pat Veilleux into separate paragraphs ("Three lunch breaks." stands alone)
+2. Added "claims to have deployed" softener for My Legal Academy figure
+3. Added meetup→framework transition sentence
+4. Added Ollama gloss
+5. Removed "The hype is real" cliché
+6. Removed repeated "I'll give credit where it's due"
+7. Changed first "killer demo" to "showpiece" for variety
+
+### User Decisions
+- **Sour again**: User confirmed enthusiasm has dropped — not just hype/reality gap, but actual stability problems
+- **Fold stability into post** rather than save for Part 2
+- **Keep Claude Code feature bullets** despite Round 3 audit warning (option C — user wants concrete preview content)
+- **Skip Singapore meetup mention**: Save Joshua Ng / Providence Law Asia for Part 2 KIV
+- **Citations and backlinks pending**: User acknowledged the post needs sources later (will be handled in backlink curation phase)
+
+### Key Insights from User
+1. **Stability is the deal-breaker**: Even more than the harness complexity, the constant breaking changes are what soured the user. 13 releases in March = constant debugging
+2. **Claude Code meetup observation**: Everyone showing impressive demos but the computing power required suggests they're burning Opus credits unsustainably
+3. **OpenAI acquisition skepticism earned**: After working with the product, paying ~$1B for it feels baffling
+4. **The interface is the killer demo**: WhatsApp/Discord access genuinely impresses people — it's the showpiece, but a showpiece isn't a workflow
+
+### Files Modified
+- `posts/open-claw-intro/openclaw-field-notes.md` — extensive revisions through 3 audit rounds + user's vim edits
+- `posts/open-claw-intro/discussion.md` — this file
+
+### Pending for Next Session
+- Backlink curation (internal links, especially the Skills callback at line 30 — "I wrote previously about Skills")
+- Citations for external sources (My Legal Academy, OpenAI acquisition, GitHub stars, Stephen Smith blog, Pat Veilleux LinkedIn, Daimon Legal, GitHub release page for the 13 releases claim)
+- Target audience review (Wei Lin + Legal Tech reviewer recommended)
+- Publish to Ghost
+- KIV: Reach out to Joshua Ng / Hanyi Zeng after April 7 meetup for Part 2 material
