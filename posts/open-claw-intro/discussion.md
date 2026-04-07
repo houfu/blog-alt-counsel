@@ -329,3 +329,57 @@ Returning the next day. Checked if OpenClaw research was stale (10+ days). Signi
 - Target audience review (Wei Lin + Legal Tech reviewer recommended)
 - Publish to Ghost
 - KIV: Reach out to Joshua Ng / Hanyi Zeng after April 7 meetup for Part 2 material
+
+## Session 5: Reviewer Feedback, Tightening, Backlinks (2026-04-07/08)
+
+### Context
+Both target audience reviewers (Wei Lin and Marcus Tan) returned with substantive feedback. User actioned 7 of 8 recommendations. Then a length audit identified ~270 words of fat. Then backlinks and citations.
+
+### What Claude Did
+- Launched parallel target audience reviews: lawyer-coder-reviewer (Wei Lin) and legal-tech-blog-reviewer (Marcus Tan)
+- Synthesized both reviews into prioritized recommendations
+- Applied 7 fixes: specific Zeeker failure mode, de-emphasized OpenAI acquisition, Cisco sample size, clarified router architecture, Pat Veilleux sting acknowledgment, Daimon Legal counterpoint, strengthened Singapore angle
+- Updated research.md with full April refresh (stability findings, new lawyer usage examples, Singapore meetup, IMDA framework)
+- Ran focused length audit — identified ~270 words of safe cuts
+- Cut: Daimon Legal paragraph (just added it!), "Setup Was Actually Nice" section header, framework's long-term summary, "hard like... hard" wind-up, transition sentences, Singapore source compression, "game changer" cliché, LQClaw meme detail
+- Searched blog for backlinks via Ghost search MCP
+- Inserted 3 internal bookmark cards: data.zeeker.sg architecture, Why Prompt Engineering Felt Wrong, Tool vs Infrastructure Mindset
+- Inserted 4 external citation links: Stephen Smith, Pat Veilleux, My Legal Academy, Daimon Legal
+
+### Key Reviewer Insights Applied
+1. **Wei Lin**: "Each failed run was an evening I won't get back" — added time cost framing
+2. **Wei Lin**: Pat Veilleux's "three lunch breaks" stings — acknowledged it explicitly with "He saw what I was only starting to see, and he pivoted faster"
+3. **Marcus Tan**: Specific Zeeker failure mode — added cron jobs working but hallucinations during scraping
+4. **Marcus Tan**: "Router" sentence was murky — clarified architecture (Claude as brain, OpenClaw as hands)
+5. **Marcus Tan**: Cisco stat needs sample size — added "26% of 31,000"
+6. **Marcus Tan**: Singapore decoration vs substance — named NUS, KPMG, SGTech
+
+### Daimon Legal Round Trip
+Notably, Daimon Legal was added per Marcus Tan's feedback, then cut in the length audit because Stephen Smith and Pat Veilleux already made the same point more vividly. Kept Daimon as an inline link in the harness section instead.
+
+### Length Reduction
+- Before reviewer fixes: ~2,140 words
+- After reviewer additions: ~2,410 words
+- After length audit cuts: ~2,140 words again (~8 min read)
+- Net: tightened the post while adding the most important reviewer fixes
+
+### Backlinks Added
+1. **data-zeeker-sg-part-2a-architecture** — bookmark card after Zeeker introduction (grounds the project for new readers)
+2. **why-prompt-engineering-felt-wrong-and-what-skills-changed** — bookmark card in skills section (Houfu's own callback to skills paradigm shift)
+3. **tool-vs-infrastructure-mindset** — bookmark card after Pat Veilleux sting (the post's clearest thematic predecessor)
+
+### External Citations Added
+- Stephen Smith → smithstephen.com
+- Pat Veilleux → LinkedIn post
+- My Legal Academy → kb article
+- Daimon Legal → their 10 use cases blog post
+
+### Files Modified
+- `posts/open-claw-intro/openclaw-field-notes.md` — extensive
+- `posts/open-claw-intro/research.md` — full April refresh appended
+- `posts/open-claw-intro/discussion.md` — this update
+
+### Next Steps
+- Commit and push
+- Publish to Ghost
+- Sync metadata back via npm run sync-ghost

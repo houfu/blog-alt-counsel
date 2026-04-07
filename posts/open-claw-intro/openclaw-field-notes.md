@@ -9,7 +9,7 @@ github_folder: "open-claw-intro"
 
 When I entered `/new` to restart OpenClaw for the third time one morning, I knew I had enough.
 
-I could *see* what OpenClaw could do for Zeeker, my open source legal data project — automate the GitOps (using Git to manage infrastructure and deployments), handle the tedious DevOps work that's genuinely painful when you're one person. The trial and errors, the constant restarts and model churn were the price of figuring out OpenClaw. The creator, after all, was acquired by OpenAI within three months of launch. 247,000+ GitHub stars.
+I could *see* what OpenClaw could do for Zeeker, my open source legal data project — automate the GitOps (using Git to manage infrastructure and deployments), handle the tedious DevOps work that's genuinely painful when you're one person. The trial and errors, the constant restarts and model churn were the price of figuring out OpenClaw. 247,000+ GitHub stars and a community that won't stop talking about it. The hype has weight.
 
 But getting from "installed" to "useful" turned out to be a different journey entirely.
 
@@ -17,9 +17,11 @@ These are my field notes from the first few weeks of trying to make OpenClaw wor
 
 ## Why I'm Using Zeeker as My Test Subject
 
-Let's get this out of the way first: I did not point OpenClaw at client work. The security concerns are well-documented. Cisco found that 26% of ClawHub skills contained vulnerabilities. OpenClaw's own maintainer warned it's "far too dangerous" for non-technical users. The Business Times Singapore just ran a feature last week on shadow AI risks.
+Let's get this out of the way first: I did not point OpenClaw at client work. The security concerns are well-documented. Cisco found that 26% of 31,000 ClawHub skills contained vulnerabilities. OpenClaw's own maintainer warned it's "far too dangerous" for non-technical users. The Business Times Singapore recently ran a feature on shadow AI risks with NUS, KPMG Singapore, and SGTech all weighing in. That conversation is happening here too, and it's not hypothetical.
 
 So I picked something manageable. Zeeker is my open source project for Singapore legal data. It has real infrastructure needs — container orchestration, CI/CD pipelines (the automated systems that build and deploy code), deployment automation — and I'm the only person maintaining it. If the agent messes something up, the blast radius is me.
+
+<bookmark url="https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/" />
 
 ## What Actually Makes OpenClaw Different
 
@@ -27,29 +29,21 @@ Before we go further, it's worth understanding why OpenClaw isn't just another A
 
 **It's long-running.** Most AI tools wait for you to type something and then respond. OpenClaw has a "heartbeat" scheduler. You can set it to wake up every 30 minutes, check on objectives, and act autonomously. It keeps working while you sleep. That's a fundamentally different relationship with an AI tool.
 
-**It has a skills system.** I wrote previously about Skills and why they are a game changer. Now look here: there's a marketplace (ClawHub) where people share them. You can build your own. This is how OpenClaw goes from "general-purpose agent" to "agent that does *your* specific things."
+**It has a skills system.** Skills are packaged automations the agent can execute. There's a marketplace (ClawHub) where people share them. You can build your own. This is how OpenClaw goes from "general-purpose agent" to "agent that does *your* specific things." I wrote about why skills changed how I think about prompt engineering — that mental model carries directly into agent work.
+
+<bookmark url="https://www.alt-counsel.com/why-prompt-engineering-felt-wrong-and-what-skills-changed/" />
 
 **You interact through channels.** Not a web interface. Not a terminal. You talk to OpenClaw through WhatsApp, Telegram, Slack, or Discord. The idea is that your AI agent lives where you already communicate. In practice, this means you can check on a running task from your phone while you're in court.
 
 These three things — long-running, extensible, channel-based — are what make OpenClaw genuinely interesting. It's not a smarter chatbot. It's an attempt at a digital coworker.
 
-## The Setup Was Actually Nice
-
-The initial setup experience was genuinely smooth.
-
-OpenClaw has setup wizards that walk you through configuration step by step. One of the most impressive moments was watching it scan my entire Zeeker codebase and build up an understanding of the project structure, the tech stack, the existing CI/CD setup. Within minutes, it had a working mental model of the project.
-
-That first impression matters. It felt like onboarding a new colleague who actually reads the documentation.
-
-But the smooth setup created a false sense of momentum. Because the *real* decisions came next.
-
 ## Where Things Got Hard
 
-Here's where things got hard. Not "hard like a tricky coding problem" hard. Hard like "I've never seen or met anything like this before" hard.
+The initial setup was genuinely smooth — wizards, automatic codebase scanning, a working mental model of Zeeker within minutes. It felt like onboarding a new colleague who actually reads the documentation. That first impression creates a false sense of momentum. Because the *real* decisions come next.
 
 The mindset shift I had to make: stop thinking in terms of context engineering. With most AI tools, the game is about crafting the right prompt, managing the context window, setting up retrieval. With OpenClaw, the game is designing the *harness*. What machine am I running on? What model can I afford? What other agents surround it and how do they coordinate? It's a different kind of problem entirely.
 
-**Where do you install it?** OpenClaw runs locally on your machine by default. But if you want it to be truly long-running — working while you sleep, that heartbeat scheduler doing its thing, talk to it meaningfully on your phone — your machine needs to stay on. Practical tip: if you're on a Mac, learn to love `caffeinate`. Run `caffeinate -i` in a terminal to prevent your Mac from sleeping while the agent works. You could run it on a cloud VM instead, but that means understanding cloud infrastructure, security groups, remote access, and costs. You could self-host on a home server like Daimon Legal in Australia does, but that's still another layer of knowledge.
+**Where do you install it?** OpenClaw runs locally on your machine by default. But if you want it to be truly long-running — working while you sleep, that heartbeat scheduler doing its thing, talk to it meaningfully on your phone — your machine needs to stay on. Practical tip: if you're on a Mac, learn to love `caffeinate`. Run `caffeinate -i` in a terminal to prevent your Mac from sleeping while the agent works. You could run it on a cloud VM instead, but that means understanding cloud infrastructure, security groups, remote access, and costs. You could self-host on a home server like [Daimon Legal in Australia](https://www.daimonlegal.com/blog/how-can-i-use-openclaw-10-use-cases-from-our-firm-and-the-legal-issues-you-should-know-about) does, but that's still another layer of knowledge.
 
 **Which model do you connect?** OpenClaw supports Claude, GPT, Qwen, GLM, Gemini, and local models. Each has different costs, capabilities, and token limits. Running a model locally means understanding hardware requirements and how to host it on your machine. Using a cloud API means understanding pricing tiers and rate limits. I chose an API model and burned through tokens faster than I expected just *figuring out what to do*.
 
@@ -59,11 +53,9 @@ The mindset shift I had to make: stop thinking in terms of context engineering. 
 
 **And then there's stability.** This is the part that really got to me. OpenClaw shipped 13 releases in March alone. That sounds impressive until you realise what it means in practice: constant breaking changes. Reddit threads are full of people spending hours debugging after updates. A GitHub issue reports the gateway crashing every 50 minutes. One Facebook user put it bluntly: "OpenClaw breaks more easily than glass."
 
-I tried to program a router using Claude Code to manage OpenClaw — the idea being that Claude would handle the orchestration while OpenClaw handled the execution. It kept breaking. Not in dramatic ways. In quiet, frustrating ways where things just stopped working and you're not sure why.
+I tried using Claude Code as a routing layer in front of OpenClaw — the idea being that Claude Code would dispatch the right task to the right OpenClaw skill based on what I asked. In theory, a clean separation: Claude as the brain, OpenClaw as the hands. It kept breaking. Not in dramatic ways. In quiet, frustrating ways where things just stopped working and you're not sure why.
 
 I was at a Claude Code meetup last month where everyone was buzzing about what they'd built with OpenClaw. Impressive demos. Advanced workflows. And I kept thinking: how? The computing power alone for what they were showing must have been enormous. My best guess is they were burning through Opus API credits at a rate most of us can't sustain. The demos look magical. The daily reality is different.
-
-I needed a way to think clearly about what I actually had, not what the demos suggested was possible.
 
 ## A Framework: From What You Have to What You Can Do
 
@@ -92,15 +84,17 @@ From whatever survived Step 2, pick the thing that's:
 
 For Zeeker, this pointed me toward a subset of the GitOps work — specific, repeatable tasks rather than the ambitious "manage all my infrastructure" vision I started with.
 
-The other thing the framework made clear: you have to think long-term. You can't just install OpenClaw and throw a complex task at it on day one. You need to build up the agent's capabilities in a series of steps — start with simple skills, let it learn your codebase and workflows, layer on more complex automations over time. It's a long-term investment, not a quick win. And every step in that build-up costs tokens.
-
 ## Where I Am Now
 
 I'm going to be honest: I haven't gotten this off the ground yet.
 
-The framework helped me think clearly about what I need. The setup was smooth. The vision is clear. But actually getting from "I know what I want to automate" to "the agent is doing it reliably" — I'm not there. I've run several experiments trying to get OpenClaw to handle Zeeker's GitOps tasks. Most returned no useful output. A couple completed but broke on the next run. The harness decisions, the token costs of experimentation, the stability issues, the long build-up of agent capabilities — it all takes more time and knowledge than I expected.
+The framework helped me think clearly about what I need. The setup was smooth. The vision is clear. But actually getting from "I know what I want to automate" to "the agent is doing it reliably" — I'm not there.
 
-I'll give credit where it's due: the channel-based interface is the one piece that consistently impresses. The LegalQuants built LQClaw, which helps with onboarding and even creates memes — and when people see they can chat with an AI agent through WhatsApp or Discord instead of some developer-facing terminal, their eyes light up. That interface is the showpiece. But a killer demo is not a reliable workflow.
+The short tasks worked. I got OpenClaw to set up cron jobs, clone repositories, and handle one-shot GitOps operations on Zeeker. That part was encouraging. Then I tried to push it into the long-running scraping work that Zeeker actually needs — and that's where it broke. The agent started hallucinating data partway through a scrape, then tried to create a Zeeker resource based on that hallucinated data. For a project whose entire value proposition is "trustworthy Singapore legal data," that's an unacceptable failure mode. Not "broken in a way I can fix." Broken in a way that would poison the data I'm trying to publish.
+
+Each failed run was an evening I won't get back. The harness decisions, the token costs of experimentation, the stability issues, the long build-up of agent capabilities — it all takes more time and knowledge than I expected.
+
+I'll give credit where it's due: the channel-based interface is the one piece that consistently impresses. The LegalQuants built LQClaw for onboarding — and when people see they can chat with an AI agent through WhatsApp or Discord instead of some developer-facing terminal, their eyes light up. That interface is the showpiece. But a killer demo is not a reliable workflow.
 
 I'm still at it. But I'm not going to pretend I have results to show.
 
@@ -108,11 +102,15 @@ I'm still at it. But I'm not going to pretend I have results to show.
 
 Some people claim OpenClaw is perfect for solos. The community tells a more complicated story.
 
-My Legal Academy claims to have deployed it for over 400 US law firms at $25-85/month. That sounds encouraging.
+[My Legal Academy](https://mylegalacademy.com/kb/what-is-openclaw-law-firm-guide) claims to have deployed it for over 400 US law firms at $25-85/month. That sounds encouraging.
 
-Then there's Stephen Smith, who built a whole team of specialised agents on a Mac Mini — and then moved away from OpenClaw entirely, rebuilding on Claude Code because he couldn't close "the gap between possible and trusted."
+Then there's [Stephen Smith](https://www.smithstephen.com/p/the-ai-agent-demo-was-easy-trusting), who built a whole team of specialised agents on a Mac Mini — and then moved away from OpenClaw entirely, rebuilding on Claude Code because he couldn't close "the gap between possible and trusted."
 
-Pat Veilleux, a lawyer at Legal Velocity, evaluated OpenClaw for billing automation. He decided it needed "lots of configuration, security provisioning, and technical troubleshooting." Then he built something simpler with Claude Projects instead. Three lunch breaks.
+[Pat Veilleux](https://www.linkedin.com/posts/pat-veilleux-967845186_everyone-is-talking-about-ai-agents-like-activity-7443261820456419328-nG44), a lawyer at Legal Velocity, evaluated OpenClaw for billing automation. He decided it needed "lots of configuration, security provisioning, and technical troubleshooting." Then he built something simpler with Claude Projects instead. Three lunch breaks.
+
+That one stung when I read it. He saw what I was only starting to see, and he pivoted faster. I wrote about this exact pattern a while ago — infrastructure thinking versus tool thinking. Pat picked the tool path. I'm still in the infrastructure trap.
+
+<bookmark url="https://www.alt-counsel.com/tool-vs-infrastructure-mindset/" />
 
 Meanwhile, setup consultants like LaunchMyOpenClaw and RemoteOpenClaw have sprung up specifically because most people can't do this on their own.
 
