@@ -1,10 +1,21 @@
 ---
-title: "OpenClaw Field Notes: A Lawyer Tries to Tame an Autonomous AI Agent"
-slug: "openclaw-field-notes-lawyer"
-tags: ["AI", "zeeker", "Tutorial", "CloudComputing"]
-status: draft
+title: 'OpenClaw Field Notes: A Lawyer Tries to Tame an Autonomous AI Agent'
+slug: openclaw-field-notes-lawyer
+tags:
+  - AI
+  - zeeker
+  - Tutorial
+  - CloudComputing
+status: scheduled
 featured: false
-github_folder: "open-claw-intro"
+github_folder: open-claw-intro
+post_id: 69d52da6aa301f0001bc3d73
+published_at: '2026-04-08T00:15:09.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1555564946-67d9945bf3d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDMzfHxsb2JzdGVyJTIwfGVufDB8fHx8MTc3NTU3OTY4Mnww&ixlib=rb-4.1.0&q=80&w=2000
+custom_excerpt: >-
+  Turns out the hard part isn't prompt engineering. It's designing the harness —
+  a problem most lawyers, even lawyer-coders, aren't equipped to solve yet.
 ---
 
 When I entered `/new` to restart OpenClaw for the third time one morning, I knew I had enough.
