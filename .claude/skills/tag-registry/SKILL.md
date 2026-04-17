@@ -1,202 +1,111 @@
 # Tag Registry Skill
 
-**Purpose**: Manage blog post tags consistently by suggesting tags from a canonical registry, preventing tag sprawl and maintaining naming consistency.
+Suggest tags from the canonical registry (`tags.md`). Prevent sprawl; keep naming consistent.
 
-**When to use**: Automatically invoke this skill when:
-- Creating a new blog post or newsletter (during pitch or draft phase)
-- User asks for help choosing tags
-- User mentions tags or tagging in any context
-- Before publishing any post to Ghost
+**Invoke when:** creating a new post, during pitch generation, before publishing, or when the user asks about tags.
 
-## Core Responsibilities
+## Responsibilities
 
-1. **Suggest appropriate tags** from the canonical registry based on post content
-2. **Warn about new tags** that don't exist in the registry
-3. **Prevent duplicates** by checking for similar existing tags
-4. **Enforce limits** (3-4 tags maximum, at least 1 core topic tag)
-5. **Normalize tag names** according to naming conventions
+1. Suggest 3–4 tags from `tags.md` — at least 1 Core Topic tag.
+2. Warn on any proposed tag not in the registry.
+3. Prevent duplicates (check aliases in `tags.md`).
+4. Enforce naming standards (see `naming-standards.md`).
+5. Ask the user about tag *intent*, not just topic — `Article` is for featured only; `OpenSource` requires actual code.
 
-## How to Use This Skill
+## Workflow
 
-### Step 1: Read the Canonical Registry
-Read `tags.md` to understand the current approved tags organized by category.
+### 1. Read `tags.md`
 
-### Step 2: Analyze Post Content
-Based on the post topic, title, and content (from pitch or draft), identify:
-- Primary topic/theme (should map to a Core Topic tag)
-- Technical elements (programming languages, tools, frameworks)
-- Practice areas or legal domains
-- Regional focus (if Singapore/ASEAN specific)
+Understand current approved tags per category.
 
-### Step 3: Suggest Tags
-Suggest 3-4 tags from the registry:
-- **At least 1 Core Topic tag** (e.g., LegalTech, AI, Programming)
-- 1-2 specific technical or domain tags
-- 1 regional tag if applicable (Singapore, ASEAN)
+### 2. Analyze post
 
-**Format your suggestion like this:**
+Identify: primary topic → Core Topic tag; technical elements → tech/tool tags; domain; regional focus.
+
+### 3. Suggest
 
 ```
-Suggested tags for this post:
-1. [Core Topic Tag] - Primary theme
-2. [Technical/Domain Tag] - Specific area
-3. [Technical/Domain Tag] - Additional context
-4. [Regional Tag] (if applicable)
+Suggested tags:
+1. [Core Topic]       — primary theme
+2. [Technical/Domain] — specific area
+3. [Technical/Domain] — additional context
+4. [Regional]         — if applicable
 
-These tags were selected from the canonical registry.
+All from the canonical registry.
 ```
 
-### Step 4: Handle New Tag Requests
+If the topic *might* warrant a tag you're unsure about (`Article`, `OpenSource`, narrow ones), ask first — don't infer from topic surface.
 
-If the post content suggests a tag NOT in the registry:
+### 4. Handle new-tag requests
 
 ```
-⚠️  WARNING: Proposed tag "[NewTag]" is not in the canonical registry.
+⚠️  "[NewTag]" is not in the registry.
 
 Similar existing tags:
-- [ExistingTag1] - [description]
-- [ExistingTag2] - [description]
+- [ExistingTag1] — [description]
+- [ExistingTag2] — [description]
 
-Options:
-1. Use existing similar tag instead
-2. Create new tag (requires justification)
-
-Before creating a new tag, ask yourself:
-- Will this tag be reused for future posts?
-- Is this specific enough to be useful but broad enough to apply to multiple posts?
-- Does a similar tag already exist with different naming?
+Before creating, ask:
+- Reusable across future posts?
+- Specific enough to be useful, broad enough to recur?
+- Does it exist under a different name?
 ```
 
-**Require explicit user confirmation** before proceeding with a new tag.
+Require explicit user confirmation before creating a new tag.
 
-### Step 5: Validate Against Rules
+### 5. Validate
 
-Check that the suggested tags meet these criteria:
-- ✅ Total of 3-4 tags (not more, not less)
-- ✅ At least 1 Core Topic tag included
-- ✅ Tags use proper naming convention (see `naming-standards.md`)
+- ✅ 3–4 tags total
+- ✅ At least 1 Core Topic tag
+- ✅ Naming follows `naming-standards.md`
 - ✅ No duplicate concepts
-- ✅ All tags exist in registry OR user explicitly approved new tag
+- ✅ All tags exist in registry OR user approved new tag
 
-### Step 6: Add New Tag to Registry (If Approved)
+### 6. Add new tag to registry (only if approved)
 
-**IMPORTANT:** If the user approves a new tag, you MUST update `tags.md` immediately using the Edit tool.
+Three atomic Edits to `tags.md`:
 
-**Required updates to tags.md:**
+**a) Add under appropriate category** (Core Topics, Technical Topics, Legal Practice & Compliance, Tools & Frameworks, Regional Focus, Events & Communities, Content Type, Professional Topics).
 
-1. **Add tag to appropriate category** (choose based on tag purpose):
-   - Core Topics - Primary themes (LegalTech, AI, Programming, etc.)
-   - Technical Topics - Languages, frameworks, tools
-   - Legal Practice & Compliance - Legal domains
-   - Tools & Frameworks - Specific tools frequently discussed
-   - Regional Focus - Geographic/jurisdictional tags
-   - Events & Communities - Legal tech events, initiatives, projects
-   - Content Type - Format of content
-   - Professional Topics - Career and work themes
+**b) Update metadata header:**
+- Bump "Last Updated" to today (YYYY-MM-DD)
+- Increment "Total Tags"
 
-2. **Update metadata at top of file:**
-   - Update "Last Updated" date to today (YYYY-MM-DD format)
-   - Increment "Total Tags" count by 1
-
-3. **Add maintenance log entry:**
-   ```markdown
-   ### YYYY-MM-DD
-   - ✅ Added **[TagName]** tag to [Category] category
-   - **Justification**: [Why this tag is needed]
-   - **Reusability**: [Where else this tag will apply]
-   - **Total tags**: [Old count] → [New count]
-   ```
-
-**Example of adding a new tag:**
+**c) Append maintenance log:**
 
 ```markdown
-# User approved new tag: "SOLID"
-
-# Step 1: Add to Events & Communities category
-- **SOLID** - Singapore Open Legal Informatics Database (SMU project) (1 post)
-
-# Step 2: Update metadata
-**Last Updated**: 2025-11-22
-**Total Tags**: 46 canonical tags (consolidated from 100 Ghost tags)
-
-# Step 3: Add maintenance log entry
-### 2025-11-22
-- ✅ Added **SOLID** tag to Events & Communities category
-- **Justification**: SMU's Singapore Open Legal Informatics Database project (launched Nov 18, 2025)
-- **Reusability**: Will apply to future posts about SOLID's development, comparisons with data.zeeker.sg, and open legal data discussions
-- **Total tags**: 45 → 46
+### YYYY-MM-DD
+- ✅ Added **[TagName]** tag to [Category] category
+- **Justification**: [Why needed]
+- **Reusability**: [Where else it will apply]
+- **Total tags**: [Old] → [New]
 ```
 
-**Use the Edit tool three times** (once for each section) to make these changes atomically.
+## Naming quick reference
 
-## Tag Naming Standards
+See `naming-standards.md` for full rules.
 
-Follow these conventions (detailed in `naming-standards.md`):
-- **Multi-word concepts**: PascalCase (e.g., `LegalTech`, `ArtificialIntelligence`, `DocumentAutomation`)
-- **Single words**: Lowercase (e.g., `programming`, `python`, `javascript`)
-- **Proper nouns**: Proper case (e.g., `Singapore`, `ASEAN`, `Python`)
-- **Acronyms**: All caps if commonly used (e.g., `AI`, `API`, `CLI`)
-- **NO**: kebab-case, snake_case, or underscores
+- **Multi-word:** PascalCase (`LegalTech`, `DocumentAutomation`)
+- **Single words:** lowercase (`programming`, `python`)
+- **Proper nouns:** proper case (`Singapore`, `ASEAN`)
+- **Acronyms:** all caps (`AI`, `API`, `CLI`)
+- **Never:** kebab-case, snake_case, underscores
 
-## Integration Points
+## Integration points
 
-### With `generate_a_pitch` skill
-When a pitch is created, tags should be suggested early. Add a "Suggested Tags" section to the pitch.
+- **`generate_a_pitch`** — suggest tags during pitch creation; ask intent questions first.
+- **Pre-publish** — validate registry membership and naming before sending to Ghost.
 
-### With `using-ghost-admin-api/creating_a_draft` skill
-Before publishing a draft, validate that:
-- Tags are from the canonical registry
-- Tag count is within limits (3-4)
-- Tag naming follows conventions
+## Files in this skill
 
-If validation fails, warn the user and suggest corrections.
+- `SKILL.md` — this file
+- `tags.md` — canonical registry
+- `naming-standards.md` — naming conventions
+- `validation-rules.md` — full validation ruleset (consult when edge cases arise)
+- `README.md` — setup/operational reference (humans + Claude Code setup)
 
-## Tag Registry Maintenance
+## Principles
 
-The canonical registry is stored in `tags.md`. It should be updated when:
-- A new tag is explicitly approved by the user
-- Tag usage patterns change significantly
-- Tags need to be consolidated or deprecated
-
-**Process for adding new tags:**
-1. Get user approval first (never add tags without confirmation)
-2. Once approved, immediately update `tags.md` using Step 6 instructions above
-3. Make three edits: add to category, update metadata, add log entry
-4. Confirm to user that tag has been added to registry
-
-## Example Usage
-
-```markdown
-# Post Pitch: "Building a CLI tool for contract review using Python"
-
-## Suggested Tags
-
-Based on the pitch content, I suggest these tags from the canonical registry:
-
-1. **LegalTech** - Core topic (legal technology application)
-2. **Python** - Technical implementation language
-3. **CLI** - Tool/framework type
-4. **DocumentAutomation** - Practice area
-
-These 4 tags cover the main themes and will help readers find this post when searching for legal tech programming content.
-
-All tags are from the canonical registry and follow naming conventions.
-```
-
-## Files in This Skill
-
-- `SKILL.md` (this file) - Main skill instructions
-- `tags.md` - Canonical tag registry organized by category
-- `naming-standards.md` - Detailed tag naming conventions
-- `validation-rules.md` - Rules for tag validation and suggestions
-
-## Important Notes
-
-- **Be strict about new tags**: Tag sprawl is the problem we're solving. Default to using existing tags.
-- **Suggest, don't decide**: Present tag suggestions and rationale, let user confirm.
-- **Think reusability**: Only approve new tags that will apply to multiple future posts.
-- **Check aliases**: A tag might exist under a different name (see tag aliases in `tags.md`).
-
----
-
-Remember: The goal is to maintain a clean, consistent, reusable tag taxonomy that helps readers discover related content without overwhelming them with too many tags.
+- Default to existing tags. New tags require reusability across multiple future posts.
+- Suggest, don't decide. Present options + rationale.
+- Ask about intent when a tag's scope is ambiguous (Article, OpenSource).

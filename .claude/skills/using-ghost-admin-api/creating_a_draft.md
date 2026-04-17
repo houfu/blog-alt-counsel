@@ -13,7 +13,7 @@ When posting to Ghost, use the lexical format for content. Ghost's modern editor
 
 The skill includes `scripts/ghost-lexical-single.js`, a fluent builder API for creating Ghost lexical format JSON. This makes it easy to programmatically construct Ghost posts with proper lexical structure.
 
-**For detailed reference:** See [ghost-lexical-complete-guide.md](./ghost-lexical-complete-guide.md) for comprehensive documentation on Ghost's lexical format with real-world examples from actual blog posts.
+**For detailed reference:** See [/docs/ghost-lexical-format.md](../../../docs/ghost-lexical-format.md) for comprehensive documentation on Ghost's lexical format with real-world examples from actual blog posts.
 
 ### Basic Usage
 

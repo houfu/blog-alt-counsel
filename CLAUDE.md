@@ -89,6 +89,11 @@ claude mcp add ghost -- ghst mcp stdio --tools all
 - `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion)
 - `scripts/sync-from-ghost.js` — Syncs Ghost metadata back to local markdown frontmatter (`npm run sync-ghost <slug>`)
 
+**Searching the blog:**
+- Use `ghost_search` MCP tool directly (full-text across posts, pages, tags).
+- For filtered queries, use `ghost_post_list` with NQL filters (e.g., `filter: "tag:ai"`, `status: "published"`).
+- When a query is ambiguous, run 2–3 parallel searches from different angles in a single message.
+
 ### Environment Variables
 
 Ghost API credentials are needed for `publish-lexical.js`, `sync-from-ghost.js`, and ghst authentication:
@@ -98,6 +103,14 @@ Ghost API credentials are needed for `publish-lexical.js`, `sync-from-ghost.js`,
 
 Copy `.env.example` to `.env` and fill in your values.
 
+### Claude Code Hooks (auto-commit + auto-notes)
+
+A `SessionEnd` hook at `.claude/hooks/session-wrap.sh` fires when a Claude session ends. If there are uncommitted changes under `posts/`, it spawns `claude -p` to append a session entry to each affected `discussion.md`, then stages and commits. The result is one batched `Session notes: <folder> — <summary>` commit per session, replacing the per-exchange commit noise seen in recent PRs.
+
+- To trigger manually mid-session: run `/wrap-up` (or `bash .claude/hooks/session-wrap.sh`).
+- To skip once: `CLAUDE_HOOK_SESSION_SKIP_WRAP=1` before ending the session.
+- Debug log: `.claude/state/session-wrap.log` (gitignored).
+
 ### Pre-Commit Hook
 
 A pre-commit hook warns when a post file is staged without also staging `discussion.md`. Install it once with:
@@ -106,7 +119,7 @@ A pre-commit hook warns when a post file is staged without also staging `discuss
 npm run setup-hooks
 ```
 
-The hook is non-blocking (exits 0) — it warns but never prevents a commit.
+The hook is non-blocking (exits 0) — it warns but never prevents a commit. With the SessionEnd hook auto-staging `discussion.md`, this reminder fires mostly on manual commits.
 
 
 ## GitHub CLI Integration
@@ -149,14 +162,16 @@ Mark todos as `in_progress` BEFORE starting work, and `completed` IMMEDIATELY af
 
 Available skills and when to use them:
 - **brainstorming** - Use at the START when ideas are vague or need refinement. Invoke automatically when user suggests a blog topic that needs development.
-- **generate_a_pitch** - Use when creating a new post. Always invoke to create the pitch before drafting.
+- **generate_a_pitch** - Use when creating a new post. Always invoke to create the pitch before drafting. Ask about tag *intent* before suggesting tags.
 - **tag-registry** - Use when suggesting tags for posts (during pitch or before publishing). Ensures tags are consistent with the canonical registry and prevents tag sprawl.
-- **blog-research** - Use when fact-checking, gathering sources, finding statistics, or researching topics for posts.
-- **note-taking** - Use throughout conversations to record progress and decisions in discussion.md files.
+- **blog-research** - Use when fact-checking, gathering sources, finding statistics, or researching topics for posts. If `research.md` is >7 days old when drafting starts, refresh first.
+- **note-taking** - The SessionEnd hook handles routine session logging automatically. Invoke this skill explicitly only for major decisions that need to land in the AUDIT TRAIL, series milestones, or when creating `discussion.md` from scratch.
 - **backlink_curating** - Use at final draft stage to find internal links to other blog posts.
-- **getting-feedback** - Use when the user needs audience feedback on ideas or questions.
-- **using-ghost-admin-api** - Use for Ghost CMS operations. Most read/query operations use ghst MCP tools directly; use the skill for creating drafts from markdown via `publish-lexical.js`.
-- **searching_the_blog** - Use when questions involve past blog posts or content. Uses `ghost_search` MCP tool.
+- **getting-feedback** - Use when the user needs audience feedback. Enforces 2-round cap and length-audit-first ordering.
+- **using-ghost-admin-api** - Use for Ghost CMS operations. Most read/query operations use ghst MCP tools directly; use the skill for creating drafts from markdown via `publish-lexical.js`. Reference: `/docs/ghost-lexical-format.md`.
+- **wrap-up** - Manually trigger the SessionEnd hook's commit + notes flow mid-session.
+
+For blog search, use the `ghost_search` MCP tool directly (see "Searching the blog" in Ghost MCP Integration section).
 
 Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are designed to be invoked automatically as part of the natural workflow.
 
@@ -333,8 +348,15 @@ The blog serves three overlapping but distinct audience segments:
    - **Review round limit**: Maximum 2 rounds of reviewer feedback. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
 4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
    - Always use `scripts/publish-lexical.js` — do not create per-post publishing scripts. Improve the canonical script if a feature is missing.
+   - **Infra changes belong on a separate branch.** If `publish-lexical.js` or other scripts need improvements, commit those on their own PR — not on the blog PR. PR #26 mixed 17 commits of content + script changes and became unreadable.
 5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
    - Use `npm run sync-ghost <slug>` to sync Ghost metadata back to local markdown frontmatter automatically.
+   - **Publish last, sync once.** Edit freely on Ghost after publishing; run `sync-ghost` only once when closing the PR. Avoid per-edit sync-back commits (four of the last five PRs had this churn).
+
+### Commit discipline
+
+- **One commit per meaningful change** — the SessionEnd hook produces one `Session notes:` commit per Claude session. Manual commits should reflect logically stable units (draft complete, reviewer round applied, backlinks added), not every edit.
+- **Avoid auto-named branches** — `claude/<descriptor>` branches from exploratory sessions fragment PR history. If a session's work belongs to an existing blog PR, land it there.
 
 **Throughout the process (use as needed):**
 - **BRAINSTORM** (use `brainstorming` skill) - Refine pitch, overcome writer's block on difficult sections, develop structure

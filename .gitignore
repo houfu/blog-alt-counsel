@@ -21,3 +21,6 @@ temp/*
 # Environment files (if any local ones are created)
 .env.local
 .env.production
+
+# Claude Code hook state (session-wrap)
+.claude/state/

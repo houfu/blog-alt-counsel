@@ -10,6 +10,16 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/session-wrap.sh"
+          }
+        ]
+      }
     ]
   }
 }
