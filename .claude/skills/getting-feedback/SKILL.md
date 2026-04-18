@@ -5,53 +5,67 @@ description: The user needs feedback on an idea or a question from his audience 
 
 # Getting Feedback
 
-## Instructions
+Get audience-perspective feedback from three reviewers:
 
-Analyse the issue and get feedback by using the following subagents to analyse the issue from different perspectives:
-1. legal tech blog reviewer (Marcus Tan) - Technical depth, open source, implementation details
-2. inhouse lawyer reviewer (Sarah Chen) - Budget constraints, practical relevance, time investment
-3. lawyer coder reviewer (Wei Lin) - Identity resonance, vulnerability, constraint acknowledgment
+1. **Legal tech blog reviewer (Marcus Tan)** — technical depth, open source, implementation details
+2. **Inhouse lawyer reviewer (Sarah Chen)** — budget constraints, practical relevance, time investment
+3. **Lawyer coder reviewer (Wei Lin)** — identity resonance, vulnerability, constraint acknowledgment
 
-## Example
+## Which reviewers for which content
+
+Not every post needs all 3. Match reviewers to content type:
+
+- **Open source project / post-mortem** → Legal Tech
+- **Tool evaluation (budget focus)** → Sarah Chen
+- **Learning in public / personal struggle** → Wei Lin
+- **Tutorial / how-to** → Sarah + Legal Tech
+- **Build vs. buy** → Wei Lin + Legal Tech
+- **Policy/budget commentary** → Sarah + Legal Tech
+- **Identity / "am I wasting my time"** → Wei Lin
+- **Broad appeal across segments** → All 3
+
+Running all 3 on every post produces diminishing returns after round 1.
+
+## Round cap (enforced)
+
+**Maximum 2 audit rounds per draft.** If the same core framing issue persists after round 2, switch to brainstorming with the user — reviewers diagnose, they don't fix framing problems.
+
+Rationale: PR #32 ran 3 rounds; the third hit diminishing returns on the same framing issue. PR #30 had a similar pattern. When feedback repeats, escalate to the user, not another round.
+
+## Length-audit-first ordering (enforced)
+
+**Before applying reviewer fixes, estimate the word delta.**
+
+- If fixes are purely cuts or neutral → apply directly.
+- If fixes would **add more than ~10% to the current length** → run a focused length audit *first* and identify what can be cut to make room. Apply the cuts, then apply the reviewer fixes.
+
+Rationale: PR #30 and #32 both showed the add-then-cut pattern — reviewer fixes added ~270 words, a follow-up length audit then removed ~270 words. Cut first to avoid the churn.
+
+Exception: for short newsletters (<800 words), additions under 100 words don't need a length audit.
+
+## Information to pass to reviewers
+
+- `pitch.md` — so they evaluate whether the draft delivers what the pitch promised (the pitch is the contract)
+- `discussion.md` relevant sections — for context on decisions already made
+- Any relevant research
+
+## Example flow
 
 ```
 User: Is this a good way to end the post about my open source legal tool?
 
-Assistant: Let me get feedback from the three reviewers.
+Claude: Running Marcus Tan and Wei Lin (open source + identity fit).
+Marcus: [feedback]
+Wei Lin: [feedback]
+Claude: Synthesising — consensus on X; Marcus alone caught Y; disagreement on Z.
 
-Assistant: Based on the feedback received, the consensus is that [...].
-
-The areas of disagreement are [...].
-
-One notable thing which legal tech blog reviewer said was [ ... ].
-
-User: What if we did this?
-
-Assistant: Let me follow up with the reviewers.
-
-Assistant: Based on their feedback [ ... ]
+User: What if we tried this?
+Claude: Follow-up round (round 2 of 2).
 ```
-
-### Which reviewers for which content
-
-Not every post needs all 3 reviewers. Match reviewers to content type:
-
-- **Open source project / post-mortem**: Legal Tech reviewer (technical community resonance)
-- **Tool evaluation (budget focus)**: Sarah Chen (cost/practicality is the core concern)
-- **Learning in public / personal struggle**: Wei Lin (validates the emotional journey)
-- **Tutorial / how-to guide**: Sarah + Legal Tech (accessibility + technical accuracy)
-- **Build vs. buy decision**: Wei Lin + Legal Tech (identity resonance + technical depth)
-- **Policy/budget commentary**: Sarah + Legal Tech (practical impact + technical depth)
-- **Identity / 'am I wasting my time'**: Wei Lin (core persona concern)
-- **Broad appeal (spans all segments)**: All 3 (only when all 3 segments clearly addressed)
 
 ## Reminders
 
-* Always announce that you are using this skill.
-* Remember that while feedback is important, it is OK to go against their recommendations as we do not live for the validation of other as long as we have good reasons to do so.
-* Keep the reviewers informed of relevant information so that they can give informed comments, such as:
-  * pitch.md of the article so that they know what the article is aiming for.
-  * discussion.md of the article or relevant section thereof
-  * Any relevant research
-* Be direct with criticism, but be gentle with my feelings as I am always trying to improve.
-* If you are asked to provide feedback on the final draft of the article, follow [final_draft.md](final_draft.md)
+- Always announce that you're using this skill.
+- Feedback isn't validation. It's fine to disagree with reviewers when there's a good reason.
+- Be direct with criticism, gentle with feelings — Houfu is trying to improve.
+- For final-draft review, see [final_draft.md](final_draft.md).
