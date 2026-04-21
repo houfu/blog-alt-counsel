@@ -680,3 +680,10 @@ See you in December 2026.
 - **Accessibility:** Non-technical lawyers can understand all concepts
 - **Credibility:** Evidence-backed with honest uncertainty
 - **Accountability:** Clear success criteria, December 2026 scorecard, $500 stakes
+## 2026-04-21 — Retroactive retag: `2026Predictions` canonical tag added
+
+First checkpoint post shipped: `word-on-claude` (scheduled for 2026-04-22). The promise in the closing of this post — *"I'll publish updates as blog posts tagged #2026Predictions"* — needed a canonical tag to exist. Created `2026Predictions` in the tag registry (`.claude/skills/tag-registry/tags.md`) and retroactively applied it to this post via `ghost_post_update`.
+
+**Tags now:** AI, LegalTech, Singapore, 2026Predictions
+
+Frontmatter updated locally to match the live Ghost state. The series tag is now live for December's scorecard post and any intermediate checkpoints.

@@ -1,7 +1,7 @@
 ---
 title: "My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)"
 slug: "my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom"
-tags: ["AI", "LegalTech", "Singapore"]
+tags: ["AI", "LegalTech", "Singapore", "2026Predictions"]
 status: published
 published_at: "2026-01-08T00:33:52.000Z"
 post_id: "695e594d8be18900017b93d4"
