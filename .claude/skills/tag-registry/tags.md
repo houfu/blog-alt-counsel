@@ -1,7 +1,7 @@
 # Canonical Tag Registry
 
-**Last Updated**: 2025-11-22
-**Total Tags**: 47 canonical tags (consolidated from 100 Ghost tags)
+**Last Updated**: 2026-04-20
+**Total Tags**: 48 canonical tags (consolidated from 100 Ghost tags)
 **Total Posts Tagged**: 382 post-tag associations
 
 This is the authoritative list of approved tags for alt-counsel.com. All blog posts and newsletters should use tags from this registry.
@@ -58,6 +58,7 @@ Legal tech events and community initiatives.
 - **FutureLaw** - FutureLaw initiative (8 posts)
 - **SOLID** - Singapore Open Legal Informatics Database (SMU project) (1 post)
 - **CoDraft** - CoDraft project (Claude Code-based document drafting workflow) (1 post)
+- **2026Predictions** - 2026 legal AI predictions accountability series (tracking updates through December 2026 scorecard) (1 post)
 
 ### Content Type
 Type or format of the content.
@@ -207,6 +208,12 @@ These represent planned content areas even if not yet published.
 - **NO spaces, hyphens, or underscores** in canonical tags
 
 ## Tag Maintenance Log
+
+### 2026-04-20
+- ✅ Added **2026Predictions** tag to Events & Communities category
+- **Justification**: January 2026 predictions post explicitly promised "I'll publish updates as blog posts tagged #2026Predictions." Series includes ongoing tracking updates (contract review experiments, usage percentages, hallucination workflow tests, theater-vs-innovation callouts) and the December 2026 scorecard post.
+- **Reusability**: Retroactively applied to `2026-predictions/2026-legal-ai-predictions.md` (Jan 8, 2026) and forward to `word-on-claude` (the first checkpoint post); future applicable to every tracking update through December 2026.
+- **Total tags**: 47 → 48
 
 ### 2026-03-03
 - ✅ Added **CoDraft** tag to Events & Communities category
