@@ -1,11 +1,23 @@
 ---
-title: "\"Where Is My Work?\" — How AI Tools Quietly Fragment Your Files"
-slug: "ai-tools-fragment-files"
-tags: ["AI", "LegalTech", "CloudComputing"]
-status: draft
+title: Where Is My Work? — How AI Tools Quietly Fragment Your Files
+slug: where-is-my-work-how-ai-tools-quietly-fragment-your-files
+tags:
+  - AI
+  - LegalTech
+  - CloudComputing
+  - Claude Code
+  - Claude
+status: published
 featured: false
-github_folder: "ai-fragmentation"
-custom_excerpt: "I sent my laptop for repair and assumed everything was backed up. Then I opened my iPad to work and discovered how many places AI tools had quietly scattered my files."
+github_folder: ai-fragmentation
+custom_excerpt: >-
+  I sent my laptop for repair and assumed everything was backed up. Then I
+  opened my iPad to work and discovered how many places AI tools had quietly
+  scattered my files.
+post_id: 69ca5417c8ade00001d5ddff
+published_at: '2026-03-31T00:32:43.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1686247778079-66b1d7ddb149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDY4fHxGcm9nJTIwZXllfGVufDB8fHx8MTc3NDg2ODA3M3ww&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
 "There's nothing much to say." I told Fred at the Apple Genius Bar as I showed him how bent my Macbook Pro was after an accident. It's just the enclosure, he assured me.
@@ -46,7 +58,7 @@ I had a backup system. It just hadn't kept up with my tools.
 
 ## The tools are moving faster than our habits
 
-Here's the thing — I don't think this is a story about being careless. Claude Cowork shipped on January 12, 2026. Claude Code's [Remote Control](https://venturebeat.com/orchestration/anthropic-just-released-a-mobile-version-of-claude-code-called-remote-control) followed on February 25. Six weeks. Two entirely new environments where work can live, each with different persistence assumptions.
+Here's the thing — I don't think this is a story about being careless. Claude Cowork shipped on January 12, 2026. Claude Code's [Remote Control](https://code.claude.com/docs/en/remote-control) followed on February 25. Six weeks. Two entirely new environments where work can live, each with different persistence assumptions.
 
 I needed to learn how to use these new tools. Our security and compliance instincts don't update that fast. Nobody's do. I [analysed over 7,000 agent runs](https://alt-counsel.com/skillsbench-analysis/) recently and even the skills I'd built were environment-specific — what works in Claude Code on the cloud doesn't necessarily work locally or in Cowork. The fragmentation goes all the way down.
 
