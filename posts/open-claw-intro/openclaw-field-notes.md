@@ -6,7 +6,7 @@ tags:
   - zeeker
   - Tutorial
   - CloudComputing
-status: scheduled
+status: published
 featured: false
 github_folder: open-claw-intro
 post_id: 69d52da6aa301f0001bc3d73
@@ -20,7 +20,7 @@ custom_excerpt: >-
 
 When I entered `/new` to restart OpenClaw for the third time one morning, I knew I had enough.
 
-I could *see* what OpenClaw could do for Zeeker, my open source legal data project — automate the GitOps (using Git to manage infrastructure and deployments), handle the tedious DevOps work that's genuinely painful when you're one person. The trial and errors, the constant restarts and model churn were the price of figuring out OpenClaw. 247,000+ GitHub stars and a community that won't stop talking about it. The hype has weight.
+I could *see* what OpenClaw could do for Zeeker, my open source legal data project — automate the GitOps (using Git to manage infrastructure and deployments), handle the tedious DevOps work that's genuinely painful when you're one person. The trial and errors, the constant restarts and model churn were the price of figuring out OpenClaw. 352,000+ GitHub stars and a community that won't stop talking about it. The hype has weight.
 
 But getting from "installed" to "useful" turned out to be a different journey entirely.
 
@@ -54,7 +54,9 @@ The initial setup was genuinely smooth — wizards, automatic codebase scanning,
 
 The mindset shift I had to make: stop thinking in terms of context engineering. With most AI tools, the game is about crafting the right prompt, managing the context window, setting up retrieval. With OpenClaw, the game is designing the *harness*. What machine am I running on? What model can I afford? What other agents surround it and how do they coordinate? It's a different kind of problem entirely.
 
-**Where do you install it?** OpenClaw runs locally on your machine by default. But if you want it to be truly long-running — working while you sleep, that heartbeat scheduler doing its thing, talk to it meaningfully on your phone — your machine needs to stay on. Practical tip: if you're on a Mac, learn to love `caffeinate`. Run `caffeinate -i` in a terminal to prevent your Mac from sleeping while the agent works. You could run it on a cloud VM instead, but that means understanding cloud infrastructure, security groups, remote access, and costs. You could self-host on a home server like [Daimon Legal in Australia](https://www.daimonlegal.com/blog/how-can-i-use-openclaw-10-use-cases-from-our-firm-and-the-legal-issues-you-should-know-about) does, but that's still another layer of knowledge.
+**Where do you install it?** OpenClaw runs locally on your machine by default. But if you want it to be truly long-running — working while you sleep, that heartbeat scheduler doing its thing, talk to it meaningfully on your phone — your machine needs to stay on. You could run it on a cloud VM instead, but that means understanding cloud infrastructure, security groups, remote access, and costs. You could self-host on a home server like [Daimon Legal in Australia](https://www.daimonlegal.com/blog/how-can-i-use-openclaw-10-use-cases-from-our-firm-and-the-legal-issues-you-should-know-about) does, but that's still another layer of knowledge.
+
+> 💡 **Practical tip**: if you're on a Mac, learn to love `caffeinate`. Run `caffeinate -i` in a terminal to prevent your Mac from sleeping while the agent works.
 
 **Which model do you connect?** OpenClaw supports Claude, GPT, Qwen, GLM, Gemini, and local models. Each has different costs, capabilities, and token limits. Running a model locally means understanding hardware requirements and how to host it on your machine. Using a cloud API means understanding pricing tiers and rate limits. I chose an API model and burned through tokens faster than I expected just *figuring out what to do*.
 
@@ -78,7 +80,7 @@ The one I found most useful works in three steps:
 
 Don't start with what you *want* the agent to do. Start with what you've *got*. What machines can you run it on? What cloud accounts do you have? What APIs are already set up? What CI/CD pipelines exist? What's your realistic monthly budget for tokens and compute?
 
-For me, I had a virtual private server that's always on to hold the agent. I had access to Claude, and I managed to figure out how to get this MacBook to run Gemma 4 27B. If my MacBook is turned off or goes to sleep, I might want to run an Ollama plan (Ollama is software for running AI models locally on your own machine). And the question I keep coming back to: is $20 a month too much for this?
+For me, I had a virtual private server that's always on to hold the agent. I had access to Claude, and I managed to figure out how to get this MacBook to run Gemma 4 26B. If my MacBook is turned off or goes to sleep, I might want to run an Ollama plan (Ollama is software for running AI models locally on your own machine). And the question I keep coming back to: is $20 a month too much for this?
 
 **Step 2: Map what the agent could do with that harness.**
 
@@ -105,7 +107,7 @@ The short tasks worked. I got OpenClaw to set up cron jobs, clone repositories, 
 
 Each failed run was an evening I won't get back. The harness decisions, the token costs of experimentation, the stability issues, the long build-up of agent capabilities — it all takes more time and knowledge than I expected.
 
-I'll give credit where it's due: the channel-based interface is the one piece that consistently impresses. The LegalQuants built LQClaw for onboarding — and when people see they can chat with an AI agent through WhatsApp or Discord instead of some developer-facing terminal, their eyes light up. That interface is the showpiece. But a killer demo is not a reliable workflow.
+I'll give credit where it's due: the channel-based interface is the one piece that consistently impresses. The LegalQuants built LQClaw for onboarding — and when people see they can chat with an AI agent through WhatsApp or Discord instead of some developer-facing terminal, their eyes light up. That interface is the showpiece.
 
 I'm still at it. But I'm not going to pretend I have results to show.
 
@@ -132,8 +134,12 @@ The ideas behind autonomous agents are compelling. Agents that work while you sl
 For solo counsels and anyone trying this at home: go in with your eyes wide open about what "getting started" actually requires. It's not just downloading an app.
 
 The burst of excitement meanwhile has created many alternatives. For lawyers who already have a Claude Code subscription, you now have tantalising opportunities:
-* Dispatch allows you to send tasks from the Claude mobile app to your computer's Cowork (as long as you flick that "keep Computer awake" switch in Claude Desktop Settings).
+
+* Dispatch allows you to send tasks from the Claude mobile app to your computer's Cowork.
 * Cowork can also run tasks on a schedule (again, as long as you keep your computer awake). These tasks remember permissions, so you can run and check on them later.
+
+> 💡 Besides `caffeinate` for MacOS, you can also flip the "Keep computer awake" switch on your Claude desktop app. It's probably in Settings > Desktop app > General > General desktop settings.
+
 * Channels pushes webhooks, alerts, and chat messages into a Claude Code session. Together with `/remote-control`, you get great access to a Claude Code session from anywhere.
 
 But that's a story for Part 2.

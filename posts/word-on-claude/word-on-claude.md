@@ -6,13 +6,17 @@ tags:
   - LegalTech
   - MicrosoftOffice
   - 2026Predictions
-status: scheduled
+status: published
 featured: false
 github_folder: word-on-claude
 post_id: 69e6dbb5efda9400018e72d6
 published_at: '2026-04-22T00:51:41.000Z'
 feature_image: >-
   https://images.unsplash.com/photo-1560092056-5669e776fc68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDN8fE1hY0Jvb2slMjBiZXNpZGUlMjB0eXBld3JpdGVyfGVufDB8fHx8MTc3NjczODgyOHww&ixlib=rb-4.1.0&q=80&w=2000
+custom_excerpt: >-
+  Claude for Word is here, and it's genuinely good. But the interface you work
+  in shapes the thinking you do — and if you can't tell whether you're doing
+  strategy or execution, you might be missing the forest for the trees.
 ---
 
 # Word on Claude: The Lawyer's Greatest Legal Tech Tool Strikes Back
@@ -35,11 +39,13 @@ The product is good. Easy install — if you've ever used a Word plugin, this is
 
 ![Screenshot of Claude for Word sidebar showing tracked changes as the plugin processes a contract clause.](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/04/CleanShot-2026-04-20-at-20.57.24.png)
 
-You don't have to take my word for it. Over this past weekend, Ritwik Bhattacharya — a Latham & Watkins innovation attorney based in Singapore — [tested it against Stanford's ContractNLI](https://lnkd.in/d7gEcj8J), one of the few public legal benchmarks for contract review. It passed the mechanics. Document Q&A with citations, multi-document comparison via a multi-agent architecture, planted-change detection — all working.
+You don't have to take my word for it. Over this past weekend, Ritwik Bhattacharya — a Latham & Watkins innovation attorney based in Singapore —[tested it against Stanford's ContractNLI](https://lnkd.in/d7gEcj8J), one of the few public legal benchmarks for contract review. It passed the mechanics. Document Q&A with citations, multi-document comparison via a multi-agent architecture, planted-change detection — all working.
+
+Many users were also impressed with Claude agent's ability to speak to each other. After finding that Copilot refused her task, [Veronica](https://www.linkedin.com/posts/veronicalegalengineer_ai-legal-legaltech-activity-7452102582526914560-QPUa?utm_source=share&utm_medium=member_ios&rcm=ACoAABxsbD4BvvVidoY-Up7ASiGebE7sSiMi4dw) was able to get Claude in Word to message Claude in Excel to build a workbook in real time to create a log of exhibits from a Word Memo. [Chong Liu](https://www.linkedin.com/posts/activity-7452348373615022080-yn0E?utm_source=share&utm_medium=member_ios&rcm=ACoAABxsbD4BvvVidoY-Up7ASiGebE7sSiMi4dw) was able to synchronise changes from the English version of a contract to a Chinese version of the same in another Word document.
 
 Ultimately, I think your perspective on Claude for Word will be coloured by your familiarity with the technology.
 
-If you are a heavy user of Claude like me, this is a sigh of relief. I’ve long felt frustrated with current LegalTech tools which use agents, and to finally see the power of Opus operating within a Word document is a revelation. This might be because there is a “Claude” way of doing these things. A cursory look at Claude plugin’s audit trail reveals many familiar Claude Code tools — AskUserQuestion, TodoWrite and Bash — as well as new ones that seem to be created just for Word. For anyone who doesn’t already use Claude Code: that means the Word plugin runs on the same agent harness as Claude’s developer tooling, not a watered-down consumer wrapper. Same orchestration, new surface. 
+If you are a heavy user of Claude like me, this is a sigh of relief. I've long felt frustrated with current LegalTech tools which use agents, and to finally see the power of Opus operating within a Word document is a revelation. This might be because there is a "Claude" way of doing these things. A cursory look at Claude plugin's audit trail reveals many familiar Claude Code tools — `AskUserQuestion`, `TodoWrite` and `Bash` — as well as new ones that seem to be created just for Word. For anyone who isn't already using Claude Code: that means the Word plugin runs on the same agent tools as Claude's developer tooling, not a watered-down consumer wrapper. Same orchestration, new surface. 
 
 ![Screenshot of Claude for Word audit trail listing tool calls including AskUserQuestion, TodoWrite, Bash, and Word-specific tools.](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/04/CleanShot-2026-04-21-at-00.03.03.png)
 
@@ -55,13 +61,13 @@ So I introduced her to Claude. Claude was a huge step up. But here's what I noti
 
 When we wanted to rethink the deck's structure — the messages to transmit, what sections to drop, what to add — we did that in the Claude web interface. Chat back and forth, see the whole thing, reshape it.
 
-When we wanted to accept specific edits to specific slides, the PowerPoint plugin was easier. See the change. Accept it. Move on.
+When we wanted to accept specific edits to specific slides, the PowerPoint plugin was easier. Select the element, tell Claude what to change. See the change. Accept it. Move on.
 
 Same AI. Two interfaces. Two jobs.
 
-My thesis was that the web app was able to do anything Word or the plugin could do, and barring edge cases, I still think that’s true. You *can* do minute edits in the web interface.
+I expected the web app to be able to do anything the Word plugin could do, and barring edge cases, I still think that's true. You *can* do minute edits in the web interface.
 
-But the interface changes what kind of thinking is comfortable. Big-picture reasoning is hard to hold in a 300-character sidebar. Accepting a tracked change is hard to do in a chat window.
+But the interface changes what kind of thinking is comfortable. Big-picture reasoning is hard to hold in a 300-character sidebar.
 
 So the interface chooses the work for you. Pick the wrong one, and you'll unconsciously do the wrong kind of thinking.
 
@@ -69,23 +75,23 @@ So the interface chooses the work for you. Pick the wrong one, and you'll uncons
 
 Which brings me to something controversial.
 
-If you're using Word plus the Claude plugin, you're doing junior work. Clause tweaks. Minute edits. Comments to accept or reject. The details matter of course, but this is really a narrow view. You can’t see past the document you’re reviewing.
+If you're using Word plus the Claude plugin, you're doing junior work. Clause tweaks. Minute edits. Comments to accept or reject. The details matter of course, but this is really a narrow view. You can't see past the document you're reviewing.
 
-To think strategically — to think like a lawyer — you need to see the contract as part of a transaction. What do the parties actually want? What position is this document taking? Those questions don’t live in a sidebar. They live in the web interface.
+To think strategically — to think like a lawyer — you need to see the contract as part of a transaction. What do the parties actually want? What position is this document taking? 
 
-You can’t see a workflow or a dashboard from a sidebar in a Word document. That can only happen from a place where you can read several documents at the same time.
+Those questions don't live in a sidebar. You can't see a workflow or a dashboard from a sidebar in a Word document. That can only happen from a place where you can read several documents at the same time, which gives you the freedom to ask what is going on and what needs changing.
 
-So interface matters *a lot*. If you’re a GC, do you spend your time poring over minutiae or are you doing strategy? The answer might be found in which interface you spend the most time in. 
+So interface matters *a lot*. If you're a GC, do you spend your time poring over minutiae or are you doing strategy? The answer might be found in which interface you spend the most time in. 
 
 ## Comparing Claude X Word with other LegalTech
 
 But what if you already use other LegalTech, such as Copilot or Harvey? Does Claude in Word change anything?
 
-Over the weekend, Alexios van der Slikke-Kirillov — a GC at Masdar in Abu Dhabi — published a [video review](https://www.linkedin.com/posts/alexios-van-der-slikke-kirillov-a1244087_ai-legal-legaltech-activity-7451417452749496320-eZkt) answering exactly that. Alexios has used Copilot and Spellbook. His take: Claude for Word is a different species. Unlike the off-the-shelf legal AI products that configure themselves, Claude for Word hands you a kit — skills, playbook structure, multi-agent orchestration — and expects you to assemble it.
+Over the weekend, Alexios van der Slikke-Kirillov — a GC at Masdar in Abu Dhabi — published [video review](https://www.linkedin.com/posts/alexios-van-der-slikke-kirillov-a1244087_ai-legal-legaltech-activity-7451417452749496320-eZkt) answering exactly that. Alexios has used Copilot and Spellbook. His take: Claude for Word is a different species. Unlike the off-the-shelf legal AI products that configure themselves, Claude for Word hands you a kit — skills, playbook structure, multi-agent orchestration — and expects you to assemble it.
 
 For Alexios, that's the whole point:
 
-> If, as General Counsel, you want to understand and control what your AI does with your work product, go for Claude for Word without hesitation.
+> If, as General Counsel, you want to understand and control what your AI does with your work product, go for Claude for Word without hesitation
 
 If you're forced to build the skills that drive the plugin, you necessarily understand what the AI is doing. That's senior work.
 
@@ -97,12 +103,10 @@ The playbook is written somewhere else. So is the deal thinking.
 
 ## Does Prediction #1 Survive?
 
-The prediction was never about tool availability. In order for lawyers to smoothly escape the orbit of Word, the contract workflow has to transform — AI precise enough to follow instructions faithfully, adoption widespread enough to mediate negotiations rather than sit beside them, and tools friendly enough for any lawyer to use. We aren’t there yet.
+The prediction was never about tool availability. In order for lawyers to smoothly escape the orbit of Word, the contract workflow has to transform — AI precise enough to follow instructions faithfully, adoption widespread enough to mediate negotiations rather than sit beside them, and tools friendly enough for any lawyer to use. We aren't there yet.
 
-Claude for Word brings the mechanics of contract review closer to where lawyers already live — and that's a real step. So it might sound like I lose Prediction #1.
+Legal tech commenters are calling this monumental, and they're not wrong to — Claude for Word brings the mechanics of contract review closer to where lawyers already live — and that's a real step. But from my seat it looks muted. Legal Skills was the paradigm break in February; Claude for Word is the next step, not the next chapter.
 
-Legal tech commenters are calling this monumental, and they’re not wrong to — Word is where lawyers actually live. But from my seat it looks muted. Legal Skills was the paradigm break in February; Claude for Word is the next step, not the next chapter.
+I still have strong views about what's ideal. Your GC should not be in Word for the strategic work. If you find yourself using Claude in Word and can't tell whether you're doing strategy or execution, then you really have to ask yourself whether you're missing the forest for the trees.
 
-And the question I actually bet on — whether lawyers will finally be rid of Word in their workflows — isn’t one a product launch can settle. December will tell. See you then with the data.
-
-I still have strong views about what’s ideal. Your GC should not be in Word for the strategic work. If you find yourself using Claude in Word and can’t tell whether you’re doing strategy or execution, then you really have to ask yourself whether you’re missing the forest for the trees.
+And the question I actually bet on — whether lawyers will finally be rid of Word in their workflows — isn't one a product launch can settle. December will tell. See you then with the data.
