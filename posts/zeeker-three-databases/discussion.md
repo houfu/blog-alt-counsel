@@ -2,6 +2,164 @@
 
 ## AUDIT TRAIL: Key Decision Points
 
+### Decision: Added paywall teaser before the cut + published (2026-05-05, Session 4)
+
+**Claude's Analysis:**
+- After publishing the draft, user noted the public preview ended at "If you work in Singapore law and the data is useful to you, use it" — but this gave the visitor no signal about what's behind the paywall, weakening the subscribe call
+- Drafted a one-paragraph teaser that names the three architectural patterns (wiki, monitor, split) AND the bonus epilogue about coding agents — without merging the bonus back into the thesis (preserves Marcus's Option 2a structure)
+
+**User Decision:** Apply teaser, then publish to Ghost.
+
+**Outcome:**
+- ✅ Teaser added before `<!--members-only-->` marker: "For members: the architecture that made this tractable. Three patterns that absorb the cost of solo ownership — wiki, monitor, split — plus a fourth thing I hadn't expected about coding agents and the frontend I'd accepted as permanent."
+- ✅ Final word count: 2,479w (still within target band)
+- ✅ Published to Ghost as draft (post_id: 69f8ce625e975d000114e2de)
+- ✅ post_id added to local frontmatter for future updates
+- ✅ User then changed status to publish on Ghost
+- Ghost admin URL: https://alt-counsel.ghost.io/ghost/#/editor/post/69f8ce625e975d000114e2de
+- Public URL slug: from-one-source-to-three
+
+### Decision: Tier A length-audit cuts after Round 2 (2026-05-05, Session 4)
+
+**Claude's Analysis:**
+- Per memory rule "Run length audit before applying additive reviewer fixes" — should have run length audit BEFORE Round 2 additive fixes; ran it after as remediation
+- Round 2 additions pushed post from 2,400w → 2,586w (over original pitch target 2,200-2,400)
+- Identified 6 Tier A cuts (no judgment debate): filler, repetition, redundancy created by the new bonus epilogue
+- Identified Tier B cuts (more aggressive, judgment calls) — recommended NOT applying
+
+**User Decision:** Apply Tier A only.
+
+**Cuts applied:**
+1. Line 31 filler: "What I didn't detail clearly enough was *why* the project wanted, or needed an agent..." (~25w)
+2. Line 57 trailing platitude → tightened to "for Zeeker, the answer was simpler" (~12w net)
+3. Line 63 redundant "Neither is wrong" paragraph — duplicated lines 47-49 (~50w)
+4. Line 67 bridge sentence "Here's what I'm finally telling you about." (~7w)
+5. Line 85 Datasette redundancy — same argument now lives in "One More Thing" epilogue (~50w)
+6. Line 161 duplicate three-thing summary — repeats line 155 (~30w)
+
+**Outcome:**
+✅ Final word count: 2,424w (within original target band 2,200-2,400, just over upper edge by ~24w). Net cut ~162w from 2,586w. Structure cleaner: no duplicate Datasette argument, no double "neither is wrong", no double three-thing summary.
+
+### Decision: Round 2 reviewer fixes — coding moved to bonus epilogue, opener sharpened, frontend section rewritten (2026-05-05, Session 4)
+
+**Claude's Analysis:**
+- Round 2 audit + Marcus + Wei Lin all flagged Datasette factual inversion (line 154) as critical — fixed
+- Marcus's sharpest finding: "coding" as fourth element breaks the ambient-touch thesis. Wiki/monitor/split absorb cost when author is *absent*; coding lifts ceiling when author is *present and engaged*. Different value props.
+- All three reviewers flagged "When we go high, we go high" section as needing structural rework: Michelle Obama allusion in title (cliché clash), bullets contain analysis not data, "not much of a frontend programmer" buried at end (should lead, vulnerability earns payoff), missing weight/resignation before payoff
+- Marcus + Wei Lin both flagged opener "leaves a lot to be desired" as too soft — too hedged, performance-review register
+
+**User Decision:**
+Apply all 3 structural fixes. Use Marcus's Option 2a (move coding section AFTER the close, frame as "one more thing I hadn't expected") rather than Option 2b (keep four-thing close). User pointed to PR https://github.com/houfu/zeeker-datasette/pull/7 as the concrete coding-agents step (4 sketch sessions, 6 implementation waves, ~15K lines, used Datasette's `_table-{db}-{table}.html` partial seam to preserve all built-in features).
+
+**Rationale:**
+- Option 2a is the lighter edit and preserves the three-thing thesis
+- Bonus epilogue framing signals to reader that coding-agents story is a finding, not core architecture
+- The PR link grounds the concrete step Marcus + Wei Lin both asked for
+- Marcus's opener rewrite ("I've written about data.zeeker.sg for months without ever saying: go use it") is sharper than the previous "leaves a lot to be desired"
+
+**Outcome:**
+✅ Opener replaced. ✅ "What Belief Looks Like Now" reverted to three things (wiki/monitor/split). ✅ Old "When we go high" section deleted; replaced by new "One More Thing I Hadn't Expected" epilogue AFTER the close, with the rewritten structure (vulnerability lead → resignation → constraint → concrete step → payoff) and PR bookmark. Word count: 2,400w → 2,529w (net +130w; acceptable given structural payoff).
+
+**Still open:**
+- Marcus's process topology question for NanoClaw — user flagged not understanding the question. Needs plain-language explanation before deciding whether to add a paragraph.
+
+### Decision: Narrowed admission from "never announced" to "haven't reported well" (2026-05-05, Session 4)
+
+**Claude's Analysis:**
+- Reading the draft, flagged that "I'll admit it: I've never really 'announced' data.zeeker.sg" overstated the case
+- Counted prior series: ~12,925 words across part-2a (6,020w architecture), part-2b (3,014w lessons/AI), part-3-smu-and-decision (2,205w), when-institutions-enter-your-space (1,686w)
+- The Nov 2025 SMU/SOLID post explicitly committed: *"I'm renewing the domain. I'm continuing."* That's an announcement in any honest accounting
+- The honest gap: Houfu had written *about* Zeeker repeatedly, but had never made the call-to-action — "it's ready, go use it"
+- Proposed satisfaction-led opener as alternative emotional core (per user's stated preference)
+
+**User Decision:**
+Kept admission framing but narrowed it. New opener: *"I'll admit it: the way I've reported my progress on data.zeeker.sg leaves a lot to be desired."* Rejected pure satisfaction opener; satisfaction now runs as through-line not as entry point.
+
+**Rationale:**
+"Never announced" was demonstrably untrue and reviewers/readers familiar with the series would catch it. "Haven't reported well" is defensible — and it sets up a different (more honest) tension: the gap between writing about a project and inviting people to use it.
+
+**Outcome:**
+✅ Opener rewritten. Satisfaction shows up as through-line: "Quiet conviction" (para 4), "gratifying" (new "When we go high" section), "I believe I can get there" (close).
+
+### Decision: Added fourth architectural change — "When we go high, we go high" (2026-05-05, Session 4)
+
+**Claude's Analysis:**
+N/A — user-initiated addition.
+
+**User Decision:**
+Added a new section between "The Split" and "What Belief Looks Like Now" describing how coding agents enabled a custom editorial-style frontend that worked around Datasette's data-science orientation. Three bullet points on the original constrained architecture choices (SQLite files, Datasette, Github Actions task runners), then the breakthrough: coding agents made the month-of-frontend-work tractable.
+
+**Rationale:**
+The earlier three-thing payoff (wiki, monitor, split) covered ownership cost but missed a different constraint that the agents lifted — the *technical-compromise* tax. Many of Zeeker's architectural choices were "we have no resources" defaults. The frontend was the most visible compromise, and coding agents flipped that one too.
+
+**Outcome:**
+✅ Architecture payoff expanded from three to four. "What Belief Looks Like Now" updated: *"These four things — wiki, monitor, split, coding — don't make Zeeker any less ambitious."* New screenshots added: editorial single-row layout (CleanShot 2026-05-04 at 23.50.19.png), wiki-agent dream skill output (23.57.15@2x.png), monitor bot analysis (23.59.19@2x.png).
+
+### Decision: Pivot from PDCA loops to "ambient touch" framing (2026-05-03, Session 3)
+
+**Claude's Analysis:**
+- User had been editing the Session 2 draft and flagged misgivings about the article's direction
+- Three new concrete elements user wants to discuss: (1) dream wiki agent that synthesizes other agents' updates, asks questions, makes suggestions; (2) monitor agent reading CF analytics + Caddy logs, reporting site usage in plain language; (3) maintenance/development split — pretty new site developed away from running production site
+- These don't fit Plan/Do/Check/Act loop discipline. They're about *ambient awareness* — the project staying in peripheral vision without demanding attention
+- Brainstormed three framing options: A) "The Project I Hadn't Announced" (vulnerability-led), B) "Solo Projects Don't Die From Effort, They Die From Decay" (framework-led), C) "From Exploring to Using" (series-arc-led)
+
+**User Decision:**
+Framing A — vulnerability of having never really announced Zeeker. Pressure (cost #4 of solo ownership) is the deepest tax. *"It's ambitious in an understated way and I don't know whether I can deliver it. It's a concept that needs more than a great idea."*
+
+**Rationale:**
+The voice guide already canonizes this exact admission as a sample opening: *"I'll admit that I never announced data.zeeker.sg. I kept thinking 'needs more resources before it's ready.'"* The article isn't inventing the vulnerability — it's finally delivering on what the guide pointed at. Closes the November cliffhanger emotionally, not just operationally.
+
+**Outcome:**
+✅ PDCA framing dropped. New thesis: *pressure of solo ownership is the deepest tax; ambient touch is the architecture of agents that absorb it.* Sections 2-8 rewritten around this thesis.
+
+### Decision: Option 1 light touch on OpenClaw/NanoClaw (2026-05-03, Session 3)
+
+**Claude's Analysis:**
+- Original draft had a dedicated "Different Harnesses, Different Shapes" section comparing OpenClaw and NanoClaw with "neither is wrong" framing
+- User had cut this section in their amendments
+- For Framing A, the harness comparison can either get a dedicated bridge section (Option 2) or be folded into one paragraph (Option 1)
+
+**User Decision:**
+Option 1 — light touch. NanoClaw section retained but compressed; OpenClaw mentioned in one paragraph that closes the Part 1 cliffhanger and sets up the shape contrast. The "neither is wrong" voice move lives inside that paragraph.
+
+**Rationale:**
+Framing A's emotional spine is *pressure → architecture → invitation*. A dedicated methodology section between pressure and proof would blunt the arc. Vivian Balakrishnan gist line user added fits Option 1's lighter register.
+
+**Outcome:**
+✅ "Different Harnesses" section dropped. Shape comparison delivered in one paragraph inside the new Section 3.
+
+### Decision: Gate Option γ — announcement public, technical depth members-only (2026-05-03, Session 3)
+
+**Claude's Analysis:**
+- Original gate (Option β / "A") placed gate after the framework section, with screenshots and what's-live as members-only payoff
+- Framing A's whole emotional move is *publicly committing* to Zeeker — gating the announcement contradicts the move
+- Three gate options: α (gate after pressure diagnosis), β (gate after architecture intro — the original), γ (reorder so announcement is public, deep dives are members-only)
+
+**User Decision:**
+Option γ. Public preview includes the announcement and screenshots. Members-only payoff is the technical implementation of the three ambient touch elements (wiki, monitor, split).
+
+**Rationale:**
+- Framing A delivers a public commitment; gating it undercuts the move
+- Three elements (wiki, monitor, split) are the strongest *technical* content — natural subscriber reward
+- Honors November anchor moment with public delivery, then explains architecture privately
+
+**Outcome:**
+✅ New 8-section structure with gate after Section 4. Public preview ~700-800w including screenshots. Members payoff ~800-1000w on the three elements + close.
+
+### Decision: New 8-section structure (2026-05-03, Session 3)
+
+| § | Section | Gate |
+|---|---|---|
+| 1 | Opening: the project I hadn't announced | Public |
+| 2 | The pressure of solo ownership | Public |
+| 3 | What shape of agent absorbs ownership (NanoClaw + brief OpenClaw "neither is wrong") | Public |
+| 4 | What's live now (3 databases, screenshots, "use it") | Public |
+| **— gate —** | | |
+| 5 | The wiki: agents that synthesize their own work | Members |
+| 6 | The monitor: the site tells you how it's doing | Members |
+| 7 | The split: maintenance away from development | Members |
+| 8 | Closing: belief renewed, fade into the background | Members |
+
 ### Decision: Series identity — Zeeker Part 4 + soft companion to OpenClaw Part 1 (2026-04-28, Session 1)
 
 **Claude's Analysis:**
@@ -295,3 +453,94 @@ Continued from Session 1 directly. User in auto mode. Goal: take the locked pitc
 - Round 2 audit slot reserved (post-screenshot or post-expansion if warranted)
 - Then publish to Ghost as draft via publish-lexical.js
 - After Ghost edits + publish: sync metadata once via npm run sync-ghost
+
+### Session 3: Framing pivot to "ambient touch" (2026-05-03)
+
+#### Context
+User returned to draft after independent edits. Flagged misgivings about article direction. Three new concrete elements wanted (wiki agent, monitor agent, dev/maintenance split) didn't fit the existing PDCA loops framing. Three screenshots already added to post folder.
+
+#### What Claude Did
+- Read user's amendments to draft and surfaced what stayed / what changed
+- Brainstormed conceptual frame: "ambient touch" → four costs of solo ownership (forgetting, decay, blindness, pressure)
+- Surfaced three framing options (A: vulnerability-led, B: framework-led, C: series-arc-led)
+- Surfaced two OpenClaw/NanoClaw treatment options (light touch vs dedicated bridge section)
+- Surfaced three gate placement options (α, β, γ)
+- Updated discussion.md with framing pivot decision before drafting
+
+#### User Decisions
+- Framing A (vulnerability of never having announced Zeeker)
+- Pressure (cost #4) is the deepest tax — *"ambitious in an understated way and I don't know whether I can deliver it"*
+- Option 1 light touch on OpenClaw/NanoClaw — one paragraph, "neither is wrong" inside it, no dedicated section
+- Gate Option γ — public announcement (with screenshots), members-only deep dive on three elements
+
+#### Key Insights from User
+1. *"Be there when I need them and fade into the background when I don't"* — a really specific kind of relationship; most software demands attention, this yields it
+2. *"I get to keep it front of my mind in various ways that isn't overwhelming. I'm in control of the pace too"* — pace control is part of the architecture, not just a side benefit
+3. *"It's a concept that needs more than a great idea"* — the deeper anxiety beneath the un-announcing is whether ambition can be delivered solo
+
+#### Files Modified
+- `posts/zeeker-three-databases/discussion.md` — Session 3 entry + 4 audit trail decisions
+- `posts/zeeker-three-databases/from-one-source-to-three.md` — full rewrite Sections 2-8 in progress
+
+#### Round 1 Content Quality Audit Results
+
+**Verdict:** Strong, mature draft. 0 critical, 4 important, 5 minor.
+
+**Important fixes applied:**
+1. Section 3 — added one sentence acknowledging Part 1 channel-interface cliffhanger ("Part 1 wondered whether channel-based interfaces could be the workflow. For Zeeker's kind of work, the answer was simpler...") — closes OpenClaw Part 1 thread that the rewrite had dropped
+2. Members section opener — added bridging sentence connecting NanoClaw's three properties to wiki/monitor/split
+3. "What's Live Now" — glossed "SQL" for non-technical legal readers; replaced "JSON API" with "data API"
+4. "The Split" opener — fixed grammar ambiguity in "an architectural decision the agents made worth doing"
+
+**Minor fixes applied:**
+6. "The Wiki" opener — removed hedging fragment ("A skill, still being refined, that I'll describe...") in favor of cleaner two-sentence structure
+7. "Pressure tractable" echo — first instance changed to "manageable"; second instance ("not gone — tractable") retained as the punch
+8. "Be there when I need them" floating sentences — anchored with attribution ("That's the line I keep returning to:")
+
+**Skipped (judgment calls):**
+5. Asymmetric "neither is wrong" comparison — auditor flagged OpenClaw gets 2 sentences vs NanoClaw 3 bullets. Judgment call: keeping asymmetry because Zeeker is the focus; expanding OpenClaw would dilute the post.
+9. SOLID paragraph placement under "What's Live Now" heading — minor structural concern, leaving as-is.
+
+**Strengths called out:**
+- Opening earns the announcement (vulnerability is specific, not generic)
+- Monitor section is the standout — fabricated analytics quote does heavy lifting
+- Gate placement is structurally sound — public section closes on payoff, members section delivers architecture not just more announcement
+
+**Word count after fixes:** 2,238w total (within pitch target 2,200-2,400). Public preview 1,264w.
+
+#### Next Steps
+- Decide whether to run Round 2 audit OR target audience review (Wei Lin + Marcus Tan)
+- Memory rule: 2-round audit limit; Round 1 was high-quality so Round 2 likely diminishing returns
+- Backlinks already in place (OpenClaw Part 1 + November SOLID) — verify still relevant
+- Publish via publish-lexical.js once user approves
+
+### Session 4: Reframing the admission + adding the coding-as-fourth-change section (2026-05-05)
+
+#### Context
+User reading through draft, pushed back on opener "I've never really announced data.zeeker.sg" as unfair given prior writing on the project. Wanted satisfaction as the emotional core, not admission/change.
+
+#### What Claude Did
+- Word-counted the prior Zeeker series (~12,925w across four pieces) to ground the pushback
+- Confirmed the November SMU post explicitly committed "I'm renewing the domain. I'm continuing"
+- Proposed a satisfaction-led opener as a structural alternative (lead with the moment of looking at the site and feeling enough)
+- Sketched how the pressure section would shift (pressure prevented satisfaction → agents restored conditions for satisfaction)
+
+#### User Decisions
+- Did NOT adopt the satisfaction-led opener
+- Narrowed admission from "never announced" to "haven't reported well" — defensible and more honest
+- Added a new fourth architectural section: "When we go high, we go high" — coding agents lifted the technical-compromise tax (specifically the Datasette frontend that didn't suit text-heavy legal data)
+- Added three new screenshots (editorial layout, wiki dream output, monitor bot analysis)
+
+#### Key Insights from User
+- "I want to focus on satisfaction as the emotional core rather than the change or admission" — but in execution, kept admission as the entry point and let satisfaction be the through-line. Suggests the admission isn't the *core* but is the *gateway*: it's how Houfu earns the right to talk about satisfaction.
+- The coding agents weren't just absorbing ownership cost — they were closing the gap between "what I had to settle for" and "what I actually wanted to build." That's a distinct architectural story worth its own section.
+
+#### Files Modified
+- `posts/zeeker-three-databases/from-one-source-to-three.md` — opener rewritten, "When we go high, we go high" section added, three new screenshots added, "What Belief" close updated to four things
+- `posts/zeeker-three-databases/discussion.md` — Session 4 entry + 2 audit trail decisions
+
+#### Next Steps
+- Compare new working-tree version vs committed (HEAD) version for user
+- Per user's stated request: "note up then compare"
+- Open question for next session: prose polish on new "When we go high" section (a few typos: "Datatsette", "designed for text-heavy, legal workloads" reads inverted, "all them" → "all of them")
+- Decide whether changes warrant Round 2 audit (memory rule: 2-round cap; Session 3 already burned Round 1)
