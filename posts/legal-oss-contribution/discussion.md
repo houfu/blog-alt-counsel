@@ -521,3 +521,53 @@ Files updated:
 - `lawyer-coder-pr-beeswarm.svg` — re-rendered
 - `stats-inventory.md` — discount table extended; cohort additions section extended
 - `discussion.md` — this amendment
+
+### 2026-05-10 — Session 5: Audit, review, refresh, publish
+
+**Context**
+
+User opened the session with the post folder still untracked on `blog/legal-oss-contribution`. Goal: get from "draft + research + scripts on disk" to "draft on Ghost." All the content audit, mediation, audience review, number refresh, and publish work landed in this session.
+
+**What Claude did**
+
+- **Initial commit gathering.** Split untracked folder into 2 commits: planning (pitch + research + discussion), data (stats-inventory + scripts + raw/ buckets). Draft and visuals deliberately deferred (user wanted to prune unused visuals first; deleted `lawyer-coder-pr-scatter.svg` and `legal_oss_stat_grid_series.html` as orphans not referenced by the draft).
+- **Solo-counsels section completion.** User had partial section ending mid-sentence ("For lawyer coders, even if becoming a..."). Drafted the completion using pitch's stakes blueprint, with workshop-callback and "Stars don't maintain code" punch close. User later overwrote with their own tighter version (commons + WWW analogy) — see decision below.
+- **Content quality audit (round 1).** content-quality-auditor on 5 specialists in parallel. Key findings: line 79 garble ("It hardly The jury is out for me on this one."), missing pitch sections 3 (criticisms) and 4 (LegalQuants prose), weak solo-counsels section, opening delays personal hook by 5 paragraphs, plus copy errors (Github→GitHub, predilict, Courtlistner, "means"→"mean", em-dash inconsistencies).
+- **Draft-vs-pitch mediation.** Surfaced 10 divergences in a structured table. User chose: keep current draft direction (drop HN reception, Tauberer, AssemblyLine, Thorne/Kuhn/DeVault), but ADD three things — Will Chen's licence/contribution ambiguity moved into "What makes a project graduate" section; LegalQuants 1-of-101 audit surfaced in lawyer-coder section with new-coder caveat; 2019 docs-typo gap added to opening. Amended `pitch.md` to reflect new structure (3,000w target, dropped sections noted, original preserved as audit trail).
+- **Audience review round 1.** Marcus + Wei Lin in parallel. Convergent findings: solo-counsels weakest section, new-coder caveat condescending, "dark moments" vague, closing line works. Marcus-only crit: "5x typical OSS rate" uncited (most credibility risk), OSI quote attribution loose, Harvey framing should call staff-only PRs "expected behaviour for corporate research infrastructure." Wei Lin-only: opening sets wrong power dynamic, Caliper-before-redlines wrong order.
+- **Round 1 fixes (10 edits).** Dropped "5x typical" claim; cut "Man, that sounds really rotten"; sharpened Harvey framing with the "expected behaviour" sentence; softened OSI quote to paraphrase; reframed new-coder caveat from "their contribution history is still being written" (deficit) to "the infrastructure for them to contribute to actually exists yet" (structural); softened "best place to practice" sequencing with forward-reference; reordered Caliper↔redlines frustration so personal admission leads, research confirms; cut "dark moments" (replaced with "I'd like to think my background sets me apart. Mostly, it doesn't."); rewrote solo-counsels section (skill-development lead, dropped WWW analogy, added "18 months no one reviewed your code" cost-of-isolation example per Wei Lin); tightened opening to bring 2019 admission to para 3.
+- **Audience review round 2.** Both reviewers near-ship. Convergent push-back on the new closing — both missed "I starred Mike on day two. Like everyone else." Marcus's three blockers: closing, Harvey denominator, OSI attribution. Wei Lin: ship.
+- **GitHub stats refresh.** Pulled live numbers via `gh` CLI. Mike moved significantly in 2 days (2,395→2,657 stars, 3→6 merged PRs, day 9→day 11). Harvey LAB now 43 PRs with 8 unique authors — confirmed user's "most of them" softening was correct. biglaw-bench unchanged.
+- **Harvey LAB denominator.** User confirmed top 3 accounts (ngrupen=23, spencerp=12, JulioPereyra93=3, total 38) are Harvey staff/collaborators; bottom 5 (renantrendt, massublau, KilgoreHerring, ClemenceLanfranchi, Abid-cognida) are external one-off contributions. Updated draft: "43 merged pull requests — 38 of them from three Harvey engineers. The remaining five are one-off external contributions. Eight more external pull requests, filed since launch, are sitting open and unreviewed."
+- **OSI attribution verified.** PDF live at `opensource.org/wp-content/uploads/2025/10/osi_maintainers.pdf` (HTTP 200, last-modified 2025-10-14). Actual title: "Supporting maintainers and protecting the Open Source ecosystem." Updated post to link the URL and call it "October 2025 maintainers report" rather than "*Maintainers* book." Quote remains paraphrased per user preference.
+- **Backlink curation.** 3 bookmark cards inserted via `<bookmark url="..." />` syntax: `open-source-ai-and-why-october-matters` after the 2019 admission; `tool-vs-infrastructure-mindset` between author-vs-maintainer beat and Will Chen paragraph in "What makes a project graduate"; `the-unexpected-joys-of-open-source` after the redlines-frustration paragraph.
+- **Publish.** `node -r dotenv/config scripts/publish-lexical.js` posted draft to Ghost. Post ID `6a009daff5b377000154ff9a`, status `draft`. Image placeholders still need swapping for actual uploads in Ghost editor.
+
+**User decisions**
+
+- **Closing line stays as workshop callback (not the "I starred Mike" line both reviewers wanted restored).** User's reasoning: the "starred it myself on Day 2" line already appears in the body at the start of "The shape across the field" section (line 59) — restoring it as the close would be repetition. Marcus's "no-ship without restore" verdict was based on not knowing this. Closing decision settled: workshop-callback close stays; round 2 closing concern is now moot.
+- **Skipped Marcus's other polishes.** User declined: line 83 "11 weren't visible" clause, OSI attribution further softened (only the link-and-title fix applied), docassemble parenthetical cut. User said "I am not so keen on them."
+- **Mike data refreshed to today's snapshot (day 11 / 2026-05-10).** Picked over freezing on a story-snapshot date. Numbers will keep moving until publish day.
+- **Mike fork sample kept (87/100 byte-identical).** Did not re-run; added snapshot note in prose ("I sampled 100 of them at the day-nine mark, when the count was 675").
+
+**Outcomes**
+
+- ✅ Post drafted on Ghost. All round 1 fixes landed; round 2 ship-blockers resolved (Harvey denominator now precise; OSI citation verified+linked; closing decision settled by repetition argument).
+- ✅ Pitch amended to match actual draft direction with the original preserved.
+- ✅ Three backlinks distributed across opening / mid / late post.
+- ⚠️ Image placeholders still bare-filename text — need uploading via Ghost editor before scheduling.
+- ⚠️ `post_id: 6a009daff5b377000154ff9a` not yet in markdown frontmatter — pending sync-back after final Ghost edits.
+
+**Files modified**
+
+- `lawyers-not-on-each-others-code.md` — round 1 fixes, number refresh, OSI link, 3 bookmark cards
+- `pitch.md` — structure-intent amended (2026-05-10 note), original preserved
+- `discussion.md` — this entry
+- Deleted: `lawyer-coder-pr-scatter.svg`, `legal_oss_stat_grid_series.html` (orphan visuals)
+
+**Next steps**
+
+- Upload 3 visuals (`mike-fork-mosaic.svg`, forest PNG, `lawyer-coder-pr-beeswarm.svg`) to Ghost editor with alt text
+- Schedule publication when ready
+- `npm run sync-ghost lawyers-not-on-each-others-code` once and add `post_id` to frontmatter
+- Part 2 KIV (what `docassemble`/`courtlistener` do differently + lessons from `redlines`)

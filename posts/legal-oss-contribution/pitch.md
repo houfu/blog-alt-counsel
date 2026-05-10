@@ -22,30 +22,41 @@ I run AI workshops for legal counsels and the moments I love most are when someo
 - **Stakes are explicit.** Part 1 ends with "why open source matters for solo counsels" — the workshop counsels need somewhere to go after they "get it"; the $50 alternative to $50K vendors requires sustained community; vendor independence and cumulative knowledge depend on contribution culture compounding rather than evaporating.
 - **Builds on prior work, doesn't repeat it.** January 2026's "I Build Infrastructure. Jamie Vibe Codes Tools." argued vibe coding was fine for disposable internal tools but sustainability matters for community-serving OSS. This piece picks up there: what happens when vibe-coded tools get marketed as community-serving but lack the infrastructure for community.
 
-## Structure intent — Part 1 (~3,150 words / 14-15 min)
+## Structure intent — Part 1 (~3,000 words / 13-14 min)
 
-The flow is linear and builds: specific case → criticisms (community voice) → empirical scope → genre/naming → explanation → stakes.
+> **Amended 2026-05-10** — original structure (8 sections, 3,150w) was reconciled with the actual draft after content audit. Audit-flagged sections that the user chose to drop are noted inline. The original structure is preserved below this section for audit trail.
+
+The flow is linear and builds: specific case → field-wide picture → people-level picture → what graduation looks like → explanation → stakes.
 
 1. **Opening — workshop floor → personal data gap** (~300w)
-2. **Mike, the case study** (~400w) — what Mike is, the launch hype, the metrics (2,395 stars, 0 merged PRs, 91/100 byte-identical forks), trade-press celebration
-3. **The criticisms** (~350w) — Hacker News reception (collective, no handles): vibe-coded thinness, wrapper-not-legal-AI, star-count gaming concerns, privilege issues. Will Chen's own ambiguity (contribution model framed as "a question," AGPL "currently considering switching to more permissive licences"). The fork pattern: 91 of 100 sampled forks zero commits ahead, 87 byte-identical.
-4. **This is the real picture in legal-tech "open source"** (~600w) — *with graphs/statistics suggested*:
-   - LegalQuants directory: 110 members, ~6 with verifiable GitHub, 1 clearing the redlines/FLP bar
-   - Median across LQ-native repos: 13 stars, 4 forks, 2 contributors, 0 merged PRs
-   - The 9-handle external PR audit: zero of nine with a merged PR to a peer's legal-OSS repo in twelve months
-   - Tauberer 2018 milestone with caveat; lawyersongithub directory at ~40 members across fifteen years
-   - Suffolk LIT AssemblyLine: 9 contributors, one carrying 1,229 commits (95/5)
-   - Conclusion: federation of solo silos
-5. **Harvey LAB and open-source washing** (~400w) — Harvey's biglaw-bench (143 stars, 19 months, 1 staff merged PR, dataset gated behind contact form). LAB just-launched: 41 PRs all from staff/invited collaborators. *"Open Source theatre"* — OSI October 2025. Thorne 2009 "openwashing." Kuhn's "open-in-name-only." DeVault's "if you want a sexier brand for it, make one!" Mike fits the pattern too. Different stakes ($11B vendor vs solo founder), same structural mechanic. *"I starred Mike on day two. Like everyone else."*
-6. **Why this might be happening** (~450w) — confidentiality (Heppner with caveat), UPL (ABA's own admission), billables and tooling, Caliper findings (well-caveated, direction over percentiles), the lawyer-coder double-bind/imposter syndrome.
-7. **Why open source matters for solo counsels** (~350w) — the stakes section:
-   - $50 alternatives to $50K vendors require sustained community
-   - Vendor independence and abandonment risk
-   - Cumulative knowledge — workshops + contribution culture compound
-   - The workshop counsels need somewhere to go after they "get it"
-   - Trust and audit — you can verify what's running on your data
-   - The tools we depend on need maintainers, and the maintainers need contributors
-8. **Close + hook to Part 2** (~150w) — these are real headwinds AND there are projects that worked. Most of what they did is hours, not years. *"I starred Mike on day two. Like everyone else. Next week I'm going to do something different. I'll show you the work."*
+   - Workshop scene + the "they get it" moment
+   - `redlines` as personal anchor, then the **2019 docs-typo to `docassemble`** admission as the vulnerable hook (the contribution gap that anchors the post)
+   - Pivot: lawyer-coders need community → resolves into the Mike case
+2. **Mike, in nine days** (~400w) — what Mike is, launch hype, day-9 metrics (2,395 stars, 3 merged PRs), the fork mosaic (87/100 byte-identical, 28% fork-to-star ratio)
+3. **The shape across the field** (~500w)
+   - Harvey `biglaw-bench` + LAB as the same shape at $11B scale
+   - Forest PNG (7-project crown/roots comparison)
+   - OSI "Open Source theatre" quote (October 2025 *Maintainers* book)
+   - **Dropped vs original pitch:** Hacker News reception block (pile-on risk); Thorne 2009 / Kuhn / DeVault attributions (political detour)
+4. **And the lawyer-coders themselves** (~400w)
+   - **LegalQuants directory: 1 of 101 audited members clears the bar** (≥100 stars, multiple contributors, ongoing releases). The one is `redlines` — Houfu's own. Awkward but honest.
+   - Caveat: many LQ members are recent arrivals to coding, often via AI tools. The chart shows "where a community of new coders, learning in public, stands today" — not "why aren't lawyer-coders contributing"
+   - 93-handle PR audit + beeswarm
+   - "Federation of solo-author archipelagos"
+   - **Dropped vs original pitch:** Tauberer 2018 milestone, Suffolk LIT AssemblyLine 95/5
+5. **What makes a project graduate from demo to codebase** (~350w) — *new section, not in original pitch*
+   - Author vs maintainer leap: most coders releasing a first project don't realise how different the two roles are. Maintainer work is unpaid, often thankless.
+   - **Will Chen's own ambiguity** — open licence question, contribution model unsettled. Framed charitably as "the maintainer work, done in public" (fairness anchor; replaces the "criticisms" section)
+   - `docassemble` + `courtlistener` as positive examples; Pyle's 10-year service award
+6. **Why this might be happening** (~400w) — confidentiality, UPL (ABA admission), employer IP restrictions, Caliper findings (lawyer dispositional traits), personal `redlines` frustration as supporting honest moment
+7. **Why this matters for solo counsels** (~250w) — single focused stake: lawyer-coder skill development through community. Reading code, getting reviewed, learning conventions only happen in community. **Dropped vs original pitch:** the comprehensive 6-stake list (vendor abandonment, $50/$50K, cumulative knowledge, audit, etc.) — user chose tight focus over breadth
+8. **Close + hook to Part 2** (~150w) — Part 2 will show what `docassemble`/`courtlistener` do differently and what `redlines` reveals about the work. *"I starred Mike on day two. Like everyone else."*
+
+---
+
+### Original structure (pre-amendment) — preserved for audit trail
+
+Original target ~3,150w. Sections matched the structure in `discussion.md` rounds 1-3. Reconciled 2026-05-10 after content audit revealed pitch sections 3 (criticisms) and 4 (full LegalQuants + Tauberer + AssemblyLine) absent or compressed in draft, and an unplanned "What makes a project graduate" section present. User accepted draft direction on most divergences and asked for three additions: 2019 docs-typo gap to opening (#7); Will Chen ambiguity moved into "graduate" section (#2); LegalQuants 1-of-101 with new-coder caveat surfaced in lawyer-coder section (#3).
 
 ## Suggested visualizations / images
 
