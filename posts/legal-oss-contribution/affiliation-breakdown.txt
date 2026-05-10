@@ -1,0 +1,115 @@
+Querying GitHub for each handle's merged PRs (will hit api.github.com).
+========================================================================
+
+[nonprofittechy]  reported total merged PRs: 1452  fetched: 1452
+  excluding orgs: ['SuffolkLITLab']
+  self (nonprofittechy):                  2
+  affiliated (SuffolkLITLab):           1169
+  external (post-discount):       281
+  top 10 owners:
+    SuffolkLITLab                   1169 [affiliated]
+    LemmaLegalConsulting             144
+    IllinoisLegalAidOnline            61
+    jhpyle                            33
+    GBLS                              14
+    MassLegalHelp                      7
+    LSVermont                          7
+    SavvySuit                          2
+    mitramir55                         2
+    nonprofittechy                     2 [self]
+
+[damienriehl]  reported total merged PRs: 44  fetched: 44
+  excluding orgs: ['alea-institute']
+  self (damienriehl):                  0
+  affiliated (alea-institute):          21
+  external (post-discount):       23
+  top 10 owners:
+    alea-institute                    21 [affiliated]
+    CatholicOS                        14
+    sali-legal                         9
+
+[adelevie]  reported total merged PRs: 629  fetched: 629
+  excluding orgs: ['18F']
+  self (adelevie):                  27
+  affiliated (18F):                     461
+  external (post-discount):       141
+  top 10 owners:
+    18F                              461 [affiliated]
+    adelevie                          27 [self]
+    codeforamerica                    22
+    vdavez                            18
+    cloud-gov                          8
+    benbalter                          8
+    iron-io                            6
+    gaffneyc                           6
+    huggingface                        5
+    unitedstates                       3
+
+[batemapf]  reported total merged PRs: 284  fetched: 284
+  excluding orgs: ['18F']
+  self (batemapf):                  2
+  affiliated (18F):                     121
+  external (post-discount):       161
+  top 10 owners:
+    department-of-veterans-affairs   153
+    18F                              121 [affiliated]
+    opengovfoundation                  3
+    dpp                                3
+    batemapf                           2 [self]
+    nelabdiel                          1
+    cloud-gov                          1
+
+[dpp]  reported total merged PRs: 131  fetched: 131
+  excluding orgs: ['lift', 'liftweb']
+  self (dpp):                  1
+  affiliated (lift):                    9
+  affiliated (liftweb):                 0
+  external (post-discount):       121
+  top 10 owners:
+    spice-labs-inc                   109
+    lift                               9 [affiliated]
+    omnibor                            4
+    strangeloop                        2
+    dpp                                1 [self]
+    automerge                          1
+    dragonmark                         1
+    lynaghk                            1
+    chenkelmann                        1
+    telegr-am                          1
+
+[compleatang]  reported total merged PRs: 65  fetched: 65
+  excluding orgs: ['eris-ltd', 'monax-io']
+  self (compleatang):                  1
+  affiliated (eris-ltd):                0
+  affiliated (monax-io):                0
+  external (post-discount):       64
+  top 10 owners:
+    hyperledger-archives              31
+    helm                              14
+    sublimehq                          5
+    rhazdon                            2
+    gotenberg                          2
+    Azure                              2
+    dpp                                2
+    compleatang                        1 [self]
+    unidoc                             1
+    lwolf                              1
+
+[benbalter]  reported total merged PRs: 1115  fetched: 1115
+  excluding orgs: ['github']
+  self (benbalter):                  385
+  affiliated (github):                  221
+  external (post-discount):       509
+  top 10 owners:
+    benbalter                        385 [self]
+    github                           221 [affiliated]
+    jekyll                           196
+    licensee                          86
+    wp-document-revisions             27
+    presidential-innovation-foundation    17
+    gjtorikian                        14
+    leereilly                         13
+    project-open-data                 12
+    gbinal                            10
+
+Done.
