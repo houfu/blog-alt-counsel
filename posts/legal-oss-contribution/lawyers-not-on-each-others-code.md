@@ -1,15 +1,23 @@
 ---
-title: "Lawyers Are Building. Just Not On Each Other's Code."
+title: Lawyers Are Building. Just Not On Each Other's Code.
 slug: lawyers-not-on-each-others-code
-custom_excerpt: "Part 1 — What Mike, Harvey, and the rest of us reveal about legal-tech 'open source.'"
+custom_excerpt: >-
+  Mike got 2,657 stars in eleven days and six merged pull requests. The
+  LegalQuants directory has 112 lawyer-coders and one repo that cleared the bar
+  — mine. Legal open source isn't a community yet. It's a federation of
+  solo-author archipelagos.
 tags:
+  - OpenSource
   - LegalTech
   - Programming
   - AI
-  - OpenSource
-status: draft
+status: scheduled
 featured: false
 github_folder: legal-oss-contribution
+post_id: 6a009daff5b377000154ff9a
+published_at: '2026-05-11T01:15:11.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1626118439040-97551af4c74c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDI2fHxpc2xhbmRzfGVufDB8fHx8MTc3ODQyNTUxN3ww&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
 Lately I've been asked to speak more to in-house counsel about using AI in legal departments. The format I picked was not a lecture or a workshop. Instead, we would ask a small group of lawyers to bring down their laptops. It's a small group so it's possible (and something I would ask for) that they would complain about how little they understand, and how difficult it is for them to keep up with what's changing.
