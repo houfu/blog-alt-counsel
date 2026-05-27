@@ -259,3 +259,16 @@ Following the new centre-of-gravity decision, the introduction needed tightening
 - Review full draft for voice consistency and legal-advice risk.
 - Add backlinks and source links.
 - Run content quality audit and audience review before publishing.
+
+### Decision: draftv4.md is the operative draft (2026-05-27)
+
+**Note:** `draft.md` and earlier versions (`draftv2.md`, `draftv3.md`) are superseded. The operative draft is `draftv4.md`.
+
+`draftv4.md` reflects the new centre-of-gravity framing ("someone who just got a dismissal letter") and differs substantially from `draft.md`:
+
+- New title: "The Forum That Said You Don't Need a Lawyer Just Explained Everything"
+- Reordered to "three communities" → ECT design → information gap → Zeeker workflow
+- Members-only section is a full step-by-step walkthrough (install connector, retrieve case, fragment search, adjacent cases) with screenshots and GIF placeholders
+- Includes explicit comparison: Zeeker vs. paid databases (LawNet/WestLaw/Lexis) vs. web search
+- Backlinks to three existing alt-counsel posts already embedded
+- Appeal disclaimer at the end (employer filed for leave to appeal all six decisions)
