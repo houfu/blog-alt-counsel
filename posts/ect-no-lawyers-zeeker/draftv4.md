@@ -1,5 +1,5 @@
 ---
-title: "The Forum That Said You Don't Need a Lawyer Just Explained Everything"
+title: "The Judgment, Not the Summary: How Zeeker MCP Can Change the Way you do Legal Research"
 slug: "ect-no-lawyers-zeeker"
 tags: ["Law", "LegalTech", "Singapore", "zeeker"]
 status: draft
