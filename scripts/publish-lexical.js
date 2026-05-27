@@ -174,6 +174,13 @@ function createLineBreak() {
   };
 }
 
+function createPaywall() {
+  return {
+    type: 'paywall',
+    version: 1,
+  };
+}
+
 function createLinkNode(url, children = []) {
   return {
     type: 'link',
@@ -213,6 +220,14 @@ class MarkdownToLexical {
         continue;
       }
       
+      // Check for members-only paywall marker
+      if (line.trim() === '<!--members-only-->') {
+        this.flushList();
+        this.nodes.push(createPaywall());
+        i++;
+        continue;
+      }
+
       // Check for thematic break / horizontal rule
       if (/^(-{3,}|\*{3,}|_{3,})$/.test(line.trim())) {
         this.nodes.push(createLineBreak());
