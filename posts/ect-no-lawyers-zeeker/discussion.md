@@ -211,3 +211,51 @@ Sharpen the value of Zeeker against paid legal search tools: Zeeker lets users b
 
 **Outcome:**
 Updated `outline.md` to frame Zeeker as an AI-native first-pass research layer. Paid databases remain stronger for citators, completeness, and final authority checking; Zeeker’s value is lower-friction research mapping in a familiar AI workspace.
+
+### Decision: New centre of gravity — "someone about to get fired" (2026-05-27)
+
+**Context:**
+Three drafts existed but none solved the central question of why the MCP server is useful. The problem was that drafts showed *what happened during a research session* without answering *why the tool specifically changes what’s possible*.
+
+**New Centre of Gravity:**
+The post should be anchored on a specific person: someone who just got a dismissal letter (or suspects one is coming) and wants to understand how the ECT actually works. Not a researcher. Not a solo counsel. Someone scared, confused, and unable to afford a consult.
+
+**The Key Insight:**
+The ECT was designed to be accessible without lawyers because it was supposed to be simple. [2026] SGECT 1 shows it isn’t simple. But because the tribunal wrote this judgment to compensate for having no lawyers — it explicitly explains the doctrine in plain terms because the parties couldn’t get that help in the room — the judgment is one of the most accessible explanations of ECT doctrine that exists.
+
+Zeeker makes that judgment queryable. Someone can ask "what did the employer need to prove?" and get the tribunal’s own words. They’re reading primary source, not a summary of a summary.
+
+**The sharp formulation:**
+> The forum that said you don’t need a lawyer just produced a 414-fragment judgment explaining exactly how it thinks. You can now ask it questions.
+
+**Why this is better than the prior frame:**
+- Prior frame: research workflow for solo counsels (methodological, professional)
+- New frame: access to understanding for anyone affected (emotional, access-to-justice)
+- The irony lands harder: ECT’s "no lawyers" design created a judgment that Zeeker can now democratise
+
+**Outcome:**
+Rewriting `outline.md` to centre the post on this person and their journey from "I got a letter" to "I understand what I actually need to know." The solo counsel angle remains but as a secondary use case, not the primary reader.
+
+### Session 7: Intro tightened with LinkedIn hook and ECT context moved earlier (2026-05-27)
+
+### Context
+
+Following the new centre-of-gravity decision, the introduction needed tightening so the LinkedIn reaction and the ECT design context land before the legal complexity argument rather than after.
+
+### What Was Done
+
+- Replaced "I read the CNA headline first" opening with "I saw it first on LinkedIn, huddled between conversations between leading employment lawyers" — grounds the reader in professional signal, not mass media.
+- Moved the ECT accessibility paragraph (no lawyers, judge-led, speedy) to immediately after the case introduction, so readers understand the design before the irony hits.
+- Softened the moral frame: "Justice served? I won't blame you for hesitating to answer" replaces a flat "I do not think that is an unreasonable public reaction".
+- Removed the redundant ECT description paragraph that appeared later in the intro.
+
+### Files Modified
+
+- `posts/ect-no-lawyers-zeeker/draft.md`
+- `posts/ect-no-lawyers-zeeker/discussion.md`
+
+### Next Steps
+
+- Review full draft for voice consistency and legal-advice risk.
+- Add backlinks and source links.
+- Run content quality audit and audience review before publishing.

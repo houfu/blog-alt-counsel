@@ -8,17 +8,17 @@ featured: false
 github_folder: "ect-no-lawyers-zeeker"
 ---
 
-I read the CNA headline first and understood why people would be annoyed.
+I saw it first on LinkedIn, huddled between conversations between leading employment lawyers in Singapore. That's when you know it's big. 
 
-Six employees won compensation after medical-benefit claims involving vitamins, supplements, and skincare. One employee had submitted 62 reimbursement claims worth nearly $10,000. Around 40 employees were dismissed after an internal review. If your first reaction is "how did they win?", I do not think that is an unreasonable public reaction.
+Six employees won compensation after medical-benefit claims involving vitamins, supplements, and skincare. One employee had submitted 62 reimbursement claims worth nearly $10,000. Around 40 employees were dismissed after an internal review. The Employment Claims Tribunal (ECT) found that the employer had not proven dishonesty, recklessness, or wilful blindness. Justice served? I won't blame you for hesitating to answer. 
 
-But that reaction is not enough to understand the case.
-
-From a legal point of view, the hard question was not whether the claims looked bad. It was whether the employer proved the reason it chose to rely on: serious breaches committed intentionally, wilfully, or dishonestly. That is a different question. A more technical question. A question that depends on legal labels, evidential burdens, statutory wording, and remedies.
+From a legal point of view, the hard question was not whether the employer had a good reason to terminate the employment. It was whether the employer proved the reason it chose to rely on: serious breaches committed intentionally, wilfully, or dishonestly. That is a different question. A more technical question. A question that depends on legal labels, evidential burdens, statutory wording, and remedies.
 
 That is what made JGP v JGQ [2026] SGECT 1 interesting to me.
 
-The same problem cuts the other way too. If you are an employee hoping to prove wrongful dismissal, a good factual story is not enough. "I was treated unfairly" may be true. It may even be compelling. But the forum still has to ask what kind of wrongful dismissal claim this is, what has to be proven, what evidence matters, and what remedy is available.
+The Employment Claims Tribunals are meant to be accessible. Parties present their own cases without lawyers. Presumably without any lawyers, the tribunal can also take a more active approach, whether it is to encourage parties to settle, or to get to the heart of the issues sooner. Proceedings are private. The forum is supposed to be speedy, low-cost, and simpler than ordinary litigation.
+
+The same problem cuts the other way too. If you are an employee hoping to prove wrongful dismissal, a good story is not enough. "I was treated unfairly" may be true. It may even be compelling. But the forum still has to ask what kind of wrongful dismissal claim this is, what has to be proven, what evidence matters, and what remedy is available.
 
 Once you see that, you need research.
 
@@ -28,7 +28,7 @@ The tribunal itself says the difficulty out loud. These cases had to be decided 
 
 That is the part I could not shake.
 
-The Employment Claims Tribunals are meant to be accessible. Lawyers are generally not allowed. Parties present their own cases. Proceedings are private. The forum is supposed to be speedy, low-cost, and simpler than ordinary litigation.
+
 
 But "no lawyers in the room" does not mean "no legal advantage".
 
