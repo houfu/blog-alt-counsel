@@ -6,6 +6,7 @@ status: draft
 visibility: public
 featured: false
 github_folder: "ect-no-lawyers-zeeker"
+post_id: "6a16d7581475040001ada4a9"
 ---
 
 I saw it first on LinkedIn huddled between conversations between leading employment lawyers in Singapore. That's when you know it's big.
@@ -71,7 +72,7 @@ The judgment is publicly available at eLitigation. It is also a 414-paragraph do
 
 Zeeker — a Singapore legal database I built — closes that gap. And the way it does it is specific.
 
-https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/
+[When Institutions Enter Your Passion Project Space](https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/)
 
 <!--members-only-->
 
@@ -85,7 +86,7 @@ Here is what the workflow actually looks like, starting from the citation. Once 
 
 Hook up your Claude Desktop app to the Zeeker MCP by adding it as a new connector under 1) Customize, 2) Connectors and 3) click the plus sign to add a connector. Use the url: `https://mcp.zeeker.sg/mcp`.
 
-Add MCP.gif
+![Adding the Zeeker MCP connector in Claude Desktop](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/Add-MCP.gif)
 
 **For other clients**: The Zeeker MCP is a Remote MCP with the url `https://mcp.zeeker.sg/mcp`. You will probably need to add a custom MCP server. Currently, no passwords or authentication are needed to access it — and Zeeker does not log your queries.
 
@@ -101,21 +102,21 @@ The quality of results depends on the model you use. Claude Sonnet — available
 
 What comes back: case name (JGP v JGQ), case number (ECT/11019/2024), decision date (15 May 2026), subject tags (disciplinary procedures, discretionary bonuses, wrongful dismissal), a source URL, and 414 fragments. Zeeker breaks each judgment into numbered fragments — roughly paragraph-aligned chunks — which makes targeted retrieval possible without feeding the entire document to the model at once.
 
-https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/
+[Building data.zeeker.sg: Technical Architecture](https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/)
 
-zeeker-citation-lookup.png
+![Zeeker citation lookup result for JGP v JGQ [2026] SGECT 1](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/zeeker-citation-lookup.png)
 
 Most of the data (like citations and subject tags) comes from what is in the official link, but enriching that data is something I am continuously working on. For example, I’ve been generating summaries for judgments using AI — it does the job, but it is still a work in progress (there are more than 10,000 judgments to go through).
 
 Once the data is available in Claude.ai or another MCP-capable client, it is straightforward to present it in more readable ways.
 
-claude-case-summary-display.png
+![Claude presenting the case data in a readable summary](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/claude-case-summary-display.png)
 
 **Ask what the employer needed to prove**
 
 The Zeeker MCP provides access to the full judgment as searchable fragments, so you can ask targeted questions rather than reading all 414 paragraphs. The query is plain language — something like "What did the employer need to prove to justify dismissal in this case?"
 
-zeeker-just-cause-fragment-search.png
+![Fragment search result: what the employer needed to prove for just cause](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/zeeker-just-cause-fragment-search.png)
 
 The fragment retrieval returns the tribunal's working definition of "just cause or excuse": the employer must prove that dismissal was justified by the conduct actually alleged, to the applicable standard. The conduct alleged was dishonesty. The tribunal found that bar unmet — the employee had committed a lesser wrong, negligent reliance on practice, not dishonesty — and a lesser wrong was not just cause or excuse for dismissal. That is the answer to the question most people actually had about this case, in the tribunal's own words.
 
@@ -123,7 +124,7 @@ The fragment retrieval returns the tribunal's working definition of "just cause 
 
 A potential litigant who encounters this judgment may want to get straight to the point: is this case helpful to my situation? With the judgment text available through Zeeker, Claude can give a detailed account of how it applies to a specific question.
 
-claude-case-helpfulness-analysis.png
+![Claude's assessment of how the case applies to a potential claimant](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/claude-case-helpfulness-analysis.png)
 
 Two things stand out in the response. First, Claude defers parts of the analysis to “a lawyer or employment law specialist.” Zeeker includes a disclaimer that its content is not legal advice; Claude adds its own. This is appropriate — knowing what the tribunal decided is not the same as knowing whether you will win. Second, the response flags a “practical reality”: the monetary remedy for wrongful dismissal at the ECT is capped and may be limited. That is worth knowing before filing, and it has not changed with this judgment.
 
@@ -133,7 +134,7 @@ A single judgment, however detailed, is not the whole picture. A key legal resea
 
 Zeeker can surface similar cases through natural language. I asked: “Are there any other materials similar to this case that might be helpful to my situation?”
 
-zeeker-similar-cases-search.png
+![Similar wrongful dismissal cases surfaced by Zeeker](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/zeeker-similar-cases-search.png)
 
 Zeeker returned five recent cases relating to wrongful and unfair dismissal, plus recent law firm commentary on the area. After a follow-up prompt asking for a direct comparison to my hypothetical, the AI worked through the cases and offered a structured assessment — which arguments were likely to succeed, and which faced headwinds. These are not predictions. They are the right questions to bring into the first hour of any ECT matter.
 
@@ -147,7 +148,7 @@ What Zeeker has that LawNet does not: MCP access. There is currently no way to c
 
 Zeeker is also free. LawNet requires either a subscription or a trip to a public library. Zeeker is a proof of concept and pricing has not been decided — free for now because it is still being built.
 
-https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/
+[What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)](https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/)
 
 **Searching the web**
 
