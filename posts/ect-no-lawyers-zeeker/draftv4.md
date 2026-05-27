@@ -25,11 +25,11 @@ The facts, quickly: employees had submitted medical-benefit claims for vitamins,
 
 Three communities read that result three different ways.
 
-The general public and business commentators focused on the conduct. They claimed skincare. The intuitive reaction — and Chris J Reed called it plainly, a travesty — was that the outcome was wrong.
+The general public and business commentators focused on the conduct. They claimed skincare. The intuitive reaction — and [Chris J Reed](https://www.linkedin.com/posts/theonlyceowithamohawk_a-travesty-of-justice-how-did-these-employees-activity-7462638584513159168-yX_5) called it plainly, a travesty — was that the outcome was wrong.
 
 HR and compliance readers focused on the process. The employer's internal controls had failed. Policies were unclear and inconsistently enforced.
 
-Employment lawyers focused on something else entirely. Nicholas Ngo explained on LinkedIn that "wrongful dismissal" in Singapore now lives in two different legal frameworks — a statutory claim at the ECT under section 14(2) of the Employment Act, and a common law claim in the courts — and that the tribunal was working through how burden of proof, evidential silence, and no-reasons dismissals operate under the statutory test. Clarence Ding disagreed with the outcome but agreed the law is hard and that more published judgments are needed.
+Employment lawyers focused on something else entirely. [Nicholas Ngo](https://www.linkedin.com/posts/ngonicholas_togiveornottogive-employmentlaw-singapore-activity-7462337801586593792-JbIc) explained on LinkedIn that "wrongful dismissal" in Singapore now lives in two different legal frameworks — a statutory claim at the ECT under section 14(2) of the Employment Act, and a common law claim in the courts — and that the tribunal was working through how burden of proof, evidential silence, and no-reasons dismissals operate under the statutory test. [Clarence Ding](https://www.linkedin.com/posts/clarenceding_6-people-win-compensation-from-company-for-activity-7462353827124396032-toRf) disagreed with the outcome but agreed the law is hard and that more published judgments are needed.
 
 Two lawyers, publicly, both saying the doctrine is unclear. Disagreeing about the result.
 
@@ -39,7 +39,7 @@ That distinction is invisible unless you can read the judgment.
 
 ## What the ECT was built for
 
-The ECT launched on 1 April 2017. The State Courts release at the time was explicit: the tribunal would be low-cost, speedy, and lawyer-free. It also said ECT would not be a forum for complicated employment claims. That was the design rationale.
+The ECT launched on 1 April 2017. The [State Courts release](https://www.judiciary.gov.sg/news-and-resources/news/news-details/media-release-state-courts-launch-new-employment-claims-tribunals) at the time was explicit: the tribunal would be low-cost, speedy, and lawyer-free. It also said ECT would not be a forum for complicated employment claims. That was the design rationale.
 
 `[2026] SGECT 1` explains, in paragraph [4], what the same forum manages in practice nine years later.
 
@@ -66,9 +66,9 @@ Someone who just received a dismissal letter and wants to understand what they w
 - Which framework applies — ECT or the courts?
 - What remedy is actually available?
 
-What they find by Googling: MOM guidance, HR blog posts, a CNA article about skincare. None of that is the tribunal speaking in its own voice.
+What they find by Googling: MOM guidance, HR blog posts, a [CNA article](https://www.channelnewsasia.com/singapore/6-people-wrongfully-dismissed-medical-benefit-claim-win-compensation-company-6127921) about skincare. None of that is the tribunal speaking in its own voice.
 
-The judgment is publicly available at eLitigation. It is also a 414-paragraph document written in doctrinal language, where the key paragraph on institutional constraint sits at [4], and the two-framework problem sits in Annex A.48. Finding the document and understanding what it says are two different things.
+The judgment is publicly available at [eLitigation](https://www.elitigation.sg/gd/s/2026_SGECT_1). It is also a 414-paragraph document written in doctrinal language, where the key paragraph on institutional constraint sits at [4], and the two-framework problem sits in Annex A.48. Finding the document and understanding what it says are two different things.
 
 Zeeker — a Singapore legal database I built — closes that gap. And the way it does it is specific.
 
