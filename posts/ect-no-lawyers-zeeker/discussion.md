@@ -260,6 +260,28 @@ Following the new centre-of-gravity decision, the introduction needed tightening
 - Add backlinks and source links.
 - Run content quality audit and audience review before publishing.
 
+### Session 8: Research update, public sections tightened, feature image, post scheduled (2026-05-28)
+
+### Context
+
+Post was scheduled for publication this session.
+
+### What Was Done
+
+- Searched for updates since original research (2026-05-20). Found `Seng Hock Chye Daniel v Denso International Asia Pte Ltd [2026] SGHCR 14` (May 11) — High Court Registrar struck out a wrongful dismissal civil claim; court confirmed Tripartite Guidelines have no force of law and the ECT is the proper statutory channel. Nicholas Ngo commented on both cases. Patrick Tay Teck Guan posted on Denso; a commenter asked him to cover [2026] SGECT 1 next. No leave-to-appeal outcome published yet.
+- User revised the public sections of draftv4.md: dropped the "three communities" controversy framing, replaced with a shorter "What keeps changing" section incorporating the Denso case; tightened intro, "What the ECT was built for", and "The information gap" to remove case over-explanation.
+- Updated research.md with Denso case findings.
+- Generated feature image via Canva MCP: dark background, "414 paragraphs. One question." text, screenshot as panel element. User selected candidate 3, saved and amended in Canva.
+- Wrote excerpt: "Singapore's Employment Claims Tribunal was built to be simple enough that lawyers weren't needed. The first published ECT judgment runs to 414 paragraphs of dense legal reasoning. Here's how to query it in plain language."
+- Post scheduled on Ghost. Synced metadata back to draft.md.
+
+### Files Modified
+
+- `posts/ect-no-lawyers-zeeker/draftv4.md`
+- `posts/ect-no-lawyers-zeeker/draft.md` (frontmatter synced from Ghost: status → scheduled, published_at, feature_image, custom_excerpt)
+- `posts/ect-no-lawyers-zeeker/research.md`
+- `posts/ect-no-lawyers-zeeker/discussion.md`
+
 ### Decision: draftv4.md is the operative draft (2026-05-27)
 
 **Note:** `draft.md` and earlier versions (`draftv2.md`, `draftv3.md`) are superseded. The operative draft is `draftv4.md`.

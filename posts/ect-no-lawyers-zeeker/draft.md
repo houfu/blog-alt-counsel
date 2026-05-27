@@ -1,11 +1,25 @@
 ---
-title: "When No Lawyers Meets a 414-Fragment Employment Judgment"
-slug: "ect-no-lawyers-zeeker"
-tags: ["Law", "LegalTech", "Singapore", "zeeker"]
-status: draft
+title: >-
+  The Judgment, Not the Summary: How Zeeker MCP Can Change the Way you do Legal
+  Research
+slug: ect-no-lawyers-zeeker
+tags:
+  - Law
+  - LegalTech
+  - Singapore
+  - zeeker
+status: scheduled
 visibility: public
 featured: false
-github_folder: "ect-no-lawyers-zeeker"
+github_folder: ect-no-lawyers-zeeker
+post_id: 6a16d7581475040001ada4a9
+published_at: '2026-05-28T00:28:55.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/Facebook-Post---414-paragraphs.--One-question..png
+custom_excerpt: >-
+  Singapore's Employment Claims Tribunal was built to be simple enough that
+  lawyers weren't needed. The first published ECT judgment runs to 414
+  paragraphs of dense legal reasoning. Here's how to query it in plain language.
 ---
 
 I saw it first on LinkedIn, huddled between conversations between leading employment lawyers in Singapore. That's when you know it's big. 
