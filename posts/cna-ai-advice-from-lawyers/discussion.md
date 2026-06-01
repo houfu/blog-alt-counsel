@@ -229,3 +229,23 @@ this manual step isn't needed. Do NOT do it on this blog branch.
 **Remaining:** Houfu to review the Ghost draft (check image rendering + bookmark
 cards). Sync metadata back once, only when closing the PR (`npm run sync-ghost
 pitfalls-seeking-ai-advice-from-lawyers`). Publish/schedule when ready.
+
+### 2026-06-01 — Excerpt + cover image, scheduled, closing the PR
+
+**Excerpt + cover photo finalised.** Wrote the custom excerpt (the "aiming a very
+good argument at old technology — and missing the real threat" framing) and a
+cover-image prompt that extends the post's own visual thesis: a lone car driving
+at night with only **one working headlight** — the capable driver (professional
+judgement) advancing confidently into the dark with only half the road lit
+(missing AI literacy). Both now live on Ghost.
+
+**Scheduled to publish.** Houfu reviewed the Ghost draft and scheduled it for
+**2026-06-02 00:04 SGT**.
+
+**Sync done (once, at PR close):** `npm run sync-ghost` pulled metadata back into
+`draft.md` frontmatter — `status: scheduled`, `post_id`, `published_at`,
+`feature_image` (hosted cover), `custom_excerpt`, and Ghost's tag ordering. Body
+keeps local `images/` paths by design (see the publish-lexical infra gap above).
+
+**Next:** commit + PR to `main`. Infra TODO (local-image upload in
+publish-lexical.js) stays off this branch — separate infra PR.

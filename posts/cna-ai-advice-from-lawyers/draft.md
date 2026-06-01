@@ -1,10 +1,22 @@
 ---
-title: "Commentary: The Pitfalls of Seeking AI Advice From Lawyers"
-slug: "pitfalls-seeking-ai-advice-from-lawyers"
-tags: ["AI", "Law", "LegalTech", "Compliance", "Singapore"]
-status: draft
+title: 'Commentary: The Pitfalls of Seeking AI Advice From Lawyers'
+slug: pitfalls-seeking-ai-advice-from-lawyers
+tags:
+  - Singapore
+  - AI
+  - Law
+  - LegalTech
+  - Compliance
+status: scheduled
 featured: false
-github_folder: "cna-ai-advice-from-lawyers"
+github_folder: cna-ai-advice-from-lawyers
+post_id: 6a1d364cb509320001938862
+published_at: '2026-06-02T00:04:37.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/06/a-lone-car-driving-down-a-dark-road-at-night--phot.png
+custom_excerpt: >-
+  A sharp CNA commentary argues AI can't replace lawyers. It's aiming a very
+  good argument at old technology — and missing the real threat.
 ---
 
 Every time Mark Yeo wrote "chatbot" in his [CNA commentary](https://www.channelnewsasia.com/commentary/ai-impact-lawyer-profession-legal-advice-6148846), I winced.
