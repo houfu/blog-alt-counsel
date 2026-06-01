@@ -247,5 +247,33 @@ judgement) advancing confidently into the dark with only half the road lit
 `feature_image` (hosted cover), `custom_excerpt`, and Ghost's tag ordering. Body
 keeps local `images/` paths by design (see the publish-lexical infra gap above).
 
+**Content sync (manual — `sync-ghost` only does frontmatter).** Houfu made
+substantive prose edits directly in the Ghost editor after scheduling. Pulled the
+live lexical via `ghost_post_get` and hand-merged the changes back into
+`draft.md` so the repo matches what's published. Notable edits:
+- Opening: "wrong about much" → "made some mistake"; specimen line reworded to
+  "this commentary is a great specimen for what I am about to talk about soon."
+- Added a hyperlink to the SCCE Singapore Regional conference page.
+- The Tell: "engineer both away" → "engineer a solution for both problems."
+- Punching Bag: added "AI would gladly help you with that too."
+- Death spiral: cut the "contract review / due diligence / cross-examination"
+  sentence; cut the METR "software isn't legal work… numbers transfer" caveat.
+- Overwhelm Trap: "For" → "From one diligent client"; split the long paragraph
+  after "inviting a complaint."
+- **What Literacy Changes: rewrote the closing paragraph and REMOVED the OpenClaw
+  bookmark card** (own outcomes / AI supports framing replaces the friction-design
+  list + harness line).
+- Solo Counsel: cut "or simply charging more for your judgment"; removed the
+  "judgment is real… agents are already at the gym" line; rewrote the Monday rep
+  to a reflective "think deeply about its costs / you always have a choice"
+  prompt; final line "stop being able to do the thing the title is for" → "stop
+  being a lawyer."
+
+**Ghost-only elements NOT represented in `draft.md`** (no clean markdown form;
+post is already scheduled so not republishing): a **members paywall break** after
+"driving with one headlight on," a **caption on the two-guiding-lights image**
+("One of the key slides in my deck…"), and **visibility = members**. Noted here
+so the source/Ghost divergence is intentional and documented.
+
 **Next:** commit + PR to `main`. Infra TODO (local-image upload in
 publish-lexical.js) stays off this branch — separate infra PR.

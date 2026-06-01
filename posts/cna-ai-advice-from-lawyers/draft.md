@@ -21,11 +21,11 @@ custom_excerpt: >-
 
 Every time Mark Yeo wrote "chatbot" in his [CNA commentary](https://www.channelnewsasia.com/commentary/ai-impact-lawyer-profession-legal-advice-6148846), I winced.
 
-Not because he's wrong about much. He's a former Deputy Public Prosecutor, now a director at his own firm. If one were to imagine a legal professional, this is what we would call a legal professional. When he writes about privilege, hallucinated cases, and what clients actually need from counsel, I nod along.
+Not because he's made some mistake. He's a former Deputy Public Prosecutor, now a director at his own firm. If one were to imagine a legal professional, this is what we would call a legal professional. When he writes about privilege, hallucinated cases, and what clients actually need from counsel, I nod along.
 
-That's what makes the piece such a good specimen.
+No, I'm thinking to myself: this commentary is a great specimen for what I am about to talk about soon.
 
-In five weeks I'm giving a talk at the SCCE Singapore Regional — *"What AI Demands of Compliance Professionals: The Discussion We Are Not Having."* Its spine is a simple claim: professionals need two guiding lights to drive safely into AI. One is professional judgement. The other is AI literacy. You need both, because each covers what the other can't see.
+In five weeks I'm giving a talk at [the SCCE Singapore Regional](https://www.corporatecompliance.org/conferences/regionals/2026-singapore-regional-compliance-ethics-conference) — *"What AI Demands of Compliance Professionals: The Discussion We Are Not Having."* Its spine is a simple claim: professionals need two guiding lights to drive safely into AI. One is professional judgement. The other is AI literacy. You need both, because each covers what the other can't see.
 
 ![Two guiding lights — Professional Judgement and AI Literacy — with a car driving the road between them](images/two-guiding-lights.png)
 
@@ -47,7 +47,7 @@ I've built the same idea for Singapore law — an MCP that lets you query the ac
 
 [The Judgment, Not the Summary: How Zeeker MCP Can Change the Way You Do Legal Research](https://www.alt-counsel.com/ect-no-lawyers-zeeker/)
 
-The two pillars Mark's whole argument rests on are hallucination and human judgment. And the architecture he waved past at the top is precisely an attempt to engineer both away — grounding the model in verified sources so it stops inventing cases from memory, and baking the act of choosing those sources into the setup rather than leaving verification in someone's head. It can still misread what it pulls. But it is no longer the chatbot Mark is arguing with.
+The two pillars Mark's whole argument rests on are hallucination and human judgment. And the architecture he waved past at the top is precisely an attempt to engineer a solution for both problems — grounding the model in verified sources so it stops inventing cases from memory, and baking the act of choosing those sources into the setup rather than leaving verification in someone's head. It can still misread what it pulls. But it is no longer the chatbot Mark is arguing with.
 
 I don't know which version Mark tried. I'm not sure he tried any. But that's the point. Professional judgment told him AI was overhyped and risky. Without the literacy to tell a chatbot from an agent, he aimed his very good argument at a target that had already moved.
 
@@ -59,7 +59,7 @@ A chatbot is "always eager to assist." It can't sense when you're hiding somethi
 
 I'm not mocking any of this. Those things are real, and they matter.
 
-But notice what the chatbot is doing in the argument. It's a punching bag. It exists to be the thing humans are obviously better than, so that "the humanness of the lawyer" can stand as the answer. Set up a weak enough opponent and human uniqueness wins by default.
+But notice what the chatbot is doing in the argument. It's a punching bag. It exists to be the thing humans are obviously better than, so that "the humanness of the lawyer" can stand as the answer. Set up a weak enough opponent and human uniqueness wins by default. AI would gladly help you with that too.
 
 So let me ask the uncomfortable question Mark's framing skips.
 
@@ -79,11 +79,11 @@ That last sentence quietly demolishes Mark's optimism. He assures us that "clien
 
 It gets worse, and this is the heart of my talk.
 
-Human judgment isn't a fixed endowment you carry because you passed the bar. It's a skill, and skills decay when you stop using them. For most of us that muscle is contract review, due diligence, a compliance sign-off — not cross-examination. And the way most professionals actually use AI sets up a quiet spiral: you lean on the tool, it affirms you, you check a little less, you rubber-stamp a little more, and — because the output is fluent and the tone is reassuring — you feel *sharper* the whole way down. Sycophancy is the anaesthetic that makes the decline feel like competence.
+Human judgment isn't a fixed endowment you carry because you passed the bar. It's a skill, and skills decay when you stop using them. The way most professionals actually use AI sets up a quiet spiral: you lean on the tool, it affirms you, you check a little less, you rubber-stamp a little more, and — because the output is fluent and the tone is reassuring — you feel *sharper* the whole way down. Sycophancy is the anaesthetic that makes the decline feel like competence.
 
 I know the feeling from the inside. I'm building this talk in reveal.js, and it runs to 250 slides — far too many to hand-craft one by one, so I lean on AI to keep pace. Every few slides the same worry surfaces: am I actually checking this, or nodding it through because it reads well? I keep going back to verify, because I own the content. But I feel the pull every single time.
 
-The research says the pull is stronger than it feels. A 2025 study by METR ran experienced open-source developers through a controlled trial: with AI tools, they took 19% *longer* to finish real tasks. Software isn't legal work, and I won't pretend the numbers transfer cleanly — but the human pattern travels, and this is the part that should unsettle any professional. The same developers believed AI had sped them up by 20%. They were slower and felt faster. The flattery isn't only in the chatbot's words. It's in the whole experience of using the tool.
+The research says the pull is stronger than it feels. A 2025 study by METR ran experienced open-source developers through a controlled trial: with AI tools, they took 19% *longer* to finish real tasks. The same developers believed AI had sped them up by 20%. They were slower and felt faster. The flattery isn't only in the chatbot's words. It's in the whole experience of using the tool.
 
 ![A slide from my talk: "You're not using the tool. You're ratifying it."](images/ratifying.png)
 
@@ -103,11 +103,13 @@ There's one more turn worth naming. A reader who *has* the literacy might say: e
 
 There's a second blind spot, and it's the passage that genuinely made me sit up.
 
-Mark's constructive advice is that clients should use AI to prepare case summaries, flag gaps in their documents, and frame better questions before meeting their lawyer. He also assumes AI will lighten the resource-intensive work — reviewing voluminous bundles, conducting legal research. For one diligent client, that's lovely: the lawyer gets a tidier brief.
+Mark's constructive advice is that clients should use AI to prepare case summaries, flag gaps in their documents, and frame better questions before meeting their lawyer. He also assumes AI will lighten the resource-intensive work — reviewing voluminous bundles, conducting legal research. From one diligent client, that's lovely: the lawyer gets a tidier brief.
 
 Now imagine every client doing it.
 
-Most won't be diligent. AI-assisted work tends to arrive verbose and over-annotated, flagging every conceivable issue regardless of real-world priority — and the lawyer still has to read it, verify it, and weigh it. Wave a client's AI "findings" away and you risk looking dismissive, or worse, inviting a complaint. Even ten genuinely careful clients are still ten piles of machine-generated material you can't skip. And how do you know which ten were careful before you've checked? For a risk-averse lawyer, none of it saves any work.
+Most won't be diligent. AI-assisted work tends to arrive verbose and over-annotated, flagging every conceivable issue regardless of real-world priority — and the lawyer still has to read it, verify it, and weigh it. Wave a client's AI "findings" away and you risk looking dismissive, or worse, inviting a complaint.
+
+Even ten genuinely careful clients are still ten piles of machine-generated material you can't skip. And how do you know which ten were careful before you've checked? For a risk-averse lawyer, none of it saves any work.
 
 The human in the loop becomes the human bottleneck. And what the client sees is that the lawyer is the holdup — not the AI.
 
@@ -123,26 +125,20 @@ Professional judgment without AI literacy is Mark's piece: a strong argument aim
 
 Neither light alone gets you down the road. Judgment tells you what's worth protecting. Literacy tells you what's actually coming for it.
 
-Literate practice doesn't mean using more AI or less AI. It means designing the friction back in on purpose: deciding in advance what you will always check yourself, using the tool to argue *against* your draft rather than to bless it, and treating that warm, agreeable, "you've got a strong case here" tone as a warning light rather than a green one.
-
-When I actually tried to wrangle an autonomous agent, the lesson was the same: the hard part isn't the prompt, it's designing the harness around it.
-
-[OpenClaw Field Notes: A Lawyer Tries to Tame an Autonomous AI Agent](https://www.alt-counsel.com/openclaw-field-notes-lawyer/)
+Literate practice doesn't mean using more AI or less AI. It means purposefully implementing where it'd be most impactful and least damaging. In my talk, I mention that we need to be mindful of tasks we allocate to AI. Given the right conditions, AI writes better reports, better clauses and argues better than almost any human. However humans need to own their outcomes and AI needs to support that exercise.
 
 ## For the Solo Counsel
 
 For solo counsels and small legal teams, none of this is abstract.
 
-You don't have a department of associates to catch your rubber stamps. You *are* the loop. That makes you the most exposed to the spiral and the least able to out-review a population of clients armed with their own agents. You can't win that race by working harder or simply charging more for your judgment.
+You don't have a department of associates to catch your rubber stamps. You *are* the loop. That makes you the most exposed to the spiral and the least able to out-review a population of clients armed with their own agents. You can't win that race by working harder.
 
 I've argued this about Singapore's official AI guidance too — it's written for institutions with committees and budgets, not the solo counsel making the real calls.
 
 [The Solo Counsel Reality: What MinLaw's AI Guidelines Miss About In-House Practice](https://www.alt-counsel.com/the-solo-counsel-reality-what-minlaws-ai-guidelines-miss-about-in-house-practice/)
 
-The judgment is real. But it's a muscle, and the agents are already at the gym.
-
 So the move isn't to defend your humanness as if it were a moat. It's to get literate before the agents arrive — to learn the difference between a chatbot and an agent, to notice when a tool is flattering you, and to keep doing by hand the few things that keep the muscle sharp.
 
-Here's one rep you can run on Monday. Before you read the AI's review of a contract, write down the one clause you would have flagged yourself. Then compare. When the tool agrees, you've kept the muscle. When it misses what you caught, you've just proven why you're still in the loop.
+Here's one rep you can run on Monday. If you're going to use AI, think deeply about its costs. Are you using AI as a rubber stamp? Being too comfortable with what it says rather than what it does? It's important to take a step back too, and assess where you use and don't use AI. You always have a choice, but you need both your AI literacy and professional judgement to lead the way.
 
-Mark's right that AI should make lawyers rethink their value. He's just looking at the wrong threat. The danger was never that the machine would replace your judgment. It's that you'll keep the title, keep the confident feeling, and quietly stop being able to do the thing the title is for.
+Mark's right that AI should make lawyers rethink their value. He's just looking at the wrong threat. The danger was never that the machine would replace your judgment. It's that you'll keep the title, keep the confident feeling, and quietly stop being a lawyer.
