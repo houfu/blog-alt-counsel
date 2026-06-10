@@ -34,3 +34,11 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
 ## Log
 
 <!-- getting-feedback appends MEMORY_UPDATE blocks here: date, post, unique catches made, advice rejected (and the stated reason), new user preferences observed -->
+
+### 2026-06-10 — deepseek-v4-vs-harvey (round 2 of 2)
+
+- Round 1 unique catches: the four-defects list needed the solo-constraints beat ("engineer, lawyer, tester, QA department") — adopted; identified "that made me sadder than the score did" as the load-bearing line (kept); flagged invented "weekend of log reading" → user supplied real cost (two weeks of Ollama token quota).
+- Round 2 unique catch: "contribution has to flow both ways" momentarily ambiguous about which two parties — clarified in draft ("not just maintainers publishing code, but users reporting back"). Narrative continuity confirmed: "federation of solo-author archipelagos" upgraded (passive isolation → active choice), not retreaded.
+- Standing asks: all pre-empted.
+- Settled (do not re-raise): user declined alternative closing question, kept harness-centric "What is your harness quietly deciding for you?" — stated reason: "stick to the spine."
+- Emotional core (per discussion.md) fully preserved in final draft. Verdict: ready to publish.

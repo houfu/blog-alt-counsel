@@ -86,7 +86,7 @@ Adeu is another lawyer-coder's open-source project. My first instinct after the 
 
 So the plan is attribution first. Fix my four defects — starting with the obvious one, replacing the text-based done signal with a proper finish tool — rerun the ~125 broken and zero-score tasks (about 10% of a sweep), and then file what I owe the maintainer: an upstream bug report with a thousand runs of forensics attached, instead of a vague complaint that it "didn't work."
 
-I once wrote that legal open source is a federation of solo-author archipelagos — projects that never receive the outside contributions that would make them a community. Bob Ambrogi quoted that line back at me when LAB launched, asking whether Harvey's benchmark would leave room for outsiders to shape it. Fair question. But contribution has to flow both ways: a stranger running your tool through 1,006 legal tasks and filing detailed bugs is what the alternative to open-source theatre actually looks like. I'd rather be that stranger than another archipelago.
+I once wrote that legal open source is a federation of solo-author archipelagos — projects that never receive the outside contributions that would make them a community. Bob Ambrogi quoted that line back at me when LAB launched, asking whether Harvey's benchmark would leave room for outsiders to shape it. Fair question. But contribution has to flow both ways — not just maintainers publishing code, but users reporting back. A stranger running your tool through 1,006 legal tasks and filing detailed bugs is what the alternative to open-source theatre actually looks like. I'd rather be that stranger than another archipelago.
 
 ## The benchmark was the product
 

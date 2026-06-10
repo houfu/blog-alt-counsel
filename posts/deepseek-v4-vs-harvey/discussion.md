@@ -48,6 +48,15 @@ Working notes for "My agent worked around the tools I gave it."
 
 **Remaining before publish:** user manual review of draft → backlink curation (legal OSS post = known candidate; Ambrogi LawNext piece as external card) → tag validation → publish via publish-lexical.js.
 
+## Session 1 (continued) — 10 June 2026: Merge main, round-2 reviews, publish-ready
+
+- Merged origin/main (PR #39 repo refactor) into the blog branch at user's request: hardened publish-lexical.js (local image upload, 418 retry, --dry-run), lint-posts.js + hooks (pre-publish gate, reviewer memory gate), posts/README naming standard. Renamed main file → `deepseek-v4-vs-harvey.md` to satisfy the standard; lint clean.
+- **Round 2 of 2 (final), memory-aware reviewers:**
+  - **Marcus Tan**: all round-1 fixes landed; verified every load-bearing number against source data and research.md (all confirmed, incl. Opus 4.5 attribution). No new catches. "Nothing is publish-blocking."
+  - **Wei Lin**: fixes landed ("turns the admission into the actual argument"); emotional core per discussion.md fully preserved; archipelago callback is an upgrade (passive isolation → active choice), not a retread. One cosmetic catch applied: "contribution has to flow both ways" clarified ("not just maintainers publishing code, but users reporting back"). Verdict: **ready to publish**.
+- MEMORY_UPDATE blocks appended to both reviewer memory logs (docs/personas/memory/).
+- Review phase CLOSED (2-round cap reached). Remaining: user manual sign-off → backlinks → tag confirm → publish.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.
