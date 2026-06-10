@@ -42,7 +42,7 @@ When the pitch or idea is approved and implementation will follow:
 - Edit an outline or post: make the change
 
 ### Phase 5: Record discussion
-Create or update the 'discussion.md' in the post folder using recorder skill.
+Create or update the 'discussion.md' in the post folder using the note-taking skill.
 
 ## When to Revisit Earlier Phases
 

@@ -64,6 +64,5 @@ I wrote a long article explaining what changed, why it matters, and what resourc
 
 Maybe you don't need to learn what everyone else is learning. Maybe your instinct that "this doesn't solve my real problems" was right all along.
 
----
 
 *This newsletter supports the full article "Lawyers Got Prompt Engineering Wrong (And Why That Matters)" published at alt-counsel.com.*

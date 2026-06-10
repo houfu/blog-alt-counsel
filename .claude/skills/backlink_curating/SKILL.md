@@ -1,6 +1,6 @@
 ---
 name: Curating backlinks for a post
-description: Find suitable pieces from the blog to use as links in a post when requested at the stage of final draft.  
+description: Finds and recommends existing blog posts as internal backlinks for a post at the final draft stage. Use when a draft is nearly complete and needs internal links to related published content.
 ---
 
 # Curating backlinks for a post

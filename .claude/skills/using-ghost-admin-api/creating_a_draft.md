@@ -11,7 +11,9 @@ When posting to Ghost, use the lexical format for content. Ghost's modern editor
 
 ## Building Lexical Content
 
-The skill includes `scripts/ghost-lexical-single.js`, a fluent builder API for creating Ghost lexical format JSON. This makes it easy to programmatically construct Ghost posts with proper lexical structure.
+**The only supported publishing path is `scripts/publish-lexical.js` at the repository root** (see "Recommended: Using the Post Creation Script" below). It converts markdown to lexical for you — in the normal workflow you never construct lexical JSON by hand.
+
+The skill also bundles `scripts/ghost-lexical-single.js`, a fluent builder API for Ghost lexical JSON. **Treat it as reference documentation** for understanding the lexical node structure (e.g., when extending `publish-lexical.js`). Do NOT require it from per-post scripts — per-post publishing scripts are not allowed.
 
 **For detailed reference:** See [/docs/ghost-lexical-format.md](../../../docs/ghost-lexical-format.md) for comprehensive documentation on Ghost's lexical format with real-world examples from actual blog posts.
 
@@ -113,6 +115,9 @@ The script handles:
 - Bookmark card syntax to Ghost bookmark cards
 - Adding GitHub footer automatically when `github_folder` is in frontmatter
 - Skipping HTML comment placeholders (e.g., `<!-- 📸 SCREENSHOT -->`)
+- **Local images**: `![alt](images/foo.png)` references that exist next to the markdown file are uploaded to Ghost automatically and rewritten to hosted URLs — no more `ghost_image_upload` + temp-copy workaround
+- **Transient API failures** (418/429/5xx): retried with exponential backoff
+- `--dry-run` flag: converts and prints the lexical JSON (and which images would be uploaded) without credentials or API calls — use it to preview before publishing
 
 ### Before running
 

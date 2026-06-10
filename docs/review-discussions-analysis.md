@@ -1,5 +1,7 @@
 # Review of 5 Most Recent Discussion.md Files
 
+> **Superseded follow-up:** see `process-lessons-2026-06.md` (2026-06-10) for the full-archive analysis that tested whether this document's recommendations held in practice.
+
 **Date**: 2026-02-19
 **Posts reviewed** (by most recent git commit):
 1. connect-codraft-article (Feb 19) - 5 sessions

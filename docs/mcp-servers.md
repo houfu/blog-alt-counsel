@@ -2,10 +2,23 @@
 
 This project uses Model Context Protocol (MCP) servers to extend Claude Code's capabilities.
 
+**Location:** `.mcp.json` at the repository root (the standard project-scope location Claude Code reads).
+
+**Security rule:** Never hardcode API keys in `.mcp.json` — it is committed to a public repository. Reference environment variables with `${VAR_NAME}` syntax and keep the actual values in `.env` (gitignored).
+
 ## Configured MCP Servers
 
+### Ghost (ghst)
+
+Provides Ghost CMS operations: search, post CRUD, tags, stats, members.
+
+**Setup:**
+```bash
+npm install -g @tryghost/ghst
+```
+Authentication happens automatically at session start via `.claude/hooks/ghst-auth.sh` using `GHOST_SITE_URL` and `GHOST_ADMIN_API_KEY` from `.env`.
+
 ### Jina AI Server
-**Location:** `.claude/mcp.json`
 
 Provides web search, URL reading, image search, and other Jina AI capabilities.
 
@@ -16,29 +29,19 @@ Provides web search, URL reading, image search, and other Jina AI capabilities.
 - `mcp__jina__search_arxiv` - Search academic papers
 - `mcp__jina__expand_query` - Expand search queries for better results
 - `mcp__jina__sort_by_relevance` - Rerank documents by relevance
-- And more (see tool descriptions in Claude Code)
 
 **Setup:**
 
 1. Get a Jina API key from https://jina.ai/
-
-2. Set the environment variable:
-   ```bash
-   export JINA_API_KEY=your_api_key_here
-   ```
-
-3. In the Docker container, add to your `.env` file:
+2. Add it to your `.env` file:
    ```
    JINA_API_KEY=your_api_key_here
    ```
-
-4. Claude Code will automatically load the MCP server configuration from `.claude/mcp.json`
+   `.mcp.json` references it as `${JINA_API_KEY}`.
 
 ## Adding New MCP Servers
 
-To add a new MCP server:
-
-1. Edit `.claude/mcp.json` and add your server configuration:
+1. Edit `.mcp.json` and add your server configuration:
    ```json
    {
      "mcpServers": {
@@ -53,7 +56,7 @@ To add a new MCP server:
    }
    ```
 
-2. Add any required environment variables to your `.env` file
+2. Add any required environment variables to your `.env` file (never the literal key in `.mcp.json`)
 
 3. Update permissions in `.claude/settings.local.json` if needed
 

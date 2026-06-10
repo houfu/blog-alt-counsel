@@ -1,3 +1,8 @@
+---
+name: tag-registry
+description: Suggests and validates tags from the canonical registry (tags.md) to prevent tag sprawl and keep naming consistent. Use when creating a new post, during pitch generation, before publishing, or when the user asks about tags.
+---
+
 # Tag Registry Skill
 
 Suggest tags from the canonical registry (`tags.md`). Prevent sprawl; keep naming consistent.

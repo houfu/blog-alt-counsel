@@ -2,34 +2,68 @@
 
 /**
  * Publish a markdown post to Ghost CMS with full lexical structure
- * Usage: node scripts/publish-lexical.js <path-to-markdown-file> [status]
- * 
+ * Usage: node scripts/publish-lexical.js <path-to-markdown-file> [status] [--dry-run]
+ *
  * Status options: draft (default), published
+ * --dry-run: convert (including which local images WOULD be uploaded) and
+ *            print the lexical JSON without touching the Ghost API. Needs no
+ *            credentials — used by the CI conversion test.
  */
 
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
-const GhostAdminAPI = require('@tryghost/admin-api');
+
+let matter, GhostAdminAPI;
+try {
+  matter = require('gray-matter');
+  GhostAdminAPI = require('@tryghost/admin-api');
+} catch (err) {
+  console.error('Error: Missing dependencies — run `npm install` first.');
+  console.error(`(${err.message})`);
+  process.exit(1);
+}
 
 const dotenvPath = path.join(__dirname, '../.env');
 require('dotenv').config({ path: dotenvPath });
 
 const GHOST_SITE_URL = process.env.GHOST_SITE_URL;
-const GHOST_ADMIN_API_KEY = process.env.GHOST_ADMIN_API_KEY;
-const GHOST_API_VERSION = process.env.GHOST_API_VERSION || 'v6.0';
 
-if (!GHOST_SITE_URL || !GHOST_ADMIN_API_KEY) {
-  console.error('Error: Missing Ghost API credentials');
-  console.error('Please set GHOST_SITE_URL and GHOST_ADMIN_API_KEY in .env file');
-  process.exit(1);
+// Credentials are only required when actually talking to Ghost — dry runs and
+// the CI conversion test must work without a .env.
+function getApi() {
+  const key = process.env.GHOST_ADMIN_API_KEY;
+  if (!GHOST_SITE_URL || !key) {
+    console.error('Error: Missing Ghost API credentials');
+    console.error('Please set GHOST_SITE_URL and GHOST_ADMIN_API_KEY in .env file');
+    process.exit(1);
+  }
+  return new GhostAdminAPI({
+    url: GHOST_SITE_URL,
+    key: key,
+    version: process.env.GHOST_API_VERSION || 'v6.0',
+  });
 }
 
-const api = new GhostAdminAPI({
-  url: GHOST_SITE_URL,
-  key: GHOST_ADMIN_API_KEY,
-  version: GHOST_API_VERSION
-});
+// Retry transient Ghost API failures (418s and 5xx have repeatedly forced
+// manual paste-into-Ghost workarounds — see docs/process-lessons-2026-06.md).
+async function withRetry(label, fn, attempts = 4) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      const statusCode = err.response?.status || err.statusCode;
+      const retriable =
+        statusCode === 418 || statusCode === 429 || (statusCode >= 500 && statusCode < 600) || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT';
+      if (!retriable || i === attempts - 1) throw err;
+      const delay = 2000 * Math.pow(2, i);
+      console.log(`   ${label} failed (${statusCode || err.code}); retrying in ${delay / 1000}s (${i + 2}/${attempts})...`);
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+  throw lastErr;
+}
 
 // ============================================================================
 // FORMAT FLAGS
@@ -426,8 +460,10 @@ class MarkdownToLexical {
     let remaining = text;
     
     while (remaining.length > 0) {
-      // Check for link [text](url) or [text](url "title")
-      const linkMatch = remaining.match(/^([^\[]+)\[([^\]]+)\]\(([^)]+)(?:\s+"([^"]+)")?\)/);
+      // Check for link [text](url) or [text](url "title").
+      // Prefix is * not + — a link at the very start of a line/paragraph is
+      // valid (the + version silently mangled line-leading links into text).
+      const linkMatch = remaining.match(/^([^\[]*)\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/);
       
       // Check for bookmark card pattern: specific alt-counsel URLs or explicit bookmark request
       const bookmarkMatch = remaining.match(/^([^\[]*)\[([^\]]+)\]\(([^)]+)\)(?:\s+"([^"]+)")?/);
@@ -524,10 +560,79 @@ class MarkdownToLexical {
 }
 
 // ============================================================================
+// LOCAL IMAGE UPLOAD
+// ============================================================================
+
+/**
+ * Find local image references (![alt](relative-path)) whose files exist next
+ * to the markdown file, upload them to Ghost, and rewrite the markdown to use
+ * the hosted URLs. Kills the recurring manual workaround (ghost_image_upload
+ * MCP + temp copy with rewritten paths) documented across multiple posts.
+ *
+ * In dry-run mode, only reports what would be uploaded.
+ */
+async function uploadLocalImages(content, baseDir, { dryRun = false, api = null } = {}) {
+  const imageRefs = [...content.matchAll(/!\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g)];
+  const localImages = [];
+  const seen = new Set();
+  for (const ref of imageRefs) {
+    const src = ref[1];
+    if (/^https?:\/\//.test(src) || src.startsWith('data:')) continue;
+    if (seen.has(src)) continue;
+    seen.add(src);
+    const abs = path.resolve(baseDir, decodeURIComponent(src));
+    if (fs.existsSync(abs)) localImages.push({ src, abs });
+  }
+
+  if (localImages.length === 0) return { content, uploads: [] };
+
+  const uploads = [];
+  let updated = content;
+  for (const img of localImages) {
+    if (dryRun) {
+      console.log(`   [dry-run] would upload local image: ${img.src}`);
+      uploads.push({ src: img.src, url: '(dry-run)' });
+      continue;
+    }
+    console.log(`   Uploading local image: ${img.src}`);
+    const result = await withRetry(`image upload (${img.src})`, () => api.images.upload({ file: img.abs }));
+    updated = updated.split(`(${img.src})`).join(`(${result.url})`);
+    uploads.push({ src: img.src, url: result.url });
+  }
+  return { content: updated, uploads };
+}
+
+// ============================================================================
+// BUILD LEXICAL (conversion + GitHub footer) — pure, testable
+// ============================================================================
+
+function buildLexical(content, frontmatter = {}) {
+  const converter = new MarkdownToLexical(content);
+  const lexicalContent = converter.convert();
+
+  if (!frontmatter.github_folder) return lexicalContent;
+
+  const githubUrl = `https://github.com/houfu/blog-alt-counsel/tree/main/posts/${frontmatter.github_folder}`;
+  const footerNodes = [
+    createLineBreak(),
+    createHeading(3, [createTextNode('Behind the Scenes')]),
+    createParagraph([createTextNode('See how this post evolved from initial pitch to final draft. Includes research sources, iterations, and decisions along the way.')]),
+    createBookmark(githubUrl, `${frontmatter.github_folder} - blog-alt-counsel`),
+  ];
+
+  return {
+    root: {
+      ...lexicalContent.root,
+      children: [...lexicalContent.root.children, ...footerNodes],
+    },
+  };
+}
+
+// ============================================================================
 // MAIN PUBLISH FUNCTION
 // ============================================================================
 
-async function publishPost(filePath, status = 'draft') {
+async function publishPost(filePath, status = 'draft', { dryRun = false } = {}) {
   try {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const { data: frontmatter, content } = matter(fileContent);
@@ -537,36 +642,25 @@ async function publishPost(filePath, status = 'draft') {
     console.log('   Tags:', frontmatter.tags?.join(', ') || '(none)');
     console.log('   Status:', status);
     console.log('   Featured:', frontmatter.featured || false);
+    if (dryRun) console.log('   Mode: DRY RUN (no Ghost API calls)');
+
+    const api = dryRun ? null : getApi();
+
+    // Upload local images first so the converted lexical references hosted URLs
+    const { content: contentWithImages, uploads } = await uploadLocalImages(content, path.dirname(filePath), { dryRun, api });
+    if (uploads.length > 0) {
+      console.log(`   ${uploads.length} local image(s) ${dryRun ? 'detected' : 'uploaded'}`);
+    }
 
     // Convert markdown to lexical
     console.log('\n🔄 Converting markdown to lexical...');
-    const converter = new MarkdownToLexical(content);
-    const lexicalContent = converter.convert();
+    if (frontmatter.github_folder) console.log('   GitHub folder:', frontmatter.github_folder);
+    const finalLexical = buildLexical(contentWithImages, frontmatter);
 
-    // Add GitHub footer if github_folder is present
-    let finalLexical = lexicalContent;
-    if (frontmatter.github_folder) {
-      console.log('   GitHub folder:', frontmatter.github_folder);
-      const githubUrl = `https://github.com/houfu/blog-alt-counsel/tree/main/posts/${frontmatter.github_folder}`;
-      
-      // Add footer to lexical
-      const footerNodes = [
-        createLineBreak(),
-        createHeading(3, [createTextNode('Behind the Scenes')]),
-        createParagraph([createTextNode('See how this post evolved from initial pitch to final draft. Includes research sources, iterations, and decisions along the way.')]),
-        createBookmark(githubUrl, `${frontmatter.github_folder} - blog-alt-counsel`),
-      ];
-      
-      finalLexical = {
-        root: {
-          children: [...lexicalContent.root.children, ...footerNodes],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          type: 'root',
-          version: 1,
-        },
-      };
+    if (dryRun) {
+      console.log('\n--- LEXICAL JSON (dry run) ---');
+      console.log(JSON.stringify(finalLexical));
+      return null;
     }
 
     // Prepare post data
@@ -601,11 +695,11 @@ async function publishPost(filePath, status = 'draft') {
     if (frontmatter.post_id) {
       // Update existing post — fetch it first to get updated_at
       console.log('   Updating existing post:', frontmatter.post_id);
-      const existing = await api.posts.read({ id: frontmatter.post_id });
+      const existing = await withRetry('post read', () => api.posts.read({ id: frontmatter.post_id }));
       postData.updated_at = existing.updated_at;
-      post = await api.posts.edit({ id: frontmatter.post_id, ...postData });
+      post = await withRetry('post update', () => api.posts.edit({ id: frontmatter.post_id, ...postData }));
     } else {
-      post = await api.posts.add(postData);
+      post = await withRetry('post create', () => api.posts.add(postData));
     }
 
     console.log('\n✅ Post published successfully!');
@@ -638,15 +732,17 @@ async function publishPost(filePath, status = 'draft') {
 
 if (require.main === module) {
   const args = process.argv.slice(2);
+  const dryRun = args.includes('--dry-run');
+  const positional = args.filter((a) => !a.startsWith('--'));
 
-  if (args.length === 0) {
-    console.error('Usage: node scripts/publish-lexical.js <path-to-markdown-file> [status]');
+  if (positional.length === 0) {
+    console.error('Usage: node scripts/publish-lexical.js <path-to-markdown-file> [status] [--dry-run]');
     console.error('Status: draft (default), published');
     process.exit(1);
   }
 
-  const filePath = path.resolve(args[0]);
-  const status = args[1] || 'draft';
+  const filePath = path.resolve(positional[0]);
+  const status = positional[1] || 'draft';
 
   if (!fs.existsSync(filePath)) {
     console.error(`Error: File not found: ${filePath}`);
@@ -658,9 +754,9 @@ if (require.main === module) {
     process.exit(1);
   }
 
-  publishPost(filePath, status)
+  publishPost(filePath, status, { dryRun })
     .then(() => process.exit(0))
     .catch(() => process.exit(1));
 }
 
-module.exports = { publishPost, MarkdownToLexical };
+module.exports = { publishPost, MarkdownToLexical, buildLexical, uploadLocalImages, withRetry };
