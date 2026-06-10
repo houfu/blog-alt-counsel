@@ -33,3 +33,11 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 ## Log
 
 <!-- getting-feedback appends MEMORY_UPDATE blocks here: date, post, unique catches made, advice rejected (and the stated reason), new user preferences observed -->
+
+### 2026-06-10 — deepseek-v4-vs-harvey (round 2 of 2)
+
+- Round 1 unique catch: drafting regresses −11.6pp even excluding broken files — the draft's "it was all my harness" overclaimed; verdict split (packaging = harness; drafting quality = await ablation) adopted verbatim. Also pinned Stark Law example to framework Q2; asked to verify Opus 4.5 attribution (verified correct).
+- Round 2: no unique catches — all round-1 essential fixes landed cleanly; all load-bearing numbers verified against nanoclaw-vs-default-analysis.md; external claims (HAL 21,730 rollouts, Opus 4.5 9.5pp, 4.9pp frontier spread) confirmed against research.md. Nothing publish-blocking.
+- Standing asks: pre-empted (jargon acceptable for lawyer-coder readership).
+- Advice rejected: alternative closing question ("Have you seen your agent improvise its own toolchain?") — user kept harness-centric close: "stick to the spine of the post."
+- User preference observed: caps reviews at 2 rounds; values honest caveats over punchy absolutes ("he prefers stronger data with caveats over omission" — confirmed again here).

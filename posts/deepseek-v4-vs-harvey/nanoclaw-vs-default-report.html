@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek-v4-flash: default harness vs nanoclaw — visual report</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{--ink:#1a1a18;--mut:#6b6a64;--line:#e4e2da;--bg:#faf9f5;--card:#ffffff;
+    --coral:#D85A30;--coral-l:#F0997B;--teal:#1D9E75;--teal-l:#5DCAA5;--gray:#888780;
+    --purple:#7F77DD;--pink:#D4537E;--amber:#EF9F27;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);margin:0;line-height:1.6;font-size:15px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 28px 80px}
+  h1{font-size:28px;font-weight:600;line-height:1.25;margin:0 0 8px}
+  h2{font-size:20px;font-weight:600;margin:3rem 0 0.75rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+  h3{font-size:15px;font-weight:600;margin:1.5rem 0 0.5rem}
+  p{margin:0 0 1rem}
+  .sub{color:var(--mut);font-size:15px;margin:0 0 2.5rem}
+  .mut{color:var(--mut)}.sm{font-size:13px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:1.25rem 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .card .lbl{font-size:12.5px;color:var(--mut);margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em}
+  .card .big{font-size:26px;font-weight:600;margin:0;line-height:1.2}
+  .card .vs{font-size:15px;color:var(--coral);margin:2px 0 0;font-weight:500}
+  .card .tag{font-size:12px;color:var(--mut);font-weight:400}
+  .chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:1.25rem 0}
+  .legend{display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;color:var(--mut);margin:0 0 10px}
+  .legend span{display:flex;align-items:center;gap:6px}
+  .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .strip{display:flex;height:30px;border-radius:8px;overflow:hidden;margin:6px 0 8px}
+  .hbar{display:flex;align-items:center;gap:12px;margin:7px 0}
+  .hbar .l{width:230px;flex-shrink:0;font-size:13px;color:var(--mut);text-align:right}
+  .hbar .track{flex:1;height:20px;background:#f0eee7;border-radius:5px;overflow:hidden}
+  .hbar .fill{height:100%;border-radius:5px}
+  .hbar .v{width:44px;font-size:13.5px;font-weight:600}
+  .defects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:1rem 0}
+  .defect{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;border-top:4px solid var(--gray)}
+  .defect h4{margin:0 0 6px;font-size:14.5px;font-weight:600}
+  .defect p{font-size:13px;color:var(--mut);margin:0;line-height:1.55}
+  .defect .n{font-size:22px;font-weight:600;float:right;margin-left:8px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.86em;background:#f0eee7;padding:1px 5px;border-radius:4px}
+  blockquote{border-left:3px solid var(--coral-l);margin:1rem 0;padding:8px 16px;background:#fdf3ef;border-radius:0 8px 8px 0;font-style:italic;color:#7a3a20;font-size:14px}
+  .flow{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:1.25rem 0}
+  .callout{background:#eef6f2;border:1px solid #cfe8dd;border-radius:12px;padding:14px 18px;font-size:14px;margin:1.25rem 0}
+  .verdicts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:1rem 0}
+  .verdict{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .pill{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+  footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:12.5px;color:var(--mut)}
+  @media print{body{background:#fff}.chartbox,.card,.defect,.verdict,.flow{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Same model, two environments: what the nanoclaw run really shows</h1>
+<p class="sub">DeepSeek-v4-flash on the harvey-labs legal benchmark — default harness (1,251 tasks) vs nanoclaw + Adeu + docling (1,006 tasks, a strict subset; same judge). June 2026.</p>
+
+<div class="cards">
+  <div class="card"><p class="lbl">Criterion pass rate</p><p class="big">84.7% <span class="tag">default</span></p><p class="vs">74.8% <span class="tag">nanoclaw</span></p></div>
+  <div class="card"><p class="lbl">Strict all-pass rate</p><p class="big">4.7% <span class="tag">default</span></p><p class="vs">3.3% <span class="tag">nanoclaw</span></p></div>
+  <div class="card"><p class="lbl">Valid .docx outputs</p><p class="big">100% <span class="tag">1,431/1,431</span></p><p class="vs">94.4% <span class="tag">1,223/1,296</span></p></div>
+  <div class="card"><p class="lbl">Completion signal seen</p><p class="big">100% <span class="tag">in-band · 1,133 runs</span></p><p class="vs">0% <span class="tag">STATUS: DONE · 1,007 runs</span></p></div>
+</div>
+
+<h2>1 · Head-to-head on 1,006 shared tasks</h2>
+<p>The nanoclaw stack loses on most tasks but wins on a third of them — the damage is specific, not uniform. The median task only drops 2.5&nbsp;pp; the mean drops 9.5&nbsp;pp because a tail of ~56 tasks collapses to zero.</p>
+<div class="chartbox">
+  <div class="strip">
+    <div style="flex:637;background:var(--coral-l)"></div>
+    <div style="flex:21;background:#d8d6cc"></div>
+    <div style="flex:348;background:var(--teal-l)"></div>
+  </div>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--coral-l)"></span>Nanoclaw worse · 637 tasks</span>
+    <span><span class="sw" style="background:#d8d6cc"></span>Tied · 21</span>
+    <span><span class="sw" style="background:var(--teal-l)"></span>Nanoclaw better · 348</span>
+  </div>
+  <div class="hbar"><span class="l">Zero-score tasks — default</span><div class="track"><div class="fill" style="width:16%;background:var(--gray)"></div></div><span class="v">9</span></div>
+  <div class="hbar"><span class="l">Zero-score tasks — nanoclaw</span><div class="track"><div class="fill" style="width:100%;background:var(--coral-l)"></div></div><span class="v">56</span></div>
+</div>
+
+<h2>2 · The completion mechanism: 100% vs 0%</h2>
+<p>The default harness ends a run when the model stops calling tools — an in-band signal that worked in every single run. The nanoclaw adapter waits for the model to print <code>STATUS: DONE</code> — an out-of-band convention the model never once followed — then falls back to a deliverable byte-stability gate, then a ~1,200&nbsp;s deadline.</p>
+<div class="flow">
+<svg width="100%" viewBox="0 0 820 250" role="img" aria-label="Diagram comparing run termination: default harness in-band signal worked 1133 of 1133 times; nanoclaw STATUS DONE string seen 0 of 1007 times, falling back to a stability gate that can fire while the agent is still working">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round"/></marker></defs>
+<text x="20" y="28" font-size="13" font-weight="600" fill="#1a1a18">Default harness</text>
+<rect x="20" y="40" width="180" height="52" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+<text x="110" y="62" font-size="12.5" fill="#085041" text-anchor="middle" font-weight="600">Model stops calling tools</text>
+<text x="110" y="79" font-size="11.5" fill="#0F6E56" text-anchor="middle">in-band, automatic</text>
+<line x1="200" y1="66" x2="250" y2="66" stroke="#888780" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="255" y="40" width="150" height="52" rx="8" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+<text x="330" y="62" font-size="12.5" fill="#085041" text-anchor="middle" font-weight="600">Run ends cleanly</text>
+<text x="330" y="79" font-size="11.5" fill="#0F6E56" text-anchor="middle">1,133 / 1,133 runs</text>
+<text x="20" y="135" font-size="13" font-weight="600" fill="#1a1a18">Nanoclaw adapter</text>
+<rect x="20" y="147" width="180" height="52" rx="8" fill="#FCEBEB" stroke="#E24B4A" stroke-width="1"/>
+<text x="110" y="169" font-size="12.5" fill="#791F1F" text-anchor="middle" font-weight="600">Print "STATUS: DONE"</text>
+<text x="110" y="186" font-size="11.5" fill="#A32D2D" text-anchor="middle">seen 0 / 1,007 runs</text>
+<line x1="200" y1="173" x2="250" y2="173" stroke="#888780" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="255" y="147" width="220" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+<text x="365" y="169" font-size="12.5" fill="#633806" text-anchor="middle" font-weight="600">Deliverables byte-stable?</text>
+<text x="365" y="186" font-size="11.5" fill="#854F0B" text-anchor="middle">fires on placeholders &amp; copies too</text>
+<line x1="475" y1="173" x2="525" y2="173" stroke="#888780" stroke-width="1.2" marker-end="url(#ar)"/>
+<rect x="530" y="147" width="160" height="52" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="1"/>
+<text x="610" y="169" font-size="12.5" fill="#444441" text-anchor="middle" font-weight="600">~1,200 s deadline</text>
+<text x="610" y="186" font-size="11.5" fill="#5F5E5A" text-anchor="middle">43 runs · mean pr 0.53</text>
+<text x="20" y="232" font-size="11.5" fill="#6b6a64">Premature-exit signature: the 56 zero-score tasks ended at a median of 241 s — 57% under 5 minutes. Fast exits, not slow failures.</text>
+</svg>
+</div>
+<p>One zero-score deliverable was the <em>source compliance program copied verbatim</em>, shipped as the "gap analysis" — the agent staged a starting file, paused to think, and the stability gate called it done. The default run scored 1.00 on the same task.</p>
+
+<h2>3 · Docx forensics: 73 broken files, three distinct defects</h2>
+<p>Every output .docx in both sweeps was integrity-checked. The default harness: 1,431 valid out of 1,431. The nanoclaw: 73 broken out of 1,296, across 69 tasks whose mean pass rate is 0.45 vs 0.76 for clean tasks.</p>
+<div class="chartbox">
+  <div class="strip">
+    <div style="flex:41;background:var(--pink)"></div>
+    <div style="flex:28;background:var(--purple)"></div>
+    <div style="flex:4;background:#b4b2a9"></div>
+  </div>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--pink)"></span>Non-escaping XML writer · 41</span>
+    <span><span class="sw" style="background:var(--purple)"></span>Unfinished workflow · 28</span>
+    <span><span class="sw" style="background:#b4b2a9"></span>Interrupted zip edit · 4</span>
+  </div>
+</div>
+<div class="defects">
+  <div class="defect" style="border-top-color:var(--pink)"><h4><span class="n" style="color:var(--pink)">41</span>Ran to completion, wrote it wrong</h4>
+  <p>Every file closes with <code>&lt;/w:document&gt;</code> and a finalized zip — interruption is ruled out. 35 contain a literal <code>&lt;0/&gt;</code> junk tag (a leaked format token) scattered anywhere from 1% to 100% through the document; the rest have unescaped <code>&amp;</code> in body text. A string-templating writer with no XML escaping.</p></div>
+  <div class="defect" style="border-top-color:var(--purple)"><h4><span class="n" style="color:var(--purple)">28</span>Work done, never packaged</h4>
+  <p>Tiny placeholder stubs (12–143 bytes) — five literally read <em>"PLACEHOLDER - This file will be generated via the Adeu MCP tool chain"</em> — plus complete memos up to 58 KB saved as raw text or markdown under a .docx name. The legal work was finished; only the conversion step never ran.</p></div>
+  <div class="defect" style="border-top-color:#888780"><h4><span class="n" style="color:#5f5e5a">4</span>Cut mid-rewrite</h4>
+  <p>The zip's central directory and local headers disagree — a non-atomic in-place edit that stopped partway. The one defect class that genuinely is "tried but didn't finish" at the I/O level.</p></div>
+</div>
+<blockquote>"PLACEHOLDER - This file will be generated via the Adeu MCP tool chain. See companion script for content."<br><span class="sm" style="font-style:normal">— the complete contents of a graded deliverable (default run: 0.983 · nanoclaw run: 0.000)</span></blockquote>
+<p>Side finding: <strong>100 task output folders contain <code>node_modules/</code></strong> and hand-written build scripts (<code>build-docx.js</code>, <code>transform.js</code>…) — the agent routing around the provided tooling to improvise its own document pipeline inside the graded deliverables folder. Those tasks average 0.68.</p>
+<div class="chartbox">
+  <p class="sm mut" style="margin:0 0 10px">What broken packaging costs — mean task pass rate</p>
+  <div class="hbar"><span class="l">Default harness baseline</span><div class="track"><div class="fill" style="width:83.8%;background:var(--gray)"></div></div><span class="v">0.84</span></div>
+  <div class="hbar"><span class="l">Nanoclaw — clean docx (937 tasks)</span><div class="track"><div class="fill" style="width:76.4%;background:var(--teal-l)"></div></div><span class="v">0.76</span></div>
+  <div class="hbar"><span class="l">Nanoclaw — node_modules in output (93)</span><div class="track"><div class="fill" style="width:68.1%;background:var(--amber)"></div></div><span class="v">0.68</span></div>
+  <div class="hbar"><span class="l">Nanoclaw — broken docx (69)</span><div class="track"><div class="fill" style="width:45.2%;background:var(--coral-l)"></div></div><span class="v">0.45</span></div>
+</div>
+
+<h2>4 · By work type: drafting carries the regression</h2>
+<p>Splitting the shared tasks by the work they ask for shows a clean gradient — and excluding broken-file tasks separates two very different stories. <strong>Drafting</strong> still regresses −11.6&nbsp;pp with all broken files removed: the nanoclaw authoring path writes genuinely worse documents. <strong>Identify-issues</strong> tasks lose most of their regression once broken files are excluded (−9.9 → −4.7&nbsp;pp): their problem was packaging — the placeholder stubs are nearly all <code>*-issues-memorandum.docx</code>.</p>
+<div class="chartbox">
+  <div class="legend">
+    <span><span class="sw" style="background:#888780"></span>Default</span>
+    <span><span class="sw" style="background:#F0997B"></span>Nanoclaw</span>
+    <span><span class="sw" style="background:#F0997B;outline:2px dashed #D85A30;outline-offset:-2px;opacity:.45"></span>Nanoclaw excl. broken docx</span>
+  </div>
+  <div style="position:relative;height:320px"><canvas id="wtChart" role="img" aria-label="Grouped bar chart of pass rate by work type: drafting regresses most even excluding broken files; compare and analyze are most resilient"></canvas></div>
+</div>
+<div class="callout"><strong>The strict all-pass metric flips sign.</strong> Nanoclaw <em>beats</em> default on perfect-task rate for extract (3.2% vs 1.6%) and compare (7.0% vs 5.4%), while collapsing on identify (0.6% vs 4.2%) and draft (3.5% vs 6.1%). For mechanical extraction and comparison work, the nanoclaw stack is arguably the better environment — the aggregate hides this entirely.</div>
+
+<h2>5 · By practice area: mostly work-type mix, with two real hotspots</h2>
+<p>Raw per-area regressions span 26&nbsp;pp, but most of that is composition — areas with more drafting regress more. Adjusting each area for its work-type mix compresses the spread to roughly ±7&nbsp;pp. The residual hotspots are <strong>funds</strong> and <strong>corporate governance</strong>, driven by catastrophic drafting cells: funds × draft −33&nbsp;pp and corp-gov × draft −28&nbsp;pp, both from baselines near 0.9. Litigation, energy, trade-sanctions, and IP outperform their mix.</p>
+<div class="chartbox">
+  <div class="legend">
+    <span><span class="sw" style="background:#F0997B"></span>Raw change (pp)</span>
+    <span><span class="sw" style="background:#7F77DD"></span>Residual after adjusting for work-type mix</span>
+  </div>
+  <div style="position:relative;height:640px"><canvas id="areaChart" role="img" aria-label="Horizontal bar chart of per-area pass rate change, raw and mix-adjusted; funds and corporate governance remain negative after adjustment while litigation and energy turn positive"></canvas></div>
+</div>
+
+<h2>6 · What does <em>not</em> explain the gap: docling</h2>
+<p>If the document-reading layer were the culprit, damage would concentrate where reading is heaviest. It doesn't, on any test:</p>
+<div class="cards">
+  <div class="card"><p class="lbl">Regression vs documents read</p><p class="big">r = 0.007</p><p class="sm mut" style="margin:6px 0 0">No correlation. The most document-heavy tasks (12–45 docs) regress <em>least</em>.</p></div>
+  <div class="card"><p class="lbl">Fail reasonings mentioning PDF</p><p class="big">0 <span class="tag">of 14,808</span></p><p class="sm mut" style="margin:6px 0 0">The failure surface is output-side (890 mention docx), not ingestion.</p></div>
+  <div class="card"><p class="lbl">Reading-heavy work types</p><p class="big">−4.0 pp</p><p class="sm mut" style="margin:6px 0 0">compare (clean tasks) — the most resilient; drafting is −11.6 pp.</p></div>
+</div>
+
+<h2>7 · Three claims, tested</h2>
+<div class="verdicts">
+  <div class="verdict"><span class="pill" style="background:#FAEEDA;color:#854F0B">Partly true</span>
+    <h4 style="margin:0 0 6px;font-size:14.5px">"The nanoclaw hurt the scores — be careful with agent environments"</h4>
+    <p class="sm mut" style="margin:0">Directionally right, but the lesson is specific: completion semantics, file-write integrity, and atomic edits — fixable defects, not an inherent property of custom environments. Nanoclaw still won 348 tasks.</p></div>
+  <div class="verdict"><span class="pill" style="background:#FCEBEB;color:#A32D2D">Refuted</span>
+    <h4 style="margin:0 0 6px;font-size:14.5px">"Adeu had no impact"</h4>
+    <p class="sm mut" style="margin:0">Its fingerprints are on both tails: unfilled placeholder stubs naming Adeu zeroed near-perfect tasks, while the biggest wins are complex-docx drafting tasks the default scored 0 on. Large effects that cancel in the average.</p></div>
+  <div class="verdict"><span class="pill" style="background:#FCEBEB;color:#A32D2D">Unsupported</span>
+    <h4 style="margin:0 0 6px;font-size:14.5px">"Docling alone hurt the agent"</h4>
+    <p class="sm mut" style="margin:0">Every observable signature locates the harm in output authoring and run termination, not document ingestion. Docling is the least implicated component.</p></div>
+</div>
+
+<h2>8 · Recommended next steps</h2>
+<p>1. Replace the <code>STATUS: DONE</code> text signal with a finish tool, or add a minimum-turn floor and longer stability window. 2. Fix XML escaping and the format-token leak; make in-place edits atomic. 3. Validate every deliverable with a docx parser before ending a run; ensure the text→docx conversion step always executes. 4. Re-run just the ~125 broken or zero-score tasks (~10% of a sweep) to measure recovery. 5. If component attribution still matters afterwards: ablation grid (bare / +docling / +adeu / +both) on a stratified sample oversampling draft tasks in funds and corporate governance.</p>
+<p><strong>The headline for readers in a hurry:</strong> in several zero-scoring tasks the agent did the legal work correctly and lost all credit on packaging. This benchmark measures the environment as much as the model.</p>
+
+<footer>Sources: scores_flat.csv (default sweep, 73,744 criterion rows), lab-1007-per-criteria.csv (nanoclaw sweep, 58,758 rows), and forensic scans of both raw results trees (2,727 output .docx files). Same model (ollama/deepseek-v4-flash:cloud), same judge, June 2026. Companion documents: nanoclaw-vs-default-analysis.md (full tables) · investigation-summary.md (narrative).</footer>
+</div>
+
+<script>
+const wt = {
+  labels:['draft','identify','review','analyze','extract','compare'],
+  d:[0.873,0.734,0.848,0.866,0.835,0.841],
+  n:[0.744,0.635,0.770,0.792,0.768,0.793],
+  nx:[0.757,0.687,0.799,0.841,0.765,0.801]
+};
+new Chart(document.getElementById('wtChart'),{type:'bar',
+ data:{labels:wt.labels,datasets:[
+  {label:'Default',data:wt.d,backgroundColor:'#888780',borderRadius:3},
+  {label:'Nanoclaw',data:wt.n,backgroundColor:'#F0997B',borderRadius:3},
+  {label:'Nanoclaw excl. broken docx',data:wt.nx,backgroundColor:'rgba(240,153,123,0.45)',borderColor:'#D85A30',borderWidth:1.5,borderDash:[4,3],borderRadius:3}]},
+ options:{responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(3)}}},
+  scales:{y:{min:0.5,max:0.95,ticks:{callback:v=>v.toFixed(2),color:'#6b6a64'},grid:{color:'rgba(0,0,0,.06)'}},
+   x:{ticks:{color:'#6b6a64'},grid:{display:false}}}}});
+
+const areas=[
+ ["Funds & asset mgmt",-17.7,-7.3],["Corporate governance",-16.0,-7.1],["Bankruptcy & restructuring",-15.3,-5.6],
+ ["Insurance",-12.3,-3.7],["Employment & labor",-12.8,-3.4],["Corporate M&A",-12.6,-2.7],
+ ["Capital markets",-12.4,-2.6],["Environmental & ESG",-12.2,-2.8],["Data privacy & cyber",-10.2,-1.8],
+ ["Real estate",-9.3,1.7],["Banking & finance",-7.0,2.0],["Emerging companies & VC",-8.3,2.6],
+ ["Arbitration & intl disputes",-6.9,3.3],["Immigration",-5.6,3.7],["Antitrust & competition",-5.4,4.2],
+ ["Healthcare & life sciences",-5.0,4.4],["Intellectual property",-4.4,4.5],["Intl trade & sanctions",-3.3,5.5],
+ ["Energy & natural resources",-2.2,6.9],["Litigation & disputes",-3.5,7.0]];
+new Chart(document.getElementById('areaChart'),{type:'bar',
+ data:{labels:areas.map(a=>a[0]),datasets:[
+  {label:'Raw change',data:areas.map(a=>a[1]),backgroundColor:'#F0997B',borderRadius:3},
+  {label:'Residual after mix adjustment',data:areas.map(a=>a[2]),backgroundColor:'#7F77DD',borderRadius:3}]},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+(c.parsed.x>0?'+':'')+c.parsed.x.toFixed(1)+' pp'}}},
+  scales:{x:{ticks:{callback:v=>(v>0?'+':'')+v+'pp',color:'#6b6a64'},grid:{color:'rgba(0,0,0,.06)'}},
+   y:{ticks:{autoSkip:false,font:{size:11.5},color:'#6b6a64'},grid:{display:false}}}}});
+</script>
+</body>
+</html>
