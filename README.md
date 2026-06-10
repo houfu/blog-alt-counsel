@@ -53,6 +53,7 @@ Create a `.env` file from `.env.example` and fill in your values.
 | `npm run setup-hooks` | Install the pre-commit git hook |
 | `npm run lint-posts` | Lint post folders (frontmatter, naming, horizontal rules, image sizes) |
 | `npm run verify` | Full repo health check (also runs in CI on every PR) |
+| `npm test` | Markdown-to-lexical conversion tests for the publishing pipeline |
 
 Or run `bash setup.sh` once after cloning to do all of the setup steps above.
 
