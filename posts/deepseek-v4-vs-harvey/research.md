@@ -104,6 +104,15 @@ User asked how Anna Guo's legal standards work bears on this post.
 - **Sources:** [Phase 1 report](https://www.legalbenchmarks.ai/research/phase-1-research) (CC BY 4.0; cite: Guo & Rodrigues 2025), [About](https://www.legalbenchmarks.ai/about), [Research index](https://www.legalbenchmarks.ai/research)
 - **Used in draft:** paragraph in "When someone shows you a benchmark score" — product-level mirror of the harness problem + Singapore anchor.
 
+## Addendum (10 June 2026): Kevin Keller — "The Harness Is the Floor, Not the Ceiling" 🌍
+
+- **Source:** [The Harness Is the Floor, Not the Ceiling](https://medium.com/@hikevin/harness-is-the-floor-not-the-ceiling-9d880f454cc5) — Kevin Keller, Medium, 8 Apr 2026. Keller is a GC/inventor (17 patents) building reasoning layers for agent harnesses (Tucuxi); LegalQuants contributor (contract-qa skill).
+- **Context he's responding to:** Nicho Charriere's "The Great Convergence" (everyone converging on the same harness shape) and **Harvey Applied Research's harness self-improvement experiment** (Niko Grupen's team: a coding agent iteratively rewrites its own harness against rubric-scored judge feedback; across 12 internal legal benchmark tasks, average success climbed **40.8% → 87.7%** through environment shaping alone — same model).
+- **His argument:** Yes the harness matters — but it's *commodifying*. When every vendor has a self-improving harness, the harness is the floor (table stakes), and differentiation moves up the stack: universal meta-cognitive reasoning skills supplied as priors, tacit-expertise extraction, apprenticeship-style transmission, career-arc modeling. "The harness is the floor. The ceiling is much higher, and it is reached by a very different path."
+- **Sharpest point for our post:** "The harness only learns what the rubric measures… the recognition that the grading framework is itself a hypothesis to be tested" is the most valuable practitioner skill — and a hill-climbing harness can't develop it by construction. Rhymes with the post's "benchmark measures the environment as much as the model."
+- **Bonus detail:** Harvey's self-improving harness *discovered* "stop hooks that validate deliverables before a run ends" — literally the fix for houfu's defect #2/#3 (premature exits, unvalidated deliverables). The fix houfu needs is one frontier labs' harnesses learn automatically.
+- **Relationship to Binding Constraint Thesis:** complementary, time-shifted. BCT: *today*, among comparable models, harness variance dominates outcomes. Keller: *tomorrow*, harness quality is commodity baseline and stops differentiating. Houfu's result fits both: he lost ten points by being *below the floor* — basic harness engineering is the price of admission, not a source of advantage.
+
 ## Additional Sources (not yet read in full)
 
 - [Harness-Bench paper](https://arxiv.org/html/2605.27922v1) — read if post needs a second harness-measurement framework

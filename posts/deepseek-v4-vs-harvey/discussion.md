@@ -67,6 +67,28 @@ User feedback after reading the draft: (1) reads like a diary (fine) but under-e
 - Anna Guo paragraph in "When someone shows you a benchmark score": LegalBenchmarks.ai (SG-based, human-judged, double-blind), general-purpose matched legal tools on accuracy, Failure Mode 5 (tools fail on file handling "not because of poor reasoning", silently) = harness thesis at product level. Research details appended to research.md (addendum).
 - Note: Marcus had called the work-type breakdown "optional, save for rerun post" in round 1 — user's read-through overrode that; it's now in this post.
 
+## Session 1 (continued) — 10 June 2026: User manual edits + completion-signal claim evaluation
+
+**User's manual edits to the draft (in Ghost-editor style, direct to file):** softened the opening ("Everything else around it failed", "My stack largely lost against the default. But what I learnt about the harness was the real lesson"), added a CleanShot image after the intro (`CleanShot 2026-06-10 at 19.56.11.png` — verify file exists in folder before publish), rewrote the logs-section opener (gut reactions: bad model? bad adeu? bad nanoclaw? — test didn't isolate factors; enlisted Claude's "Fable" model for forensics), and started an unfinished sentence at the first-discovery paragraph ("If you've used My harness expected…") — left dangling, pending the claim discussion below.
+
+**USER CLAIM EVALUATED (user asked, Claude assessed):** "The agent didn't say it was done because nanoclaw is a conversational agent — unlike the default harness, which as a tool-call loop could detect completion explicitly; my only option was to wait for output and pause."
+- **Verdict: sound core, two qualifications.** (1) Architecturally correct — the default harness owns the loop and detects "no more tool calls" structurally; a conversational agent only exposes messages, so in-band loop signals were unavailable, forcing an out-of-band convention. This upgrades the post's framing: the defect was downstream of a *substrate choice* (conversational agent for unattended batch work), a purer illustration of the harness thesis than an unforced design slip. (2) Overreach a: "only option" is too strong — a finish/submit MCP tool was available in-band (adeu proves MCP plumbing worked); own analysis doc recommends exactly that fix. Overreach b: 0% compliance has a known cause — out-of-band string conventions aren't load-bearing for models (instruction buried as context grows, small model drops it); tool calls live in the model's action space. Category lesson, not bad luck.
+- **Pending user decision:** whether Claude weaves the qualified version into the first-discovery passage and tidies the dangling fragment + typos in the new line-41 paragraph ("Deepseekv4-flash is terrible model", "As test did not isolate"). Not yet applied — user may still be mid-edit.
+
+## Session 1 (continued) — 10 June 2026: User rewrite review + mechanical fixes
+
+**User made substantial manual edits** (diary→substance balance, his own voice): new logs-section opener with Fable disclosure, conversational-agent completion-signal explanation, rewrote "It wasn't the model" with jagged-frontier framing and regrets, added his own Kevin Keller "harness is the floor" paragraph, rewrote the Adeu/bug-report section, cut the next-post teaser, added two CleanShot charts.
+
+**Claude review flagged; USER DECISIONS:**
+- Deleted "That made me sadder than the score did" (Wei Lin's do-not-cut line) → **user chose to keep it deleted.**
+- Deleted the 0/1,007 STATUS: DONE stat → **user chose to keep it deleted.**
+- Deleted Stark Law example (broke framework Q2 cross-ref) → **user chose to RESTORE this one** (now in the stability-gate paragraph).
+- Kevin Keller research done earlier this session: found "The Harness Is the Floor, Not the Ceiling" (Medium, 8 Apr 2026; Keller = GC/inventor, Tucuxi, LegalQuants contributor); notes + BCT-vs-floor reconciliation in research.md addendum. User wrote his own version into the draft (line ~79); no citation link yet — consider bookmark at backlink stage.
+
+**Mechanical fixes applied:** images renamed (spaces broke publish-lexical's upload regex): `CleanShot…19.56.11.png` → `nanoclaw-task-scatter.png`, `CleanShot…22.13.20.png` → `nanoclaw-worktype-breakdown.png`; both now proper `![alt](file)` markdown with descriptive alt text written from actual chart contents (scatter: red/blue triangles by wall clock × pass rate; breakdown: 7 work-type columns). Grammar: pitted, DeepSeek naming, "not all it's cut out to be", garbled completion-loop sentence, half-baked, turned out/degrade, jagged frontier glossed, head-to-head, "to blame", Adeu capitalisation standardised.
+
+**Remaining before publish:** backlinks (legal OSS post + consider Keller/Ambrogi/Anna Guo links), tag confirm, cover image?, publish via publish-lexical.js (--dry-run first), sync once.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.
