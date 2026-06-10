@@ -31,6 +31,7 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
     - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
     - `sarah-chen-persona.md` - In-house Lawyer Reviewer
     - `wei-lin-persona.md` - Lawyer-Coder Reviewer
+    - `memory/<agent-name>.md` - Persistent reviewer memory (standing asks, unique catches, settled disagreements) — read by reviewers before each round, appended after
 - `/scripts/` - Canonical Node/shell tooling (publish, sync, lint, verify)
 - `/.claude/` - Claude Code agents, skills and configuration
 - `/.mcp.json` - Project MCP server config (Jina, Ghost). **Never hardcode API keys here — reference env vars** (e.g. `${JINA_API_KEY}`).
@@ -324,6 +325,7 @@ An evidence audit of every recorded review found ~70% of reviewer advice is temp
 - **Marcus's best move belongs at PITCH, not draft.** His highest-value catch ever — "an NDA guide will always be 'another NDA guide'; what's different?" — forced an angle pivot after a full draft existed. Ask his differentiation question during pitch interrogation instead.
 - **Sarah's template is predictable — pre-empt it.** Costs, time, security/compliance, "what do I do Monday morning": bake these into the draft (see WRITE phase), then use her round for the practitioner-reality catches only she makes.
 - **When synthesizing feedback, separate template from unique.** Label which advice is the persona's standing ask vs. specific to this post. Only unique catches justify another round; standing asks should have been pre-empted and can be batch-applied without debate.
+- **Reviewers have persistent memory** at `docs/personas/memory/<agent-name>.md` — standing asks, past unique catches, and settled disagreements (advice Houfu already rejected with reasons). Pass the file to the reviewer; append their `MEMORY_UPDATE` block after each round (the getting-feedback skill handles both). This is what stops re-litigation of settled calls across posts.
 
 ### Reviewer Routing Table
 

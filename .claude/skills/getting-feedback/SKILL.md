@@ -59,7 +59,13 @@ Exception: for short newsletters (<800 words), additions under 100 words don't n
 
 - `pitch.md` — so they evaluate whether the draft delivers what the pitch promised (the pitch is the contract)
 - `discussion.md` relevant sections — for context on decisions already made
+- Their memory file path (`docs/personas/memory/<agent-name>.md`) with an instruction to read it first — it holds their standing asks, past unique catches, and settled disagreements
+- Confirmation that the pre-review checklist ran (so they know standing asks were pre-empted)
 - Any relevant research
+
+## After each round: update reviewer memory
+
+Each reviewer ends with a `MEMORY_UPDATE` block. After synthesizing the round, append each block (with date and round number) to that reviewer's log in `docs/personas/memory/<agent-name>.md`. When the user rejects a piece of advice with a reason, record it under "Settled disagreements" so no reviewer re-raises it on a future post. This is what gives reviewers memory across posts — skipping it returns them to amnesia.
 
 ## Example flow
 

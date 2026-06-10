@@ -34,6 +34,9 @@ core_files=(
     "docs/personas/marcus-tan-persona.md"
     "docs/personas/wei-lin-persona.md"
     "docs/personas/sarah-chen-persona.md"
+    "docs/personas/memory/legal-tech-blog-reviewer.md"
+    "docs/personas/memory/inhouse-lawyer-reviewer.md"
+    "docs/personas/memory/lawyer-coder-reviewer.md"
     "docs/Houfu_Voice_Guide.md"
 )
 for f in "${core_files[@]}"; do
