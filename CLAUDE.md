@@ -120,9 +120,10 @@ Hooks enforce the rules that prose alone didn't (discussion-log evidence: prose-
 | `pre-publish-gate.js` | PreToolUse (Bash) | **Denies** any `publish-lexical.js` run while the post has lint ERRORS (horizontal rules etc. that break lexical conversion) |
 | `reviewer-memory-gate.js` | PreToolUse (Task) | **Denies** spawning an audience reviewer whose prompt doesn't reference its memory file (`docs/personas/memory/<agent>.md`) — no more amnesiac reviews |
 | `post-edit-lint.js` | PostToolUse (Edit\|Write) | Lints a post folder right after its main file is edited: errors are fed back to fix immediately, warnings surface as context |
-| `session-wrap.sh` | SessionEnd | Auto-appends session notes to affected `discussion.md` files via `claude -p`, then commits one `Session notes:` commit per session |
+| `stop-note-check.js` | Stop | If post content changed this session without a discussion.md update, blocks the turn-end once and instructs Claude to append the session/decision notes — the user should never have to ask for note-taking |
+| `session-wrap.sh` | SessionEnd | Backstop: appends session notes to affected `discussion.md` files via `claude -p` (mining the session **transcript** for user decisions, not just the diff) and commits one `Session notes:` commit per session. Covers folders touched by commits this session, not just uncommitted changes |
 
-Session-wrap notes: trigger manually with `/wrap-up`; skip once with `CLAUDE_HOOK_SESSION_SKIP_WRAP=1`; debug log at `.claude/state/session-wrap.log` (gitignored).
+Session-wrap notes: trigger manually with `/wrap-up`; skip once with `CLAUDE_HOOK_SESSION_SKIP_WRAP=1` (Stop-hook equivalent: `CLAUDE_HOOK_SKIP_NOTE_NAG=1`); debug log at `.claude/state/session-wrap.log` (gitignored). History note: the v1 SessionEnd hook never produced a commit — it only looked at uncommitted changes, which well-run sessions don't leave behind. If `Session notes:` commits stop appearing again, check the log rather than assuming notes are being taken.
 
 ### Pre-Commit Hook (git)
 

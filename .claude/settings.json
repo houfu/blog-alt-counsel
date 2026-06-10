@@ -46,6 +46,16 @@
         ]
       }
     ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/stop-note-check.js\""
+          }
+        ]
+      }
+    ],
     "SessionEnd": [
       {
         "hooks": [
