@@ -95,6 +95,14 @@ User feedback after reading the draft: (1) reads like a diary (fine) but under-e
 - **Backlinks** (user: "do the pass, add research links"). Internal cards (publish-lexical auto-converts alt-counsel.com + harvey.ai links to bookmark cards): OpenClaw Field Notes (after regrets para — its excerpt "the hard part isn't prompt engineering. It's designing the harness" is this post's direct setup) and Lawyers Are Building Just Not On Each Other's Code (after archipelago para; NB local frontmatter says scheduled but Ghost shows published 2026-05-11). External card: Harvey LAB announcement (after all-pass para). Inline research links: HAL arXiv, Stop Comparing arXiv, Keller Medium, LegalBenchmarks.ai phase-1, Ambrogi LawNext.
 - Lint clean throughout. Remaining: tag confirm (AI/LegalTech/OpenSource in frontmatter), cover image decision, publish (--dry-run first), sync once.
 
+## Session 1 (continued) — 10 June 2026: Published to Ghost (draft)
+
+- Tags confirmed by user: AI, LegalTech, OpenSource. Cover: scatter chart (user choice).
+- Dry-run verified (4 bookmark cards incl. GitHub footer, 2 local images, all 9 link URLs), then published via publish-lexical.js — **the new pipeline's automatic local-image upload worked on its first real use** (no manual ghost_image_upload workaround).
+- Post ID `6a2983d681ce1e000152d0e3`, status **draft**. Admin: https://alt-counsel.ghost.io/ghost/#/editor/post/6a2983d681ce1e000152d0e3
+- Feature image set via Admin API (MCP ghost_post_update lacks feature_image): hosted scatter PNG + alt text.
+- **Remaining:** user reviews draft on Ghost, schedules/publishes there; then ONE `npm run sync-ghost my-agent-worked-around-the-tools-i-gave-it` at PR close (publish last, sync once). Separate chore noted: legal-oss-contribution folder frontmatter is stale (says scheduled; Ghost shows published 2026-05-11) — sync on its own branch/PR.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.
