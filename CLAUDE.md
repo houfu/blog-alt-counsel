@@ -19,18 +19,21 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
 **Brand Position**: "The Solo Counsel's Tech Strategist" - practical problem-solver who helps resource-constrained legal departments leverage technology for real impact.
 
 ## Directory Structure
-- `/temp/` - Temporary folder
-- '/posts/' - Place to store posts and work in progress
-  - '{post-short-title}' - Each post is stored in its own folder using a short memorable title
-    - '{post-title}.md' - This file contains the content of the post and some metadata
-    - 'discussion.md' - This file stores the memories of claude involved in writing the post
-    - 'pitch.md' - This file stores the pitch of the post used to create the post.
-    - It also contains images, research documents and others relating to this post. 
+- `/temp/` - Temporary folder (gitignored)
+- `/posts/` - Place to store posts and work in progress (see `/posts/README.md` for the folder standard)
+  - `{post-short-title}/` - Each post is stored in its own folder using a short memorable title
+    - `{post-short-title}.md` - The post content with YAML frontmatter. **New posts: name the main file after the folder.** (Older posts vary; the linter warns on mismatches.)
+    - `discussion.md` - This file stores the memories of claude involved in writing the post
+    - `pitch.md` - This file stores the pitch of the post used to create the post.
+    - It also contains images, research documents and others relating to this post.
 - `/docs/` - Documentation and analysis
   - `/docs/personas/` - Full persona documents for the three audience reviewer agents
     - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
+    - `sarah-chen-persona.md` - In-house Lawyer Reviewer
     - `wei-lin-persona.md` - Lawyer-Coder Reviewer
+- `/scripts/` - Canonical Node/shell tooling (publish, sync, lint, verify)
 - `/.claude/` - Claude Code agents, skills and configuration
+- `/.mcp.json` - Project MCP server config (Jina, Ghost). **Never hardcode API keys here — reference env vars** (e.g. `${JINA_API_KEY}`).
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
 ## Post Structure and Metadata
@@ -88,6 +91,8 @@ claude mcp add ghost -- ghst mcp stdio --tools all
 **Custom scripts still used:**
 - `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion)
 - `scripts/sync-from-ghost.js` — Syncs Ghost metadata back to local markdown frontmatter (`npm run sync-ghost <slug>`)
+- `scripts/lint-posts.js` — Lints post folders: frontmatter, naming, horizontal rules, oversized images (`npm run lint-posts`, add `--strict` for new posts). Run it before publishing.
+- `scripts/verify.sh` — Repo health check: file presence, script syntax, secret scan, agent/skill frontmatter, post lint (`npm run verify`). Runs in CI on every PR (`.github/workflows/verify.yml`).
 
 **Searching the blog:**
 - Use `ghost_search` MCP tool directly (full-text across posts, pages, tags).
@@ -272,10 +277,13 @@ The blog serves three overlapping but distinct audience segments:
 
 **Full persona details**: `/docs/personas/marcus-tan-persona.md`
 
-### 2. Corporate Lawyer Reviewer (Sarah Chen)
+### 2. In-house Lawyer Reviewer (Sarah Chen)
 **Persona**: Solo corporate lawyer at 150-person manufacturing company ($150/month budget)
 **Use for**: Tool evaluations, budget-conscious solutions, pragmatic workflows
 **Key values**: Affordability, realistic time estimates, practical relevance
+**Agent name**: `inhouse-lawyer-reviewer`
+
+**Full persona details**: `/docs/personas/sarah-chen-persona.md`
 
 ### 3. Lawyer-Coder Reviewer (Wei Lin)
 **Persona**: Senior Legal Counsel at Series B fintech (lawyer who codes, 5-10 hours/week side projects)
@@ -288,7 +296,7 @@ The blog serves three overlapping but distinct audience segments:
 
 **Use individual reviewers** when content clearly targets one segment:
 - **legal-tech-blog-reviewer**: "How I built an open source legal document parser"
-- **corporate-lawyer-reviewer**: "Evaluating contract management tools under $200/month"
+- **inhouse-lawyer-reviewer**: "Evaluating contract management tools under $200/month"
 - **lawyer-coder-reviewer**: "Why I abandoned my side project after 150 hours"
 
 **Use /feedback command (all three)** when:
