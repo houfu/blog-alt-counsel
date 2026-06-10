@@ -88,6 +88,19 @@ Red flags:
 - "Others might think..." (Distancing language)
 - "One should..." (Who? Be specific)
 
+### Step 3.5: Verify the Data
+
+A pitch is a hypothesis, not a finding. Before locking it:
+
+- If the pitch contains numbers or factual claims (article counts, hours invested, download stats, adoption figures), **verify them against the actual data now** — run the query, check the repo, ask the user for the source. Two posts required full rewrites because pitch numbers were wrong ("444 articles" was actually 27; "600 hours" was actually ~150).
+- For time-investment claims, **ask the user for their lived numbers** ("How many hours did this actually take? Evenings or full days?"). Never derive time estimates from lines of code or other formulas.
+- If verification must wait (e.g., needs Ghost access), mark the claim in pitch.md as `[UNVERIFIED]` so drafting doesn't treat it as fact.
+
+### Step 3.7: Seed Must-Link Posts and Timeline
+
+- Identify 2-3 **must-link prior posts** this post builds on or contradicts (use `ghost_search`). List them in pitch.md under "Prior work". This makes linking a structural decision instead of last-minute polish; full curation still happens at final draft via `backlink_curating`.
+- Ask whether there's a **target publish date or external deadline** (talk, event, news hook). Record it in pitch.md — surprise schedule acceleration causes rushed metadata, images, and backlinks.
+
 ### Step 4: Suggest Tags
 
 After the pitch is approved, use the **tag-registry** skill to suggest appropriate tags:

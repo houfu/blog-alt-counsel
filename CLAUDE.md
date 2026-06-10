@@ -200,6 +200,16 @@ Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are
 **Why this matters:**
 For series posts, each part should build on previous parts, not repeat them. Reading discussion.md helps you understand what's already been covered and maintain a holistic view across the entire series.
 
+### Series Discipline
+
+**Complete and publish Part 1 before planning Parts 2+.** Detailed multi-part plans create false confidence and become traps: contract-review-skill planned a 5-episode series in depth and never built episode one; data-zeeker-sg's series structure changed 4+ times across 11 sessions.
+
+Red flags that a series plan is becoming a trap — when you see them, explicitly ask the user "should we descope this to a single post?":
+- The plan is comprehensive but Part 1 hasn't been drafted
+- The series depends on an external event or someone else's decision
+- The structure has already changed twice
+- Planning sessions outnumber writing sessions
+
 ## Writing Voice & Style
 
 **CRITICAL: Houfu's distinctive voice must be present in all blog content.** This voice is what differentiates alt-counsel from generic legal tech content.
@@ -345,21 +355,28 @@ The blog serves three overlapping but distinct audience segments:
 1. **PITCH** - Define scope and direction (use `generate_a_pitch` skill)
    - Read Voice Guide Part 4 (Templates) before developing pitch
    - Tags are suggested during pitch using `tag-registry` skill
+   - **Verify data before locking the pitch.** A pitch is a hypothesis, not a finding. If it contains numbers or claims (article counts, hours spent, adoption stats), check them against the actual data first — year-in-review's pitch said "444 articles" (actual: 27) and data-zeeker's said "600 hours" (actual: ~150); both forced full rewrites. For time estimates, ask the user for lived numbers — never derive them from lines of code.
+   - Identify 2-3 **must-link prior posts** the new post builds on or contradicts; note them in the pitch. Full backlink curation still happens at final draft, but seeding links at pitch time prevents last-minute, tacked-on linking.
 2. **WRITE** - Draft the content
    - **CRITICAL: Read `/docs/Houfu_Voice_Guide.md` before writing blog posts**
+   - **Also read 1-2 recent published posts** to sample the live voice (sentence rhythm, narrative-first pacing). Recurring failure: Claude drafts in expository/analytical "blog voice" and the user has to demand a narrative rewrite (ai-fragmentation lost a full draft to this).
    - Apply voice patterns from guide during drafting
-3. **REVIEW** - Quality checks and refinement:
-   - Content quality audit (content-quality-auditor agent - includes voice check via audit-tone)
-   - Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
-   - Backlink curation (backlink_curating skill)
-   - Tag validation (use `tag-registry` skill to verify tags before publishing)
-   - **Review round limit**: Maximum 2 rounds of reviewer feedback. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
+3. **REVIEW** - Quality checks and refinement, **in this order**:
+   1. **Pitch checkpoint (the drift gate).** Before any review, compare the draft against the pitch on thesis, scope, and emotional core. If they've diverged, decide explicitly with the user — revise the draft to match the pitch, or amend the pitch and record the decision in discussion.md. Do not amend the pitch retroactively to justify drift that already happened.
+   2. **One content quality audit** (content-quality-auditor agent — includes voice check via audit-tone). **Maximum 1 audit round before reviewers see the draft.** Apply critical fixes only; hold judgment calls (tone, structure) for reviewers. Audit hoarding — 3-4 polish cycles before any reviewer input — is how the round cap gets bypassed (open-claw-intro ran 4+ cycles this way).
+   3. **Target audience review** (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
+   4. **Length audit BEFORE applying additive reviewer fixes** — this ordering is the most-violated rule (followed in ~40% of recent posts). If reviewer fixes would add >~10% length, find the cuts first, then apply the fixes.
+   5. Backlink curation (backlink_curating skill)
+   6. Tag validation (use `tag-registry` skill to verify tags before publishing)
+   - **Review round limit**: Maximum 2 rounds of reviewer feedback — and audit cycles count toward revision discipline, not a separate free budget. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
 4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
    - Always use `scripts/publish-lexical.js` — do not create per-post publishing scripts. Improve the canonical script if a feature is missing.
    - **Infra changes belong on a separate branch.** If `publish-lexical.js` or other scripts need improvements, commit those on their own PR — not on the blog PR. PR #26 mixed 17 commits of content + script changes and became unreadable.
 5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
    - Use `npm run sync-ghost <slug>` to sync Ghost metadata back to local markdown frontmatter automatically.
    - **Publish last, sync once.** Edit freely on Ghost after publishing; run `sync-ghost` only once when closing the PR. Avoid per-edit sync-back commits (four of the last five PRs had this churn).
+   - **Expect post-scheduling Ghost edits.** Houfu routinely polishes prose in the Ghost editor after scheduling. At the final sync, also diff the live content against the local file, merge the edits back so the repo matches what's published, and log notable edits in discussion.md as user decisions (they reveal voice preferences future drafts should follow).
+   - **Don't skip the final sync.** Several older posts (prompt-engineering-wrong, redlines-top-10-percent, ai-tools-for-agents) were published on Ghost months ago but their local frontmatter still says draft or is missing — making them look abandoned. The repo should always know a post's true status.
 
 ### Commit discipline
 

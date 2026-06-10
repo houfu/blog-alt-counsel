@@ -26,13 +26,25 @@ Not every post needs all 3. Match reviewers to content type:
 
 Running all 3 on every post produces diminishing returns after round 1.
 
+## Review order (enforced)
+
+Run review in this sequence — each step gates the next:
+
+1. **Pitch checkpoint (drift gate).** Compare the draft against pitch.md on thesis, scope, and emotional core. If they've diverged, stop and decide with the user: revise the draft to match the pitch, or amend the pitch and record the decision in discussion.md. Never amend the pitch retroactively to justify drift that already happened — that defeats "the pitch is the contract."
+2. **One content quality audit, maximum, before reviewers.** Apply critical fixes only (accuracy, accessibility, Ghost blockers); hold judgment calls (tone, structure) for the reviewers. Recent posts ran 3-4 audit polish cycles before any reviewer saw the draft — that's the round cap being bypassed under another name.
+3. **Reviewer round(s)** per the routing table above.
+4. **Length audit before applying additive fixes** (see below).
+5. Final polish.
+
 ## Round cap (enforced)
 
-**Maximum 2 audit rounds per draft.** If the same core framing issue persists after round 2, switch to brainstorming with the user — reviewers diagnose, they don't fix framing problems.
+**Maximum 2 reviewer rounds per draft** — and content-audit cycles count toward revision discipline, not a separate free budget. If the same core framing issue persists after round 2, switch to brainstorming with the user — reviewers diagnose, they don't fix framing problems.
 
 Rationale: PR #32 ran 3 rounds; the third hit diminishing returns on the same framing issue. PR #30 had a similar pattern. When feedback repeats, escalate to the user, not another round.
 
 ## Length-audit-first ordering (enforced)
+
+**This is the most-violated rule in the workflow** (followed in ~40% of recent posts — zeeker-three-databases, open-claw-intro, and 2026-predictions all applied additive fixes first, then had to cut). The order is: audit length → make room → apply fixes. Not: apply fixes → discover the post is over budget → cut.
 
 **Before applying reviewer fixes, estimate the word delta.**
 
