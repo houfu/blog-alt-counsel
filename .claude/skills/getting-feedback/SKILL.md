@@ -1,6 +1,6 @@
 ---
 name: Getting Feedback
-description: The user needs feedback on an idea or a question from his audience to improve the writing and create valuable content.
+description: Coordinates audience feedback on a draft or idea from 1-3 specialized reviewer agents (legal-tech blog, in-house lawyer, lawyer-coder personas), with an enforced 2-round cap and length-audit-first ordering. Use when the user wants audience feedback on a draft, idea, or question. The /feedback command is a shortcut that runs all 3 reviewers; this skill chooses reviewers by content type.
 ---
 
 # Getting Feedback

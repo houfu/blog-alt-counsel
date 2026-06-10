@@ -1,6 +1,6 @@
 ---
 name: Generate a pitch
-description: Define the scope of an article or newsletter at the beginning of the drafting an article or newsletter
+description: Develops a focused pitch (title plus 150-200 word paragraph) that defines the scope, thesis, and suggested tags for a new article or newsletter. Use at the start of drafting any new post, after the idea is clear enough (use brainstorming first if it is vague).
 ---
 
 # Generate a pitch
@@ -103,7 +103,7 @@ This early tag planning helps maintain consistency and prevents tag sprawl durin
 
 - Create the folder structure using the title, for example "posts/ai-vs-lawyers-newsletter"
 - Save the pitch in that folder under the file "pitch.md" (including suggested tags)
-- Save the discussion using "skills/note-taking" under the file "note-taking.md"
+- Save the discussion using "skills/note-taking" under the file "discussion.md"
 - Save any documents or links discussed during the process under the folder
 
 Once this process is completed, you should ask the human partner whether you can develop the outline of the article. 
