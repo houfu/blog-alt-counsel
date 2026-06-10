@@ -11,7 +11,7 @@ Somewhere in my benchmark results sits a complete legal memorandum. Fifty-eight 
 
 Not zero because the law was wrong. Zero because my agent saved the memo as raw markdown under a `.docx` filename, the judge couldn't open it, and no criterion passed. The legal work was finished. The packaging failed.
 
-I found that memo because I went looking for why my agent stack lost a bet I was sure it would win. I believed a set of lawyer-made tools would beat a generic harness at legal work. I ran 2,257 benchmark tasks to prove it. I was wrong — but in a more interesting way than the score suggested.
+I found that memo because I went looking for why my agent stack lost a bet I was sure it would win. I believed a set of lawyer-made tools would beat a generic harness at legal work. I ran over 2,200 benchmark tasks to prove it. I was wrong — but in a more interesting way than the score suggested.
 
 ## What I actually ran
 
@@ -19,14 +19,14 @@ Three weeks ago, Harvey open-sourced its Legal Agent Benchmark (LAB): around 1,2
 
 I ran the same model through it twice:
 
-- **The stock harness** (1,251 tasks): LAB's default setup. Six generic tools — bash, read, write, edit, glob, grep — plus Pandoc and pdfplumber for documents.
-- **My stack** (1,006 of the same tasks): the same model inside my nanoclaw container, wired to adeu, an MCP document-authoring tool built by a fellow lawyer-coder, and docling for document reading.
+- **The stock harness** (1,251 tasks): LAB's default setup. Six generic tools — bash, read, write, edit, glob, grep — plus Pandoc (a document converter) and pdfplumber (a PDF reader).
+- **My stack** (1,006 of the same tasks): the same model inside my nanoclaw container, wired to adeu, an MCP document-authoring tool built by a fellow lawyer-coder, and docling, a library that converts PDFs and Office files into text an agent can read.
 
 The model in both runs was DeepSeek-v4-flash through Ollama. Not a frontier model. Not a legal model. A model that costs approximately nothing.
 
 My theory was simple: tools made by lawyers, for legal documents, should beat bash and Pandoc at producing legal documents. The agent would redline with a proper redlining tool, author Word files with a proper authoring chain, and the generic setup would be left improvising.
 
-The results: the stock harness passed 84.7% of rubric criteria. My stack passed 74.8%. The stock harness produced 9 zero-score tasks; mine produced 56. Mine was also two and a half times slower.
+The results: the stock harness passed 84.7% of rubric criteria. My stack passed 74.8%. The stock harness produced 9 zero-score tasks; mine produced 56. Mine was also 2.6 times slower.
 
 Ten points, in the wrong direction.
 
@@ -34,9 +34,9 @@ Ten points, in the wrong direction.
 
 My first instinct was the obvious one: maybe DeepSeek just can't do legal work in my environment, or maybe the judge was unfair. Both readings were wrong, and I only found out because I stopped looking at scores and started reading run logs — over a thousand of them.
 
-The first discovery: my agent never once told me it was done. My harness expected the model to emit a `STATUS: DONE` string when it finished. In 1,007 runs, the model emitted it exactly zero times. Every single run ended because my harness guessed — either deliverable files stopped changing, or a hard deadline hit. The stock harness uses an in-band signal instead (the run ends when the model stops calling tools), and it worked in all 1,133 of its runs. My completion mechanism had a 0% compliance rate, and I didn't know until I checked.
+The first discovery: my agent never once told me it was done. My harness expected the model to emit a `STATUS: DONE` string when it finished. In 1,007 runs (a credit outage paused the sweep at the 1,007th), the model emitted it exactly zero times. Every single run ended because my harness guessed — either deliverable files stopped changing, or a hard deadline hit. The stock harness doesn't ask the model to announce anything: the run simply ends when the model stops calling tools, and that worked in all 1,133 of its runs. My completion mechanism had a 0% compliance rate, and I didn't know until I checked.
 
-That guessing had a failure mode. The "files stopped changing" gate kills a run when deliverables look stable — which also describes an agent that staged a draft early and is quietly thinking. My 56 zero-score tasks have a median wall time of 241 seconds. They weren't slow failures. They were executions. In one healthcare task, the run was cut so early that the "gap analysis" my agent shipped was the *input compliance program*, verbatim. The stock run scored 1.00 on that task. Mine scored 0.00.
+That guessing had a failure mode. The "files stopped changing" gate kills a run when deliverables look stable — which also describes an agent that staged a draft early and is quietly thinking. My 56 zero-score tasks have a median wall time of 241 seconds. They weren't slow failures. They were killed mid-thought. In one Stark Law task, the run was cut so early that the "gap analysis" my agent shipped was the *input compliance program*, verbatim. The stock run scored 1.00 on that task. Mine scored 0.00.
 
 Then there were the files themselves. The stock harness produced 1,431 valid Word documents out of 1,431. My stack produced 73 broken ones — files with unescaped XML and leaked format tokens, placeholder stubs that literally read "PLACEHOLDER - This file will be generated via the Adeu MCP tool chain", and finished memos saved as text under `.docx` names, like the 58 KB one that opened this post.
 
@@ -52,7 +52,7 @@ The model did the legal work. In the zero-score tasks I audited, the analysis wa
 
 The model isn't wrong. The tools aren't wrong. What lost me ten points was the layer I built around them: a completion signal the model never used, a stability gate that executed thinking agents, a writer that produced invalid XML, and a two-stage authoring workflow that sometimes never ran its second stage. Four engineering defects, all mine, all invisible in the score.
 
-When I went looking for whether anyone had measured this properly, I found a whole research field arriving at the same place. Princeton's Holistic Agent Leaderboard team ran 21,730 agent rollouts and found the *same model* swinging up to 48 percentage points depending on which scaffold wrapped it. A position paper published last month — bluntly titled "Stop Comparing LLM Agents Without Disclosing the Harness" — puts numbers on it: on one coding benchmark, six frontier models span just 4.9 points under a single locked harness, while one model moves 9.5 points when you change only the harness around it.
+When I went looking for whether anyone had measured this properly, I found a whole research field arriving at the same place. Princeton's Holistic Agent Leaderboard team ran 21,730 agent rollouts and found the *same model* swinging up to 48 percentage points depending on which scaffold wrapped it. A position paper published last month — bluntly titled "Stop Comparing LLM Agents Without Disclosing the Harness" — puts numbers on it: on SWE-bench Pro, a leading coding benchmark, six frontier models span just 4.9 points under a single locked harness, while one of them (Claude Opus 4.5) moves 9.5 points when you change only the harness around it.
 
 Read that again: the gap between harnesses was twice the gap between the best and worst frontier models.
 
