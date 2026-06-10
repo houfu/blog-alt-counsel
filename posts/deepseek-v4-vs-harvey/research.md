@@ -90,6 +90,20 @@ Yes — separating harness from model is now an active, fast-moving research are
 - "The benchmark measures the environment as much as the model" → for resource-constrained teams evaluating vendors: when a vendor quotes a benchmark score, ask what harness produced it.
 - Free QA: a public benchmark found four real engineering bugs in a personal agent stack — the repurposing teaser (Angle B).
 
+## Addendum (10 June 2026): Anna Guo / LegalBenchmarks.ai ✅ Singapore
+
+User asked how Anna Guo's legal standards work bears on this post.
+
+- **Who:** Anna Guo — Singapore-based lawyer (legal counsel at a health-tech startup; ex-Google, ex-Ant Group, Duke), founder of **LegalBenchmarks.ai**. Built benchmarks "alongside 500+ legal professionals"; advisory board of GCs (Zoom, Morgan Stanley, Razer etc.); steering committee validates assessment criteria — this is her "standards" work: a practitioner-built evaluation framework/standard for legal AI.
+- **Method (Phase 1, Apr 2025, "Putting AI to the Test in Real-World Legal Work"):** 6 tools (GC AI, Vecflow Oliver, NotebookLM, Copilot, ChatGPT, DeepSeek-V3) × 18 real info-extraction tasks from in-house counsel (US/UK/SG/CN); double-blind human evaluation by 2–4 lawyers per task; Accuracy Standard (pass/fail) + Usefulness Factors (helpfulness, length, feature support). Human judges, not LLM judges — the complement of LAB's rubric/LLM-judge design.
+- **Findings that rhyme with the post:**
+  - Legal AI tools did NOT beat general-purpose on accuracy (NotebookLM top at 14/18; ChatGPT & DeepSeek 12/18 matched the legal tools) — but legal tools won on usefulness/workflow. Parallel to "lawyer-made tools didn't beat the generic harness."
+  - **Failure Mode 5: "AI fails when technical or file-handling issues prevent content access"** — "not because of poor reasoning but due to technical constraints": file formats, OCR, upload limits, content filters; tools "silently skip unreadable content… without pointing it out." This is the harness/packaging thesis surfacing at the product level — the product-world mirror of the 58 KB memo.
+  - Her conclusion: "As accuracy gaps narrow, usability and integration will drive the next wave of legal AI adoption" ≈ the binding constraint migrating from model to environment.
+- **Also:** Contract Drafting Benchmark (Sep 2025, human vs AI drafting) and a tool leaderboard now live. She co-hosted/appeared at the SG event "Claude, Copilot, OpenClaw and Legal AI in Practice" (Luma) — same community orbit as the OpenClaw posts.
+- **Sources:** [Phase 1 report](https://www.legalbenchmarks.ai/research/phase-1-research) (CC BY 4.0; cite: Guo & Rodrigues 2025), [About](https://www.legalbenchmarks.ai/about), [Research index](https://www.legalbenchmarks.ai/research)
+- **Used in draft:** paragraph in "When someone shows you a benchmark score" — product-level mirror of the harness problem + Singapore anchor.
+
 ## Additional Sources (not yet read in full)
 
 - [Harness-Bench paper](https://arxiv.org/html/2605.27922v1) — read if post needs a second harness-measurement framework

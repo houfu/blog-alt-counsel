@@ -57,6 +57,16 @@ Working notes for "My agent worked around the tools I gave it."
 - MEMORY_UPDATE blocks appended to both reviewer memory logs (docs/personas/memory/).
 - Review phase CLOSED (2-round cap reached). Remaining: user manual sign-off → backlinks → tag confirm → publish.
 
+## Session 1 (continued) — 10 June 2026: User read-through → substance revision + Anna Guo
+
+User feedback after reading the draft: (1) reads like a diary (fine) but under-explains what Harvey LAB tests for and what his results actually show; (2) asked how Anna Guo's legal standards work bears on this.
+
+**Applied:**
+- Expanded LAB description in "What I actually ran": client-matter anatomy + the $458M Crestview M&A example (57 criteria, 9 planted issues) + "formatting matters for this story" setup.
+- New section "Where my stack lost — and where it won": work-type breakdown (draft −12.9/−11.6 clean; identify −9.9→−4.7 excl. broken = packaging; extract/compare strict-all-pass wins), funds/corp-gov drafting hotspots (−33/−28), litigation/IP/trade-sanctions resilient; closing point — the breakdown beats the single number (tells you what to fix/keep). De-duplicated stats from "It wasn't the model" section accordingly.
+- Anna Guo paragraph in "When someone shows you a benchmark score": LegalBenchmarks.ai (SG-based, human-judged, double-blind), general-purpose matched legal tools on accuracy, Failure Mode 5 (tools fail on file handling "not because of poor reasoning", silently) = harness thesis at product level. Research details appended to research.md (addendum).
+- Note: Marcus had called the work-type breakdown "optional, save for rerun post" in round 1 — user's read-through overrode that; it's now in this post.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.

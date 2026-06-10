@@ -17,7 +17,9 @@ I lost. What I didn't expect was why.
 
 ## What I actually ran
 
-Three weeks ago, Harvey open-sourced its Legal Agent Benchmark (LAB): around 1,250 tasks across 24 practice areas, graded against more than 75,000 expert-written rubric criteria. Each task is a partner-to-associate assignment — draft this agreement, find the issues in this data room — and the agent must hand back reviewable work product. Grading is all-pass: a deal memo that catches eight of ten risks scores as incomplete, because that's how partners review work.
+Three weeks ago, Harvey open-sourced its Legal Agent Benchmark (LAB): around 1,250 tasks across 24 practice areas, graded against more than 75,000 expert-written rubric criteria. Each task is a partner-to-associate assignment, built around a client matter: a fifty-word instruction, a closed universe of documents (some relevant, some deliberately not), and a requirement to hand back reviewable work product. One corporate M&A task, for example, gives the agent a data room for a fictional $458 million acquisition and asks for a board-ready memo on change-of-control provisions — graded against 57 criteria covering nine issues planted across eight material contracts.
+
+Grading is all-pass: a deal memo that catches eight of ten risks scores as incomplete, because that's how partners review work. The rubrics check facts, conclusions, citations, severity ratings, dollar amounts — and formatting. That last one matters for this story.
 
 I ran the same model through it twice:
 
@@ -46,17 +48,29 @@ And the discovery that actually stung: in 100 task folders, my agent had quietly
 
 I gave my agent lawyer-made tools, and it preferred to improvise its own. That made me sadder than the score did.
 
+## Where my stack lost — and where it won
+
+LAB tags every task with the kind of work an associate would recognise: draft, review, analyze, identify issues, extract, compare, research. Splitting the 1,006 shared tasks that way turned one ten-point gap into three different stories:
+
+- **Drafting regressed worst: −12.9 points** across 374 tasks — and still −11.6 with every broken file excluded. Whatever my stack does when authoring long documents, the judge consistently liked it less.
+- **Identify-issues and analyze tasks lost mostly on packaging.** Excluding broken files cuts the identify regression from −9.9 to −4.7 points. The legal thinking was largely intact; the memos didn't survive delivery.
+- **Extract and compare tasks flipped: my stack won.** More perfect-score extractions (3.2% vs 1.6%) and comparisons (7.0% vs 5.4%) than the stock harness managed.
+
+The pattern: my stack is better at mechanical work and worse at composition. And the composition damage concentrated exactly where a fragile authoring pipeline would compound — funds and corporate-governance drafting, the longest and most heavily structured documents in the benchmark, fell 33 and 28 points in those cells. Meanwhile litigation, IP, and trade-sanctions tasks barely noticed the change of harness.
+
+A single leaderboard number would have flattened all of that into "your stack is worse." The breakdown says something far more useful: it tells me what to fix, what to keep, and where my stack is already the better environment.
+
 ## It wasn't the model. It wasn't the tools either.
 
 Here's where the post I planned to write fell apart.
 
-The model did the legal work. In the zero-score tasks I audited, the analysis was frequently done and sometimes done well — it just never survived packaging. And the lawyer-made tooling wasn't the villain either: adeu's fingerprints are on my biggest wins as well as my worst zeros, and on mechanical work my stack actually *beat* the stock harness — more perfect-score extraction tasks (3.2% vs 1.6%) and comparison tasks (7.0% vs 5.4%). Docling, my document reader, was fully exonerated: regression had no correlation with how many documents a task read.
+The model did the legal work. In the zero-score tasks I audited, the analysis was frequently done and sometimes done well — it just never survived packaging. And the lawyer-made tooling wasn't the villain either: adeu's fingerprints are on my biggest wins — those extraction and comparison victories — as well as my worst zeros. Docling, my document reader, was fully exonerated: regression had no correlation with how many documents a task read.
 
 The model isn't wrong. The tools aren't wrong. Most of what lost me ten points was the layer I built around them: a completion signal the model never used, a stability gate that killed thinking agents, a writer that produced invalid XML, and a two-stage authoring workflow that sometimes never ran its second stage. Four engineering defects, all mine, all invisible in the score.
 
 These are also exactly the defects you'd predict when one person is the engineer, the lawyer, the tester, and the QA department. Nobody rubber-ducked my completion logic. No test suite validated my document writer before it ran a thousand tasks. Frontier labs have teams for this. I had a container that worked in my demos.
 
-One honest caveat, because my own data demands it: even with every broken file excluded, documents *drafted* through my stack still scored 11.6 points worse than the stock harness's. I can't yet separate how much of that is my authoring pipeline versus the tools versus the model's fit with them — that's what an ablation rerun is for. On packaging, the verdict is in: that was me. On drafting quality, the verdict isn't in yet.
+One honest caveat, because my own data demands it: that 11.6-point drafting gap survives every exclusion I throw at it. I can't yet separate how much of it is my authoring pipeline versus the tools versus the model's fit with them — that's what an ablation rerun is for. On packaging, the verdict is in: that was me. On drafting quality, the verdict isn't in yet.
 
 When I went looking for whether anyone had measured this properly, I found a whole research field arriving at the same place. Princeton's Holistic Agent Leaderboard team ran 21,730 agent rollouts and found the *same model* swinging up to 48 percentage points depending on which scaffold wrapped it. A position paper published last month — bluntly titled "Stop Comparing LLM Agents Without Disclosing the Harness" — puts numbers on it: on SWE-bench Pro, a leading coding benchmark, six frontier models span just 4.9 points under a single locked harness, while one of them (Claude Opus 4.5) moves 9.5 points when you change only the harness around it.
 
@@ -69,6 +83,8 @@ My ten-point gap, on legal work, with the model held constant, is the same findi
 For solo counsels and small teams, this changes how to read every legal AI claim. Every benchmark score is jointly produced by a model and a harness, and the harness is the part nobody discloses. When a vendor says "our system scores X on legal tasks," the polish of their harness — the completion logic, the document writers, the retry behaviour, the packaging validation — is baked invisibly into X.
 
 Harvey seems to understand this better than its marketing peers. LAB launched deliberately *without* a leaderboard, because Harvey says it first wants standards for normalising submissions. That's an admission worth noticing: nobody yet knows how to compare agent results fairly across different stacks. I'd put it more strongly. Benchmarks like this don't favour frontier *models* so much as they reward polished *harnesses* — which frontier labs and well-funded vendors have, and the rest of us have to build on weekends.
+
+The same problem shows up at the product level, closer to home. Anna Guo, a Singapore-based in-house counsel, runs LegalBenchmarks.ai — double-blind evaluations of legal AI tools, scored by panels of practising lawyers rather than rubrics. Her findings rhyme with mine from the other side: general-purpose chatbots matched purpose-built legal tools on raw accuracy, and one of her six documented failure modes is tools failing "not because of poor reasoning but due to technical constraints" — file formats, upload limits, OCR — sometimes silently skipping content without telling the lawyer. The product world files that under usability. The agent world calls it the harness. Either way, the layer between the model and the legal work is deciding more than anyone discloses.
 
 So before trusting any agent benchmark number, I now ask three questions:
 
