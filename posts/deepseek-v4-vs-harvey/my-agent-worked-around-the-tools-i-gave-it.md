@@ -11,7 +11,9 @@ Somewhere in my benchmark results sits a complete legal memorandum. Fifty-eight 
 
 Not zero because the law was wrong. Zero because my agent saved the memo as raw markdown under a `.docx` filename, the judge couldn't open it, and no criterion passed. The legal work was finished. The packaging failed.
 
-I found that memo because I went looking for why my agent stack lost a bet I was sure it would win. I believed a set of lawyer-made tools would beat a generic harness at legal work. I ran over 2,200 benchmark tasks to prove it. I was wrong — but in a more interesting way than the score suggested.
+I found that memo because I went looking for why my agent stack lost a bet I was sure it would win. I believed a set of lawyer-made tools would beat a generic harness at legal work. I ran over 2,200 benchmark tasks to prove it.
+
+I lost. What I didn't expect was why.
 
 ## What I actually ran
 
@@ -36,7 +38,7 @@ My first instinct was the obvious one: maybe DeepSeek just can't do legal work i
 
 The first discovery: my agent never once told me it was done. My harness expected the model to emit a `STATUS: DONE` string when it finished. In 1,007 runs (a credit outage paused the sweep at the 1,007th), the model emitted it exactly zero times. Every single run ended because my harness guessed — either deliverable files stopped changing, or a hard deadline hit. The stock harness doesn't ask the model to announce anything: the run simply ends when the model stops calling tools, and that worked in all 1,133 of its runs. My completion mechanism had a 0% compliance rate, and I didn't know until I checked.
 
-That guessing had a failure mode. The "files stopped changing" gate kills a run when deliverables look stable — which also describes an agent that staged a draft early and is quietly thinking. My 56 zero-score tasks have a median wall time of 241 seconds. They weren't slow failures. They were killed mid-thought. In one Stark Law task, the run was cut so early that the "gap analysis" my agent shipped was the *input compliance program*, verbatim. The stock run scored 1.00 on that task. Mine scored 0.00.
+That guessing had a failure mode. The "files stopped changing" gate kills a run when deliverables look stable — which also describes an agent that staged a draft early and is quietly thinking. My 56 zero-score tasks have a median wall time of 241 seconds. They weren't slow failures. They were killed mid-thought. The dead completion signal is funny in a bleak way; this one is worse. I built that gate to be careful, and it spent a thousand runs terminating work in progress. In one Stark Law task, the run was cut so early that the "gap analysis" my agent shipped was the *input compliance program*, verbatim. The stock run scored 1.00 on that task. Mine scored 0.00.
 
 Then there were the files themselves. The stock harness produced 1,431 valid Word documents out of 1,431. My stack produced 73 broken ones — files with unescaped XML and leaked format tokens, placeholder stubs that literally read "PLACEHOLDER - This file will be generated via the Adeu MCP tool chain", and finished memos saved as text under `.docx` names, like the 58 KB one that opened this post.
 
@@ -50,7 +52,11 @@ Here's where the post I planned to write fell apart.
 
 The model did the legal work. In the zero-score tasks I audited, the analysis was frequently done and sometimes done well — it just never survived packaging. And the lawyer-made tooling wasn't the villain either: adeu's fingerprints are on my biggest wins as well as my worst zeros, and on mechanical work my stack actually *beat* the stock harness — more perfect-score extraction tasks (3.2% vs 1.6%) and comparison tasks (7.0% vs 5.4%). Docling, my document reader, was fully exonerated: regression had no correlation with how many documents a task read.
 
-The model isn't wrong. The tools aren't wrong. What lost me ten points was the layer I built around them: a completion signal the model never used, a stability gate that executed thinking agents, a writer that produced invalid XML, and a two-stage authoring workflow that sometimes never ran its second stage. Four engineering defects, all mine, all invisible in the score.
+The model isn't wrong. The tools aren't wrong. Most of what lost me ten points was the layer I built around them: a completion signal the model never used, a stability gate that killed thinking agents, a writer that produced invalid XML, and a two-stage authoring workflow that sometimes never ran its second stage. Four engineering defects, all mine, all invisible in the score.
+
+These are also exactly the defects you'd predict when one person is the engineer, the lawyer, the tester, and the QA department. Nobody rubber-ducked my completion logic. No test suite validated my document writer before it ran a thousand tasks. Frontier labs have teams for this. I had a container that worked in my demos.
+
+One honest caveat, because my own data demands it: even with every broken file excluded, documents *drafted* through my stack still scored 11.6 points worse than the stock harness's. I can't yet separate how much of that is my authoring pipeline versus the tools versus the model's fit with them — that's what an ablation rerun is for. On packaging, the verdict is in: that was me. On drafting quality, the verdict isn't in yet.
 
 When I went looking for whether anyone had measured this properly, I found a whole research field arriving at the same place. Princeton's Holistic Agent Leaderboard team ran 21,730 agent rollouts and found the *same model* swinging up to 48 percentage points depending on which scaffold wrapped it. A position paper published last month — bluntly titled "Stop Comparing LLM Agents Without Disclosing the Harness" — puts numbers on it: on SWE-bench Pro, a leading coding benchmark, six frontier models span just 4.9 points under a single locked harness, while one of them (Claude Opus 4.5) moves 9.5 points when you change only the harness around it.
 
@@ -67,7 +73,7 @@ Harvey seems to understand this better than its marketing peers. LAB launched de
 So before trusting any agent benchmark number, I now ask three questions:
 
 1. **What harness produced this score?** Same model, different wrapper, ±10 points or more.
-2. **Who decided when each run ended?** If the harness guesses, some runs died mid-thought.
+2. **Who decided when each run ended?** If the harness guesses, some runs died mid-thought — that's how a verbatim copy of an input document became my agent's "gap analysis."
 3. **What happened to outputs that failed packaging?** A zero might be wrong law — or finished law in a file the judge couldn't open.
 
 None of these appear on a leaderboard. All of them moved my results more than the model did.
@@ -78,7 +84,7 @@ There's one more place this lesson applies, and it's the reason this post isn't 
 
 Adeu is another lawyer-coder's open-source project. My first instinct after the loss was that the tooling had failed me. The forensics say otherwise: most of the damage came from my integration — my completion signal, my stability gate, my conversion step that never ran. Whatever share belongs to the tool itself, I can't separate it from my own engineering until I rerun the broken tasks with my defects fixed. Blaming the tool now would repeat the exact mistake the benchmark made about the model: reading a composite score as a verdict on one component.
 
-So the plan is attribution first. Fix my four defects, rerun the ~125 broken and zero-score tasks (about 10% of a sweep), and then file what I owe the maintainer: an upstream bug report with a thousand runs of forensics attached, instead of a vague complaint that it "didn't work."
+So the plan is attribution first. Fix my four defects — starting with the obvious one, replacing the text-based done signal with a proper finish tool — rerun the ~125 broken and zero-score tasks (about 10% of a sweep), and then file what I owe the maintainer: an upstream bug report with a thousand runs of forensics attached, instead of a vague complaint that it "didn't work."
 
 I once wrote that legal open source is a federation of solo-author archipelagos — projects that never receive the outside contributions that would make them a community. Bob Ambrogi quoted that line back at me when LAB launched, asking whether Harvey's benchmark would leave room for outsiders to shape it. Fair question. But contribution has to flow both ways: a stranger running your tool through 1,006 legal tasks and filing detailed bugs is what the alternative to open-source theatre actually looks like. I'd rather be that stranger than another archipelago.
 
