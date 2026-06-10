@@ -24,7 +24,7 @@ I ran the same model through it twice:
 - **The stock harness** (1,251 tasks): LAB's default setup. Six generic tools — bash, read, write, edit, glob, grep — plus Pandoc (a document converter) and pdfplumber (a PDF reader).
 - **My stack** (1,006 of the same tasks): the same model inside my nanoclaw container, wired to adeu, an MCP document-authoring tool built by a fellow lawyer-coder, and docling, a library that converts PDFs and Office files into text an agent can read.
 
-The model in both runs was DeepSeek-v4-flash through Ollama. Not a frontier model. Not a legal model. A model that costs approximately nothing.
+The model in both runs was DeepSeek-v4-flash through Ollama. Not a frontier model. Not a legal model. A model that costs approximately nothing — though "nothing" is doing some work there: each sweep exhausted a week of my Ollama token quota, so the experiment took two weeks of waiting for a benchmark that frontier labs run in an afternoon.
 
 My theory was simple: tools made by lawyers, for legal documents, should beat bash and Pandoc at producing legal documents. The agent would redline with a proper redlining tool, author Word files with a proper authoring chain, and the generic setup would be left improvising.
 
@@ -90,7 +90,7 @@ I once wrote that legal open source is a federation of solo-author archipelagos 
 
 ## The benchmark was the product
 
-I set out to prove my stack was better and got something more useful: the most thorough QA report my agent has ever had, free. Harvey built a 75,000-criterion test suite with frontier-lab research partners; running it cost me one credit outage and a weekend of log reading. It found four real bugs in my harness that no amount of demo-driven tinkering would have surfaced, told me exactly which work types my stack is already good at, and handed me a fix list with measurable recovery criteria.
+I set out to prove my stack was better and got something more useful: the most thorough QA report my agent has ever had, nearly free. Harvey built a 75,000-criterion test suite with frontier-lab research partners; running it cost me two weeks of Ollama token quota and a credit outage that cut my second sweep short. It found four real bugs in my harness that no amount of demo-driven tinkering would have surfaced, told me exactly which work types my stack is already good at, and handed me a fix list with measurable recovery criteria.
 
 That's the teaser for the next post: how to use someone else's benchmark as your own test suite. (And, when the rerun is done, whether my ten points come back.)
 
