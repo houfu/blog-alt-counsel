@@ -30,7 +30,7 @@ Running all 3 on every post produces diminishing returns after round 1.
 
 Run review in this sequence — each step gates the next:
 
-1. **Pitch checkpoint (drift gate).** Compare the draft against pitch.md on thesis, scope, and emotional core. If they've diverged, stop and decide with the user: revise the draft to match the pitch, or amend the pitch and record the decision in discussion.md. Never amend the pitch retroactively to justify drift that already happened — that defeats "the pitch is the contract."
+1. **Pitch checkpoint.** Compare the draft against pitch.md on thesis, scope, and emotional core. If they've diverged, stop and decide with the user which artifact is wrong: the draft wandered (revise it back), or the pitch itself was defective — in which case **amending the pitch is the correct move**. When amending, record in discussion.md why the pitch was wrong and which pitch-interrogation question (diagnosis test, differentiation, framing risk — see generate_a_pitch Step 3.6) would have caught it earlier. The goal is catching bad pitches sooner, not defending bad pitches longer.
 2. **One content quality audit, maximum, before reviewers.** Apply critical fixes only (accuracy, accessibility, Ghost blockers); hold judgment calls (tone, structure) for the reviewers. Recent posts ran 3-4 audit polish cycles before any reviewer saw the draft — that's the round cap being bypassed under another name.
 3. **Reviewer round(s)** per the routing table above.
 4. **Length audit before applying additive fixes** (see below).
@@ -74,6 +74,15 @@ Claude: Synthesising — consensus on X; Marcus alone caught Y; disagreement on 
 User: What if we tried this?
 Claude: Follow-up round (round 2 of 2).
 ```
+
+## Synthesizing feedback: separate template from unique
+
+Each persona has standing asks that appear in most of their reviews (Sarah: costs/time/security/Monday-morning action; Marcus: concrete examples/jargon/differentiation; Wei Lin: emotional beat/next step). When reporting feedback to the user, label each item **[standing ask]** or **[unique catch]**:
+
+- Standing asks should have been pre-empted at draft time (see pre-review-checklist.md). Batch-apply the legitimate ones without debate; they never justify another round.
+- Unique catches — feedback specific to this post's substance — are the actual value of the round and the only thing worth a round-2 discussion.
+
+This labelling also keeps an honest record of whether each reviewer is earning their place.
 
 ## Reminders
 

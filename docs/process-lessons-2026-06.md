@@ -41,7 +41,41 @@ Successor to `review-discussions-analysis.md` (2026-02-19), whose recommendation
 - **User chooses among 2-3 framing options Claude surfaces** — produces more conviction than Claude picking a frame.
 - **Visuals planned in the pitch** (screenshot list, feature-image brief) prevents publish-day scrambles.
 
-## Part 4: Stalled-post ground truth
+## Part 4: Agent usefulness audit (2026-06-10, second pass)
+
+**Methodology caveat that governs this whole document:** discussion.md files are Claude's self-reports and tend to narrate feedback as valuable and process steps as justified. Judge agents by *outcomes* (did the post change, did the change stick), not by the narration. This second pass applied that lens.
+
+### Correction to Part 1's "pitch drift" finding
+
+Part 1 originally coded mid-draft pitch amendments as drift-discipline failures. Forensics on the actual pitch changes shows that's wrong: in the clear-cut cases the **pitch itself was defective** and amending it was correct. The real defect was upstream — nothing stress-tested the pitch before a full draft was spent on it:
+
+| Post | Pitch defect | Catchable at pitch time by |
+|---|---|---|
+| single-serving-bias | Built on user's self-diagnosis ("abstraction bias") that was wrong | Probing the diagnosis ("does this actually explain the tension?") |
+| year-in-review-2025 | "444 articles, gradual shift" — never queried | Running the SQL before locking the pitch |
+| legal-oss-contribution | Named LegalQuants as anchor; read as an attack | "Could a named community read this as an attack?" |
+| prompt-engineering-wrong | None — facts held; only tone was calibrated | N/A (good pitch) |
+
+**Rule change applied:** the REVIEW-phase pitch checkpoint no longer forbids amendments; it requires recording *why the pitch was wrong and which interrogation question would have caught it*. generate_a_pitch gained Step 3.6 (diagnosis test, differentiation question, framing-risk question).
+
+### Are the reviewers templated?
+
+~70% of recorded reviewer advice is the persona's standing ask; ~20-30% is post-specific with high adoption:
+
+| Agent | Verdict | Standing asks (frequency) | Best unique catches |
+|---|---|---|---|
+| Wei Lin | **Most useful, least templated** | emotional beat, next step (5/11) | "visitor in both communities" double-bind; disclosure-before-data sequencing (both restructured legal-oss-contribution) |
+| Sarah Chen | Useful | costs/time (6/10), implementation reality (6/10), security, Monday-morning action | PDPA vs NDA ROI quantification ($660-1,110 vs $510/yr) justifying legal-plugin-guide's pivot; security-as-dealbreaker forcing prompt-engineering-wrong's compliance section |
+| Marcus Tan | Useful, but **his best move belongs at pitch stage** | concrete examples (7/9), jargon (5/9) | "always 'another NDA guide'" differentiation catch — made post-draft when it should gate the pitch |
+| content-quality-auditor | **Mostly templated (~90% mechanical)** | heading skips (8/19), repetition (9/19), alt text (7/19), long sentences (11/19), terminology (4/19) | pitch-divergence catch on legal-plugin-guide; 750-word redundant section in prompt-engineering-wrong |
+
+**Changes applied:** lint-posts.js now checks heading skips, empty alt text, and GitHub spelling (plus the existing horizontal rules/frontmatter/image sizes), freeing the auditor for judgment calls; the auditor agent's brief now says so explicitly. CLAUDE.md's reviewer guide records the measured value per persona; WRITE phase pre-empts standing asks; getting-feedback synthesis labels feedback **[standing ask]** vs **[unique catch]**, and only unique catches justify a round 2. The labels also build a running record for re-checking whether each reviewer keeps earning its place.
+
+### Churn check
+
+Add-then-cut churn from reviewer advice is rarer than Part 1 implied — one clear case (prompt-engineering-wrong learning-curve detail added ~180w, user cut to ~40w). Most applied feedback sticks; rejected feedback is rejected for stated reasons. The reviewers are calibrated; the waste is in *when* they're consulted (too late for differentiation, after too many audit cycles) rather than *what* they say.
+
+## Part 5: Stalled-post ground truth
 
 Posts that looked abandoned in the repo were mostly published long ago and never synced:
 

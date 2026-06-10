@@ -96,6 +96,16 @@ A pitch is a hypothesis, not a finding. Before locking it:
 - For time-investment claims, **ask the user for their lived numbers** ("How many hours did this actually take? Evenings or full days?"). Never derive time estimates from lines of code or other formulas.
 - If verification must wait (e.g., needs Ghost access), mark the claim in pitch.md as `[UNVERIFIED]` so drafting doesn't treat it as fact.
 
+### Step 3.6: Interrogate the Pitch
+
+Past pitch failures were catchable at this stage. Before locking, ask three questions and record the answers in pitch.md:
+
+1. **Test the diagnosis.** If the pitch is built on the user's own problem framing, probe it instead of accepting it: "Does [diagnosis] actually explain the tension? What would contradict it?" (single-serving-bias shipped a wrong diagnosis into a full draft; one probing question at pitch time surfaced the real insight.)
+2. **The differentiation question.** "This will always be 'another [X] post' — what makes ours different?" If there's no answer, the pitch isn't ready.
+3. **The framing risk question.** "Could a named person, company, or community read this as an attack?" If yes, decide now whether to anonymize or reframe — not after drafting (legal-oss-contribution had to anonymize its anchor example post-draft).
+
+A pitch amended mid-draft is not a sin, but it means this step failed — when it happens, note in discussion.md which of these questions would have caught it.
+
 ### Step 3.7: Seed Must-Link Posts and Timeline
 
 - Identify 2-3 **must-link prior posts** this post builds on or contradicts (use `ghost_search`). List them in pitch.md under "Prior work". This makes linking a structural decision instead of last-minute polish; full curation still happens at final draft via `backlink_curating`.

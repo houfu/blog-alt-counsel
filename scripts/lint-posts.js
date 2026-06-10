@@ -103,6 +103,48 @@ function checkHorizontalRules(body, folder, file, status) {
   }
 }
 
+// Mechanical checks the content-quality audit used to repeat on most posts
+// (heading skips: 8/19 audited posts; missing alt text: 7/19; GitHub
+// terminology: 4/19). Linting them frees the auditor for judgment calls.
+function checkMechanicalDefects(body, folder, file) {
+  const lines = body.split('\n');
+  let inCode = false;
+  let prevLevel = 0;
+  const headingSkips = [];
+  const missingAlt = [];
+  let badGithub = 0;
+
+  lines.forEach((line, i) => {
+    if (/^```/.test(line.trim())) inCode = !inCode;
+    if (inCode) return;
+
+    const heading = line.match(/^(#{1,6})\s/);
+    if (heading) {
+      const level = heading[1].length;
+      if (prevLevel > 0 && level > prevLevel + 1) headingSkips.push(`line ${i + 1} (h${prevLevel}->h${level})`);
+      prevLevel = level;
+    }
+
+    for (const img of line.matchAll(/!\[([^\]]*)\]\(/g)) {
+      if (img[1].trim() === '') missingAlt.push(i + 1);
+    }
+
+    // "Github"/"github" in prose (not URLs or code spans)
+    const noUrls = line.replace(/\(https?:\/\/[^)]*\)|`[^`]*`|https?:\/\/\S+/g, '');
+    badGithub += (noUrls.match(/\bGithub\b/g) || []).length;
+  });
+
+  if (headingSkips.length > 0) {
+    warn(folder, `${file} skips heading levels: ${headingSkips.join(', ')}`);
+  }
+  if (missingAlt.length > 0) {
+    warn(folder, `${file} has image(s) with empty alt text at line(s) ${missingAlt.join(', ')}`);
+  }
+  if (badGithub > 0) {
+    warn(folder, `${file} spells "Github" (${badGithub}x) — house style is "GitHub"`);
+  }
+}
+
 function lintFolder(folder) {
   const folderPath = path.join(POSTS_DIR, folder);
   const files = fs.readdirSync(folderPath);
@@ -144,6 +186,7 @@ function lintFolder(folder) {
   }
 
   checkHorizontalRules(parsed.content, folder, main, fm.status);
+  checkMechanicalDefects(parsed.content, folder, main);
 
   for (const f of files) {
     if (/\.(png|jpg|jpeg|gif|webp)$/i.test(f)) {

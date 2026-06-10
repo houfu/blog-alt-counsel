@@ -316,6 +316,15 @@ The blog serves three overlapping but distinct audience segments:
 
 **Default to 1-2 reviewers based on content type. Use all 3 only when content explicitly addresses all three audience segments. Running all 3 on every post produces diminishing returns after round 1.**
 
+### Measured Reviewer Value (from discussion.md audit, 2026-06)
+
+An evidence audit of every recorded review found ~70% of reviewer advice is templated per persona, ~20-30% is post-specific and high-adoption. Use them accordingly:
+
+- **Wei Lin: highest signal (least templated).** Best unique catches are about design intent and sequencing ("the 23-month gap disclosure earns the right BEFORE the wider data"). Prefer Wei Lin when only one reviewer fits.
+- **Marcus's best move belongs at PITCH, not draft.** His highest-value catch ever — "an NDA guide will always be 'another NDA guide'; what's different?" — forced an angle pivot after a full draft existed. Ask his differentiation question during pitch interrogation instead.
+- **Sarah's template is predictable — pre-empt it.** Costs, time, security/compliance, "what do I do Monday morning": bake these into the draft (see WRITE phase), then use her round for the practitioner-reality catches only she makes.
+- **When synthesizing feedback, separate template from unique.** Label which advice is the persona's standing ask vs. specific to this post. Only unique catches justify another round; standing asks should have been pre-empted and can be batch-applied without debate.
+
 ### Reviewer Routing Table
 
 | Content Type | Recommended Reviewers | Rationale |
@@ -356,14 +365,16 @@ The blog serves three overlapping but distinct audience segments:
    - Read Voice Guide Part 4 (Templates) before developing pitch
    - Tags are suggested during pitch using `tag-registry` skill
    - **Verify data before locking the pitch.** A pitch is a hypothesis, not a finding. If it contains numbers or claims (article counts, hours spent, adoption stats), check them against the actual data first — year-in-review's pitch said "444 articles" (actual: 27) and data-zeeker's said "600 hours" (actual: ~150); both forced full rewrites. For time estimates, ask the user for lived numbers — never derive them from lines of code.
+   - **Interrogate the pitch before locking it.** Forensics on past pitch failures show they were catchable at pitch time with three questions: (1) *Test the diagnosis* — when the user offers a problem framing, probe it instead of building on it ("if all clients are unique, is abstraction bias really the tension?" would have saved single-serving-bias a full reframe). (2) *The differentiation question* — "this will always be 'another X guide'; what makes ours different?" (Marcus Tan's highest-value catch, made at draft stage on legal-plugin-guide when it belonged at pitch). (3) *The framing risk question* — "could a named person or community read this as an attack?" (legal-oss-contribution had to anonymize LegalQuants after drafting).
    - Identify 2-3 **must-link prior posts** the new post builds on or contradicts; note them in the pitch. Full backlink curation still happens at final draft, but seeding links at pitch time prevents last-minute, tacked-on linking.
 2. **WRITE** - Draft the content
    - **CRITICAL: Read `/docs/Houfu_Voice_Guide.md` before writing blog posts**
    - **Also read 1-2 recent published posts** to sample the live voice (sentence rhythm, narrative-first pacing). Recurring failure: Claude drafts in expository/analytical "blog voice" and the user has to demand a narrative rewrite (ai-fragmentation lost a full draft to this).
    - Apply voice patterns from guide during drafting
+   - **Pre-empt the predictable reviewer asks.** ~70% of recorded reviewer advice is the same per persona. Address it in the draft so review rounds are spent on post-specific catches, not templates: cost/time/budget reality and security-compliance where relevant (Sarah asks in 6/10 reviews), concrete examples and jargon defined on first use (Marcus, 7/9), an honest emotional beat and a concrete next step (Wei Lin, 5/11). The pre-review checklist in the getting-feedback skill covers these.
 3. **REVIEW** - Quality checks and refinement, **in this order**:
-   1. **Pitch checkpoint (the drift gate).** Before any review, compare the draft against the pitch on thesis, scope, and emotional core. If they've diverged, decide explicitly with the user — revise the draft to match the pitch, or amend the pitch and record the decision in discussion.md. Do not amend the pitch retroactively to justify drift that already happened.
-   2. **One content quality audit** (content-quality-auditor agent — includes voice check via audit-tone). **Maximum 1 audit round before reviewers see the draft.** Apply critical fixes only; hold judgment calls (tone, structure) for reviewers. Audit hoarding — 3-4 polish cycles before any reviewer input — is how the round cap gets bypassed (open-claw-intro ran 4+ cycles this way).
+   1. **Pitch checkpoint.** Before any review, compare the draft against the pitch on thesis, scope, and emotional core. If they've diverged, decide explicitly with the user: either the draft wandered (revise it back), or **the pitch was wrong — amending it is then the correct move, not a violation.** When amending, record in discussion.md *why the pitch was wrong and which pitch-time check would have caught it* (untested diagnosis? unverified data? framing risk?). That feedback loop is the point: a mid-draft pitch change means pitch interrogation failed, and the workflow should learn from it rather than hide it.
+   2. **Run `npm run lint-posts <folder>` first, then one content quality audit** (content-quality-auditor agent — includes voice check via audit-tone). The linter now covers the audit's most-repeated mechanical findings (horizontal rules, heading skips, empty alt text, GitHub spelling, image sizes) — the audit should spend its round on judgment calls (semantic repetition, jargon, tone, example sufficiency), not re-reporting lintable defects. **Maximum 1 audit round before reviewers see the draft.** Audit hoarding — 3-4 polish cycles before any reviewer input — is how the round cap gets bypassed (open-claw-intro ran 4+ cycles this way).
    3. **Target audience review** (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
    4. **Length audit BEFORE applying additive reviewer fixes** — this ordering is the most-violated rule (followed in ~40% of recent posts). If reviewer fixes would add >~10% length, find the cuts first, then apply the fixes.
    5. Backlink curation (backlink_curating skill)
