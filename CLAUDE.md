@@ -19,18 +19,22 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
 **Brand Position**: "The Solo Counsel's Tech Strategist" - practical problem-solver who helps resource-constrained legal departments leverage technology for real impact.
 
 ## Directory Structure
-- `/temp/` - Temporary folder
-- '/posts/' - Place to store posts and work in progress
-  - '{post-short-title}' - Each post is stored in its own folder using a short memorable title
-    - '{post-title}.md' - This file contains the content of the post and some metadata
-    - 'discussion.md' - This file stores the memories of claude involved in writing the post
-    - 'pitch.md' - This file stores the pitch of the post used to create the post.
-    - It also contains images, research documents and others relating to this post. 
+- `/temp/` - Temporary folder (gitignored)
+- `/posts/` - Place to store posts and work in progress (see `/posts/README.md` for the folder standard)
+  - `{post-short-title}/` - Each post is stored in its own folder using a short memorable title
+    - `{post-short-title}.md` - The post content with YAML frontmatter. **New posts: name the main file after the folder.** (Older posts vary; the linter warns on mismatches.)
+    - `discussion.md` - This file stores the memories of claude involved in writing the post
+    - `pitch.md` - This file stores the pitch of the post used to create the post.
+    - It also contains images, research documents and others relating to this post.
 - `/docs/` - Documentation and analysis
   - `/docs/personas/` - Full persona documents for the three audience reviewer agents
     - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
+    - `sarah-chen-persona.md` - In-house Lawyer Reviewer
     - `wei-lin-persona.md` - Lawyer-Coder Reviewer
+    - `memory/<agent-name>.md` - Persistent reviewer memory (standing asks, unique catches, settled disagreements) — read by reviewers before each round, appended after
+- `/scripts/` - Canonical Node/shell tooling (publish, sync, lint, verify)
 - `/.claude/` - Claude Code agents, skills and configuration
+- `/.mcp.json` - Project MCP server config (Jina, Ghost). **Never hardcode API keys here — reference env vars** (e.g. `${JINA_API_KEY}`).
 - `/node_modules/` - Node.js dependencies (ignored by git)
 
 ## Post Structure and Metadata
@@ -86,8 +90,10 @@ claude mcp add ghost -- ghst mcp stdio --tools all
 ```
 
 **Custom scripts still used:**
-- `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion)
+- `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion, **local image upload**, 418/5xx retry). `--dry-run` converts and prints the lexical JSON with no credentials or API calls. Conversion logic is covered by `npm test` (`tests/test-lexical.js`) — extend the fixture when adding converter features.
 - `scripts/sync-from-ghost.js` — Syncs Ghost metadata back to local markdown frontmatter (`npm run sync-ghost <slug>`)
+- `scripts/lint-posts.js` — Lints post folders: frontmatter, naming, horizontal rules, oversized images (`npm run lint-posts`, add `--strict` for new posts). Run it before publishing.
+- `scripts/verify.sh` — Repo health check: file presence, script syntax, secret scan, agent/skill frontmatter, post lint (`npm run verify`). Runs in CI on every PR (`.github/workflows/verify.yml`).
 
 **Searching the blog:**
 - Use `ghost_search` MCP tool directly (full-text across posts, pages, tags).
@@ -103,23 +109,28 @@ Ghost API credentials are needed for `publish-lexical.js`, `sync-from-ghost.js`,
 
 Copy `.env.example` to `.env` and fill in your values.
 
-### Claude Code Hooks (auto-commit + auto-notes)
+### Claude Code Hooks
 
-A `SessionEnd` hook at `.claude/hooks/session-wrap.sh` fires when a Claude session ends. If there are uncommitted changes under `posts/`, it spawns `claude -p` to append a session entry to each affected `discussion.md`, then stages and commits. The result is one batched `Session notes: <folder> — <summary>` commit per session, replacing the per-exchange commit noise seen in recent PRs.
+Hooks enforce the rules that prose alone didn't (discussion-log evidence: prose-only rules got 40-60% adherence; mechanical ones held). Wired in `.claude/settings.json`:
 
-- To trigger manually mid-session: run `/wrap-up` (or `bash .claude/hooks/session-wrap.sh`).
-- To skip once: `CLAUDE_HOOK_SESSION_SKIP_WRAP=1` before ending the session.
-- Debug log: `.claude/state/session-wrap.log` (gitignored).
+| Hook | Event | What it does |
+|---|---|---|
+| npm bootstrap | SessionStart | Installs node_modules if missing (Claude Code on the web) |
+| `ghst-auth.sh` | SessionStart | Authenticates ghst CLI from `.env`; reports loudly if setup is broken |
+| `pre-publish-gate.js` | PreToolUse (Bash) | **Denies** any `publish-lexical.js` run while the post has lint ERRORS (horizontal rules etc. that break lexical conversion) |
+| `reviewer-memory-gate.js` | PreToolUse (Task) | **Denies** spawning an audience reviewer whose prompt doesn't reference its memory file (`docs/personas/memory/<agent>.md`) — no more amnesiac reviews |
+| `post-edit-lint.js` | PostToolUse (Edit\|Write) | Lints a post folder right after its main file is edited: errors are fed back to fix immediately, warnings surface as context |
+| `stop-note-check.js` | Stop | If post content changed this session without a discussion.md update, blocks the turn-end once and instructs Claude to append the session/decision notes — the user should never have to ask for note-taking |
+| `session-wrap.sh` | SessionEnd | Backstop: appends session notes to affected `discussion.md` files via `claude -p` (mining the session **transcript** for user decisions, not just the diff) and commits one `Session notes:` commit per session. Covers folders touched by commits this session, not just uncommitted changes |
 
-### Pre-Commit Hook
+Session-wrap notes: trigger manually with `/wrap-up`; skip once with `CLAUDE_HOOK_SESSION_SKIP_WRAP=1` (Stop-hook equivalent: `CLAUDE_HOOK_SKIP_NOTE_NAG=1`); debug log at `.claude/state/session-wrap.log` (gitignored). History note: the v1 SessionEnd hook never produced a commit — it only looked at uncommitted changes, which well-run sessions don't leave behind. If `Session notes:` commits stop appearing again, check the log rather than assuming notes are being taken.
 
-A pre-commit hook warns when a post file is staged without also staging `discussion.md`. Install it once with:
+### Pre-Commit Hook (git)
 
-```bash
-npm run setup-hooks
-```
+Install once with `npm run setup-hooks`. Two checks:
 
-The hook is non-blocking (exits 0) — it warns but never prevents a commit. With the SessionEnd hook auto-staging `discussion.md`, this reminder fires mostly on manual commits.
+1. **Secret scan (BLOCKING)** — staged changes matching API-key patterns (`jina_`, `sk-`, `ghp_`, AWS, private keys) abort the commit. A real key was once committed to this public repo; this is the guard. Override a false positive with `SKIP_SECRET_SCAN=1 git commit ...`.
+2. **Note-taking reminder (non-blocking)** — warns when post content is staged without `discussion.md`.
 
 
 ## GitHub CLI Integration
@@ -194,6 +205,16 @@ Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are
 
 **Why this matters:**
 For series posts, each part should build on previous parts, not repeat them. Reading discussion.md helps you understand what's already been covered and maintain a holistic view across the entire series.
+
+### Series Discipline
+
+**Complete and publish Part 1 before planning Parts 2+.** Detailed multi-part plans create false confidence and become traps: contract-review-skill planned a 5-episode series in depth and never built episode one; data-zeeker-sg's series structure changed 4+ times across 11 sessions.
+
+Red flags that a series plan is becoming a trap — when you see them, explicitly ask the user "should we descope this to a single post?":
+- The plan is comprehensive but Part 1 hasn't been drafted
+- The series depends on an external event or someone else's decision
+- The structure has already changed twice
+- Planning sessions outnumber writing sessions
 
 ## Writing Voice & Style
 
@@ -272,10 +293,13 @@ The blog serves three overlapping but distinct audience segments:
 
 **Full persona details**: `/docs/personas/marcus-tan-persona.md`
 
-### 2. Corporate Lawyer Reviewer (Sarah Chen)
+### 2. In-house Lawyer Reviewer (Sarah Chen)
 **Persona**: Solo corporate lawyer at 150-person manufacturing company ($150/month budget)
 **Use for**: Tool evaluations, budget-conscious solutions, pragmatic workflows
 **Key values**: Affordability, realistic time estimates, practical relevance
+**Agent name**: `inhouse-lawyer-reviewer`
+
+**Full persona details**: `/docs/personas/sarah-chen-persona.md`
 
 ### 3. Lawyer-Coder Reviewer (Wei Lin)
 **Persona**: Senior Legal Counsel at Series B fintech (lawyer who codes, 5-10 hours/week side projects)
@@ -288,7 +312,7 @@ The blog serves three overlapping but distinct audience segments:
 
 **Use individual reviewers** when content clearly targets one segment:
 - **legal-tech-blog-reviewer**: "How I built an open source legal document parser"
-- **corporate-lawyer-reviewer**: "Evaluating contract management tools under $200/month"
+- **inhouse-lawyer-reviewer**: "Evaluating contract management tools under $200/month"
 - **lawyer-coder-reviewer**: "Why I abandoned my side project after 150 hours"
 
 **Use /feedback command (all three)** when:
@@ -297,6 +321,16 @@ The blog serves three overlapping but distinct audience segments:
 - Unsure which audience will resonate most
 
 **Default to 1-2 reviewers based on content type. Use all 3 only when content explicitly addresses all three audience segments. Running all 3 on every post produces diminishing returns after round 1.**
+
+### Measured Reviewer Value (from discussion.md audit, 2026-06)
+
+An evidence audit of every recorded review found ~70% of reviewer advice is templated per persona, ~20-30% is post-specific and high-adoption. Use them accordingly:
+
+- **Wei Lin: highest signal (least templated).** Best unique catches are about design intent and sequencing ("the 23-month gap disclosure earns the right BEFORE the wider data"). Prefer Wei Lin when only one reviewer fits.
+- **Marcus's best move belongs at PITCH, not draft.** His highest-value catch ever — "an NDA guide will always be 'another NDA guide'; what's different?" — forced an angle pivot after a full draft existed. Ask his differentiation question during pitch interrogation instead.
+- **Sarah's template is predictable — pre-empt it.** Costs, time, security/compliance, "what do I do Monday morning": bake these into the draft (see WRITE phase), then use her round for the practitioner-reality catches only she makes.
+- **When synthesizing feedback, separate template from unique.** Label which advice is the persona's standing ask vs. specific to this post. Only unique catches justify another round; standing asks should have been pre-empted and can be batch-applied without debate.
+- **Reviewers have persistent memory** at `docs/personas/memory/<agent-name>.md` — standing asks, past unique catches, and settled disagreements (advice Houfu already rejected with reasons). Pass the file to the reviewer; append their `MEMORY_UPDATE` block after each round (the getting-feedback skill handles both). This is what stops re-litigation of settled calls across posts.
 
 ### Reviewer Routing Table
 
@@ -337,21 +371,30 @@ The blog serves three overlapping but distinct audience segments:
 1. **PITCH** - Define scope and direction (use `generate_a_pitch` skill)
    - Read Voice Guide Part 4 (Templates) before developing pitch
    - Tags are suggested during pitch using `tag-registry` skill
+   - **Verify data before locking the pitch.** A pitch is a hypothesis, not a finding. If it contains numbers or claims (article counts, hours spent, adoption stats), check them against the actual data first — year-in-review's pitch said "444 articles" (actual: 27) and data-zeeker's said "600 hours" (actual: ~150); both forced full rewrites. For time estimates, ask the user for lived numbers — never derive them from lines of code.
+   - **Interrogate the pitch before locking it.** Forensics on past pitch failures show they were catchable at pitch time with three questions: (1) *Test the diagnosis* — when the user offers a problem framing, probe it instead of building on it ("if all clients are unique, is abstraction bias really the tension?" would have saved single-serving-bias a full reframe). (2) *The differentiation question* — "this will always be 'another X guide'; what makes ours different?" (Marcus Tan's highest-value catch, made at draft stage on legal-plugin-guide when it belonged at pitch). (3) *The framing risk question* — "could a named person or community read this as an attack?" (legal-oss-contribution had to anonymize LegalQuants after drafting).
+   - Identify 2-3 **must-link prior posts** the new post builds on or contradicts; note them in the pitch. Full backlink curation still happens at final draft, but seeding links at pitch time prevents last-minute, tacked-on linking.
 2. **WRITE** - Draft the content
    - **CRITICAL: Read `/docs/Houfu_Voice_Guide.md` before writing blog posts**
+   - **Also read 1-2 recent published posts** to sample the live voice (sentence rhythm, narrative-first pacing). Recurring failure: Claude drafts in expository/analytical "blog voice" and the user has to demand a narrative rewrite (ai-fragmentation lost a full draft to this).
    - Apply voice patterns from guide during drafting
-3. **REVIEW** - Quality checks and refinement:
-   - Content quality audit (content-quality-auditor agent - includes voice check via audit-tone)
-   - Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
-   - Backlink curation (backlink_curating skill)
-   - Tag validation (use `tag-registry` skill to verify tags before publishing)
-   - **Review round limit**: Maximum 2 rounds of reviewer feedback. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
+   - **Pre-empt the predictable reviewer asks.** ~70% of recorded reviewer advice is the same per persona. Address it in the draft so review rounds are spent on post-specific catches, not templates: cost/time/budget reality and security-compliance where relevant (Sarah asks in 6/10 reviews), concrete examples and jargon defined on first use (Marcus, 7/9), an honest emotional beat and a concrete next step (Wei Lin, 5/11). The pre-review checklist in the getting-feedback skill covers these.
+3. **REVIEW** - Quality checks and refinement, **in this order**:
+   1. **Pitch checkpoint.** Before any review, compare the draft against the pitch on thesis, scope, and emotional core. If they've diverged, decide explicitly with the user: either the draft wandered (revise it back), or **the pitch was wrong — amending it is then the correct move, not a violation.** When amending, record in discussion.md *why the pitch was wrong and which pitch-time check would have caught it* (untested diagnosis? unverified data? framing risk?). That feedback loop is the point: a mid-draft pitch change means pitch interrogation failed, and the workflow should learn from it rather than hide it.
+   2. **Run `npm run lint-posts <folder>` first, then one content quality audit** (content-quality-auditor agent — includes voice check via audit-tone). The linter now covers the audit's most-repeated mechanical findings (horizontal rules, heading skips, empty alt text, GitHub spelling, image sizes) — the audit should spend its round on judgment calls (semantic repetition, jargon, tone, example sufficiency), not re-reporting lintable defects. **Maximum 1 audit round before reviewers see the draft.** Audit hoarding — 3-4 polish cycles before any reviewer input — is how the round cap gets bypassed (open-claw-intro ran 4+ cycles this way).
+   3. **Target audience review** (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
+   4. **Length audit BEFORE applying additive reviewer fixes** — this ordering is the most-violated rule (followed in ~40% of recent posts). If reviewer fixes would add >~10% length, find the cuts first, then apply the fixes.
+   5. Backlink curation (backlink_curating skill)
+   6. Tag validation (use `tag-registry` skill to verify tags before publishing)
+   - **Review round limit**: Maximum 2 rounds of reviewer feedback — and audit cycles count toward revision discipline, not a separate free budget. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
 4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
    - Always use `scripts/publish-lexical.js` — do not create per-post publishing scripts. Improve the canonical script if a feature is missing.
    - **Infra changes belong on a separate branch.** If `publish-lexical.js` or other scripts need improvements, commit those on their own PR — not on the blog PR. PR #26 mixed 17 commits of content + script changes and became unreadable.
 5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
    - Use `npm run sync-ghost <slug>` to sync Ghost metadata back to local markdown frontmatter automatically.
    - **Publish last, sync once.** Edit freely on Ghost after publishing; run `sync-ghost` only once when closing the PR. Avoid per-edit sync-back commits (four of the last five PRs had this churn).
+   - **Expect post-scheduling Ghost edits.** Houfu routinely polishes prose in the Ghost editor after scheduling. At the final sync, also diff the live content against the local file, merge the edits back so the repo matches what's published, and log notable edits in discussion.md as user decisions (they reveal voice preferences future drafts should follow).
+   - **Don't skip the final sync.** Several older posts (prompt-engineering-wrong, redlines-top-10-percent, ai-tools-for-agents) were published on Ghost months ago but their local frontmatter still says draft or is missing — making them look abandoned. The repo should always know a post's true status.
 
 ### Commit discipline
 

@@ -32,6 +32,7 @@ Most Ghost operations use the **ghst MCP tools** directly. Use this skill to rou
 ## Reference
 
 - [/docs/ghost-lexical-format.md](../../../docs/ghost-lexical-format.md) — comprehensive lexical format reference. Consult when constructing complex lexical structures for `publish-lexical.js`.
+- [scripts/ghost-lexical-single.js](scripts/ghost-lexical-single.js) — **reference documentation only** (a LexicalBuilder API illustration). Do NOT require it or write per-post publishing scripts; `scripts/publish-lexical.js` at the repo root is the only canonical publishing path.
 
 ## Reminders
 

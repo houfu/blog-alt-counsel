@@ -1,6 +1,6 @@
 ---
 name: Generate a pitch
-description: Define the scope of an article or newsletter at the beginning of the drafting an article or newsletter
+description: Develops a focused pitch (title plus 150-200 word paragraph) that defines the scope, thesis, and suggested tags for a new article or newsletter. Use at the start of drafting any new post, after the idea is clear enough (use brainstorming first if it is vague).
 ---
 
 # Generate a pitch
@@ -88,6 +88,29 @@ Red flags:
 - "Others might think..." (Distancing language)
 - "One should..." (Who? Be specific)
 
+### Step 3.5: Verify the Data
+
+A pitch is a hypothesis, not a finding. Before locking it:
+
+- If the pitch contains numbers or factual claims (article counts, hours invested, download stats, adoption figures), **verify them against the actual data now** — run the query, check the repo, ask the user for the source. Two posts required full rewrites because pitch numbers were wrong ("444 articles" was actually 27; "600 hours" was actually ~150).
+- For time-investment claims, **ask the user for their lived numbers** ("How many hours did this actually take? Evenings or full days?"). Never derive time estimates from lines of code or other formulas.
+- If verification must wait (e.g., needs Ghost access), mark the claim in pitch.md as `[UNVERIFIED]` so drafting doesn't treat it as fact.
+
+### Step 3.6: Interrogate the Pitch
+
+Past pitch failures were catchable at this stage. Before locking, ask three questions and record the answers in pitch.md:
+
+1. **Test the diagnosis.** If the pitch is built on the user's own problem framing, probe it instead of accepting it: "Does [diagnosis] actually explain the tension? What would contradict it?" (single-serving-bias shipped a wrong diagnosis into a full draft; one probing question at pitch time surfaced the real insight.)
+2. **The differentiation question.** "This will always be 'another [X] post' — what makes ours different?" If there's no answer, the pitch isn't ready.
+3. **The framing risk question.** "Could a named person, company, or community read this as an attack?" If yes, decide now whether to anonymize or reframe — not after drafting (legal-oss-contribution had to anonymize its anchor example post-draft).
+
+A pitch amended mid-draft is not a sin, but it means this step failed — when it happens, note in discussion.md which of these questions would have caught it.
+
+### Step 3.7: Seed Must-Link Posts and Timeline
+
+- Identify 2-3 **must-link prior posts** this post builds on or contradicts (use `ghost_search`). List them in pitch.md under "Prior work". This makes linking a structural decision instead of last-minute polish; full curation still happens at final draft via `backlink_curating`.
+- Ask whether there's a **target publish date or external deadline** (talk, event, news hook). Record it in pitch.md — surprise schedule acceleration causes rushed metadata, images, and backlinks.
+
 ### Step 4: Suggest Tags
 
 After the pitch is approved, use the **tag-registry** skill to suggest appropriate tags:
@@ -103,7 +126,7 @@ This early tag planning helps maintain consistency and prevents tag sprawl durin
 
 - Create the folder structure using the title, for example "posts/ai-vs-lawyers-newsletter"
 - Save the pitch in that folder under the file "pitch.md" (including suggested tags)
-- Save the discussion using "skills/note-taking" under the file "note-taking.md"
+- Save the discussion using "skills/note-taking" under the file "discussion.md"
 - Save any documents or links discussed during the process under the folder
 
 Once this process is completed, you should ask the human partner whether you can develop the outline of the article. 

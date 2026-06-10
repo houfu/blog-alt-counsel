@@ -266,7 +266,6 @@ For solo counsels and small legal teams, this matters more than it does for big 
 
 The standing-room-only workshop taught you how to write better prompts. Now it's time to learn how to build better systems.
 
----
 
 ## References
 

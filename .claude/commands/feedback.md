@@ -2,10 +2,10 @@ Analyse this post and give feedback on its contents to improve its quality.
 
 **Critical: Ensure reviewers read the pitch first.** Each reviewer should evaluate whether the draft delivers on what the pitch promised, not their ideal version. The pitch is the contract.
 
-Use the following subagents to analyse the post from different perspectives:
-1. legal tech blog reviewer
-2. corporate lawyer reviewer
-3. lawyer coder reviewer
+Use the following subagents to analyse the post from different perspectives (invoke by these exact agent names):
+1. legal-tech-blog-reviewer (Marcus Tan)
+2. inhouse-lawyer-reviewer (Sarah Chen)
+3. lawyer-coder-reviewer (Wei Lin)
 
 When synthesizing feedback, identify what each reviewer uniquely caught that others didn't. This helps understand when each reviewer adds value beyond the others.
 
