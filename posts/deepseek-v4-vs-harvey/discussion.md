@@ -103,6 +103,13 @@ User feedback after reading the draft: (1) reads like a diary (fine) but under-e
 - Feature image set via Admin API (MCP ghost_post_update lacks feature_image): hosted scatter PNG + alt text.
 - **Remaining:** user reviews draft on Ghost, schedules/publishes there; then ONE `npm run sync-ghost my-agent-worked-around-the-tools-i-gave-it` at PR close (publish last, sync once). Separate chore noted: legal-oss-contribution folder frontmatter is stale (says scheduled; Ghost shows published 2026-05-11) — sync on its own branch/PR.
 
+## Session 2 — 11 June 2026: Title chosen, scheduled, synced, PR
+
+- Title brainstorm (4 directions offered: zero-score memo / lost bet / harness thesis / experiment). **User chose** "My Agent Did the Legal Work. The Benchmark Gave It Zero." (direction A) and scheduled the post on Ghost for 2026-06-11T00:28:56Z, updating the slug to match.
+- Noted for the record: Claude cannot post comments on Ghost posts (no MCP comment tools; Ghost comments are member-created via the site frontend, Admin API only moderates).
+- sync-ghost initially found no local match (frontmatter had old slug); fixed by updating local slug first, then synced — frontmatter now has final title/slug/status/post_id/published_at/feature_image. Lesson: if title/slug changes in Ghost, update the local slug before running sync-ghost.
+- PR opened from blog/deepseek-v4-vs-harvey → main.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.

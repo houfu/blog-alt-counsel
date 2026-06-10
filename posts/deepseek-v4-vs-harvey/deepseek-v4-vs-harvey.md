@@ -1,10 +1,17 @@
 ---
-title: "My agent worked around the tools I gave it"
-slug: "my-agent-worked-around-the-tools-i-gave-it"
-tags: ["AI", "LegalTech", "OpenSource"]
-status: draft
+title: My Agent Did the Legal Work. The Benchmark Gave It Zero.
+slug: my-agent-did-the-legal-work-the-benchmark-gave-it-zero
+tags:
+  - AI
+  - LegalTech
+  - OpenSource
+status: scheduled
 featured: false
-github_folder: "deepseek-v4-vs-harvey"
+github_folder: deepseek-v4-vs-harvey
+post_id: 6a2983d681ce1e000152d0e3
+published_at: '2026-06-11T00:28:56.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/06/nanoclaw-task-scatter.png
 ---
 
 Somewhere in my benchmark results sits a complete legal memorandum. Fifty-eight kilobytes of finished work: issues identified, analysis done, recommendations made. Its score: zero.
