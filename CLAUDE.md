@@ -90,7 +90,7 @@ claude mcp add ghost -- ghst mcp stdio --tools all
 ```
 
 **Custom scripts still used:**
-- `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion)
+- `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion, **local image upload**, 418/5xx retry). `--dry-run` converts and prints the lexical JSON with no credentials or API calls. Conversion logic is covered by `npm test` (`tests/test-lexical.js`) — extend the fixture when adding converter features.
 - `scripts/sync-from-ghost.js` — Syncs Ghost metadata back to local markdown frontmatter (`npm run sync-ghost <slug>`)
 - `scripts/lint-posts.js` — Lints post folders: frontmatter, naming, horizontal rules, oversized images (`npm run lint-posts`, add `--strict` for new posts). Run it before publishing.
 - `scripts/verify.sh` — Repo health check: file presence, script syntax, secret scan, agent/skill frontmatter, post lint (`npm run verify`). Runs in CI on every PR (`.github/workflows/verify.yml`).

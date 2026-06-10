@@ -56,7 +56,7 @@ else
     fail "invalid JSON"
 fi
 
-for script in "sync-ghost" "setup-hooks" "lint-posts" "verify"; do
+for script in "sync-ghost" "setup-hooks" "lint-posts" "verify" "test"; do
     if node -e "const p=require('./package.json'); process.exit(p.scripts['$script']?0:1)" 2>/dev/null; then
         pass "npm run $script defined"
     else
@@ -157,6 +157,15 @@ if node scripts/lint-posts.js > /tmp/lint-posts-out.txt 2>&1; then
     pass "lint-posts: $(tail -1 /tmp/lint-posts-out.txt)"
 else
     fail "lint-posts found errors — run: node scripts/lint-posts.js"
+fi
+
+
+# ─── 8b. Lexical conversion tests ────────────────────────────────────────────
+header "8b. Lexical conversion tests (tests/test-lexical.js)"
+if node tests/test-lexical.js > /tmp/test-lexical-out.txt 2>&1; then
+    pass "conversion tests: $(grep -c '✓' /tmp/test-lexical-out.txt) assertions passed"
+else
+    fail "conversion tests failed — run: npm test"
 fi
 
 

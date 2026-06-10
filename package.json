@@ -6,7 +6,8 @@
     "setup-hooks": "ln -sf ../../.claude/hooks/pre-commit .git/hooks/pre-commit && echo 'Pre-commit hook installed successfully.'",
     "sync-ghost": "node -r dotenv/config scripts/sync-from-ghost.js",
     "lint-posts": "node scripts/lint-posts.js",
-    "verify": "bash scripts/verify.sh"
+    "verify": "bash scripts/verify.sh",
+    "test": "node tests/test-lexical.js"
   },
   "keywords": [
     "ghost",

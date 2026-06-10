@@ -24,3 +24,6 @@ jobs:
 
       - name: Lint post folders
         run: node scripts/lint-posts.js
+
+      - name: Lexical conversion tests
+        run: npm test

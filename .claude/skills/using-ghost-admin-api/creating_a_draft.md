@@ -115,6 +115,9 @@ The script handles:
 - Bookmark card syntax to Ghost bookmark cards
 - Adding GitHub footer automatically when `github_folder` is in frontmatter
 - Skipping HTML comment placeholders (e.g., `<!-- 📸 SCREENSHOT -->`)
+- **Local images**: `![alt](images/foo.png)` references that exist next to the markdown file are uploaded to Ghost automatically and rewritten to hosted URLs — no more `ghost_image_upload` + temp-copy workaround
+- **Transient API failures** (418/429/5xx): retried with exponential backoff
+- `--dry-run` flag: converts and prints the lexical JSON (and which images would be uploaded) without credentials or API calls — use it to preview before publishing
 
 ### Before running
 
