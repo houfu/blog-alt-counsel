@@ -34,6 +34,21 @@ Working notes for "My agent worked around the tools I gave it."
 3. Quality audit → audience review (Wei Lin + Marcus Tan, max 2 rounds, length audit first) → backlinks (legal OSS post is a known candidate) → publish via publish-lexical.js.
 4. KIV for the post or follow-up: upstream bug report to adeu maintainer; possible rerun of ~125 broken/zero tasks after fixes; ablation grid (nanoclaw bare / +docling / +adeu / +both).
 
+## Session 1 (continued) — 10 June 2026: Draft, audit, round-1 reviews
+
+- Outline approved by user (7 sections, Lane 2 template). Tags: AI + LegalTech + OpenSource (user steer: "AI" leads; OpenSource flagged as borderline but the contribution arc is load-bearing).
+- Draft complete (~2,000 words). Content quality audit: no structural issues; fixed "2,257 tasks" framing (same 1,006 tasks run twice → "over 2,200 runs"), glossed in-band signal jargon, named SWE-bench Pro / Claude Opus 4.5, "Stark Law task", "killed mid-thought" (avoids legal meaning of "execution"), docling descriptor.
+- Round-1 reviews (cap is 2 rounds; recommendation: stop at 1):
+  - **Wei Lin**: vulnerability lands; "sadder than the score" = best line, do not cut. Essential fix applied: solo-constraints beat at the four-defects moment ("engineer, lawyer, tester, QA department").
+  - **Marcus Tan** (7.5→9 with fix): essential fix applied — drafting regresses −11.6pp even excluding broken files, so verdict split: packaging = mine; drafting quality = not in until ablation. Verified Opus 4.5 attribution is correct in source paper.
+  - Skipped as optional/beyond scope: work-type win analysis, bug-report anatomy (both saved for rerun post).
+- **User corrections:** investigation took **two weeks — each sweep exhausted a week of Ollama token quota** (replaced invented "weekend of log reading"; now in two places in draft). Closing question stays harness-centric ("What is your harness quietly deciding for you?") — user: "stick to the spine."
+
+**KIV for the follow-up post (B teaser, "benchmark as your own test suite"):** the *operational* story user flagged — there are more components, e.g. the Claude scorer (LLM judge); a lot of work and learning in managing agents in a loop; runs monitored by AI agents; computer on all day for two weeks. That's the running-the-benchmark post, distinct from this reading-the-results post. Also KIV: rerun ~125 broken/zero tasks after fixes, ablation grid, upstream adeu bug report.
+
+**Remaining before publish:** user manual review of draft → backlink curation (legal OSS post = known candidate; Ambrogi LawNext piece as external card) → tag validation → publish via publish-lexical.js.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.
+- 2026-06-10: Round-1 reviewer essentials applied (drafting-regression caveat, solo-constraints beat). Review stopped at round 1. Two-week token-quota cost grounded. Closing question locked (harness-centric). Operational/scorer material deferred to follow-up post.
