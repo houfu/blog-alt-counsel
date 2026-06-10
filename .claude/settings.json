@@ -6,6 +6,10 @@
         "hooks": [
           {
             "type": "command",
+            "command": "[ -d node_modules ] || npm install --no-audit --no-fund > /dev/null 2>&1 && echo 'npm dependencies ready'"
+          },
+          {
+            "type": "command",
             "command": "bash .claude/hooks/ghst-auth.sh"
           }
         ]

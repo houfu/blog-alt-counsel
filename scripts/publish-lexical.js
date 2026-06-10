@@ -9,8 +9,16 @@
 
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
-const GhostAdminAPI = require('@tryghost/admin-api');
+
+let matter, GhostAdminAPI;
+try {
+  matter = require('gray-matter');
+  GhostAdminAPI = require('@tryghost/admin-api');
+} catch (err) {
+  console.error('Error: Missing dependencies — run `npm install` first.');
+  console.error(`(${err.message})`);
+  process.exit(1);
+}
 
 const dotenvPath = path.join(__dirname, '../.env');
 require('dotenv').config({ path: dotenvPath });
