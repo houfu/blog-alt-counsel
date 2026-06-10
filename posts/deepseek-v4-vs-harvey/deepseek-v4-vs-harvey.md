@@ -20,9 +20,7 @@ Not zero because the law was wrong. Zero because my agent saved the memo as raw 
 
 I found that memo because I went looking for why my agent stack confounded me. I had pitted a set of lawyer-made tools against a generic harness at legal work, and ran over 2,200 benchmark tasks to settle it.
 
-My stack largely lost against the default. But what I learnt about the harness was the real lesson.
-
-![Scatter plot of 1,006 benchmark tasks comparing my stack against the stock harness: each triangle is a task, red pointing down where my stack scored worse, blue pointing up where it improved, plotted by run time against pass rate. Red dominates.](nanoclaw-task-scatter.png)
+My stack largely lost against the default. But what I learnt about harnesses was the real lesson.
 
 ## What I actually ran
 
@@ -30,20 +28,18 @@ Three weeks ago, Harvey open-sourced its Legal Agent Benchmark (LAB): around 1,2
 
 Grading is all-pass: a deal memo that catches eight of ten risks scores as incomplete, because that's how partners review work. The rubrics check facts, conclusions, citations, severity ratings, dollar amounts — and formatting. That last one matters for this story.
 
-[Open-Sourcing Harvey's Long Horizon Legal Agent Benchmark](https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark)
-
 I ran the same model through it twice:
 
-- **The stock harness** (1,251 tasks): LAB's default setup. Six generic tools — bash, read, write, edit, glob, grep — plus Pandoc (a document converter) and pdfplumber (a PDF reader).
+- **The default harness** (1,251 tasks): LAB's default setup. Six generic tools — bash, read, write, edit, glob, grep — plus Pandoc (a document converter) and pdfplumber (a PDF reader).
 - **My stack** (1,006 of the same tasks): the same model inside my nanoclaw container, wired to Adeu, an MCP document-authoring tool built by a fellow lawyer-coder, and docling, a library that converts PDFs and Office files into text an agent can read.
 
 The model in both runs was DeepSeek-v4-flash through Ollama. Not a frontier model. Not a legal model. A model that costs approximately nothing — though each sweep exhausted a week of my Ollama token quota, so the experiment took two weeks for what frontier labs run in an afternoon.
 
-My theory was simple: my agent would redline with a proper redlining tool and author Word files with a proper authoring chain, while the generic setup was left improvising with bash and Pandoc.
+My theory was simple: my agent would redline with a proper redlining tool and author Word files with a proper authoring chain, while the default setup was left improvising with bash and Pandoc.
 
-The results: the stock harness passed 84.7% of rubric criteria. My stack passed 74.8%. The stock harness produced 9 zero-score tasks; mine produced 56. Mine was also 2.6 times slower.
+The results: the default harness passed 84.7% of rubric criteria. My stack passed 74.8%. The default harness produced 9 zero-score tasks; mine produced 56. Mine was also 2.6 times slower.
 
-Ten points, in the wrong direction.
+![Scatter plot of 1,006 benchmark tasks comparing my stack against the stock harness: each triangle is a task, red pointing down where my stack scored worse, blue pointing up where it improved, plotted by run time against pass rate. Red dominates.](nanoclaw-task-scatter.png)
 
 ## The logs said something stranger
 
@@ -51,7 +47,7 @@ Encountering these results, your gut tells you a lot of things. DeepSeek-v4-flas
 
 The first discovery: my agent never once told me it was done. In the default harness used by Harvey, the harness owns the agent loop: when the agent stops calling tools, the harness knows directly that the run is over. That worked in all 1,133 of its runs.
 
-Nanoclaw is different — it's a conversational agent, and the runner I wrote could only watch its messages. So I relied on the model to emit a `STATUS: DONE` string. It didn't work, because models don't reliably conform to their instructions. Instead I watched its deliverables, and deemed it done once they stopped changing. Sometimes the agent was not done — nanoclaw runs took longer, and I graded half-baked work instead. In one Stark Law task, the run was cut so early that the "gap analysis" my agent shipped was the *input compliance program*, verbatim. The stock run scored 1.00 on that task. Mine scored 0.00.
+Nanoclaw is different — it's a conversational agent, and the runner I wrote could only watch its messages. So I relied on the model to emit a `STATUS: DONE` string. It didn't work, because models don't reliably conform to their instructions. Instead I watched its deliverables, and deemed it done once they stopped changing. Sometimes the agent was not done — nanoclaw runs took longer, and I graded half-baked work instead. In one task, the run was cut so early that the "gap analysis" my agent shipped was the *input compliance program*, verbatim. The stock run scored 1.00 on that task. Mine scored 0.00.
 
 Then there were the files themselves. The stock harness produced 1,431 valid Word documents out of 1,431. My stack produced 73 broken ones — files with unescaped XML and leaked format tokens, placeholder stubs that literally read "PLACEHOLDER - This file will be generated via the Adeu MCP tool chain", and finished memos saved as text under `.docx` names, like the 58 KB one that opened this post.
 
@@ -75,9 +71,9 @@ A single leaderboard number would have flattened all of that into "your stack is
 
 ## It wasn't the model. It wasn't the tools either.
 
-Here's where the post I planned to write — my nanoclaw stack declaring total victory over Harvey's basic harness — fell apart. The harness turned out to be made of many little things, and nothing I swapped or added came with any guarantee of improving the result. This was the jagged frontier — AI capability strong in one spot, weak in the next — vividly illustrated for me.
+Here's where the post I planned to write fell apart. The harness turned out to be made of many little things, and nothing I swapped or added came with any guarantee of improving the result. This was the jagged frontier — AI capability strong in one spot, weak in the next — vividly illustrated for me.
 
-It is hard going when one person is the engineer, the lawyer, the tester, and the QA department. I have regrets; a more careful design would have bought firmer conclusions. I ran into this wall once before, trying to tame an autonomous agent:
+It is hard going when one person is the engineer, the lawyer, the tester, and the QA department. I have regrets; a more careful design would have bought firmer conclusions.
 
 [OpenClaw Field Notes: A Lawyer Tries to Tame an Autonomous AI Agent](https://www.alt-counsel.com/openclaw-field-notes-lawyer/) 
 
@@ -93,9 +89,9 @@ For solo counsels and small teams, this changes how to read every legal AI claim
 
 Harvey seems to understand this better than its marketing peers: LAB launched deliberately *without* a leaderboard because Harvey first wants standards for normalising submissions — an admission that nobody yet knows how to compare agent results fairly across stacks. I'd put it more strongly. Benchmarks like this don't favour frontier *models* so much as they reward polished *harnesses* — which frontier labs and well-funded vendors have, and the rest of us have to build on weekends.
 
-The same problem shows up at the product level, closer to home. Anna Guo, a Singapore-based in-house counsel, runs [LegalBenchmarks.ai](https://www.legalbenchmarks.ai/research/phase-1-research) — double-blind evaluations of legal AI tools, scored by panels of practising lawyers. Her findings rhyme with mine: general-purpose chatbots matched purpose-built legal tools on raw accuracy, and one of her documented failure modes is tools failing "not because of poor reasoning but due to technical constraints" — file formats, upload limits, OCR — sometimes silently. The product world calls that usability. The agent world calls it the harness.
+The same problem shows up at the product level, closer to home. Anna Guo's [LegalBenchmarks.ai](https://www.legalbenchmarks.ai/research/phase-1-research) ran double-blind evaluations of legal AI tools, scored by panels of practising lawyers. Her findings rhyme with mine: general-purpose chatbots matched purpose-built legal tools on raw accuracy, and one of her documented failure modes is tools failing "not because of poor reasoning but due to technical constraints" such as file formats, upload limits, OCR. The product world calls that usability. The agent world calls it the harness.
 
-So before trusting any agent benchmark number, I now ask three questions:
+So before trusting any agent benchmark number, I think of three questions:
 
 1. **What harness produced this score?** Same model, different wrapper, ±10 points or more.
 2. **Who decided when each run ended?** If the harness guesses, some runs died mid-thought — that's how a verbatim copy of an input document became my agent's "gap analysis."
@@ -107,7 +103,7 @@ None of these appear on a leaderboard. All of them moved my results more than th
 
 Determining a winner in head-to-head battles isn't the only thing stressing a harness under Harvey LAB's 1,000-plus tests is good for.
 
-While my integration is clearly to blame for some of the failures — my completion signal, my stability gate, my conversion step that never ran — there are other factors, such as Adeu, an open-source tool that allows AI agents to freely edit a document, including redlining.
+While my integration is clearly to blame for some of the failures — my completion signal, my stability gate, my conversion step that never ran — there are other factors, such as Adeu, the open source tool.
 
 There is something intriguing about what's going on behind the scenes. So here's my plan: study where Adeu appears to have failed, reproduce the error, and contribute back — an upstream bug report with a thousand runs of forensics attached, instead of a vague complaint that it "didn't work."
 

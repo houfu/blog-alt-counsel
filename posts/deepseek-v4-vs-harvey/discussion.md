@@ -108,7 +108,9 @@ User feedback after reading the draft: (1) reads like a diary (fine) but under-e
 - Title brainstorm (4 directions offered: zero-score memo / lost bet / harness thesis / experiment). **User chose** "My Agent Did the Legal Work. The Benchmark Gave It Zero." (direction A) and scheduled the post on Ghost for 2026-06-11T00:28:56Z, updating the slug to match.
 - Noted for the record: Claude cannot post comments on Ghost posts (no MCP comment tools; Ghost comments are member-created via the site frontend, Admin API only moderates).
 - sync-ghost initially found no local match (frontmatter had old slug); fixed by updating local slug first, then synced — frontmatter now has final title/slug/status/post_id/published_at/feature_image. Lesson: if title/slug changes in Ghost, update the local slug before running sync-ghost.
-- PR opened from blog/deepseek-v4-vs-harvey → main.
+- PR opened from blog/deepseek-v4-vs-harvey → main: https://github.com/houfu/blog-alt-counsel/pull/40
+- **Content sync** (user: "you need to sync content too" — sync-ghost only does metadata). Diffed Ghost HTML against local markdown; applied user's Ghost-editor edits locally: "harnesses" plural in intro; scatter image moved from intro to after results (intro slot now belongs to the feature image); "Ten points, in the wrong direction." cut; Harvey LAB bookmark card removed; "stock"→"default" harness in setup/results; "Stark Law" genericised to "one task"; victory em-dash clause cut; OpenClaw card lead-in cut; Anna Guo para shortened (SG descriptor out, "sometimes silently" out); "I now ask"→"I think of"; Adeu re-description shortened. Internal links/cards preserved.
+- ⚠️ Flagged to user: Ghost HTML shows literal asterisks around "*same model*" in the HAL paragraph (italic didn't render after editor edits) — fix in Ghost editor before publish time.
 
 ## AUDIT TRAIL
 
