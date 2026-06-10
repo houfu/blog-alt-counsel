@@ -23,6 +23,8 @@ Three weeks ago, Harvey open-sourced its Legal Agent Benchmark (LAB): around 1,2
 
 Grading is all-pass: a deal memo that catches eight of ten risks scores as incomplete, because that's how partners review work. The rubrics check facts, conclusions, citations, severity ratings, dollar amounts — and formatting. That last one matters for this story.
 
+[Open-Sourcing Harvey's Long Horizon Legal Agent Benchmark](https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark)
+
 I ran the same model through it twice:
 
 - **The stock harness** (1,251 tasks): LAB's default setup. Six generic tools — bash, read, write, edit, glob, grep — plus Pandoc (a document converter) and pdfplumber (a PDF reader).
@@ -68,13 +70,15 @@ A single leaderboard number would have flattened all of that into "your stack is
 
 Here's where the post I planned to write — my nanoclaw stack declaring total victory over Harvey's basic harness — fell apart. The harness turned out to be made of many little things, and nothing I swapped or added came with any guarantee of improving the result. This was the jagged frontier — AI capability strong in one spot, weak in the next — vividly illustrated for me.
 
-It is hard going when one person is the engineer, the lawyer, the tester, and the QA department. I have regrets; a more careful design would have bought firmer conclusions. 
+It is hard going when one person is the engineer, the lawyer, the tester, and the QA department. I have regrets; a more careful design would have bought firmer conclusions. I ran into this wall once before, trying to tame an autonomous agent:
 
-When I went looking for whether anyone had measured this properly, I found a whole research field arriving at the same place. Princeton's Holistic Agent Leaderboard team ran 21,730 agent rollouts and found the *same model* swinging up to 48 percentage points depending on which scaffold wrapped it. A position paper published last month — bluntly titled "Stop Comparing LLM Agents Without Disclosing the Harness" — puts numbers on it: on SWE-bench Pro, a leading coding benchmark, six frontier models span just 4.9 points under a single locked harness, while one of them (Claude Opus 4.5) moves 9.5 points when you change only the harness around it.
+[OpenClaw Field Notes: A Lawyer Tries to Tame an Autonomous AI Agent](https://www.alt-counsel.com/openclaw-field-notes-lawyer/) 
+
+When I went looking for whether anyone had measured this properly, I found a whole research field arriving at the same place. Princeton's [Holistic Agent Leaderboard](https://arxiv.org/abs/2510.11977) team ran 21,730 agent rollouts and found the *same model* swinging up to 48 percentage points depending on which scaffold wrapped it. A position paper published last month — bluntly titled ["Stop Comparing LLM Agents Without Disclosing the Harness"](https://arxiv.org/abs/2605.23950) — puts numbers on it: on SWE-bench Pro, a leading coding benchmark, six frontier models span just 4.9 points under a single locked harness, while one of them (Claude Opus 4.5) moves 9.5 points when you change only the harness around it.
 
 Read that again: the gap between harnesses was twice the gap between the best and worst frontier models. My ten-point gap, on legal work, with the model held constant, is the same finding.
 
-There's another lens, though. I now have a path to improve the scores — skills, more tools, even extended thinking, which is essentially throwing more tokens at the problem. That path is open to anyone, including the AI itself. This is why Kevin Keller calls the harness the floor: table stakes for any AI.
+There's another lens, though. I now have a path to improve the scores — skills, more tools, even extended thinking, which is essentially throwing more tokens at the problem. That path is open to anyone, including the AI itself. This is why [Kevin Keller calls the harness the floor](https://medium.com/@hikevin/harness-is-the-floor-not-the-ceiling-9d880f454cc5): table stakes for any AI.
 
 ## When someone shows you a benchmark score
 
@@ -82,7 +86,7 @@ For solo counsels and small teams, this changes how to read every legal AI claim
 
 Harvey seems to understand this better than its marketing peers: LAB launched deliberately *without* a leaderboard because Harvey first wants standards for normalising submissions — an admission that nobody yet knows how to compare agent results fairly across stacks. I'd put it more strongly. Benchmarks like this don't favour frontier *models* so much as they reward polished *harnesses* — which frontier labs and well-funded vendors have, and the rest of us have to build on weekends.
 
-The same problem shows up at the product level, closer to home. Anna Guo, a Singapore-based in-house counsel, runs LegalBenchmarks.ai — double-blind evaluations of legal AI tools, scored by panels of practising lawyers. Her findings rhyme with mine: general-purpose chatbots matched purpose-built legal tools on raw accuracy, and one of her documented failure modes is tools failing "not because of poor reasoning but due to technical constraints" — file formats, upload limits, OCR — sometimes silently. The product world calls that usability. The agent world calls it the harness.
+The same problem shows up at the product level, closer to home. Anna Guo, a Singapore-based in-house counsel, runs [LegalBenchmarks.ai](https://www.legalbenchmarks.ai/research/phase-1-research) — double-blind evaluations of legal AI tools, scored by panels of practising lawyers. Her findings rhyme with mine: general-purpose chatbots matched purpose-built legal tools on raw accuracy, and one of her documented failure modes is tools failing "not because of poor reasoning but due to technical constraints" — file formats, upload limits, OCR — sometimes silently. The product world calls that usability. The agent world calls it the harness.
 
 So before trusting any agent benchmark number, I now ask three questions:
 
@@ -100,7 +104,9 @@ While my integration is clearly to blame for some of the failures — my complet
 
 There is something intriguing about what's going on behind the scenes. So here's my plan: study where Adeu appears to have failed, reproduce the error, and contribute back — an upstream bug report with a thousand runs of forensics attached, instead of a vague complaint that it "didn't work."
 
-I once wrote that legal open source is a federation of solo-author archipelagos — projects that never receive the outside contributions that would make them a community. Bob Ambrogi quoted that line back at me when LAB launched, asking whether Harvey's benchmark would leave room for outsiders to shape it. Fair question. But contribution has to flow both ways — not just maintainers publishing code, but users reporting back. A stranger running your tool through 1,006 legal tasks and filing detailed bugs is what the alternative to open-source theatre actually looks like. I'd rather be that stranger than another archipelago.
+I once wrote that legal open source is a federation of solo-author archipelagos — projects that never receive the outside contributions that would make them a community. Bob Ambrogi [quoted that line back at me](https://www.lawnext.com/2026/05/some-thoughts-on-harveys-launch-of-lab-an-open-source-long-horizon-benchmark-for-legal-ai-agents.html) when LAB launched, asking whether Harvey's benchmark would leave room for outsiders to shape it. Fair question. But contribution has to flow both ways — not just maintainers publishing code, but users reporting back. A stranger running your tool through 1,006 legal tasks and filing detailed bugs is what the alternative to open-source theatre actually looks like. I'd rather be that stranger than another archipelago.
+
+[Lawyers Are Building. Just Not On Each Other's Code.](https://www.alt-counsel.com/lawyers-not-on-each-others-code/)
 
 ## The benchmark was the product
 

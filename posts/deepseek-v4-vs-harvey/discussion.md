@@ -89,6 +89,12 @@ User feedback after reading the draft: (1) reads like a diary (fine) but under-e
 
 **Remaining before publish:** backlinks (legal OSS post + consider Keller/Ambrogi/Anna Guo links), tag confirm, cover image?, publish via publish-lexical.js (--dry-run first), sync once.
 
+## Session 1 (continued) — 10 June 2026: Trim pass + backlinks
+
+- **Trim pass** (user: "aim for 9 mins"): 2,347 → 2,162 body words (~2,080 prose). Cut: triple-stated bet → once; jagged-frontier/regrets paras merged; Anna Guo 130→90; Harvey/no-leaderboard merged; Crestview lost 2 clauses; double "I plan"; filler connectives. Nothing load-bearing lost.
+- **Backlinks** (user: "do the pass, add research links"). Internal cards (publish-lexical auto-converts alt-counsel.com + harvey.ai links to bookmark cards): OpenClaw Field Notes (after regrets para — its excerpt "the hard part isn't prompt engineering. It's designing the harness" is this post's direct setup) and Lawyers Are Building Just Not On Each Other's Code (after archipelago para; NB local frontmatter says scheduled but Ghost shows published 2026-05-11). External card: Harvey LAB announcement (after all-pass para). Inline research links: HAL arXiv, Stop Comparing arXiv, Keller Medium, LegalBenchmarks.ai phase-1, Ambrogi LawNext.
+- Lint clean throughout. Remaining: tag confirm (AI/LegalTech/OpenSource in frontmatter), cover image decision, publish (--dry-run first), sync once.
+
 ## AUDIT TRAIL
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.
