@@ -67,7 +67,7 @@ done
 
 # ─── 3. Node.js syntax ────────────────────────────────────────────────────────
 header "3. Node.js script syntax"
-for f in scripts/*.js; do
+for f in scripts/*.js .claude/hooks/*.js; do
     if node --check "$f" 2>/dev/null; then
         pass "$f"
     else

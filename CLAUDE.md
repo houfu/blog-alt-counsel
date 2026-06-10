@@ -109,23 +109,27 @@ Ghost API credentials are needed for `publish-lexical.js`, `sync-from-ghost.js`,
 
 Copy `.env.example` to `.env` and fill in your values.
 
-### Claude Code Hooks (auto-commit + auto-notes)
+### Claude Code Hooks
 
-A `SessionEnd` hook at `.claude/hooks/session-wrap.sh` fires when a Claude session ends. If there are uncommitted changes under `posts/`, it spawns `claude -p` to append a session entry to each affected `discussion.md`, then stages and commits. The result is one batched `Session notes: <folder> — <summary>` commit per session, replacing the per-exchange commit noise seen in recent PRs.
+Hooks enforce the rules that prose alone didn't (discussion-log evidence: prose-only rules got 40-60% adherence; mechanical ones held). Wired in `.claude/settings.json`:
 
-- To trigger manually mid-session: run `/wrap-up` (or `bash .claude/hooks/session-wrap.sh`).
-- To skip once: `CLAUDE_HOOK_SESSION_SKIP_WRAP=1` before ending the session.
-- Debug log: `.claude/state/session-wrap.log` (gitignored).
+| Hook | Event | What it does |
+|---|---|---|
+| npm bootstrap | SessionStart | Installs node_modules if missing (Claude Code on the web) |
+| `ghst-auth.sh` | SessionStart | Authenticates ghst CLI from `.env`; reports loudly if setup is broken |
+| `pre-publish-gate.js` | PreToolUse (Bash) | **Denies** any `publish-lexical.js` run while the post has lint ERRORS (horizontal rules etc. that break lexical conversion) |
+| `reviewer-memory-gate.js` | PreToolUse (Task) | **Denies** spawning an audience reviewer whose prompt doesn't reference its memory file (`docs/personas/memory/<agent>.md`) — no more amnesiac reviews |
+| `post-edit-lint.js` | PostToolUse (Edit\|Write) | Lints a post folder right after its main file is edited: errors are fed back to fix immediately, warnings surface as context |
+| `session-wrap.sh` | SessionEnd | Auto-appends session notes to affected `discussion.md` files via `claude -p`, then commits one `Session notes:` commit per session |
 
-### Pre-Commit Hook
+Session-wrap notes: trigger manually with `/wrap-up`; skip once with `CLAUDE_HOOK_SESSION_SKIP_WRAP=1`; debug log at `.claude/state/session-wrap.log` (gitignored).
 
-A pre-commit hook warns when a post file is staged without also staging `discussion.md`. Install it once with:
+### Pre-Commit Hook (git)
 
-```bash
-npm run setup-hooks
-```
+Install once with `npm run setup-hooks`. Two checks:
 
-The hook is non-blocking (exits 0) — it warns but never prevents a commit. With the SessionEnd hook auto-staging `discussion.md`, this reminder fires mostly on manual commits.
+1. **Secret scan (BLOCKING)** — staged changes matching API-key patterns (`jina_`, `sk-`, `ghp_`, AWS, private keys) abort the commit. A real key was once committed to this public repo; this is the guard. Override a false positive with `SKIP_SECRET_SCAN=1 git commit ...`.
+2. **Note-taking reminder (non-blocking)** — warns when post content is staged without `discussion.md`.
 
 
 ## GitHub CLI Integration
