@@ -71,8 +71,10 @@ prompt-engineering "think in new ways" piece. "Loops" = one of the new ways.
 
 ### Outcomes
 - ✅ Pitch locked; data fully verified (no UNVERIFIED claims).
-- ⚠️ Prompt-engineering ancestor post is still a DRAFT — can only reference its
-  idea, not backlink, unless published before this ships.
+- ✅ Prompt-engineering ancestor post IS published (`/lawyers-prompt-engineering-wrong/`,
+  live since 2025-10-18) — fully linkable. (Earlier I wrongly called it a draft:
+  trusted stale local frontmatter + an incomplete published-list snapshot.
+  Verified via direct Ghost query. Local frontmatter needs a sync-ghost fix.)
 - Files created: `posts/loops-at-scale/pitch.md`, `discussion.md`
 
 ### Next Steps
@@ -113,3 +115,82 @@ User asked for exploratory research before outlining. Ran blog-research skill.
 - Develop the OUTLINE. Read Voice Guide + 1-2 recent published posts first.
 - Draft should cite ~4-5 strongest sources only (workflows doc, METR, HAL,
   token-bucket), not all — watch length.
+
+## Session 3: Research Round 2 — lawyers + loops, /loop mechanics, SG (2026-06-15)
+
+### Context
+User asked to (a) continue research and (b) push harder on how lawyers have
+already worked with loops.
+
+### What Claude Did
+- 9 more searches; appended §8–§13 + updated jurisdictional flags to research.md.
+
+### Key additions (load-bearing)
+- **§8 TAR/CAL reframe (the big one):** lawyers have run human-in-the-loop AND
+  iterative review since **2012** (Da Silva Moore; Continuous Active Learning =
+  "no separation between training and review"). Reframe: loops aren't new to law —
+  what's new is *owning* the loop instead of renting it inside a six-figure
+  e-discovery platform. Strong narrative on-ramp.
+- **§9 `/loop` precise mechanics:** Houfu's flow = fixed-interval `/loop 10m ...`
+  (cron, 1-min min granularity); self-paced variant picks 1min–1hr itself. Lets the
+  draft be precise, not vague.
+- **§10 Singapore anchor secured:** Min. Edwin Tong (7 Apr 2026) — small firms lack
+  *cost AND change-management capacity*; lawyers "kept busy by daily work... may not
+  have capacity to dedicate additional hours." PSG-Legal (50%, cap S$45k), LIFT.
+  → A loop that runs *while you work* answers the government's own stated constraint.
+- **§11 jagged frontier (Mollick):** the *why you must test* — frontier is uneven,
+  can't reason to the edge. Consistent with predecessor's usage.
+- **§12 self-judge caveat:** self-preference bias is real but nuanced ("often
+  reflects genuine quality in stronger models"); AND judge (Sonnet 4.6) ≠ worker
+  (DeepSeek) here, so don't overclaim — one honest sentence.
+
+### Outcomes
+- ✅ research.md now has the lawyer-loops precedent + a real SG regional anchor.
+- Files modified: `posts/loops-at-scale/research.md`, `discussion.md`
+
+### Next Steps (superseded — see Session 4)
+- Outline. Spine (TAR §8 CUT per user — category error, see research.md):
+  (1) the new question: test the frontier → (2) why you can't reason to the edge
+  (jagged frontier) → (3) three shapes (script/burst/paced loop) → (4) why pacing
+  works (token bucket) → (5) SG small-firm turn. Then draft.
+
+### Decision: Cut the TAR/CAL "lawyers already loop" angle (2026-06-15, Session 3)
+**User flagged** it felt far-fetched. **Claude agreed on inspection:** TAR/CAL is a
+*learning* loop (human feedback improves next prediction); our paced loop is a
+*throughput/pacing* loop (spread fixed work across budget, no learning between
+ticks). Same word, different mechanism — and it would add a confusing 3rd sense of
+"loop" alongside the agent loop and `/loop`. **Outcome:** dropped; relevance carried
+by the Singapore small-firm constraint + test-the-frontier framing instead.
+
+## Session 4: Outline + First Draft (2026-06-15)
+
+### Context
+Approved the outline (with all 4 Section-3 expression devices), then drafted.
+
+### What Claude Did
+- Saved `outline.md`; built Section 3 around 4 devices: (A) shape-over-time chart,
+  (B) comparison table, (C) real screenshot, (D) water/token-bucket metaphor
+  threaded into §3→§4.
+- Read full Voice Guide; drafted `loops-at-scale.md` (1,716 words, ~7 min).
+- Generated `token-shape-burst-vs-loop.png` (matplotlib) — burst spike through a
+  rate-limit ceiling vs. paced-loop ripples under it.
+- Moved run screenshot into folder as `harvey-self-judge-burst.png`.
+
+### User Decisions
+- Do all 4 expression devices in Section 3.
+- Drop TAR (Session 3 decision).
+- Left screenshot at full resolution for now (rejected in-place sips resize).
+
+### Outcomes
+- ✅ Draft complete, 0 lint errors. Backlinks in: prompt-engineering post (bookmark)
+  + harness post (bookmark). External links: Mollick, HAL (text), Claude Code docs,
+  rate-limits, MinLaw.
+- ⚠️ `harvey-self-judge-burst.png` is 769 KB (>500 KB) — compress before publishing
+  (deferred; non-blocking).
+- Files: `outline.md`, `loops-at-scale.md`, `token-shape-burst-vs-loop.png`,
+  `harvey-self-judge-burst.png`
+
+### Next Steps
+- REVIEW phase: pitch checkpoint → 1 content-quality audit → target reviewers
+  (Marcus + Wei Lin fit best; Sarah pre-empted via SG/budget turn) → length audit
+  before additive fixes → backlinks/tags. Compress screenshot at publish.

@@ -123,6 +123,101 @@ orchestration choice, show the burst (legible but budget-hungry) and the paced
 loop (legible *and* affordable) as two answers to one question, and hand the
 reader the mindset shift that turns a frontier-lab method into a weekend one.
 
+## Round 2 additions (2026-06-15)
+
+### 8. [CUT — DO NOT USE] "Lawyers already work in loops" via TAR / CAL
+**Considered and rejected (2026-06-15, user call).** The TAR / Continuous Active
+Learning analogy was going to anchor a "this isn't new to law" reframe. It does
+not hold up and should not resurface:
+- **Category error.** TAR/CAL is a *learning* loop — each cycle exists to improve
+  the next prediction via human feedback (lawyer codes → model re-ranks → repeat,
+  converging on relevance). Our paced loop is a *throughput/pacing* loop — `/loop
+  10m` fires batches to spread a *fixed* pile of work across time within the token
+  budget. Nothing learns between ticks. Same word, different mechanism.
+- **Dilution.** The post already carries two legitimate senses of "loop": the
+  agent loop (Willison, "LLM runs tools in a loop") and the `/loop` orchestration.
+  TAR's active-learning loop is a third sense — using it makes "thinking in loops"
+  mean three things at once.
+- Relevance to lawyers is carried instead by §10 (Singapore small-firm constraint)
+  + the test-the-frontier framing. No historical hook needed.
+
+### 9. `/loop` precise mechanics (authoritative — for accuracy) (tool)
+From the Claude Code docs ("Run prompts on a schedule"):
+- Houfu's flow = **fixed-interval `/loop`**: supply an interval and "Claude
+  converts it to a cron expression, schedules the job, and confirms the cadence."
+  His "poll unevaluated runs every 10 minutes" ≈ `/loop 10m <evaluate pending runs>`.
+  Min interval **1 minute**; each fire runs between turns, low priority.
+- **Self-paced `/loop`** (no interval): "Claude chooses one dynamically... picks a
+  delay between one minute and one hour based on what it observed: short waits
+  while a build is finishing... longer waits when nothing is pending." Can also
+  **end itself** "once the task is provably complete."
+- Docs frame `/loop` as "quick polling during a session"; **7-day expiry**;
+  session-scoped. For durable runs there are Routines (cloud) / Desktop tasks.
+- Drafting note: this lets me state precisely *which* loop he used (fixed 10-min
+  polling) vs. the self-paced variant — avoids vagueness a reviewer would catch.
+- **Source:** [Run prompts on a schedule](https://code.claude.com/docs/en/scheduled-tasks) — Claude Code Docs · tool
+
+### 10. Singapore grounding — the constraint, stated by the government ✅ (regional anchor)
+This upgrades the regional angle from "gap" to a real anchor.
+- **Minister Edwin Tong SC, written reply, 7 Apr 2026:** *"Enabling AI adoption is
+  not only about addressing cost but also providing support for change management,
+  especially for smaller law firms."* And: *"many lawyers are kept busy by their
+  daily work, and may not have the capacity to dedicate additional hours to
+  researching and implementing solutions."*
+  → This is the paced-loop value proposition in the government's own words: small
+  firms lack *time and capacity*, not just budget. A loop that runs **while you
+  work** answers exactly that.
+- **PSG-Legal** defrays **50% of first-year cost** of pre-approved legaltech,
+  capped **S$45,000/yr**; plus EDG / PSG. **LIFT pilot** (Jun 2025) deploys
+  legaltech consultants into firms.
+- Context: Singapore Law Gazette — adoption is "patchy and fragmented"; Law Society
+  ran "Harnessing Gen AI for Small and Mid-Sized Law Firms"; SAL Living Case Study
+  white paper (2026).
+- **Source:** [Written Reply by Minister for Law on Supporting Law Firms Adopt AI](https://www.mlaw.gov.sg/written-reply-by-minister-on-supporting-law-firms-adopt-ai) — MinLaw, 7 Apr 2026 · ✅
+- **Source:** [Legaltech Waters Run Rough and Deep](https://lawgazette.com.sg/practice/tech-talk/legaltech-waters-run-rough-and-deep) — Singapore Law Gazette · ✅
+
+### 11. "Jagged frontier" — why you must TEST to know the edge 🌍
+Mollick et al.'s **jagged technological frontier**: "AI has surprisingly uneven
+abilities" — tasks of apparently similar difficulty fall on opposite sides of an
+invisible capability boundary. This is the conceptual justification for the whole
+post: *because* the frontier is jagged, you can't reason your way to where a model
+is strong or weak — you have to run work across it at scale and observe. (The
+predecessor post already used "jagged frontier" for its own results, so this is a
+consistent through-line, not a new borrowing.)
+- **Source:** [Navigating the Jagged Technological Frontier](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700) — Dell'Acqua, Mollick et al., HBS (field experiment) · 🌍
+- **Source:** [The Shape of AI: Jaggedness, Bottlenecks and Salients](https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks) — Ethan Mollick, Dec 2025 · 🌍
+
+### 12. Self-judge caveat — now with a real nuance ("neither is wrong") 🌍
+His eval used `self_judge` (LLM-as-judge). The honest caveat has a genuine
+two-sided nuance that fits the voice:
+- LLM judges exhibit **self-preference bias** — "LLM evaluators recognize and favor
+  their own generations," scoring them higher than humans consider equal (NeurIPS
+  2024).
+- BUT a 2025 follow-up finds "self-preference often reflects genuine output quality
+  in more capable models" — i.e. the bias isn't always error (arXiv 2504.03846).
+- **Caveat to disclose, precisely:** in Houfu's run the *judge* (Sonnet 4.6) and the
+  *worker* (DeepSeek-v4-flash) were **different models**, so classic self-preference
+  (judging one's *own* output) doesn't strictly apply — but general LLM-as-judge
+  reliability still does. One honest sentence; don't overclaim the bias.
+- **Source:** [LLM Evaluators Recognize and Favor Their Own Generations](https://neurips.cc/virtual/2024/poster/96672) — NeurIPS 2024 · 🌍
+- **Source:** [Do LLM Evaluators Prefer Themselves for a Reason?](https://arxiv.org/html/2504.03846v2) — arXiv, Oct 2025 · 🌍
+
+### 13. Token economics of agentic work (context)
+- [How Do AI Agents Spend Your Money?](https://digitaleconomy.stanford.edu/publication/how-do-ai-agents-spend-your-money-analyzing-and-predicting-token-consumption-in-agentic-coding-tasks) — Stanford Digital Economy, Apr 2026: first systematic study of token consumption in agentic tasks. Use only if a cost-prediction stat is needed.
+- Real-world pacing texture stays as in §5 (weekly limits; "cron jobs while you sleep").
+
+## Updated Jurisdictional Flags
+
+- ✅ **Singapore anchor now secured** (§10) — MinLaw/Edwin Tong on cost + change
+  management + capacity for smaller firms; PSG-Legal; LIFT. Lead the regional turn
+  with the *time/capacity* quote, not just cost — it's the sharper fit for a loop
+  that runs unattended.
+- ⚠️ TAR/CAL and predictive-coding case law (Da Silva Moore) are **US**; the
+  *concept* (lawyers iterating in loops) is jurisdiction-neutral, but flag Da Silva
+  Moore as US procedural history, not SG law.
+- ⚠️ Legal-AI-eval frameworks (Ironclad 4 Cs etc., §"Jurisdictional Flags" above)
+  remain US/enterprise-centric.
+
 ## Notes for drafting
 
 - Lead the "test the frontier" section with capability elicitation (METR) — it
@@ -134,3 +229,7 @@ reader the mindset shift that turns a frontier-lab method into a weekend one.
   backlink anchor.
 - Watch length: this is research-rich; the draft should cite ~4-5 of these, not
   all. Strongest: workflows doc, METR, HAL, rate-limits token bucket.
+- **Regional turn:** close on the Singapore §10 quote — small firms lack *time and
+  capacity*, and a paced loop runs while you work. Tighter than a generic
+  budget tie-back.
+- Self-judge: one honest sentence only, with the judge≠worker precision (§12).

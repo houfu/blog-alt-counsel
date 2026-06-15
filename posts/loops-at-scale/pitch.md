@@ -80,10 +80,11 @@ scale — and orchestration shape is what makes that affordable.
 1. **My Agent Did the Legal Work. The Benchmark Gave It Zero.** —
    `/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/` — direct
    predecessor (harness > model). **Published.**
-2. The prompt-engineering "think in new ways" post
-   (`lawyers-prompt-engineering-wrong`) — thesis ancestor (loops as one of the
-   new ways of thinking). **Still a draft** — idea-only unless published before
-   this ships.
+2. **Lawyers Got Prompt Engineering Wrong (And Why That Matters)** —
+   `/lawyers-prompt-engineering-wrong/` — thesis ancestor (loops as one of the
+   new ways of thinking; contains the Simon Willison "LLM agent runs tools in a
+   loop" definition — perfect hook for this post's title). **Published**
+   2025-10-18. (Local frontmatter wrongly says draft — stale, needs sync-ghost.)
 
 ## Tags
 
