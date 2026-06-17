@@ -385,3 +385,6 @@ audit/reviews.
 - To eyeball in Ghost: (a) the comparison table card; (b) the paced-loop section now
   reads as PROSE (numbered list removed for the converter bug — Houfu can re-add a list
   in the Ghost editor if he prefers, where lists work); (c) no feature image set yet.
+
+## Session 5 (cont.): Converter bugs filed as issue #41 (2026-06-17)
+- https://github.com/houfu/blog-alt-counsel/issues/41 (infra, own branch). No upstream — bespoke script.
