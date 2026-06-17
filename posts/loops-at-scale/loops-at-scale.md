@@ -19,51 +19,57 @@ Every few weeks there's a new model, a new capability, a new score. Underneath t
 
 You can't find out from a single chat window. One clever prompt tells you the model can do the thing once, on a good day, when you're watching. It doesn't tell you whether it holds up across a hundred real matters with the messy documents and the deadlines. For that you have to give it real work, at scale, and grade what comes back.
 
+And there's a sharper reason one chat undersells a model. What a single instance manages on its own is only half the story. Put six hundred of them to work at once — grading in parallel, covering ground no lone agent could reach in a week — and the capability you're measuring changes. What AI can do isn't a fact about the model alone. It's the model *and* how you orchestrate it.
+
 A while ago I argued that lawyers had learned prompt engineering at exactly the wrong moment — that the tools had quietly shifted from things you prompt to systems that run in loops, and that we needed new ways of thinking to keep up.
 
 [Lawyers Got Prompt Engineering Wrong (And Why That Matters)](https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/)
 
-Thinking in loops is one of those new ways. This post is what it looked like when I actually tried it.
-
-## You can't reason your way to the edge
-
-The reason you have to *test*, rather than read the spec sheet, is that AI capability is jagged.
-
-Ethan Mollick and his co-authors named this the [jagged technological frontier](https://www.oneusefulthing.org/p/the-shape-of-ai-jaggedness-bottlenecks): AI is brilliant at one task and surprisingly hopeless at another that looked just as hard. The boundary is invisible until you cross it. So you can't predict where a model breaks — you can only watch it work across a lot of tasks and see where it falls off.
-
-And even when you do test, the number you get back isn't the model's score. It's the model *plus the harness* — the wrapper of tools, retries, and packaging around it. I learned that the expensive way last month, when a finished legal memo scored zero because my agent saved it under a broken filename.
-
-[My Agent Did the Legal Work. The Benchmark Gave It Zero.](https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/)
-
-I'm not the only one. Princeton's Holistic Agent Leaderboard ran tens of thousands of agent rollouts and found the *same model* swinging by 30 to 50 points depending on the scaffold wrapped around it. So "what can this model do?" is really "what can this model do, in this harness, graded this way?" The only honest way to answer it is to run a lot of work and look hard at the results.
-
-Which brings me back to the wall.
+Thinking in loops is one of those new ways. But it's confounding to say the least. For most lawyers, the work flows in a pipeline. Do A, then B and finally C. What does a loop mean? Do A over and over again? It sounds like an exercise in stupidity and it has been one of the hardest things to wrap my mind around (no pun intended).
 
 ## Same work, three shapes
 
 Here is the work I was actually doing. I had 1,252 finished benchmark runs — legal tasks an agent had already completed — and I needed every one scored against the rubric. Tedious, mechanical, and far too much to read myself.
 
+[My Agent Did the Legal Work. The Benchmark Gave It Zero.](https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/)
+
 I ended up doing that identical job three different ways. The difference between them is the whole point.
 
-**Scripts.** The obvious way to grade a thousand things is to write a script that loops through them. This is how Harvey, who built the benchmark, runs it — and scripts can orchestrate enormous scale. But a script is a black box while it runs. When something goes wrong at run 800, it tells you very little; you're reading logs after the fact, not watching the work happen. For a job I didn't fully trust yet, that opacity bothered me.
+### Scripts 
 
-**The burst.** So I reached for a dynamic workflow instead — a [Claude Code feature](https://code.claude.com/docs/en/workflows) where, rather than doing the job itself, Claude writes a small program that hands the work out to a fleet of subagents and supervises them. It split my 1,252 runs into 626 judge agents, each scoring about two runs, running a dozen at a time.
+The obvious way to grade a thousand things is to write a script that loops through them. This is how Harvey, who built the benchmark, [runs it](https://github.com/harveyai/harvey-labs/blob/main/docs/tutorial.md) — and scripts can orchestrate enormous scale. But a script is a black box while it runs. When something goes wrong at run 800, it tells you very little; you're reading logs after the fact, not watching the work happen. For a job I didn't fully trust yet, that opacity bothered me.
+
+The scripts definitely work, but you’re conforming to a script written by someone else. In my case, Harvey’s script allowed evaluation only or test only runs. However, it required Anthropic API models to judge. It seemed fairly dumb not to use Claude Code (which I was already using) to judge these runs myself. 
+
+The script was nice, but I couldn’t use it. I would have to rewrite it, introducing new potential problems.  
+
+### The burst
+
+So I reached for a dynamic workflow instead — a [Claude Code feature](https://code.claude.com/docs/en/workflows) where, rather than doing the job itself, Claude writes a small program that hands the work out to a fleet of subagents and supervises them, adapted to the Claude Code interface. 
+
+I told Claude Code that I had 1,252 evaluations to do in my folders and to use “workflows” to solve them. It split my 1,252 runs into 626 judge agents, each scoring about two runs, running a dozen at a time.
 
 This was the opposite of a black box. I could open any single agent and watch it reason about a run. As the documentation puts it, a workflow "moves the plan into code" — the orchestration becomes something you can read, rerun, and inspect. The work had become legible.
 
 ![A Claude Code workflow scoring the benchmark: a run titled "harvey-self-judge-all-runs" fanning out 626 judge agents, with a dozen actively running and the rest queued, each showing its token use and tool calls.](harvey-self-judge-burst.png)
 
-It was glorious. It was also a flood. Six hundred agents firing as fast as the system allowed is like tipping a full bucket of water out at once — most of the capacity you're paying for just sloshes over the side. Three days in, the bucket was empty. My tokens ran out.
+It was glorious. It was also a flood. Six hundred agents firing as fast as the system allowed is like tipping a full bucket of water out at once — most of the capacity you're paying for just sloshes over the side. Three days in, the bucket was empty. I kept hitting the limit. I spent more time waiting for it to reset than actually running the work. 
 
-**The paced loop.** That was the moment I had a choice: wait for a bigger budget, or change the shape of the work.
+### The paced loop
 
-So I set a loop running. Every ten minutes, check for runs that hadn't been scored yet, and spin up a few agents — three to eight — to grade them. Each small batch finished before the next began, and each round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs. Same agents. Same judge. A completely different shape in time.
+When I had a chance at another go, I wanted some conservation of resources. I was also writing a presentation and other daily stuff in Claude Cowork. I definitely could not expend all my session usage for 5 hours within 30 minutes of a reset.
+
+So I set a loop running:
+
+1. Run the model or agent against a task in Harvey LAB. These take time and vary (simple tasks take a few minutes, complex tasks take longer). Once they are done, they save their output in the folder, waiting for a judge to score them.
+2. Separately I check for runs that hadn't been scored yet, and spin up an agent to grade them. These are set on a loop of 10 mins (using `/loop 10m [prompt]`) so it picks up whatever is actually outstanding. This resulted in about 3-8 tasks evaluated by a Claude subagent every 10 minutes.  
+3. Each small batch finished before the next began, and each round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs. Same agents. Same judge. A completely different shape in time.
 
 Drawn against the limit, the two shapes look like this:
 
-![A chart of token use over time against a dashed rate-limit ceiling. The burst is a single tall spike that punches through the ceiling and collapses; the paced loop is a row of small, even humps that ride comfortably underneath it.](token-shape-burst-vs-loop.png)
+![A chart of usage over time against a dashed session-limit ceiling. The burst is a single tall spike that punches through the ceiling and collapses; the paced loop is a row of small, even humps that ride comfortably underneath it.](token-shape-burst-vs-loop.png)
 
-One honest caveat: I had the agents grade the runs themselves — an LLM acting as judge. That's a useful instrument, not an oracle, and I trust the pattern across a thousand runs far more than any single score. But the shape of *how* I ran them is what this post is about, and on that the three approaches sort cleanly:
+The shape of *how* I ran them is what this post is about, and on that the three approaches sort cleanly:
 
 | | Scripts | Burst (`Workflow`) | Paced loop (`/loop`) |
 |---|---|---|---|
@@ -77,9 +83,9 @@ One honest caveat: I had the agents grade the runs themselves — an LLM acting 
 
 The loop isn't slower out of patience. It works because the limit I hit has a shape, and the loop matches it.
 
-Anthropic's API, like most, enforces its limits with a [token bucket](https://platform.claude.com/docs/en/api/rate-limits). Your capacity refills continuously, drip by drip, up to a maximum — it isn't handed back to you in one lump each hour. The documentation is blunt about what that means for a flood: "Short bursts of requests can exceed the limit and trigger rate limit errors."
+A Claude subscription doesn't meter you by the request. It gives you an allowance inside a rolling window a few hours long, with a larger weekly cap sitting on top. Spend that window's worth in one go and you're locked out until it resets. That's why the burst felt so wasteful: six hundred agents drained the whole window in minutes, and then I sat idle, waiting on the clock while the limit slowly crept back.
 
-That's the whole story in one image. The burst empties the bucket and slams into the ceiling. The loop sips at the rate the bucket refills. Same water, same bucket — one shape overflows and stalls, the other rides the refill and finishes.
+The loop spends differently. Three to eight agents every ten minutes is a steady sip — small enough that the window recovers about as fast as I draw it down, so the work never stops and I keep enough in reserve to write a presentation in Cowork on the side. Same allowance, same ceiling. One shape pours it all out and stalls; the other paces itself and finishes.
 
 Once you see it that way, pacing stops feeling like a compromise. It's just the shape that fits the constraint.
 
@@ -87,7 +93,7 @@ Once you see it that way, pacing stops feeling like a compromise. It's just the 
 
 Once you've settled on a model and built a decent harness, the shape of the work is the lever still in your hands — and it's a real decision, not a default.
 
-Burst when you have budget to spend and you want the answer now. Pace when tokens, rate limits, or your own attention are the thing in short supply. The burst gave me legibility and speed right up until it gave me an empty tank. The loop gave up the speed and kept everything else.
+Burst when you have budget to spend and you want the answer now. Pace when your usage limits, your budget, or your own attention are the thing in short supply. The burst gave me legibility and speed right up until it gave me an empty tank. The loop gave up the speed and kept everything else.
 
 Neither is wrong. But choosing the wrong shape for your constraint is how you end up three days in with nothing scored — or how you wait a week for an answer you could have had in an afternoon.
 
@@ -102,5 +108,7 @@ A loop that runs while you work is a direct answer to exactly that. You don't si
 For solo counsels and small teams, this is the part worth internalising. You will not win by buying the biggest burst. You win by knowing the question is testable at all, and by shaping the work so it fits the resources you have rather than the ones you wish you had.
 
 My tokens ran out three days into the benchmark, and the fix wasn't a bigger budget or a better model. It was a different shape. The capability was already there — I just had to stop pouring it out all at once.
+
+That's the part I keep coming back to. We spend so much energy arguing over which model is best. But what these tools can actually do depends just as much on how you run them — one at a time, six hundred at once, or a few every ten minutes. Knowing how to orchestrate them, in concert, is becoming a skill of its own — and it widens the frontier as surely as a better model does.
 
 The model isn't the only thing you're choosing. What shape is your work running in?

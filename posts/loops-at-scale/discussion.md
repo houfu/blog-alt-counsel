@@ -194,3 +194,72 @@ Approved the outline (with all 4 Section-3 expression devices), then drafted.
 - REVIEW phase: pitch checkpoint → 1 content-quality audit → target reviewers
   (Marcus + Wei Lin fit best; Sarah pre-empted via SG/budget turn) → length audit
   before additive fixes → backlinks/tags. Compress screenshot at publish.
+
+## Session 5: User edits + editorial review (2026-06-17)
+
+### Context
+User read and hand-edited the draft, then asked Claude to go through it before
+audit/reviews.
+
+### User edits (kept — make voice/lived-in)
+- Added "loops are confounding for lawyers" beat (pipeline vs loop) in §1.
+- Added lived detail: judging with Claude Code (subscription) instead of Harvey's
+  Anthropic-API judge; Claude CoWork + 5-hour session usage; numbered loop steps;
+  "waiting for limits to reset" pain.
+- Cut the jagged-frontier section (Mollick + HAL) entirely — leaner post.
+- Removed Claude's self-judge caveat line.
+
+### Claude's review findings (pre-audit)
+- **Blocking — §4 accuracy:** user correctly reframed to subscription, but the
+  section still describes the API **token bucket** ("refills continuously, drip by
+  drip") and quotes the API rate-limits doc. Subscription = fixed rolling ~5-hr
+  window + weekly cap that RESETS, not continuous refill. Line 85 also ungrammatical.
+  Proposed: rewrite §4 around session/weekly limits, drop API quote, keep water
+  metaphor but "refills on reset"; regen chart label "rate-limit"→"session-limit".
+- **Structural call:** with jagged-frontier cut, title/§1 "finding the frontier" is
+  lightly supported; post is now about orchestration shape under resource limits.
+  Options: (a) soften frontier language [Claude leans a], or (b) restore 1 compact
+  paragraph.
+- **Polish:** two "(no pun intended)" within 15 lines; "### The burst." trailing
+  period; "tokens ran out continuously" oxymoron; double space; optional self-judge
+  caveat restore.
+- **Verified:** Harvey script link is real — repo `harveyai/harvey-labs`,
+  tutorial.md documents eval-only re-scoring. Link OK.
+
+### Pending USER DECISIONS (awaiting reply)
+- Confirm "Claude CoWork" is the real product name (vs Claude Code / Claude.ai).
+- Approve §4 rewrite + chart-label regen + polish fixes.
+- Choose frontier framing: (a) soften title/§1 vs (b) restore jagged-frontier para.
+
+### Next Steps
+- Apply agreed fixes, THEN run 1 content-quality audit → Marcus + Wei Lin reviews
+  → length audit before additive fixes → backlinks/tags.
+
+## Session 5 (cont.): Accuracy + frontier-sharpening edits applied (2026-06-17)
+
+### User Decisions
+- "Claude Cowork" IS a real product — keep (fixed casing CoWork→Cowork).
+- Apply the §4 accuracy rewrite.
+- **Frontier framing: SHARPEN, not soften.** Key idea: what we can learn about what
+  models can do also depends on orchestration — what 600 agents do in concert vs.
+  1-by-1. Loops/workflows multiply capability through orchestration; being able to
+  orchestrate is itself a frontier skill/feature. (Rejected Claude's lean toward
+  option (a) soften.)
+
+### What Claude Did
+- §4 rewritten to subscription reality: rolling ~5-hr window + weekly cap that
+  RESETS (not API token bucket); dropped the API rate-limits quote; kept a light
+  water image ("sip"/"pours it all out"). Mentions Cowork.
+- §1: added orchestration-as-capability beat ("the model AND how you orchestrate it").
+- Close: sharpened to land orchestration-as-frontier-skill payoff.
+- Regenerated chart labels: "rate-limit"→"session-limit ceiling", y-axis "session usage".
+- Polish: removed 2nd "(no pun intended)"; "### The burst." period; "ran out
+  continuously"→"kept hitting the limit"; double-space + blank-line cleanup.
+- Verified Harvey script link is real (`harveyai/harvey-labs`, tutorial.md).
+
+### Outcomes
+- ✅ Draft accurate + frontier thesis sharpened. 0 lint errors (image-size warning only).
+- Note: self-judge caveat stays cut (user's call); flag for audit if it resurfaces.
+
+### Next Steps
+- Run 1 content-quality audit → Marcus + Wei Lin reviews → length audit → backlinks/tags.
