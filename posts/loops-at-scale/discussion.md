@@ -376,3 +376,12 @@ audit/reviews.
 ### fix processTable to drop empty edge cells + render inline code in cells.
 
 ### Final backlinks (3 cards, distributed): skillsbench (§1), prompt-engineering (§1), harness (§3).
+
+## Session 5 (cont.): Ghost draft created (2026-06-17)
+- Published as DRAFT via publish-lexical.js. Post ID 6a32122639186c0001eab9af.
+- Editor: https://alt-counsel.ghost.io/ghost/#/editor/post/6a32122639186c0001eab9af
+- Both local images uploaded (screenshot kept at 769 KB per user choice).
+- NOT synced back yet (rule: sync once when closing the PR, after any Ghost edits).
+- To eyeball in Ghost: (a) the comparison table card; (b) the paced-loop section now
+  reads as PROSE (numbered list removed for the converter bug — Houfu can re-add a list
+  in the Ghost editor if he prefers, where lists work); (c) no feature image set yet.
