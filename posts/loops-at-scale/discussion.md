@@ -263,3 +263,31 @@ audit/reviews.
 
 ### Next Steps
 - Run 1 content-quality audit → Marcus + Wei Lin reviews → length audit → backlinks/tags.
+
+## Session 5 (cont.): Content-quality audit — applied + deferred (2026-06-17)
+
+### Audit run (content-quality-auditor, 5 sub-agents)
+**Applied (clear wins):**
+- Defined "orchestrate" on first use (scheduling/pacing/parallelisation).
+- Jargon glosses: judge agents = "separate Claude instances scoring vs the rubric"
+  (also answers the self-judge question), Harvey LAB, `/loop`; deduped subagent→agent.
+- Fixed residual water-metaphor leak ("window recovers as fast as I draw it down" →
+  "stay under the ceiling for the whole window, with headroom to spare").
+- Trimmed "shape" motif (13→~11): table column → "Behaviour over time"; step 3 → "rhythm".
+- Heading parallelism: "Scripts" → "The script".
+
+**Declined / pushing back:**
+- Move comparison table later — keeping it as a summary of the 3 shapes just described.
+- Remove "(no pun intended)" — keeping; it's the author's voice.
+- Rewrite opening for "more vulnerability" — author DELIBERATELY chose determination
+  over panic as the anchor; keep the author's choice.
+
+**Deferred to post-reviewer synthesis (structural — batch with reviewer feedback):**
+- (1) Possible consolidation of §"Why the slow way works" + §"The shape is the
+  decision" (they circle mechanism→decision-rule; ~150-word save).
+- (2) "The script" section reads as personal limitation ("couldn't reuse Harvey's")
+  vs. a property of the script shape, while the table treats it as coequal.
+
+### Next Steps
+- Run Marcus (legal-tech) + Wei Lin (lawyer-coder) reviews → then synthesise audit
+  + reviews, length-audit, apply structural changes in one pass.

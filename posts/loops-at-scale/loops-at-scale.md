@@ -19,7 +19,7 @@ Every few weeks there's a new model, a new capability, a new score. Underneath t
 
 You can't find out from a single chat window. One clever prompt tells you the model can do the thing once, on a good day, when you're watching. It doesn't tell you whether it holds up across a hundred real matters with the messy documents and the deadlines. For that you have to give it real work, at scale, and grade what comes back.
 
-And there's a sharper reason one chat undersells a model. What a single instance manages on its own is only half the story. Put six hundred of them to work at once — grading in parallel, covering ground no lone agent could reach in a week — and the capability you're measuring changes. What AI can do isn't a fact about the model alone. It's the model *and* how you orchestrate it.
+And there's a sharper reason one chat undersells a model. What a single instance manages on its own is only half the story. Put six hundred of them to work at once — grading in parallel, covering ground no lone agent could reach in a week — and the capability you're measuring changes. What AI can do isn't a fact about the model alone. It's the model *and* how you orchestrate it — the scheduling, pacing, and parallelisation you wrap around it.
 
 A while ago I argued that lawyers had learned prompt engineering at exactly the wrong moment — that the tools had quietly shifted from things you prompt to systems that run in loops, and that we needed new ways of thinking to keep up.
 
@@ -35,7 +35,7 @@ Here is the work I was actually doing. I had 1,252 finished benchmark runs — l
 
 I ended up doing that identical job three different ways. The difference between them is the whole point.
 
-### Scripts 
+### The script
 
 The obvious way to grade a thousand things is to write a script that loops through them. This is how Harvey, who built the benchmark, [runs it](https://github.com/harveyai/harvey-labs/blob/main/docs/tutorial.md) — and scripts can orchestrate enormous scale. But a script is a black box while it runs. When something goes wrong at run 800, it tells you very little; you're reading logs after the fact, not watching the work happen. For a job I didn't fully trust yet, that opacity bothered me.
 
@@ -47,7 +47,7 @@ The script was nice, but I couldn’t use it. I would have to rewrite it, introd
 
 So I reached for a dynamic workflow instead — a [Claude Code feature](https://code.claude.com/docs/en/workflows) where, rather than doing the job itself, Claude writes a small program that hands the work out to a fleet of subagents and supervises them, adapted to the Claude Code interface. 
 
-I told Claude Code that I had 1,252 evaluations to do in my folders and to use “workflows” to solve them. It split my 1,252 runs into 626 judge agents, each scoring about two runs, running a dozen at a time.
+I told Claude Code that I had 1,252 evaluations to do in my folders and to use “workflows” to solve them. It split my 1,252 runs into 626 judge agents — separate Claude instances, each scoring about two runs against the rubric — running a dozen at a time.
 
 This was the opposite of a black box. I could open any single agent and watch it reason about a run. As the documentation puts it, a workflow "moves the plan into code" — the orchestration becomes something you can read, rerun, and inspect. The work had become legible.
 
@@ -61,9 +61,9 @@ When I had a chance at another go, I wanted some conservation of resources. I wa
 
 So I set a loop running:
 
-1. Run the model or agent against a task in Harvey LAB. These take time and vary (simple tasks take a few minutes, complex tasks take longer). Once they are done, they save their output in the folder, waiting for a judge to score them.
-2. Separately I check for runs that hadn't been scored yet, and spin up an agent to grade them. These are set on a loop of 10 mins (using `/loop 10m [prompt]`) so it picks up whatever is actually outstanding. This resulted in about 3-8 tasks evaluated by a Claude subagent every 10 minutes.  
-3. Each small batch finished before the next began, and each round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs. Same agents. Same judge. A completely different shape in time.
+1. Run the model against a task in Harvey LAB (the benchmark itself). These take time and vary (simple tasks take a few minutes, complex tasks take longer). Once they are done, they save their output in the folder, waiting for a judge to score them.
+2. Separately I check for runs that hadn't been scored yet, and spin up an agent to grade them. These run on a ten-minute loop — `/loop 10m [prompt]`, a Claude Code command that re-runs a prompt on a fixed interval — so each pass picks up whatever is still outstanding. About 3-8 tasks got graded by a Claude agent every ten minutes.
+3. Each small batch finished before the next began, and each round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs. Same agents. Same judge. A completely different rhythm in time.
 
 Drawn against the limit, the two shapes look like this:
 
@@ -75,7 +75,7 @@ The shape of *how* I ran them is what this post is about, and on that the three 
 |---|---|---|---|
 | Who holds the plan | the script | an orchestrator | the scheduler |
 | Can you see inside? | barely | yes, agent by agent | yes, a summary each tick |
-| Shape over time | opaque | one tall spike | steady ripples |
+| Behaviour over time | opaque | one tall spike | steady ripples |
 | Hits the wall? | maybe | fast | rides under it |
 | Fits when | already battle-tested | budget, and you want speed | time or budget is the constraint |
 
@@ -85,7 +85,7 @@ The loop isn't slower out of patience. It works because the limit I hit has a sh
 
 A Claude subscription doesn't meter you by the request. It gives you an allowance inside a rolling window a few hours long, with a larger weekly cap sitting on top. Spend that window's worth in one go and you're locked out until it resets. That's why the burst felt so wasteful: six hundred agents drained the whole window in minutes, and then I sat idle, waiting on the clock while the limit slowly crept back.
 
-The loop spends differently. Three to eight agents every ten minutes is a steady sip — small enough that the window recovers about as fast as I draw it down, so the work never stops and I keep enough in reserve to write a presentation in Cowork on the side. Same allowance, same ceiling. One shape pours it all out and stalls; the other paces itself and finishes.
+The loop spends differently. Three to eight agents every ten minutes is a steady sip — small enough that I stay under the ceiling for the whole window, with headroom to spare, so the work never stops and I keep enough in reserve to write a presentation in Cowork on the side. Same allowance, same ceiling. One shape pours it all out and stalls; the other paces itself and finishes.
 
 Once you see it that way, pacing stops feeling like a compromise. It's just the shape that fits the constraint.
 
