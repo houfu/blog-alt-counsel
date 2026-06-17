@@ -93,7 +93,7 @@ Once you see it that way, pacing stops feeling like a compromise. It's just the 
 
 Once you've settled on a model and built a decent harness, the shape of the work is the lever still in your hands — and it's a real decision, not a default.
 
-Burst when you have budget to spend and you want the answer now. Pace when your usage limits, your budget, or your own attention are the thing in short supply. The burst gave me legibility and speed right up until it gave me an empty tank. The loop gave up the speed and kept everything else.
+After the burst, the rule I gave myself was simple. Burst when you have budget to spend and you want the answer now. Pace when your usage limits, your budget, or your own attention are the thing in short supply. The burst gave me legibility and speed right up until it gave me an empty tank. The loop gave up the speed and kept everything else.
 
 Neither is wrong. But choosing the wrong shape for your constraint is how you end up three days in with nothing scored — or how you wait a week for an answer you could have had in an afternoon.
 
