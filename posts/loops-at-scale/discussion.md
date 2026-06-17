@@ -330,3 +330,28 @@ audit/reviews.
 ### Next Steps
 - Backlink curation (2 internal bookmarks already in: prompt-engineering + harness posts;
   confirm no others needed) → tag validation → compress screenshot → publish.
+
+## Session 5 (cont.): Backlinks + tags (2026-06-17)
+
+### Backlinks (curated, final draft)
+- Already present (bookmarks): prompt-engineering post (§1), harness predecessor (§3).
+- Added (inline, distributed): "What 7,308 Agent Runs Taught Me About Writing Better
+  Skills" (skillsbench-analysis) on §1's "real work at scale" — own precedent for
+  testing-at-scale; "Two Files, One Workflow. No Code. Just Cowork." on the §3 Cowork
+  mention — explains the product the post name-drops.
+- Considered but skipped (would crowd / already covered by predecessor): OpenClaw,
+  Word on Claude.
+
+### Tags
+- Validated against registry: AI (core topic) + LegalTech (core topic). Both canonical,
+  both central — valid pairing. No change needed.
+
+### Pre-publish status
+- Draft ~2,055 words (~9 min), 0 lint errors. Only outstanding item:
+  `harvey-self-judge-burst.png` is 769 KB (>500 KB soft limit) — non-blocking but
+  should be compressed before publish. (User earlier declined an in-place resize;
+  confirm approach at publish.)
+
+### Next Steps
+- Confirm screenshot handling → publish to Ghost via publish-lexical.js (with --dry-run
+  first) → sync once after any Ghost edits.

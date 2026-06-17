@@ -17,7 +17,7 @@ When you run real AI work at scale, the model isn't the thing you're really choo
 
 Every few weeks there's a new model, a new capability, a new score. Underneath the noise, the people I talk to keep asking the same quiet question: with all of this, how do I actually know what these models can do for *my* work?
 
-You can't find out from a single chat window. One clever prompt tells you the model can do the thing once, on a good day, when you're watching. It doesn't tell you whether it holds up across a hundred real matters with the messy documents and the deadlines. For that you have to give it real work, at scale, and grade what comes back.
+You can't find out from a single chat window. One clever prompt tells you the model can do the thing once, on a good day, when you're watching. It doesn't tell you whether it holds up across a hundred real matters with the messy documents and the deadlines. For that you have to give it real work, at scale, and grade what comes back — [the last time I did this](https://www.alt-counsel.com/skillsbench-analysis/), it took 7,308 agent runs to see which skills actually helped.
 
 And there's a sharper reason one chat undersells a model. What a single instance manages on its own is only half the story. Put six hundred of them to work at once — grading in parallel, covering ground no lone agent could reach in a week — and the capability you're measuring changes. What AI can do isn't a fact about the model alone. It's the model *and* how you orchestrate it — the scheduling, pacing, and parallelisation you wrap around it.
 
@@ -57,7 +57,7 @@ It was glorious. It was also a flood. Six hundred agents firing as fast as the s
 
 ### The paced loop
 
-When I had a chance at another go, I wanted some conservation of resources. I was also writing a presentation and other daily stuff in Claude Cowork. I definitely could not expend all my session usage for 5 hours within 30 minutes of a reset.
+When I had a chance at another go, I wanted some conservation of resources. I was also writing a presentation and other daily stuff in [Claude Cowork](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/). I definitely could not expend all my session usage for 5 hours within 30 minutes of a reset.
 
 So I set a loop running:
 
