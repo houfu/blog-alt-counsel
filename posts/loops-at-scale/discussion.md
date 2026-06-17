@@ -355,3 +355,24 @@ audit/reviews.
 ### Next Steps
 - Confirm screenshot handling → publish to Ghost via publish-lexical.js (with --dry-run
   first) → sync once after any Ghost edits.
+
+## Session 5 (cont.): Pre-publish dry-run caught converter bugs (2026-06-17)
+
+### publish-lexical.js dry-run surfaced 3 problems — worked around in markdown (NOT in the script; infra fixes belong on a separate branch):
+1. **Ordered/bulleted lists relocated to end of doc.** `flushList()` is only called on
+   list-type-change, paywall, or end-of-document — never when a non-list block (paragraph/
+   heading/image) interrupts a list. So any mid-document list lands at the bottom.
+   → WORKAROUND: converted the 3-step paced-loop list to prose.
+2. **Markdown tables get phantom empty columns.** `processTable` splits on `|` and filters
+   only `undefined`, not empty strings — so outer pipes produce leading/trailing blank cells.
+   Also: inline code (backticks) in cells renders literally.
+   → WORKAROUND: wrote the table with NO outer pipes and a real first-column header
+   ("Approach"); removed backticks from header cells.
+3. **Inline internal (alt-counsel.com) links get mangled** into bookmark cards mid-sentence,
+   duplicating text. → WORKAROUND: backlinks must be STANDALONE lines (become clean cards).
+   Reverted 2 inline links; kept skillsbench as a standalone card. Dropped the Cowork link.
+
+### TODO (separate infra branch, not this PR): fix flushList() to flush on any non-list block;
+### fix processTable to drop empty edge cells + render inline code in cells.
+
+### Final backlinks (3 cards, distributed): skillsbench (§1), prompt-engineering (§1), harness (§3).

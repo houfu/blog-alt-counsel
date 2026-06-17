@@ -17,7 +17,9 @@ When you run real AI work at scale, the model isn't the thing you're really choo
 
 Every few weeks there's a new model, a new capability, a new score. Underneath the noise, the people I talk to keep asking the same quiet question: with all of this, how do I actually know what these models can do for *my* work?
 
-You can't find out from a single chat window. One clever prompt tells you the model can do the thing once, on a good day, when you're watching. It doesn't tell you whether it holds up across a hundred real matters with the messy documents and the deadlines. For that you have to give it real work, at scale, and grade what comes back — [the last time I did this](https://www.alt-counsel.com/skillsbench-analysis/), it took 7,308 agent runs to see which skills actually helped.
+You can't find out from a single chat window. One clever prompt tells you the model can do the thing once, on a good day, when you're watching. It doesn't tell you whether it holds up across a hundred real matters with the messy documents and the deadlines. For that you have to give it real work, at scale, and grade what comes back.
+
+[What 7,308 Agent Runs Taught Me About Writing Better Skills](https://www.alt-counsel.com/skillsbench-analysis/)
 
 And there's a sharper reason one chat undersells a model. What a single instance manages on its own is only half the story. Put six hundred of them to work at once — grading in parallel, covering ground no lone agent could reach in a week — and the capability you're measuring changes. What AI can do isn't a fact about the model alone. It's the model *and* how you orchestrate it — the scheduling, pacing, and parallelisation you wrap around it.
 
@@ -57,13 +59,11 @@ It was glorious. It was also a flood. Six hundred agents firing as fast as the s
 
 ### The paced loop
 
-When I had a chance at another go, I wanted some conservation of resources. I was also writing a presentation and other daily stuff in [Claude Cowork](https://www.alt-counsel.com/two-files-one-workflow-no-code-just-cowork/). I definitely could not expend all my session usage for 5 hours within 30 minutes of a reset.
+When I had a chance at another go, I wanted some conservation of resources. I was also writing a presentation and other daily stuff in Claude Cowork. I definitely could not expend all my session usage for 5 hours within 30 minutes of a reset.
 
-So I set a loop running:
+So I set a loop running. The benchmark tasks went first — simple ones in a few minutes, complex ones longer — each saving its output to a folder to wait for a judge. Then, on a separate ten-minute cadence (`/loop 10m [prompt]`, a Claude Code command that re-runs a prompt on a fixed interval), I checked for runs that hadn't been scored yet and spun up an agent to grade them. I never set a batch size; each pass just took however many had piled up since the last — three to eight, as it turned out.
 
-1. Run the model against a task in Harvey LAB (the benchmark itself). These take time and vary (simple tasks take a few minutes, complex tasks take longer). Once they are done, they save their output in the folder, waiting for a judge to score them.
-2. Separately I check for runs that hadn't been scored yet, and spin up an agent to grade them. These run on a ten-minute loop — `/loop 10m [prompt]`, a Claude Code command that re-runs a prompt on a fixed interval — so each pass picks up whatever is still outstanding. I never set that batch size; it was simply however many had piled up since the last pass — three to eight, as it turned out.
-3. Each small batch finished before the next began, and each round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs. Same agents. Same judge. A completely different rhythm in time.
+Each small batch finished before the next began, and every round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs, same agents, same judge — a completely different rhythm in time.
 
 Drawn against the limit, the two shapes look like this:
 
@@ -71,13 +71,13 @@ Drawn against the limit, the two shapes look like this:
 
 The shape of *how* I ran them is what this post is about, and on that the three approaches sort cleanly:
 
-| | Scripts | Burst (`Workflow`) | Paced loop (`/loop`) |
-|---|---|---|---|
-| Who holds the plan | the script | an orchestrator | the scheduler |
-| Can you see inside? | barely | yes, agent by agent | yes, a summary each tick |
-| Behaviour over time | opaque | one tall spike | steady ripples |
-| Hits the wall? | maybe | fast | rides under it |
-| Fits when | already battle-tested | budget, and you want speed | time or budget is the constraint |
+Approach | Scripts | Burst (Workflow) | Paced loop (/loop)
+---|---|---|---
+Who holds the plan | the script | an orchestrator | the scheduler
+Can you see inside? | barely | yes, agent by agent | yes, a summary each tick
+Behaviour over time | opaque | one tall spike | steady ripples
+Hits the wall? | maybe | fast | rides under it
+Fits when | already battle-tested | budget, and you want speed | time or budget is the constraint
 
 ## Why the slow way works
 
