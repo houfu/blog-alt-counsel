@@ -388,3 +388,34 @@ audit/reviews.
 
 ## Session 5 (cont.): Converter bugs filed as issue #41 (2026-06-17)
 - https://github.com/houfu/blog-alt-counsel/issues/41 (infra, own branch). No upstream — bespoke script.
+
+## Session 5 (cont.): Scheduled + final sync from Ghost (2026-06-17)
+
+### Status
+- SCHEDULED for 2026-06-18 01:14 UTC. post_id 6a32122639186c0001eab9af.
+- Frontmatter synced (status, post_id, published_at, feature_image, custom_excerpt).
+
+### Houfu's Ghost-editor edits (synced/logged — note voice preferences for future posts):
+- **Excerpt:** used the narrative option A verbatim.
+- **Feature image:** generated wide-3:2 banner on deep indigo — the burst-vs-loop *water/
+  bucket* metaphor (left: bucket splashing all at once past a line; right: same bucket as a
+  steady drip staying in place). i.e. picked the editorial water concept over reusing the chart.
+  → `feature_image_alt` still empty; alt text drafted, offered to set via API.
+- **Bookmark cards — adds captions** (voice preference: enrich every link card with a context
+  sentence, don't leave bare): skillsbench = "Previously I shared how running workflows at
+  scale can produce lessons that can be generalised…" (+ added `?ref=loops-article` UTM);
+  harness = "My previous post provides results of the work I was doing here"; prompt-engineering
+  = MOVED the body line "A while ago I argued…" INTO the card caption (so it's no longer a
+  standalone body paragraph in the published version).
+- **Image captions added** to both (used my suggested alt sentences as the captions).
+- **Prose clarification (burst section), MERGED to markdown:** "Three days in, the bucket was
+  empty" → "Within 30 minutes, my bucket was empty… I kept hitting the limit in the three days
+  it took to run the workflow." Reconciles the 30-min-window vs 3-day-total timeline.
+
+### Markdown round-trip limits (per converter, issue #41): bookmark/image captions and the
+### moved-paragraph-into-caption can't be represented in markdown; logged here instead of merged.
+
+### Remaining
+- Set `feature_image_alt` (awaiting user go / or they paste in editor).
+- Screenshot stays 769 KB (user's choice).
+- After go-live, this PR can be merged; converter fixes (#41) are a separate branch.

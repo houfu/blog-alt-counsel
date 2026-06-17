@@ -1,10 +1,20 @@
 ---
-title: "Thinking in Loops: Finding the Frontier Without a Frontier Budget"
+title: 'Thinking in Loops: Finding the Frontier Without a Frontier Budget'
 slug: thinking-in-loops-frontier-budget
-tags: ["AI", "LegalTech"]
-status: draft
+tags:
+  - AI
+  - LegalTech
+status: scheduled
 featured: false
 github_folder: loops-at-scale
+post_id: 6a32122639186c0001eab9af
+published_at: '2026-06-18T01:14:38.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/06/wide-3-2-blog-banner--deep-indigo-purple-backgroun.png
+custom_excerpt: >-
+  Three days into scoring a legal benchmark, my tokens ran out. The fix wasn't a
+  bigger budget or a better model — it was a different shape. On orchestration,
+  loops, and reaching the frontier of what AI can do without a frontier budget.
 ---
 
 Three days into scoring the benchmark, my tokens ran out.
@@ -55,7 +65,7 @@ This was the opposite of a black box. I could open any single agent and watch it
 
 ![A Claude Code workflow scoring the benchmark: a run titled "harvey-self-judge-all-runs" fanning out 626 judge agents, with a dozen actively running and the rest queued, each showing its token use and tool calls.](harvey-self-judge-burst.png)
 
-It was glorious. It was also a flood. Six hundred agents firing as fast as the system allowed is like tipping a full bucket of water out at once — most of the capacity you're paying for just sloshes over the side. Three days in, the bucket was empty — my session budget, not any cap on the agents themselves. I kept hitting the limit, and spent more time waiting for it to reset than running the work. 
+It was glorious. It was also a flood. Six hundred agents firing as fast as the system allowed is like tipping a full bucket of water out at once — most of the capacity you're paying for just sloshes over the side. Within 30 minutes, my bucket was empty — my session budget, not any cap on the agents themselves. I kept hitting the limit in the three days it took to run the workflow, and spent more time waiting for it to reset than running the work. 
 
 ### The paced loop
 
