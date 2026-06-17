@@ -42,3 +42,12 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
 - Standing asks: all pre-empted.
 - Settled (do not re-raise): user declined alternative closing question, kept harness-centric "What is your harness quietly deciding for you?" — stated reason: "stick to the spine."
 - Emotional core (per discussion.md) fully preserved in final draft. Verdict: ready to publish.
+
+## loops-at-scale — Round 1 (2026-06-17)
+- Load-bearing line praised: the "loops are confounding for lawyers" paragraph ("exercise in stupidity... hardest thing to wrap my mind around") — Wei Lin's "I'm not alone" moment. KEPT as-is (did not invent a cognitive-breakthrough sentence Houfu didn't supply).
+- Most resonant detail: the Cowork-on-the-side + 5-hour-session constraint ("that's my Tuesday night"). KEPT.
+- Unique catches APPLIED:
+  - "The script" section did two jobs (universal opacity vs personal API incompatibility) → separated: para 1 = general opacity problem, para 2 = the specific forcing function (couldn't reuse Harvey's API-bound script).
+  - Closing mis-sequenced/too long → restructured: determination callback ("the fix wasn't a bigger budget... a different shape") now lands LAST before the question; abstract paragraph replaced by a concrete, earned payoff.
+- Settled: emotional anchor is DETERMINATION not panic (user, Session 1) — did not push for more vulnerability.
+- Standing asks: none (pre-empted).
