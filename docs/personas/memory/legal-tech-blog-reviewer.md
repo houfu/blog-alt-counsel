@@ -41,3 +41,14 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 - Standing asks: pre-empted (jargon acceptable for lawyer-coder readership).
 - Advice rejected: alternative closing question ("Have you seen your agent improvise its own toolchain?") — user kept harness-centric close: "stick to the spine of the post."
 - User preference observed: caps reviews at 2 rounds; values honest caveats over punchy absolutes ("he prefers stronger data with caveats over omission" — confirmed again here).
+
+## loops-at-scale — Round 1 (2026-06-17)
+- Unique catches (most applied):
+  - Orchestration-as-capability thesis was asserted, not earned → APPLIED: closing now earns it with the concrete payoff (fan-out made the full 1,252-run set feasible vs a sample; cross-practice-area findings only surface at full scale).
+  - Judge≠worker (Claude judged DeepSeek's work) was missing → APPLIED as a credibility *signal* (not the cut self-judge caveat): "a model marking its own homework" line added.
+  - Wall hit was session token budget, not the 1,000-agent cap → APPLIED (clarifying clause).
+  - 3–8 agents/tick read as tuned → APPLIED: reframed as emergent ("however many piled up since the last pass").
+  - /loop idempotency is in the prompt design, not the tool → NOT separately added; step 2 already says the prompt grades "whatever is still outstanding" (implies design-level idempotency). Optional follow-up.
+  - Title "finding the frontier" vs worked example (scored completed runs) → addressed by earning the thesis rather than softening (user wants frontier framing kept/sharpened).
+- Standing asks: none (pre-empted).
+- Settled: self-judge caveat stays cut (user, Session 5); reframed as credibility signal instead.

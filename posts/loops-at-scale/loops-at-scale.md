@@ -37,23 +37,23 @@ I ended up doing that identical job three different ways. The difference between
 
 ### The script
 
-The obvious way to grade a thousand things is to write a script that loops through them. This is how Harvey, who built the benchmark, [runs it](https://github.com/harveyai/harvey-labs/blob/main/docs/tutorial.md) — and scripts can orchestrate enormous scale. But a script is a black box while it runs. When something goes wrong at run 800, it tells you very little; you're reading logs after the fact, not watching the work happen. For a job I didn't fully trust yet, that opacity bothered me.
+The obvious way to grade a thousand things is to write a script that loops through them. This is how Harvey, who built the benchmark, [runs it](https://github.com/harveyai/harvey-labs/blob/main/docs/tutorial.md) — and scripts can orchestrate enormous scale. But a script is a black box while it runs. When something goes wrong at run 800, it tells you very little; you're reading logs after the fact, not watching the work happen. For a job I didn't fully trust yet, that opacity was the general problem.
 
-The scripts definitely work, but you’re conforming to a script written by someone else. In my case, Harvey’s script allowed evaluation only or test only runs. However, it required Anthropic API models to judge. It seemed fairly dumb not to use Claude Code (which I was already using) to judge these runs myself. 
+The specific problem was that I couldn’t use Harvey’s at all. Its script judged runs with Anthropic’s own API models, and I wanted to grade them with the Claude Code subscription I was already paying for. 
 
-The script was nice, but I couldn’t use it. I would have to rewrite it, introducing new potential problems.  
+Rewriting it would only trade one set of problems for another — so I went looking for a shape I could both see into and actually run.  
 
 ### The burst
 
 So I reached for a dynamic workflow instead — a [Claude Code feature](https://code.claude.com/docs/en/workflows) where, rather than doing the job itself, Claude writes a small program that hands the work out to a fleet of subagents and supervises them, adapted to the Claude Code interface. 
 
-I told Claude Code that I had 1,252 evaluations to do in my folders and to use “workflows” to solve them. It split my 1,252 runs into 626 judge agents — separate Claude instances, each scoring about two runs against the rubric — running a dozen at a time.
+I told Claude Code that I had 1,252 evaluations to do in my folders and to use “workflows” to solve them. It split my 1,252 runs into 626 judge agents — separate Claude instances, each scoring about two runs against the rubric — running a dozen at a time. The judges were Claude; the work they graded came from a different model entirely, which if anything makes the scores more trustworthy than a model marking its own homework.
 
 This was the opposite of a black box. I could open any single agent and watch it reason about a run. As the documentation puts it, a workflow "moves the plan into code" — the orchestration becomes something you can read, rerun, and inspect. The work had become legible.
 
 ![A Claude Code workflow scoring the benchmark: a run titled "harvey-self-judge-all-runs" fanning out 626 judge agents, with a dozen actively running and the rest queued, each showing its token use and tool calls.](harvey-self-judge-burst.png)
 
-It was glorious. It was also a flood. Six hundred agents firing as fast as the system allowed is like tipping a full bucket of water out at once — most of the capacity you're paying for just sloshes over the side. Three days in, the bucket was empty. I kept hitting the limit. I spent more time waiting for it to reset than actually running the work. 
+It was glorious. It was also a flood. Six hundred agents firing as fast as the system allowed is like tipping a full bucket of water out at once — most of the capacity you're paying for just sloshes over the side. Three days in, the bucket was empty — my session budget, not any cap on the agents themselves. I kept hitting the limit, and spent more time waiting for it to reset than running the work. 
 
 ### The paced loop
 
@@ -62,7 +62,7 @@ When I had a chance at another go, I wanted some conservation of resources. I wa
 So I set a loop running:
 
 1. Run the model against a task in Harvey LAB (the benchmark itself). These take time and vary (simple tasks take a few minutes, complex tasks take longer). Once they are done, they save their output in the folder, waiting for a judge to score them.
-2. Separately I check for runs that hadn't been scored yet, and spin up an agent to grade them. These run on a ten-minute loop — `/loop 10m [prompt]`, a Claude Code command that re-runs a prompt on a fixed interval — so each pass picks up whatever is still outstanding. About 3-8 tasks got graded by a Claude agent every ten minutes.
+2. Separately I check for runs that hadn't been scored yet, and spin up an agent to grade them. These run on a ten-minute loop — `/loop 10m [prompt]`, a Claude Code command that re-runs a prompt on a fixed interval — so each pass picks up whatever is still outstanding. I never set that batch size; it was simply however many had piled up since the last pass — three to eight, as it turned out.
 3. Each small batch finished before the next began, and each round left me a one-line summary so I could watch progress while I got on with other things. Same 1,252 runs. Same agents. Same judge. A completely different rhythm in time.
 
 Drawn against the limit, the two shapes look like this:
@@ -107,8 +107,8 @@ A loop that runs while you work is a direct answer to exactly that. You don't si
 
 For solo counsels and small teams, this is the part worth internalising. You will not win by buying the biggest burst. You win by knowing the question is testable at all, and by shaping the work so it fits the resources you have rather than the ones you wish you had.
 
-My tokens ran out three days into the benchmark, and the fix wasn't a bigger budget or a better model. It was a different shape. The capability was already there — I just had to stop pouring it out all at once.
+And the shape doesn't only decide whether you finish — it decides what you can attempt. One agent grading 1,252 runs in sequence is days of babysitting nobody signs up for; fanning the work across hundreds made the whole set feasible instead of a sample. And only across the whole set did the real findings surface — which practice areas held up, which fell apart. Orchestration didn't just save me money; it put a question that used to need a research lab within reach of one person on a subscription. That's why learning to run these tools in concert is becoming a skill of its own — as much a part of the frontier as the model itself.
 
-That's the part I keep coming back to. We spend so much energy arguing over which model is best. But what these tools can actually do depends just as much on how you run them — one at a time, six hundred at once, or a few every ten minutes. Knowing how to orchestrate them, in concert, is becoming a skill of its own — and it widens the frontier as surely as a better model does.
+My tokens ran out three days into the benchmark, and the fix wasn't a bigger budget or a better model. It was a different shape — and the capability was already there, waiting for me to stop pouring it out all at once.
 
 The model isn't the only thing you're choosing. What shape is your work running in?

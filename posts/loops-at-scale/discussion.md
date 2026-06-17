@@ -291,3 +291,42 @@ audit/reviews.
 ### Next Steps
 - Run Marcus (legal-tech) + Wei Lin (lawyer-coder) reviews → then synthesise audit
   + reviews, length-audit, apply structural changes in one pass.
+
+## Session 5 (cont.): Reviewer round 1 — Marcus + Wei Lin (2026-06-17)
+
+### Reviewers: legal-tech (Marcus) + lawyer-coder (Wei Lin). Both pre-empted on standing asks.
+
+### Convergent unique catches (APPLIED):
+- **Orchestration-as-capability thesis asserted, not earned** (both). Did NOT soften
+  (user wants it sharp) — EARNED it: closing now backs it concretely (fan-out made the
+  full 1,252-run set feasible vs a sample; cross-practice-area findings only surface at
+  full scale; a question that used to need a research lab, reached by one person on a sub).
+- **Closing too long + mis-sequenced** (both). Restructured: determination callback
+  ("the fix wasn't a bigger budget... a different shape") now lands LAST before the
+  question; abstract paragraph replaced by the concrete earned payoff.
+
+### Marcus-only (APPLIED):
+- Judge≠worker (Claude graded DeepSeek's work) restored as a credibility SIGNAL
+  ("a model marking its own homework"), not the cut caveat.
+- Clarified the wall was the session token budget, not the 1,000-agent cap.
+- Reframed 3–8/tick as emergent (not a tuned dial).
+
+### Wei Lin-only (APPLIED):
+- "The script" section separated: universal opacity (para 1) vs personal API
+  incompatibility (para 2). Reads as a shape property + a forcing function, not just
+  "I couldn't use it."
+
+### Praised / kept as-is:
+- "Loops are confounding for lawyers" paragraph (Wei Lin's "I'm not alone" line) — did
+  NOT invent a cognitive-breakthrough sentence Houfu didn't supply.
+- Cowork-on-the-side constraint detail ("that's my Tuesday night").
+- Determination anchor (not panic) — settled, not re-litigated.
+
+### Outcomes
+- ✅ Round 1 applied. 2,027 words (~9 min). 0 lint errors (image-size warning only).
+- Reviewer memory updated for both. Round 2 available but likely unnecessary (catches
+  were convergent + applied; no persistent framing dispute).
+
+### Next Steps
+- Backlink curation (2 internal bookmarks already in: prompt-engineering + harness posts;
+  confirm no others needed) → tag validation → compress screenshot → publish.
