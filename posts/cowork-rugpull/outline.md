@@ -35,7 +35,8 @@
 ## 6. That someone is the lawyer-builder (thesis core)
 - Engineer can cost the workflow. Lawyer can judge the work. Only the lawyer-builder merges both AND carries the professional trust to tell colleagues "this is trustworthy, and it's the right direction" — and be believed.
 - When AI was flat/free, bad use cases hid inside the subscription; you could spray it everywhere. The meter ends the hiding. Proving + selling the right use cases is now THE job — and it needs the weird combination.
-- Callbacks: "When Building Gets Cheap But Knowing Stays Expensive" (now there's literally a price tag on the building; the knowing is the scarce part) + "AI Won't Replace You. Someone Who Decides Will." (the decider = the voucher).
+- **The unexpected beat — "the meter is an honesty machine" (A+D, user-selected):** the meter doesn't just charge, it *reveals*. (A) Your good judgment becomes a number — "this workflow runs $3/matter, saves 2 hours" — your invisible "I know what's worth running" becomes a line item you can point to. (D) Everyone else's bad judgment becomes visible too — feature-spray and innovation theatre that hid inside a flat fee now come with a receipt. The twist: a meter only tells the truth to someone who can read it. The lawyer-builder looks at "$7 a run" and knows if the legal output was worth it, if a cheaper model would do, if it's substance or theatre. **The meter makes judgment legible AND makes the absence of judgment expensive.** So you stop vouching with vibes and start vouching with receipts.
+- Callbacks: "When Building Gets Cheap But Knowing Stays Expensive" (now there's literally a price tag on the building; the knowing is the scarce part) + "AI Won't Replace You. Someone Who Decides Will." (the decider = the voucher). Lighter touches available: "Thinking in Loops" (orchestration = the spend lever) and "My Agent Did the Work / the harness is the floor" (harness quality = spend story) — use only if they fit without bloating.
 - [SLOT — user to supply]: one concrete detail of the Cowork workflow I built + what the meter broke + the colleagues-prefer-it scene (the builder doesn't get to just pick the cheapest tool; adoption is real and that's part of the vouching job).
 
 ## 7. Don't oversell it — the honest counterweight (distinct from §4's timing point)
@@ -44,7 +45,7 @@
 
 ## 8. Return to solo-counsel reality + close
 - For solo counsels and small teams: the buffet was never bottomless for you. You always justified every dollar. Metering just moves everyone else into your world — where judgment about "what's worth it" was always the scarce thing.
-- Close (recommendation OR question, not both): the meter isn't the end of the party; it's the moment the room finally needs someone who knows what's worth ordering.
+- Close (recommendation OR question, not both): the meter isn't the end of the party; it's the moment the room finally needs someone who can read the bill / knows what's worth ordering.
 
 ## Backlinks (seed — finalize at backlink_curating)
 - When Building Gets Cheap But Knowing Stays Expensive (bookmark card)
