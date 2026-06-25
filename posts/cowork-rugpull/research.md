@@ -50,6 +50,21 @@ The legal AI industry is converging on consumption/usage-based pricing in mid-20
 - Consumption pricing can **dump the ROI problem on the buyer** — bills tied to technical metrics (credits, cycles) with no clear line to value.
 - **Leena AI** tried consumption, customers got wary, switched to outcomes-based and accelerated. → Consumption pricing isn't automatically good; it rewards those who *can* connect spend to value. That's the gap the lawyer-builder fills.
 
+### 8. RAW reactions / meter-shock sentiment (the layer that was thin — now filled) 🌍
+**Honest finding first:** Cowork-*specific* raw individual reactions are surprisingly thin in indexed sources — Cowork commentary is dominated by IT-governance/partner analysis (Quisitive, Witivio, cowork.tips, hubsite365, multiple Windows Forum threads). The *visceral* meter-shock backlash in June 2026 mostly attached to the **developer-facing siblings** (GitHub Copilot went usage-based June 1, two weeks before Cowork). Treat that backlash as the same phenomenon one product over — label it as such in the draft, don't pass it off as Cowork reaction.
+
+**Cowork-specific sentiment** (partner/advisor + forum analysis):
+- [hubsite365 "The catch"](https://www.hubsite365.com/en-ww/crm-pages/the-catch-with-copilot-coworks-new-pricing.htm), [Quisitive](https://quisitive.com/copilot-cowork-pricing-2026-how-usage-based-billing-works/), [Witivio](https://www.witivio.com/en/copilot-cowork-pricing/), [cowork.tips](https://www.cowork.tips/blog/copilot-cowork-pricing-explained), [Windows Forum GA thread](https://windowsforum.com/threads/copilot-cowork-ga-june-16-2026-metered-agent-billing-credits-and-it-governance.426989/)
+- Dominant gripe: **"you pay twice"** — the $30 seat AND metered usage on top; "surprised many"; costs "scale quickly."
+- Credit feel: light task ~100–300 credits ($1–3), heavy 700+ (~$7+) — small per task, unpredictable in aggregate.
+- **Two lines that ARE our thesis** (from the advisor analysis): metered billing "can **reward efficient, targeted automation while penalizing broad, autonomous agent behavior**" → the meter rewards the person who knows what's worth running. And: *"If Copilot Cowork saves hours of legal review … usage-based pricing may be easier to defend than another blanket per-seat uplift"* → the defense of the meter is explicitly value-per-use — the lawyer-builder's argument.
+- Model-choice example surfacing everywhere: "a legal team preparing high-stakes analysis may want the strongest reasoning model" while routine work doesn't → choosing the right model per task = lawyer-builder judgment, now a line item.
+
+**The visceral sibling backlash** (GitHub Copilot, June 1 — use as "meter shock is real," clearly labeled NOT Cowork):
+- [Visual Studio Magazine: "$180 bill on Day 1"](https://visualstudiomagazine.com/articles/2026/06/02/slammed-by-copilot-usage-based-billing-on-day-1-facing-180-bill-for-june.aspx); [VSM "Devs sound off: 'you will get less, but pay the same price'"](https://visualstudiomagazine.com/articles/2026/04/27/devs-sound-off-on-usage-based-copilot-pricing-change-you-will-get-less-but-pay-the-same-price.aspx); [gHacks: rapid credit depletion backlash](https://www.ghacks.net/2026/06/02/github-copilot-usage-based-billing-takes-effect-drawing-developer-backlash-over-rapid-credit-depletion/)
+- Vivid data points: one dev burned ~8% of monthly credits in two hours; another spent >$6 on a single change, "impossible to predict"; some monthly costs ballooned from ~$29 to ~$750. "A developer who thinks they are buying 'Copilot' may now discover they are really buying a monthly allowance against an inference bill."
+- This is the emotional register of "the rugpull" — good for color in §1/§3, but attribute to GitHub Copilot, not Cowork.
+
 ### 7. THE SPINE: "Consumption is not outcome" 🌍 (FULL TEXT VERIFIED — user PDF)
 **Source:** [Legal AI Won't Be Priced Per Seat. Legora Just Agreed.](https://unfilteredbits.substack.com/p/legal-ai-wont-be-priced-per-seat) — **Elgar Weijtmans**, unfilteredbits (Substack), June 2026
 - "The seat was never the right unit for software that thinks for itself." Falling token prices *sharpen* the problem — "a tidy case of the **Jevons paradox**" (cheaper resource → more use). Headcount pricing "becomes a wager the vendor loses precisely on its busiest clients."
