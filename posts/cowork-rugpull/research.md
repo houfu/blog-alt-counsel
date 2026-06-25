@@ -10,13 +10,15 @@ The legal AI industry is converging on consumption/usage-based pricing in mid-20
 
 ## Key Findings
 
-### 1. "Per-seat is dead" is now the analyst consensus 🌍
-**Source:** [Legal AI Has A Growing Token Price Problem](https://www.artificiallawyer.com/2026/06/03/legal-ai-has-a-growing-token-price-problem/) — Artificial Lawyer, **June 3, 2026**
-- Direct line (from search index): *"Per seat pricing is gone — if Anthropic, Microsoft and OpenAI have moved away from it, no-one is going to subsidise legal tech vendors on all you can eat."*
-- Vendors "can't absorb all the costs alone, especially when also sometimes offering very subsidised per-seat deals to win customers."
-- Floats a **"mobile phone / data-use" pricing analogy** as the replacement model.
-- Adaptation: vendors may build **fine-tuned open-source LLMs** to cut reliance on frontier models.
-- This is THE anchor "free buffet is over" text. Note: full article 403s to our fetcher; quotes are from the search index snapshot — re-verify exact wording before quoting verbatim.
+### 1. "Per-seat is dead" is now the analyst consensus 🌍 (FULL TEXT VERIFIED — user PDF)
+**Source:** [Legal AI Has A Growing Token Price Problem](https://www.artificiallawyer.com/2026/06/03/legal-ai-has-a-growing-token-price-problem/) — Richard Tromans, Artificial Lawyer, **June 3, 2026**
+- Framing metaphor: *"if legal AI tools are the vehicles our work is now transported by, then tokens are the oil that drives it all"* — and the oil is "getting increasingly expensive."
+- **Shawn Curran, CEO of Jylo** (verbatim): *"Tokenmaxxing is a thing, per seat pricing is gone, if Anthropic, Microsoft and OpenAI have moved away from it, no-one is going to subsidise legal tech vendors on all you can eat."* + *"firms paid a premium for wrappers when the supply chain models were useless and now they may have to pay an even bigger fortune."*
+- **Antti Innanen (Laverne)** (verbatim): *"The frontier is expensive, the baseline is getting cheaper."* Skeptic line (good for alt-counsel voice): *"most of these companies are middle men. They buy tokens and resell them at a premium"*; some legal layers are *"innovation theatre and fear designed to justify pricing."*
+- **Jake Jones (Flank)**: agentic work uses "orders of magnitude more tokens"; pricing moved from *"this is a tool, here's a licence"* to *"this is an autonomous system displacing humans, priced on the displacement, not the licence … still a fraction of what you'd pay an ALSP."*
+- **Winston Weinberg (Harvey)**: model-routing (Factory) — "not all tasks demand the most expensive model."
+- AL's "new sensibility" close: *"The next time you use an AI tool at work for a very document-heavy task you may want to ask: how much is this costing us?"* Floats **"mobile phone / data-use pricing"**; asks whether inhouse will "pick law firms on the basis of how they handle token costs."
+- THE anchor "free buffet is over" text.
 
 ### 2. Legora frames consumption as *legibility*, not just cost 🌍 (contrarian-positive)
 **Source:** [Introducing Consumption-Based Pricing](https://legora.com/blog/consumption-based-pricing) — Legora blog; also [Law360](https://www.law360.com/articles/2492625/legora-to-move-to-consumption-based-billing); [The Lawyer](https://www.thelawyer.com/firms-face-hike-in-ai-cost-base-as-legora-gears-up-for-pricing-switch/)
@@ -48,6 +50,14 @@ The legal AI industry is converging on consumption/usage-based pricing in mid-20
 - Consumption pricing can **dump the ROI problem on the buyer** — bills tied to technical metrics (credits, cycles) with no clear line to value.
 - **Leena AI** tried consumption, customers got wary, switched to outcomes-based and accelerated. → Consumption pricing isn't automatically good; it rewards those who *can* connect spend to value. That's the gap the lawyer-builder fills.
 
+### 7. THE SPINE: "Consumption is not outcome" 🌍 (FULL TEXT VERIFIED — user PDF)
+**Source:** [Legal AI Won't Be Priced Per Seat. Legora Just Agreed.](https://unfilteredbits.substack.com/p/legal-ai-wont-be-priced-per-seat) — **Elgar Weijtmans**, unfilteredbits (Substack), June 2026
+- "The seat was never the right unit for software that thinks for itself." Falling token prices *sharpen* the problem — "a tidy case of the **Jevons paradox**" (cheaper resource → more use). Headcount pricing "becomes a wager the vendor loses precisely on its busiest clients."
+- Echoes Legora's legibility point: each run "tied back to the matter … finally makes the cost of AI **legible client by client** in a way the seat never could."
+- **The key catch (this is our thesis's intellectual backbone):** *"Consumption is not outcome. A firm pays for the work the agent does, not for that work being right, and the spending limits the company has built in alongside the new model give the game away, since a threshold is something you set against a cost you cannot foresee, not against a result you have learned to trust."*
+- **Why it powers our argument:** the meter prices *compute spent*, not *work being right*. The vendor explicitly does NOT sell you the judgment that the spend was worthwhile or the output trustworthy. That judgment — "this was right, and it was worth it" — is exactly what the lawyer-builder supplies. Consumption pricing makes the gap between *paid-for* and *trusted* visible and billable; someone has to stand in that gap and vouch. A skeptic of consumption pricing (Weijtmans) accidentally made the case for why the lawyer-builder matters more.
+- **Attribution note:** Weijtmans got to "per seat is dead" first (wrote it in May, before Legora's move). When we use the "neither is wrong"/consumption≠outcome framing, CREDIT him — don't echo unattributed. Good bookmark-card candidate.
+
 ### 6. Singapore / ASEAN lens ✅ (thin — supply it ourselves)
 **Sources:** [Singapore Budget 2026: AI growth, risks, governance](https://law.asia/singapore-ai-regulation-budget-2026/) — Law.asia; [MinLaw Guide for Using Generative AI in the Legal Sector (6 Mar 2026)](https://www.mlaw.gov.sg/files/Guide_for_using_Generative_AI_in_the_Legal_Sector__Published_on_6_Mar_2026_.pdf); [Clio AI pricing](https://www.clio.com/resources/ai-for-lawyers/legal-ai-tool-pricing/)
 - Budget 2026 (PM Lawrence Wong): legal services a focal point in national AI push; law + accountancy prioritised.
@@ -64,12 +74,22 @@ The legal AI industry is converging on consumption/usage-based pricing in mid-20
 - "Neither is wrong" counterweight → Finding 5 (bill shock, ROI dumped on buyer, Leena AI).
 - Solo-counsel return → Finding 6 (constraint was always there; now it's visible).
 
-## Quote bank (verify exact wording before publishing)
-- AL: "no-one is going to subsidise legal tech vendors on all you can eat."
-- Legora: consumption "makes the cost of AI legible client by client in a way the seat never could."
-- Lamanna (Axios): Cowork "could not be offered on an unlimited-use basis."
-- Phronesis: "If AI costs scale with activity, then value must scale with results."
+### The "honeymoon over" narrative is now mainstream legal press 🌍
+**Source:** [The Lawyer — "Firms face hike in AI cost base as Legora gears up for pricing switch"](https://www.thelawyer.com/firms-face-hike-in-ai-cost-base-as-legora-gears-up-for-pricing-switch/) — Ben Lucas (Tech Editor), **June 23, 2026**
+- Body is hard-paywalled (subscriber-only) — could not read; no named-firm reaction quotes obtained. Headline + framing ("Firms face hike in AI cost base") is itself usable as evidence the legal press is selling the cost-anxiety story.
+- Adjacent headlines on the same page reinforce the mood: **"Law's AI honeymoon is over"** and "Harvey and Legora face scrutiny over Anthropic's Fable model." Good corroboration that "the buffet/honeymoon is over" is the prevailing 2026 framing — i.e., our foil is real and mainstream, not a straw man.
 
-## Source gaps / to-verify
-- Artificial Lawyer + unfilteredbits Substack both 403'd direct fetch — quotes are from search-index snapshots; re-verify before quoting verbatim (or have user paste the text).
-- No primary Singapore reaction source — SG lens is ours to supply.
+## Quote bank (ALL VERIFIED against user-supplied PDFs unless noted)
+- **Curran (Jylo), via AL:** "Tokenmaxxing is a thing, per seat pricing is gone … no-one is going to subsidise legal tech vendors on all you can eat."
+- **Innanen (Laverne), via AL:** "most of these companies are middle men. They buy tokens and resell them at a premium." / "The frontier is expensive, the baseline is getting cheaper."
+- **Jones (Flank), via AL:** priced on "the displacement, not the licence."
+- **AL (Tromans):** "tokens are the oil that drives it all" / "how much is this costing us?"
+- **Weijtmans (unfilteredbits) — THE SPINE:** "Consumption is not outcome. A firm pays for the work the agent does, not for that work being right …" / "a threshold is something you set against a cost you cannot foresee, not against a result you have learned to trust." / "The seat was never the right unit for software that thinks for itself."
+- **Legora:** consumption "makes the cost of AI legible client by client in a way the seat never could."
+- **Lamanna (Axios), paraphrase ONLY:** Cowork "could not be offered on an unlimited-use basis." (Axios body not captured — paraphrase from search snippet; soften or attribute as reported.)
+- **Phronesis:** "If AI costs scale with activity, then value must scale with results."
+
+## Source status
+- ✅ Verified full text (user PDFs): Artificial Lawyer token-price piece; Weijtmans "Won't Be Priced Per Seat" Substack.
+- ⚠️ Paywalled / not readable: The Lawyer (subscriber wall — headline only); Axios DeepSeek piece (body didn't render — Lamanna line is a search-snippet paraphrase, use cautiously).
+- ⚠️ No primary Singapore reaction source — SG lens is ours to supply.
