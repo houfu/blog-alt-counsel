@@ -30,3 +30,17 @@ AI, LegalTech, SoloBuilder locked. Programming proposed as recommended 4th (grou
 
 ### Next step
 Pitch approved + scaffolded. Awaiting user answers on: (1) 4th tag Programming?, (2) publish deadline?, (3) depth of personal rebuild detail. Then develop outline.
+
+## Session 2 — 2026-06-25 (RESEARCH)
+
+### Decisions from user
+- **Tags final:** AI, LegalTech, SoloBuilder. **No Programming.**
+- **Publish:** ASAP (news hook fresh — Cowork GA was 2026-06-16).
+- **Rebuild details:** user will describe specifics later; outline can hold a slot for one concrete detail.
+
+### Copilot Studio / meter — resolved honestly
+User's lived experience: **Cowork is literally a toggle on a tab in the M365 chat app, and they never saw a meter when using Copilot or Studio.** So the original "Microsoft didn't even do this with Studio" instinct came from real experience — Studio's consumption was bundled/invisible to them, not absent. New framing (better than the retracted counterexample): *the meter appeared where there had never been a visible meter — same app, same toggle, now it's counting.* That concretises the "rugpull." Use this; drop the factual "Studio counterexample" claim.
+
+### Research done (research.md written)
+Key anchors: Artificial Lawyer "token price problem" (June 3) = the canonical buffet-over text ("no-one is going to subsidise … all you can eat"); Legora's own "makes cost legible client by client" framing = contrarian-positive; Cowork criticisms (bill shock, double-charge, volatility) + Lamanna "could not be offered on unlimited-use basis"; Phronesis/Liminal ROI-discipline thread = our spine; counterweight stats (600-CIO survey: 98% ROI pressure, only 51% can evaluate AI ROI; Leena AI consumption backfire) for the "neither is wrong" move. SG lens thin (Budget 2026, MinLaw GenAI guide) — supply ourselves.
+- Source caveat: Artificial Lawyer + unfilteredbits Substack 403'd direct + Jina fetch; quotes from search-index snapshots, re-verify before verbatim use.
