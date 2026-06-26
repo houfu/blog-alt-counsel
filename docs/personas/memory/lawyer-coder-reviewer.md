@@ -51,3 +51,19 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
   - Closing mis-sequenced/too long → restructured: determination callback ("the fix wasn't a bigger budget... a different shape") now lands LAST before the question; abstract paragraph replaced by a concrete, earned payoff.
 - Settled: emotional anchor is DETERMINATION not panic (user, Session 1) — did not push for more vulnerability.
 - Standing asks: none (pre-empted).
+
+### 2026-06-26 — cowork-rugpull
+- **Unique catches:**
+  1. **Sequencing (sharpest):** the thesis peak "my vote moves the room" (§7) arrives as confident present-tense retrospective, but the tool is suspended and the cost-allocation meeting hasn't happened (§8 reveals it's unresolved). Fix = establish the "we're still in the suspended moment, the meeting is coming" position *before* §7, so the thesis reads as a prepared argument, not a claimed outcome. More honest AND more relatable.
+  2. **Missing vulnerable beat:** post never asks whether "vouching is the advantage" might be *cope*. §8 gets close ("harder game that rewards a skill I have") but won't ask the harder question. One sentence asking + answering it = the difference between readers saving vs. sharing. His share-message hedge ("this is what I'm *hoping* is true… he makes the argument better than I can") is exactly the gap.
+  3. Load-bearing line to protect through all cuts: "I used to vouch with vibes. Now I vouch in a cost-allocation meeting." (compresses whole thesis).
+  4. Prior-post links genuinely *build* (building-cheap → meter prices the building; "decides" → sharpened to "vouches"), not name-drops — keep transition on line 98 from rushing the "deciding with a budget line" beat.
+- **Standing asks raised:** none — all pre-empted.
+- **Settled/rejected:** none this round.
+
+### 2026-06-27 — cowork-rugpull (round 2)
+- **Both round-1 catches LANDED. Share verdict: YES (no hedge).**
+  1. Sequencing — "Now I wait to see whether that carries" (lines 26-28) establishes the present-moment wait before §7's thesis peak; identity claim now reads as prepared argument, not retrospective victory. Fully resolved.
+  2. Cope-beat — "the most valuable person in the room turns out to be the story I told myself while the tool sat in limbo" is the cope question at full volume, correctly placed in §8 (make the case, then interrogate it). The cope-admission is what EARNS the thesis rather than undercutting it.
+- **Remaining prose-polish note (not structural, author's own voice):** the cope-beat answer (line 114, "...I care, a lot.") trails slightly defensive after a strong admission; a shorter answer would hit harder. Left to author.
+- Load-bearing line "I used to vouch with vibes. Now I vouch in a cost-allocation meeting." survived intact.

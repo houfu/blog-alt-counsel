@@ -35,3 +35,18 @@ Persistent memory for the inhouse-lawyer-reviewer agent. **Read this before ever
 ## Log
 
 <!-- getting-feedback appends MEMORY_UPDATE blocks here: date, post, unique catches made, advice rejected (and the stated reason), new user preferences observed -->
+
+### 2026-06-26 — cowork-rugpull
+- **Unique catches:**
+  1. Cost-chart math: the Legal Nodes $0.80 Cowork figure likely measures *model API cost only*, not full Copilot Credits billing (credits also meter context retrieval, tool calls, runtime). At 30 medium-complexity tasks/month, real Cowork cost ≈ $165–195/mo incl. the $30 seat — over a $150 in-house budget. "$0.01 per credit" makes it sound trivial; it isn't. Ran the numbers rather than asking.
+  2. Chart cites **MikeOSS as the cheapest option without saying what it is** — open-source, self-host/BYO-key, a lawyer-*builder* tool a non-technical solo counsel cannot just adopt. Invites "why aren't we using the cheap one?" with no answer.
+  3. IT chargeback framed as open-ended confusion, but Microsoft's billing docs set a hard **July 1 2026** cutoff to configure usage-based billing or lose Cowork access — "suspended till further notice" understates the urgency; needs a date anchor.
+  4. "For the rest of us" close assumes the reader *built* the tool they vouch for; the lawyer-*user*'s vouching role is weaker and unaddressed. "The room" (cost-allocation meeting, departmental chargeback) is enterprise-scale — doesn't exist at a 150-person company.
+- **Standing asks raised:** July 1 deadline anchor (not pre-empted).
+- **Advice likely to be rejected:** full pricing-guide treatment of the chart — author keeps cost honesty to one line (see settled prompt-engineering-wrong calibration); expect a one-sentence verdict, not a table.
+- **New preference observed:** author adds third-party data visuals as "atmosphere" (cost differences exist) rather than as decision tools — flag when a visual implies a decision it doesn't resolve.
+
+### 2026-06-27 — cowork-rugpull (round 2)
+- **Greenlight: publish-ready for in-house segment.** Cost-chart verdict paragraph resolved the round-1 numbers concern within the author's one-paragraph-of-cost-honesty style — confirmed, not re-raised.
+- **New catch (one-line, applied):** the Singapore GenAI guidance (line 66) was named but unlinked — should name MinLaw's Guide and hyperlink it; a missed practical handoff to exactly this segment. Fixed this round.
+- Settled: chart-as-decision-tool / full pricing breakdown remains the author's deliberate choice to keep brief; not re-raised.

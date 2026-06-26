@@ -7,21 +7,31 @@ featured: false
 github_folder: "cowork-rugpull"
 ---
 
-I built a contract reviewer that my non-legal colleagues run without me.
+There’s a funny story about Microsoft. It’s a big enterprise company and many leading companies big and small use their services. It’s a huge monolith, so their history is replete with little apps that mimic popular apps. It keeps their customers happy within their walled garden, but somehow their attempts to re-create a popular app always disappoints.
 
-It reads an incoming contract, sorts the clear ones from the ones that need a human, and for the clean cases it gives a green light with a short explanation of why. The people using it don't have legal training. That's the point. It lets them clear the easy contracts themselves and only escalate what actually needs a lawyer.
+Take Copilot Cowork for example. It’s an implementation of Claude Cowork, sure. But it’s connected to your enterprise data. Furthermore, it uses Anthropic models like Claude Opus 4.8. *I absolutely loved it*. I tell all my colleagues who had been disappointed at how the M365 chat or Copilot (or whatever name they have been calling it) to use it. They loved it too.  
 
-I built it on Microsoft's Cowork. On 16 June, Microsoft pushed Cowork to general availability and put a meter on it — every model call, every document it reads, every tool it picks up, every minute it runs, billed in Copilot Credits at a cent each, on top of the $30 seat we were already paying.
+As it turned out, all good things end miserably.
+
+On 16 June, Microsoft pushed Cowork to general availability and put a meter on it — every model call, every document it reads, every tool it picks up, every minute it runs, billed in Copilot Credits at a cent each, on top of the $30 seat we were already paying.
 
 I got rugpulled.
 
-Except it didn't look like the horror stories. Nobody got a surprise bill. Fifteen days in, the most dramatic thing that has happened is that our IT department, who manage the cost, still haven't worked out how to charge it back to the departments that use it. The meter is running. Nobody yet knows whose budget it lands on.
+## A builder’s dilemma at work
 
-The ground moved, and the org hasn't caught up to where it landed. And I can't just walk away from it.
+Unfortunately, the stakes were higher on this issue. I had within a matter of weeks, built a contract reviewer on Copilot Cowork that my non-legal colleagues can run without me.
+
+It reads an incoming contract, sorts the clear ones from the ones that need a human, and for the clean cases it gives a green light with a short explanation of why. The people using it don't have legal training. That's the point. It lets them clear the easy contracts themselves and only escalate what actually needs a lawyer.
+
+[So you want to Claude Cowork the Legal Plugin?: A Guide](https://www.alt-counsel.com/so-you-want-to-claude-cowork-the-legal-plugin-a-guide/)
+
+Now that Copilot Cowork will switch to usage based pricing, one might expect everyone to baulk at the pennies you have to spend every time you review a contract. The reality on the ground in a bigger organisation is more quaint. Our IT department, who manage the cost, still haven't worked out how to charge it back to the departments that use it. So for now it sits in limbo — and I'm the one footing the bill for my own use while that gets sorted out. And the limbo comes with a deadline: Microsoft gave us until 1 July to switch on usage-based billing or lose Cowork altogether.
+
+I'd thought I was finally ahead of the wave. I'd built the thing that hands the boring triage to AI so a lawyer doesn't have to touch it — about as close as I'd come to automating a slice of my own job. Then the wave changed shape. So I did the only thing that made sense: I went to IT and told them plainly that Legal needs this and wants it properly implemented. Now I wait to see whether that carries. 
 
 ## I tried to put it back. They said no.
 
-When the pricing changed, I asked the obvious question: should we just go back to the paid legal-tech tool we already license — the one actually built for this?
+When the pricing changed, I asked the obvious question: should we just go back to the paid legal-tech tool we already license — the one we subscribed to for exactly this?
 
 The answer came back that they would rather keep Cowork.
 
@@ -37,6 +47,14 @@ Cowork isn't a one-off, and neither is my problem. The same few weeks felt like 
 - Legora moved its most capable product, Agent Pro, off per-seat pricing — about $3,000 a seat a year — to consumption.
 - The pattern runs well past legal: even SAP is shifting enterprise software to consumption as agents eat the seat model.
 
+And once you're paying by the task, *which* platform you run on stops being a detail. When the consultancy Legal Nodes put the same model — Claude Opus 4.8 — through three different setups on the same 40 legal tasks, the cost per task ran from $0.30 to $2.80. Same model. A near-tenfold spread, decided entirely by the scaffold around it — the prompts, integrations, and workflow design wrapping the model.
+
+![Cost-per-task bar chart from Legal Nodes: MikeOSS $0.30, Cowork plus Legal Plugin $0.80, Claude Chat $2.80, averaged over 40 tasks.](legal-nodes-cost-per-task.png)
+
+*Cost per task, same model across three platforms. Source: Legal Nodes scaffold study, via [Artificial Lawyer](https://www.artificiallawyer.com/2026/06/22/the-legal-ai-scaffold-changes-everything-claude-study/).*
+
+Don't read that as a shopping list. The cheapest row, MikeOSS, is an open-source platform you host and wire together yourself — formidable if you build, useless if you don't. And these are tidy benchmark numbers; a real metered bill, which also charges for retrieval, tool calls, and runtime, runs higher than the model cost alone. The point isn't *switch to the cheap one*. It's that the same model can cost a little or a lot depending on the machinery around it — and someone has to judge whether that machinery is worth what it's metering.
+
 Shawn Curran, the CEO of Jylo, [told Artificial Lawyer](https://www.artificiallawyer.com/2026/06/03/legal-ai-has-a-growing-token-price-problem/): "per seat pricing is gone, if Anthropic, Microsoft and OpenAI have moved away from it, no-one is going to subsidise legal tech vendors on all you can eat."
 
 *The Lawyer* ran its version under a blunter headline: "Law's AI honeymoon is over." That's the consensus now. The free buffet is closing, and it's bad news for legal AI.
@@ -47,7 +65,7 @@ I think that read is short-sighted. But it took getting rugpulled to see why.
 
 Here's what nags at me. The meter didn't arrive after we'd figured out what legal AI is for. It arrived in the middle of the experiment.
 
-My triage tool is months of figuring out what these things can and can't be trusted with. We are nowhere near done with that. Singapore's guidance for using generative AI in legal work only landed in March. Half the "legal-specific" features on the market are, as one founder told Artificial Lawyer, "innovation theatre and fear designed to justify pricing."
+My triage tool is months of figuring out what these things can and can't be trusted with. We are nowhere near done with that. Singapore's own guidance for the legal sector — [MinLaw's Guide for using generative AI](https://www.mlaw.gov.sg/launch-of-guide-for-using-generative-artificial-intelligence-in-the-legal-sector/) — only landed in March. Half the "legal-specific" features on the market are, as one founder told Artificial Lawyer, "innovation theatre and fear designed to justify pricing."
 
 Free pricing was quietly doing the most important work in the industry: it let people experiment cheaply enough to find out what's worth doing. The meter taxes exactly that. It asks you to justify the spend while making the experiments that would justify it more expensive. You need the answer to afford the question.
 
@@ -91,11 +109,11 @@ I used to vouch with vibes. Now I vouch in a cost-allocation meeting.
 
 I want to be honest, because the triumphant version of this post would be a lie.
 
-I think Copilot Cowork is flawed. I've used it long enough to have opinions, and the version we're metered on isn't the one I would design. But organisational reality means it's the easiest thing we have that actually works — familiar, already deployed, used without anyone being nagged. I don't get to hold out for the perfect tool. Neither do my colleagues. We get the one that gets used.
+I still think Copilot Cowork is flawed. I've used it long enough to have opinions, and the version we're metered on isn't the one I would design. But organisational reality means it's the easiest thing we have that actually works — familiar, already deployed, used without anyone being nagged. I don't get to hold out for the perfect tool. Neither do my colleagues. We get the one that gets used.
 
-And the meter is not a gift basket for people like me. It's a harder game that happens to reward a skill I have. Consumption pricing can just as easily dump the whole ROI problem on you. Most legal AI vendors are, as another founder put it, "middle men — they buy tokens and resell them at a premium," and the bill is denominated in credits, not outcomes. In one 2026 survey, only about half of organisations said they could evaluate AI ROI at all.
+And the meter is not a gift basket for people like me. It's a harder game that happens to reward a skill I have. And I should be honest about what I can't prove yet: I've made the case to IT, but I may not be there when the final decision is made. Maybe the vouching tips it. Maybe they kill the line item and my judgment goes unheard — and "the most valuable person in the room" turns out to be the story I told myself while the tool sat in limbo. 
 
-Watch the language, too. Vendors will sell consumption as if it were outcome — "pay for results." It isn't. You pay for the work, not for it being right. Keeping that honest inside the building is part of the job now.
+I might still be wrong, but I think it’ll tip. That’s because I am not arguing that Cowork is useful or impressive. I am saying it is worth paying for. As a real user, I had offered myself as an asset to the IT department. I care, a lot. 
 
 ## For the rest of us
 
@@ -103,6 +121,4 @@ Here's the part that should land for solo counsels and small teams: the buffet w
 
 You were always justifying every dollar. You never had the budget to spray expensive AI across every task to see what stuck. You already lived in the world where the question was "is this worth it" before you spent it. Metering doesn't trap you. It drags everyone else into the world you were already in — the one where judgment about what's worth doing was always the scarce thing.
 
-I'm still rebuilding around the meter. I still think the tool is flawed. IT still hasn't figured out whose budget it lands on. But I've stopped reading the meter as a punishment.
-
-It isn't the end of the party. It's the moment the room finally needs someone who can say what's worth keeping — and be believed.
+For some people, the end of seat pricing is the end of the party, a cold reflection that AI is going to be out of reach. I feel it’s a new challenge, and I hope it will reward my judgement for the value it truly brings to the table. 
