@@ -106,3 +106,17 @@ User uploaded 4 PDFs. Now VERIFIED full text: Artificial Lawyer "token price pro
 - MinLaw GenAI Guide named + linked (line 66).
 - Reviewer MEMORY_UPDATE blocks appended for both. Audit's repetition/cliché minors ("turning of the season"; 3× "consumption is not outcome") left as optional — both reviewers shipped without them; not blockers.
 ### Status: REVIEW complete (2/2 rounds). Draft publish-ready pending backlinks check + tag validation, then POST.
+
+## Session 7 — 2026-06-27 (POST + CHECK/sync)
+### Published to Ghost + scheduled by user
+- Created Ghost draft via publish-lexical.js (uploaded cost chart image). User then, on Ghost: applied the recommended excerpt, added a feature image (top-down white gallery-surface flat-lay — ran with the cover concept), and **scheduled** the post for 2026-06-27T02:04:58Z. post_id 6a3eaaa719cc89000121ae77, slug rugpulled-by-cowork.
+- **Dry-run caught the issue #41 converter quirk:** the mid-doc bullet list ("This isn't just us") relocated to the end of the doc. Fixed by converting bullets → prose. Also stripped literal `*…*` asterisks from the chart caption (italic-with-link doesn't convert).
+- **Duplicate-draft mistake:** a second publish-lexical run (to push the excerpt) created a duplicate at slug `rugpulled-by-cowork-2` (post_id 6a3eaf6b19cc89000121ae95) because the original slug was taken by the scheduled post. MCP delete is blocked by safety flag — **USER TO DELETE the `rugpulled-by-cowork-2` draft manually in Ghost admin.** Lesson: once a slug is scheduled/taken, don't re-run publish-lexical to tweak metadata — edit on Ghost or set frontmatter before first publish.
+### Sync-back (content + metadata) — user edits made in Ghost editor, merged to local
+- Metadata (via sync-ghost): status→scheduled, + post_id, + published_at, + feature_image, custom_excerpt (no trailing period).
+- Content edits merged by hand to match published:
+  1. Limbo line trimmed → "and it comes with a deadline" (dropped the self-funding clause).
+  2. Italicised *they would rather keep Cowork*.
+  3. Curran quote → pull-aside (rendered as blockquote in md).
+  4. Weijtmans link inlined on his name; standalone Substack bookmark card removed.
+- **User removed the GitHub "Behind the Scenes" footer** on Ghost. Body matches (footer is auto-injected, not in md); github_folder left in frontmatter and FLAGGED — a re-publish would re-add the footer. Preference signal: this post ships without the GitHub footer.

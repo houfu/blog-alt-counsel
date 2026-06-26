@@ -1,10 +1,23 @@
 ---
-title: "I Got Rugpulled by Cowork. The Meter Is the Best Thing to Happen to Lawyer-Builders."
-slug: "rugpulled-by-cowork"
-tags: ["AI", "LegalTech", "SoloBuilder"]
-status: draft
+title: >-
+  I Got Rugpulled by Cowork. The Meter Is the Best Thing to Happen to
+  Lawyer-Builders.
+slug: rugpulled-by-cowork
+tags:
+  - AI
+  - LegalTech
+  - SoloBuilder
+status: scheduled
 featured: false
-github_folder: "cowork-rugpull"
+custom_excerpt: >-
+  The meter that rugpulled my contract tool prices compute, not trust. That's
+  exactly why the lawyer who can build it and vouch for it just got more
+  valuable
+github_folder: cowork-rugpull
+post_id: 6a3eaaa719cc89000121ae77
+published_at: '2026-06-27T02:04:58.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/06/stark-white-gallery-surface--90--top-down-aerial-f.png
 ---
 
 There’s a funny story about Microsoft. It’s a big enterprise company and many leading companies big and small use their services. It’s a huge monolith, so their history is replete with little apps that mimic popular apps. It keeps their customers happy within their walled garden, but somehow their attempts to re-create a popular app always disappoints.
@@ -25,7 +38,7 @@ It reads an incoming contract, sorts the clear ones from the ones that need a hu
 
 [So you want to Claude Cowork the Legal Plugin?: A Guide](https://www.alt-counsel.com/so-you-want-to-claude-cowork-the-legal-plugin-a-guide/)
 
-Now that Copilot Cowork will switch to usage based pricing, one might expect everyone to baulk at the pennies you have to spend every time you review a contract. The reality on the ground in a bigger organisation is more quaint. Our IT department, who manage the cost, still haven't worked out how to charge it back to the departments that use it. So for now it sits in limbo — and I'm the one footing the bill for my own use while that gets sorted out. And the limbo comes with a deadline: Microsoft gave us until 1 July to switch on usage-based billing or lose Cowork altogether.
+Now that Copilot Cowork will switch to usage based pricing, one might expect everyone to baulk at the pennies you have to spend every time you review a contract. The reality on the ground in a bigger organisation is more quaint. Our IT department, who manage the cost, still haven't worked out how to charge it back to the departments that use it. So for now it sits in limbo — and it comes with a deadline: Microsoft gave us until 1 July to switch on usage-based billing or lose Cowork altogether.
 
 I'd thought I was finally ahead of the wave. I'd built the thing that hands the boring triage to AI so a lawyer doesn't have to touch it — about as close as I'd come to automating a slice of my own job. Then the wave changed shape. So I did the only thing that made sense: I went to IT and told them plainly that Legal needs this and wants it properly implemented. Now I wait to see whether that carries. 
 
@@ -33,7 +46,7 @@ I'd thought I was finally ahead of the wave. I'd built the thing that hands the 
 
 When the pricing changed, I asked the obvious question: should we just go back to the paid legal-tech tool we already license — the one we subscribed to for exactly this?
 
-The answer came back that they would rather keep Cowork.
+The answer came back that *they would rather keep Cowork*.
 
 It isn't that the dedicated tool is worse. It's that Cowork is *there*. It's Microsoft, it lives in the chat app they already have open, and it's familiar in a way a purpose-built legal product never quite manages. We've tried other solutions. None of them beat the gravity of "it's already on the tab."
 
@@ -41,21 +54,17 @@ My colleagues didn't pick the best tool. They picked the one they'll actually us
 
 ## This isn't just us
 
-Cowork isn't a one-off, and neither is my problem. The same few weeks felt like a turning of the season:
-
-- Microsoft moved Cowork from a free-feeling preview to a metered GA.
-- Legora moved its most capable product, Agent Pro, off per-seat pricing — about $3,000 a seat a year — to consumption.
-- The pattern runs well past legal: even SAP is shifting enterprise software to consumption as agents eat the seat model.
+Cowork isn't a one-off, and neither is my problem. The same few weeks felt like a turning of the season. Microsoft moved Cowork from a free-feeling preview to a metered GA. Legora moved its most capable product, Agent Pro, off per-seat pricing — about $3,000 a seat a year — to consumption. And the pattern runs well past legal: even SAP is shifting enterprise software to consumption as agents eat the seat model.
 
 And once you're paying by the task, *which* platform you run on stops being a detail. When the consultancy Legal Nodes put the same model — Claude Opus 4.8 — through three different setups on the same 40 legal tasks, the cost per task ran from $0.30 to $2.80. Same model. A near-tenfold spread, decided entirely by the scaffold around it — the prompts, integrations, and workflow design wrapping the model.
 
 ![Cost-per-task bar chart from Legal Nodes: MikeOSS $0.30, Cowork plus Legal Plugin $0.80, Claude Chat $2.80, averaged over 40 tasks.](legal-nodes-cost-per-task.png)
 
-*Cost per task, same model across three platforms. Source: Legal Nodes scaffold study, via [Artificial Lawyer](https://www.artificiallawyer.com/2026/06/22/the-legal-ai-scaffold-changes-everything-claude-study/).*
+Cost per task, same model across three platforms. Source: Legal Nodes scaffold study, via [Artificial Lawyer](https://www.artificiallawyer.com/2026/06/22/the-legal-ai-scaffold-changes-everything-claude-study/).
 
 Don't read that as a shopping list. The cheapest row, MikeOSS, is an open-source platform you host and wire together yourself — formidable if you build, useless if you don't. And these are tidy benchmark numbers; a real metered bill, which also charges for retrieval, tool calls, and runtime, runs higher than the model cost alone. The point isn't *switch to the cheap one*. It's that the same model can cost a little or a lot depending on the machinery around it — and someone has to judge whether that machinery is worth what it's metering.
 
-Shawn Curran, the CEO of Jylo, [told Artificial Lawyer](https://www.artificiallawyer.com/2026/06/03/legal-ai-has-a-growing-token-price-problem/): "per seat pricing is gone, if Anthropic, Microsoft and OpenAI have moved away from it, no-one is going to subsidise legal tech vendors on all you can eat."
+> Shawn Curran, the CEO of Jylo, [told Artificial Lawyer](https://www.artificiallawyer.com/2026/06/03/legal-ai-has-a-growing-token-price-problem/): "per seat pricing is gone, if Anthropic, Microsoft and OpenAI have moved away from it, no-one is going to subsidise legal tech vendors on all you can eat."
 
 *The Lawyer* ran its version under a blunter headline: "Law's AI honeymoon is over." That's the consensus now. The free buffet is closing, and it's bad news for legal AI.
 
@@ -75,9 +84,7 @@ But whichever way you answer, the same thing happened underneath the argument. T
 
 ## The meter prices compute, not trust
 
-The sharpest thing I read through all this came from someone sceptical of the whole shift. Writing about Legora's move, Elgar Weijtmans put it in four words I can't shake: consumption is not outcome.
-
-[Legal AI Won't Be Priced Per Seat. Legora Just Agreed.](https://unfilteredbits.substack.com/p/legal-ai-wont-be-priced-per-seat)
+The sharpest thing I read through all this came from someone sceptical of the whole shift. Writing about Legora's move, [Elgar Weijtmans](https://unfilteredbits.substack.com/p/legal-ai-wont-be-priced-per-seat) put it in four words I can't shake: consumption is not outcome.
 
 You pay for the work the agent does, not for that work being right. The meter charges the moment the compute is spent. It has no opinion on whether the green light my tool just handed a contract was the correct call. That judgment isn't in the bill. It can't be.
 
