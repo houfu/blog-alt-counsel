@@ -45,6 +45,16 @@
 ### Meta-observation (candidate angle for the update)
 Failing to keep the tracking log is *itself* a finding: tracking has friction too (speaks to P3's "friction is real"), and it's a live test of P5 — was the accountability structure real iteration or my own bit of theater? The blog's brand is honest, "includes what broke" — so leading with "I dropped the formal log; here's what I did instead" is on-brand, not a weakness to hide.
 
+### Houfu's comments (2026-07-02, walking through predictions one by one)
+
+**Prediction 1 — verdict: FAIL at 6 months, but still holding out for December.**
+- Key reframe: the prediction rests on **orchestration** — agents use the Word app, the *human* does not. The bet is not "AI in Word," it's "human out of Word."
+- Therefore the *slew* of Word plugins (Claude for Word + many others) that put AI *inside* Word for the human to use is **fatal to the prediction's spirit**: "If AI is meant to be used in the Word app, we are not leaving the Word app."
+- Counter-signal keeping it alive: agent benchmarks suggest the agents-do-it / human-doesn't vision "might be in reach." **Spellbook's new autonomous CLM** points the same (orchestration) direction.
+- Houfu personally expected the work to happen in a **Cowork**-like environment. **Microsoft Copilot "coworker"** is an important development on that axis.
+- Current blocker (besides cost): **validation** — to confirm the agent is reliable, he still has to open the file in Word to check it. That's why it's a fail right now.
+- TODO at revision: external refs to verify if they go in the post — Spellbook autonomous CLM, Copilot coworker, the "slew of Word plugins." Offered blog-research/web-search; awaiting go-ahead.
+
 ### Deep-read findings (voice + concrete detail)
 - **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
 - **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
