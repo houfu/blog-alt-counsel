@@ -38,8 +38,9 @@
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.14.0",
-    "jsonwebtoken": "^9.0.2",
-    "gray-matter": "^4.0.3"
+    "axios": "^1.18.1",
+    "gray-matter": "^4.0.3",
+    "jsonwebtoken": "^9.0.2"
   },
   "engines": {
     "node": ">=16.0.0"
