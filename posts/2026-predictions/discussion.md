@@ -74,6 +74,12 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 - Double irony to use: (1) his MOST confident prediction is his MOST wrong; (2) in Jan he doubted the "adoption doubled to 52%" claim — 2026 number is 69% and his own log confirms it. He became a data point for the trend he doubted.
 - Sources to verify firsthand before publishing: 8am 2026 report, RSGI/Harvey report PDF. (Offered; not yet done.)
 
+**Prediction 4 — verdict: "unsolved" half CONFIRMED; "manageable" half UNDER PRESSURE / trending wrong way.**
+- Houfu did NOT run the planned three-workflow bake-off (RAG-citations / two-pass / locked templates) — "didn't do much work."
+- Real signal instead: with more use of autonomous agents ("claws" = OpenClaw/nanoclaw-family agents — CONFIRM), the problem is GROWING, not becoming manageable. Autonomy widens the error surface (agents route around tools, broken files, quietly-wrong output) rather than structure taming it.
+- So the optimistic hedge ("maybe manageable") is not panning out; arguably the opposite as agentic autonomy scales. Ties to P2's harness-design point.
+- Draft impact: replace the three-workflow framing with "I didn't run the experiment; but scaling agent autonomy made hallucination/reliability worse, not manageable."
+
 ### Deep-read findings (voice + concrete detail)
 - **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
 - **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
