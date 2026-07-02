@@ -55,6 +55,14 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 - Current blocker (besides cost): **validation** — to confirm the agent is reliable, he still has to open the file in Word to check it. That's why it's a fail right now.
 - TODO at revision: external refs to verify if they go in the post — Spellbook autonomous CLM, Copilot coworker, the "slew of Word plugins." Offered blog-research/web-search; awaiting go-ahead.
 
+**Prediction 2 — verdict: CONFIRMED / strong, but the promised deliverable is being abandoned-and-redefined.**
+- Looks strong *because* it was unexpected (his flagged-to-fail bet became his best call). Benchmark work + **local-model advances** (DeepSeek-v4-flash on Ollama) made it worthwhile and exciting.
+- Will **not** deliver the January "revised decision framework." Reasons:
+  - Hand-waving a compliance/decision framework is meaningless — "too many variables" (echoes Jan admission: too simplistic, it's context not task type).
+  - The real learning is about **designing a great harness, not an eval framework**.
+  - A **synthetic-data benchmark** is the nearest rigorous method to map the frontier, but "still too hard for a resource-restrained person to carry out on their own" (LAB run = 2 weeks, exhausted Ollama quota).
+- On-brand irony to surface in the post: the only rigorous way to map the jagged frontier is an eval his own resource-constrained audience can't run.
+
 ### Deep-read findings (voice + concrete detail)
 - **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
 - **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
