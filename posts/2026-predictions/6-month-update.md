@@ -1,5 +1,5 @@
 ---
-title: "Half-Time on My 2026 Predictions: My Confidence Was Backwards"
+title: "Half-Time on My 2026 Predictions: My Confidence Was Inverted"
 slug: 2026-predictions-six-month-update
 tags: [AI, LegalTech, Singapore, 2026Predictions]
 status: draft
@@ -96,7 +96,7 @@ On ASEAN: the region-wide leapfrog hasn't materialised. Southeast Asia is still 
 | 4 | Hallucination manageable | **Most confident** | Half wrong; trending worse |
 | 5 | Mostly theatre | Most likely to fail | Holding |
 
-Read the confidence column against the verdict column. I was calibrated backwards. The predictions I'd have bet the house on are the two the year most thoroughly refuted; the ones I hedged as too hard to call are the ones that held.
+Read the confidence column against the verdict column. I was calibrated the wrong way round. The predictions I'd have bet the house on are the two the year most thoroughly refuted; the ones I hedged as too hard to call are the ones that held.
 
 I think I know why, and it isn't flattering. My confident predictions were the *comfortable* ones — they matched how I wanted 2026 to go: friction protecting us from over-reliance, structure taming the risk. My pessimistic predictions were the ones I'd already tested against reality and expected to lose. Comfort is a terrible forecasting input. The frontier doesn't care what would be convenient for me.
 
