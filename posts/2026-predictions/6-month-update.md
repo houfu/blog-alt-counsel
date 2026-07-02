@@ -1,115 +1,137 @@
 ---
-title: "Six Months In: Grading My 2026 Predictions (And the Log I Didn't Keep)"
+title: "Half-Time on My 2026 Predictions: The Ones I Was Surest Of Are the Ones I Blew"
 slug: 2026-predictions-six-month-update
 tags: [AI, LegalTech, Singapore, 2026Predictions]
 status: draft
-excerpt: "In January I made five testable predictions and promised to track them publicly all year. I made five predictions and then didn't keep the log. Here's the mid-year reckoning anyway — because the year kept its own record."
+excerpt: "In January I made five predictions and ranked how confident I was in each. Six months in, that ranking is almost perfectly inverted: the two I was surest of are my worst calls, and the two I expected to fail are holding. Here's the mid-year reckoning."
 ---
 
-In January, I made five predictions about legal AI, gave each one a success criterion, and promised something most prediction posts never do: to track them publicly, month by month, in a repo anyone could watch. I even set a stake. If I chickened out of the December scorecard, $500 to a Singapore legal aid organisation and a public acknowledgment that I'd flaked.
+In January I made five predictions about legal AI, gave each a success criterion, and did one more thing most prediction posts skip: I ranked my own confidence. I said I was *most confident* about two of them and *most likely to fail* at two others.
 
-So let me start with the most honest sentence in this post.
+Six months in, that ranking is almost perfectly inverted.
 
-I didn't keep the log.
+The two I was surest of are my worst calls. The two I flagged as most likely to fail are the ones holding up. That inversion is the real story of this halfway post — more than any individual grade, it's a lesson about how badly I read my own certainty.
 
-The tracking file I set up in January still has every "updates will appear here" placeholder exactly where I left it. No monthly usage percentages. No contract-review spreadsheet. No decision log. The public audit trail I promised has six months of silence in it.
+Before the scorecard, one confession and one correction.
 
-That's a failure worth sitting with — and I'll come back to what it means. But it turns out I don't get to hide behind the missing log, because the year kept its own record. Between January and now I published twenty-two posts, and read back in order they *are* the tracking data. Not the clean quantitative version I promised. The messier, more honest version, where you can watch me change my mind in real time.
+The confession: I promised to track all of this publicly, month by month, in a repo anyone could watch. For the reconstructed pieces I leaned on my own published posts instead of a clean log — twenty-two of them since January, which turn out to be a decent audit trail even when I wasn't keeping the formal one.
 
-So here's the mid-year reckoning. Five predictions, graded from the trenches, using the receipts I actually left.
+The correction to my own last draft of this post: I almost wrote that one prediction was "untracked, can't grade." That was me being lazy. I *did* keep a log at work. The number exists. It's just not the number I wanted.
 
-## Prediction 1: Agentic AI will actually work for document review
+Let's start there.
 
-**The bet:** By the end of 2026 I'd complete routine contract reviews without ever opening Microsoft Word. Binary test: if I hand-write one edit in Word, it failed.
+## Where I was overconfident
 
-**Where it stands: not there yet — and I nearly conceded early.**
+### Prediction 3: "Real usage will stay under 20%" — my most confident call, and my most wrong
 
-In April, Anthropic shipped Claude for Word, with contract review as the flagship use case. Native sidebar, tracked changes, the works. I installed it half-expecting to eat my prediction on the spot.
+**The bet:** When I honestly tracked meaningful AI use across my legal work, it would stay under 20% of my total. Friction is real, I said. Claims of surging adoption were inflated.
 
-https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-strikes-back/
+**Reality: north of 50%.**
 
-The product is genuinely good — the strongest agentic editing I've seen inside Word. But writing that review clarified something I'd gotten muddled in January. My prediction was never about whether a good tool would *exist*. It was about whether the workflow would *transform* — AI precise enough to trust, adoption wide enough to mediate negotiations, tools friendly enough for any lawyer. A launch can't settle that. And the interface itself pulls you toward junior work: clause tweaks in a 300-character sidebar, when the strategic thinking lives somewhere you can see the whole transaction.
+My work log since May puts AI in more than half my tasks — and I'm using a strict bar for "meaningful." Not "asked a chatbot a question." I mean AI doing substantive work I'd otherwise have done myself: reading, drafting, vetting, framing advice. On that demanding definition, it still clears 50%.
 
-Then in June I ran a harder test than any product demo — I put an agent stack through Harvey's Legal Agent Benchmark, over 2,000 tasks.
+I didn't just miss. I missed in the *opposite direction*, on the prediction I was proudest of.
+
+And it gets worse, because in January I was sniffy about the industry's "adoption doubled to 52%" claim. The 2026 numbers came in higher — the [8am 2026 Legal Industry Report](https://www.lawnext.com/2026/03/ai-adoption-among-legal-professionals-has-more-than-doubled-in-a-year-new-8am-report-finds-but-firms-lag-far-behind-individual-practitioners.html) puts general-AI adoption among lawyers at 69%, more than double a year ago. Harvey reports [80% weekly usage](https://www.harvey.ai/blog/harvey-releases-study-on-how-mobile-and-ai-are-transforming-legal-work) across its base; Legora cites 80%+ daily usage among its customers. I doubted the trend, and then I became a data point for it.
+
+One honest caveat, because this blog lives on them: those vendor numbers measure "used it this week," and mine measures "did meaningful work on this task." My >50% is a *stricter* test than their 80% — which, if anything, makes my miss cleaner, not softer. The friction I bet on was real in 2024. By mid-2026 the tools had climbed inside the daily workflow and the friction stopped being decisive.
+
+### Prediction 4: "The hallucination paradox stays unsolved, but maybe manageable" — half right, on the wrong half
+
+**The bet:** You can't kill hallucinations without killing what makes LLMs useful. Unsolved in 2026 — but maybe made *manageable* through structure: RAG with citations, two-pass review, locked templates. I named three workflows I'd test.
+
+**Reality: the "unsolved" half holds. The "manageable" half is trending the wrong way — and I never ran the experiment.**
+
+I'd love to report clean results from the three-workflow bake-off. I didn't do the work. What I have instead is more honest and less comfortable: the more I lean on autonomous agents, the *worse* the reliability problem gets, not the better.
+
+That's the opposite of "manageable." Every increment of autonomy widens the surface where things break — and they break in ways that are hard to see. The agents route around the tools I give them, ship confident output that's quietly wrong, and — my favourite failure of the year — hand back finished legal work in a file nobody can open.
 
 https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/
 
-Somewhere in those results is a complete, correct legal memo that scored zero — because my agent saved it as raw markdown under a `.docx` name and the grader couldn't open it. The legal thinking was done. The delivery failed. That's the prediction in miniature: we can get AI to *do* the review; we can't yet get it to *hand back* reviewable work without me reaching for Word to fix what broke.
+The paradox I described was real; I just aimed it at the wrong target. I worried about the invented case citation. The sharper 2026 risk is the well-formed deliverable that's subtly broken or subtly wrong, produced by an agent doing more and more on its own. Structure might still tame that. But six months of using these agents harder has moved me toward pessimism, not comfort.
 
-Six months in, I've still opened Word. Prediction 1 is leaning toward a miss — but a more interesting miss than I expected.
+## Where I was too pessimistic
 
-## Prediction 2: The jagged frontier problem won't get better
+### Prediction 2: "The jagged frontier won't get better" — my strongest call, from my weakest hand
 
-**The bet:** The problem was never that AI fails — it's that we can't predict *which* tasks it'll fail at. And that unpredictability wouldn't improve in 2026.
+**The bet:** The problem was never that AI fails — it's that we can't predict *which* tasks it'll fail at, and that unpredictability wouldn't improve in 2026. I flagged this as one of my two most likely to fail, because it was the hardest to pin down.
 
-**Where it stands: this is looking like my strongest call.**
+**Reality: it's the prediction the evidence keeps confirming.**
 
-In January I flagged this as one of the two I was *most likely to fail at*, because it's the hardest to operationalise. Instead it's the one the evidence keeps confirming.
-
-SkillsBench dropped in February — 7,308 agent runs measuring whether skills actually help. They do, on average, by 16 points. But 19% of tasks got *worse*, the worst by nearly 40 points, and models proved unable to write the very skills they benefit from using.
+In February, SkillsBench put numbers on it: across 7,308 agent runs, curated skills helped by 16 points on average — but 19% of tasks got *worse*, and models proved unable to write the very skills they benefit from using.
 
 https://www.alt-counsel.com/skillsbench-analysis/
 
-That's jaggedness with a sample size. Strong here, weak one task over, and no reliable way to know which in advance. My benchmark run said the same thing from the other direction: my lawyer-built stack *lost* to a generic one (74.8% vs 84.7%), but won on extraction and comparison while collapsing on long-form drafting. Same tools, opposite results, depending on the task. I called it "the jagged frontier vividly illustrated" — and I meant it.
+Then my own benchmark run said the same thing from the inside: my lawyer-built stack lost overall but won on extraction and comparison while collapsing on long-form drafting. Same tools, opposite results, no reliable way to know in advance. Strong here, weak one task over. The jagged frontier, vividly illustrated.
 
-Better models moved the frontier this year. They didn't remove it.
+Here's where I owe you a correction on the *deliverable*, though. In January I promised a "revised decision framework" — a way to know when to trust AI. I no longer think I'll ship that, and I want to be honest about why rather than quietly drop it.
 
-## Prediction 3: Real usage will stay under 20%
+A hand-waved framework — "use AI for low-stakes, catchable tasks" — is useless when the real variable is context, and there are too many variables to reduce to a checklist. The genuine lesson turned out to be about *harness design*, not evaluation: the reliability lives in how you build the agent's environment, not in a decision tree you consult beforehand. And the only rigorous way to actually map the frontier is a benchmark on synthetic data — which I did, and which is *still too expensive and too hard for a resource-constrained practitioner to run on their own*. My run took two weeks and burned my entire compute quota.
 
-**The bet:** When I honestly tracked my *actual* meaningful AI use across my legal work, it would stay under 20% — claims of 52% adoption notwithstanding.
+So the uncomfortable finding under the confirmed prediction: the frontier is real, it's jagged, and the tool that maps it honestly is out of reach for exactly the readers this blog is written for. That's a better thing to say than a framework I'd have to fake.
 
-**Where it stands: I can't grade this honestly, and that's the whole point.**
+### Prediction 5: "Most adoption is performative theatre" — holding, with a twist
 
-This is the prediction I said I was *most confident* about. It's also the one I sabotaged — because the "honest monthly tracking" I promised is exactly the log I didn't keep. I don't have a number for you. I could reconstruct one from my calendar and pretend it was tracked contemporaneously. I won't. A made-up percentage in an accountability post is the exact theatre I said I'd call out in Prediction 5.
+**The bet:** Most AI projects would be checkbox exercises; real innovation would live in isolated pockets. I also bet *against* Salesforce's claim that ASEAN would leapfrog the West on adoption. Another one I flagged as likely to fail — I was learning to spot theatre from scratch.
 
-What I *can* say complicates the bet. In April I finally admitted in writing that almost every post I publish is now heavily AI-assisted end to end — and that the readers rewarded it, not punished it.
+**Reality: holding.**
 
-https://www.alt-counsel.com/three-years-100-members-and-an-experiment-in-plain-sight/
-
-That's usage well north of 20% — but it's my *building and writing* life, not my legal-deliverable life, which is what the prediction was actually about. The gap between those two numbers is probably the real finding here, and I don't have it measured. So the honest mid-year grade on Prediction 3 is *incomplete*, and the reason it's incomplete tells you something true: even for someone who bet money on tracking, the friction of tracking was enough to stop me. Which, ironically, is the friction thesis the prediction was built on.
-
-## Prediction 4: The hallucination paradox stays unsolved, but maybe manageable
-
-**The bet:** You can't kill hallucinations without killing what makes LLMs useful. Unsolved in 2026 — but maybe made *manageable* through structure: citations, two-pass review, locked templates.
-
-**Where it stands: partial, and the failure surface moved.**
-
-I haven't run the clean three-workflow bake-off I described in January. But the benchmark work taught me something I didn't have in the original framing. Harvey's grader is all-pass — a memo that catches eight of ten risks scores as incomplete, because that's how partners actually review. Under that standard, the thing that sank my agents wasn't fabricated law. It was *packaging*: broken files, leaked format tokens, placeholder stubs shipped as final work.
-
-So the manageable-hallucination thesis holds, but the sharpest risk in practice isn't the confident fake citation I worried about in January — it's the confident, well-formed output that's quietly wrong or quietly broken in ways an all-pass reviewer catches and a busy solo counsel might not. Structure helps. It doesn't solve. Leaning toward the prediction, with a revised sense of *what* needs managing.
-
-## Prediction 5: Most AI adoption will be performative theatre
-
-**The bet:** Most projects would be checkbox exercises. Real innovation would happen in isolated pockets. And I'd learn to tell them apart.
-
-**Where it stands: leaning confirmed, with more texture than I expected.**
-
-I flagged this as my other likely-to-fail prediction because I was "learning to spot theatre from scratch." Three posts this year sharpened the signal.
-
-Budget 2026 put real government money behind legal AI — tax deductions, free tools, a Champions programme. Good, but I asked whether it was adoption *infrastructure* or a way to keep lawyers in the passenger seat.
-
-https://www.alt-counsel.com/budget-2026-lawyers-ai-drivers-seat/
-
-And when I actually went looking for the innovation pockets, I found them thinner than the announcements suggest — legal open source isn't a community yet, it's "a federation of solo-author archipelagos."
+When I went looking for the innovation pockets, they were thinner than the press releases suggested — legal open source isn't a community, it's "a federation of solo-author archipelagos."
 
 https://www.alt-counsel.com/lawyers-not-on-each-others-code/
 
-But I also caught a real one, close to home: I submitted feedback on MinLaw's draft AI guide and watched two recommendations land in the final, near-verbatim. Real iteration, in public, changing something. That's the innovation signal, and it's rarer than the press releases imply. Prediction 5 is holding.
+Budget 2026 put real government money behind legal AI, and I asked the theatre-or-substance question of the policy itself — infrastructure, or keeping lawyers in the passenger seat?
 
-## The updated scorecard
+https://www.alt-counsel.com/budget-2026-lawyers-ai-drivers-seat/
 
-In January I said I was most confident about #3 and #4, most likely to fail on #2 and #5. Six months in, the ranking flipped in the most instructive way:
+And I caught a genuine innovation signal close to home: I submitted feedback on MinLaw's draft AI guide and two recommendations landed in the final, near-verbatim. Real, public iteration that changed something.
 
-- **#2 (jagged frontier)** — my supposed weakest bet — is my strongest.
-- **#3 (usage under 20%)** — my most confident — is the one I broke by not measuring it.
-- **#1** is leaning miss, #4 partial, #5 holding.
+https://www.alt-counsel.com/minlaw-ai-guide-draft-to-final/
 
-The lesson isn't in any single grade. It's that the prediction I was proudest of the *method* on is the one where the method failed, and the prediction I thought was too abstract to test kept proving itself without my help.
+On the ASEAN sub-bet: the region-wide leapfrog hasn't materialised. Southeast Asia is still early; Singapore is a clear standout while the rest of the region trails more advanced markets by two to three years, and North America still leads in absolute maturity ([regional picture here](https://fulcrum.sg/what-is-shaping-artificial-intelligence-ai-governance-policies-in-southeast-asia/)). APAC is the fastest-*growing* region, which is catching up, not leaping ahead. And the barriers the reports cite — no training at 54% of firms, no policy at 43%, governance and readiness lagging — are exactly the non-legacy constraints I said would matter more than "unburdened by old systems."
 
-## What I'm doing about the log
+The twist I didn't see coming: Singapore leaping ahead while the rest of ASEAN lags *is my own thesis in miniature*. Innovation in isolated pockets. The sub-bet doesn't just survive — it feeds the headline prediction. One caveat to keep myself honest: "leapfrog" is a slippery word. If it means "grow fastest," APAC qualifies. If it means "skip stages and overtake the West" — the version Salesforce was selling — it hasn't happened.
 
-The missing tracking is a real breach of what I promised, so here's the fix, not an excuse. I've back-filled the tracking file in the repo with what these six months actually showed, and for the back half of the year I'm dropping the fantasy of a perfect monthly spreadsheet in favour of something I'll actually sustain: a short entry appended whenever a post touches a prediction. Lower friction, same audit trail. If that's still theatre, you'll be able to see it — publicly, in the commits.
+The one deliverable here I *do* still intend to ship: the theatre-versus-innovation signals framework. Unlike the jagged-frontier framework, this one I think is real and tractable. I've got a few months to write it down properly.
 
-The $500 stake stands. The December scorecard stands. I'm on record now, twice.
+## The one I'm still fighting
+
+### Prediction 1: "Agentic AI will actually work for document review" — fail, but I'm not conceding
+
+**The bet:** By year's end I'd complete routine contract reviews using only AI and agents, never opening Word.
+
+**Reality: fail at the halfway mark. But I read the miss differently now.**
+
+The prediction was never that a good tool would *exist*. It was about *orchestration* — agents operating the document while the human stays out of it entirely. So the year's flood of Word plugins, Claude for Word among them, is not evidence *for* me. It's evidence *against*. If the industry's answer is "put the AI inside Word so the lawyer can drive it from a sidebar," then we never leave Word. That's the opposite of the future I bet on.
+
+https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-strikes-back/
+
+What keeps the bet alive is the other direction: the agent benchmarks suggest the do-it-without-the-human vision might genuinely be in reach, and autonomous tools like Spellbook's new CLM point that way too. I always expected the real work to happen somewhere like Cowork, not Word — and Microsoft's Copilot "coworker" is a meaningful step on that axis.
+
+The wall I keep hitting isn't capability. It's *validation*. Even when an agent does the review, I open Word to check it — because I don't yet trust it enough not to. Until I can validate reliability without opening the file myself, the human hasn't actually left the app.
+
+So: fail. But I suspect, and I'm still holding out.
+
+## The scorecard, and what the inversion taught me
+
+| # | Prediction | January confidence | Half-time verdict |
+|---|---|---|---|
+| 1 | Doc review, human out of Word | Optimistic (stretch) | Fail — but still fighting |
+| 2 | Jagged frontier won't improve | Most likely to fail | Confirmed — my strongest call |
+| 3 | Usage stays under 20% | **Most confident** | Wrong, in the opposite direction |
+| 4 | Hallucination manageable | **Most confident** | Half wrong; trending worse |
+| 5 | Mostly theatre | Most likely to fail | Holding |
+
+Read the confidence column against the verdict column. I was calibrated backwards. The predictions I'd have bet the house on — usage staying low, hallucinations becoming manageable — are the two the year has most thoroughly refuted. The ones I hedged as too hard to call are the ones that held.
+
+I think I know why. My confident predictions were the *comfortable* ones — they matched how I wanted 2026 to go: friction protecting us from over-reliance, structure taming the risk. My pessimistic predictions were the ones I'd tested against reality and expected to lose. Comfort is a terrible forecasting input. The frontier doesn't care what would be convenient for me.
+
+## What happens now
+
+The tracking failure was real, so here's the fix and not the excuse. I've back-filled the repo with what these six months actually showed, and for the rest of the year I'm dropping the fantasy of a perfect monthly spreadsheet for something I'll sustain: a short entry appended whenever a post touches a prediction. Lower friction, same audit trail, public in the commits where you can check it.
+
+Two deliverables still stand: the theatre-versus-innovation framework (Prediction 5) I intend to ship; the jagged-frontier decision framework (Prediction 2) I'm formally retiring, and I've told you why.
+
+The $500 stake stands. The December scorecard stands. If anything, being this wrong at half-time makes December more interesting, not less — because now the story isn't "did he call it." It's "watch a guy find out his instincts were inside-out, in public, with the receipts."
 
 See you in December with the data. All of it this time.

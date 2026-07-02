@@ -80,6 +80,16 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 - So the optimistic hedge ("maybe manageable") is not panning out; arguably the opposite as agentic autonomy scales. Ties to P2's harness-design point.
 - Draft impact: replace the three-workflow framing with "I didn't run the experiment; but scaling agent autonomy made hallucination/reliability worse, not manageable."
 
+**Prediction 5 — verdict: leaning CONFIRMED (main thesis), ASEAN sub-bet leaning HIS WAY, framework still pending (few months left).**
+- Main thesis (theatre dominant, innovation in isolated pockets): holding. Evidence — Budget 2026 (passenger seat), Lawyers Not On Each Other's Code (solo archipelagos), MinLaw draft-to-final (real iteration = positive innovation signal).
+- ASEAN-leapfrog sub-bet (he bet AGAINST Salesforce's "ASEAN leapfrogs West"): grading mostly in his favour at halfway.
+  - Against leapfrog: SEA early-stage, "Singapore standout, rest of region lags advanced countries by 2-3 years"; North America still leads absolute; APAC only fastest-GROWING (~20% CAGR) = catching up, not overtaking. His counter-constraints confirmed: 54% no training, 43% no policy, governance/readiness lags.
+  - Complicating: ~90% APAC "using" AI (broad, experimental); Singapore genuinely out front (MinLaw guide 6 Mar 2026; Minister: up to 44% tasks automatable).
+  - THE TWIST (use it): Singapore leaping ahead while rest of ASEAN lags = his own "innovation in isolated pockets" thesis in action. Sub-bet feeds the main bet.
+  - Definitional caveat for post: "leapfrog" = grow fastest (APAC qualifies) vs skip-stages-and-overtake-West (hasn't happened; that's the version Salesforce sold).
+  - Sources: 8am 2026 (LawSites), MinLaw GenAI guide, FULCRUM SEA governance, GlobeNewswire APAC market report.
+- Framework: unlike P2, he STILL intends to build the theatre-vs-innovation signals framework — "a few months to go." So P5 deliverable = pending/in-progress, not abandoned.
+
 ### Deep-read findings (voice + concrete detail)
 - **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
 - **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
