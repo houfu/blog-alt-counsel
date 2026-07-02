@@ -63,6 +63,17 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
   - A **synthetic-data benchmark** is the nearest rigorous method to map the frontier, but "still too hard for a resource-restrained person to carry out on their own" (LAB run = 2 weeks, exhausted Ollama quota).
 - On-brand irony to surface in the post: the only rigorous way to map the jagged frontier is an eval his own resource-constrained audience can't run.
 
+**Prediction 3 — verdict: DECISIVE MISS, wrong direction. Predicted <20%; actual >50%.**
+- Houfu DID keep a work log. Metrics since May 2026: **AI involved in >50% of tasks.**
+- His definition = **meaningful work**: reading, drafting, vetting, framing advice (matches Jan's "substantive work I'd have done manually," not "asked a question"). So it's a STRICT bar — stricter than vendor "used weekly/daily" — which makes >50% robust, not inflated.
+- Benchmark vs market (he asked me to check "does this track Harvey/Legora?"):
+  - 8am 2026 report: genl-AI adoption 69% (up from 31%); legal-specific tool usage 42%.
+  - Harvey (Mobile&AI 2026): weekly usage 80%; RSGI/Harvey Apr–Jun 2026: orgs w/ 30%+ power users 34%→50%; power users save 11h/wk.
+  - Legora (own case studies): 80%+ daily usage, goal 90%; $100M ARR, 1000+ customers.
+  - VERDICT on his belief: directionally yes (his number is in the same regime), BUT not apples-to-apples — vendor numbers = "used it," his = "meaningful task involvement"; vendor sources are self-reported about own customers (bias). Frame as "lands in the same ballpark as market adoption," not identical measures.
+- Double irony to use: (1) his MOST confident prediction is his MOST wrong; (2) in Jan he doubted the "adoption doubled to 52%" claim — 2026 number is 69% and his own log confirms it. He became a data point for the trend he doubted.
+- Sources to verify firsthand before publishing: 8am 2026 report, RSGI/Harvey report PDF. (Offered; not yet done.)
+
 ### Deep-read findings (voice + concrete detail)
 - **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
 - **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
