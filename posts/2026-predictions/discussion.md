@@ -90,6 +90,12 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
   - Sources: 8am 2026 (LawSites), MinLaw GenAI guide, FULCRUM SEA governance, GlobeNewswire APAC market report.
 - Framework: unlike P2, he STILL intends to build the theatre-vs-innovation signals framework — "a few months to go." So P5 deliverable = pending/in-progress, not abandoned.
 
+### Structure decision (2026-07-02, after hero debate)
+- Houfu's steer: **P2 is "the story of the year"** (unexpected how much it featured); **P1 is the idea he chewed on all term**; **P3 "continues nascent trends"** → least distinctive.
+- On "did I flub the 20%?": No arithmetic flub — 20% was a gut contrarian floor justified purely by the friction thesis (M&A term-sheet story, verification cost, client Word expectations, post-Oct-3 caution). Success criterion (meaningful monthly usage) matches the work-log metric, so no moved goalposts. BUT a subtler **category error**: he pitted "52% adoption" (breadth) against "<20% usage" (intensity) as if one axis — you can be right that adoption claims are hype AND use AI in >50% of tasks. Use this as the smart-confession angle.
+- **Final draft order (narrative arc, inversion as frame):** intro+log confession+correction → P3 opening confession (with category-error insight) → P1 "the idea I lived with all year" → P2 climax "story of the year" (retire framework + benchmark-out-of-reach punch) → P4 short → P5 short → scorecard + inversion lesson ("comfort is a terrible forecasting input") → what happens now (tracking fix, retire P2 framework / ship P5 framework, $500, December).
+- Title on the inversion; P2 as climax. Title options still open for Houfu.
+
 ### Deep-read findings (voice + concrete detail)
 - **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
 - **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
