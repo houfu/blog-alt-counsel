@@ -8,7 +8,7 @@ excerpt: "In January I ranked how confident I was in each of five predictions. S
 
 In January I made five predictions about legal AI, gave each a success criterion, and did one thing most prediction posts skip: I ranked my own confidence. Two I was *most confident* about. Two I flagged as *most likely to fail*.
 
-https://www.alt-counsel.com/my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom/
+https://www.alt-counsel.com/my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom/?ref=2026-predictions-six-month-update
 
 Six months in, that ranking is almost perfectly inverted. The two I was surest of are my worst calls. One of the two I expected to fail became the story of the year.
 
@@ -36,7 +36,7 @@ Why is this the confession and not the headline? Because being wrong that AI usa
 
 The prediction was never that a good tool would *exist*. It was about *orchestration*: agents operating the document while the human stays out of it entirely. Hold that definition, and the year's flood of Word plugins — Claude for Word the loudest of them — is not evidence *for* me. It's evidence *against*: if the AI lives in a sidebar inside Word, we never leave Word.
 
-https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-strikes-back/
+https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-strikes-back/?ref=2026-predictions-six-month-update
 
 A community of lawyers who build agents — people whose default is to automate first and apologise later — reached the same verdict independently, and phrased it in a way that's been bothering me since: the agent moved into Word; the human didn't move out. Word didn't lose to the agents. It absorbed them. I'd been treating the format as a legacy constraint the agents would eventually route around. What if it's the gravity well they all fall into?
 
@@ -52,11 +52,11 @@ The wall I keep hitting isn't capability. My agents' benchmark failures this yea
 
 It kept showing up whether I invited it or not. In February, a benchmark called SkillsBench put numbers on it: across 7,308 agent runs, curated skills helped by 16 points on average — but 19% of tasks got *worse*.
 
-https://www.alt-counsel.com/skillsbench-analysis/
+https://www.alt-counsel.com/skillsbench-analysis/?ref=2026-predictions-six-month-update
 
 Then my own benchmark run said it again from the inside: my lawyer-built stack won on extraction and comparison while collapsing on long-form drafting. Same tools, opposite results, no reliable way to know in advance.
 
-https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/
+https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/?ref=2026-predictions-six-month-update
 
 One correction on the *deliverable*, said plainly rather than quietly dropped. In January I promised a "revised decision framework" — a way to know when to trust AI. Six months of exactly this unpredictability convinced me: **I'm retiring that promise.** A hand-waved rule ("use AI for low-stakes, catchable tasks") is useless when the real variable is context. The genuine lesson turned out to be about *harness design*, not evaluation — if the failures live in the environment around the model, the fix lives in how you build that environment, not in a decision tree you consult beforehand.
 
@@ -72,7 +72,7 @@ Which means the honest tool for navigating the jagged frontier is *out of reach 
 
 I didn't run the three-workflow bake-off, and I'm not scheduling it now — real agent use answered the question the lab test would have asked, and less comfortably: the more I lean on autonomous agents, the *worse* the reliability problem gets. Every increment of autonomy widens the surface where things break — agents route around the tools I give them, ship confident output that's quietly wrong, and hand back finished legal work in a file nobody can open.
 
-https://www.alt-counsel.com/openclaw-field-notes-lawyer/
+https://www.alt-counsel.com/openclaw-field-notes-lawyer/?ref=2026-predictions-six-month-update
 
 I aimed the paradox at the wrong target. I worried about the invented citation. The sharper 2026 risk is the well-formed deliverable that's subtly wrong, produced by an agent doing more and more on its own. Structure might still tame that — but six months of harder agent use has moved me toward pessimism, not comfort.
 
@@ -84,11 +84,11 @@ I aimed the paradox at the wrong target. I worried about the invented citation. 
 
 The innovation pockets were thinner than the press releases suggested — legal open source isn't a community, it's "a federation of solo-author archipelagos."
 
-https://www.alt-counsel.com/lawyers-not-on-each-others-code/
+https://www.alt-counsel.com/lawyers-not-on-each-others-code/?ref=2026-predictions-six-month-update
 
 The counter-signal was close to home: two of my recommendations on MinLaw's draft AI guide landed in the final, near-verbatim. Real, public iteration that changed something.
 
-https://www.alt-counsel.com/minlaw-ai-guide-draft-to-final/
+https://www.alt-counsel.com/minlaw-ai-guide-draft-to-final/?ref=2026-predictions-six-month-update
 
 On ASEAN: the region-wide leapfrog hasn't materialised. The [regional picture](https://fulcrum.sg/what-is-shaping-artificial-intelligence-ai-governance-policies-in-southeast-asia/) is uneven — Singapore leads on legal-sector AI infrastructure, while Vietnam, of all places, beat everyone to a binding AI law. The barriers I pointed to — [no training at 54% of firms, no policy at 43%](https://www.8am.com/blog/ai-adoption-law-firms-2026-legal-industry-report) — are exactly the non-legacy constraints I said would matter more than being "unburdened by old systems." The twist I didn't see: Singapore leaping while the rest of ASEAN lags *is my own thesis in miniature* — innovation in isolated pockets.
 

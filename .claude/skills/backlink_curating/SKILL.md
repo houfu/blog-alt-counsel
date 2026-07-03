@@ -17,7 +17,8 @@ value of reading my blog, and apparently some SEO thing.
 2. Generate some search terms. 
 3. Use the `ghost_search` MCP tool to search for relevant posts. Run multiple searches in parallel with different terms. When searching, always get a summary or excerpt of the post (use `ghost_post_get` with a slug if needed for more detail).
 4. Aim for about 3 relevant posts. If necessary, limit the number of related posts to 5 posts. 
-5. Present your report to your human partner in the form of a table. For each related post, create a row with the columns, "Post title", "Relevance", "Link", and "Where to put this".
+5. **Append `?ref={referring-post-slug}` to every internal backlink URL** (the slug of the post the link sits *in*, not the target). Example: a link inside `2026-predictions-six-month-update` becomes `https://www.alt-counsel.com/target-post/?ref=2026-predictions-six-month-update`. This lets Houfu attribute internal traffic to the referring post in Ghost analytics.
+6. Present your report to your human partner in the form of a table. For each related post, create a row with the columns, "Post title", "Relevance", "Link", and "Where to put this".
 
 ## Tips
 
