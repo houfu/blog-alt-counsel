@@ -831,3 +831,23 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 - Worth-adding externals: Vals hLAB ~90% criteria / ~11% tasks (P2); CJ Menon "jagged frontier" keynote (P2); Harvey LAB <10% end-to-end at ~$50/task (P1); Princeton CITP or sanctions-doubling (P4); Axiom 96/7/83/100 (P5); adoption/intensity scissors reframe (P3).
 - Report's length warning: draft now ~2,160 words (was ~1,960 pre-session; original target ~1,700). Additions should displace words, not extend. Length audit before any further adds.
 - Review phase not started: no content-quality audit or reviewer round yet.
+
+## Session: 2026-07-03 (later) — Review completed, published & scheduled
+
+### Review phase (completed in order)
+- Length pass (~2,160 → 1,886), then 1 content-quality audit round (+41w), then reviewer round 1: Marcus Tan + Wei Lin. Zero standing asks re-raised; 3 unique catches applied (P1 packaging-not-reasoning validation claim, P2 harness-design bridge, P4 bake-off disposition). Round 2 skipped by recommendation. MEMORY_UPDATE blocks appended to both reviewer memories.
+- **User decision (P4 bake-off):** confirmed retiring it — "i'm not doing it anymore because the scene has changed." Kept the drafted line ("not scheduling it now — real agent use answered the question"); user may still substitute his own wording on Ghost.
+- Backlinks: added January predictions post (intro) + OpenClaw field notes (P4); other 5 already placed. Tags validated against registry: [AI, LegalTech, Singapore, 2026Predictions].
+
+### User decision: ?ref attribution on internal links
+- All internal links now carry `?ref={referring-post-slug}` so Ghost attributes internal traffic. Rule codified in backlink_curating skill + memory. Applies at ANY stage a link is inserted, not just the backlink pass.
+
+### Publishing discoveries (both codified)
+- **Bare URLs never became bookmark cards** — publish-lexical.js only converts `[Title](url)` markdown-link syntax on allowlisted domains. All 7 internal links converted to that syntax; 10 bookmark cards in final output.
+- **Frontmatter `excerpt:` is silently ignored** — script reads `custom_excerpt:` only. Renamed; gotcha added to creating_a_draft.md along with a new pre-publish metadata checklist (excerpt + cover photo), per user ask.
+- Table converter bugs (phantom edge columns, raw `**` in cells — issue #41 quirks) fixed on separate PR #45 per infra-separation rule; this post published with the fix.
+- Added `github_folder: 2026-predictions` → GitHub footer (fits the "watch the repo" promise).
+
+### Published
+- Draft → Ghost post 6a47d32fbf2af40001c0095f; user set cover (AI-generated vintage half-time scoreboard, from prompt option 1) and **scheduled for 2026-07-04T01:00Z (9am SGT)**. Synced back (status, published_at, feature_image) at 80174e2.
+- Remaining for CHECK: after it goes live + any Ghost polish, final sync-ghost + live-vs-local content diff before closing PR #44; log notable Ghost edits here as voice decisions.
