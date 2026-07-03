@@ -8,6 +8,8 @@ excerpt: "In January I ranked how confident I was in each of five predictions. S
 
 In January I made five predictions about legal AI, gave each a success criterion, and did one thing most prediction posts skip: I ranked my own confidence. Two I was *most confident* about. Two I flagged as *most likely to fail*.
 
+https://www.alt-counsel.com/my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom/
+
 Six months in, that ranking is almost perfectly inverted. The two I was surest of are my worst calls. One of the two I expected to fail became the story of the year.
 
 That inversion — not any single grade — is what this halfway post is really about. First, a confession: I promised to track all of this publicly, month by month, in a repo anyone could watch. I didn't keep that log. Twenty-two published posts since January turned out to be a serviceable audit trail anyway — and the one log I *did* keep, a work log of my actual AI usage at the office, is where we have to start.
@@ -69,6 +71,8 @@ Which means the honest tool for navigating the jagged frontier is *out of reach 
 **Reality: the "unsolved" half holds. The "manageable" half is trending the wrong way — and I never ran the experiment.**
 
 I didn't run the three-workflow bake-off, and I'm not scheduling it now — real agent use answered the question the lab test would have asked, and less comfortably: the more I lean on autonomous agents, the *worse* the reliability problem gets. Every increment of autonomy widens the surface where things break — agents route around the tools I give them, ship confident output that's quietly wrong, and hand back finished legal work in a file nobody can open.
+
+https://www.alt-counsel.com/openclaw-field-notes-lawyer/
 
 I aimed the paradox at the wrong target. I worried about the invented citation. The sharper 2026 risk is the well-formed deliverable that's subtly wrong, produced by an agent doing more and more on its own. Structure might still tame that — but six months of harder agent use has moved me toward pessimism, not comfort.
 
