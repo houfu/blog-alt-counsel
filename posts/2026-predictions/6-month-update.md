@@ -1,11 +1,22 @@
 ---
-title: "Half-Time on My 2026 Predictions: My Confidence Was Inverted"
+title: 'Half-Time on My 2026 Predictions: My Confidence Was Inverted'
 slug: 2026-predictions-six-month-update
-tags: [AI, LegalTech, Singapore, 2026Predictions]
-status: draft
-custom_excerpt: "In January I ranked how confident I was in each of five predictions. Six months in, that ranking is almost perfectly inverted — the two I was surest of are my worst calls, and the prediction I nearly waved away as too abstract became the story of the year."
-github_folder: "2026-predictions"
+tags:
+  - AI
+  - LegalTech
+  - Singapore
+  - 2026Predictions
+status: scheduled
+custom_excerpt: >-
+  In January I ranked how confident I was in each of five predictions. Six
+  months in, that ranking is almost perfectly inverted — the two I was surest of
+  are my worst calls, and the prediction I nearly waved away as too abstract
+  became the story of the year.
+github_folder: 2026-predictions
 post_id: 6a47d32fbf2af40001c0095f
+published_at: '2026-07-04T01:00:45.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/07/vintage-stadium-scoreboard-at-half-time--photograp.png
 ---
 
 In January I made five predictions about legal AI, gave each a success criterion, and did one thing most prediction posts skip: I ranked my own confidence. Two I was *most confident* about. Two I flagged as *most likely to fail*.
