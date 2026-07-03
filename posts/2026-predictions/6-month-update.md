@@ -10,7 +10,7 @@ In January I made five predictions about legal AI, gave each a success criterion
 
 Six months in, that ranking is almost perfectly inverted. The two I was surest of are my worst calls. One of the two I expected to fail became the story of the year.
 
-That inversion — not any single grade — is what this halfway post is really about. First, a confession: I promised to track all of this publicly, month by month, in a repo anyone could watch. I didn't keep that log. Twenty-two published posts since January turned out to be a serviceable audit trail anyway — and the one log I *did* keep is where we have to start.
+That inversion — not any single grade — is what this halfway post is really about. First, a confession: I promised to track all of this publicly, month by month, in a repo anyone could watch. I didn't keep that log. Twenty-two published posts since January turned out to be a serviceable audit trail anyway — and the one log I *did* keep, a work log of my actual AI usage at the office, is where we have to start.
 
 ## The confession: Prediction 3, where I was surest and most wrong
 
@@ -18,9 +18,11 @@ That inversion — not any single grade — is what this halfway post is really 
 
 **Reality: north of 50%.**
 
-My work log since May puts AI in more than half my tasks, on a strict bar for "meaningful" — not "asked a chatbot a question," but AI doing substantive work I'd otherwise do myself: reading, drafting, vetting, framing advice. I didn't just miss. I missed in the *opposite direction*, on the prediction I'd have bet the house on.
+Since May, that log puts AI in more than half my tasks. And that's on a strict bar for "meaningful" — not "asked a chatbot a question," but AI doing substantive work I'd otherwise do myself: reading, drafting, vetting, framing advice. I didn't just miss. I missed in the *opposite direction*, on the prediction I'd have bet the house on.
 
-But here's the part worth more than the mea culpa. In January I set the industry's "adoption doubled to 52%" against my own "under 20%" — and those were never the same axis. **52% measured adoption — how many lawyers touch AI at all. My 20% measured intensity — how much of *my* work AI does.** You can be right that adoption claims are hype *and* run AI in half your tasks. What lost wasn't my arithmetic; it was the friction thesis. I bet workflow friction and client expectations would hold real usage down. By mid-2026 the tools had climbed inside the daily workflow, and friction stopped being decisive.
+But here's the part worth more than the mea culpa. In January I set the industry's "adoption doubled to 52%" against my own "under 20%" — and those were never the same axis. **52% measured adoption — how many lawyers touch AI at all. My 20% measured intensity — how much of *my* work AI does.**
+
+You can be right that adoption claims are hype *and* run AI in half your tasks. What lost wasn't my arithmetic; it was the friction thesis. I bet workflow friction and client expectations would hold real usage down. By mid-2026 the tools had climbed inside the daily workflow, and friction stopped being decisive.
 
 Why is this the confession and not the headline? Because being wrong that AI usage would stay low, in 2026, is the least surprising way to be wrong. The [8am 2026 report](https://www.lawnext.com/2026/03/ai-adoption-among-legal-professionals-has-more-than-doubled-in-a-year-new-8am-report-finds-but-firms-lag-far-behind-individual-practitioners.html) has adoption at 69%; [Harvey](https://www.harvey.ai/blog/harvey-releases-study-on-how-mobile-and-ai-are-transforming-legal-work) reports 80% weekly usage. I doubted the trend and became a data point for it. Humbling — but not the interesting story.
 
@@ -36,7 +38,7 @@ https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-
 
 A community of lawyers who build agents — people whose default is to automate first and apologise later — reached the same verdict independently, and phrased it in a way that's been bothering me since: the agent moved into Word; the human didn't move out. Word didn't lose to the agents. It absorbed them. I'd been treating the format as a legacy constraint the agents would eventually route around. What if it's the gravity well they all fall into?
 
-What keeps the bet breathing is the other direction of travel. Spellbook just announced [Autonomous Contract Management](https://spellbook.com/acm) — pointedly *not* a CLM, they insist — with contracts "reviewed and redlined before a lawyer ever opens" them. Early access only, but the pitch is exactly my bet. I always expected the real work to happen somewhere like Cowork, not Word — and [Microsoft's Copilot Cowork](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available), generally available since mid-June, is a step on that axis. It shipped still unable to edit a Word file, though. The gravity well again.
+What keeps the bet breathing is the other direction of travel. Spellbook just announced [Autonomous Contract Management](https://spellbook.com/acm) — pointedly *not* a CLM (contract lifecycle management tool), they insist — with contracts "reviewed and redlined before a lawyer ever opens" them. Early access only, but the pitch is exactly my bet. I always expected the real work to happen somewhere like Cowork, not Word — and [Microsoft's Copilot Cowork](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available), generally available since mid-June, is a step on that axis. It shipped still unable to edit a Word file, though. The gravity well again.
 
 The wall I keep hitting isn't capability. It's *validation*. Even when an agent does the review, I open Word to check it — because I don't yet trust it enough not to. Until I can validate reliability without opening the file myself, the human hasn't actually left the app. So: fail. But I'm not conceding this one before December.
 
@@ -46,7 +48,7 @@ The wall I keep hitting isn't capability. It's *validation*. Even when an agent 
 
 **Reality: it's the prediction the evidence kept confirming — and I did not expect it to feature this heavily.**
 
-It kept showing up whether I invited it or not. In February, SkillsBench put numbers on it: across 7,308 agent runs, curated skills helped by 16 points on average — but 19% of tasks got *worse*.
+It kept showing up whether I invited it or not. In February, a benchmark called SkillsBench put numbers on it: across 7,308 agent runs, curated skills helped by 16 points on average — but 19% of tasks got *worse*.
 
 https://www.alt-counsel.com/skillsbench-analysis/
 
@@ -54,17 +56,19 @@ Then my own benchmark run said it again from the inside: my lawyer-built stack w
 
 https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/
 
-One correction on the *deliverable*, said plainly rather than quietly dropped. In January I promised a "revised decision framework" — a way to know when to trust AI. **I'm retiring that promise.** A hand-waved rule ("use AI for low-stakes, catchable tasks") is useless when the real variable is context. The genuine lesson turned out to be about *harness design*, not evaluation — reliability lives in how you build the agent's environment, not a decision tree you consult beforehand.
+One correction on the *deliverable*, said plainly rather than quietly dropped. In January I promised a "revised decision framework" — a way to know when to trust AI. Six months of exactly this unpredictability convinced me: **I'm retiring that promise.** A hand-waved rule ("use AI for low-stakes, catchable tasks") is useless when the real variable is context. The genuine lesson turned out to be about *harness design*, not evaluation — reliability lives in how you build the agent's environment, not a decision tree you consult beforehand.
 
-And the truly uncomfortable finding sits under the confirmed prediction. The only rigorous way to actually map the frontier is a benchmark on synthetic data. I ran one. It took two weeks and burned my entire compute quota. Which means the honest tool for navigating the jagged frontier is *out of reach for exactly the resource-constrained practitioners this blog is written for*. Being right about the frontier bought me nothing I can hand to a reader. That's a better thing to say than a framework I'd have to fake — and it's why this, not the big miss, is the story of the year.
+And the truly uncomfortable finding sits under the confirmed prediction. The only rigorous way to actually map the frontier is a benchmark on synthetic data. I ran one. It took two weeks and burned my entire compute quota.
+
+Which means the honest tool for navigating the jagged frontier is *out of reach for exactly the resource-constrained practitioners this blog is written for*. Being right about the frontier bought me nothing I can hand to a reader. That's a better thing to say than a framework I'd have to fake — and it's why this, not the big miss, is the story of the year.
 
 ## Prediction 4: half right, on the wrong half
 
-**The bet:** hallucinations stay unsolved in 2026, but maybe become *manageable* through structure — RAG with citations, two-pass review, locked templates. Another one I was *most confident* about.
+**The bet:** hallucinations stay unsolved in 2026, but maybe become *manageable* through structure — RAG with citations (grounding answers in pre-approved sources), two-pass review, locked templates. Another one I was *most confident* about.
 
 **Reality: the "unsolved" half holds. The "manageable" half is trending the wrong way — and I never ran the experiment.**
 
-I'd love to report clean results from the three-workflow bake-off. I didn't do the work. What I have instead is less comfortable: the more I lean on autonomous agents, the *worse* the reliability problem gets. Every increment of autonomy widens the surface where things break — agents route around the tools I give them, ship confident output that's quietly wrong, and hand back finished legal work in a file nobody can open.
+I'd love to report clean results from the three-workflow bake-off. I didn't do the work. What I observed instead, in real agent use rather than any designed test, is less comfortable: the more I lean on autonomous agents, the *worse* the reliability problem gets. Every increment of autonomy widens the surface where things break — agents route around the tools I give them, ship confident output that's quietly wrong, and hand back finished legal work in a file nobody can open.
 
 I aimed the paradox at the wrong target. I worried about the invented citation. The sharper 2026 risk is the well-formed deliverable that's subtly wrong, produced by an agent doing more and more on its own. Structure might still tame that — but six months of harder agent use has moved me toward pessimism, not comfort.
 
