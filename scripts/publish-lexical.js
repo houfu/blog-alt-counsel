@@ -384,9 +384,11 @@ class MarkdownToLexical {
   processTable(tableLines) {
     if (tableLines.length < 2) return;
     
-    const rows = tableLines.map(line => 
-      line.split('|')
-          .filter(cell => cell !== undefined)
+    const rows = tableLines.map(line =>
+      line.trim()
+          .replace(/^\|/, '')
+          .replace(/\|$/, '')
+          .split('|')
           .map(cell => cell.trim())
     );
     
@@ -396,7 +398,7 @@ class MarkdownToLexical {
     // Header row
     html += '  <thead>\n    <tr>\n';
     rows[0].forEach(cell => {
-      html += `      <th>${this.escapeHtml(cell)}</th>\n`;
+      html += `      <th>${this.formatTableCell(cell)}</th>\n`;
     });
     html += '    </tr>\n  </thead>\n';
     
@@ -406,7 +408,7 @@ class MarkdownToLexical {
       for (let i = 1; i < rows.length; i++) {
         html += '    <tr>\n';
         rows[i].forEach(cell => {
-          html += `      <td>${this.escapeHtml(cell)}</td>\n`;
+          html += `      <td>${this.formatTableCell(cell)}</td>\n`;
         });
         html += '    </tr>\n';
       }
@@ -417,6 +419,13 @@ class MarkdownToLexical {
     
     // Wrap in HTML card
     this.nodes.push(createHtmlCard(html));
+  }
+
+  formatTableCell(cell) {
+    return this.escapeHtml(cell)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>');
   }
 
   escapeHtml(text) {

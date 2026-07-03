@@ -91,6 +91,8 @@ async function main() {
   const htmlNode = [];
   walk(lexical.root, (n) => n.type === 'html' && htmlNode.push(n.html));
   check('table HTML contains header and cells', htmlNode[0] && htmlNode[0].includes('<th>Column A</th>') && htmlNode[0].includes('<td>cell 1</td>'));
+  check('table has no phantom edge columns', htmlNode[0] && !htmlNode[0].includes('<th></th>') && !htmlNode[0].includes('<td></td>'));
+  check('inline markdown rendered in table cells', htmlNode[0] && htmlNode[0].includes('<td><strong>bold cell</strong></td>'));
 
   // uploadLocalImages: dry-run detects exactly the local image, leaves remote alone
   fs.writeFileSync(path.join(__dirname, 'fixtures', 'fixture-image.png'), Buffer.from([0x89, 0x50, 0x4e, 0x47]));

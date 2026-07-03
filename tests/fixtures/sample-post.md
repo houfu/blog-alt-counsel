@@ -35,7 +35,7 @@ def hello():
 
 | Column A | Column B |
 |----------|----------|
-| cell 1   | cell 2   |
+| cell 1   | **bold cell** |
 
 <!--members-only-->
 
