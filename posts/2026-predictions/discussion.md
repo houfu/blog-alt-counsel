@@ -806,3 +806,28 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 3. Scope → **interim scorecard, ~1,700w** (matches original length).
 4. Back-fill tracking-2026.md → **yes**, so the public repo trail is real again.
 - Draft written to `6-month-update.md` (NOT posted to Ghost — awaiting review).
+
+## Session: 2026-07-03 — Research workflow + accuracy fixes
+
+### What happened
+- Pulled branch `claude/article-6-month-update-bxg6u0`, merged main in (conflicts: took main's package files; concatenated discussion.md = Jan history + Jul session notes).
+- Ran a 16-agent research workflow (3 streams: source verification via Jina, web insight sweep, LegalQuants chat mining Jan–Jun 2026). Full output: `6-month-update-research-report.md` in this folder.
+
+### Verification results (draft claims)
+- VERIFIED: 8am figures (69%/31%/42%), Harvey 80% weekly usage, 54%/43% barrier stats (source = 8am report, was uncited).
+- NEEDED FIXES (applied this session):
+  1. "Spellbook's new CLM" → **Spellbook ACM** (Autonomous Contract Management, announced 2026-06-30, early access) — Spellbook markets it as pointedly NOT a CLM; old wording inverted their framing.
+  2. "Copilot 'coworker'" → **Microsoft Copilot Cowork** (announced Mar 9, GA Jun 16, built on Claude Cowork; still cannot edit Word files at GA).
+  3. ASEAN "trails by 2–3 years" — figure appears NOWHERE in the Fulcrum source; replaced with uneven-picture framing + Vietnam-first-binding-AI-law wrinkle.
+  4. Salesforce "leapfrog the West" — Salesforce never said "the West" (their claim: leapfrog into the agentic era over legacy infrastructure). Reworded + attributed the West-gloss to Houfu, linked press release.
+  5. Added 8am citation to the 54%/43% stats.
+
+### User decision: "Word absorbed the agents" counterpoint added to P1
+- LQ community's settled verdict (Docx Problem vault MOC): the agent moved INTO Word rather than the human moving out — Word absorbed the agents. Houfu: "troubling to my thesis... a good counterpoint to [add] depth."
+- Added as new P1 paragraph (anonymous community attribution, no verbatim quotes per LQ anonymization precedent) + "gravity well" callback on Cowork-can't-edit-Word.
+- tracking-2026.md P1 six-month read updated to match (ACM/Cowork names + counter-counter-signal).
+
+### Still on the table (from report, NOT yet applied — Houfu to decide)
+- Worth-adding externals: Vals hLAB ~90% criteria / ~11% tasks (P2); CJ Menon "jagged frontier" keynote (P2); Harvey LAB <10% end-to-end at ~$50/task (P1); Princeton CITP or sanctions-doubling (P4); Axiom 96/7/83/100 (P5); adoption/intensity scissors reframe (P3).
+- Report's length warning: draft now ~2,160 words (was ~1,960 pre-session; original target ~1,700). Additions should displace words, not extend. Length audit before any further adds.
+- Review phase not started: no content-quality audit or reviewer round yet.

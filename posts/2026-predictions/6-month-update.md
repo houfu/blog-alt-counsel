@@ -38,7 +38,9 @@ The prediction was never that a good tool would *exist*. It was about *orchestra
 
 https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-strikes-back/
 
-What keeps the bet breathing is the other direction of travel. The agent benchmarks suggest the do-it-without-the-human vision might genuinely be in reach, and autonomous tools like Spellbook's new CLM point that way. I always expected the real work to happen somewhere like Cowork, not Word — and Microsoft's Copilot "coworker" is a real step on that axis.
+A community of lawyers who build agents — people whose default is to automate first and apologise later — reached the same verdict independently, and phrased it in a way that's been bothering me since: the agent moved into Word; the human didn't move out. Word didn't lose to the agents. It absorbed them. I'd been treating the format as a legacy constraint the agents would eventually route around. What if it's the gravity well they all fall into?
+
+What keeps the bet breathing is the other direction of travel. The agent benchmarks suggest the do-it-without-the-human vision might genuinely be in reach. Spellbook just announced [Autonomous Contract Management](https://spellbook.com/acm) — pointedly *not* a CLM, they insist — with contracts "reviewed and redlined before a lawyer ever opens" them. Early access only, but the pitch is exactly my bet. I always expected the real work to happen somewhere like Cowork, not Word — and [Microsoft's Copilot Cowork](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available), generally available since mid-June, is a real step on that axis. Though I note it shipped still unable to edit a Word file. The gravity well again.
 
 The wall I keep hitting isn't capability. It's *validation*. Even when an agent does the review, I open Word to check it — because I don't yet trust it enough not to. Until I can validate reliability without opening the file myself, the human hasn't actually left the app. So: fail. But this is the one I suspect I'll be arguing about all the way to December, and I'm not conceding it.
 
@@ -72,7 +74,7 @@ I aimed the paradox at the wrong target. I worried about the invented citation. 
 
 ## Prediction 5: holding, with a twist
 
-**The bet:** most AI adoption would be checkbox theatre; real innovation would live in isolated pockets. I also bet *against* Salesforce's claim that ASEAN would leapfrog the West. Another flagged-to-fail.
+**The bet:** most AI adoption would be checkbox theatre; real innovation would live in isolated pockets. I also bet *against* [Salesforce's prediction](https://www.salesforce.com/ap/news/press-releases/2025/12/12/salesforce-2026-asean-predictions) that ASEAN would "leapfrog" into the agentic era, unburdened by legacy systems. (The "versus the West" framing was mine, not theirs.) Another flagged-to-fail.
 
 **Reality: holding.**
 
@@ -84,7 +86,7 @@ I caught a genuine innovation signal close to home, though: I submitted feedback
 
 https://www.alt-counsel.com/minlaw-ai-guide-draft-to-final/
 
-On ASEAN: the region-wide leapfrog hasn't materialised. Southeast Asia is still early, Singapore a clear standout while the rest of the region trails advanced markets by two to three years ([regional picture](https://fulcrum.sg/what-is-shaping-artificial-intelligence-ai-governance-policies-in-southeast-asia/)). The barriers cited — no training at 54% of firms, no policy at 43% — are exactly the non-legacy constraints I said would matter more than being "unburdened by old systems." The twist I didn't see: Singapore leaping while the rest of ASEAN lags *is my own thesis in miniature* — innovation in isolated pockets. One deliverable here I *do* still intend to ship: the theatre-versus-innovation signals framework. Unlike the jagged-frontier one, I think that's real and tractable, and I've a few months to write it.
+On ASEAN: the region-wide leapfrog hasn't materialised. The [regional picture](https://fulcrum.sg/what-is-shaping-artificial-intelligence-ai-governance-policies-in-southeast-asia/) is uneven — Singapore leads on legal-sector AI infrastructure, several members still lack basic data-protection laws, and Vietnam, of all places, beat everyone to a binding AI law. The barriers cited — [no training at 54% of firms, no policy at 43%](https://www.8am.com/blog/ai-adoption-law-firms-2026-legal-industry-report) — are exactly the non-legacy constraints I said would matter more than being "unburdened by old systems." The twist I didn't see: Singapore leaping while the rest of ASEAN lags *is my own thesis in miniature* — innovation in isolated pockets. One deliverable here I *do* still intend to ship: the theatre-versus-innovation signals framework. Unlike the jagged-frontier one, I think that's real and tractable, and I've a few months to write it.
 
 ## The scorecard, and what the inversion taught me
 

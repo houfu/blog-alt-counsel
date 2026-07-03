@@ -26,7 +26,7 @@ For the first six months I did **not** keep *this file* up to date. Most entries
 **Updates:**
 - *2026-04-22* — Claude for Word shipped. Genuinely strong, but the prediction was about *orchestration* (agents operate Word, human stays out), not tool availability. The wave of human-in-Word plugins is evidence *against* the bet, not for it: if AI lives inside Word, we never leave Word. See [Word on Claude](https://www.alt-counsel.com/word-on-claude-the-lawyers-greatest-legal-tech-tool-strikes-back/).
 - *2026-06-11* — Agent stack through Harvey's LAB: a complete, correct memo scored zero because it was saved as raw markdown under a `.docx` name. See [My Agent Did the Legal Work](https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/).
-- **Six-month read:** The blocker isn't capability, it's *validation* — I still open Word to confirm the agent is reliable, so the human hasn't left the app. Counter-signal keeping hope alive: agent benchmarks + autonomous tools (Spellbook CLM, Copilot "coworker", Cowork-style environments) point toward the human-out orchestration I actually bet on. Fail now; holding out.
+- **Six-month read:** The blocker isn't capability, it's *validation* — I still open Word to confirm the agent is reliable, so the human hasn't left the app. Counter-signal keeping hope alive: agent benchmarks + autonomous tools (Spellbook ACM — announced 2026-06-30, early access, pointedly "not a CLM"; Microsoft Copilot Cowork — GA 2026-06-16, though still unable to edit Word files) point toward the human-out orchestration I actually bet on. Counter-counter-signal from the lawyer-coder community: the agent moved *into* Word, the human didn't move out — Word absorbed the agents. Fail now; holding out.
 
 ---
 
