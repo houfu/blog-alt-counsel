@@ -40,7 +40,7 @@ A community of lawyers who build agents — people whose default is to automate 
 
 What keeps the bet breathing is the other direction of travel. Spellbook just announced [Autonomous Contract Management](https://spellbook.com/acm) — pointedly *not* a CLM (contract lifecycle management tool), they insist — with contracts "reviewed and redlined before a lawyer ever opens" them. Early access only, but the pitch is exactly my bet. I always expected the real work to happen somewhere like Cowork, not Word — and [Microsoft's Copilot Cowork](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available), generally available since mid-June, is a step on that axis. It shipped still unable to edit a Word file, though. The gravity well again.
 
-The wall I keep hitting isn't capability. It's *validation*. Even when an agent does the review, I open Word to check it — because I don't yet trust it enough not to. Until I can validate reliability without opening the file myself, the human hasn't actually left the app. So: fail. But I'm not conceding this one before December.
+The wall I keep hitting isn't capability. My agents' benchmark failures this year were packaging and delivery, not legal reasoning — the memo was right; the file was unopenable. What's missing is *validation*: I still open Word to check the agent's work, because I don't yet trust it enough not to. Until I can validate reliability without opening the file myself, the human hasn't actually left the app. So: fail. But I'm not conceding this one before December.
 
 ## The story of the year: Prediction 2, the jagged frontier
 
@@ -56,7 +56,7 @@ Then my own benchmark run said it again from the inside: my lawyer-built stack w
 
 https://www.alt-counsel.com/my-agent-did-the-legal-work-the-benchmark-gave-it-zero/
 
-One correction on the *deliverable*, said plainly rather than quietly dropped. In January I promised a "revised decision framework" — a way to know when to trust AI. Six months of exactly this unpredictability convinced me: **I'm retiring that promise.** A hand-waved rule ("use AI for low-stakes, catchable tasks") is useless when the real variable is context. The genuine lesson turned out to be about *harness design*, not evaluation — reliability lives in how you build the agent's environment, not a decision tree you consult beforehand.
+One correction on the *deliverable*, said plainly rather than quietly dropped. In January I promised a "revised decision framework" — a way to know when to trust AI. Six months of exactly this unpredictability convinced me: **I'm retiring that promise.** A hand-waved rule ("use AI for low-stakes, catchable tasks") is useless when the real variable is context. The genuine lesson turned out to be about *harness design*, not evaluation — if the failures live in the environment around the model, the fix lives in how you build that environment, not in a decision tree you consult beforehand.
 
 And the truly uncomfortable finding sits under the confirmed prediction. The only rigorous way to actually map the frontier is a benchmark on synthetic data. I ran one. It took two weeks and burned my entire compute quota.
 
@@ -68,7 +68,7 @@ Which means the honest tool for navigating the jagged frontier is *out of reach 
 
 **Reality: the "unsolved" half holds. The "manageable" half is trending the wrong way — and I never ran the experiment.**
 
-I'd love to report clean results from the three-workflow bake-off. I didn't do the work. What I observed instead, in real agent use rather than any designed test, is less comfortable: the more I lean on autonomous agents, the *worse* the reliability problem gets. Every increment of autonomy widens the surface where things break — agents route around the tools I give them, ship confident output that's quietly wrong, and hand back finished legal work in a file nobody can open.
+I didn't run the three-workflow bake-off, and I'm not scheduling it now — real agent use answered the question the lab test would have asked, and less comfortably: the more I lean on autonomous agents, the *worse* the reliability problem gets. Every increment of autonomy widens the surface where things break — agents route around the tools I give them, ship confident output that's quietly wrong, and hand back finished legal work in a file nobody can open.
 
 I aimed the paradox at the wrong target. I worried about the invented citation. The sharper 2026 risk is the well-formed deliverable that's subtly wrong, produced by an agent doing more and more on its own. Structure might still tame that — but six months of harder agent use has moved me toward pessimism, not comfort.
 
