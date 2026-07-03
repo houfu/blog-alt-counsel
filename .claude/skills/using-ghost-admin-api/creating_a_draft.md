@@ -98,6 +98,15 @@ Once you have the lexical content, combine it with metadata to create a complete
 
 Before creating the post, always verify these three fields exist and generate them if missing. For tags specifically, invoke the tag-registry skill to ensure consistency and prevent tag sprawl.
 
+**Frontmatter key gotcha:** the script reads `custom_excerpt:` — a frontmatter key named `excerpt:` is silently ignored. Always use `custom_excerpt:`.
+
+### Pre-publish metadata checklist
+
+Run through this with the human partner at publish time (these are the two things routinely forgotten until after the draft lands on Ghost):
+
+1. **Custom excerpt** — present in frontmatter as `custom_excerpt:`, ≤300 characters. Draft 1-2 candidate excerpts from the post's core inversion/hook and offer them to the human partner.
+2. **Cover photo (feature image)** — the script does not set one. After creating the draft, propose 2-3 image concepts (check the series' earlier posts for visual continuity — e.g. via `ghost_post_list`/`ghost_post_get` `feature_image`). The human partner picks/uploads in the Ghost editor, or upload via `ghost_image_upload` + `ghost_post_update` if they hand you a file.
+
 ## Recommended: Using the Post Creation Script
 
 The canonical publishing script is `scripts/publish-lexical.js` at the repository root. Always use this script — do NOT create per-post publishing scripts.
