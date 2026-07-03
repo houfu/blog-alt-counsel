@@ -52,3 +52,9 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
   - Title "finding the frontier" vs worked example (scored completed runs) → addressed by earning the thesis rather than softening (user wants frontier framing kept/sharpened).
 - Standing asks: none (pre-empted).
 - Settled: self-judge caveat stays cut (user, Session 5); reframed as credibility signal instead.
+
+## 2026-07-03 — 2026-predictions/6-month-update (Round 1)
+- Unique catches: (1) P1's "wall isn't capability, it's validation" claim was untested against Harvey LAB's own <10% end-to-end completion figure, which cuts against it — fixed with one clause importing the "packaging, not reasoning" finding from the DeepSeek/LAB post. (2) "Harness design, not evaluation" was asserted rather than earned within the post — same import resolved both catches.
+- Positive verdicts worth remembering: "Word absorbed the agents" judged genuine insight, not escape hatch (still scores as Fail on the table); retiring the P2 framework judged honest engineering judgment, not goalpost-moving (January post pre-committed to the hedge). Differentiation confirmed: no competing 2026 legal-AI scorecard uses a confidence-inversion structure.
+- Standing asks: none raised — pre-empted (concrete examples, jargon, dual-audience structure fine as drafted).
+- Settled/rejected: none this round.

@@ -687,3 +687,167 @@ First checkpoint post shipped: `word-on-claude` (scheduled for 2026-04-22). The 
 **Tags now:** AI, LegalTech, Singapore, 2026Predictions
 
 Frontmatter updated locally to match the live Ghost state. The series tag is now live for December's scorecard post and any intermediate checkpoints.
+
+
+## Session: 2026-07-02 — 6-month update, "bringing stuff up to speed"
+
+### Where we are
+- Original post: **"My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)"** — published 2026-01-08, 1,869 words. Tags: AI, LegalTech, Singapore, 2026Predictions.
+- Slug: `my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom`
+- The post made **5 testable predictions** with public accountability: monthly tracking committed to this repo (referenced as PR #8), monthly blog updates tagged #2026Predictions, and a **December 2026 scorecard**. Stakes: if I chicken out, $500 to a Singapore legal aid org + public acknowledgment.
+
+### The honest problem
+`tracking-2026.md` was set up in January but **never filled in** — every "Updates" / "Monthly Usage Data" section is still a placeholder. The formal decision log (#2), monthly usage percentages (#3), contract-review spreadsheet (#1), and theater/innovation callouts (#5) were **not kept**. So the promised hard data doesn't exist in the repo.
+
+**BUT** — the 6 months of published posts ARE a real, timestamped audit trail. Reconstructing from them below.
+
+### The 5 predictions (recap)
+1. **Agentic AI will actually work for document review** — complete routine contract reviews (NDA/service/SaaS) using only AI/agents, never opening Word. Binary test per contract.
+2. **The jagged frontier won't get better** — unpredictability of *which* tasks fail won't improve. Deliver a revised, honest decision framework by year-end.
+3. **Real usage stays under 20%** — actual meaningful AI use in legal work, tracked monthly.
+4. **Hallucination paradox stays unsolved but maybe manageable** — testing RAG-with-citations, two-pass review, locked templates.
+5. **Most adoption is performative theater** — monthly callouts of theater vs. real innovation signals.
+- Most confident: #3, #4. Most likely to fail: #2, #5.
+
+### Reconstructed evidence from posts published Jan 8 – Jun 27 (23 posts, incl. original)
+- **P1 (agentic doc review / no Word):**
+  - 2026-02-09 "So you want to Claude Cowork the Legal Plugin" — Anthropic legal plugin, jurisdiction templates (PDPA DSAR)
+  - 2026-02-24 "Two Files, One Workflow. No Code. Just Cowork." — CoDraft
+  - 2026-04-22 "Word on Claude" *(tagged 2026Predictions)* — Claude for Word arrives; genuinely good, but interface shapes thinking. Complicates the "never open Word" premise.
+  - 2026-06-11 "My Agent Did the Legal Work. The Benchmark Gave It Zero." — agent produced a complete memo but saved raw markdown under a .docx name → unopenable. **Concrete "what broke": the DOCX/WYSIWYG gap P1 flagged.**
+  - 2026-06-27 "I Got Rugpulled by Cowork" — contract tool + the compute meter
+- **P2 (jagged frontier):**
+  - 2026-03-04 "What 7,308 Agent Runs Taught Me About Writing Better Skills" — SkillsBench: +16pp from skills, but **19% of tasks got worse**. Direct jaggedness evidence.
+  - 2026-06-11 "My Agent Did the Legal Work" — perfect legal reasoning, zero score on format. Jaggedness in the flesh.
+  - 2026-06-18 "Thinking in Loops: Finding the Frontier Without a Frontier Budget"
+- **P3 (usage under 20%):**
+  - 2026-04-29 "Three years, 100 members" — "Almost every piece I publish is heavily AI-assisted... haven't written any without it for a long time." NB: writing ≠ legal deliverables, but tension worth addressing.
+  - 2026-01-22 "Legal AI's Real Value: Autonomy, Not Automation"
+- **P4 (hallucination manageable):**
+  - contract-review-skill work; benchmark posts; format/QA failures
+- **P5 (theater vs innovation):**
+  - 2026-02-16 "Budget 2026 Tells Lawyers to Use AI" — govt money; adoption infrastructure vs passenger seat
+  - 2026-03-09 "From Draft to Final: MinLaw AI Guide" — my feedback adopted near-verbatim
+  - 2026-05-11 "Lawyers Are Building. Just Not On Each Other's Code." — federation of solo archipelagos; real building vs theater
+  - 2026-06-02 "Commentary: Pitfalls of Seeking AI Advice From Lawyers"
+
+### Meta-observation (candidate angle for the update)
+Failing to keep the tracking log is *itself* a finding: tracking has friction too (speaks to P3's "friction is real"), and it's a live test of P5 — was the accountability structure real iteration or my own bit of theater? The blog's brand is honest, "includes what broke" — so leading with "I dropped the formal log; here's what I did instead" is on-brand, not a weakness to hide.
+
+### Houfu's comments (2026-07-02, walking through predictions one by one)
+
+**Prediction 1 — verdict: FAIL at 6 months, but still holding out for December.**
+- Key reframe: the prediction rests on **orchestration** — agents use the Word app, the *human* does not. The bet is not "AI in Word," it's "human out of Word."
+- Therefore the *slew* of Word plugins (Claude for Word + many others) that put AI *inside* Word for the human to use is **fatal to the prediction's spirit**: "If AI is meant to be used in the Word app, we are not leaving the Word app."
+- Counter-signal keeping it alive: agent benchmarks suggest the agents-do-it / human-doesn't vision "might be in reach." **Spellbook's new autonomous CLM** points the same (orchestration) direction.
+- Houfu personally expected the work to happen in a **Cowork**-like environment. **Microsoft Copilot "coworker"** is an important development on that axis.
+- Current blocker (besides cost): **validation** — to confirm the agent is reliable, he still has to open the file in Word to check it. That's why it's a fail right now.
+- TODO at revision: external refs to verify if they go in the post — Spellbook autonomous CLM, Copilot coworker, the "slew of Word plugins." Offered blog-research/web-search; awaiting go-ahead.
+
+**Prediction 2 — verdict: CONFIRMED / strong, but the promised deliverable is being abandoned-and-redefined.**
+- Looks strong *because* it was unexpected (his flagged-to-fail bet became his best call). Benchmark work + **local-model advances** (DeepSeek-v4-flash on Ollama) made it worthwhile and exciting.
+- Will **not** deliver the January "revised decision framework." Reasons:
+  - Hand-waving a compliance/decision framework is meaningless — "too many variables" (echoes Jan admission: too simplistic, it's context not task type).
+  - The real learning is about **designing a great harness, not an eval framework**.
+  - A **synthetic-data benchmark** is the nearest rigorous method to map the frontier, but "still too hard for a resource-restrained person to carry out on their own" (LAB run = 2 weeks, exhausted Ollama quota).
+- On-brand irony to surface in the post: the only rigorous way to map the jagged frontier is an eval his own resource-constrained audience can't run.
+
+**Prediction 3 — verdict: DECISIVE MISS, wrong direction. Predicted <20%; actual >50%.**
+- Houfu DID keep a work log. Metrics since May 2026: **AI involved in >50% of tasks.**
+- His definition = **meaningful work**: reading, drafting, vetting, framing advice (matches Jan's "substantive work I'd have done manually," not "asked a question"). So it's a STRICT bar — stricter than vendor "used weekly/daily" — which makes >50% robust, not inflated.
+- Benchmark vs market (he asked me to check "does this track Harvey/Legora?"):
+  - 8am 2026 report: genl-AI adoption 69% (up from 31%); legal-specific tool usage 42%.
+  - Harvey (Mobile&AI 2026): weekly usage 80%; RSGI/Harvey Apr–Jun 2026: orgs w/ 30%+ power users 34%→50%; power users save 11h/wk.
+  - Legora (own case studies): 80%+ daily usage, goal 90%; $100M ARR, 1000+ customers.
+  - VERDICT on his belief: directionally yes (his number is in the same regime), BUT not apples-to-apples — vendor numbers = "used it," his = "meaningful task involvement"; vendor sources are self-reported about own customers (bias). Frame as "lands in the same ballpark as market adoption," not identical measures.
+- Double irony to use: (1) his MOST confident prediction is his MOST wrong; (2) in Jan he doubted the "adoption doubled to 52%" claim — 2026 number is 69% and his own log confirms it. He became a data point for the trend he doubted.
+- Sources to verify firsthand before publishing: 8am 2026 report, RSGI/Harvey report PDF. (Offered; not yet done.)
+
+**Prediction 4 — verdict: "unsolved" half CONFIRMED; "manageable" half UNDER PRESSURE / trending wrong way.**
+- Houfu did NOT run the planned three-workflow bake-off (RAG-citations / two-pass / locked templates) — "didn't do much work."
+- Real signal instead: with more use of autonomous agents ("claws" = OpenClaw/nanoclaw-family agents — CONFIRM), the problem is GROWING, not becoming manageable. Autonomy widens the error surface (agents route around tools, broken files, quietly-wrong output) rather than structure taming it.
+- So the optimistic hedge ("maybe manageable") is not panning out; arguably the opposite as agentic autonomy scales. Ties to P2's harness-design point.
+- Draft impact: replace the three-workflow framing with "I didn't run the experiment; but scaling agent autonomy made hallucination/reliability worse, not manageable."
+
+**Prediction 5 — verdict: leaning CONFIRMED (main thesis), ASEAN sub-bet leaning HIS WAY, framework still pending (few months left).**
+- Main thesis (theatre dominant, innovation in isolated pockets): holding. Evidence — Budget 2026 (passenger seat), Lawyers Not On Each Other's Code (solo archipelagos), MinLaw draft-to-final (real iteration = positive innovation signal).
+- ASEAN-leapfrog sub-bet (he bet AGAINST Salesforce's "ASEAN leapfrogs West"): grading mostly in his favour at halfway.
+  - Against leapfrog: SEA early-stage, "Singapore standout, rest of region lags advanced countries by 2-3 years"; North America still leads absolute; APAC only fastest-GROWING (~20% CAGR) = catching up, not overtaking. His counter-constraints confirmed: 54% no training, 43% no policy, governance/readiness lags.
+  - Complicating: ~90% APAC "using" AI (broad, experimental); Singapore genuinely out front (MinLaw guide 6 Mar 2026; Minister: up to 44% tasks automatable).
+  - THE TWIST (use it): Singapore leaping ahead while rest of ASEAN lags = his own "innovation in isolated pockets" thesis in action. Sub-bet feeds the main bet.
+  - Definitional caveat for post: "leapfrog" = grow fastest (APAC qualifies) vs skip-stages-and-overtake-West (hasn't happened; that's the version Salesforce sold).
+  - Sources: 8am 2026 (LawSites), MinLaw GenAI guide, FULCRUM SEA governance, GlobeNewswire APAC market report.
+- Framework: unlike P2, he STILL intends to build the theatre-vs-innovation signals framework — "a few months to go." So P5 deliverable = pending/in-progress, not abandoned.
+
+### Structure decision (2026-07-02, after hero debate)
+- Houfu's steer: **P2 is "the story of the year"** (unexpected how much it featured); **P1 is the idea he chewed on all term**; **P3 "continues nascent trends"** → least distinctive.
+- On "did I flub the 20%?": No arithmetic flub — 20% was a gut contrarian floor justified purely by the friction thesis (M&A term-sheet story, verification cost, client Word expectations, post-Oct-3 caution). Success criterion (meaningful monthly usage) matches the work-log metric, so no moved goalposts. BUT a subtler **category error**: he pitted "52% adoption" (breadth) against "<20% usage" (intensity) as if one axis — you can be right that adoption claims are hype AND use AI in >50% of tasks. Use this as the smart-confession angle.
+- **Final draft order (narrative arc, inversion as frame):** intro+log confession+correction → P3 opening confession (with category-error insight) → P1 "the idea I lived with all year" → P2 climax "story of the year" (retire framework + benchmark-out-of-reach punch) → P4 short → P5 short → scorecard + inversion lesson ("comfort is a terrible forecasting input") → what happens now (tracking fix, retire P2 framework / ship P5 framework, $500, December).
+- Title on the inversion; P2 as climax. Title options still open for Houfu.
+
+### Deep-read findings (voice + concrete detail)
+- **"Word on Claude" (Apr 22) is already a P1 mid-course update.** His own verdict: "The prediction was never about tool availability... We aren't there yet." Claude for Word = a step, not the chapter. "December will tell." → P1 leaning MISS/not-yet, with nuance (interface signals junior vs senior work).
+- **"My Agent Did the Legal Work" (Jun 11):** ran Harvey's LAB (~2,200 tasks). His lawyer-made stack LOST to the generic harness (74.8% vs 84.7%), 56 zero-score tasks, mostly on *packaging/format* not law. Explicitly: "This was the jagged frontier... vividly illustrated." Strong P2 + P4(format QA) evidence.
+- **SkillsBench (Mar 4):** +16.2pp avg but 19% of tasks WORSE (−39.3pp worst); self-generated skills −1.3pp ("models cannot author the procedural knowledge they benefit from consuming"); less-is-more. Direct P2 confirmation.
+- **"Three years, 100 members" (Apr 29):** "Almost every piece I publish is heavily AI-assisted... haven't written any without it for a long time." His *writing* usage ≈ near-total. P3 was about *legal deliverables*, not writing — but the tension is real and must be addressed head-on.
+- **P5 texture:** Budget 2026 (govt money, passenger seat), Lawyers Not On Each Other's Code (federation of solo archipelagos = real building is rare/isolated, matches "innovation in isolated pockets"), MinLaw draft-to-final (his feedback adopted = real iteration beats theater).
+
+### Interim call (my read, for Houfu to confirm/override)
+- P1: leaning **not-yet / miss** (tool arrived, workflow hasn't transformed)
+- P2: leaning **confirmed** — strongest call so far
+- P3: **can't grade honestly** — I didn't keep the number. The lapse is itself the story.
+- P4: **partial** — manageable-via-structure, not solved; format is the live failure surface
+- P5: leaning **confirmed** with texture
+- Original confidence was: most confident #3,#4; most likely to fail #2,#5. Plot twist: #2 is looking like the strongest, #3 is the one I sabotaged by not tracking.
+
+### Decisions taken (AskUserQuestion tool failed twice; proceeding on defaults, Houfu to redirect)
+1. Missing data → **qualitative + honest**, no invented numbers (esp. P3 %).
+2. Framing → **honest "I dropped the formal log, here's what the year recorded anyway."**
+3. Scope → **interim scorecard, ~1,700w** (matches original length).
+4. Back-fill tracking-2026.md → **yes**, so the public repo trail is real again.
+- Draft written to `6-month-update.md` (NOT posted to Ghost — awaiting review).
+
+## Session: 2026-07-03 — Research workflow + accuracy fixes
+
+### What happened
+- Pulled branch `claude/article-6-month-update-bxg6u0`, merged main in (conflicts: took main's package files; concatenated discussion.md = Jan history + Jul session notes).
+- Ran a 16-agent research workflow (3 streams: source verification via Jina, web insight sweep, LegalQuants chat mining Jan–Jun 2026). Full output: `6-month-update-research-report.md` in this folder.
+
+### Verification results (draft claims)
+- VERIFIED: 8am figures (69%/31%/42%), Harvey 80% weekly usage, 54%/43% barrier stats (source = 8am report, was uncited).
+- NEEDED FIXES (applied this session):
+  1. "Spellbook's new CLM" → **Spellbook ACM** (Autonomous Contract Management, announced 2026-06-30, early access) — Spellbook markets it as pointedly NOT a CLM; old wording inverted their framing.
+  2. "Copilot 'coworker'" → **Microsoft Copilot Cowork** (announced Mar 9, GA Jun 16, built on Claude Cowork; still cannot edit Word files at GA).
+  3. ASEAN "trails by 2–3 years" — figure appears NOWHERE in the Fulcrum source; replaced with uneven-picture framing + Vietnam-first-binding-AI-law wrinkle.
+  4. Salesforce "leapfrog the West" — Salesforce never said "the West" (their claim: leapfrog into the agentic era over legacy infrastructure). Reworded + attributed the West-gloss to Houfu, linked press release.
+  5. Added 8am citation to the 54%/43% stats.
+
+### User decision: "Word absorbed the agents" counterpoint added to P1
+- LQ community's settled verdict (Docx Problem vault MOC): the agent moved INTO Word rather than the human moving out — Word absorbed the agents. Houfu: "troubling to my thesis... a good counterpoint to [add] depth."
+- Added as new P1 paragraph (anonymous community attribution, no verbatim quotes per LQ anonymization precedent) + "gravity well" callback on Cowork-can't-edit-Word.
+- tracking-2026.md P1 six-month read updated to match (ACM/Cowork names + counter-counter-signal).
+
+### Still on the table (from report, NOT yet applied — Houfu to decide)
+- Worth-adding externals: Vals hLAB ~90% criteria / ~11% tasks (P2); CJ Menon "jagged frontier" keynote (P2); Harvey LAB <10% end-to-end at ~$50/task (P1); Princeton CITP or sanctions-doubling (P4); Axiom 96/7/83/100 (P5); adoption/intensity scissors reframe (P3).
+- Report's length warning: draft now ~2,160 words (was ~1,960 pre-session; original target ~1,700). Additions should displace words, not extend. Length audit before any further adds.
+- Review phase not started: no content-quality audit or reviewer round yet.
+
+## Session: 2026-07-03 (later) — Review completed, published & scheduled
+
+### Review phase (completed in order)
+- Length pass (~2,160 → 1,886), then 1 content-quality audit round (+41w), then reviewer round 1: Marcus Tan + Wei Lin. Zero standing asks re-raised; 3 unique catches applied (P1 packaging-not-reasoning validation claim, P2 harness-design bridge, P4 bake-off disposition). Round 2 skipped by recommendation. MEMORY_UPDATE blocks appended to both reviewer memories.
+- **User decision (P4 bake-off):** confirmed retiring it — "i'm not doing it anymore because the scene has changed." Kept the drafted line ("not scheduling it now — real agent use answered the question"); user may still substitute his own wording on Ghost.
+- Backlinks: added January predictions post (intro) + OpenClaw field notes (P4); other 5 already placed. Tags validated against registry: [AI, LegalTech, Singapore, 2026Predictions].
+
+### User decision: ?ref attribution on internal links
+- All internal links now carry `?ref={referring-post-slug}` so Ghost attributes internal traffic. Rule codified in backlink_curating skill + memory. Applies at ANY stage a link is inserted, not just the backlink pass.
+
+### Publishing discoveries (both codified)
+- **Bare URLs never became bookmark cards** — publish-lexical.js only converts `[Title](url)` markdown-link syntax on allowlisted domains. All 7 internal links converted to that syntax; 10 bookmark cards in final output.
+- **Frontmatter `excerpt:` is silently ignored** — script reads `custom_excerpt:` only. Renamed; gotcha added to creating_a_draft.md along with a new pre-publish metadata checklist (excerpt + cover photo), per user ask.
+- Table converter bugs (phantom edge columns, raw `**` in cells — issue #41 quirks) fixed on separate PR #45 per infra-separation rule; this post published with the fix.
+- Added `github_folder: 2026-predictions` → GitHub footer (fits the "watch the repo" promise).
+
+### Published
+- Draft → Ghost post 6a47d32fbf2af40001c0095f; user set cover (AI-generated vintage half-time scoreboard, from prompt option 1) and **scheduled for 2026-07-04T01:00Z (9am SGT)**. Synced back (status, published_at, feature_image) at 80174e2.
+- Remaining for CHECK: after it goes live + any Ghost polish, final sync-ghost + live-vs-local content diff before closing PR #44; log notable Ghost edits here as voice decisions.
