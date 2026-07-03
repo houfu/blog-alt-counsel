@@ -11,9 +11,11 @@ When posting to Ghost, use the lexical format for content. Ghost's modern editor
 
 ## Building Lexical Content
 
-The skill includes `scripts/ghost-lexical-single.js`, a fluent builder API for creating Ghost lexical format JSON. This makes it easy to programmatically construct Ghost posts with proper lexical structure.
+**The only supported publishing path is `scripts/publish-lexical.js` at the repository root** (see "Recommended: Using the Post Creation Script" below). It converts markdown to lexical for you — in the normal workflow you never construct lexical JSON by hand.
 
-**For detailed reference:** See [ghost-lexical-complete-guide.md](./ghost-lexical-complete-guide.md) for comprehensive documentation on Ghost's lexical format with real-world examples from actual blog posts.
+The skill also bundles `scripts/ghost-lexical-single.js`, a fluent builder API for Ghost lexical JSON. **Treat it as reference documentation** for understanding the lexical node structure (e.g., when extending `publish-lexical.js`). Do NOT require it from per-post scripts — per-post publishing scripts are not allowed.
+
+**For detailed reference:** See [/docs/ghost-lexical-format.md](../../../docs/ghost-lexical-format.md) for comprehensive documentation on Ghost's lexical format with real-world examples from actual blog posts.
 
 ### Basic Usage
 
@@ -78,38 +80,6 @@ Available text formatting:
 - `text.underline(content)` - underlined
 - `text.strikethrough(content)` - strikethrough
 
-### Complete Example
-
-```javascript
-const { LexicalBuilder, text, Link } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
-
-const content = new LexicalBuilder()
-  .h1('Technical Deep Dive')
-  .paragraph('Welcome to this ', text.bold('comprehensive guide'), ' on legal tech.')
-  .h2('Key Features')
-  .bulletList([
-    'Easy to integrate',
-    'No external dependencies',
-    'Type-safe builder pattern'
-  ])
-  .h2('Code Example')
-  .codeBlock(
-    'function hello() {\n  console.log("Hello, world!");\n}',
-    'javascript',
-    'A simple example'
-  )
-  .h2('Learn More')
-  .paragraph(
-    'For more information, visit ',
-    Link.withText('https://example.com', 'our documentation'),
-    '.'
-  )
-  .build();
-
-// Use in Ghost API
-const lexical = JSON.stringify(content);
-```
-
 ## Adding Metadata
 
 Once you have the lexical content, combine it with metadata to create a complete post.
@@ -128,68 +98,35 @@ Once you have the lexical content, combine it with metadata to create a complete
 
 Before creating the post, always verify these three fields exist and generate them if missing. For tags specifically, invoke the tag-registry skill to ensure consistency and prevent tag sprawl.
 
-### Required and Key Fields
-
-```javascript
-const postData = {
-  // Required
-  title: "Your Post Title",
-  lexical: JSON.stringify(content),
-
-  // Key optional fields (with defaults)
-  status: "draft",                        // Default: "draft". Options: "draft", "published", "scheduled"
-  custom_excerpt: "",                     // Default: auto-generated from content
-  tags: [],                               // Default: no tags. Format: [{ name: "TagName" }]
-  visibility: "public",                   // Default: "public". Options: "public", "members", "paid"
-  featured: false                         // Default: false
-};
-```
-
-### Complete Example
-
-```javascript
-const GhostAdminAPI = require('@tryghost/admin-api');
-const { LexicalBuilder, text } = require('./.claude/skills/using-ghost-admin-api/scripts/ghost-lexical-single.js');
-
-// Initialize Ghost API
-const api = new GhostAdminAPI({
-  url: process.env.GHOST_SITE_URL,
-  key: process.env.GHOST_ADMIN_API_KEY,
-  version: 'v6.0'
-});
-
-// Build content
-const content = new LexicalBuilder()
-  .h1('Lawyers Got Prompt Engineering Wrong')
-  .paragraph('At TechLawFest 2025, Singapore lawyers packed a workshop on prompt engineering.')
-  .h2('What Changed')
-  .paragraph('Meanwhile, the technology shifted: agent skills became available.')
-  .build();
-
-// Create post with metadata
-const postData = {
-  title: "Lawyers Got Prompt Engineering Wrong (And Why That Matters)",
-  lexical: JSON.stringify(content),
-  status: "draft",
-  custom_excerpt: "At TechLawFest 2025, Singapore lawyers packed a workshop on prompt engineering. Meanwhile, the technology shifted.",
-  tags: [
-    { name: "Artificial Intelligence" },
-    { name: "LegalTech" }
-  ],
-  visibility: "public",
-  featured: false
-};
-
-// Create the post
-api.posts.add(postData)
-  .then((response) => {
-    console.log('Post created:', response.url);
-    console.log('Post ID:', response.id);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-```
-
 ## Recommended: Using the Post Creation Script
 
+The canonical publishing script is `scripts/publish-lexical.js` at the repository root. Always use this script — do NOT create per-post publishing scripts.
+
+### Usage
+
+```bash
+node -r dotenv/config scripts/publish-lexical.js posts/{post-folder}/{post-file}.md
+```
+
+The script handles:
+- Parsing markdown frontmatter (title, slug, tags, status, custom_excerpt, github_folder)
+- Converting markdown to Ghost lexical JSON format
+- Tables to HTML cards
+- Bookmark card syntax to Ghost bookmark cards
+- Adding GitHub footer automatically when `github_folder` is in frontmatter
+- Skipping HTML comment placeholders (e.g., `<!-- 📸 SCREENSHOT -->`)
+- **Local images**: `![alt](images/foo.png)` references that exist next to the markdown file are uploaded to Ghost automatically and rewritten to hosted URLs — no more `ghost_image_upload` + temp-copy workaround
+- **Transient API failures** (418/429/5xx): retried with exponential backoff
+- `--dry-run` flag: converts and prints the lexical JSON (and which images would be uploaded) without credentials or API calls — use it to preview before publishing
+
+### Before running
+
+Ensure your `.env` file has: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`
+
+### After running
+
+The script outputs the post ID and admin URL. Update the post's markdown frontmatter with the returned `post_id`.
+
+### If the canonical script is missing a feature
+
+Improve `scripts/publish-lexical.js` directly rather than creating a new per-post script.

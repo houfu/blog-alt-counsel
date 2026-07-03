@@ -23,6 +23,11 @@ Trigger this skill when the user requests:
 
 Before beginning research, confirm the post has:
 
+**Before anything else — check the blog archive:**
+Use the `ghost_search` MCP tool (full-text search across posts, pages, tags) to check if any existing posts on this topic already exist. For filtered queries, use `ghost_post_list` with NQL filters.
+This prevents: assuming a post exists when it doesn't, repeating content already covered, and missing series context.
+Do NOT assume prior posts exist based on topic relevance alone.
+
 **Required inputs:**
 - [ ] **Locked thesis** - One-sentence argument the post will make
 - [ ] **Section outline** - 3-5 main sections with their specific claims
@@ -87,35 +92,8 @@ Before conducting searches, output a research brief:
 ```
 
 **Ask user:** "Does this match what you need? Or should I adjust before starting searches?"
-```
 
-This creates the checkpoint you're currently missing.
-
-## Integration with Your Workflow
-
-Based on your process patterns, here's how the improved skill would work:
-
-### Current Problem (AI Tools Post):
-```
-Session 1: Broad research on MCP, CLI patterns, everything
-Session 2: More research on security, failures, Singapore (exploratory)
-Session 6: Cut 2/3 of research as redundant/not fitting
-
-= 3 sessions, high waste
-```
-
-### With Improved Skill:
-```
-Session 1: 
-- User: "I want to research for AI tools post"
-- Skill: "What's your locked outline? Which sections need evidence?"
-- User: Provides 3 sections that need validation
-- Skill: Generates research brief targeting those 3 specific claims
-- User: Approves brief
-- Skill: Executes focused research (6-9 searches, not 20+)
-- Output: Evidence mapped directly to 3 sections
-
-= 1 session, minimal waste
+Do not start searching until the user approves the brief.
 
 ### Step 3: Conduct Research
 
@@ -229,6 +207,7 @@ Create research.md in the specified post folder:
 - Pure US content without regional context
 - Vague claims without specific examples
 - Missing citations or broken links
+- Unverified statistics from memory (always web-search to confirm data before writing it into drafts)
 
 ## Example Research Queries
 

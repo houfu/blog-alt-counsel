@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "jina": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jinaai/mcp-server-jina"
+      ],
+      "env": {
+        "JINA_API_KEY": "${JINA_API_KEY}"
+      }
+    },
+    "ghost": {
+      "command": "ghst",
+      "args": [
+        "mcp",
+        "stdio",
+        "--tools",
+        "all"
+      ]
+    }
+  }
+}

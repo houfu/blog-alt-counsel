@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+#
+# Pre-commit hook:
+#   1. BLOCKING secret scan — an API key was once committed to this public
+#      repo (.claude/mcp.json, Jina). Override once with SKIP_SECRET_SCAN=1.
+#   2. Non-blocking reminder to update discussion.md when post content changes.
+#
+
+# Get list of staged files
+staged_files=$(git diff --cached --name-only)
+
+# ── 1. Secret scan (BLOCKING) ────────────────────────────────────────────────
+if [[ -z "${SKIP_SECRET_SCAN:-}" ]]; then
+    # Scan staged content (not the worktree) for common key patterns
+    secret_hits=$(git diff --cached -U0 | grep -E '^\+' | grep -En 'jina_[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY' || true)
+    if [[ -n "$secret_hits" ]]; then
+        echo "" >&2
+        echo "=== COMMIT BLOCKED: possible secret in staged changes ===" >&2
+        echo "" >&2
+        echo "$secret_hits" | head -5 >&2
+        echo "" >&2
+        echo "Move the value to .env and reference it as an env var." >&2
+        echo "False positive? Re-run with: SKIP_SECRET_SCAN=1 git commit ..." >&2
+        echo "" >&2
+        exit 1
+    fi
+fi
+
+# ── 2. Note-taking reminder (non-blocking) ───────────────────────────────────
+
+# Track which post folders have content changes but no discussion.md staged
+folders_needing_notes=()
+
+# Find staged post content files (posts/*/*.md), excluding meta files
+while IFS= read -r file; do
+    # Skip empty lines
+    [[ -z "$file" ]] && continue
+
+    # Only look at markdown files directly inside posts/{folder}/
+    if [[ "$file" =~ ^posts/([^/]+)/[^/]+\.md$ ]]; then
+        folder="${BASH_REMATCH[1]}"
+        basename=$(basename "$file")
+
+        # Skip meta files — these are not "post content"
+        case "$basename" in
+            discussion.md|pitch.md|research.md|research-*.md)
+                continue
+                ;;
+        esac
+
+        # This is a post content file — check if discussion.md is also staged
+        discussion_file="posts/${folder}/discussion.md"
+        if ! echo "$staged_files" | grep -qx "$discussion_file"; then
+            # Only add the folder once
+            if [[ ! " ${folders_needing_notes[*]} " =~ " ${folder} " ]]; then
+                folders_needing_notes+=("$folder")
+            fi
+        fi
+    fi
+done <<< "$staged_files"
+
+# Print reminder if any post folders need discussion.md updates
+if [[ ${#folders_needing_notes[@]} -gt 0 ]]; then
+    echo "" >&2
+    echo "=== Note-Taking Reminder ===" >&2
+    echo "" >&2
+    echo "You have post content changes staged, but discussion.md is not" >&2
+    echo "staged for the following post(s):" >&2
+    echo "" >&2
+    for folder in "${folders_needing_notes[@]}"; do
+        echo "  - posts/${folder}/" >&2
+    done
+    echo "" >&2
+    echo "Consider using the note-taking skill to document this session" >&2
+    echo "in discussion.md before committing." >&2
+    echo "" >&2
+fi
+
+# The reminder above never blocks; only the secret scan gates commits
+exit 0

@@ -1,82 +1,52 @@
 #!/bin/bash
 
-# Setup script for blog-alt-counsel containerized environment
-# Run this after starting the container to complete Claude Code setup
+# Setup script for blog-alt-counsel (local Node.js project)
+# Run once after cloning: bash setup.sh
 
 echo "🚀 blog-alt-counsel Setup"
 echo "========================"
-
-# Check if we're in a container
-if [[ -f /.dockerenv ]]; then
-    echo "✅ Running inside container"
-else
-    echo "📋 This script is designed to run inside the Docker container"
-    echo "   Access via: docker-compose exec blog-terminal bash"
-    echo "   Or web terminal: http://localhost:7681"
-fi
-
 echo ""
 
-# Check if Claude Code is installed (should be pre-installed in container)
+# 1. Node dependencies
+if [ ! -d node_modules ]; then
+    echo "📦 Installing npm dependencies..."
+    npm install --no-audit --no-fund
+else
+    echo "✅ npm dependencies installed"
+fi
+
+# 2. Environment file
+if [ -f .env ]; then
+    echo "✅ .env exists"
+else
+    cp .env.example .env
+    echo "📝 Created .env from .env.example — fill in your Ghost credentials:"
+    echo "   GHOST_SITE_URL, GHOST_ADMIN_API_KEY, GHOST_API_VERSION, JINA_API_KEY"
+fi
+
+# 3. Pre-commit hook
+npm run setup-hooks --silent
+
+# 4. ghst CLI (powers the Ghost MCP server)
+if command -v ghst &> /dev/null; then
+    echo "✅ ghst installed"
+    bash .claude/hooks/ghst-auth.sh
+else
+    echo "⚠️  ghst not installed — Ghost MCP tools won't work until you run:"
+    echo "   npm install -g @tryghost/ghst"
+fi
+
+# 5. Claude Code
 if command -v claude &> /dev/null; then
-    echo "✅ Claude Code is pre-installed"
-
-    # Check if authenticated
-    if claude auth status &> /dev/null; then
-        echo "✅ Claude Code is authenticated"
-        echo "🎉 Setup complete! Try: new-post \"test post\""
-    else
-        echo "🔑 Claude Code needs authentication"
-        echo ""
-        echo "Choose one authentication method:"
-        echo "   Option 1: Set API key in docker-compose.yml:"
-        echo "   ANTHROPIC_API_KEY=your_api_key_here"
-        echo ""
-        echo "   Option 2: Interactive login (persists in volume):"
-        echo "   claude auth login"
-    fi
+    echo "✅ Claude Code installed"
 else
-    echo "⚠️  Claude Code not found (should be pre-installed)"
-    echo ""
-    echo "💡 Troubleshooting:"
-    echo "1. Rebuild container: docker-compose build --no-cache"
-    echo "2. Manual install: curl -fsSL https://claude.ai/install.sh | bash"
-    echo "3. Continue without Claude Code (Ghost API tools still work)"
+    echo "⚠️  Claude Code not found — install: https://code.claude.com/docs"
 fi
 
 echo ""
-echo "🧪 Testing Ghost API setup..."
-
-# Test Ghost configuration
-if node ghost_jwt.js --quiet &> /dev/null; then
-    echo "✅ Ghost JWT generation works"
+echo "🧪 Running repo health check..."
+if bash scripts/verify.sh; then
+    echo "🎉 Setup complete."
 else
-    echo "⚠️  Ghost JWT generation needs configuration"
-    echo "   Check environment variables or settings.json"
-    echo "   Run: env-help for setup instructions"
+    echo "Some checks failed — see output above. Setup may still be usable."
 fi
-
-echo ""
-echo "📋 Available Commands:"
-echo "========================"
-echo "Ghost API:"
-echo "  blog-token       Generate Ghost JWT token"
-echo "  search-posts     Search blog posts"
-echo "  token-examples   Show API usage examples"
-echo "  env-help         Environment variable setup"
-echo ""
-echo "Claude Code (after authentication):"
-echo "  new-post         Generate blog post skeleton"
-echo "  audit-post       Quality audit content"
-echo "  legal-review     Legal tech review"
-echo "  corp-review      Corporate lawyer review"
-echo ""
-echo "Setup:"
-echo "  setup-claude     Install Claude Code"
-echo "  claude-help      Show Claude setup instructions"
-echo ""
-echo "🎯 Next Steps:"
-echo "1. If Claude Code isn't installed: setup-claude"
-echo "2. Authenticate: claude auth login"
-echo "3. Test: blog-token && new-post \"test post\""
-echo "4. Start blogging! 🚀"

@@ -1,7 +1,7 @@
 # Canonical Tag Registry
 
-**Last Updated**: 2025-11-22
-**Total Tags**: 46 canonical tags (consolidated from 100 Ghost tags)
+**Last Updated**: 2026-04-20
+**Total Tags**: 48 canonical tags (consolidated from 100 Ghost tags)
 **Total Posts Tagged**: 382 post-tag associations
 
 This is the authoritative list of approved tags for alt-counsel.com. All blog posts and newsletters should use tags from this registry.
@@ -57,6 +57,8 @@ Legal tech events and community initiatives.
 - **TechLawFest** - Tech Law Fest conference (11 posts)
 - **FutureLaw** - FutureLaw initiative (8 posts)
 - **SOLID** - Singapore Open Legal Informatics Database (SMU project) (1 post)
+- **CoDraft** - CoDraft project (Claude Code-based document drafting workflow) (1 post)
+- **2026Predictions** - 2026 legal AI predictions accountability series (tracking updates through December 2026 scorecard) (1 post)
 
 ### Content Type
 Type or format of the content.
@@ -207,6 +209,18 @@ These represent planned content areas even if not yet published.
 
 ## Tag Maintenance Log
 
+### 2026-04-20
+- ✅ Added **2026Predictions** tag to Events & Communities category
+- **Justification**: January 2026 predictions post explicitly promised "I'll publish updates as blog posts tagged #2026Predictions." Series includes ongoing tracking updates (contract review experiments, usage percentages, hallucination workflow tests, theater-vs-innovation callouts) and the December 2026 scorecard post.
+- **Reusability**: Retroactively applied to `2026-predictions/2026-legal-ai-predictions.md` (Jan 8, 2026) and forward to `word-on-claude` (the first checkpoint post); future applicable to every tracking update through December 2026.
+- **Total tags**: 47 → 48
+
+### 2026-03-03
+- ✅ Added **CoDraft** tag to Events & Communities category
+- **Justification**: CoDraft is an ongoing project with a published post and multiple future posts planned covering skills implementation, document workflows, and Claude Code integrations
+- **Reusability**: Will apply to existing connect-codraft-article post, this SkillsBench analysis post, and future CoDraft development posts
+- **Total tags**: 46 → 47
+
 ### 2025-11-22
 - ✅ Added **SOLID** tag to Events & Communities category
 - **Justification**: SMU's Singapore Open Legal Informatics Database project (launched Nov 18, 2025)
@@ -220,33 +234,25 @@ These represent planned content areas even if not yet published.
 - ⏳ Pending: Execute consolidation scripts to clean up Ghost database
 - ⏳ Pending: Update existing posts with canonical tag names
 
-### Consolidation Commands (To Execute)
+### Pending Consolidations
 
-```bash
-# High Priority Consolidations
-node scripts/consolidate_tags.js --from "Artificial Intelligence" --to "AI" --dry-run
-node scripts/consolidate_tags.js --from "Artifical Intelligence" --to "AI" --dry-run
-node scripts/consolidate_tags.js --from "machine learning" --to "AI" --dry-run
-node scripts/consolidate_tags.js --from "Data Science" --to "DataScience" --dry-run
-node scripts/consolidate_tags.js --from "Natural Language Processing" --to "NLP" --dry-run
-node scripts/consolidate_tags.js --from "PDPC-Decisions" --to "PDPA" --dry-run
-node scripts/consolidate_tags.js --from "Personal Data Protection Act" --to "PDPA" --dry-run
-node scripts/consolidate_tags.js --from "Personal Data Protection Commission" --to "PDPA" --dry-run
+Use ghst MCP tools (`ghost_tag_list`, `ghost_post_list`, `ghost_post_update`, `ghost_tag_delete`) or the `ghst` CLI to execute these consolidations:
 
-# Medium Priority
-node scripts/consolidate_tags.js --from "Microsoft Word" --to "MicrosoftOffice" --dry-run
-node scripts/consolidate_tags.js --from "Open Source" --to "OpenSource" --dry-run
-node scripts/consolidate_tags.js --from "Web Scraping" --to "WebScraping" --dry-run
-node scripts/consolidate_tags.js --from "Cloud Computing" --to "CloudComputing" --dry-run
-node scripts/consolidate_tags.js --from "Work Life Balance" --to "WorkLifeBalance" --dry-run
-node scripts/consolidate_tags.js --from "Book Review" --to "BookReview" --dry-run
-```
+**High Priority:**
+- "Artificial Intelligence" / "Artifical Intelligence" / "machine learning" -> **AI**
+- "Data Science" -> **DataScience**
+- "Natural Language Processing" -> **NLP**
+- "PDPC-Decisions" / "Personal Data Protection Act" / "Personal Data Protection Commission" -> **PDPA**
 
----
+**Medium Priority:**
+- "Microsoft Word" -> **MicrosoftOffice**
+- "Open Source" -> **OpenSource**
+- "Web Scraping" -> **WebScraping**
+- "Cloud Computing" -> **CloudComputing**
+- "Work Life Balance" -> **WorkLifeBalance**
+- "Book Review" -> **BookReview**
 
 **Next Steps**:
 1. ✅ Tag audit complete
-2. ⏳ Review consolidation plan with user
-3. ⏳ Execute consolidation scripts (with --dry-run first)
-4. ⏳ Test tag-registry skill with canonical tags
-5. ⏳ Update CLAUDE.md to enforce tag validation in workflow
+2. Execute consolidations using ghst MCP tools
+3. Test tag-registry skill with canonical tags

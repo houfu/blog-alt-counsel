@@ -1,10 +1,13 @@
 ---
 title: "What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)"
+slug: "what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2"
 date: 2025-11-22
-draft: false
-tags: [LegalTech, SoloBuilder, Singapore, SOLID]
+status: published
+tags: [LegalTech, SoloBuilder, Singapore, SOLID, zeeker]
 excerpt: "After 150+ hours building data.zeeker.sg, I attended SMU's SOLID database launch to see institutional legal data infrastructure in action. I applied my decision framework and made my choice: I'm continuing. Here's what I learned about when solo builders should persist alongside institutions."
-published_at: 2025-11-22T20:32:39
+published_at: 2025-11-22T12:32:39.000Z
+post_id: "692121a5acb37300016227a2"
+github_folder: data-zeeker-sg
 ---
 
 <!--

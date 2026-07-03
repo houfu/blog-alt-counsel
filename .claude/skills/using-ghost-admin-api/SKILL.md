@@ -5,26 +5,37 @@ description: Comprehensive draft and post access, creating, editing and analysis
 
 # Using Ghost Admin API
 
-## Overview 
+Most Ghost operations use the **ghst MCP tools** directly. Use this skill to route to the one custom script still needed (`publish-lexical.js` for markdown → lexical with bookmark cards, GitHub footer, table conversion).
 
-The user may ask you to create, edit or analyses posts on Houfu's alt-counsel.com blog using Ghost Admin API. 
-You have different tools and workflows available for different tasks. 
+## Decision tree
 
-## Workflow decision tree
+- Post a draft from markdown → [`creating_a_draft.md`](creating_a_draft.md) (uses `publish-lexical.js`)
+- Sync Ghost post metadata back to local markdown (CHECK phase) → `npm run sync-ghost <slug>`
+- Backlink curation → use the `backlink_curating` skill
+- Everything else (read/query/update/stats) → MCP tools below
 
-* If there is already a separate SKILL that is used to perform the workflow, STOP and use that skill instead.
-   * Example, searching_the_blog or backlink_curating
-* For posting a draft on Ghost platform, use [creating_a_draft.md](creating_a_draft.md)
-* For checking published posts and syncing to repo (CHECK phase), fetch the post from Ghost API and update the local markdown file with any edits made in Ghost's editor
+## MCP tools quick reference
 
-For all other workflows, read the [Ghost Admin API writeup](ghost-admin-api.md) to create an appropriate `curl` command to perform the task.
+| Operation | MCP Tool | Notes |
+|---|---|---|
+| Search posts | `ghost_search` | Full-text across posts, pages, tags |
+| List posts | `ghost_post_list` | Supports filter, status, limit |
+| Get post | `ghost_post_get` | By `slug` or `id` |
+| Create / update / delete | `ghost_post_create` / `ghost_post_update` / `ghost_post_delete` | Delete needs `confirm: true` |
+| Publish / schedule | `ghost_post_publish` / `ghost_post_schedule` | Schedule takes `at` datetime |
+| Tags | `ghost_tag_list` / `_create` / `_update` / `_delete` | |
+| Image upload | `ghost_image_upload` | Local file path |
+| Site / settings | `ghost_site_info` / `ghost_setting_list` / `ghost_setting_get` | |
+| Stats | `ghost_stats_overview` / `_post` / `_web` / `_growth` / `_email` | |
+| Members, pages, newsletters | `ghost_member_list` / `ghost_page_list` / `ghost_newsletter_list` | |
 
-## Reference Documentation
+## Reference
 
-* **[ghost-lexical-complete-guide.md](ghost-lexical-complete-guide.md)** - Comprehensive guide to Ghost's lexical format with real-world examples from actual blog posts. Use this when you need to understand or construct complex lexical structures.
+- [/docs/ghost-lexical-format.md](../../../docs/ghost-lexical-format.md) — comprehensive lexical format reference. Consult when constructing complex lexical structures for `publish-lexical.js`.
+- [scripts/ghost-lexical-single.js](scripts/ghost-lexical-single.js) — **reference documentation only** (a LexicalBuilder API illustration). Do NOT require it or write per-post publishing scripts; `scripts/publish-lexical.js` at the repo root is the only canonical publishing path.
 
 ## Reminders
 
-* Always announce that you are using this skill.
-* You need authentication to access Ghost Admin API. It can be found in the environment values or in a .env file. 
-* Documentation is sparse from Ghost. Always report problems so that we can figure out together how to fix them and improve our instructions. 
+- Announce that you're using this skill.
+- MCP tools handle auth via the ghst CLI; no manual JWT needed.
+- Ghost docs are sparse — report any surprises so we can improve these instructions.

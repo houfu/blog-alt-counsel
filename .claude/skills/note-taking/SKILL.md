@@ -5,135 +5,85 @@ description: Record discussions in the posts folder on an ongoing basis when req
 
 # Note Taking
 
-## Overview
+Maintain `posts/{post}/discussion.md` — an audit trail of decisions, Claude's contributions, and outcomes. Two audiences: Claude (quick context to avoid repetition across sessions) and the user (trace why any decision was made).
 
-Maintain an **audit trail** of discussions, decisions, and progress for each blog post or newsletter. The discussion.md file serves two purposes:
+**Note:** The `SessionEnd` hook at `.claude/hooks/session-wrap.sh` auto-appends a session entry and commits when a session closes with uncommitted `posts/` changes. Invoke this skill explicitly when a *major decision* is made mid-session and you want it captured in the AUDIT TRAIL (not just the session log) — or when the user asks.
 
-1. **For Claude:** Quick context to avoid repetition and maintain holistic view
-2. **For User:** Audit trail showing what Claude did, what decisions were made, and why
+## Core principle
 
-**Core principle:** Track attribution (what Claude did vs. what user decided) and outcomes (did it work?).
+Attribute clearly: what Claude did → what user decided → why → what happened. A session entry without attribution is narrative filler.
 
-**Announce at start:** "I'm recording this discussion in discussion.md."
-
-## Success Criteria
-
-The discussion record is complete when:
-
-1. **Decision attribution is clear** - Shows what Claude contributed vs. what user decided
-2. **Cause and effect tracked** - "Claude did X → User decided Y because Z"
-3. **Outcomes documented** - Did the decision work? What happened?
-4. **Quick lookup enabled** - Can find key decisions without reading full narrative
-5. **Audit trail exists** - Can trace back why any decision was made
-
-## File Structure
-
-discussion.md follows this structure:
+## File structure
 
 ```markdown
 # Discussion Notes: [Project Name]
 
 ## AUDIT TRAIL: Key Decision Points
-
-[Decision-by-decision record - see template below]
+[Decisions with attribution — added as they happen]
 
 ## WHAT CLAUDE DID (Contributions)
-
-### Research
-- [Bullet list of research performed]
-
-### Writing
-- [Bullet list of drafts, rewrites, sections created]
-
-### Quality Control
-- [Bullet list of audits, reviews, validations]
-
-### Technical
-- [Bullet list of scripts, tools, automation]
+### Research / Writing / Quality Control / Technical
+[Bullet lists, updated on milestones]
 
 ## WHAT WORKED / DIDN'T WORK
-
 ### Worked Well ✅
 | What Claude Did | User Decision | Outcome |
-|-----------------|---------------|---------|
-| [action] | [decision] | [result] |
-
 ### Didn't Work ❌
 | What Claude Did | Problem | Lesson |
-|-----------------|---------|--------|
-| [action] | [what failed] | [what to avoid] |
 
 ## SESSIONS (Chronological Detail)
-
-[Full session-by-session narrative for context]
+[Session-by-session entries — appended; oldest stays at top]
 ```
 
-## The Process
+## Before writing
 
-### Step 1: Determine the Post Folder
+Read the existing `discussion.md` first. Extract decisions already made (don't re-debate), coverage (don't repeat), and failures (don't retry).
 
-- If working on existing post: locate `/posts/{post-short-title}/`
-- If creating new post: folder created during pitch generation
-- If unsure: ask user which post this relates to
+## Session entry template
 
-### Step 2: Read Existing discussion.md
-
-**CRITICAL:** Always read existing discussion.md before starting work.
-
-When reading, extract:
-- What decisions have been made (don't re-debate)
-- What content is already covered (don't repeat)
-- What approaches failed (don't retry)
-- What Claude already contributed (build on it)
-
-### Step 3: Record the Session
-
-Add session detail at bottom, then update top sections.
-
-#### For Each Session: Add to Bottom
+Append at the bottom of the SESSIONS section:
 
 ```markdown
-## Session X: [Short Title] (YYYY-MM-DD)
+## Session N: [Short Title] (YYYY-MM-DD)
 
 ### Context
-[Why this session happened, what triggered it]
+[Why this session happened — 1–2 sentences]
 
 ### What Claude Did
-- Research: [what research]
-- Analysis: [what analysis]
+- Research: [what]
+- Analysis: [what]
 - Writing: [what drafted/revised]
-- Tools: [what tools/scripts created]
+- Tools: [scripts/automation]
 
 ### User Decisions
-- Decision 1: [what was decided and why]
-- Decision 2: [what was decided and why]
+- [What was decided and why]
 
 ### Outcomes
-- ✅ What worked: [successes]
-- ❌ What didn't: [failures]
-- Files created/modified: [list]
+- ✅ Worked: [successes]
+- ❌ Didn't: [failures]
+- Files modified: [list]
 
 ### Next Steps
 [What comes next]
 ```
 
-#### For Major Decisions: Add to AUDIT TRAIL
+Keep under ~40 lines. Terse beats thorough — the audit trail is the load-bearing record.
 
-Use this template for significant decisions:
+## Decision entry template
+
+Use for *significant* decisions only (framing, scope, major revisions). Add to the AUDIT TRAIL section at the top:
 
 ```markdown
-### Decision: [Decision Title] (YYYY-MM-DD, Session X)
+### Decision: [Title] (YYYY-MM-DD, Session N)
 
 **Claude's Analysis:**
-- [What research/analysis Claude performed]
-- [What data/insights Claude provided]
-- [What options Claude presented]
+- [Research/analysis performed; options presented]
 
 **Claude's Recommendation:**
 [What Claude suggested and why]
 
 **User Decision:**
-[What the user actually decided]
+[What the user actually decided — may differ from recommendation]
 
 **Rationale:**
 [Why the user made this choice]
@@ -142,141 +92,39 @@ Use this template for significant decisions:
 ✅/❌ [What happened as a result]
 ```
 
-### Step 4: Update Top Sections
+If Claude had no recommendation (presented options equally), state that explicitly. Do not invent one.
 
-After adding session details, update:
+## When to invoke this skill explicitly
 
-1. **AUDIT TRAIL** - Add major decisions with attribution
-2. **WHAT CLAUDE DID** - Add to contribution categories
-3. **WHAT WORKED / DIDN'T WORK** - Update outcome tables
+The SessionEnd hook handles routine session logging. Use `/note-taking` for:
+- Major decisions that need to land in AUDIT TRAIL (not just SESSIONS)
+- Series milestones (a part published, direction pivot)
+- When `discussion.md` doesn't exist yet and you're creating it from scratch
+- When the user asks
 
-### Step 5: Save the Record
+Don't use this skill to re-record what the hook already committed. Check `git log -- posts/{post}/discussion.md` first.
 
-- Append to `/posts/{post-short-title}/discussion.md`
-- Use Edit tool to update top sections
-- Don't replace existing content - build on it
+## For series work
 
-## When to Use This Skill
+Add these sections when working on Part N of a series:
 
-**Always use after:**
-- Brainstorming sessions
-- Generating or revising pitches
-- Significant research or feedback
-- Quality control reviews
-- Publishing to Ghost
-- Major milestones in writing process
-
-**Also use when:**
-- User explicitly requests it
-- Making major decisions
-- Something fails or succeeds notably
-- End of a series or project
-
-## Recording Decisions: Best Practices
-
-**Good decision record:**
 ```markdown
-### Decision: Use "150+ hours" not "600 hours" (2025-11-03)
+## WHAT'S BEEN COVERED
+### Part 1 established: [bullets]
+### Part 2 established: [bullets]
 
-**Claude's Analysis:**
-- Git analysis: 79 commits across 36 days
-- Found error: content is automated, not manually curated
-- Revised estimate: 150-200 hours based on commit patterns
+## SERIES STATE
+- Part 1: PUBLISHED (date)
+- Part 2: DRAFT
+- Part 3: KIV
 
-**Claude's Recommendation:**
-Use "over 150 hours across several months"
-
-**User Decision:**
-Approved. Changed throughout Part 1.
-
-**Rationale:**
-More honest (admits uncertainty), shows AI's impact, still significant.
-
-**Outcome:**
-✅ More credible than 600-hour claim. Readers responded well.
+## SERIES LESSONS
+- ✅ [What worked across parts]
+- ❌ [What to avoid repeating]
 ```
 
-**Bad decision record:**
-```markdown
-We decided to use 150 hours instead of 600.
-```
-(Missing: what Claude did, why decision was made, what happened)
+## Good vs. bad
 
-## What Makes Good Audit Trail
+**Good:** "Decision: use '150+ hours' (Session 2). Claude found 79 commits across 36 days → revised from 600 to 150. User approved. Outcome: ✅ more credible."
 
-**Capture:**
-- ✅ What Claude analyzed/researched
-- ✅ What Claude recommended
-- ✅ What user decided (might differ from recommendation!)
-- ✅ Why user made that choice
-- ✅ What happened as result
-
-**Avoid:**
-- ❌ Narrative prose without attribution
-- ❌ Decisions without rationale
-- ❌ Recommendations without alternatives considered
-- ❌ Outcomes without assessment (worked or didn't?)
-
-## For Series Work
-
-**Additional tracking needed:**
-
-1. **What's been covered** - Track to avoid repetition
-   ```markdown
-   ## WHAT'S BEEN COVERED
-   ### Part 1 established:
-   - Domain renewal decision
-   - Framework: assess, identify, clarify
-   - Zero users truth
-
-   ### Part 2 established:
-   - Three-layer architecture
-   - Cost breakdown
-   - Time savings
-   ```
-
-2. **Series state** - Track what's done/pending
-   ```markdown
-   ## SERIES STATE
-   - Part 1: PUBLISHED (Nov 7)
-   - Part 2a: PUBLISHED (Nov 14)
-   - Part 2b: POSTPONED
-   - Part 3: PUBLISHED (Nov 22)
-   ```
-
-3. **Cross-series lessons** - What worked across all parts
-   ```markdown
-   ## SERIES LESSONS
-   - ✅ Research before writing (validated decisions)
-   - ✅ Multiple reviewer perspectives
-   - ❌ Treated parts as standalone (repeated context)
-   - ❌ Didn't read discussion.md first
-   ```
-
-## Files in This Skill
-
-- `SKILL.md` (this file) - Main skill instructions
-- `decision-template.md` - Template for recording decisions
-- `session-template.md` - Template for recording sessions
-
-## Remember
-
-**For Claude:**
-- Read discussion.md FIRST before any work
-- Extract what's covered to avoid repetition
-- Check what failed to avoid retrying
-
-**For User (audit trail):**
-- Show what Claude did that led to decisions
-- Attribute clearly (Claude's work vs. User's choice)
-- Track outcomes (worked or didn't?)
-- Enable tracing: "Why did we decide X?" → full path visible
-
-**For both:**
-- Decisions need context and rationale
-- Outcomes need assessment
-- Lessons learned feed improvement
-
----
-
-The goal: Create an audit trail showing what Claude contributed, what decisions resulted, and whether they worked.
+**Bad:** "We decided to use 150 hours instead of 600." (Missing: what Claude did, why, what happened.)

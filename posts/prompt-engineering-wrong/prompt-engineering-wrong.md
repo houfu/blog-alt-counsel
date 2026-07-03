@@ -4,6 +4,7 @@ slug: "lawyers-prompt-engineering-wrong"
 tags: ["legal-tech", "AI", "Singapore", "prompt-engineering", "agents"]
 status: draft
 featured: True
+github_folder: "prompt-engineering-wrong"
 ---
 
 # Lawyers Got Prompt Engineering Wrong (And Why That Matters)
@@ -265,7 +266,6 @@ For solo counsels and small legal teams, this matters more than it does for big 
 
 The standing-room-only workshop taught you how to write better prompts. Now it's time to learn how to build better systems.
 
----
 
 ## References
 

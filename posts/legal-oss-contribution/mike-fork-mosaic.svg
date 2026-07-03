@@ -1,0 +1,173 @@
+<svg viewBox="0 0 800 970" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">87 of 100 forks are unchanged copies</title>
+  <desc id="desc">A 10 by 10 grid representing 100 of Mike's most recently active forks. 87 cells are grey (identical to upstream), 4 are faint green (size-modified with no commits), 4 are medium green (1 to 9 commits ahead), 4 are dark green (10 or more commits ahead), and 1 is dark green with a gold ring (Turkish localisation, diverged history).</desc>
+
+  <defs>
+    <rect id="grey"  width="50" height="50" rx="8" fill="#D8D2C6"/>
+    <rect id="faint" width="50" height="50" rx="8" fill="#BCC8AB"/>
+    <rect id="med"   width="50" height="50" rx="8" fill="#6F8B5C"/>
+    <rect id="sat"   width="50" height="50" rx="8" fill="#2D5F3F"/>
+    <rect id="ring"  width="50" height="50" rx="8" fill="#2D5F3F" stroke="#C49449" stroke-width="3"/>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="970" fill="#F8F4ED"/>
+
+  <!-- Title block -->
+  <text x="400" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#2A2520" text-anchor="middle">87 of 100 forks are unchanged copies</text>
+  <text x="400" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#6B5F50" text-anchor="middle">Mike's 100 most recently active forks, by commits ahead of upstream</text>
+
+  <!-- Grid: 10 x 10, cells 50 px, gap 6 px, origin (123, 120) -->
+
+  <!-- Row 0: 4 SAT, 4 MED, 2 FAINT -->
+  <use href="#sat"   x="123" y="120"/>
+  <use href="#sat"   x="179" y="120"/>
+  <use href="#sat"   x="235" y="120"/>
+  <use href="#sat"   x="291" y="120"/>
+  <use href="#med"   x="347" y="120"/>
+  <use href="#med"   x="403" y="120"/>
+  <use href="#med"   x="459" y="120"/>
+  <use href="#med"   x="515" y="120"/>
+  <use href="#faint" x="571" y="120"/>
+  <use href="#faint" x="627" y="120"/>
+
+  <!-- Row 1: 2 FAINT, 1 RING, 7 GREY -->
+  <use href="#faint" x="123" y="176"/>
+  <use href="#faint" x="179" y="176"/>
+  <use href="#ring"  x="235" y="176"/>
+  <use href="#grey"  x="291" y="176"/>
+  <use href="#grey"  x="347" y="176"/>
+  <use href="#grey"  x="403" y="176"/>
+  <use href="#grey"  x="459" y="176"/>
+  <use href="#grey"  x="515" y="176"/>
+  <use href="#grey"  x="571" y="176"/>
+  <use href="#grey"  x="627" y="176"/>
+
+  <!-- Row 2: all GREY -->
+  <use href="#grey" x="123" y="232"/>
+  <use href="#grey" x="179" y="232"/>
+  <use href="#grey" x="235" y="232"/>
+  <use href="#grey" x="291" y="232"/>
+  <use href="#grey" x="347" y="232"/>
+  <use href="#grey" x="403" y="232"/>
+  <use href="#grey" x="459" y="232"/>
+  <use href="#grey" x="515" y="232"/>
+  <use href="#grey" x="571" y="232"/>
+  <use href="#grey" x="627" y="232"/>
+
+  <!-- Row 3: all GREY -->
+  <use href="#grey" x="123" y="288"/>
+  <use href="#grey" x="179" y="288"/>
+  <use href="#grey" x="235" y="288"/>
+  <use href="#grey" x="291" y="288"/>
+  <use href="#grey" x="347" y="288"/>
+  <use href="#grey" x="403" y="288"/>
+  <use href="#grey" x="459" y="288"/>
+  <use href="#grey" x="515" y="288"/>
+  <use href="#grey" x="571" y="288"/>
+  <use href="#grey" x="627" y="288"/>
+
+  <!-- Row 4: all GREY -->
+  <use href="#grey" x="123" y="344"/>
+  <use href="#grey" x="179" y="344"/>
+  <use href="#grey" x="235" y="344"/>
+  <use href="#grey" x="291" y="344"/>
+  <use href="#grey" x="347" y="344"/>
+  <use href="#grey" x="403" y="344"/>
+  <use href="#grey" x="459" y="344"/>
+  <use href="#grey" x="515" y="344"/>
+  <use href="#grey" x="571" y="344"/>
+  <use href="#grey" x="627" y="344"/>
+
+  <!-- Row 5: all GREY -->
+  <use href="#grey" x="123" y="400"/>
+  <use href="#grey" x="179" y="400"/>
+  <use href="#grey" x="235" y="400"/>
+  <use href="#grey" x="291" y="400"/>
+  <use href="#grey" x="347" y="400"/>
+  <use href="#grey" x="403" y="400"/>
+  <use href="#grey" x="459" y="400"/>
+  <use href="#grey" x="515" y="400"/>
+  <use href="#grey" x="571" y="400"/>
+  <use href="#grey" x="627" y="400"/>
+
+  <!-- Row 6: all GREY -->
+  <use href="#grey" x="123" y="456"/>
+  <use href="#grey" x="179" y="456"/>
+  <use href="#grey" x="235" y="456"/>
+  <use href="#grey" x="291" y="456"/>
+  <use href="#grey" x="347" y="456"/>
+  <use href="#grey" x="403" y="456"/>
+  <use href="#grey" x="459" y="456"/>
+  <use href="#grey" x="515" y="456"/>
+  <use href="#grey" x="571" y="456"/>
+  <use href="#grey" x="627" y="456"/>
+
+  <!-- Row 7: all GREY -->
+  <use href="#grey" x="123" y="512"/>
+  <use href="#grey" x="179" y="512"/>
+  <use href="#grey" x="235" y="512"/>
+  <use href="#grey" x="291" y="512"/>
+  <use href="#grey" x="347" y="512"/>
+  <use href="#grey" x="403" y="512"/>
+  <use href="#grey" x="459" y="512"/>
+  <use href="#grey" x="515" y="512"/>
+  <use href="#grey" x="571" y="512"/>
+  <use href="#grey" x="627" y="512"/>
+
+  <!-- Row 8: all GREY -->
+  <use href="#grey" x="123" y="568"/>
+  <use href="#grey" x="179" y="568"/>
+  <use href="#grey" x="235" y="568"/>
+  <use href="#grey" x="291" y="568"/>
+  <use href="#grey" x="347" y="568"/>
+  <use href="#grey" x="403" y="568"/>
+  <use href="#grey" x="459" y="568"/>
+  <use href="#grey" x="515" y="568"/>
+  <use href="#grey" x="571" y="568"/>
+  <use href="#grey" x="627" y="568"/>
+
+  <!-- Row 9: all GREY -->
+  <use href="#grey" x="123" y="624"/>
+  <use href="#grey" x="179" y="624"/>
+  <use href="#grey" x="235" y="624"/>
+  <use href="#grey" x="291" y="624"/>
+  <use href="#grey" x="347" y="624"/>
+  <use href="#grey" x="403" y="624"/>
+  <use href="#grey" x="459" y="624"/>
+  <use href="#grey" x="515" y="624"/>
+  <use href="#grey" x="571" y="624"/>
+  <use href="#grey" x="627" y="624"/>
+
+  <!-- Legend -->
+  <g transform="translate(220, 740)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <g>
+      <rect width="24" height="24" rx="4" fill="#D8D2C6"/>
+      <text x="36" y="12" dominant-baseline="central" font-size="14" font-weight="700" fill="#2A2520">87</text>
+      <text x="68" y="12" dominant-baseline="central" font-size="13" fill="#5A5147">Identical to upstream</text>
+    </g>
+    <g transform="translate(0, 36)">
+      <rect width="24" height="24" rx="4" fill="#BCC8AB"/>
+      <text x="36" y="12" dominant-baseline="central" font-size="14" font-weight="700" fill="#2A2520">4</text>
+      <text x="68" y="12" dominant-baseline="central" font-size="13" fill="#5A5147">Size-modified, 0 commits ahead</text>
+    </g>
+    <g transform="translate(0, 72)">
+      <rect width="24" height="24" rx="4" fill="#6F8B5C"/>
+      <text x="36" y="12" dominant-baseline="central" font-size="14" font-weight="700" fill="#2A2520">4</text>
+      <text x="68" y="12" dominant-baseline="central" font-size="13" fill="#5A5147">1–9 commits ahead</text>
+    </g>
+    <g transform="translate(0, 108)">
+      <rect width="24" height="24" rx="4" fill="#2D5F3F"/>
+      <text x="36" y="12" dominant-baseline="central" font-size="14" font-weight="700" fill="#2A2520">4</text>
+      <text x="68" y="12" dominant-baseline="central" font-size="13" fill="#5A5147">10+ commits ahead</text>
+    </g>
+    <g transform="translate(0, 144)">
+      <rect width="24" height="24" rx="4" fill="#2D5F3F" stroke="#C49449" stroke-width="2.5"/>
+      <text x="36" y="12" dominant-baseline="central" font-size="14" font-weight="700" fill="#2A2520">1</text>
+      <text x="68" y="12" dominant-baseline="central" font-size="13" fill="#5A5147">Diverged history (Turkish localisation)</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="400" y="945" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#8B7F6B" text-anchor="middle" font-style="italic">Sample of 100 from 675 total forks · gh api 2026-05-08</text>
+</svg>

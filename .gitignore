@@ -3,6 +3,7 @@ docker-compose.yml
 compose.yml
 .env
 settings.json
+!.claude/settings.json
 
 # System files
 **/.DS_Store
@@ -11,7 +12,7 @@ settings.json
 node_modules/
 npm-debug.log*
 
-# Temporary files 
+# Temporary files
 temp/*
 *.tmp
 *.log
@@ -19,3 +20,6 @@ temp/*
 # Environment files (if any local ones are created)
 .env.local
 .env.production
+
+# Claude Code hook state (session-wrap)
+.claude/state/

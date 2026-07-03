@@ -1,12 +1,26 @@
 ---
-title: "Building data.zeeker.sg: Technical Architecture"
-date: 2025-11-14
+title: 'Building data.zeeker.sg: Technical Architecture'
+date: 2025-11-14T00:00:00.000Z
 published: true
-published_url: https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/
-tags: [zeeker, technical, datasette, sqlite, infrastructure, open-data, Architecture, Solo Builder, Singapore]
-series: "data.zeeker.sg decision series"
-series_part: "2"
-custom_excerpt: "The complete technical stack behind Singapore's first public legal news API: zeeker CLI standardizes data collection, Datasette serves SQLite straight from S3, and canned queries make legal research accessible without SQL. Built solo, runs on $6-12/month, designed to scale from 1 to many sources."
+published_url: 'https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/'
+tags:
+  - zeeker
+  - technical
+  - architecture
+  - Singapore
+series: data.zeeker.sg decision series
+series_part: '2'
+custom_excerpt: >-
+  The complete technical stack behind Singapore's first public legal news API:
+  zeeker CLI standardizes data collection, Datasette serves SQLite straight from
+  S3, and canned queries make legal research accessible without SQL. Built solo,
+  runs on $6-12/month, designed to scale from 1 to many sources.
+slug: data-zeeker-sg-part-2a-architecture
+status: published
+post_id: 69167aea4071650001610426
+published_at: '2025-11-14T15:36:28.000Z'
+feature_image: >-
+  https://www.alt-counsel.com/content/images/2025/11/photo-1667375887091-2237f31fa92b.jpeg
 ---
 
 In Part 1, I shared the decision dilemma: 150+ hours building Singapore's first public legal news API, zero known users, and institutions entering the space. Should I continue or stop?

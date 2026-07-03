@@ -1,5 +1,14 @@
 # Pre-Review Checklist (Run Before Sending to Reviewers)
 
+## Pitch Compliance (the drift gate — check FIRST)
+- [ ] Thesis in the draft matches the thesis in pitch.md?
+- [ ] Scope matches (no sections the pitch never promised, nothing promised but missing)?
+- [ ] Emotional core/opening is the one the user provided for the pitch?
+- [ ] If any answer is no: stop — resolve with the user (revise draft or consciously amend pitch, logged in discussion.md) before reviewers see it
+
+## Audit Budget
+- [ ] At most ONE content-quality audit has run on this draft so far?
+
 ## Audience Value
 - [ ] Does opening paragraph answer "why should I care?"
 - [ ] Are all examples concrete (not abstract)?

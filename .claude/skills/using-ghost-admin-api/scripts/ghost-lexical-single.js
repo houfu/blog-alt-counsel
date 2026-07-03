@@ -805,6 +805,35 @@ const text = {
 };
 
 // ============================================================================
+// GITHUB FOOTER HELPER
+// ============================================================================
+
+/**
+ * Adds GitHub repository footer to post content
+ * @param {LexicalBuilder} builder - LexicalBuilder instance
+ * @param {string} folderName - Post folder name (e.g., "prompt-engineering-wrong")
+ * @returns {LexicalBuilder} Builder with footer appended
+ */
+function addGitHubFooter(builder, folderName) {
+  if (!folderName) return builder;
+
+  const githubUrl = `https://github.com/houfu/blog-alt-counsel/tree/main/posts/${folderName}`;
+
+  return builder
+    .hr()  // Visual separator (creates LineBreak card, not markdown ---)
+    .h3('Behind the Scenes')
+    .paragraph('See how this post evolved from initial pitch to final draft. Includes research sources, iterations, and decisions along the way.')
+    .bookmark(githubUrl, {
+      metadata: {
+        title: `${folderName} - blog-alt-counsel`,
+        description: 'Source files and research notes for this blog post',
+        publisher: 'GitHub',
+        icon: 'https://github.githubassets.com/favicons/favicon.svg'
+      }
+    });
+}
+
+// ============================================================================
 // EXPORTS
 // ============================================================================
 
@@ -831,6 +860,7 @@ if (typeof module !== 'undefined' && module.exports) {
     text,
     FORMAT,
     combineFormats,
+    addGitHubFooter,
     // Export all classes for advanced usage
     TextNode,
     Link,

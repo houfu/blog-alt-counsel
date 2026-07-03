@@ -24,6 +24,11 @@ Transform rough ideas into fully-formed designs through structured questioning a
 ### Phase 2: Exploration
 - Propose 2-3 different approaches
 - For each: Core architecture, trade-offs, complexity assessment
+
+**For blog posts — vulnerability framing:**
+When exploring emotional hooks or opening angles, FIRST ask: "What personal experience from your own life connects to this topic?"
+Use the user's answer as the source. Do not construct a vulnerability from the subject matter itself — it must come from a real experience the user shares.
+
 - Ask your human partner which approach resonates
 
 ### Phase 3: Presentation
@@ -37,7 +42,7 @@ When the pitch or idea is approved and implementation will follow:
 - Edit an outline or post: make the change
 
 ### Phase 5: Record discussion
-Create or update the 'discussion.md' in the post folder using recorder skill.
+Create or update the 'discussion.md' in the post folder using the note-taking skill.
 
 ## When to Revisit Earlier Phases
 
@@ -56,3 +61,5 @@ Create or update the 'discussion.md' in the post folder using recorder skill.
 - Present incrementally, validate as you go
 - Go backward when needed - flexibility > rigid progression
 - Announce skill usage at start
+- For blog posts and newsletters, reference `/docs/Houfu_Voice_Guide.md` when exploring approaches
+- Houfu's voice favors: frameworks over advice, nuance over binary thinking, vulnerable admissions over polished authority
