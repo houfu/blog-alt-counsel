@@ -70,6 +70,42 @@ the LinkedIn confidence.
 - End on ONE of: the LinkedIn line ("Build first. Certify after.") OR an
   unresolved question — not both (Voice Guide checklist).
 
+### Decision: Sharper thesis — certification corrects the blind spots shipping creates (2026-07-12, Session 1)
+
+**User's lived material (the turn that unlocked it):**
+- Prep was **mostly experience**. Cold practice paper ≈ **90%**. Only a few gaps.
+- Used a **LegalQuants AI drilling tool** to drill the principles he kept getting
+  wrong. The AI mattered for the *habits*, not the facts.
+- The concrete gap: as a builder, his reflex is to **build something for every
+  problem** — but sometimes **improving a tool or redesigning the process** is more
+  effective. The drilling caught that reflex.
+
+**Refined thesis (supersedes flat "build first, certify after"):**
+Shipping gets you ~90% of the judgment AND installs predictable blind spots.
+The exam's value wasn't teaching basics (experience already covered those) — it was
+**catching the 10% where a builder's instincts actively mislead**. So you certify
+*after* building not to prove the skill but to **correct the distortions experience
+creates.** "Build first, certify after" still lands the ending; the body earns it via
+this correction insight. Genuine "neither is wrong": raw experience vs certification —
+experience can't see its own bad habits.
+
+**Vulnerability beat:** his single most defining trait (builder) is exactly what he had
+to be drilled *out of*. Honest, not a humble-brag (the 90% is immediately complicated).
+
+**Anchor example for the hook (representative, NOT an actual exam item — keep it that
+way for exam-confidentiality reasons):**
+> An agent keeps forgetting key facts from earlier in the conversation. Do you (a) use
+> a stronger model, (b) increase the context window, or (c) inline a structured object
+> of key facts at the start of every turn?
+- All three are things a real builder reaches for. **Optimal = (c)** — forgetting is an
+  *availability/salience* problem, not a reasoning or capacity problem. (a) doesn't
+  touch the mechanism; (b) is the trap (lost-in-the-middle: presence ≠ recall, and it
+  only delays overflow). You only *know* (b) fails from having watched a fat-context
+  agent forget anyway → "build first" in miniature. User confirmed (c) is right.
+
+**Backlink unlocked:** the "don't reflexively build; improve/redesign" lesson ties to
+`single-serving-bias` (builder-reflex / abstraction-bias family). Add at backlink stage.
+
 ## Session Log
 
 ### 2026-07-12 — Session 1 (Pitch)
@@ -99,4 +135,11 @@ the LinkedIn confidence.
   don't prove you can apply under real constraints" = build first, certify after.
 - **Backlink bonus:** LegalQuants was co-founded by Jamie Tso (HK) — ties this post
   to the existing jamie-tso-vibe-coding post via the community's founder.
-- Saved research.md. Next: user to approve moving to outline (WRITE phase).
+- Saved research.md.
+- **Gap-filling turn:** user supplied the anchor exam-style question (context
+  management), confirmed optimal answer (c), and the prep story (experience-first,
+  ~90% cold, LegalQuants AI drilling tool for habit-correction). This sharpened the
+  thesis to the "certification corrects builder blind spots" insight above.
+- Remaining soft gaps (handle at outline/draft, not blocking): the exact *moment* he
+  decided to register, and his current emotional state re: the badge. Enough material
+  to build the outline. Next: build outline for approval.
