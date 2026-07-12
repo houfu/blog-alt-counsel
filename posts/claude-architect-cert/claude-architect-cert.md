@@ -84,7 +84,7 @@ So here's the reframe I didn't see coming. You don't certify to prove you can do
 
 Back to the CV.
 
-There's no "legal innovation engineer" job in Singapore. Not really. AI fluency shows up as a line bolted onto ordinary legal roles, not a title you apply for. So I earned a fresh credential for a job that doesn't exist here.
+There's no job in Singapore this badge is for. Not really. AI skill shows up as a line bolted onto ordinary legal roles — "comfortable with AI tools" — not as a title you can apply for. So I earned a fresh credential for a job that doesn't exist here.
 
 On paper, a badge for nothing.
 
