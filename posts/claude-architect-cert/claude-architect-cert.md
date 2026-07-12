@@ -44,7 +44,7 @@ The stronger model doesn't fix it either. Forgetting isn't about intelligence. I
 
 The answer is the boring one. Write the key facts into a small note, every turn, so they sit in front of the model no matter how long the conversation runs. Working memory. Cheap. Dull. Reliable.
 
-Here's the catch: the wrong answer is the intuitive one. And the only way to know it's wrong is to have watched a fat-context agent forget things anyway.
+Here's the catch: the wrong answer is the intuitive one. And the only way to know it's wrong is to have watched an agent with a huge context window forget things anyway.
 
 That's not knowledge. That's a scar.
 
@@ -52,7 +52,7 @@ Sixty questions like that. Nothing to memorise, because all the answers are alre
 
 ## Experience Got Me to 90%. Then It Failed Me.
 
-I "studied" for about a week. Mostly I didn't. I leaned on years of building with Claude, agents, and MCP — the plumbing that lets an AI call your tools. The cold practice paper came back around 90%.
+I "studied" for about a week. Mostly I didn't. I leaned on years of building with Claude, agents, and MCP — Model Context Protocol, the plumbing that lets an AI call your tools. The practice paper, sat without prep, came back around 90%.
 
 So why bother with the last 10%? If experience gets you an A-minus, why sit the exam at all?
 
@@ -74,7 +74,7 @@ But experience has one blind spot it can't fix on its own: it can't see its own 
 
 That's the gap the exam filled. Not the basics — I had those. The few places my instincts had drifted wrong without me noticing.
 
-What actually drilled them out was a tool from LegalQuants, a community of lawyers who build their own tech. It uses AI to hammer you on the principles you keep missing. It kept surfacing my build-first reflex until I stopped reaching for it.
+What actually drilled them out was a tool from LegalQuants — a community of lawyers who build their own tech. Several of us were sitting the same exam around the same time, drilling with the same AI tool, which hammers you on the principles you keep getting wrong. It kept surfacing my build-first reflex until I stopped reaching for it.
 
 Sit with that loop for a second. An AI tool, made by a community of AI builders, drilling a lawyer for an AI exam.
 
@@ -88,15 +88,15 @@ There's no job in Singapore this badge is for. Not really. AI skill shows up as 
 
 On paper, a badge for nothing.
 
-Except the skill under the badge is the hardest thing to hire for in the country. Building AI applications just overtook traditional IT and data work as the single hardest role to fill in Singapore. The government is pouring money into closing that exact gap — IMDA is retraining tens of thousands of tech professionals on it, and Budget 2026 hands companies a 400% tax deduction on qualifying AI spending.
+Except the skill under the badge is the hardest thing to hire for in the country. Building AI applications just overtook traditional IT and data work as the single hardest role to fill in Singapore. The government sees the same gap. IMDA is retraining tens of thousands of tech professionals on it. Budget 2026 hands companies a 400% tax deduction on qualifying AI spending.
 
 So — asset or vanity line? Both, honestly.
 
 The AI-certification market crossed four billion dollars this year, 400-plus credentials deep, and the fairest criticism of all of them lands on mine too: a certificate proves exposure, not capability. It says you understand the ideas. It doesn't say you can use them when the data is messy and the problem is vague — which is the only thing the job ever actually asks.
 
-A badge for a title that doesn't exist yet, pointing straight at the skill nobody can hire for. My bet is that the skill shows up before the title does.
+Can I put it on my CV? I can. Whether anyone reading it yet knows what it means — that's the real question. A badge for a title that doesn't exist, pointing straight at the skill nobody can hire for.
 
-It is a bet.
+My bet is that the skill shows up before the title does. It is a bet.
 
 ## For Solo Counsels Wondering If AI Skills Can Be Certified
 
@@ -106,8 +106,6 @@ The knowledge is cheap. Anthropic's prep courses are free, and you could work th
 
 The judgment is the moat. And judgment only comes from shipping something and watching it break. You can't cram the scar that tells you a bigger context window won't save your forgetful agent. You earn it.
 
-So get the order right. Build first — on real problems, with real stakes, until something you made breaks in a way you'll remember. Then certify, if you want a mirror held up to your habits.
-
-Not to prove you can do it. To find where your instincts have quietly gone wrong.
+So get the order right. Build first — on real problems, with real stakes, until something you made breaks in a way you'll remember. Then certify, if you want a mirror held up to your habits — not to prove you can do it, but to find where your instincts have quietly gone wrong.
 
 Build first. Certify after.

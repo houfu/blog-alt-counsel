@@ -73,3 +73,9 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
 - Resonance notes: P2 climax ("honest tool out of reach for resource-constrained practitioners") and "comfort is a terrible forecasting input" flagged as save-and-share lines; category-error reframe in P3 landed. Watch item (not a fix): "twenty-two published posts since January" could trigger comparison anxiety for readers who don't know the posts are AI-assisted.
 - Standing asks: none raised — emotional beat, action-oriented next step, and trust-the-example all pre-empted.
 - Settled/rejected: none this round.
+
+### 2026-07-13 — claude-architect-cert (Round 1)
+- Unique catches: (1) Pitch's "gratitude beat" (LegalQuants members certifying alongside him) was in the emotional-core list but dropped from the draft — LegalQuants appeared only as a drilling tool, losing the strongest available "I'm not alone" signal for this persona. One-sentence fix identified and APPLIED ("Several of us were sitting the same exam around the same time"), verified against Houfu's LinkedIn ("several of whom are also taking on this certification with me"). (2) Confirmed sequencing is clean — CV doubt teased in ¶3, earned via the correction-insight thesis, then resolved — no mis-ordering (rare clean pass on my sharpest lens). (3) Confirmed continuity: builder-reflex admission builds on (does not retread) jamie-tso-vibe-coding via "I know this lesson. I've written it down. And I still failed it" — an escalation.
+- Load-bearing line named (protect through cuts): "The thing that most makes me *me* — I build — was the thing the exam had to drill out of me." Most-quotable: "That's not knowledge. That's a scar."
+- Standing asks raised: none — all pre-empted.
+- Settled/rejected: none this round.

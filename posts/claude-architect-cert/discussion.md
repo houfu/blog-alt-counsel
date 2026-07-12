@@ -161,3 +161,24 @@ way for exam-confidentiality reasons):**
   onto Houfu's drilled-out builder reflex. Optional weave into §3/§4. Offered to user.
 - research.md updated with full verification block. Next: user reads draft; confirm
   question count; decide on LegalQuants enrichment; then quality audit + Wei Lin.
+
+### 2026-07-13 — Session 2 cont. (REVIEW: audit + Wei Lin + length audit)
+- User confirmed 60 questions (stays). Declined the engineer-vs-quant enrichment
+  ("I don't see myself as an engineer; conflates with builder; confusing") →
+  removed "legal innovation engineer" from §5, now describes the absent job directly.
+- Ran content-quality-auditor + lawyer-coder-reviewer (Wei Lin) in parallel.
+- **Wei Lin: rare clean pass.** Sequencing sound, vulnerability genuine, continuity
+  builds (not retread). One unique catch: restore the LegalQuants "not alone" beat
+  (members certifying alongside) — APPLIED, verified vs LinkedIn.
+- **Auditor findings applied:** (1) CV-doubt thread now explicitly closed at end of
+  §5 ("Can I put it on my CV? I can. Whether anyone reading it yet knows what it
+  means — that's the real question."); (2) removed the third "why certify"
+  restatement (folded into one sentence, ends on tagline); (3) de-stacked the
+  IMDA/Budget report-speak into short sentences; (4) expanded "MCP" on first use +
+  reworded "fat-context agent" → "an agent with a huge context window"; (5) clarified
+  "cold practice paper"; (7) anchored LegalQuants timeline.
+- **Auditor finding declined:** #6 (add 2nd worked example) — 60 is verified and one
+  representative example suffices; adding would bloat. "I code. I law." identity beat
+  held as optional (identity already carried by "builder").
+- **Length audit:** net ~+10 words (<1%); ~6 min vs 9-min ceiling → no forced cuts.
+- Round 1 of 2 used. Next: backlink curation + tag validation, then POST.
