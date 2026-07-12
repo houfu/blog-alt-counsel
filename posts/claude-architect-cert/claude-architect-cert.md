@@ -40,7 +40,7 @@ Most people pick the bigger context window. More room, less forgetting. It feels
 
 It's also wrong. A bigger window doesn't fix forgetting — models skim the middle of a long context the way you skim a long email. A fact being in there isn't the same as the model using it. You haven't solved the problem. You've paid more to postpone it.
 
-The stronger model doesn't fix it either. Forgetting isn't about intelligence. If the fact fell out of the context, a smarter model can't recall what it can't see.
+The stronger model doesn't fix it either. Forgetting isn't about intelligence. If the fact is buried in the middle of the context, a smarter model skims past it just the same.
 
 The answer is the boring one. Write the key facts into a small note, every turn, so they sit in front of the model no matter how long the conversation runs. Working memory. Cheap. Dull. Reliable.
 
@@ -58,11 +58,11 @@ So why bother with the last 10%? If experience gets you an A-minus, why sit the 
 
 Because the last 10% wasn't knowledge I was missing. It was habits I'd built wrong.
 
-One kept catching me. Hand me a problem and my reflex is to build something. A tool. A script. A new pipeline. It's the instinct that got me this far.
+One kept catching me. Hand me a problem and [my reflex is to build something](https://www.alt-counsel.com/tool-vs-infrastructure-mindset/?ref=every-answer-was-correct). A tool. A script. A new pipeline. It's the instinct that got me this far.
 
 It's also a distortion. Sometimes the fix isn't a new tool — it's improving the one you have, or redesigning the process until the problem disappears. The exam kept offering me that choice and watching me reach for the hammer.
 
-I know this lesson. I've [written it down](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/). And I still failed it under exam conditions, because a habit doesn't care what you believe.
+I know this lesson. I've [written it down](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=every-answer-was-correct). And I still failed it under exam conditions, because a habit doesn't care what you believe.
 
 That's the uncomfortable part. The thing that most makes me *me* — I build — was the thing the exam had to drill out of me.
 
@@ -104,7 +104,7 @@ If you're a solo counsel or on a small team eyeing one of these, here's the usef
 
 The knowledge is cheap. Anthropic's prep courses are free, and you could work through the concepts in a few evenings. That's not the moat.
 
-The judgment is the moat. And judgment only comes from shipping something and watching it break. You can't cram the scar that tells you a bigger context window won't save your forgetful agent. You earn it.
+The judgment is the moat. And judgment only comes from [shipping something and watching it break](https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/?ref=every-answer-was-correct). You can't cram the scar that tells you a bigger context window won't save your forgetful agent. You earn it.
 
 So get the order right. Build first — on real problems, with real stakes, until something you made breaks in a way you'll remember. Then certify, if you want a mirror held up to your habits — not to prove you can do it, but to find where your instincts have quietly gone wrong.
 

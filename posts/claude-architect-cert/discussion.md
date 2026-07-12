@@ -182,3 +182,25 @@ way for exam-confidentiality reasons):**
   held as optional (identity already carried by "builder").
 - **Length audit:** net ~+10 words (<1%); ~6 min vs 9-min ceiling → no forced cuts.
 - Round 1 of 2 used. Next: backlink curation + tag validation, then POST.
+
+### 2026-07-13 — Session 2 cont. (2nd reviewer, backlinks, tags, scope cleanup)
+- User added **Marcus (legal-tech-blog-reviewer)** as a 2nd reader. Reader verdict:
+  "I'd forward this"; CV doubt "lands harder than the LinkedIn version"; respected
+  that it doesn't oversell what an MCQ can certify. Differentiation survived.
+- **User correction (saved to auto-memory [[feedback_reviewers_reader_response]]):**
+  reviewers are NOT fact-checkers — they give reader-response (feelings/what lands),
+  facts are research/audit's job. Applied one writing-clarity fix Marcus flagged
+  ("fell out of" → "buried in the middle of the context" — one consistent failure
+  mechanism), per user's explicit OK.
+- **Backlinks (3, inline, ?ref=every-answer-was-correct):** when-building-gets-cheap
+  (§3, "written it down"), tool-vs-infrastructure-mindset / Jamie Tso (§3, "my reflex
+  is to build something"), what-top-10-actually-means-for-a-lawyer-who-codes (§6,
+  "shipping something and watching it break"). Kept inline (not bookmark cards) to
+  preserve narrative rhythm.
+- **Tags validated** against registry: AI, Training, SoloBuilder, Singapore — all
+  canonical, 1 core topic present, Article correctly not used. No change.
+- **Scope cleanup:** a prior `git add -A` had wrongly committed tooling/other-project
+  files (.agents/, .codex/, AGENTS.md, ONBOARDING.md, another post's images) — all
+  untracked (kept on disk); branch now scoped to this post + reviewer memories.
+  Going forward: add only specific paths, never `git add -A`.
+- Next: POST to Ghost (publish-lexical.js), then CHECK + sync.
