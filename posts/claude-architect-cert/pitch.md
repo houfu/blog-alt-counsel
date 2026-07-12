@@ -29,8 +29,20 @@ it comes from shipping. Therefore the credential certifies something real only
 *after* you've built. "Build first. Certify after."
 
 The vulnerable complication (the value-add over the LinkedIn version): a
-credential earned for a role that barely exists in Singapore. Is a
-"first-in-Singapore" badge an asset or a vanity line? Honest, not resolved.
+credential earned for a *title* that doesn't exist yet in Singapore — while the
+*skill* it attests to (agentic-AI / AI-application development) is the single
+hardest-to-fill capability in the local market (95% of SG employers report AI
+skill gaps; IMDA is subsidising exactly this). So the badge is uncashable for a
+named legal-engineering role and points straight at the scarcest general skill.
+Is a "first-in-Singapore" badge an asset or a vanity line? Honest, not resolved —
+the bet isn't on a role, it's on the skill arriving before the title does.
+
+**AMENDMENT (2026-07-12, research phase).** Original pitch framed the tension as
+"a credential for a job that doesn't exist." Research sharpened it to the
+skill-vs-title nuance above. Not a pitch failure — the data check at pitch time
+verified the *credential* facts; this refinement needed the SG labour-market
+research to surface. Recording per the workflow's pitch-amendment rule so the
+outline uses the sharper frame.
 
 ## Emotional core (from the user's real experience)
 
