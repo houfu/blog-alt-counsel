@@ -204,3 +204,23 @@ way for exam-confidentiality reasons):**
   untracked (kept on disk); branch now scoped to this post + reviewer memories.
   Going forward: add only specific paths, never `git add -A`.
 - Next: POST to Ghost (publish-lexical.js), then CHECK + sync.
+
+### 2026-07-13 — Session 2 cont. (POST)
+- Dry-run caught the issue #41 converter quirks before anything hit Ghost: inline
+  alt-counsel links force-carded + mangled surrounding sentences; the mid-doc bullet
+  list relocated to the very end. Fixed content-side (own-line bookmark cards; list →
+  prose). Re-ran dry-run → clean node order.
+- Cosmetic artifact noted: converter emits ~2 empty paragraphs around each bookmark
+  card (blank spacing). Left for Ghost-editor tidy / a future infra fix.
+- First publish attempt failed Ghost validation: custom_excerpt > 300 chars. Trimmed
+  to 260 and re-published.
+- **Published as DRAFT.** Post ID `6a53cc4e3ca691000115e4a2`. Admin:
+  https://alt-counsel.ghost.io/ghost/#/editor/post/6a53cc4e3ca691000115e4a2 ;
+  preview: https://www.alt-counsel.com/p/4ad9fd61-c533-4c4a-be4e-b857c2208f81/
+- **KIV — infra follow-up (separate branch, NOT this content PR):** fix
+  publish-lexical.js so (a) internal alt-counsel links can be inline without
+  mangling, (b) mid-doc lists flush in place instead of relocating, (c) no empty
+  paragraphs around bookmark cards. Ref issue #41.
+- Next (CHECK): Houfu reviews draft in Ghost; expect prose polish there. At final
+  sync, run `npm run sync-ghost every-answer-was-correct` ONCE, diff live vs local,
+  merge Ghost edits back, log notable ones. Then set status/publish decision.

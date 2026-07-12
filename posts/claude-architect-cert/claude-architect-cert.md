@@ -10,10 +10,10 @@ status: draft
 featured: false
 github_folder: claude-architect-cert
 custom_excerpt: >-
-  I passed Anthropic's Claude Certified Architect exam and I'm probably the first
-  lawyer in Singapore to hold it. Then I wondered if I could even put it on my CV.
-  The exam was hard because every answer was correct — and the gaps it found were
-  my builder habits, not my knowledge. Build first. Certify after.
+  I passed Anthropic's Claude Certified Architect exam — maybe the first lawyer in
+  Singapore to hold it — then wondered if I could even put it on my CV. It was hard
+  because every answer was correct, and the gaps it found were my builder habits,
+  not my knowledge.
 ---
 
 Every answer in the exam was correct. That's what made it hard.
