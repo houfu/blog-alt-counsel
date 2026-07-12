@@ -81,4 +81,22 @@ the LinkedIn confidence.
 - Seeded 3 must-link prior posts (when-building-gets-cheap, redlines-top-10-
   percent, jamie-tso-vibe-coding).
 - Scaffolded posts/claude-architect-cert/ with pitch.md + discussion.md.
-- Pitch approved. Next: user to approve moving to outline.
+- Pitch approved.
+
+### 2026-07-12 — Session 1 (Research)
+- User requested research; added a 5th angle (Singapore AI-skills demand) at their
+  request — an area they want to explore further.
+- Ran ~7 web searches (CCA-F facts, SG legal-eng jobs, AI-cert value, LegalQuants,
+  SG AI-skills shortage). Official Skilljar page 403'd; CCA-F facts corroborated
+  across 2+ third-party sources instead.
+- **Key reframe surfaced:** the SG tension is sharper than the pitch's "job that
+  doesn't exist." Reality — no dedicated legal-innovation-engineer *title*, BUT
+  agentic-AI/AI-app-dev is the single **hardest-to-fill capability** in SG (95% of
+  employers report AI skill gaps; IMDA subsidising exactly this). So: a badge for a
+  title that doesn't exist yet, pointing at the skill the market most lacks. Cleaner
+  "neither is wrong." → Consider amending the pitch's tension framing at outline.
+- **Thesis corroborated externally:** AI certs "validate exposure, not capability…
+  don't prove you can apply under real constraints" = build first, certify after.
+- **Backlink bonus:** LegalQuants was co-founded by Jamie Tso (HK) — ties this post
+  to the existing jamie-tso-vibe-coding post via the community's founder.
+- Saved research.md. Next: user to approve moving to outline (WRITE phase).
