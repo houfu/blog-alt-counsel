@@ -99,5 +99,6 @@ feature this.
 
 - How much weight does the CV/market doubt get? (User leaning: real tension, not
   the whole point.)
-- Does the post end on the LinkedIn line ("Build first. Certify after.") or on
-  an unresolved question? Voice guide says end on ONE, not both.
+- ~~Does the post end on the LinkedIn line or an unresolved question?~~
+  RESOLVED 2026-07-12: ends on **"Build first. Certify after."** (clear
+  recommendation, not an open question).
