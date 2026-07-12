@@ -1,6 +1,91 @@
 # Research: Every Answer Was Correct (CCA-F post)
 
-**Date:** 2026-07-12
+**Date:** 2026-07-12 (updated 2026-07-13 — Jina pass, previously-blocked sources cracked)
+
+## 2026-07-13 UPDATE — verified against primary sources via Jina
+
+Jina read the sources WebFetch had 403'd. Results:
+
+**CCA-F facts — now CONFIRMED against Anthropic's official page.**
+- Domains & weightings match the official Skilljar page *exactly*: Agentic
+  Architecture & Orchestration **27%**, Claude Code Config & Workflows **20%**,
+  Prompt Engineering & Structured Output **20%**, Tool Design & MCP **18%**,
+  Context Management & Reliability **15%**.
+- Format (official): "Multiple choice and multiple response." Passing score
+  **720 (scaled 100–1,000)**. Delivery: online proctored **or Pearson test
+  center**. Free Anthropic Academy prep courses confirmed (AI Fluency, Claude
+  101, Building with the Claude API, Intro to MCP, Claude Code in Action, etc.).
+- Retake policy (Pearson VUE): 14 days after 1st fail, 30 after 2nd, 90 after
+  3rd; **max 4 attempts per rolling 12 months**.
+- ⚠️ **NAMING CORRECTION.** Pearson VUE's official program page lists the exam as
+  **"Claude Certified Architect – Foundations (CCAR-F)"** — not "CCA-F". Full
+  official family: Associate–Foundations (CCAO-F), Architect–Foundations
+  (CCAR-F), Architect–Professional (CCAR-P), Developer–Foundations (CCDV-F).
+  Houfu (and much of the community / third-party sites) call it **CCA-F**. The
+  DRAFT BODY never uses the abbreviation, so no fix needed there — but flag: if
+  we ever print the acronym, the official one is CCAR-F. Internal files
+  (pitch/discussion/folder) use CCA-F; harmless, but noted.
+- ⚠️ **Number of questions / duration NOT on the official pages Jina returned.**
+  "60 questions / 120 min" is third-party (exam-prep sites) only. The draft says
+  "Sixty questions." Houfu SAT the exam — CONFIRM the real count with him rather
+  than trust prep sites. Until confirmed, treat "60" as [UNVERIFIED].
+- Launch date (12 Mar 2026), cost ($99→$125 on 30 Jun 2026), 12-month validity:
+  still third-party-sourced (not on the official pages fetched). Draft avoids the
+  exact cost and only says "only a few months old" (accurate: ~4 months). Fine.
+- Note: cert is "open to organizations in the Claude Partner Network and counts
+  toward partner program standing." Houfu got access via LegalQuants — consistent.
+
+**Singapore stats — two draft claims corrected after verification:**
+- WRONG→FIXED **"95% of SG employers report AI skill gaps"** conflated two
+  surveys. The 95% is from a *different* report ("State of Tech Talent 2026":
+  "95% of Singapore employers face **tech hiring challenges**"). The authoritative
+  ManpowerGroup 2026 survey (504 SG employers, fieldwork Oct 2025) says **71%**
+  report difficulty hiring, and — the clean, on-point fact — **AI Model &
+  Application Development (26%) is now the #1 hardest-to-fill skill, overtaking
+  IT & Data** (which fell from 1st in 2025 to 7th / 17%). DRAFT UPDATED to the
+  ManpowerGroup framing ("building AI applications just overtook traditional IT
+  and data work as the single hardest role to fill"). Cleaner and defensible.
+- WRONG→FIXED **"400% tax deduction at AI training"** was imprecise. Confirmed
+  (EDB, PwC, Vistra): Budget 2026 gives **400% tax deduction on qualifying AI
+  *expenditure/spend*, capped S$50,000/year for YA2027–YA2028**, under the
+  Enterprise Innovation Scheme. It's AI *adoption spend*, not "training." DRAFT
+  UPDATED to "a 400% tax deduction on qualifying AI spending."
+- OK IMDA/TeSA **40,000** tech professionals over 3 yrs (NAIIP) and **100,000**
+  non-tech "AI bilingual" by 2029 — confirmed (technode/IMDA). Bonus: IMDA's new
+  **AIxTech** program explicitly trains "implementing agentic systems in
+  multi-agent teams" with access to **Claude**, Codex, Copilot, Gemini — i.e.,
+  the SG govt is literally training people on Claude + agents, the exact CCA-F
+  skill. Strong support for "the skill the market most lacks, and the state is
+  subsidising it."
+
+**LegalQuants — full, accurate detail (public "About" page) + a thematic gift:**
+- Self-description: "A highly selective network of lawyers who build their own
+  tech to practice law." Thesis: elite legal work won't be defined by "who has
+  the best AI tool," but by "the rare ability to design, evaluate, and deploy any
+  tool." "Tools are overhyped. Talent is underhyped."
+- **The engineer-vs-quant distinction — matches Houfu's exam blind spot almost
+  exactly:** "A legal **engineer** makes an existing workflow faster. A legal
+  **quant** looks at the same workflow and thinks: how do I redesign the entire
+  experience from first principles?" → This IS Houfu's drilled-out habit (reflex
+  to build/speed up a workflow vs. redesign the process so the problem
+  disappears). Potential enrichment for §3/§4. Also a nice tension with §5's "no
+  legal *innovation engineer* role" — LQ deliberately distinguishes the two.
+- Values: **High agency**, **Real shipping** ("shipped things used in real
+  client work, not throwaway code"), **Obsession** ("build nights and weekends
+  because you can't help yourself"); community norm **"Ship over speak."** →
+  literally "build first" as a membership bar.
+- Founders: **Jamie Tso** (Clifford Chance HK; rebuilt Harvey/Legora tabular
+  review in an afternoon, open-sourced, 160K+ views, forked 100+) and **Raymond
+  Sun** (Sydney; Global AI Regulation Tracker). Started as a 5-person WhatsApp
+  group. Confirms the jamie-tso-vibe-coding backlink tie.
+
+**Still single-sourced (leave as color, or soften):** "$4B AI-cert market, 400+
+credentials" (rework/Rework). Fine as illustrative; not Singapore-critical.
+
+---
+
+## (Original research, 2026-07-12 — retained below)
+
 **Thesis being supported:** The exam is a judgment test, not a knowledge test;
 judgment comes from shipping → build first, certify after. Tension: a credential
 for a role that barely exists in Singapore.

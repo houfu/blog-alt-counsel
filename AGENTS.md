@@ -1,0 +1,368 @@
+# AGENTS.md
+
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+
+## Project Overview
+This is Ang Hou Fu's personal website (alt-counsel.ghost.io), a ghost-based blog and newsletter focused on legal technology, programming, and personal projects.
+
+### Blog Mission & Content Strategy
+alt-counsel.com offers **alternative perspectives on legal technology and practice** specifically for solo counsels, small legal teams, and resource-constrained legal departments. Unlike typical legal tech content that assumes enterprise budgets and large teams, this blog focuses on:
+
+- **Practical solutions for real constraints** - $50 solutions that replace $50K systems
+- **Resource-conscious implementations** - Tools and workflows that work with limited budgets and time
+- **Singapore/ASEAN legal context** - Regional insights with global applicability  
+- **Builder-friendly content** - Serving both legal professionals and technical folks building legal solutions
+- **Honest assessments** - What actually works vs. what's marketed to work
+
+**Target Audience**: Solo counsels, small legal teams, in-house lawyers working with limited resources, and builders creating legal tech solutions.
+
+**Brand Position**: "The Solo Counsel's Tech Strategist" - practical problem-solver who helps resource-constrained legal departments leverage technology for real impact.
+
+## Directory Structure
+- `/temp/` - Temporary folder
+- '/posts/' - Place to store posts and work in progress
+  - '{post-short-title}' - Each post is stored in its own folder using a short memorable title
+    - '{post-title}.md' - This file contains the content of the post and some metadata
+    - 'discussion.md' - This file stores the memories of Codex involved in writing the post
+    - 'pitch.md' - This file stores the pitch of the post used to create the post.
+    - It also contains images, research documents and others relating to this post. 
+- `/docs/` - Documentation and analysis
+  - `/docs/personas/` - Full persona documents for the three audience reviewer agents
+    - `marcus-tan-persona.md` - Legal Tech Blog Reviewer
+    - `wei-lin-persona.md` - Lawyer-Coder Reviewer
+- `/.Codex/` - Codex agents, skills and configuration
+- `/node_modules/` - Node.js dependencies (ignored by git)
+
+## Post Structure and Metadata
+
+Each blog post markdown file includes YAML frontmatter with metadata fields:
+
+```yaml
+---
+title: "Post Title"
+slug: "url-slug"
+tags: ["tag1", "tag2", "tag3"]
+status: draft
+featured: false
+github_folder: "post-folder-name"  # Optional: folder name in /posts/ directory
+---
+```
+
+### GitHub Integration
+
+Posts can link to their source folder in the GitHub repository by adding the `github_folder` field to frontmatter. When this field is present, a GitHub footer section is automatically added when publishing the post with:
+
+- Visual separator (horizontal rule)
+- "View on GitHub" heading
+- Explanatory text about open source content
+- Rich bookmark card linking to the GitHub folder
+
+**Example:**
+```yaml
+---
+title: "My Post About Legal Tech"
+github_folder: "prompt-engineering-wrong"
+---
+```
+
+This will add a footer linking to:
+`https://github.com/houfu/blog-alt-counsel/tree/main/posts/prompt-engineering-wrong`
+
+**Note:** The `github_folder` field should contain only the folder name, not the full path.
+
+## Development Environment
+
+This is a local Node.js project. Install dependencies with `npm install` and configure environment via a `.env` file.
+
+### Ghost MCP Integration
+
+Most Ghost CMS operations are handled via **ghst MCP tools** — native tools available directly in Codex. This includes searching posts, managing tags, viewing analytics, creating/updating posts, and managing members.
+
+**Setup:**
+```bash
+npm install -g @tryghost/ghst
+ghst auth login --url $GHOST_SITE_URL --staff-token $GHOST_ADMIN_API_KEY --site alt-counsel
+Codex mcp add ghost -- ghst mcp stdio --tools all
+```
+
+**Custom scripts still used:**
+- `scripts/publish-lexical.js` — Markdown-to-lexical publishing with custom features (bookmark cards, GitHub footer, table conversion)
+- `scripts/sync-from-ghost.js` — Syncs Ghost metadata back to local markdown frontmatter (`npm run sync-ghost <slug>`)
+
+**Searching the blog:**
+- Use `ghost_search` MCP tool directly (full-text across posts, pages, tags).
+- For filtered queries, use `ghost_post_list` with NQL filters (e.g., `filter: "tag:ai"`, `status: "published"`).
+- When a query is ambiguous, run 2–3 parallel searches from different angles in a single message.
+
+### Environment Variables
+
+Ghost API credentials are needed for `publish-lexical.js`, `sync-from-ghost.js`, and ghst authentication:
+- `GHOST_SITE_URL` — Your Ghost site URL
+- `GHOST_ADMIN_API_KEY` — Admin API key in `id:secret` format (also used as ghst staff token)
+- `GHOST_API_VERSION` — API version (e.g. `v6.0`)
+
+Copy `.env.example` to `.env` and fill in your values.
+
+### Codex Hooks (auto-commit + auto-notes)
+
+A `SessionEnd` hook at `.Codex/hooks/session-wrap.sh` fires when a Codex session ends. If there are uncommitted changes under `posts/`, it spawns `Codex -p` to append a session entry to each affected `discussion.md`, then stages and commits. The result is one batched `Session notes: <folder> — <summary>` commit per session, replacing the per-exchange commit noise seen in recent PRs.
+
+- To trigger manually mid-session: run `/wrap-up` (or `bash .Codex/hooks/session-wrap.sh`).
+- To skip once: `CLAUDE_HOOK_SESSION_SKIP_WRAP=1` before ending the session.
+- Debug log: `.Codex/state/session-wrap.log` (gitignored).
+
+### Pre-Commit Hook
+
+A pre-commit hook warns when a post file is staged without also staging `discussion.md`. Install it once with:
+
+```bash
+npm run setup-hooks
+```
+
+The hook is non-blocking (exits 0) — it warns but never prevents a commit. With the SessionEnd hook auto-staging `discussion.md`, this reminder fires mostly on manual commits.
+
+
+## GitHub CLI Integration
+
+GitHub CLI (`gh`) is used for repository operations including creating pull requests and managing issues.
+
+### Authentication
+Run `gh auth login` to authenticate, or set `GITHUB_TOKEN` as an environment variable.
+
+
+
+**Critical rules:**
+- **NEVER use horizontal rules** (`---`, `***`, or `___`) in final blog post content (files that will be published to Ghost). These break the markdown to lexical conversion process. Use headings or spacing instead.
+  - *Note: You CAN use horizontal rules in draft/working documents (discussion.md, pitch.md, research.md) to organize content during writing.*
+- **Prefer bookmark cards over inline links** for key content and backlinks - they provide richer previews and visual emphasis.
+
+**Available Ghost elements:** Images, code blocks, bookmark cards, toggles/accordions.
+
+## Task Management with TodoWrite
+
+**CRITICAL: Use TodoWrite for ALL multi-step workflows, especially content creation.** This ensures quality checks are never skipped and progress is visible.
+
+**Always create TodoWrite todos when:**
+- Starting any blog post or newsletter workflow
+- Beginning research or content quality work
+- Working on tasks with 3+ steps
+- Quality checks need to be tracked (content audit, legal review, etc.)
+
+**Quality check todos are mandatory** - Include these in your todo list for content workflows:
+- Content quality audit (using content-quality-auditor agent)
+- Target audience review (using inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
+- Backlink curation
+- Final proofreading before publishing
+
+Mark todos as `in_progress` BEFORE starting work, and `completed` IMMEDIATELY after finishing. This keeps the user informed of progress.
+
+## Skills Usage Policy
+
+**CRITICAL: Always use skills when available for their intended purposes.** Do not wait for explicit user requests - proactively invoke the appropriate skill based on the task at hand.
+
+Available skills and when to use them:
+- **brainstorming** - Use at the START when ideas are vague or need refinement. Invoke automatically when user suggests a blog topic that needs development.
+- **generate_a_pitch** - Use when creating a new post. Always invoke to create the pitch before drafting. Ask about tag *intent* before suggesting tags.
+- **tag-registry** - Use when suggesting tags for posts (during pitch or before publishing). Ensures tags are consistent with the canonical registry and prevents tag sprawl.
+- **blog-research** - Use when fact-checking, gathering sources, finding statistics, or researching topics for posts. If `research.md` is >7 days old when drafting starts, refresh first.
+- **note-taking** - The SessionEnd hook handles routine session logging automatically. Invoke this skill explicitly only for major decisions that need to land in the AUDIT TRAIL, series milestones, or when creating `discussion.md` from scratch.
+- **backlink_curating** - Use at final draft stage to find internal links to other blog posts.
+- **getting-feedback** - Use when the user needs audience feedback. Enforces 2-round cap and length-audit-first ordering.
+- **using-ghost-admin-api** - Use for Ghost CMS operations. Most read/query operations use ghst MCP tools directly; use the skill for creating drafts from markdown via `publish-lexical.js`. Reference: `/docs/ghost-lexical-format.md`.
+- **wrap-up** - Manually trigger the SessionEnd hook's commit + notes flow mid-session.
+
+For blog search, use the `ghost_search` MCP tool directly (see "Searching the blog" in Ghost MCP Integration section).
+
+Do NOT ask "Would you like me to use the X skill?" - Just use it. The skills are designed to be invoked automatically as part of the natural workflow.
+
+## Before Working on Posts
+
+**CRITICAL: Always read discussion.md before working on any post-related task.** This ensures context awareness and prevents repetition across series posts.
+
+**Pre-work checklist:**
+- [ ] Read the post's `discussion.md` file (at least the last 2-3 sessions)
+- [ ] For series work: Read all previously published parts
+- [ ] Check what's already established in previous posts
+- [ ] Identify what can be referenced vs. what needs re-explaining
+
+**When to read discussion.md:**
+- Before drafting new content
+- Before making revisions
+- Before adding to a series
+- Before publishing to Ghost
+- Before any substantial work on the post
+
+**Why this matters:**
+For series posts, each part should build on previous parts, not repeat them. Reading discussion.md helps you understand what's already been covered and maintain a holistic view across the entire series.
+
+## Writing Voice & Style
+
+**CRITICAL: Houfu's distinctive voice must be present in all blog content.** This voice is what differentiates alt-counsel from generic legal tech content.
+
+### Voice Guide Reference
+
+The comprehensive **Houfu Voice Guide** is available at `/docs/Houfu_Voice_Guide.md`. This 5-part guide defines:
+
+1. **Voice Patterns** - Opening moves, "neither is wrong" framing, specific numbers, vulnerable admissions
+2. **Structural Patterns** - Bullet point rules, paragraph length, header style
+3. **Anti-Patterns** - What Houfu never does (jargon, humble-bragging, false certainty)
+4. **Templates** - News commentary, learning in public, LinkedIn posts
+5. **Quick Reference Checklist** - Pre-publishing verification
+
+### When to Apply the Voice Guide
+
+**During PITCH (generate_a_pitch skill):**
+- Read Part 4 (Templates) to understand post structure
+- Ensure title follows voice patterns (conversational, not academic)
+- Check that pitch opens with feeling/vulnerability, not throat-clearing
+
+**During WRITE (drafting content):**
+- REQUIRED: Read the entire Voice Guide before drafting blog posts
+- Reference Part 1 (Voice Patterns) while writing opening paragraphs
+- Use Part 2 (Structural Patterns) for formatting decisions
+- Apply Part 5 (Quick Reference Checklist) during self-review
+
+**During REVIEW (quality checks):**
+- The audit-tone agent will check voice consistency using the guide
+- Target audience reviewers reference voice patterns in their feedback
+
+### Content Type Distinctions
+
+**Voice guide applies to:**
+- Blog posts (full application)
+- Newsletter articles (full application)
+- LinkedIn posts (use Part 4 template)
+
+**Voice guide does NOT apply to:**
+- discussion.md files (working notes)
+- pitch.md files (internal planning)
+- research.md files (source collection)
+- Technical documentation
+
+### Key Voice Principles (Quick Reference)
+
+If you need to write quickly without reading the full guide, these core principles maintain Houfu's voice:
+
+1. **Open with feeling, not fact** - "I compared my GitHub to Jamie's and felt unproductive" (not "This article discusses...")
+
+2. **Specific numbers as anchors** - "148 stars and 177,000 monthly downloads" (not "significant traction")
+
+3. **Vulnerable admissions** - Admit gaps, failures, uncertainties early in the piece
+
+4. **The "neither is wrong" move** - Resist binary framing, embrace nuance. Formula: [Position A] vs [Position B]. Neither is wrong. But [the nuance that actually matters].
+
+5. **Return to solo counsel reality** - Every post circles back to resource-constrained practitioners: "For solo counsels and small teams..."
+
+6. **Short paragraphs, varied rhythm** - 2-5 sentences typically, punch with single-sentence paragraphs after buildup
+
+7. **Frameworks over advice** - Present questions/criteria, not prescriptions. "Before starting, ask 4 questions..." rather than "You should always..."
+
+8. **User leads on vulnerability** — The emotional opening and core vulnerability must come from the user's real experience. Ask for it; don't invent it. Codex's role is to build the pitch from what the user provides, not to construct an emotional frame from the topic.
+
+**Remember:** Professional tone doesn't mean boring. Houfu's voice is honest, specific, nuanced, and framework-oriented.
+
+## Audience Reviewers Guide
+
+The blog serves three overlapping but distinct audience segments:
+
+### 1. Legal Tech Blog Reviewer (Marcus Tan)
+**Persona**: Legal Technology Director, Singapore-based, 10+ years shipping production legal tech systems across ASEAN; speaks at conferences, contributes to open source
+**Use for**: Technical implementations, open source projects, honest post-mortems
+**Key values**: Technical depth, community knowledge sharing, authenticity — has a high bar and can tell if you've shipped something real
+
+**Full persona details**: `/docs/personas/marcus-tan-persona.md`
+
+### 2. Corporate Lawyer Reviewer (Sarah Chen)
+**Persona**: Solo corporate lawyer at 150-person manufacturing company ($150/month budget)
+**Use for**: Tool evaluations, budget-conscious solutions, pragmatic workflows
+**Key values**: Affordability, realistic time estimates, practical relevance
+
+### 3. Lawyer-Coder Reviewer (Wei Lin)
+**Persona**: Senior Legal Counsel at Series B fintech (lawyer who codes, 5-10 hours/week side projects)
+**Use for**: Personal project struggles, learning journeys, build vs. buy decisions, identity questions
+**Key values**: Vulnerability, specificity, "I'm not alone" validation, frameworks for decision-making
+
+**Full persona details**: `/docs/personas/wei-lin-persona.md`
+
+### When to Use Each Reviewer
+
+**Use individual reviewers** when content clearly targets one segment:
+- **legal-tech-blog-reviewer**: "How I built an open source legal document parser"
+- **corporate-lawyer-reviewer**: "Evaluating contract management tools under $200/month"
+- **lawyer-coder-reviewer**: "Why I abandoned my side project after 150 hours"
+
+**Use /feedback command (all three)** when:
+- Content has broad appeal across segments
+- You want comprehensive triangulated feedback
+- Unsure which audience will resonate most
+
+**Default to 1-2 reviewers based on content type. Use all 3 only when content explicitly addresses all three audience segments. Running all 3 on every post produces diminishing returns after round 1.**
+
+### Reviewer Routing Table
+
+| Content Type | Recommended Reviewers | Rationale |
+|---|---|---|
+| Policy/budget commentary | Sarah + Legal Tech | Practical impact + technical depth |
+| Tutorial / how-to guide | Sarah + Legal Tech | Accessibility + technical accuracy |
+| Build vs. buy decision | Wei Lin + Legal Tech | Identity resonance + technical depth |
+| Learning in public / personal struggle | Wei Lin | Validates the emotional journey |
+| Open source project / post-mortem | Legal Tech | Technical community resonance |
+| Tool evaluation (budget focus) | Sarah | Cost/practicality is the core concern |
+| Identity / "am I wasting my time" | Wei Lin | Core persona concern |
+| Broad appeal (spans all segments) | All 3 | Only when all 3 segments clearly addressed |
+
+### Key Distinctions
+
+**Technical Capability:**
+- Legal Tech Reviewer: Seasoned practitioner, wants deep implementation details
+- Sarah Chen: Non-technical, needs explanations for assumptions
+- Lawyer-Coder: Self-taught coder, questions execution not capability
+
+**Emotional State:**
+- Legal Tech Reviewer: Confident veteran, values honest failures
+- Sarah Chen: Pragmatic skeptic, values solutions that work
+- Lawyer-Coder: Imposter syndrome, isolation, validation-seeking, guilt about unfinished projects
+
+**Content Preferences:**
+- Legal Tech Reviewer: Code, architecture, open source
+- Sarah Chen: Affordability, practical steps, backup plans
+- Lawyer-Coder: Vulnerability, specific numbers, constraint acknowledgment, decision frameworks
+
+## Common Development Workflows
+
+### 1. Create a new post
+
+**Core phases: PITCH → WRITE → REVIEW → POST → CHECK**
+
+1. **PITCH** - Define scope and direction (use `generate_a_pitch` skill)
+   - Read Voice Guide Part 4 (Templates) before developing pitch
+   - Tags are suggested during pitch using `tag-registry` skill
+2. **WRITE** - Draft the content
+   - **CRITICAL: Read `/docs/Houfu_Voice_Guide.md` before writing blog posts**
+   - Apply voice patterns from guide during drafting
+3. **REVIEW** - Quality checks and refinement:
+   - Content quality audit (content-quality-auditor agent - includes voice check via audit-tone)
+   - Target audience review (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
+   - Backlink curation (backlink_curating skill)
+   - Tag validation (use `tag-registry` skill to verify tags before publishing)
+   - **Review round limit**: Maximum 2 rounds of reviewer feedback. If the same core framing issue persists after 2 rounds, switch to brainstorming with the user instead — reviewers diagnose, they don't fix framing problems.
+4. **POST** - Publish to Ghost (use `using-ghost-admin-api` skill)
+   - Always use `scripts/publish-lexical.js` — do not create per-post publishing scripts. Improve the canonical script if a feature is missing.
+   - **Infra changes belong on a separate branch.** If `publish-lexical.js` or other scripts need improvements, commit those on their own PR — not on the blog PR. PR #26 mixed 17 commits of content + script changes and became unreadable.
+5. **CHECK** - Verify published post and sync repo (use `using-ghost-admin-api` skill)
+   - Use `npm run sync-ghost <slug>` to sync Ghost metadata back to local markdown frontmatter automatically.
+   - **Publish last, sync once.** Edit freely on Ghost after publishing; run `sync-ghost` only once when closing the PR. Avoid per-edit sync-back commits (four of the last five PRs had this churn).
+
+### Commit discipline
+
+- **One commit per meaningful change** — the SessionEnd hook produces one `Session notes:` commit per Codex session. Manual commits should reflect logically stable units (draft complete, reviewer round applied, backlinks added), not every edit.
+- **Avoid auto-named branches** — `Codex/<descriptor>` branches from exploratory sessions fragment PR history. If a session's work belongs to an existing blog PR, land it there.
+
+**Throughout the process (use as needed):**
+- **BRAINSTORM** (use `brainstorming` skill) - Refine pitch, overcome writer's block on difficult sections, develop structure
+- **RESEARCH** (use `blog-research` skill) - Gather sources, facts, statistics (can happen before pitch, after pitch, or when outline is clear)
+
+**Always:**
+- Create TodoWrite todos at the start to track each phase
+- Use `note-taking` skill to update discussion.md throughout the process
+- Mark todos completed immediately after each step

@@ -88,7 +88,7 @@ There's no "legal innovation engineer" job in Singapore. Not really. AI fluency 
 
 On paper, a badge for nothing.
 
-Except the skill under the badge is the hardest thing to hire for in the country. 95% of Singapore employers report AI skill gaps. AI application development sits at the top of the hardest-to-fill list. IMDA is subsidising this exact skill for tens of thousands of people, and Budget 2026 throws a 400% tax deduction at AI training.
+Except the skill under the badge is the hardest thing to hire for in the country. Building AI applications just overtook traditional IT and data work as the single hardest role to fill in Singapore. The government is pouring money into closing that exact gap — IMDA is retraining tens of thousands of tech professionals on it, and Budget 2026 hands companies a 400% tax deduction on qualifying AI spending.
 
 So — asset or vanity line? Both, honestly.
 

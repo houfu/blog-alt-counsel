@@ -1,0 +1,23 @@
+[mcp_servers.ghost]
+args = [
+    "mcp",
+    "stdio",
+    "--tools",
+    "posts,pages,tags,members,site,settings,stats,search",
+]
+command = "/Users/houfu/.nvm/versions/node/v22.17.0/bin/ghst"
+
+[mcp_servers.jina-mcp-server]
+args = [
+    "mcp-remote",
+    "https://mcp.jina.ai/v1",
+    "--header",
+    "Authorization: Bearer jina_9387702736464db7aff3c524bfb9c0efChy3PfGdmpb_eI6imnOPA_T5-Zi3",
+]
+command = "npx"
+
+[mcp_servers.jina-mcp-server.tools.search_web]
+approval_mode = "approve"
+
+[mcp_servers.jina-mcp-server.tools.read_url]
+approval_mode = "approve"

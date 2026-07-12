@@ -143,3 +143,21 @@ way for exam-confidentiality reasons):**
 - Remaining soft gaps (handle at outline/draft, not blocking): the exact *moment* he
   decided to register, and his current emotional state re: the badge. Enough material
   to build the outline. Next: build outline for approval.
+
+### 2026-07-13 — Session 2 (local; Jina research pass, draft fact-fixes)
+- Now on local machine with Jina MCP. Used Jina to crack the sources WebFetch 403'd.
+- **CCA-F facts confirmed** against Anthropic's official Skilljar page (domain
+  weightings exact) + Pearson VUE. **Two draft fact errors caught and fixed:**
+  (1) "95% of SG employers report AI skill gaps" conflated two surveys → replaced
+  with ManpowerGroup's clean fact (AI app-dev is now the #1 hardest-to-fill skill,
+  overtaking IT & Data); (2) "400% tax deduction at AI training" → corrected to
+  "qualifying AI spending" (Budget 2026 EIS, cap S$50k, YA2027–28).
+- **Naming flag:** official Pearson code is **CCAR-F**, not CCA-F (which Houfu uses
+  publicly). Draft body uses no acronym, so no change needed; noted in research.md.
+- **[UNVERIFIED] flag:** "Sixty questions" is third-party only (not on official
+  pages). Need Houfu to confirm the real count — he sat it.
+- **Enrichment surfaced:** LegalQuants' own "legal engineer (make workflow faster)
+  vs legal quant (redesign from first principles)" distinction maps almost exactly
+  onto Houfu's drilled-out builder reflex. Optional weave into §3/§4. Offered to user.
+- research.md updated with full verification block. Next: user reads draft; confirm
+  question count; decide on LegalQuants enrichment; then quality audit + Wei Lin.

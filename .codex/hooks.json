@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/houfu/Projects/blog-alt-counsel/.codex/hooks/ghst-auth.sh'"
+          }
+        ]
+      }
+    ]
+  }
+}
