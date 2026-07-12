@@ -28,11 +28,7 @@ I'll come back to that doubt. First, the exam — because it surprised me, and b
 
 Here's the shape of one. Not a real question — the exam's under wraps — but close enough.
 
-Your AI agent keeps forgetting things you told it earlier in the conversation. Do you:
-
-- Switch to a stronger model?
-- Give it a bigger context window?
-- Write the key facts into a small structured note at the start of every turn?
+Your AI agent keeps forgetting things you told it earlier in the conversation. Do you switch to a stronger model? Give it a bigger context window? Or write the key facts into a small structured note at the start of every turn?
 
 Every one of those is a real thing a builder reaches for. None is stupid. Pick one.
 
@@ -58,13 +54,15 @@ So why bother with the last 10%? If experience gets you an A-minus, why sit the 
 
 Because the last 10% wasn't knowledge I was missing. It was habits I'd built wrong.
 
-One kept catching me. Hand me a problem and [my reflex is to build something](https://www.alt-counsel.com/tool-vs-infrastructure-mindset/?ref=every-answer-was-correct). A tool. A script. A new pipeline. It's the instinct that got me this far.
+One kept catching me. Hand me a problem and my reflex is to build something. A tool. A script. A new pipeline. It's the instinct that got me this far.
 
 It's also a distortion. Sometimes the fix isn't a new tool — it's improving the one you have, or redesigning the process until the problem disappears. The exam kept offering me that choice and watching me reach for the hammer.
 
-I know this lesson. I've [written it down](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=every-answer-was-correct). And I still failed it under exam conditions, because a habit doesn't care what you believe.
+I know this lesson. I've written it down. And I still failed it under exam conditions, because a habit doesn't care what you believe.
 
 That's the uncomfortable part. The thing that most makes me *me* — I build — was the thing the exam had to drill out of me.
+
+[I wrote about this before: building got cheap, but knowing what to build stayed expensive.](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=every-answer-was-correct)
 
 ## You Don't Certify to Prove You Can Do It
 
@@ -79,6 +77,8 @@ What actually drilled them out was a tool from LegalQuants — a community of la
 Sit with that loop for a second. An AI tool, made by a community of AI builders, drilling a lawyer for an AI exam.
 
 So here's the reframe I didn't see coming. You don't certify to prove you can do the work. You certify to find where doing the work has quietly made you worse.
+
+[More on the build-first instinct — and the lawyer who made me notice mine.](https://www.alt-counsel.com/tool-vs-infrastructure-mindset/?ref=every-answer-was-correct)
 
 ## The Part I Didn't Put on LinkedIn
 
@@ -98,13 +98,15 @@ Can I put it on my CV? I can. Whether anyone reading it yet knows what it means 
 
 My bet is that the skill shows up before the title does. It is a bet.
 
+[What "success" actually looks like for a lawyer who codes.](https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/?ref=every-answer-was-correct)
+
 ## For Solo Counsels Wondering If AI Skills Can Be Certified
 
 If you're a solo counsel or on a small team eyeing one of these, here's the useful version.
 
 The knowledge is cheap. Anthropic's prep courses are free, and you could work through the concepts in a few evenings. That's not the moat.
 
-The judgment is the moat. And judgment only comes from [shipping something and watching it break](https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/?ref=every-answer-was-correct). You can't cram the scar that tells you a bigger context window won't save your forgetful agent. You earn it.
+The judgment is the moat. And judgment only comes from shipping something and watching it break. You can't cram the scar that tells you a bigger context window won't save your forgetful agent. You earn it.
 
 So get the order right. Build first — on real problems, with real stakes, until something you made breaks in a way you'll remember. Then certify, if you want a mirror held up to your habits — not to prove you can do it, but to find where your instincts have quietly gone wrong.
 
