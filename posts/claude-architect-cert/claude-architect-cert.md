@@ -1,19 +1,23 @@
 ---
-title: "Every Answer Was Correct. That's What Made It Hard."
+title: Every Answer Was Correct. That's What Made It Hard.
 slug: every-answer-was-correct
 tags:
   - AI
   - Training
   - SoloBuilder
   - Singapore
-status: draft
+status: published
 featured: false
 github_folder: claude-architect-cert
 custom_excerpt: >-
-  I passed Anthropic's Claude Certified Architect exam — maybe the first lawyer in
-  Singapore to hold it — then wondered if I could even put it on my CV. It was hard
-  because every answer was correct, and the gaps it found were my builder habits,
-  not my knowledge.
+  I passed Anthropic's Claude Certified Architect exam — maybe the first lawyer
+  in Singapore to hold it — then wondered if I could even put it on my CV. It
+  was hard because every answer was correct, and the gaps it found were my
+  builder habits, not my knowledge.
+post_id: 6a53cc4e3ca691000115e4a2
+published_at: '2026-07-14T01:14:33.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/07/Certification-Announcement-with-AI-Background-1.png
 ---
 
 Every answer in the exam was correct. That's what made it hard.
@@ -48,7 +52,7 @@ Sixty questions like that. Nothing to memorise, because all the answers are alre
 
 ## Experience Got Me to 90%. Then It Failed Me.
 
-I "studied" for about a week. Mostly I didn't. I leaned on years of building with Claude, agents, and MCP — Model Context Protocol, the plumbing that lets an AI call your tools. The practice paper, sat without prep, came back around 90%.
+I "studied" for about a week. Mostly I didn't. I leaned on months of building with Claude, agents, and MCP — Model Context Protocol, the plumbing that lets an AI call your tools. The practice paper, sat without prep, came back around 90%.
 
 So why bother with the last 10%? If experience gets you an A-minus, why sit the exam at all?
 
@@ -96,9 +100,9 @@ The AI-certification market crossed four billion dollars this year, 400-plus cre
 
 Can I put it on my CV? I can. Whether anyone reading it yet knows what it means — that's the real question. A badge for a title that doesn't exist, pointing straight at the skill nobody can hire for.
 
-My bet is that the skill shows up before the title does. It is a bet.
-
 [What "success" actually looks like for a lawyer who codes.](https://www.alt-counsel.com/what-top-10-actually-means-for-a-lawyer-who-codes/?ref=every-answer-was-correct)
+
+Last night, I received a rejection for a job that appeared to me to require someone who is innovative. Naturally I wondered, if I had put the Claude Certification in my CV would it have made a difference? I kind of doubt it to be honest. Would it change soon? I hope so.
 
 ## For Solo Counsels Wondering If AI Skills Can Be Certified
 

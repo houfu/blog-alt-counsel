@@ -224,3 +224,24 @@ way for exam-confidentiality reasons):**
 - Next (CHECK): Houfu reviews draft in Ghost; expect prose polish there. At final
   sync, run `npm run sync-ghost every-answer-was-correct` ONCE, diff live vs local,
   merge Ghost edits back, log notable ones. Then set status/publish decision.
+
+### 2026-07-16 — Session 3 (CHECK / final sync)
+- Post is **live/published** on Ghost (published_at 2026-07-14). Ran the final sync.
+- Proxy snag: the Ghost SDK's axios (1.12.2) tripped the agent proxy's 405 (non-CONNECT
+  bug). Fixed by installing axios ≥1.16.1 with `--no-save` (node_modules only —
+  package.json/lock untouched). `sync-ghost` then worked.
+- Frontmatter synced: status→published, post_id, published_at, feature_image. Excerpt
+  already matched (the Session-2 260-char trim == live).
+- Diffed live plaintext against the published draft body. It already matched on nearly
+  everything (the Session-2 clarity/backlink/converter work == what's live). Only **3
+  genuine Ghost-editor deltas** applied: (1) "years"→"months" of building; (2) removed
+  the "My bet… It is a bet." close; (3) added the real, present-tense vulnerable beat —
+  a job rejection "last night" that reopens the CV doubt ("I kind of doubt it to be
+  honest. Would it change soon? I hope so."). This is the emotional landing he prefers:
+  lived, specific, unresolved. Kept the Session-2 `?ref=` tracking backlinks (they match
+  the live cards).
+- **TYPO to fix on Ghost:** the live rejection paragraph reads "some0ne"; wrote it
+  correctly as "someone" locally. Fix on Ghost so the two match.
+- Repo now mirrors the published post. Preparing PR to main.
+- Reminder still open: the issue-#41 publish-lexical.js infra fixes belong on a
+  SEPARATE branch, not this content PR.
