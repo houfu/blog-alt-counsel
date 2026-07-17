@@ -58,3 +58,9 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 - Positive verdicts worth remembering: "Word absorbed the agents" judged genuine insight, not escape hatch (still scores as Fail on the table); retiring the P2 framework judged honest engineering judgment, not goalpost-moving (January post pre-committed to the hedge). Differentiation confirmed: no competing 2026 legal-AI scorecard uses a confidence-inversion structure.
 - Standing asks: none raised — pre-empted (concrete examples, jargon, dual-audience structure fine as drafted).
 - Settled/rejected: none this round.
+
+### 2026-07-13 — claude-architect-cert (Round 1)
+- **Reader verdict (what Houfu actually wants from me): "I'd forward this." Would cite the exam example in a workshop on agent memory design. The CV doubt "lands harder than anything on the LinkedIn version." Respected that the post doesn't oversell what a multiple-choice exam can certify — "rarer than it should be in this genre."** Differentiation (judgment-not-knowledge + withheld CV doubt) survived from pitch into draft intact.
+- One writing-clarity note applied: the "stronger model" rebuttal conflated two failure modes (attention vs eviction) → reworded to "buried in the middle of the context… skims past it just the same" (one consistent mechanism).
+- **Process note (Houfu correction this round): reviewers are NOT fact-checkers. He wants reader-response — how it feels/reads, what lands — not verification. My verify-load-bearing-claims instinct was over-weighted here. Next time lead with the felt reaction; keep "did anything make me distrust the author?" as the only credibility angle.**
+- Standing asks: none — pre-empted. Settled/rejected: none.
