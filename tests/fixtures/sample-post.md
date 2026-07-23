@@ -24,6 +24,8 @@ Read this on [alt-counsel](https://www.alt-counsel.com/some-post/) for a bookmar
 1. First numbered item
 2. Second numbered item
 
+A paragraph between the numbered list and the code block.
+
 ```python
 def hello():
     return "world"
