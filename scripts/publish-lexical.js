@@ -253,7 +253,19 @@ class MarkdownToLexical {
         i++;
         continue;
       }
-      
+
+      // A pending list must flush before any non-list block, or it relocates
+      // to the end of the document (issue #41). Blank lines don't flush, so a
+      // list whose items are separated by blank lines stays one list.
+      if (
+        this.listItems.length > 0 &&
+        line.trim() !== '' &&
+        !/^[-*+]\s+(.+)$/.test(line) &&
+        !/^(\d+)\.\s+(.+)$/.test(line)
+      ) {
+        this.flushList();
+      }
+
       // Check for members-only paywall marker
       if (line.trim() === '<!--members-only-->') {
         this.flushList();

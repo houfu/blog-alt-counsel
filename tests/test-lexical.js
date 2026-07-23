@@ -72,6 +72,14 @@ async function main() {
   check('paywall marker converted', types['paywall'] === 1);
   check('images converted (local + remote)', types['image'] === 2);
 
+  // Node ordering — mid-document lists must stay in place, not relocate to
+  // the end of the document (issue #41)
+  const order = lexical.root.children.map((n) => n.type);
+  const lastList = order.lastIndexOf('list');
+  const codeIdx = order.indexOf('codeblock');
+  check('mid-document lists stay in document order', lastList !== -1 && lastList < codeIdx);
+  check('paragraph directly follows the numbered list', order[lastList + 1] === 'paragraph' && allText.includes('between the numbered list'));
+
   // Inline formatting
   check('bold format present', formats.includes(2));
   check('italic format present', formats.includes(1));
