@@ -40,3 +40,25 @@ Houfu proposed an article about contributing to legal open source: his experienc
 **Next steps**
 
 - Houfu answers open questions → lock pitch → tags confirmed → outline → draft
+
+## 2026-07-27 — Session 1 (cont.): Emotional core landed; Wei Lin pitch-stage consult
+
+**Houfu's answer (the emotional core, verbatim in pitch.md)**
+
+Not a success story. Double uncertainty: as contributor "don't know if my code is good"; as maintainer "don't know if this code is good". Wrote the agent (lq-ai-maintainer) to help, but "fable claims that there is no open source code review agent that can help a non technical audience". Few PRs coming through, response times below ideal, no release timeline. Believes foundations + governance help long term; "results will have to be seen". Asked: "Would that be interesting to my audience?"
+
+**What Claude did**
+
+- Rewrote the pitch (v2) around the double-uncertainty core and the honest non-success metrics; kept `[UNVERIFIED]` markers on all counts.
+- Ran a **pitch-stage Wei Lin consult** (getting-feedback skill; single reviewer per routing table "learning in public / personal struggle"; explicitly NOT counted against the 2-round draft cap — noted here so the cap stays honest). Memory file passed and MEMORY_UPDATE appended.
+
+**Wei Lin verdict**: Yes, unambiguously interesting — "the mess is the post"; a messy-middle maintainer diary is higher-trust than a success story. Title locked on his pick: "I Said Lawyers Don't Work on Each Other's Code. Then I Started."
+
+**Wei Lin unique catches (carried into pitch.md as draft obligations)**: own the Part 1 "what works" pivot in one early sentence; scene treatment for the lq-ai-maintainer beat; protect load-bearing line "This isn't a success story, and I'm writing it anyway"; build the framework; real numbers not "few PRs" (+ does maintainer time replace own-project time?); stewardship stays hypothesis-under-test.
+
+**Still open (blocking pitch lock)**
+
+- Lived numbers (PRs, response times, hours/week, how role came about; whether maintainer time displaces own-project time)
+- Exact framing of the "Fable said no such tool exists" exchange
+- Tag confirmation (proposed: OpenSource, LegalTech, Programming, ± AI)
+- Part 2 framing confirmation + target publish date

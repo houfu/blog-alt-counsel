@@ -79,3 +79,11 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
 - Load-bearing line named (protect through cuts): "The thing that most makes me *me* — I build — was the thing the exam had to drill out of me." Most-quotable: "That's not knowledge. That's a scar."
 - Standing asks raised: none — all pre-empted.
 - Settled/rejected: none this round.
+
+### 2026-07-27 — legal-oss-maintainer (pitch-stage consult)
+- **Direct verdict on Houfu's question "would a non-success maintainer story interest my audience?": YES, unambiguously — "the mess is the post." A messy-middle maintainer diary is higher-trust than a success story for this persona.**
+- Unique catches: (1) Part 1's closing promise ("what works" — docassemble/courtlistener) is being pivoted away from; the post needs one sentence owning the pivot ("I'd planned to write about what works. One month into maintaining lq-ai, I don't have that post yet"), not hiding it — same sequencing family as the 23-month-gap catch. (2) The lq-ai-maintainer tool build ("built the agent, problem persists anyway") is the sharpest builder-identity beat but sits in a subordinate clause — deserves scene treatment at draft. (3) Load-bearing line to protect through cuts: "This isn't a success story, and I'm writing it anyway" — stronger than "results will have to be seen"; candidate opening or closing line.
+- Title verdict: #1 "I Said Lawyers Don't Work on Each Other's Code. Then I Started." — present-tense dramatic irony, rewards Part 1 readers without requiring them. #3 "The Maintainer, Not the Genius" rejected as title (states unearned settled identity) but keep as subhead/pull-quote candidate.
+- Standing asks raised: action-oriented next step — not yet addressed at pitch stage; framework ("what maintaining someone else's code actually asks of you") must be built out at draft. Emotional beat — pre-empted, confirmed genuine. Specificity — `[UNVERIFIED]` numbers correctly blocking; also asked whether maintainer hours are *replacing* Houfu's own project time (real trade-off this persona recognizes).
+- Reinforced: keep stewardship epiphany framed as hypothesis-under-test, not conversion — certainty here would read as humble-bragging.
+- Settled/rejected: none this round.
