@@ -56,6 +56,14 @@ Not a success story. Double uncertainty: as contributor "don't know if my code i
 
 **Wei Lin unique catches (carried into pitch.md as draft obligations)**: own the Part 1 "what works" pivot in one early sentence; scene treatment for the lq-ai-maintainer beat; protect load-bearing line "This isn't a success story, and I'm writing it anyway"; build the framework; real numbers not "few PRs" (+ does maintainer time replace own-project time?); stewardship stays hypothesis-under-test.
 
+## 2026-07-27 — Session 1 (cont. 2): Part 1 callbacks + Mike status check
+
+Houfu approved the pitch direction ("Yes let me get some details later") — lived numbers deferred, pitch effectively locked on direction pending those details. He then asked what Part 1 material can still be brought in, and whether to check if the Mike situation has changed.
+
+**What Claude did**: news-level Mike status check (repo stats unavailable — session network policy blocks GitHub for out-of-scope repos). Findings + callback assessment written to `research.md`. Headlines: Mike still actively shipping (July 16 release), license still AGPL-3.0 (no announced change despite May permissive-switch musings), mikeoss.com positioning around BYO-API-key/local control. The "roots" metrics (external merged PRs, fork→contributor conversion) need repo data — flagged for Houfu to run the Part 1 `gh` queries locally or for a draft-time session with access.
+
+**Recommendation recorded**: Mike day-90 revisit is the strongest callback (works regardless of outcome); close the LegalQuants infrastructure loop (Part 1 measured the absence, lq-ai attempts the presence); lived author-vs-maintainer callback; skip Harvey re-litigation. Open narrative question for Houfu: did lq-ai predate Part 1 / any causal link?
+
 **Still open (blocking pitch lock)**
 
 - Lived numbers (PRs, response times, hours/week, how role came about; whether maintainer time displaces own-project time)
