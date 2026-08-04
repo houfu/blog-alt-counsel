@@ -402,3 +402,13 @@ Houfu's verdict on the interrogation of why drafts failed: *"I don't like it. En
 **Out of scope, named:** contributor-concentration story, governance measurement + review-capacity thread, Mike day-90, both dead theses. The v7 corrections survive only as learning-curve beats.
 
 **Verification debt for WRITE:** doc-size numbers (v7's 94,678/255 from local repo read — re-measure or stay qualitative); "what's a canon map" and the 17 July quote (re-pull from pitch v7 at commit 93974a0 on the old branch). No target publish date set.
+
+## 2026-08-04 — Session 4 (cont.): Metaphor swap — mammoth out, cat herder in (Houfu's request)
+
+Houfu: *"instead of mammoth, can we use a metaphor, i had told others that i wanted to be an official cat herder for the project, and this is strongly related."*
+
+**This supersedes the 2026-07-27 settled decision** ("cat herder was meant to be flippant... use as a light aside or drop entirely"). The reversal is Houfu-initiated, and it's not the same move that decision guarded against: in July, Claude built a title and framework on a throwaway line; now Houfu is electing the metaphor himself, and his own 2026-07-30 words make it load-bearing — *"i always aimed to be replaceable, and as official cat herder, im supposed to let cats do their thing. it's the raison d'être for creating the agent and focusing on the governance."* That quote is the join between the metaphor and the coding agent.
+
+**Why it improves on mammoth:** mammoth says the job is big; cat herder says the job is coordinating many independent contributors none of whom you command — which is the actual shape of a community-led project, and connects directly to replaceability.
+
+Pitch v2 locked on first presentation. Thesis, spine, beats, and thesis_keywords updated to match; "serious job wearing a flippant title" kept in the paragraph as the honest nod to his own earlier objection. Sourcing for the two verbatim quotes recorded in pitch.md verification notes (both live in old-branch discussion.md).

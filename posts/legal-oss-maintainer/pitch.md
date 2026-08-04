@@ -3,7 +3,7 @@ word_budget: 1800
 budget_tolerance: 10
 primary_audience: wei-lin
 secondary_audience: [marcus]
-thesis_keywords: ["coding agent", "lq-ai", "certification", "learning curve"]
+thesis_keywords: ["coding agent", "lq-ai", "certification", "cat herder"]
 protected_lines: []
 voice: {lane: learning-in-public, moves: ["specific lived numbers", "one honest admission, stated once", "close on hope/appointment"]}
 interrogation:
@@ -31,17 +31,17 @@ target_date: ~
 *Clarified same day: "for the rest of us" = typo for "for the rest of the year" — the commitment is time.*
 
 **Title:** [deferred by Houfu 2026-08-04 — "lets think of it once we done the draft". Old title dropped.]
-**Thesis:** The best use of a freshly certified skill is a project big enough to need it — and a truly community-led legal AI product, which doesn't exist anywhere else today, is worth the rest of his year.
-**Spine:** It's been a tough learning curve, but it's worth doing — so I'm making it my focus for the rest of 2026.
+**Thesis:** The best use of a freshly certified skill is a job only you will do — herding a community-led legal AI product that doesn't exist anywhere else today — and that job is worth the rest of his year.
+**Spine:** It's been a tough learning curve, but it's worth doing — so I'm herding these cats for the rest of 2026.
 
-## Pitch (approved 2026-08-04)
+## Pitch (approved 2026-08-04; metaphor amended mammoth → cat herder same day, at Houfu's request)
 
-> At the start of July I passed Anthropic's architect certification. The first real thing I pointed it at wasn't a demo — it was somebody else's project. lq-ai is a community-led legal AI platform, barely three months old, and maintaining it is a mammoth job: the documentation is huge, the project's canon prizes transparency, and what it's trying to be — a truly community-led legal AI product — doesn't exist today. That's exactly the kind of job a coding agent is built for, so I built one. The learning curve has been rough. I threw my entire first build away on day two and kept only the spec. I had to ask what a canon map was. Twice I discovered I'd been careful about the wrong thing. But the agent now runs in production, signed, and it has already reviewed one of my own pull requests. This post is about picking a mammoth on purpose: why this project earned the skill I'd just certified, what the curve actually cost, and why I'm making it my focus for the rest of 2026.
+> At the start of July I passed Anthropic's architect certification. The first real thing I pointed it at wasn't a demo — it was somebody else's project. lq-ai is a community-led legal AI platform, barely three months old, and on my first calls with the project I told everyone what I wanted to be: its official cat herder — not the person who writes the code, the person who lets the cats do their thing and keeps the whole clowder moving roughly together. It's a serious job wearing a flippant title: the documentation is huge, the canon prizes transparency, and what the project is trying to be — a truly community-led legal AI product — doesn't exist today. A cat herder needs tools, so I built one: a coding agent. The learning curve has been rough. I threw my first build away on day two and kept only the spec. I had to ask what a canon map was. Twice I discovered I'd been careful about the wrong thing. But the agent now runs in production, signed, and it has already reviewed one of my own pull requests. This post is about why these cats earned the skill I'd just certified — and why I'm herding them for the rest of 2026.
 
 ## Beats (sum = 1,800)
 
-- **The decision (~280).** Fresh from the cert, payoff stated early (this is my project for the rest of 2026). What lq-ai is, plainly.
-- **Why this mammoth (~380).** A truly community-led legal AI product doesn't exist today; huge docs and a transparency canon; exactly the job a coding agent is for.
+- **The decision (~280).** Fresh from the cert, payoff stated early (this is my project for the rest of 2026). What lq-ai is, plainly — and the first-calls declaration: official cat herder.
+- **The cat herder's job (~380).** Not writing the code — letting the cats do their thing while keeping the clowder together. A truly community-led legal AI product doesn't exist today; huge docs and a transparency canon; exactly the job a coding agent is for, because a herder's raison d'être is being replaceable.
 - **The learning curve (~450).** Day-2 reset (deleted everything except the spec); "what's a canon map"; twice careful about the wrong thing. One honest admission register, not a confession arc.
 - **What it does now (~330).** In production, signed, reviewed his own PR; the block-writes hook blocking a live Claude session; counterweights stated (0 stars, open queue).
 - **Worth it, and the commitment (~360).** Why the curve was the price and the project is worth it; solo-counsel return; close on the rest-of-year appointment — hope, not a kicker.
@@ -61,3 +61,4 @@ target_date: ~
 - "What's a canon map" + the 17 July correction: from the maintenance-log sweep recorded in pitch v7 (old branch, commit 93974a0) — re-verify quotes there at draft time.
 - [UNVERIFIED] documentation size numbers (v7 claimed 94,678 lines / 255 files from a local repo read) — re-measure at draft time or stay qualitative.
 - Sequencing note: the cert post (claude-architect-cert) is unpublished; "my certification" can't backlink to it yet. If it publishes first, add it to must_link.
+- Cat-herder sourcing (verbatim, old-branch discussion.md): declared "cat-herder-in-chief" on his first lq-ai calls (recorded 2026-07-27); and 2026-07-30: "i always aimed to be replaceable, and as official cat herder, im supposed to let cats do their thing. it's the raison d'être for creating the agent and focusing on the governance." The 2026-07-27 settled decision ("flippant, aside only") is superseded by Houfu's explicit request 2026-08-04 to make it the post's metaphor.
