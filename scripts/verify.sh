@@ -76,6 +76,29 @@ for f in scripts/*.js .claude/hooks/*.js; do
 done
 
 
+# ─── 3b. Hook wiring ─────────────────────────────────────────────────────────
+header "3b. Hook wiring (settings.json commands resolve)"
+if node -e '
+const s=require("./.claude/settings.json"), fs=require("fs");
+let bad=0;
+for (const ev of Object.values(s.hooks||{})) for (const g of ev) for (const h of g.hooks||[]) {
+  const m=(h.command||"").match(/[\w./$-]*\.claude\/hooks\/[\w.-]+/);
+  if (m) { const p=m[0].replace(/^"?\$CLAUDE_PROJECT_DIR\/?/,""); if(!fs.existsSync(p)){console.log("MISSING "+p);bad++;} }
+}
+process.exit(bad?1:0)' 2>/dev/null; then
+    pass "all settings.json hook commands resolve to existing scripts"
+else
+    fail "settings.json references a missing hook script"
+fi
+for f in .claude/hooks/*.sh; do
+    if bash -n "$f" 2>/dev/null; then
+        pass "$f syntax"
+    else
+        fail "$f — bash syntax error"
+    fi
+done
+
+
 # ─── 4. No hardcoded secrets ─────────────────────────────────────────────────
 header "4. No hardcoded secrets in tracked config"
 if grep -rIlE "(jina_[a-zA-Z0-9]{20,}|sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{20,})" \
@@ -134,6 +157,20 @@ for f in .claude/agents/*.md; do
 done
 
 
+# ─── 6b. Agent references resolve ────────────────────────────────────────────
+header "6b. Agent references resolve (CLAUDE.md, skills, commands)"
+agents=$(ls .claude/agents/*.md 2>/dev/null | xargs -n1 basename | sed 's/\.md$//')
+refs=$(grep -rhoE '\b(inhouse-lawyer-reviewer|legal-tech-blog-reviewer|lawyer-coder-reviewer|content-quality-auditor|audit-(substance|tone|flow|structure|readability|accessibility))\b' \
+       CLAUDE.md .claude/skills .claude/commands 2>/dev/null | sort -u)
+for ref in $refs; do
+    if echo "$agents" | grep -qx "$ref"; then
+        pass "$ref resolves"
+    else
+        fail "$ref referenced in CLAUDE.md/skills/commands but .claude/agents/$ref.md missing"
+    fi
+done
+
+
 # ─── 7. Skill frontmatter ─────────────────────────────────────────────────────
 header "7. Skills"
 for dir in .claude/skills/*/; do
@@ -157,6 +194,41 @@ if node scripts/lint-posts.js > /tmp/lint-posts-out.txt 2>&1; then
     pass "lint-posts: $(tail -1 /tmp/lint-posts-out.txt)"
 else
     fail "lint-posts found errors — run: node scripts/lint-posts.js"
+fi
+
+
+# ─── 8a. Strict lint for new-contract drafts ─────────────────────────────────
+# Draft posts whose pitch.md has frontmatter opted into the pitch contract;
+# they must pass --strict. Legacy posts are exempt (no flag day).
+header "8a. Strict lint (draft posts with pitch contract)"
+contract_drafts=$(node -e '
+const fs=require("fs"),path=require("path");
+let matter;try{matter=require("gray-matter")}catch{process.exit(0)}
+const {findMainFile}=require("./scripts/lib/postfile");
+const out=[];
+for (const f of fs.readdirSync("posts")){
+  const dir=path.join("posts",f);
+  if(!fs.statSync(dir).isDirectory()||f.startsWith("."))continue;
+  const pitch=path.join(dir,"pitch.md");
+  if(!fs.existsSync(pitch))continue;
+  let pfm;try{pfm=matter(fs.readFileSync(pitch,"utf-8")).data||{}}catch{continue}
+  if(Object.keys(pfm).length===0)continue;
+  const main=findMainFile(dir,f);
+  if(!main)continue;
+  let fm;try{fm=matter(fs.readFileSync(path.join(dir,main),"utf-8")).data||{}}catch{continue}
+  if(fm.status==="draft")out.push(f);
+}
+console.log(out.join(" "));' 2>/dev/null)
+if [ -z "$contract_drafts" ]; then
+    pass "no draft posts under the pitch contract yet"
+else
+    for d in $contract_drafts; do
+        if node scripts/lint-posts.js --strict "$d" > /tmp/lint-strict-out.txt 2>&1; then
+            pass "strict lint: $d"
+        else
+            fail "strict lint failed for $d — run: node scripts/lint-posts.js --strict $d"
+        fi
+    done
 fi
 
 

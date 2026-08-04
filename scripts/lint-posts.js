@@ -516,6 +516,9 @@ function lintFolder(folder) {
   } else {
     if (!fm.title) warn(folder, `${main} frontmatter missing "title"`);
     if (!fm.status) warn(folder, `${main} frontmatter missing "status"`);
+    if ((fm.status === 'published' || fm.status === 'scheduled') && !fm.post_id) {
+      warn(folder, `${main} is ${fm.status} but frontmatter has no "post_id" — a re-publish would create a DUPLICATE Ghost post; sync it (npm run sync-ghost <slug>)`);
+    }
     if (canonicalTags && Array.isArray(fm.tags)) {
       for (const tag of fm.tags) {
         if (typeof tag === 'string' && !canonicalTags.has(tag)) {

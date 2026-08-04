@@ -17,7 +17,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Bash",
+        "matcher": "Bash|mcp__ghost__ghost_post_create|mcp__ghost__ghost_post_update",
         "hooks": [
           {
             "type": "command",

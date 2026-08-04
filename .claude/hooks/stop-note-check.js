@@ -45,19 +45,50 @@ process.stdin.on('end', () => {
   // -uall lists individual untracked files (a bare new folder shows as
   // "?? posts/folder/" otherwise and the per-file parsing below misses it)
   const status = git(['status', '--porcelain', '-uall', 'posts/'], root);
-  if (!status.trim()) process.exit(0);
 
   const changed = new Map(); // folder -> { content: bool, notes: bool }
-  for (const line of status.split('\n')) {
-    const file = line.slice(3).trim();
+  const record = (file) => {
     const m = file.match(/^posts\/([^/]+)\/(.+)$/);
-    if (!m) continue;
+    if (!m) return;
     const [, folder, rest] = m;
     const entry = changed.get(folder) || { content: false, notes: false };
     if (rest === 'discussion.md') entry.notes = true;
     else if (/\.md$/.test(rest) && !/^(README|REVIEWS)/i.test(rest)) entry.content = true;
     changed.set(folder, entry);
+  };
+  for (const line of status.split('\n')) {
+    if (line.trim()) record(line.slice(3).trim());
   }
+
+  // A well-run session COMMITS its post work, leaving porcelain clean — the
+  // v1 hole. Also count files committed since the session started (first
+  // timestamp in the transcript; fall back to 6 hours).
+  let since = '6 hours ago';
+  const transcript = data.transcript_path || '';
+  if (transcript && fs.existsSync(transcript)) {
+    try {
+      const head = fs.readFileSync(transcript, 'utf-8').split('\n', 5);
+      for (const l of head) {
+        try {
+          const t = JSON.parse(l).timestamp;
+          if (t) {
+            since = t;
+            break;
+          }
+        } catch {
+          /* keep scanning */
+        }
+      }
+    } catch {
+      /* fall back to 6 hours */
+    }
+  }
+  const committed = git(['log', `--since=${since}`, '--name-only', '--pretty=format:', '--', 'posts/'], root);
+  for (const line of committed.split('\n')) {
+    if (line.trim()) record(line.trim());
+  }
+
+  if (changed.size === 0) process.exit(0);
 
   const needNotes = [];
   for (const [folder, e] of changed) {

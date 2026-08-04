@@ -62,10 +62,14 @@ SESSION_START=""
 if [[ -n "$TRANSCRIPT" && -f "$TRANSCRIPT" ]] && command -v node &> /dev/null; then
   SESSION_START="$(head -5 "$TRANSCRIPT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{for(const l of d.split("\n")){try{const t=JSON.parse(l).timestamp;if(t){process.stdout.write(t);return}}catch{}}})' 2>/dev/null)"
 fi
-SESSION_START="${SESSION_START:-$(date -u -d '6 hours ago' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || echo '6 hours ago')}"
+# GNU date has -d, BSD/macOS date has -v; fall back to a git-parseable phrase
+if [[ -z "$SESSION_START" ]]; then
+  SESSION_START="$(date -u -d '6 hours ago' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v-6H +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || echo '6 hours ago')"
+fi
 
 # Guard: dedupe per session
-STATE_KEY="$STATE_DIR/last-wrap-${SESSION_ID:-$(git status --porcelain posts/ 2>/dev/null | sha1sum | cut -c1-12)}"
+# sha1sum is GNU-only; macOS ships shasum
+STATE_KEY="$STATE_DIR/last-wrap-${SESSION_ID:-$(git status --porcelain posts/ 2>/dev/null | { sha1sum 2>/dev/null || shasum; } | cut -c1-12)}"
 if [[ -f "$STATE_KEY" ]]; then
   log "skipped: already wrapped session ${SESSION_ID:-unknown}"
   exit 0
@@ -154,13 +158,14 @@ EOF
 
   rm -f "$CONTEXT_FILE"
 
-  # Commit whatever the summary run produced (discussion.md and any dirty files)
-  if [[ -z "$(git status --porcelain -- "$POST_DIR" 2>/dev/null)" ]]; then
-    log "$folder: no changes after summary, nothing to commit"
+  # Commit ONLY the discussion notes — sweeping the whole folder pulled
+  # unrelated in-flight changes into the notes commit
+  if [[ -z "$(git status --porcelain -- "$DISCUSSION" 2>/dev/null)" ]]; then
+    log "$folder: no discussion.md changes after summary, nothing to commit"
     continue
   fi
 
-  git add -- "$POST_DIR" 2>> "$LOG_FILE"
+  git add -- "$DISCUSSION" 2>> "$LOG_FILE"
 
   COMMIT_MSG=$(cat <<EOF
 Session notes: $folder — $COMMIT_SUMMARY
