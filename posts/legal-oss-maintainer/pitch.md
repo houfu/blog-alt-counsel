@@ -5,7 +5,7 @@ primary_audience: wei-lin
 secondary_audience: [marcus]
 thesis_keywords: ["coding agent", "lq-ai", "certification", "cat herder"]
 protected_lines: []
-voice: {lane: learning-in-public, moves: ["specific lived numbers", "one honest admission, stated once", "close on hope/appointment"]}
+voice: {lane: learning-in-public, moves: ["specific lived numbers", "one honest admission, stated once", "close on hope/appointment", "return to solo counsel reality"]}
 interrogation:
   diagnosis: "His framing: a mammoth job that truly benefits from a coding agent. Probed: the mammoth-ness is real in the data (374 PRs in ~3 months, huge docs, open backlog); the honest tension is that 'worth it' must survive the counterweights (agent at 0 stars, queue, displacement cost) — the post states them rather than hides them."
   differentiation: "Not another 'I built a coding agent' tutorial: the subject is choosing a mammoth on purpose — a lawyer pointing a fresh certification at a community-led legal AI product that doesn't exist anywhere else, and committing his year to it."

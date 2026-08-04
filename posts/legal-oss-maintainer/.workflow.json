@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-08-04T22:40:22.033Z",
+    "verdict": "Draft written same-session against locked pitch; thesis/scope/emotional core aligned; no subject drift vs original framing",
+    "draft_sha": "22afae35fe05",
+    "pitch_sha": "ab1977fae546"
+  },
+  "audit_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-04T22:40:52.438Z",
+      "draft_sha": "22afae35fe05",
+      "words": 1318,
+      "agents": [
+        "audit-substance",
+        "audit-tone"
+      ]
+    }
+  ],
+  "review_rounds": [],
+  "length_audit": null,
+  "overrides": []
+}
