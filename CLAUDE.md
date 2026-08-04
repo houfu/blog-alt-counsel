@@ -160,8 +160,8 @@ Run `gh auth login` to authenticate, or set `GITHUB_TOKEN` as an environment var
 - Quality checks need to be tracked (content audit, legal review, etc.)
 
 **Quality check todos are mandatory** - Include these in your todo list for content workflows:
-- Content quality audit (using content-quality-auditor agent)
-- Target audience review (using inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
+- Content quality audit (the two audit agents — audit-substance and audit-tone — launched in one message; the linter owns the mechanical checks)
+- Target audience review (reviewers per the pitch's `primary_audience`; `/feedback` routes automatically)
 - Backlink curation
 - Final proofreading before publishing
 
@@ -284,6 +284,10 @@ If you need to write quickly without reading the full guide, these core principl
 
 ## Audience Reviewers Guide
 
+**Reviewers are constituencies, not auditors.** Each reviewer is one of the blog's three target audiences; their review answers "did this post serve me?" — reader-response verdict first, suggestions as a tagged bonus. They report everything unfiltered; the getting-feedback skill's synthesis step does the filtering. Routing is declared at pitch time via `primary_audience` in pitch.md frontmatter, with an eye on portfolio balance (no constituency neglected too long).
+
+**Model pins are deliberate trade-offs, re-swept on new model generations.** Wei Lin runs `model: inherit` (highest unique-catch rate — the judgment-heavy channel rides the session model); Marcus, Sarah and the audit agents pin `sonnet` (their measured value is verification, arithmetic, and pattern-matching, which the cheaper tier handles; ~70% of reviewer output is templated regardless of model). Every pin carries a one-line comment stating the trade-off. When a new model generation lands, re-run the sweep instead of carrying pins forward untested.
+
 The blog serves three overlapping but distinct audience segments:
 
 ### 1. Legal Tech Blog Reviewer (Marcus Tan)
@@ -381,7 +385,7 @@ An evidence audit of every recorded review found ~70% of reviewer advice is temp
    - **Pre-empt the predictable reviewer asks.** ~70% of recorded reviewer advice is the same per persona. Address it in the draft so review rounds are spent on post-specific catches, not templates: cost/time/budget reality and security-compliance where relevant (Sarah asks in 6/10 reviews), concrete examples and jargon defined on first use (Marcus, 7/9), an honest emotional beat and a concrete next step (Wei Lin, 5/11). The pre-review checklist in the getting-feedback skill covers these.
 3. **REVIEW** - Quality checks and refinement, **in this order**:
    1. **Pitch checkpoint.** Before any review, compare the draft against the pitch on thesis, scope, and emotional core. If they've diverged, decide explicitly with the user: either the draft wandered (revise it back), or **the pitch was wrong — amending it is then the correct move, not a violation.** When amending, record in discussion.md *why the pitch was wrong and which pitch-time check would have caught it* (untested diagnosis? unverified data? framing risk?). That feedback loop is the point: a mid-draft pitch change means pitch interrogation failed, and the workflow should learn from it rather than hide it.
-   2. **Run `npm run lint-posts <folder>` first, then one content quality audit** (content-quality-auditor agent — includes voice check via audit-tone). The linter now covers the audit's most-repeated mechanical findings (horizontal rules, heading skips, empty alt text, GitHub spelling, image sizes) — the audit should spend its round on judgment calls (semantic repetition, jargon, tone, example sufficiency), not re-reporting lintable defects. **Maximum 1 audit round before reviewers see the draft.** Audit hoarding — 3-4 polish cycles before any reviewer input — is how the round cap gets bypassed (open-claw-intro ran 4+ cycles this way).
+   2. **Run `npm run lint-posts <folder>` first, then one content quality audit** — the two audit agents, **audit-substance** (progression, sequencing, repetition, examples, claims) and **audit-tone** (Houfu-voice judgment against the pitch's voice contract), launched in one message. The linter owns the mechanical findings (horizontal rules, heading skips, alt text, GitHub spelling, image sizes, word budget, thesis presence, banned phrases, link text) — the audit spends its round on judgment calls only. **Maximum 1 audit round before reviewers see the draft**, enforced by the workflow gate (audit-polish cycles count as rounds; open-claw-intro once ran 4+ cycles this way).
    3. **Target audience review** (inhouse-lawyer-reviewer, legal-tech-blog-reviewer, or lawyer-coder-reviewer agent, or /feedback command for all three)
    4. **Length audit BEFORE applying additive reviewer fixes** — this ordering is the most-violated rule (followed in ~40% of recent posts). If reviewer fixes would add >~10% length, find the cuts first, then apply the fixes.
    5. Backlink curation (backlink_curating skill)
