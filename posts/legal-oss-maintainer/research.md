@@ -476,3 +476,49 @@ Two external claims in §9.1 were wrong or flattened, caught by Marcus and verif
 | Inline review comments, all time | **9** — 7 his, 2 from another reviewer |
 | Formal reviews before 2026-07-23 | **0**, across 396 PRs |
 | Open PRs | **80** total · 46 one contributor's re-file · 19 dependabot · **14 genuine external**, oldest 28 days |
+
+## 12. UPDATE 2026-08-04 — refresh for the cat-herder pitch (rewrite branch)
+
+All GitHub figures pulled live via `gh` REST on **2026-08-04**. Snapshot discipline per §11: do not mix these numbers with §1 (2026-07-27) or §8 (2026-07-30) in a draft — this section supersedes both for anything the draft states as current.
+
+### 12.1 lq-ai since 07-30 — the review culture held, and the herder is alone at the gate
+
+- **Merged since 07-30: 10 PRs, every single one merged by houfu.** Seven on 07-30 (his two consolidation sweeps #476/#477 plus five dependabot bumps), then SaifAlYounan's security fixes **#399 (07-30), #397 (08-01), #400 (08-03)**.
+- **PR #400 completed its arc and merged 2026-08-03** — the canon-citing security review (base_url egress guard). Full timeline: CHANGES_REQUESTED 07-28 → second CHANGES_REQUESTED 08-01 → APPROVED and merged 08-03. Two full review rounds on a security change, settled by the project's own transparency canon. **Beat 4/5's strongest scene is no longer pending — it landed.**
+- **The review loop is now a practice, not a burst.** §8.8 warned "three days is not a trend." It is now five reviewed merges of one contributor's security work across nine days (#398, #396, #399, #397, #400), 7 PRs total carrying houfu reviews. The conversion-narrative risk has receded; the honest claim is "a month in, the loop keeps closing."
+- **Founder quiet: one full month.** Kevin-Tucuxi — 0 commits since 07-30; last commit to `main` remains **2026-07-04**. Framing rule unchanged (§6): no abandoning/leaving/stepping-back language; GOVERNANCE.md's "founder-led → carried by a committee" wording is the register.
+- **Backlog: 73 open** (44 SaifAlYounan re-filed set, 12 dependabot — down from 18 after his sweep-and-close triage, 17 others incl. his own 2). Large externals (#314, #267, #265) unmoved.
+- Stars 112 · forks 50 · last push 2026-08-03. **Still no release since `desktop-v0.6.2` (2026-07-04) — 31 days.** The no-release-timeline counterweight stays alive.
+
+### 12.2 lq-maintainer-agent since 07-30 — shipping daily, still invisible
+
+- **v0.4.1 "the field-feedback release" published 2026-07-30 02:12** (the 2am release noted in §10.8). 8 commits since; **last push 2026-08-04 — today.** The commitment in the pitch's close is visible in the push log.
+- Still **0 stars**, 1 fork. The honest counterweight holds.
+
+### 12.3 Documentation corpus — measured, correcting the unlogged v7 figures
+
+From the local lq-ai clone (snapshot 2026-07-30, `9acfb665`): **`docs/` holds 254 markdown files, 94,361 lines**; **23 ADRs**; **244 unique DE-numbered entries** in the PRD's deferred-enhancement backlog; `GOVERNANCE.md` at repo root. (v7 had said 94,678 lines / 255 files / 243 ideas without logging a source — use these measured figures.) Whole-repo markdown for context: 1,368 files / 382,744 lines.
+
+### 12.4 Quotes ported from the v7 log sweep (old branch, commit 93974a0) — beat 3 material
+
+The 2026-07-30 sweep of maintenance-session logs (121 typed messages) lived only in discarded pitch v7; the finds worth keeping, verbatim:
+
+- **The 17 July correction — nine days before the manifesto:** *"It keeps telling me that there are architectural issues that i must escalate to human discussion, but what if there are already decisions made that will narrow the amount of uncertainty there actually is? … evaluate whether our maintainer actually interrogates and whether it can assist in determining what is the actual scope of uncertainty involved in line with the ADR and philosophy of this project."* Two corrections on the same axis: 17 July (stop escalating what's decided), 26 July (caution belongs on irreversibility, §10.2–10.3).
+- **The vulnerable register, all verbatim:** *"What's a canon map."* · *"by the way, what does use uv instead of dependabot mean"* · *"how is the word add in tested?"* · *"you need to help me understand what does it mean when there are two signed off by message"*
+- **PR #400's canon citation:** *"i think there is also canon about transparency and it is better to be explicit about what is allowed vs relying on python."* (Now attached to a merged PR — see 12.1.)
+- **The finding contract's three real-PR origins:** impact — *"what is the impact?"* (#399); scope — *"this might be a bug fix that i don't necessarily think is under the scope of this PR"* (#316); ask — *"the major finding says it does not touch a test. but what does this mean?"* (#398).
+- **GOVERNANCE.md's origin instinct:** *"i do wish we can document the options we heard and then evaluate them, much like an ADR"* and *"should we have an adr as to how we hold meetings in committee? Doesn't sound like software architecture but still?"* (both 07-20).
+
+### 12.5 "Herding cats" has academic standing (beat 2, one line of colour) 🌍
+
+The metaphor is established in open-source research, not just hallway talk: Michlmayr & Fitzgerald's release-management case study is literally titled *"Herding Cats: A Case Study of Release Management in an Open Collaboration Ecosystem"* ([ResearchGate](https://www.researchgate.net/publication/303097912_Herding_Cats_A_Case_Study_of_Release_Management_in_an_Open_Collaboration_Ecosystem)), extended in the Journal of Internet Services and Applications ([Springer, 2017](https://link.springer.com/article/10.1186/s13174-017-0063-2)) — key finding: what works on volunteer ecosystems is **influence instead of direct control**, which is the cat herder's method stated formally. Karl Fogel's *Producing Open Source Software* covers the same ground ([discussion](https://jeffpaul.com/2025/09/thoughts-on-producing-open-source-software-by-karl-fogel/)). US/EU-centric sources; fine for one line.
+
+### 12.6 What this does to the pitch (≤3 findings touch beats; rest logged)
+
+1. **Beat 4–5:** PR #400 merged — the "what it does now / worth it" evidence upgrades from a pending review to a completed two-round arc, and the review loop is now a nine-day practice, not a three-day burst.
+2. **Beat 2:** the herder-alone fact — every merge for a month has been his, while the founder's quiet reached a full month. Strengthens "the job is real" but must wear GOVERNANCE.md's framing, never a departure narrative.
+3. **Beat 2:** documentation figures corrected to measured values (254 files / 94,361 lines / 23 ADRs / 244 parked ideas).
+
+**Available, not used:** dependabot triage sweep detail; whole-repo markdown count; herding-cats citation (optional colour); backlog composition detail.
+
+**Still needed from Houfu (unchanged, for the quiz):** what "focus for the rest of 2026" concretely looks like; how the cat-herder role came about (invited/volunteered/self-appointed) and the lived cert→lq-ai sequence; hours/week and what it displaces; consent set (SaifAlYounan naming, committee members, quoting his own session logs).
