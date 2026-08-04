@@ -481,3 +481,17 @@ Round 1 of 2 used. Lint clean throughout.
 **Beer line discussed, kept verbatim.** The reviewers attacked opposite halves (Marcus: the joke is stock FOSS; Wei Lin: the lead-in is vague) — which reads as evidence the sentence works whole. For the blog's lawyer audience the beer/freedom gloss explains, not clichés. Stays unless Houfu says otherwise.
 
 **Length audit recorded:** 1,446 words vs 1,800 budget — growth since round 1 is reviewer-requested additions (offsetting CUTs applied first) plus these five calls; no padding found.
+
+## 2026-08-05 — Session 4 (cont.): Pushed to Ghost
+
+**Beer line: kept verbatim, discussion closed** — Houfu: "let's leave that quote alone."
+
+**Pre-checks before overwrite:** live draft's updated_at was 2026-07-30 15:24 — the draft-2 push itself, so no Ghost hand-edits existed to rescue. Dry-run verified: 3 bookmark cards (two internal with ?ref=official-cat-herder + GitHub footer), 2 inline links (Springer citation, lq-maintainer-agent repo), no lists/tables to trigger converter quirks.
+
+**Published:** updated in place, post_id unchanged, slug now official-cat-herder, tags AI/LegalTech/OpenSource (Programming dropped from the old Ghost tag set), new title and excerpt. Preview: https://www.alt-counsel.com/p/db422019-0635-4658-929b-bf295e612a2a/
+
+**Converter gap noted for the infra PR:** standalone github.com links don't become bookmark cards — the bookmark allowlist (publish-lexical.js ~line 492) is a hardcoded domain list without github.com. The lq-maintainer-agent link ships as an inline link meanwhile.
+
+**Infra PR shopping list (separate branch, after this post):** reviewer agents' broken model frontmatter (inline YAML comments); the self-referential node_modules symlink on main (deletion already recorded on this branch); github.com in the bookmark allowlist.
+
+**Still open before publish:** backlink curation sweep (must-links placed); feature image (none set — Houfu picks in Ghost editor or hands over a file); publish/schedule date; consent items if any Slack-sourced upgrades are wanted; final sync-ghost at PR close.
