@@ -1,10 +1,13 @@
 # Pre-Review Checklist (Run Before Sending to Reviewers)
 
-## Pitch Compliance (the drift gate — check FIRST)
+## Pitch Compliance (the drift gate — check FIRST; this checklist is the ONE owner of drift detection)
 - [ ] Thesis in the draft matches the thesis in pitch.md?
+- [ ] **Subject of the draft is the subject of the ORIGINAL framing message** (the verbatim block in pitch.md — not just of the current pitch version)?
 - [ ] Scope matches (no sections the pitch never promised, nothing promised but missing)?
 - [ ] Emotional core/opening is the one the user provided for the pitch?
+- [ ] Lint is clean, including word budget and thesis-keyword presence (`npm run lint-posts <folder>`)?
 - [ ] If any answer is no: stop — resolve with the user (revise draft or consciously amend pitch, logged in discussion.md) before reviewers see it
+- [ ] Checkpoint recorded: `node scripts/workflow-state.js checkpoint <folder> "<verdict>"`
 
 ## Audit Budget
 - [ ] At most ONE content-quality audit has run on this draft so far?

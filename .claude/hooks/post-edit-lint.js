@@ -49,18 +49,43 @@ process.stdin.on('end', () => {
   }
 
   const findings = out.split('\n').filter((l) => /ERROR|warn/.test(l));
-  if (findings.length === 0) process.exit(0);
 
   if (hasErrors) {
     console.error(`lint-posts found errors in posts/${m[1]} after this edit — fix before continuing:\n${findings.join('\n')}`);
     process.exit(2);
   }
 
+  // Length-audit-first advisory (the most-violated prose rule, ~40% adherence):
+  // when the draft has grown >10% past the last reviewer round with no length
+  // audit recorded since, surface it while the additions are being made — not
+  // after. Advisory only; the word-budget lint error is the hard stop.
+  let ordering = '';
+  try {
+    const fs = require('fs');
+    const { proseWords } = require(path.join(root, 'scripts/lib/wordcount'));
+    const matter = require(path.join(root, 'node_modules/gray-matter'));
+    const state = JSON.parse(fs.readFileSync(path.join(root, 'posts', m[1], '.workflow.json'), 'utf-8'));
+    const rounds = state.review_rounds || [];
+    const last = rounds[rounds.length - 1];
+    if (last && last.words) {
+      const words = proseWords(matter(fs.readFileSync(filePath, 'utf-8')).content);
+      const auditStale = !state.length_audit || state.length_audit.at < last.at;
+      if (last.draft_sha && words > last.words * 1.1 && auditStale) {
+        ordering =
+          `\nlength-audit-first: the draft has grown ${words - last.words} words (+${Math.round(((words - last.words) / last.words) * 100)}%) since reviewer round ${last.n} with no length audit recorded — this is the add-then-cut pattern. Apply the reviewers' CUT findings first, then the additions, and record: node scripts/workflow-state.js length-audit ${m[1]}`;
+      }
+    }
+  } catch {
+    /* no workflow state — nothing to advise */
+  }
+
+  if (findings.length === 0 && !ordering) process.exit(0);
+
   console.log(
     JSON.stringify({
       hookSpecificOutput: {
         hookEventName: 'PostToolUse',
-        additionalContext: `lint-posts warnings for posts/${m[1]} (non-blocking):\n${findings.join('\n')}`,
+        additionalContext: `lint-posts warnings for posts/${m[1]} (non-blocking):\n${findings.join('\n')}${ordering}`,
       },
     })
   );

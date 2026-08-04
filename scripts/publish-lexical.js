@@ -721,6 +721,15 @@ async function publishPost(filePath, status = 'draft', { dryRun = false } = {}) 
       post = await withRetry('post update', () => api.posts.edit({ id: frontmatter.post_id, ...postData }));
     } else {
       post = await withRetry('post create', () => api.posts.add(postData));
+      // Write post_id back into frontmatter so future runs UPDATE this post
+      // instead of creating a duplicate (documented near-miss, 2026-07-30).
+      // Minimal string insert to avoid reformatting the whole frontmatter.
+      const fmMatch = fileContent.match(/^---\r?\n[\s\S]*?\r?\n---/);
+      if (fmMatch && !/^post_id:/m.test(fmMatch[0])) {
+        const updated = fileContent.replace(fmMatch[0], fmMatch[0].replace(/\r?\n---$/, `\npost_id: "${post.id}"\n---`));
+        fs.writeFileSync(filePath, updated);
+        console.log('   post_id written back to frontmatter:', post.id);
+      }
     }
 
     console.log('\n✅ Post published successfully!');

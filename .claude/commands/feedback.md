@@ -1,44 +1,23 @@
-Analyse this post and give feedback on its contents to improve its quality.
+Analyse this post and give feedback on its contents to improve its quality, using the getting-feedback skill's synthesis rules.
 
-**Critical: Ensure reviewers read the pitch first.** Each reviewer should evaluate whether the draft delivers on what the pitch promised, not their ideal version. The pitch is the contract.
+**Routing — driven by the pitch, not judged per run.** Read pitch.md frontmatter for `primary_audience` (and secondary). Run the declared audience(s) — normally 1–2 reviewers, announced in one line. `/feedback all` forces all three; `/feedback wei-lin` (or `marcus` / `sarah`) forces one. If the pitch predates the field, route by the CLAUDE.md content-type table and say which you picked and why.
 
-Use the following subagents to analyse the post from different perspectives (invoke by these exact agent names):
-1. legal-tech-blog-reviewer (Marcus Tan)
-2. inhouse-lawyer-reviewer (Sarah Chen)
-3. lawyer-coder-reviewer (Wei Lin)
+Agent names (invoke by these exact subagent types):
+- legal-tech-blog-reviewer (Marcus Tan)
+- inhouse-lawyer-reviewer (Sarah Chen)
+- lawyer-coder-reviewer (Wei Lin)
 
-When synthesizing feedback, identify what each reviewer uniquely caught that others didn't. This helps understand when each reviewer adds value beyond the others.
+**Critical: ensure reviewers read the pitch first.** The pitch is the scope oracle — each reviewer tags every finding SCOPE: IN or OUT against what the pitch promised their constituency. Pass each reviewer their memory file path (docs/personas/memory/<agent>.md) with an instruction to read it first.
 
-You should produce a short summary of the post in the following format.
-* Overview
-  * Does the draft deliver on what the pitch promised?
-  * Key consensus points between reviewers
-  * Unique insights by reviewer (what each caught that others didn't)
-  * Primary areas of disagreement
-  * Primary suggestions for improvement (prioritized: Essential vs. High Value vs. Optional)
-  * Overall recommendation/conclusion
-* Reviewer A Perspective
-  * Overall rating/assessment
-  * Key strengths identified
-  * Main concerns or weaknesses
-  * Specific recommendations
-  * Notable quotes or observations
-* Reviewer B Perspective
-  * Overall rating/assessment
-  * Key strengths identified
-  * Main concerns or weaknesses
-  * Specific recommendations
-  * Notable quotes or observations
-* Reviewer C Perspective (Lawyer-Coder Reviewer)
-  * Overall rating/assessment
-  * Key strengths identified
-  * Main concerns or weaknesses
-  * Specific recommendations
-  * Notable quotes or observations
-* Recommendations 
-  * Immediate areas of improvement
-  * Longer-term improvements
-  * Decision on what to do with this post
-  
-Be gentle and polite in your review (I am always trying to improve!)
-If necessary, ask reviewers further questions to finalise your report.
+**Reviewers must report everything they find, unfiltered** (see each agent's output contract). Gentleness applies to YOUR synthesis back to me, not to their reviews: be direct about the substance, kind in how you tell me. The filter is in how you say it, never in what was found.
+
+Produce the synthesis in this shape (per the getting-feedback skill):
+
+* **Verdicts** — each reviewer's serves-me verdict and reader-response paragraph, verbatim, before any suggestion
+* **Conflicts** — where constituencies want opposite things, presented as a "who is this post for" decision, never averaged
+* **In-scope work** — deduplicated IN findings, primary audience weighted first; STANDING items batch-applied without debate
+* **Beyond the pitch** — the collapsed OUT list ("follow-up post material?")
+* **Length** — summed TOTAL DELTA vs the word budget; if net additive beyond ~10%, cuts first
+* **Decision** — what to do with this post, and the single IF ONE THING that matters most
+
+Do not restate findings you already listed. If necessary, ask reviewers follow-up questions before finalising the report.

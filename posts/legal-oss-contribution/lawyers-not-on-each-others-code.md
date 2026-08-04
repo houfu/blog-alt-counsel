@@ -26,7 +26,7 @@ The moment I find most gratifying is when they "get" it. I am not asking them to
 
 For me, the way I've sustained that feeling is through coding and open source — I've maintained [redlines](https://github.com/houfu/redlines) since 2021. The honest version, though, is that my own outbound contribution record is dismal. The last pull request I got merged into someone else's legal-OSS repo was a docs typo on `docassemble` — in 2019. Almost two years before I'd even started `redlines`. So when I describe the rest of the field, know I'm describing the same wall I keep hitting.
 
-<bookmark url="https://www.alt-counsel.com/open-source-ai-and-why-october-matters/" />
+[Open source ai and why october matters](https://www.alt-counsel.com/open-source-ai-and-why-october-matters/)
 
 However, let's face it — lawyer-coders are at a massive disadvantage. For one, this ain't our main rodeo. But more relevantly, we have few chances to practice it. Writing code is viable. Reviewing code that you don't write and bringing all that in line with a project shared with others? Unheard of.
 
@@ -108,7 +108,7 @@ When people get into open source, they imagine strangers respectfully using thei
 
 Most coders releasing their first project don't realise how different being an *author* is from being a *maintainer*. Author work is the fun part — designing, building, shipping. Maintainer work is reading other people's code, defending the project's choices for the hundredth time, deciding which licence to keep, deciding what counts as in-scope. It's a lot of work, mostly unpaid, often thankless.
 
-<bookmark url="https://www.alt-counsel.com/tool-vs-infrastructure-mindset/" />
+[Tool vs infrastructure mindset](https://www.alt-counsel.com/tool-vs-infrastructure-mindset/)
 
 Will Chen, to his credit, has been candid that he's working through this. In [his interview with Artificial Lawyer](https://www.artificiallawyer.com/2026/05/04/mike-the-open-source-legal-ai-platform-will-chen-interview/) he framed Mike's contribution model as an open question and said he was considering switching from AGPL-3.0 to a more permissive licence. That's not failure — that's the maintainer work, done in public.
 
@@ -130,7 +130,7 @@ If you ask any lawyer who can code, there are several problems that make contrib
 
 If you ask **me**, the biggest obstacle of a lawyer coder contributing to an open source project is not so much the "coder" part of that sentence, but the "lawyer" part of it. While maintaining `redlines` I've found myself frustrated reading other people's code, questioning what the point of the changes is and where the whole thing is going. I'd like to think my background sets me apart. Mostly, it doesn't. It's been a long and lonely journey.
 
-<bookmark url="https://www.alt-counsel.com/the-unexpected-joys-of-open-source/" />
+[The unexpected joys of open source](https://www.alt-counsel.com/the-unexpected-joys-of-open-source/)
 
 There's research that explains the pattern. Larry Richard's Caliper studies show that lawyers trend towards high skepticism, low resilience, high risk-aversion, and low default sociability — traits that predispose lawyers to go it alone, demand error-free work, and resist feedback. These traits make it hard to be part of a project, let alone one that asks us to share time and expertise for free.
 
