@@ -3,8 +3,10 @@
 /**
  * Lint post folders under posts/ for structure, frontmatter, and content rules.
  *
- * Usage: node scripts/lint-posts.js [--strict] [folder ...]
+ * Usage: node scripts/lint-posts.js [--strict] [--fix] [folder ...]
  *   --strict    treat warnings as failures (use for new posts)
+ *   --fix       apply safe autofixes (currently: append ?ref=<slug> to
+ *               internal alt-counsel.com links that lack it)
  *   folder      limit to specific posts/<folder> names (default: all)
  *
  * Errors (always fail, exit 1):
@@ -13,14 +15,23 @@
  *     these break the markdown-to-lexical conversion (see CLAUDE.md critical
  *     rules). Posts already published only get a warning, since their local
  *     copy may have been synced back from Ghost.
+ *   - <bookmark> tags in a draft/scheduled post — publish-lexical.js does not
+ *     support the syntax and passes it through as literal text (documented
+ *     publish defect, 2026-07-30)
  *
  * Warnings (fail only with --strict):
  *   - no identifiable main post file
  *   - main file missing frontmatter, or missing title/status fields
  *   - main file not named after the folder
  *   - missing discussion.md or pitch.md
- *   - tags not found in the tag registry
+ *   - tags not found in the tag registry (exact match against the canonical list)
  *   - images larger than 500 KB
+ *   - internal alt-counsel.com links missing ?ref=<slug> (measured adherence
+ *     before this check: 3 of 25 links)
+ *   - banned phrases (clichés / AI slop, ported from the audit-tone wordlist)
+ *   - prose mechanics: undescriptive link text, bare-URL link text, unlabeled
+ *     code fences, malformed tables (ported from audit-accessibility /
+ *     audit-readability, which are retired as agents)
  */
 
 const fs = require('fs');
@@ -34,21 +45,52 @@ try {
   process.exit(1);
 }
 
+const { findMainFile } = require('./lib/postfile');
+
 const ROOT = path.join(__dirname, '..');
 const POSTS_DIR = path.join(ROOT, 'posts');
 const TAGS_FILE = path.join(ROOT, '.claude/skills/tag-registry/tags.md');
 
-// Supporting files that are never the main post file
-const SUPPORT_FILES = /^(discussion|pitch|research|outline.*|examples|notes|README|REVIEWS.*|.*audit.*report.*)\.md$/i;
-const DRAFT_VERSION = /^(draft)?v\d+.*\.md$/i;
-
 const strict = process.argv.includes('--strict');
+const fix = process.argv.includes('--fix');
 const onlyFolders = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 
-const registryText = fs.existsSync(TAGS_FILE) ? fs.readFileSync(TAGS_FILE, 'utf-8') : null;
+// Canonical tags: exact match against `- **TagName** - ...` lines only, so a
+// tag can't pass by appearing somewhere in the registry's prose.
+function loadCanonicalTags() {
+  if (!fs.existsSync(TAGS_FILE)) return null;
+  const tags = new Set();
+  for (const line of fs.readFileSync(TAGS_FILE, 'utf-8').split('\n')) {
+    const m = line.match(/^- \*\*([^*]+)\*\*/);
+    if (m) tags.add(m[1].trim());
+  }
+  return tags.size > 0 ? tags : null;
+}
+const canonicalTags = loadCanonicalTags();
+
+// Clichés and AI-slop phrases, ported from the audit-tone checklist so the
+// audit agents spend their round on judgment calls instead of grep work.
+// Conservative list: only phrases that are near-certain defects in this blog.
+const BANNED_PHRASES = [
+  /game[- ]chang(er|ing)/i,
+  /cutting[- ]edge/i,
+  /paradigm shift/i,
+  /think outside the box/i,
+  /low[- ]hanging fruit/i,
+  /move the needle/i,
+  /rapidly evolving/i,
+  /in today's (fast-paced |digital )?(landscape|world)/i,
+  /it'?s no secret/i,
+  /navigate the complexit/i,
+  /delve into/i,
+  /revolutioniz/i,
+];
+
+const BAD_LINK_TEXT = /^(click here|here|read more|this link|link|this)$/i;
 
 let errors = 0;
 let warnings = 0;
+let fixes = 0;
 
 function err(folder, msg) {
   console.log(`  ERROR  ${folder}: ${msg}`);
@@ -57,32 +99,6 @@ function err(folder, msg) {
 function warn(folder, msg) {
   console.log(`  warn   ${folder}: ${msg}`);
   warnings++;
-}
-
-function findMainFile(folderPath, folder) {
-  const mdFiles = fs
-    .readdirSync(folderPath)
-    .filter((f) => f.endsWith('.md') && !SUPPORT_FILES.test(f) && !DRAFT_VERSION.test(f));
-
-  // Preferred: file named after the folder
-  const slugNamed = mdFiles.find((f) => f === `${folder}.md`);
-  if (slugNamed) return slugNamed;
-
-  // Otherwise: any candidate with frontmatter containing a title
-  const withTitle = mdFiles.filter((f) => {
-    try {
-      const fm = matter(fs.readFileSync(path.join(folderPath, f), 'utf-8'));
-      return fm.data && fm.data.title;
-    } catch {
-      return false;
-    }
-  });
-  if (withTitle.length === 1) return withTitle[0];
-  if (withTitle.length > 1) return withTitle.sort()[0];
-
-  // Last resort: single remaining candidate
-  if (mdFiles.length === 1) return mdFiles[0];
-  return null;
 }
 
 function checkHorizontalRules(body, folder, file, status) {
@@ -100,6 +116,127 @@ function checkHorizontalRules(body, folder, file, status) {
     } else {
       warn(folder, msg);
     }
+  }
+}
+
+// <bookmark url="..."/> is not supported by publish-lexical.js — it passes
+// through as literal text in the published post. Use a standalone markdown
+// link to alt-counsel.com instead (the converter turns those into cards).
+function checkBookmarkTags(body, folder, file, status) {
+  const lines = body.split('\n');
+  let inCode = false;
+  const hits = [];
+  lines.forEach((line, i) => {
+    if (/^```/.test(line.trim())) inCode = !inCode;
+    if (!inCode && /<bookmark\b/i.test(line)) hits.push(i + 1);
+  });
+  if (hits.length > 0) {
+    const msg =
+      `${file} uses <bookmark> tag(s) at line(s) ${hits.join(', ')} — publish-lexical.js does not support this ` +
+      `syntax and publishes it as literal text. Use a standalone markdown link to alt-counsel.com instead.`;
+    if (status === 'draft' || status === 'scheduled') {
+      err(folder, msg);
+    } else {
+      warn(folder, msg);
+    }
+  }
+}
+
+// Internal links need ?ref=<slug> so Ghost analytics attribute the traffic to
+// the referring post. Autofixable with --fix.
+function checkInternalLinkRefs(raw, body, folder, file, slug) {
+  const lines = body.split('\n');
+  let inCode = false;
+  const missing = [];
+  lines.forEach((line, i) => {
+    if (/^```/.test(line.trim())) inCode = !inCode;
+    if (inCode) return;
+    for (const m of line.matchAll(/\]\((https?:\/\/(?:www\.)?alt-counsel\.com\/[^)]*)\)/g)) {
+      if (!/[?&]ref=/.test(m[1])) missing.push({ line: i + 1, url: m[1] });
+    }
+  });
+  if (missing.length === 0) return;
+
+  if (fix && slug) {
+    let fixed = raw;
+    for (const { url } of missing) {
+      const withRef = url.includes('?') ? `${url}&ref=${slug}` : `${url.replace(/\/?$/, '/')}?ref=${slug}`;
+      fixed = fixed.split(`(${url})`).join(`(${withRef})`);
+    }
+    fs.writeFileSync(path.join(POSTS_DIR, folder, file), fixed);
+    console.log(`  fixed  ${folder}: appended ?ref=${slug} to ${missing.length} internal link(s) in ${file}`);
+    fixes += missing.length;
+    return;
+  }
+  warn(
+    folder,
+    `${file} has ${missing.length} internal link(s) without ?ref=${slug || '<slug>'} at line(s) ` +
+      `${missing.map((m) => m.line).join(', ')} — run with --fix to autofix`
+  );
+}
+
+function checkBannedPhrases(body, folder, file) {
+  const lines = body.split('\n');
+  let inCode = false;
+  const hits = [];
+  lines.forEach((line, i) => {
+    if (/^```/.test(line.trim())) inCode = !inCode;
+    if (inCode) return;
+    for (const re of BANNED_PHRASES) {
+      const m = line.match(re);
+      if (m) hits.push(`"${m[0]}" (line ${i + 1})`);
+    }
+  });
+  if (hits.length > 0) {
+    warn(folder, `${file} contains banned phrase(s): ${hits.join(', ')} — clichés/AI slop, rewrite in plain words`);
+  }
+}
+
+// Mechanical prose checks ported from the retired audit-accessibility and
+// audit-readability agents (whose findings were ~90% these).
+function checkProseMechanics(body, folder, file) {
+  const lines = body.split('\n');
+  let inCode = false;
+  const badLinks = [];
+  const bareUrls = [];
+  const unlabeledFences = [];
+  const badTables = [];
+
+  lines.forEach((line, i) => {
+    const fence = line.trim().match(/^```(.*)$/);
+    if (fence) {
+      if (!inCode && fence[1].trim() === '') unlabeledFences.push(i + 1);
+      inCode = !inCode;
+      return;
+    }
+    if (inCode) return;
+
+    for (const m of line.matchAll(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g)) {
+      if (BAD_LINK_TEXT.test(m[1].trim())) badLinks.push(`line ${i + 1} ("${m[1]}")`);
+      else if (/^https?:\/\//.test(m[1].trim())) bareUrls.push(i + 1);
+    }
+
+    // A table's header row must be followed by a |---| separator row
+    if (/^\s*\|.*\|\s*$/.test(line) && !/^\s*\|[\s:|-]+\|\s*$/.test(line)) {
+      const prev = i > 0 ? lines[i - 1] : '';
+      const next = i + 1 < lines.length ? lines[i + 1] : '';
+      const prevIsTable = /^\s*\|.*\|\s*$/.test(prev);
+      const nextIsSeparator = /^\s*\|[\s:|-]+\|\s*$/.test(next);
+      if (!prevIsTable && !nextIsSeparator) badTables.push(i + 1);
+    }
+  });
+
+  if (badLinks.length > 0) {
+    warn(folder, `${file} has undescriptive link text at ${badLinks.join(', ')} — say what the link is`);
+  }
+  if (bareUrls.length > 0) {
+    warn(folder, `${file} uses a bare URL as link text at line(s) ${bareUrls.join(', ')} — use descriptive text`);
+  }
+  if (unlabeledFences.length > 0) {
+    warn(folder, `${file} has code fence(s) without a language tag at line(s) ${unlabeledFences.join(', ')}`);
+  }
+  if (badTables.length > 0) {
+    warn(folder, `${file} has table row(s) without a |---| header separator near line(s) ${badTables.join(', ')}`);
   }
 }
 
@@ -176,16 +313,20 @@ function lintFolder(folder) {
   } else {
     if (!fm.title) warn(folder, `${main} frontmatter missing "title"`);
     if (!fm.status) warn(folder, `${main} frontmatter missing "status"`);
-    if (registryText && Array.isArray(fm.tags)) {
+    if (canonicalTags && Array.isArray(fm.tags)) {
       for (const tag of fm.tags) {
-        if (typeof tag === 'string' && !registryText.includes(tag)) {
-          warn(folder, `tag "${tag}" not found in tag registry (tags.md)`);
+        if (typeof tag === 'string' && !canonicalTags.has(tag)) {
+          warn(folder, `tag "${tag}" is not a canonical tag in the registry (tags.md) — exact match required`);
         }
       }
     }
   }
 
   checkHorizontalRules(parsed.content, folder, main, fm.status);
+  checkBookmarkTags(parsed.content, folder, main, fm.status);
+  checkInternalLinkRefs(raw, parsed.content, folder, main, fm.slug || folder);
+  checkBannedPhrases(parsed.content, folder, main);
+  checkProseMechanics(parsed.content, folder, main);
   checkMechanicalDefects(parsed.content, folder, main);
 
   for (const f of files) {
@@ -207,5 +348,6 @@ const folders = fs
 console.log(`Linting ${folders.length} post folder(s)...\n`);
 folders.forEach(lintFolder);
 
+if (fixes > 0) console.log(`\n${fixes} autofix(es) applied`);
 console.log(`\n${errors} error(s), ${warnings} warning(s)`);
 if (errors > 0 || (strict && warnings > 0)) process.exit(1);

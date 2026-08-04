@@ -34,7 +34,7 @@ This post is about what closed that gap.
 
 When I published Part 1 of OpenClaw Field Notes in April, Zeeker had one source live. I admitted I hadn't gotten the autonomous agent off the ground. I closed Part 1 with: *"I'm not going to pretend I have results to show."*
 
-<bookmark url="https://www.alt-counsel.com/openclaw-field-notes-lawyer/" />
+[Openclaw field notes lawyer](https://www.alt-counsel.com/openclaw-field-notes-lawyer/)
 
 The visible work — having a website, demoing a source, running a query — is the easy part. AI tooling has gotten good at it. A willing weekend gets you something that looks like progress.
 
@@ -88,7 +88,7 @@ I'm particularly proud of the beginner's guide I wrote for lawyers using the dat
 
 In November, I wrote that data.zeeker.sg was complementary to SMU's SOLID project — they were building empirical research infrastructure (statistical metadata about court decisions); I was building current awareness. Adding the Judgements database narrows that gap, but only as full-text content access. The empirical metadata layer is still SOLID's territory, and I think it should be.
 
-<bookmark url="https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/" />
+[What i learned at smus legal database launch and my decision about data zeeker sg 2](https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/)
 
 The November post ended with: *"I renewed the domain. I'm not done exploring."*
 
@@ -176,6 +176,6 @@ The constraint was real. Building a custom legal-data interface from scratch was
 
 What changed wasn't time. It was that coding agents made the work tractable. Four sketch sessions — actual visual mockups, validated against real data — let me commit to a direction before any production code was written. Then six waves of implementation plans converted the sketches into something that ran. The trick was using one of Datasette's templating seams to replace just the row layout, keeping every built-in feature underneath: filter forms, full-text search, facets, sort, pagination, CSV and JSON export. About 15,000 lines later, the site has the editorial layout you see now — and Datasette's plumbing still works.
 
-<bookmark url="https://github.com/houfu/zeeker-datasette/pull/7" />
+[7](https://github.com/houfu/zeeker-datasette/pull/7)
 
 Gratifying in a specific way. Not "I shipped something nice." More like: a constraint I'd accepted as permanent turned out to be temporary.
