@@ -20,6 +20,7 @@ posts/{post-short-title}/
 5. **Compress images** to under 500 KB before committing.
 6. **No confidential material.** This is a public repository, and published posts link back to their folders via the GitHub footer. Term sheets, client documents, and anything marked confidential must never be committed.
 7. **No per-post publishing scripts.** Use `scripts/publish-lexical.js`; improve the canonical script if a feature is missing.
+8. **`.workflow.json` is machine-owned.** It records pitch checkpoints, audit/review rounds (keyed to draft content hash), length audits, and gate overrides — written by `scripts/workflow-state.js` and `.claude/hooks/workflow-gate.js`, tracked in git because rounds span sessions. Do not hand-edit it.
 
 ## Linting
 

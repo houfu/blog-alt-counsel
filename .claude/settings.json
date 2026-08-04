@@ -30,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/reviewer-memory-gate.js\""
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/workflow-gate.js\""
           }
         ]
       }
