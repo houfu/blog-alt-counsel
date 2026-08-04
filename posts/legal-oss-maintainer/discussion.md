@@ -425,3 +425,20 @@ Pitch v2 locked on first presentation. Thesis, spine, beats, and thesis_keywords
 - **Consent question returned unanswered — recorded as a publish-gate, not a draft-blocker.** Drafting defaults: no Slack quotes (including his own), no new names, no "Keller"/"post-Keller" language, GOVERNANCE.md neutral wording. Revisit before publishing.
 
 **Next: WRITE.** Read full Voice Guide + 1–2 recent published posts, then draft on the amended pitch.
+
+## 2026-08-05 — Session 4 (cont.): Draft 1 of the rewrite written
+
+**Voice reference: rugpulled-by-cowork** — narrative pacing, plain-claim headers, hope close. Full Voice Guide re-read including the Living Addendum (no bookmark lead-ins, no aphoristic kickers, no inferred emotion, closes on hope).
+
+**Draft:** 1,380 words (budget 1,800 — left lean on purpose; Houfu cuts, and reviewer fixes need room). Five beats per pitch. Lint: 0 errors, 0 warnings. Working title "I'm the Official Cat Herder of a Legal AI Project" — title deliberately still open per Houfu's call; candidates to be proposed now that the draft exists.
+
+**Choices for the record:**
+- Opens on the Sunday-call scene; the mandate (appointment + the group's agent ask) stated as fact in the first paragraph; payoff ("rest of 2026") in paragraph two, no withheld reveal.
+- Houfu's authored line from the old Ghost edits kept verbatim: "LQ.AI had several cool features, but it was deep, complex and free — both in terms of beer and freedom."
+- Consent defaults applied throughout: no Slack quotes, no contributor names ("one contributor's security fixes"), founder referenced only via GOVERNANCE.md's published language, no "Keller".
+- Data all from research.md §12 (2026-08-04 snapshot): 254 files/94,361 lines/23 ADRs/244 parked ideas; 304-package lockfile review scene; five reviewed merges in just over a week; 73 open PRs; no release since 4 July; agent 0 stars.
+- The one honest admission (fear tuned into the agent) stated once, in the learning-curve section, per Voice Guide 1.6.
+- Close: hour-a-day metric + December appointment + hope ("I hope to have company by then"). No kicker.
+- Both must-link cards placed (Part 1 after the open, unexpected-joys before the close), no lead-in sentences, ?ref= attribution on both.
+
+**Next:** title candidates to Houfu, then REVIEW phase: audit round (audit-substance + audit-tone), then Wei Lin (primary) per pitch, length audit before additive fixes.
