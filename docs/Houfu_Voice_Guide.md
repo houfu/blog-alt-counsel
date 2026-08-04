@@ -2,449 +2,295 @@
 
 > **This guide defines the distinctive voice and style of Alt + Counsel blog posts.**
 >
-> **When to use:** Read before writing blog posts, during pitch development for structure guidance, and when reviewing tone/style.
+> **When to use:** Read before writing blog posts, during pitch development (pick the voice contract), and when reviewing tone/style.
 >
-> **Referenced by:** CLAUDE.md writing workflow, audit-tone agent, target audience reviewers, content creation skills
+> **Referenced by:** CLAUDE.md writing workflow, audit-tone agent, content creation skills
+>
+> **Provenance:** Rewritten 2026-08 on the mined hand-edit corpus (`docs/voice-edit-corpus-2026-08.md`) — thirteen rules derived from six months of Houfu's own edits, especially his final Ghost edits before publication. The January 2026 version was calibrated on the blog's first two posts, from the one period when his edits were additive; since then his edits overwhelmingly CUT. Where this guide and his recent hand edits conflict, the hand edits win — see the Living Addendum at the bottom, which is updated at every final sync.
 
-A reference for replicating the voice and style of Alt + Counsel blog posts and LinkedIn content.
+## Part 0: Dosage — read this first
 
----
+**The patterns below are a palette, not a checklist.** A post that uses all of them reads as parody. At pitch time, pick the **2–3 moves this material genuinely supports** and record them in pitch.md frontmatter (`voice:`). The draft is then judged against that contract — patterns not declared should be *absent*, not forced. "Neither is wrong" on a topic with no genuine binary is a defect, not a voice win.
+
+The single most reliable fact about Houfu's editing: **he cuts.** His purest hand-edit commit is net negative lines. When in doubt between adding a flourish and deleting one, delete.
 
 ## Core Identity
 
-**Who you are:** The Solo Counsel's Tech Strategist  
-**What you do:** Practical legal tech for resource-constrained practitioners  
-**How you sound:** Honest, specific, nuanced, framework-oriented  
+**Who you are:** The Solo Counsel's Tech Strategist
+**What you do:** Practical legal tech for resource-constrained practitioners
+**How you sound:** Honest, specific, plain, framework-oriented — and slightly rougher than polished
 
 **The reader should feel:** "This person understands my constraints and won't bullshit me."
-
----
 
 ## Part 1: Voice Patterns
 
 ### 1.1 Opening Moves
 
-**Pattern: Start with a feeling, not a fact**
+**Pattern: a flat, interior, first-person setup — not a performance.**
 
-You don't open with "Here's what happened" - you open with how something *felt*.
+His hand-rewritten openings are *longer and quieter* than the drafts they replaced: what he was doing, what he expected, what happened. No withheld reveal, no compressed anecdote-as-hook, no rhetorical-question run.
 
-Examples:
-> "I compared my GitHub to Jamie Tso's and felt unproductive."
+His own openings:
+> "To be honest, I did have a goal to do some public speaking in 2026."
 
-> "I spent my weekend mulling over MinLaw's new guidelines. Here's the truth: Most of it isn't implementable for me."
+> "I went looking for why my agent stack confounded me. I had pitted a set of lawyer-made tools against a generic harness at legal work, to see if specialised tools made by lawyers could beat a generalised tool."
 
-> "Domain renewal: $110. But the real cost is over 150 hours and zero users."
+> "I had a mental model from docassemble… I expected to hit a wall somewhere in Cowork. Two text files later, it worked."
 
 **What NOT to do:**
-- ❌ "In this article, I will discuss..."
-- ❌ "Legal tech is evolving rapidly..."
-- ❌ Throat-clearing or context-setting before the hook
+- ❌ "I lost. What I didn't expect was why." (withheld reveal — he rewrote this to state the payoff up front)
+- ❌ "In this article, I will discuss..." / throat-clearing
+- ❌ A feeling the author never stated (see 1.6)
 
-**Pattern: Vulnerable admission in paragraph one**
-
-Within the first 3-4 sentences, admit something uncomfortable:
-
-> "I compared my GitHub to Jamie Tso's and felt unproductive."
-
-> "Here's the truth: Most of it isn't implementable for me."
-
-> "I'll admit that I never announced data.zeeker.sg."
-
-This earns trust immediately.
-
----
+**State the payoff early.** He replaced a cliffhanger with "But what I learnt about the harness was the real lesson." The reader gets the destination, then the journey.
 
 ### 1.2 The "Neither Is Wrong" Move
 
-This is the signature move. Resist binary framing.
+Still a signature — he *hand-writes* these into closes:
 
-> "Then I realized: I build infrastructure. Jamie builds tools. **Neither approach is wrong.** But using infrastructure thinking for tool problems kills your velocity."
+> "Enterprise contract management systems exist for a reason… Two text files in a folder won't replace that. Neither approach is wrong — it depends on what you're building and what you'll actually use."
 
-> "Pragmatism says cut losses. Passion says keep going. **The decision depends on** what gaps remain and what you're actually trying to achieve."
+**Formula:** [Position A] vs [Position B]. Neither is wrong. But [the nuance that actually matters].
 
-**Formula:**
-```
-[Position A] vs [Position B].
-Neither is wrong.
-But [the nuance that actually matters].
-```
-
-**Why this works:**
-- Shows intellectual sophistication
-- Respects reader's ability to hold complexity
-- Builds trust with people tired of hot takes
-
----
+**Dosage warning:** only for genuine binaries. He also *deletes* "neither is wrong" buildups when they slow a section — the move earns a close, not every comparison.
 
 ### 1.3 Specific Numbers as Anchors
 
-Always ground abstract concepts in concrete reality.
+Ground abstractions in concrete, **lived, provable** reality:
 
-> "My profile: 70 repositories, redlines library with 148 stars and 177,000 monthly downloads on PyPI, top 10% quality ranking. Years of work."
+> "Mike got 2,657 stars in eleven days and six merged pull requests. The LegalQuants directory has 112 lawyer-coders and one repo that cleared the bar — mine." (his own hand-written excerpt)
 
-> "RedlineNow, his instant redline tool: 5 commits over 2 days in December 2025. Done. Shipped. Thirty stars and 11 forks."
+Rules his edits enforce:
+- Numbers appear in clusters, not isolated.
+- **Every number must be one he can stand behind** — he corrects his own numbers in both directions (177,000 → 175,000 down; 247,000 → 352,000 up) and fixes time estimates from lived experience (90 min → 30 min).
+- **Delete false-precision thresholds** — he removed "under 50 lines" in favour of "keep the skill small." A crisp number the author can't defend is worse than a plain word.
 
-> "Domain renewal: $110. But the real cost is over 150 hours and zero users."
+### 1.4 Callbacks: the card IS the callback
 
-> "The 26-page guide is thoughtful and comprehensive."
+When linking to a prior post, place the bookmark card (a standalone markdown link line) and **let it speak. Never write a lead-in sentence narrating it** ("I've written before that…", "I made this argument after…").
 
-**Pattern:** Numbers appear in clusters. Don't say "a lot" - say "148 stars and 177,000 monthly downloads."
-
----
-
-### 1.4 The Self-Quote / Callback
-
-Reference your own previous writing to create continuity:
-
-> "I wrote about this (What Top 10% Actually Means): 'Scope is your most important feature...'"
-
-> "The uncomfortable truth I wrote about just a week ago: Professional judgment isn't enough."
-
-**Why this works:**
-- Shows you have a body of work
-- Rewards loyal readers
-- Creates intellectual continuity
-
----
+This is the highest-confidence rule in the edit corpus: **nine lead-ins drafted, nine deleted, zero exceptions.** If the surrounding prose needs the prior idea, state the idea as part of the argument — don't announce the link.
 
 ### 1.5 The Two-Column Internal Dialogue
 
-When genuinely uncertain, externalize both voices:
+For genuinely unresolved tensions only, externalize both voices ("Pragmatic voice:" / "Passion voice:"). Rare — not manufactured drama.
 
-> "Two voices keep arguing in my head:
-> 
-> **Pragmatic voice:** Over 150 hours with zero known users. Never validated demand. SMU has institutional backing and dedicated staff. You proved it's technically feasible—that's enough. Time to let it go.
-> 
-> **Passion voice:** I'm still in love with this vision. This is labour of love with different success criteria..."
+### 1.6 The Uncomfortable Admission — user-led, stated once, never performed
 
-**When to use:** Only for genuinely unresolved tensions, not manufactured drama.
+Honest admissions build the blog's trust, but three hard rules from his edits:
 
----
-
-### 1.6 The Uncomfortable Admission
-
-Regularly say things most professionals would hide:
-
-> "I'll admit that I never announced data.zeeker.sg. I kept thinking 'needs more resources before it's ready.'"
-
-> "Zero known users because I never really tried to find them."
-
-> "I don't know which voice is right. That's why I need a framework."
-
-> "What I should have done (tool thinking)..."
-
-**Pattern:** Admit the gap between what you *did* and what you *should have done*.
-
----
+1. **Only feelings and failures Houfu actually stated.** Never infer an emotion from the situation — an inferred "I hesitated" shipped to a Ghost draft and was factually wrong. When the vulnerability is missing, ask; mark `[HOUFU: …]`; never fill in.
+2. **State the fact, then undercut it — never display the proof.** He deleted his own influence-evidence side-by-side and "I checked twice." But he *added* hard numbers and "— mine" to an excerpt: this is not modesty, it is refusal to perform. Same for credit: "That post got pretty warm feedback, including a cite from LawSites… and got distracted instead" — credit given, then undercut.
+3. **Admissions are made once, plainly, at normal volume.** He renamed "Three Things I Got Wrong" to "Three Things I Learnt", deleted a 350-word confessional close, and kept an emotional line deleted over a reviewer's protection. Self-flagellation is as off-voice as bragging.
 
 ### 1.7 The Return to Solo Counsel Reality
 
-Every post circles back to your core audience:
+Where the material supports it, circle back: "For solo counsels and small teams…" → specific, practical implication. (Declared in the voice contract like every other move — his most personal posts skip it entirely.)
 
-> "For solo counsels and small teams: You probably need MORE tools, LESS infrastructure."
+### 1.8 Sentence Rhythm — asides yes, aphorisms no
 
-> "For small firms and solo practitioners, the message is clear: Unless you can build proper verification infrastructure (and most can't), the risk-reward calculation doesn't work."
+Vary rhythm; short sentences are welcome. But there are two kinds of short sentence, and only one is his:
 
-> "For resource-constrained law practices, it's important to discard the hype and focus on what's important."
-
-**Formula:**
-```
-[Universal insight about tech/coding/AI]
-↓
-"For solo counsels / small teams / resource-constrained practitioners..."
-↓
-[Specific, practical implication]
-```
-
----
-
-### 1.8 Sentence Rhythm
-
-**Short sentences for punch:**
-> "Done. Shipped. Thirty stars and 11 forks."
-
-> "That's the dream."
-
-> "I don't know yet."
-
-**Medium sentences for explanation:**
-> "Jamie doesn't carry infrastructure weight."
-
-**Longer sentences for nuance:**
-> "When I'm honest with myself: I don't know if anyone wants structured legal data APIs for Singapore."
-
-**Pattern:** Vary rhythm deliberately. After a complex paragraph, drop a short sentence. After buildup, punch.
-
----
+- ✅ **Colloquial asides** — "That's it." "Claude Cowork is Zen." "Neato, right?" "I don't know yet." Talk, not performance.
+- ❌ **Aphoristic kickers** — a metaphor appended to an argument that already landed: "the agents are already at the gym", "Ten points, in the wrong direction.", "a killer demo is not a reliable workflow." **He deletes these on sight (nine documented).** The argument carries itself; never restate it as a punchline.
 
 ### 1.9 Framework Presentation
 
-When presenting frameworks, use consistent structure:
+Questions and criteria, not prescriptions: "Before starting, ask 4 questions…" Numbered questions, ❌/✅ contrasting checkboxes for criteria. Unchanged — and note his edit direction even here: "I now ask three questions" became "I think of three questions." Frameworks are offered, not decreed.
 
-**The numbered question format:**
-> "Before starting your next project, ask 4 questions. Your answers determine everything else."
+### 1.10 Humour — dry, and after the argument lands
 
-> "When institutions enter your passion project space, three questions help cut through the noise."
+The guide's old versions had no humour section; his hand edits add it constantly, always in the same position: **a dry jab after the point is made, never inside the argument.**
 
-**Checkboxes for contrasting criteria:**
-> "✅ 'Does it redline the contracts my team reviews?'
-> ✅ 'Can I ship by Friday?'
-> ✅ 'Do 5 colleagues find it useful?'"
+> "Set up a weak enough opponent and human uniqueness wins by default. *AI would gladly help you with that too.*"
 
-> "❌ 'What if users have different file formats?'
-> ❌ 'What if this needs to scale to 1,000 users?'"
+> "Size does matter. Brevity is the wit of a legal quant's soul."
 
----
+> A 😅 callout exposing a live bug in his own product, mid-tutorial.
+
+Slightly clumsy is fine — he keeps ungrammatical jokes ("just trying to be sycophant"). Manufactured wit is not.
+
+### 1.11 Fairness to Third Parties
+
+He consistently edits drafts to be *more generous to other people's work than the draft was*: rescoping his own claim in a competitor's favour, cutting credential-stacking while keeping the credit, "stock harness" → "default harness", deleting ominous asides ("— sometimes silently"). Named people, tools, and communities get the most generous reading the evidence allows. If a sentence about a third party would sting them and isn't load-bearing, cut it.
+
+### 1.12 Directional Hedging
+
+Hedging is not uniformly bad — it has a direction:
+
+- **Harden claims about the world:** "It appears law firms guard…" → "Law firms guard…". If the evidence supports it, say it.
+- **Soften claims about himself:** "My stack *largely* lost", "Version 1 is *primarily* two text files", "It's *probably* in Settings". Certainty about his own conclusions gets dialed down; the world gets stated plainly.
 
 ## Part 2: Structural Patterns
 
-### 2.1 Bullet Point Rules
+### 2.1 Bullets and headings are for inventory and procedure; prose is for argument
 
-**Use bullets FOR:**
-- Parallel comparisons (❌ vs ✅)
-- Timelines (2022 / 2023 / 2024)
-- Technical specs (repo stats, feature lists)
-- Frameworks and questions
+**Use bullets/headings FOR:** feature inventories, timelines, specs, step-by-step procedure (he *converted* narrated features into bullets and promoted step labels to headings).
 
-**DON'T use bullets for:**
-- Emotional content
-- Analysis and insight (use prose)
-- Personal stories and admissions
+**NEVER for:** argument, analysis, emotional content, self-assessment. He deletes decision matrices, if/then scenario blocks, tricolons, example triads, and numbered self-indictments from prose — one edit removed *every section heading* from an argumentative post, turning it into continuous editorial prose.
 
-**Bullet frequency:** ~3 lists per 1,000 words
+Bullet frequency: ~3 lists per 1,000 words; 3-4 items per list; always introduced with a colon setup sentence.
 
-**Items per list:** 3-4 items (rarely more than 5)
+### 2.2 Headers: plain first-person claims
 
-**Pattern:** Use bullets to present DATA, then prose to interpret it.
+- ✅ "I was certainly wrong about my legal work"
+- ✅ "The Word Plugin troubled me most"
+- ✅ "You've got to study what's in it"
+- ❌ "The confession: Prediction 3, where I was surest and most wrong" (colon-label constructions are a drafting tic he rewrites)
+- ❌ "Analysis of Infrastructure vs Tool Development Paradigms"
 
-Example:
-> *Bullets:*
-> - RedlineNow: 5 commits in 2 days, no tests, ships when it works, 30 stars
-> - SignaturePacketIDE: 5 commits, similar velocity, 20 stars and 14 forks
-> 
-> *Then prose:*
-> "The pattern: Ship when it works. No iterative refinement."
-
----
-
-### 2.2 List Introduction
-
-Never drop into a list without setup. Always use a colon:
-
-> "What Harvey got right:" → [list]
-
-> "The technical reality:" → [list]
-
-> "Here's what stings beyond the fine:" → [list]
-
-> "When building RedlineNow, Jamie doesn't ask:" → [list]
-
-**Formula:** `[Setup sentence ending in colon] → [list]`
-
----
+H2 for major sections, H3 rare, never deeper. Headings are optional: an argumentative post may need none.
 
 ### 2.3 Paragraph Length
 
-| Type | Typical Length |
-|------|---------------|
-| Opening paragraph | 2-3 sentences |
-| Explanation paragraph | 3-5 sentences |
-| Transition paragraph | 1-2 sentences |
-| Closing paragraph | 2-3 sentences |
+2-5 sentences typically; single-sentence paragraphs for colloquial asides (not aphorisms — see 1.8). He also *splits* paragraphs so a quiet line lands alone.
 
-**Rule:** Rarely more than 5 sentences. Often just 2-3.
+### 2.4 Accuracy outranks economy
 
-**Single-sentence paragraphs for emphasis:**
+When a tidy parable and the messy real mechanism compete, **he picks the messy real story even at twice the length** — the six-line-fix parable became the full soffice saga; a rhetorical frame became a second real case. Cut flourishes, not facts. If showing the real mechanism costs 100 words, cut 100 words of scaffolding elsewhere.
 
-> "That's the dream."
+### 2.5 Narrative Pacing
 
-> "I don't know yet."
+The recurring drafting failure is expository "blog voice" — analysis arranged in sections. His posts are stories:
 
-> "Neither approach is wrong."
+- **Scene before analysis.** Open inside the experience (what he did, saw, expected), not above it.
+- **One narrative spine per post.** Analysis arrives as the narrator's realization along the way, not as titled argument blocks.
+- **Data appears when the story needs it**, not when the research found it. A finding without a place in the story goes to research.md, not the post.
+- **Before drafting, read the canonical corpus posts (below)** to sample the live rhythm — and record in discussion.md which post you modeled ("voice reference: <post> — <quality>").
 
----
+### 2.6 Closes: soft, hopeful, or flat
 
-### 2.4 Header Style
+His own words, logged as a preference: **"ends on hope, not a mic-drop."**
 
-**Emoji in headers** (sparingly):
-- "The Drama, Briefly 🎭"
-- "Harvey's GenAI Blueprint 🏗️"
-- "Bottom Line 🎯"
+- ✅ A quiet statement of hope: "I feel it's a new challenge, and I hope it will reward my judgement."
+- ✅ A flat, low-stakes line: "The worst that happens is nothing changes."
+- ✅ A warm invitation or an appointment: "December will tell. See you then with the data."
+- ✅ Reflective questions the reader carries away
+- ❌ Mic-drop aphorisms, rising exhortation, next-post teasers (deleted: "That's the teaser for the next post…"), prescription-as-finale
 
-**Header hierarchy:**
-- H2 for major sections
-- H3 for subsections (rare)
-- Never deeper than H3
+### 2.7 Special Formatting
 
-**Header tone:** Conversational, not academic
-- ✅ "What I'm Missing"
-- ✅ "When Vibe Coding Breaks - And It Will"
-- ❌ "Analysis of Infrastructure vs Tool Development Paradigms"
-
----
-
-### 2.5 Special Formatting
-
-**Blockquotes:** For self-quotes from previous posts
-> "Scope is your most important feature..."
-
-**Bold:** For:
-- Key terms on first use ("**vibe coding**")
-- Emphasis in lists ("**Pragmatic voice:**")
-- Section labels within prose
-
-**Italics:** For:
-- Titles
-- Single-word emphasis ("what's *possible*")
-- Internal thoughts
-
-**❌/✅ checkboxes:** For contrasting lists (this is distinctive)
-
----
-
-### 2.6 Embedded Content
-
-| Type | Frequency | Purpose |
-|------|-----------|---------|
-| Link cards to own posts | 1-2 per article | Build continuity |
-| Link cards to external | 0-1 per article | Credit sources |
-| Images/diagrams | 0-1 per article | Framework visualization |
-
----
+Blockquotes for quotes; bold for key terms on first use and voice labels; italics for titles and single-word emphasis; ❌/✅ checkboxes for contrasting lists; callouts (`> 💡`, `> 😅`, `> 🆘`) for tips, self-deprecating asides, and invitations — a live pattern in his own edits. No emojis in body text.
 
 ## Part 3: Anti-Patterns
 
-**What Houfu does NOT do:**
+**Voice:**
+- ❌ Aphoristic kickers and punchline metaphors (1.8)
+- ❌ Bookmark lead-in narration (1.4)
+- ❌ Inferred or manufactured emotion; performed confession or performed proof (1.6)
+- ❌ Register UP: polished litotes, formal claims ("My thesis was…" → he writes "I expected…")
+- ❌ Credential-stacking and ominous asides about others' work (1.11)
+- ❌ False-precision thresholds (1.3)
+- ❌ Jargon without explanation; humble-bragging; false certainty; preaching
+- ❌ Hedging claims about the world (hedge yourself instead — 1.12)
 
-### Voice Anti-Patterns
-- ❌ Jargon without explanation
-- ❌ Humble-bragging (achievements are always complicated immediately)
-- ❌ False certainty (comfortable saying "I don't know")
-- ❌ Preaching (describes experience, not what others "should" do)
-- ❌ Excessive hedging (states opinions directly when warranted)
-- ❌ Emojis in body text (only occasionally in headers)
-
-### Structure Anti-Patterns
-- ❌ Walls of 10+ bullet points
-- ❌ Nested bullets (bullets within bullets)
-- ❌ Academic header structures ("1.1.2 Subsection")
-- ❌ Bold for entire sentences
-- ❌ Bullet points for emotional/personal content
-- ❌ Lists without setup sentences
-
----
+**Structure:**
+- ❌ Colon-label headings (2.2)
+- ❌ Decision matrices, tricolons, and enumerated self-indictments in prose (2.1)
+- ❌ Mic-drop closes and teasers (2.6)
+- ❌ Walls of 10+ bullets; nested bullets; bullets for emotional content
+- ❌ Tidy parables replacing the messy real mechanism (2.4)
 
 ## Part 4: Templates
 
 ### Blog Post: "News Commentary" (Lane 1)
 
 ```
-[Opening: News hook with specific detail - 1-2 sentences]
-[Vulnerable reaction or contrarian take - 1 sentence]
+[Opening: what happened + his flat first-person reaction — 2-3 sentences, payoff stated]
 
 [Section: What happened]
-- [Bullet: Key fact 1]
-- [Bullet: Key fact 2]  
-- [Bullet: Key fact 3]
+- [3-4 bullets: the facts]
+[Prose: why this matters — the argument, in prose]
 
-[Prose: Why this matters - 2-3 sentences]
-
-[Section: The uncomfortable truth]
-[Prose: What most coverage misses - 3-4 sentences]
+[Section: The uncomfortable truth — what coverage misses, argued not listed]
 
 [Section: Solo counsel implications]
-"For solo counsels / small teams..."
-[Specific, practical recommendation]
+"For solo counsels / small teams..." [specific implication]
 
-[Closing: Clear recommendation OR question for readers]
+[Close: soft/flat/invitation — never a mic-drop]
 ```
 
 ### Blog Post: "Learning in Public" (Lane 2)
 
 ```
-[Opening: Personal feeling or vulnerable admission - 2-3 sentences]
-[Specific numbers grounding the situation]
+[Opening: interior first-person scene — what he did, expected, what happened. Payoff stated early]
+[Specific lived numbers grounding it]
 
-[Section: The comparison/tension]
-[Describe two approaches or perspectives]
-"Neither is wrong. But..."
+[The story unfolds: analysis as realization, data as the story needs it]
 
-[Section: Framework]
-"[N] questions help cut through the noise:"
-1. [Question 1]
-2. [Question 2]
-3. [Question 3]
+[Framework, if declared: "N questions help cut through the noise:"]
 
-[Section: What I learned / What I'm still figuring out]
-[Uncomfortable admission about gaps]
+[What I'm still figuring out — one honest admission, stated once, not performed]
 
-[Section: Return to solo counsel reality]
-"For solo counsels..."
+[Return to solo counsel reality, if declared]
 
-[Closing: Unresolved question OR invitation to share experience]
+[Close: hope, appointment, or invitation]
 ```
 
 ### LinkedIn Post
 
 ```
-[Hook: Feeling or surprising observation - 1 sentence]
-
-[Vulnerable admission or contrarian take - 1-2 sentences]
-
+[Hook: flat observation or feeling — 1 sentence]
 [The insight - 2-3 sentences]
 → [Bullet if needed]
-→ [Bullet if needed]
-
-"For solo counsels / small teams..."
-[Practical implication - 1-2 sentences]
-
-[Link to full article OR question for comments]
+"For solo counsels / small teams..." [implication]
+[Link OR question for comments]
 ```
 
----
-
-## Part 5: Sample Sentences
+## Part 5: Sample Sentences (from his hand edits, 2026)
 
 **Openings:**
-> "I stared at the invoice for 20 minutes. $2,400/year for a tool I'd built myself in a weekend."
+> "To be honest, I did have a goal to do some public speaking in 2026."
+> "I went looking for why my agent stack confounded me."
 
-> "Everyone's talking about [X]. Here's what they're missing."
+**Asides (the good short sentences):**
+> "That's it." · "Claude Cowork is Zen." · "Neato, right?" · "I don't know yet."
 
-**Neither-is-wrong:**
-> "Enterprise solutions aren't wrong. But they're built for teams with procurement departments and IT support. Most of us have neither."
+**Humour after the argument:**
+> "AI would gladly help you with that too."
+> "Brevity is the wit of a legal quant's soul."
 
-**Specific numbers:**
-> "Three months. Forty-seven commits. One user: me."
+**Fact-then-undercut:**
+> "That post got pretty warm feedback, including a cite from LawSites. I promised a follow-up about what works, and got distracted instead."
 
-**Uncomfortable admission:**
-> "I still haven't shipped it. Every time I think it's ready, I find another edge case that feels important."
+**Directional hedging:**
+> "My stack largely lost against the default. But what I learnt about the harness was the real lesson."
 
-**Return to solo counsel:**
-> "For practitioners without dedicated tech support, the question isn't 'what's the best tool?' It's 'what can I actually maintain?'"
+**Closes:**
+> "The worst that happens is nothing changes."
+> "December will tell. See you then with the data."
+> "As long as you use your real voice."
 
-**Punch sentences:**
-> "That's the dream."
-> "Neither is wrong."
-> "I don't know yet."
-> "Done. Shipped."
+## Canonical Corpus (the live reference — read before drafting)
 
----
+The guide describes; these posts ARE the voice. Refresh this list at final-sync time when a newer post is heavily hand-polished.
+
+1. **`my-voice-worked`** (2026-02) — 100% hand-written, his own callout says so. The uncontaminated baseline: no headings, no bullets, no formulas, quiet three-word close.
+2. **`pitfalls-seeking-ai-advice-from-lawyers`** (2026-06, folder `cna-ai-advice-from-lawyers`) — richest hand-edit set; opening and close both his.
+3. **`rugpulled-by-cowork`** (2026-06, folder `cowork-rugpull`) — most recent and most authorially defended (hand-written opening protected against reviewer advice).
+
+Also instructive: commit `73f7805` ("A human wrote some edits") — his rawest prose, on skillsbench-analysis. **Use the commit, not the live post**: a later polish pass smoothed his hand-written passage, which is exactly the failure mode to avoid. **Never smooth a passage Houfu hand-wrote.**
+
+## Living Addendum (updated at every final sync)
+
+Dated voice decisions from Houfu's hand edits, newest first. When this section conflicts with the guide above, this section wins. Full evidence: `docs/voice-edit-corpus-2026-08.md`.
+
+- **2026-08-04 (corpus mining, 6 months of edits):** Thirteen rules derived and folded into this rewrite — headline: he cuts; no bookmark lead-ins (9/9 deleted); no aphoristic kickers (9 deleted); no inferred emotion (one shipped factually wrong); closes on hope not mic-drops; register down; fairer to third parties than the draft; numbers must be lived.
+- **2026-07-30 (legal-oss-maintainer):** Corrected an inferred hesitation ("I didn't hesitate. I just wasn't sure what I should do"); "help out" not "help maintain"; added the free-as-in-beer-and-freedom aside; cut the 2019-typo confession from the callback, added the LawSites credit with an undercut.
+- **2026-06-27 (cowork-rugpull):** "Ends on hope, not a mic-drop" — his stated close preference; hand-written opening marked keep/do-not-re-raise.
+- **2026-06-10 (deepseek-v4-vs-harvey):** Refused the gambling metaphor and the withheld reveal; added his own methodological disclaimer; kept an emotional line deleted over reviewer protection; genericised a named US statute.
 
 ## Quick Reference Checklist
 
 Before publishing, verify:
 
-- [ ] Opens with feeling or vulnerable admission (not throat-clearing)
-- [ ] Specific numbers appear in first few paragraphs
-- [ ] "Neither is wrong" framing where applicable
-- [ ] Bullet lists have 3-4 items max, introduced with colon
-- [ ] No bullets for emotional/personal content
-- [ ] Paragraphs are 2-5 sentences
-- [ ] At least one return to "solo counsel reality"
-- [ ] Single-sentence paragraphs used for punch
-- [ ] Self-quote or callback to previous post (if relevant)
-- [ ] Ends with question OR clear recommendation (not both)
-
----
-
-*Last Updated: January 2026*
+- [ ] The 2-3 declared voice moves are present; undeclared patterns are absent
+- [ ] Opening is a flat interior first-person setup with the payoff stated (no withheld reveal)
+- [ ] Every feeling/admission traces to something Houfu actually said
+- [ ] Numbers are lived, clustered, and defensible; no false-precision thresholds
+- [ ] Zero bookmark lead-in sentences; zero aphoristic kickers
+- [ ] Bullets only for inventory/procedure; argument is in prose
+- [ ] Headings are plain first-person claims (or absent)
+- [ ] Third parties get the generous reading
+- [ ] Close is soft, hopeful, flat, or an invitation — no mic-drop, no teaser
+- [ ] Hand-written passages untouched by any polish pass

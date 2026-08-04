@@ -241,6 +241,67 @@ function checkProseMechanics(body, folder, file) {
   }
 }
 
+// Voice mechanics from the mined hand-edit corpus (docs/voice-edit-corpus-2026-08.md)
+// and the Voice Guide's own numeric calibrations. All advisory.
+const LEAD_IN_RE = /\b(I('ve| have)? (written|argued|wrote|made (this|the) (argument|case))|I (wrote|argued) (about|before|that)|as I('ve| have)? (written|argued|said))\b/i;
+
+function checkVoiceMechanics(body, folder, file) {
+  const lines = body.split('\n');
+  let inCode = false;
+  const leadIns = [];
+  const bigLists = [];
+  let listBlocks = 0;
+  let inList = false;
+  let listLen = 0;
+
+  lines.forEach((line, i) => {
+    if (/^```/.test(line.trim())) inCode = !inCode;
+    if (inCode) return;
+
+    // R2: a standalone internal-link line preceded by a prose sentence
+    // narrating it ("I've written before that...") — 9/9 such lead-ins were
+    // hand-deleted; the card's title is the callback.
+    const standaloneLink = /^\s*\[[^\]]+\]\(https?:\/\/(?:www\.)?alt-counsel\.com\/[^)]*\)\s*$/.test(line);
+    if (standaloneLink) {
+      for (let j = i - 1; j >= 0; j--) {
+        const prev = lines[j].trim();
+        if (prev === '') continue;
+        if (LEAD_IN_RE.test(prev)) leadIns.push(i + 1);
+        break;
+      }
+    }
+
+    // List shape: count blocks and oversized lists
+    const isItem = /^\s*([-*+]|\d+\.)\s+/.test(line);
+    if (isItem) {
+      listLen++;
+      if (!inList) {
+        inList = true;
+        listBlocks++;
+      }
+    } else if (line.trim() !== '') {
+      if (inList && listLen > 6) bigLists.push(`~line ${i} (${listLen} items)`);
+      inList = false;
+      listLen = 0;
+    }
+  });
+  if (inList && listLen > 6) bigLists.push(`end of file (${listLen} items)`);
+
+  if (leadIns.length > 0) {
+    warn(
+      folder,
+      `${file} narrates bookmark card(s) with a lead-in sentence at line(s) ${leadIns.join(', ')} — the card's title IS the callback (voice rule R2: 9/9 lead-ins hand-deleted)`
+    );
+  }
+  if (bigLists.length > 0) {
+    warn(folder, `${file} has list(s) with more than 6 items at ${bigLists.join(', ')} — house style is 3-4 items; argument belongs in prose`);
+  }
+  const words = proseWords(body);
+  if (words > 500 && listBlocks / (words / 1000) > 5) {
+    warn(folder, `${file} has ${listBlocks} bullet lists in ${words} words (voice guide: ~3 per 1,000) — bullets are for inventory/procedure, prose for argument`);
+  }
+}
+
 // Mechanical checks the content-quality audit used to repeat on most posts
 // (heading skips: 8/19 audited posts; missing alt text: 7/19; GitHub
 // terminology: 4/19). Linting them frees the auditor for judgment calls.
@@ -472,6 +533,7 @@ function lintFolder(folder) {
   checkInternalLinkRefs(raw, parsed.content, folder, main, fm.slug || folder);
   checkBannedPhrases(parsed.content, folder, main);
   checkProseMechanics(parsed.content, folder, main);
+  checkVoiceMechanics(parsed.content, folder, main);
   checkMechanicalDefects(parsed.content, folder, main);
 
   for (const f of files) {
