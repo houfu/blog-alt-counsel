@@ -69,6 +69,12 @@ Append at the bottom of the SESSIONS section:
 
 Keep under ~40 lines. Terse beats thorough — the audit trail is the load-bearing record.
 
+**One entry per session.** If a session runs long, **update** its entry rather than appending `(cont. N)` sub-entries — eight individually-compliant sub-entries once made a 369-line file. When SESSIONS passes ~250 lines, compress everything older than the last three sessions into the AUDIT TRAIL and WHAT WORKED/DIDN'T tables, which is what those sections are for.
+
+## discussion.md is public
+
+`posts/` ships to a public GitHub repo, and published posts link back to their folders. Everything written here is published, including working notes. Never record: names the user has not agreed to publish, private message content from third parties, or anything framed as "don't put this in the post." Adding a name later is one edit; removing it from git history is not.
+
 ## Decision entry template
 
 Use for *significant* decisions only (framing, scope, major revisions). Add to the AUDIT TRAIL section at the top:

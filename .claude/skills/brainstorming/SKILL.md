@@ -21,9 +21,9 @@ Transform rough ideas into fully-formed designs through structured questioning a
 - Prefer multiple choice when possible
 - Gather: Purpose, constraints, success criteria
 
-### Phase 2: Exploration
-- Propose 2-3 different approaches
-- For each: Core architecture, trade-offs, complexity assessment
+### Phase 2: Exploration — go wide before going narrow
+- Generate **5-8 genuinely different angles** first, one line each, including at least two you think are wrong. Breadth is the product of this phase; a shortlist of three that all say the same thing is a failed brainstorm.
+- Then narrow to **2-3** and develop those: core structure, trade-offs, what each one costs
 
 **For blog posts — vulnerability framing:**
 When exploring emotional hooks or opening angles, FIRST ask: "What personal experience from your own life connects to this topic?"
@@ -56,8 +56,8 @@ Create or update the 'discussion.md' in the post folder using the note-taking sk
 
 ## Remember
 - One question per message during Phase 1
-- Apply YAGNI ruthlessly
-- Explore 2-3 alternatives before settling
+- Generate generously, select ruthlessly — YAGNI applies to what survives the shortlist, never to what you are willing to put on the table
+- Go wide (5-8 angles) before narrowing to 2-3
 - Present incrementally, validate as you go
 - Go backward when needed - flexibility > rigid progression
 - Announce skill usage at start

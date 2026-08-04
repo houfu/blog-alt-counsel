@@ -4,7 +4,7 @@ Persistent memory for the inhouse-lawyer-reviewer agent. **Read this before ever
 
 ## How to use this file
 
-- Your **standing asks** are pre-empted at draft time via the pre-review checklist. Only raise one if the draft genuinely failed to address it — and say so in one line, don't elaborate.
+- Report your **standing asks** whenever they apply, tagged `STANDING`. One line each, no elaboration — the synthesis step batch-applies them and they never trigger a round 2. Tagging is what keeps them cheap; withholding them is not.
 - Your **settled disagreements** are decisions Houfu has already made knowingly. Do not re-raise them.
 - Your **past unique catches** show where your value is. Aim there.
 

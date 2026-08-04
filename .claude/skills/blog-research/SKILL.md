@@ -91,9 +91,7 @@ Before conducting searches, output a research brief:
 **Stop when:** All sections adequately supported OR regional sources exhausted
 ```
 
-**Ask user:** "Does this match what you need? Or should I adjust before starting searches?"
-
-Do not start searching until the user approves the brief.
+**Ask the user only if the brief changes the thesis or the budget.** Otherwise post the brief and start searching — it is a plan, not a permission request. Report what you found against it.
 
 ### Step 3: Conduct Research
 
@@ -111,15 +109,15 @@ Use web_search following this priority order:
 - Extract specific data points, quotes, and citations
 - Cross-reference information across multiple sources
 
-**Search Depth (Evidence-Driven):**
-- **Per section claim:** 2-3 searches minimum
-  - Stop when: Claim is supported by 2+ credible sources OR you've exhausted regional sources
-  
-- **Total research session:** Based on outline
-  - 3 sections with specific claims = 6-9 searches
-  - Stop when: All sections have adequate evidence OR regional sources exhausted
-  
-**Red flag:** If doing 10+ searches and outline still has evidence gaps, the problem is likely the outline (claims too broad/unsupported), not insufficient research.
+**Search depth — go wide.** There is no useful cap on searches; a thin evidence base costs a rewrite, an extra search costs a minute. Per section claim, stop when it is supported by 2+ credible sources or regional sources are exhausted — but follow leads that look promising even when they were not in the brief, and record them.
+
+**The cap is on what crosses into the pitch, not on what you find.** research.md is unbounded. Per drafting session, at most **3 findings may change the pitch's beats** — pick the three with the highest claim-per-word and log the rest in research.md under "Available, not used." A finding that adds a thread without replacing one is not a finding, it is scope. (History: one post accumulated ~12 threads in a session because everything research found entered the pitch.)
+
+**Red flag:** If the outline still has evidence gaps after wide searching, the problem is likely the outline (claims too broad/unsupported), not insufficient research.
+
+### Step 3.5: Read the artifact, not the log
+
+When a source is a discussion, chat log, or session transcript, it is evidence of what someone *said*, not of what they *decided*. If a message produced an artifact — a design doc, an ADR, a commit, a merged PR — open the artifact and cite that. Pitch v6 of legal-oss-maintainer failed on exactly this: research recorded four soft bullets from a chat message and missed the design principle entirely, because the principle was in the design doc the message produced, four commands away in the repo, never opened. It cost a full draft. Interrogating your framing cannot tell you that you read the wrong file.
 
 ### Step 4: Evaluate Sources
 
