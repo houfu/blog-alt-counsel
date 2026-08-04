@@ -1,10 +1,10 @@
 {
   "version": 1,
   "pitch_checkpoint": {
-    "at": "2026-08-04T22:40:22.033Z",
-    "verdict": "Draft written same-session against locked pitch; thesis/scope/emotional core aligned; no subject drift vs original framing",
-    "draft_sha": "22afae35fe05",
-    "pitch_sha": "ab1977fae546"
+    "at": "2026-08-04T22:50:25.216Z",
+    "verdict": "Post-audit draft still aligned with pitch: thesis/beats/emotional core unchanged by audit fixes; pitch edit only added declared solo-counsel voice move; lint thesis-presence clean",
+    "draft_sha": "39c580538b02",
+    "pitch_sha": "4baebd6e91d5"
   },
   "audit_rounds": [
     {
@@ -18,7 +18,18 @@
       ]
     }
   ],
-  "review_rounds": [],
+  "review_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-04T22:51:15.228Z",
+      "draft_sha": "39c580538b02",
+      "words": 1286,
+      "agents": [
+        "lawyer-coder-reviewer",
+        "legal-tech-blog-reviewer"
+      ]
+    }
+  ],
   "length_audit": null,
   "overrides": []
 }

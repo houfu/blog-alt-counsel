@@ -453,3 +453,19 @@ Pitch v2 locked on first presentation. Thesis, spine, beats, and thesis_keywords
 **Houfu's own hand edit, preserved untouched:** "terrified of coding" → "terrified of coding in this big, foreign codebase."
 
 Lint clean after edits. Draft now ~1,360 words.
+
+## 2026-08-05 — Session 4 (cont.): Reviewer round 1 — both serve, fixes applied
+
+**Audit round (before reviewers):** substance + tone agents. Critical catch (both agents independently): the founder-went-quiet sentence violated the settled no-departure-narrative rule — cut, counterweight now carried by his own facts only. Also applied: five-merges claim narrowed to sourced shape, ten-repo claim narrowed to GOVERNANCE.md-only, seven weeks not six, artifact count de-numbered, community-participation evidence added (litigator ADR support), triad echoes trimmed, header de-witted, solo-counsel move formally added to the voice contract (pitch beats had declared it; frontmatter hadn't).
+
+**Reviewers: Wei Lin (primary) + Marcus (secondary), per Houfu's "at least 2 reviewers. select and go." Both verdicts: SERVES ME.** Wei Lin: "strongest draft of the three framings"; the fear line is his forward-to-a-friend line. Marcus: would forward to the community list; #441 scene + mechanical hook earned it.
+
+**Applied from synthesis (net ≈ +75 words → ~1,460, well under budget):** certification joining sentence (Wei Lin's if-one-thing — the mandate was waiting for the skill); excerpt rewritten (Marcus's inconsistency catch + Wei Lin's v7-residue catch); agent-feeds-the-committee pipeline sentence (Marcus's if-one-thing, from research §10.7); reader on-ramp in solo-counsel paragraph (Wei Lin standing ask); metaphor-stumble rephrase; long paragraph split; three small cuts (redundant birthdate, recommend/decide restatement, ADR-ownership aside).
+
+**Declined, recorded in reviewer memories:** both reviewers' nibbles at the protected hand-written line ("LQ.AI had several cool features, but it was deep, complex and free — both in terms of beer and freedom") — never smooth Houfu's own words.
+
+**Escalated to Houfu (open):** (1) the governance one-liner uses the out-of-scope measurement — Wei Lin votes keep-and-bless, needs a knowing call; (2) LQ.AI vs lq-ai casing (his line vs body style); (3) optional: Herding Cats academic citation one-liner (Marcus); (4) optional: one clause on how the yes felt (Wei Lin, only if Houfu supplies it); (5) slug still `working-on-each-others-code` from the dead title — change before publish or keep.
+
+**Process note:** both reviewer agent definitions have broken YAML (`model:` field with inline comment) — every spawn fails without an explicit model override. Fix on a separate infra branch after this post.
+
+Round 1 of 2 used. Lint clean throughout.
