@@ -384,3 +384,21 @@ Houfu's verdict on the interrogation of why drafts failed: *"I don't like it. En
 **This branch (`post/legal-oss-maintainer-rewrite`, off main) carries only what Houfu called valuable: `research.md` and this file.** Draft 1, draft 2, pitches v1–v7, and the deck images live in the history of `claude/legal-open-source-article-86vio3` (through commit 93974a0) and are not carried forward. The Ghost draft (post_id `6a6ac6b2e1ac4e0001e36a8f`) still exists, untouched, to be replaced when a new draft is ready.
 
 **Next: a brand-new pitch, built from research.md, starting from zero on framing.**
+
+## 2026-08-04 — Session 4 (cont.): New pitch approved — the mammoth, chosen on purpose
+
+**The emotional core came from Houfu directly** (verbatim in pitch.md): fresh from the Claude certification, he decided to build a coding agent for lq-ai — a mammoth job worth doing — and he's making it his focus for the rest of the year ("for the rest of us" was a typo for "for the rest of the year", clarified same session).
+
+**What's new versus every rejected framing:** this is forward-looking commitment, not retrospective confession. Subject = the decision to point a fresh certification at a community-led project and commit the year to it. Not stewardship (v6), not the documents (v7), not fear.
+
+**Timeline find that anchors the open:** the CCA-F LinkedIn post went live 2026-07-10 — the same day the lq-maintainer-agent repo was created. "Fresh from" is literal. The unpublished cert post ("Every Answer Was Correct...", branch claude/architect-cert-post-s5uod3) closes with "Build first. Certify after." — this post is its sequel; if it publishes first it joins must_link.
+
+**Decisions (Houfu's):**
+- Pitch paragraph approved as written, first presentation ("Yes, that's the post").
+- **Title deferred to post-draft** — "lets think of it once we done the draft". Old title dropped.
+- Tags: AI, LegalTech, OpenSource (Article declined — not featuring).
+- Word budget 1,800; primary audience wei-lin, secondary marcus.
+
+**Out of scope, named:** contributor-concentration story, governance measurement + review-capacity thread, Mike day-90, both dead theses. The v7 corrections survive only as learning-curve beats.
+
+**Verification debt for WRITE:** doc-size numbers (v7's 94,678/255 from local repo read — re-measure or stay qualitative); "what's a canon map" and the 17 July quote (re-pull from pitch v7 at commit 93974a0 on the old branch). No target publish date set.
