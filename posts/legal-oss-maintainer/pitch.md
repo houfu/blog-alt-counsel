@@ -30,7 +30,7 @@ target_date: ~
 
 *Clarified same day: "for the rest of us" = typo for "for the rest of the year" — the commitment is time.*
 
-**Title:** [deferred by Houfu 2026-08-04 — "lets think of it once we done the draft". Old title dropped.]
+**Title:** "I'm the Official Cat Herder of a Legal AI Project" — SETTLED (Houfu, 2026-08-05: "The working title is great"). Do not re-propose alternatives.
 **Thesis:** The best use of a freshly certified skill is a job only you will do — herding a community-led legal AI product that doesn't exist anywhere else today — and that job is worth the rest of his year.
 **Spine:** It's been a tough learning curve, but it's worth doing — so I'm herding these cats for the rest of 2026.
 

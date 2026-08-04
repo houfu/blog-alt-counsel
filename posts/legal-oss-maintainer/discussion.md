@@ -442,3 +442,14 @@ Pitch v2 locked on first presentation. Thesis, spine, beats, and thesis_keywords
 - Both must-link cards placed (Part 1 after the open, unexpected-joys before the close), no lead-in sentences, ?ref= attribution on both.
 
 **Next:** title candidates to Houfu, then REVIEW phase: audit round (audit-substance + audit-tone), then Wei Lin (primary) per pitch, length audit before additive fixes.
+
+## 2026-08-05 — Session 4 (cont.): Houfu's read — title settled, triad tic sharpened
+
+**Houfu read the draft. Two outcomes:**
+
+1. **Title SETTLED: "I'm the Official Cat Herder of a Legal AI Project"** — the working title, kept ("The working title is great"). Do not re-propose.
+2. **Voice catch, his:** the triadic role-summary sentence ("read everything, remember what was decided, and say 'approved' out loud...") "is repeated often in the draft. it needs sharpening." He's right — the tricolon is a documented delete-on-sight pattern in the Voice Guide (2.1), and it appeared five times in different clothes. All five sharpened: the why-commit paragraph now lands on "a reader with the nerve to press Approve"; the solo-counsel line on "close reading, and pricing what can't be undone — ones lawyers already bill for"; the tool description compressed to two moves; the close's em-dash triad cut (content already in the plan paragraph); the excerpt rewritten. **Rule for future drafts: one triad per post, if that — the summary-of-role tricolon is a Claude drafting tic, not Houfu's voice.**
+
+**Houfu's own hand edit, preserved untouched:** "terrified of coding" → "terrified of coding in this big, foreign codebase."
+
+Lint clean after edits. Draft now ~1,360 words.

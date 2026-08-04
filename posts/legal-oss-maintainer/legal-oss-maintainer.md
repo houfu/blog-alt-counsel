@@ -2,9 +2,9 @@
 title: I'm the Official Cat Herder of a Legal AI Project
 slug: working-on-each-others-code
 custom_excerpt: >-
-  A committee of lawyers appointed me to review code I can't write. So I built
-  an agent, read everything the project wrote down, and signed up to herd cats
-  for the rest of 2026.
+  A committee of lawyers appointed me to review code I can't write. The project
+  had written itself down, and that turned out to be enough. I'm herding these
+  cats for the rest of 2026.
 tags:
   - AI
   - LegalTech
@@ -31,7 +31,7 @@ It's a serious job wearing a flippant title. LQ.AI had several cool features, bu
 
 That writing-down is also why a non-coder can herd here at all. The docs folder alone holds 254 markdown files and 94,361 lines: 23 architecture decision records, and a requirements document that openly parks 244 ideas it hasn't built yet. Reading is the part of the job I was already qualified for.
 
-And the group had asked for a tool. So the first thing I did with the new certification was build the coding agent they wanted: a Claude Code plugin that reads an incoming contribution, holds it against the project's own written decisions, and hands me the judgment call.
+And the group had asked for a tool. So the first thing I did with the new certification was build the coding agent they wanted: a Claude Code plugin that holds every incoming contribution against the project's own written decisions — and hands me the judgment call.
 
 [lq-maintainer-agent on GitHub](https://github.com/houfu/lq-maintainer-agent)
 
@@ -43,7 +43,7 @@ Two days in, I wasn't happy with anything the first version produced, so I told 
 
 The HTML explainer deck the agent now produces — the most useful thing it makes — exists because the maintainer couldn't read the maintainer tool. In the same stretch I asked my own tool, in all sincerity, "What's a canon map." It had invented a term and I was its first confused user.
 
-Twice I found out I'd been careful about the wrong thing. In mid-July the agent kept telling me to escalate architectural questions for human discussion, until I pushed back: weren't there already decisions on file that narrow the uncertainty? The ADRs had settled questions I was still treating as open. Escalating them wasn't caution; it was a failure to read. Then at the end of July I caught the deeper version of the same mistake. Three weeks of real contributions had arrived and not one was malicious. Most were small. And my agent was still thorough, slow, and fond of recommending inaction — because I had tuned it for a threat that never showed up. I had been terrified of coding, and I had built that fear into software. So I asked the agent, in writing, how it could support my weaknesses without making me afraid to go ahead, and rebuilding it around that question became the biggest redesign of the tool so far.
+Twice I found out I'd been careful about the wrong thing. In mid-July the agent kept telling me to escalate architectural questions for human discussion, until I pushed back: weren't there already decisions on file that narrow the uncertainty? The ADRs had settled questions I was still treating as open. Escalating them wasn't caution; it was a failure to read. Then at the end of July I caught the deeper version of the same mistake. Three weeks of real contributions had arrived and not one was malicious. Most were small. And my agent was still thorough, slow, and fond of recommending inaction — because I had tuned it for a threat that never showed up. I had been terrified of coding in this big, foreign codebase, and I had built that fear into software. So I asked the agent, in writing, how it could support my weaknesses without making me afraid to go ahead, and rebuilding it around that question became the biggest redesign of the tool so far.
 
 ## The agent recommends; I decide, every time
 
@@ -55,14 +55,14 @@ Honesty requires the other column. The agent has zero stars; nobody is watching.
 
 ## What the rest of the year looks like
 
-So why commit a year to this? Because the hard part — a project that writes down its decisions, a community that wants to carry it, contributors who answer reviews within a day — already exists, and the missing parts are exactly the ones a lawyer can supply. Nobody on that Sunday call needed another coder. They needed someone to read everything, remember what was decided, and say "approved" out loud where the record can see it.
+So why commit a year to this? Because the hard part already exists: a project that writes down its decisions, and a community that wants to carry it. What was missing on that Sunday call wasn't another coder. It was a reader with the nerve to press Approve.
 
 The plan for the rest of 2026 is concrete: ship the project's first committee-era release — version 0.7.0 is imminent, and the release-process ADR is mine; grow the review committee from one founding member into an actual group; keep evolving the agent as the job teaches it; and stand up a documentation site so that people who don't code can find their way in.
 
 The cost is also concrete: about an hour a day. It comes out of my own projects, and out of this blog — which is part of why this post took longer to arrive than I'd like.
 
-For solo counsels and small teams, here's the practical read: the free tools standing between you and a five-figure platform bill survive only if somebody does this unglamorous job, and the somebody doesn't have to be the person who wrote the code. Reading carefully, remembering what was decided, and allocating the risk of what can't be undone are things our profession already trains.
+For solo counsels and small teams, here's the practical read: the free tools standing between you and a five-figure platform bill survive only if somebody does this unglamorous job, and the somebody doesn't have to be the person who wrote the code. Its core skills — close reading, and pricing what can't be undone — are ones lawyers already bill for.
 
 [The Unexpected Joys of Open Source](https://www.alt-counsel.com/the-unexpected-joys-of-open-source/?ref=working-on-each-others-code)
 
-The number I'm watching is that hour a day. If the herding works — more reviewers, a release cadence, documentation that lets strangers in — it should start to fall. Ask me in December. I hope to have company by then.
+The number I'm watching is that hour a day. If the herding works, it should start to fall. Ask me in December. I hope to have company by then.
