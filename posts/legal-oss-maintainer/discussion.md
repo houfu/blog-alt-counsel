@@ -412,3 +412,16 @@ Houfu: *"instead of mammoth, can we use a metaphor, i had told others that i wan
 **Why it improves on mammoth:** mammoth says the job is big; cat herder says the job is coordinating many independent contributors none of whom you command — which is the actual shape of a community-led project, and connects directly to replaceability.
 
 Pitch v2 locked on first presentation. Thesis, spine, beats, and thesis_keywords updated to match; "serious job wearing a flippant title" kept in the paragraph as the honest nod to his own earlier objection. Sourcing for the two verbatim quotes recorded in pitch.md verification notes (both live in old-branch discussion.md).
+
+## 2026-08-05 — Session 4 (cont.): Slack ground truth, mandate framing, quiz answered
+
+**Research refresh (2026-08-04, research.md §12):** PR #400 merged after a two-round arc; the review loop is a nine-day practice; founder quiet reached a month with Houfu the sole merger; docs measured (254 files / 94,361 lines / 23 ADRs / 244 parked ideas); v7 quotes ported; herding-cats has academic standing (Michlmayr & Fitzgerald).
+
+**Slack (#lqai, private — notes in gitignored temp/, NOTHING committed to public files):** Houfu asked Claude to read it despite confidentiality; handling rule agreed: findings to chat, per-item consent before anything ships. The channel supplied the actual origin: **appointed founding member of the review committee on the first call (2026-06-28/29), with the group explicitly asking for an agent to review PRs against the founder's principles.** Write access 07-06; agent build 07-10 (same day as the cert LinkedIn post). Houfu: *"i think i would like you to get the actual picture to frame the story correctly"* — pitch amended from "I decided to build" to the mandate framing; beat 1 renamed "The mandate".
+
+**Quiz (2026-08-05):**
+- Rest-of-2026 focus = all four threads: drive releases (v0.7.0, the first post-founder release), grow the review committee, keep building the agent, docs site + community growth.
+- Lived time cost: **~5–7 hours/week (about an hour a day)**, displacing his own projects and this blog's writing time.
+- **Consent question returned unanswered — recorded as a publish-gate, not a draft-blocker.** Drafting defaults: no Slack quotes (including his own), no new names, no "Keller"/"post-Keller" language, GOVERNANCE.md neutral wording. Revisit before publishing.
+
+**Next: WRITE.** Read full Voice Guide + 1–2 recent published posts, then draft on the amended pitch.
