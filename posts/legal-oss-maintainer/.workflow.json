@@ -30,6 +30,9 @@
       ]
     }
   ],
-  "length_audit": null,
+  "length_audit": {
+    "at": "2026-08-04T23:01:54.299Z",
+    "draft_sha": "325b209af982"
+  },
   "overrides": []
 }

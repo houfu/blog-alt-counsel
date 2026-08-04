@@ -1,6 +1,6 @@
 ---
 title: I'm the Official Cat Herder of a Legal AI Project
-slug: working-on-each-others-code
+slug: official-cat-herder
 custom_excerpt: >-
   A group of lawyers decided their open-source legal AI needed a review
   committee, and made me its founding member. I can't write the code. I'm
@@ -15,17 +15,17 @@ github_folder: legal-oss-maintainer
 post_id: 6a6ac6b2e1ac4e0001e36a8f
 ---
 
-At the end of June, I joined a Sunday video call about lq-ai, an open-source legal AI platform that had appeared in the LegalQuants community seven weeks earlier and grown faster than anyone was ready for. By the end of the call I had a job. The group had decided the project needed a review committee — people who decide what gets merged into the code — and appointed me its founding member. They also asked for something oddly specific: could someone build a coding agent to help review contributions against the principles the founder had written down?
+At the end of June, I joined a Sunday video call about LQ.AI, an open-source legal AI platform that had appeared in the LegalQuants community seven weeks earlier and grown faster than anyone was ready for. By the end of the call I had a job. The group had decided the project needed a review committee — people who decide what gets merged into the code — and appointed me its founding member. They also asked for something oddly specific: could someone build a coding agent to help review contributions against the principles the founder had written down?
 
-I said yes to both, and I want to be plain about the size of the yes: I'm going to spend the rest of 2026 on this project.
+I said yes to both, excited to get to work. What I didn't understand yet was the extent of the work. So let me be plain about the size of the yes: I'm going to spend the rest of 2026 on this project.
 
 A week or so later I passed Anthropic's architect certification. The usual problem with a fresh certificate is finding something worth pointing it at. I didn't have that problem — the mandate was already sitting there, waiting for the skill. So the first real thing I pointed it at wasn't a demo or a portfolio piece. It was somebody else's codebase — one I can't write.
 
-[I Said Lawyers Don't Work on Each Other's Code](https://www.alt-counsel.com/lawyers-not-on-each-others-code/?ref=working-on-each-others-code)
+[I Said Lawyers Don't Work on Each Other's Code](https://www.alt-counsel.com/lawyers-not-on-each-others-code/?ref=official-cat-herder)
 
 ## I told them I wanted to be the cat herder
 
-On those early calls I gave my role a name: **official cat herder**. A cat herder doesn't share the cats' interests. The cats write code or file ideas; the herder keeps the whole clowder moving in roughly the same direction without pretending to command anybody. I don't aspire to say I wrote lq-ai. There are more ways to a sustainable open-source community than authoring its code.
+On those early calls I gave my role a name: **official cat herder**. A cat herder doesn't share the cats' interests. The cats write code or file ideas; the herder keeps the whole clowder moving in roughly the same direction without pretending to command anybody. I don't aspire to say I wrote LQ.AI. There are more ways to a sustainable open-source community than authoring its code. The metaphor isn't even mine to be flippant with: there is a research study of open-source release management literally titled ["Herding Cats"](https://link.springer.com/article/10.1186/s13174-017-0063-2), and its finding is that volunteer ecosystems run on influence, not control.
 
 It's a serious job wearing a flippant title. LQ.AI had several cool features, but it was deep, complex and free — both in terms of beer and freedom. In its own governance document's words, it "began as a founder-led project" that "has grown into a community effort carried by a committee of practicing lawyers and legal engineers." What it's trying to be — a truly community-led legal AI product — doesn't exist today. When I checked ten legal open-source repositories at the end of July, exactly one had published a governance document. This one.
 
@@ -53,7 +53,7 @@ By late July the tool was working in the open under its own name: its reviews ar
 
 The repo's first formal approvals in its history are mine, from late July. A review loop that had never once closed in nearly 400 pull requests now closes routinely: one contributor's security fixes produced five reviewed merges over nine days, two of them full ask-and-fix cycles. The last took two rounds before I approved it on 3 August. I still can't read every line of those diffs. I can read whether a change honours the decisions the project already made — and ask for the test that settles what I can't verify myself.
 
-Honesty requires the other column. The agent has zero stars; nobody is watching. lq-ai has 73 open pull requests and hasn't shipped a release since 4 July. And every merge since mid-July has been mine.
+Honesty requires the other column. The agent has zero stars; nobody is watching. The lq-ai repo has 73 open pull requests and hasn't shipped a release since 4 July. And every merge since mid-July has been mine.
 
 ## What the rest of the year looks like
 
@@ -65,6 +65,6 @@ The cost is also concrete: about an hour a day. It comes out of my own projects,
 
 For solo counsels and small teams, here's the practical read: the free tools standing between you and a five-figure platform bill survive only if somebody does this unglamorous job, and the somebody doesn't have to be the person who wrote the code. Its core skills — close reading, and pricing what can't be undone — are ones lawyers already bill for. If you want to know whether a free tool you depend on could take this kind of help, open its docs folder. If there's nothing to read, that's your answer.
 
-[The Unexpected Joys of Open Source](https://www.alt-counsel.com/the-unexpected-joys-of-open-source/?ref=working-on-each-others-code)
+[The Unexpected Joys of Open Source](https://www.alt-counsel.com/the-unexpected-joys-of-open-source/?ref=official-cat-herder)
 
 The number I'm watching is that hour a day. If the herding works, it should start to fall. Ask me in December. I hope to have company by then.

@@ -469,3 +469,15 @@ Lint clean after edits. Draft now ~1,360 words.
 **Process note:** both reviewer agent definitions have broken YAML (`model:` field with inline comment) — every spawn fails without an explicit model override. Fix on a separate infra branch after this post.
 
 Round 1 of 2 used. Lint clean throughout.
+
+## 2026-08-05 — Session 4 (cont.): Houfu's five calls applied
+
+1. **Governance one-liner BLESSED** — "exactly one had published a governance document" stays; the knowing exception to the out-of-scope list is now on record.
+2. **Naming standardised on the repo's own docs** (LQ.AI 220 vs lq-ai 82 in README/GOVERNANCE/PRD): product = LQ.AI in prose, lq-ai only for the repository ("The lq-ai repo has 73 open pull requests"). Pitch thesis_keyword updated to match.
+3. **Herding Cats citation added** — one line with Springer link, placed to answer the flippancy charge: "The metaphor isn't even mine to be flippant with."
+4. **Slug changed** to `official-cat-herder` (from the dead title's `working-on-each-others-code`); both internal-card ?ref= params updated to match.
+5. **The yes-feeling, his words:** "i felt excited to get to work, but i didnt understand the extent of the work needed" → "I said yes to both, excited to get to work. What I didn't understand yet was the extent of the work." (Wei Lin's optional ask, answered with lived words, not invented.)
+
+**Beer line discussed, kept verbatim.** The reviewers attacked opposite halves (Marcus: the joke is stock FOSS; Wei Lin: the lead-in is vague) — which reads as evidence the sentence works whole. For the blog's lawyer audience the beer/freedom gloss explains, not clichés. Stays unless Houfu says otherwise.
+
+**Length audit recorded:** 1,446 words vs 1,800 budget — growth since round 1 is reviewer-requested additions (offsetting CUTs applied first) plus these five calls; no padding found.

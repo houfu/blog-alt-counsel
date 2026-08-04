@@ -3,7 +3,7 @@ word_budget: 1800
 budget_tolerance: 10
 primary_audience: wei-lin
 secondary_audience: [marcus]
-thesis_keywords: ["coding agent", "lq-ai", "certification", "cat herder"]
+thesis_keywords: ["coding agent", "LQ.AI", "certification", "cat herder"]
 protected_lines: []
 voice: {lane: learning-in-public, moves: ["specific lived numbers", "one honest admission, stated once", "close on hope/appointment", "return to solo counsel reality"]}
 interrogation:
