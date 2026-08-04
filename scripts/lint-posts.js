@@ -46,6 +46,7 @@ try {
 }
 
 const { findMainFile } = require('./lib/postfile');
+const { proseWords, sectionWords, headingSlug } = require('./lib/wordcount');
 
 const ROOT = path.join(__dirname, '..');
 const POSTS_DIR = path.join(ROOT, 'posts');
@@ -282,6 +283,147 @@ function checkMechanicalDefects(body, folder, file) {
   }
 }
 
+function escapeRe(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * The pitch contract (workflow-audit-2026-08 Part 1). pitch.md frontmatter
+ * declares word_budget / thesis_keywords / protected_lines; the body carries
+ * exactly one "## Pitch" section of one paragraph, ≤200 words. Contract
+ * checks are opt-in for legacy posts: they run only when pitch.md has
+ * frontmatter, or the post is still draft/scheduled (no flag day).
+ * Returns the pitch frontmatter (or null).
+ */
+function checkPitchContract(folderPath, folder, status) {
+  const pitchPath = path.join(folderPath, 'pitch.md');
+  if (!fs.existsSync(pitchPath)) return null;
+
+  let parsed;
+  try {
+    parsed = matter(fs.readFileSync(pitchPath, 'utf-8'));
+  } catch (e) {
+    warn(folder, `pitch.md has invalid YAML frontmatter: ${e.message}`);
+    return null;
+  }
+  const fm = parsed.data || {};
+  const optedIn = Object.keys(fm).length > 0 || status === 'draft' || status === 'scheduled';
+  if (!optedIn) return fm;
+
+  if (!fm.word_budget) {
+    warn(folder, 'pitch.md declares no word_budget — the draft has no length contract');
+  }
+
+  const content = parsed.content;
+  const heads = [...content.matchAll(/^##\s+(.+)$/gm)];
+  const idx = heads.findIndex((h) => /^Pitch\s*$/.test(h[1].trim()));
+  if (idx === -1) {
+    warn(
+      folder,
+      'pitch.md has no "## Pitch" section — the contract can\'t be located (current pitch under "## Pitch"; superseded versions belong in git history)'
+    );
+  } else {
+    const dupes = heads.filter((h) => /^Pitch\b/i.test(h[1].trim())).length;
+    if (dupes > 1) {
+      warn(folder, `pitch.md has ${dupes} "## Pitch…" headings — keep ONE current pitch; git holds the history`);
+    }
+    const start = heads[idx].index + heads[idx][0].length;
+    const end = idx + 1 < heads.length ? heads[idx + 1].index : content.length;
+    const section = content.slice(start, end);
+    const words = proseWords(section);
+    const paras = section.trim().split(/\n\s*\n/).filter((p) => p.trim()).length;
+    if (words > 200) {
+      warn(folder, `the "## Pitch" section is ${words} words (contract: one paragraph, ≤200) — if the pitch needs sections, the scope isn't settled`);
+    }
+    if (paras > 1) {
+      warn(folder, `the "## Pitch" section has ${paras} paragraphs (contract: one)`);
+    }
+  }
+
+  const totalWords = proseWords(content);
+  if (totalWords > 2500) {
+    warn(folder, `pitch.md is ${totalWords} words overall — superseded versions and research belong in git history / research.md`);
+  }
+  return fm;
+}
+
+/**
+ * Draft word budget gate. Warn above budget + tolerance (default 10%); ERROR
+ * above +25% on draft/scheduled posts — the overrun that "flagged, not
+ * enforced" shipped at +27.5% (legal-oss-maintainer draft 2). Raising the
+ * budget in pitch.md is the legitimate escape: a deliberate, diffable act.
+ */
+function checkWordBudget(body, folder, file, status, pitchFm) {
+  if (!pitchFm || !pitchFm.word_budget) return;
+  const budget = Number(pitchFm.word_budget);
+  if (!budget || budget <= 0) {
+    warn(folder, `pitch.md word_budget "${pitchFm.word_budget}" is not a positive number`);
+    return;
+  }
+  const tol = Number(pitchFm.budget_tolerance) || 10;
+  const words = proseWords(body);
+  const over = Math.round(((words - budget) / budget) * 100);
+  if (over <= tol) return;
+
+  const cap = Math.round(budget * (1 + tol / 100));
+  const msg =
+    `${file} is ${words} prose words against a ${budget}-word budget (+${over}%, cap ${cap}) — ` +
+    `cut ${words - cap} words, or amend word_budget in pitch.md and record why in discussion.md`;
+  if (over > 25 && (status === 'draft' || status === 'scheduled')) {
+    err(folder, msg);
+  } else {
+    warn(folder, msg);
+  }
+
+  if (pitchFm.section_budgets && typeof pitchFm.section_budgets === 'object') {
+    for (const s of sectionWords(body)) {
+      const b = Number(pitchFm.section_budgets[headingSlug(s.heading)]);
+      if (b && s.words > b * 1.25) {
+        warn(folder, `section "${s.heading}" is ${s.words} words against its ${b}-word allocation (+${Math.round(((s.words - b) / b) * 100)}%)`);
+      }
+    }
+  }
+}
+
+/**
+ * Thesis presence + protected lines: mechanizes the divergence diagnosis that
+ * previously required the author to read the draft cold ("steward" appearing
+ * once at 92% depth, draft 1). Missing keyword / missing protected line is an
+ * ERROR on draft/scheduled — the pitch is a contract; violating it silently
+ * is the failure mode.
+ */
+function checkThesisPresence(body, folder, file, status, pitchFm) {
+  if (!pitchFm) return;
+  const blocking = status === 'draft' || status === 'scheduled';
+  const report = blocking ? err : warn;
+
+  for (const term of Array.isArray(pitchFm.thesis_keywords) ? pitchFm.thesis_keywords : []) {
+    if (typeof term !== 'string' || !term.trim()) continue;
+    const hits = [...body.matchAll(new RegExp(`\\b${escapeRe(term)}`, 'gi'))];
+    if (hits.length === 0) {
+      report(folder, `${file} never uses thesis keyword "${term}" declared in pitch.md — the draft is not about what the pitch promised`);
+    } else {
+      const depth = Math.round((hits[0].index / body.length) * 100);
+      if (hits.length < 2 || depth > 50) {
+        warn(
+          folder,
+          `thesis keyword "${term}": ${hits.length} occurrence(s), first at ${depth}% depth — the pitch's subject is arriving late or thin`
+        );
+      }
+    }
+  }
+
+  for (const line of Array.isArray(pitchFm.protected_lines) ? pitchFm.protected_lines : []) {
+    if (typeof line !== 'string' || !line.trim()) continue;
+    if (!body.includes(line)) {
+      report(
+        folder,
+        `${file} is missing a protected line from pitch.md: "${line.slice(0, 60)}${line.length > 60 ? '…' : ''}" — protected lines survive all cuts, or the pitch gets amended`
+      );
+    }
+  }
+}
+
 function lintFolder(folder) {
   const folderPath = path.join(POSTS_DIR, folder);
   const files = fs.readdirSync(folderPath);
@@ -322,6 +464,9 @@ function lintFolder(folder) {
     }
   }
 
+  const pitchFm = checkPitchContract(folderPath, folder, fm.status);
+  checkWordBudget(parsed.content, folder, main, fm.status, pitchFm);
+  checkThesisPresence(parsed.content, folder, main, fm.status, pitchFm);
   checkHorizontalRules(parsed.content, folder, main, fm.status);
   checkBookmarkTags(parsed.content, folder, main, fm.status);
   checkInternalLinkRefs(raw, parsed.content, folder, main, fm.slug || folder);
