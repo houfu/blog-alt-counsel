@@ -495,3 +495,19 @@ Round 1 of 2 used. Lint clean throughout.
 **Infra PR shopping list (separate branch, after this post):** reviewer agents' broken model frontmatter (inline YAML comments); the self-referential node_modules symlink on main (deletion already recorded on this branch); github.com in the bookmark allowlist.
 
 **Still open before publish:** backlink curation sweep (must-links placed); feature image (none set — Houfu picks in Ghost editor or hands over a file); publish/schedule date; consent items if any Slack-sourced upgrades are wanted; final sync-ghost at PR close.
+
+## 2026-08-05 — Session 4 (cont.): v7's deck images recovered and placed
+
+Houfu asked whether the v7-era pictures survived — yes, in the old branch's history (commit 93974a0). Both restored and placed:
+
+- **deck-441-top.jpg** → learning-curve section, right after the explainer-deck sentence — it IS the fix for "way too technical for a lawyer."
+- **deck-441-decision.jpg** → recommend/decide section — its embedded line ("a human decides, every time") matches the section header verbatim.
+
+**Conversion defects caught by dry-run inspection before they shipped, and their fixes:**
+1. My image-insert edit had landed mid-paragraph, so the converter shoved the following sentence ("What's a canon map…") into the image's `title` attribute and dropped it from the body — my edit error, but note the converter's behavior is silently lossy here (trailing same-line text after an image vanishes into title). Fixed by splitting lines.
+2. Bold is not parsed in the pre-link segment of link-bearing paragraphs — `**official cat herder**` shipped as literal asterisks. Fixed by splitting the Herding Cats citation into its own paragraph.
+3. Blockquotes are unsupported — `>` ships as literal text. The log quote is now an inline italic quote instead (matches how draft 1/2 rendered quotes).
+
+**For issue #41 / the infra PR:** add these three converter behaviors (image-line trailing text → title; no bold before inline links; no blockquote support) to the known-quirks list, ideally with fixes.
+
+Republished with both images uploaded to Ghost. Lint clean. Preview unchanged.

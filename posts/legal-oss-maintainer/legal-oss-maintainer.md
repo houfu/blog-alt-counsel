@@ -25,7 +25,9 @@ A week or so later I passed Anthropic's architect certification. The usual probl
 
 ## I told them I wanted to be the cat herder
 
-On those early calls I gave my role a name: **official cat herder**. A cat herder doesn't share the cats' interests. The cats write code or file ideas; the herder keeps the whole clowder moving in roughly the same direction without pretending to command anybody. I don't aspire to say I wrote LQ.AI. There are more ways to a sustainable open-source community than authoring its code. The metaphor isn't even mine to be flippant with: there is a research study of open-source release management literally titled ["Herding Cats"](https://link.springer.com/article/10.1186/s13174-017-0063-2), and its finding is that volunteer ecosystems run on influence, not control.
+On those early calls I gave my role a name: **official cat herder**. A cat herder doesn't share the cats' interests. The cats write code or file ideas; the herder keeps the whole clowder moving in roughly the same direction without pretending to command anybody. I don't aspire to say I wrote LQ.AI. There are more ways to a sustainable open-source community than authoring its code.
+
+The metaphor isn't even mine to be flippant with: there is a research study of open-source release management literally titled ["Herding Cats"](https://link.springer.com/article/10.1186/s13174-017-0063-2), and its finding is that volunteer ecosystems run on influence, not control.
 
 It's a serious job wearing a flippant title. LQ.AI had several cool features, but it was deep, complex and free — both in terms of beer and freedom. In its own governance document's words, it "began as a founder-led project" that "has grown into a community effort carried by a committee of practicing lawyers and legal engineers." What it's trying to be — a truly community-led legal AI product — doesn't exist today. When I checked ten legal open-source repositories at the end of July, exactly one had published a governance document. This one.
 
@@ -37,11 +39,13 @@ And the group had asked for a tool. So I put the fresh certification to work and
 
 ## The learning curve was rough
 
-Two days in, I wasn't happy with anything the first version produced, so I told the session: create a branch and delete everything except the PRD. I threw away my entire first build and kept the specification. The day after, I ran the rebuilt version on a real pull request and wrote this in the log:
+Two days in, I wasn't happy with anything the first version produced, so I told the session: create a branch and delete everything except the PRD. I threw away my entire first build and kept the specification. The day after, I ran the rebuilt version on a real pull request and wrote this in the log: *"i ran it on a PR. i... feel stressed looking at this. Way too technical for a lawyer."*
 
-> "i ran it on a PR. i... feel stressed looking at this. Way too technical for a lawyer."
+The HTML explainer deck the agent now produces — the most useful thing it makes — exists because the maintainer couldn't read the maintainer tool.
 
-The HTML explainer deck the agent now produces — the most useful thing it makes — exists because the maintainer couldn't read the maintainer tool. In the same stretch I asked my own tool, in all sincerity, "What's a canon map." It had invented a term and I was its first confused user.
+![The agent's explainer deck for a real pull request — one specific question to settle first, a warning that the change cannot be cleanly undone, and counters for the safety gate, findings, and reversibility.](deck-441-top.jpg)
+
+In the same stretch I asked my own tool, in all sincerity, "What's a canon map." It had invented a term and I was its first confused user.
 
 Twice I found out I'd been careful about the wrong thing. In mid-July the agent kept telling me to escalate architectural questions for human discussion, until I pushed back: weren't there already decisions on file that narrow the uncertainty? The ADRs had settled questions I was still treating as open. Escalating them wasn't caution; it was a failure to read.
 
@@ -50,6 +54,8 @@ Then at the end of July I caught the deeper version of the same mistake. Three w
 ## The agent recommends; I decide, every time
 
 By late July the tool was working in the open under its own name: its reviews are posted with the footer "Drafted by lq-maintainer-agent; reviewed and posted by @houfu." The strangest one is the review it filed on my own pull request — a dependency-lockfile change, by far the largest change I've made to the repo. It verified that all 304 packages resolve with full hash coverage, flagged two pinned libraries carrying security advisories with no clean upgrade path, and ended with: over to you — land the lock now and track the upgrades, or hold until they can move together. The rule — recommend, never decide — isn't a sentence in a prompt; it's a mechanical hook that blocks any Claude session from touching the merge button. The hook has fired on the sessions researching this post, twice. And the tool and the governance work are one pipeline, not two projects: when a contribution raises a question the canon hasn't answered, the agent drafts the decision record for the committee to discuss — escalation produces a document, not a delay.
+
+![The deck's decision card — a conversation to have, not a decline; the agent has not merged, approved, closed or posted anything, and a human decides every time.](deck-441-decision.jpg)
 
 The repo's first formal approvals in its history are mine, from late July. A review loop that had never once closed in nearly 400 pull requests now closes routinely: one contributor's security fixes produced five reviewed merges over nine days, two of them full ask-and-fix cycles. The last took two rounds before I approved it on 3 August. I still can't read every line of those diffs. I can read whether a change honours the decisions the project already made — and ask for the test that settles what I can't verify myself.
 
