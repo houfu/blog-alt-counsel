@@ -43,7 +43,7 @@ Two days in, I wasn't happy with anything the first version produced, so I told 
 
 The HTML explainer deck the agent now produces — the most useful thing it makes — exists because the maintainer couldn't read the maintainer tool.
 
-![The agent's explainer deck for a real pull request — one specific question to settle first, a warning that the change cannot be cleanly undone, and counters for the safety gate, findings, and reversibility.](deck-441-top.jpg)
+![The agent's explainer deck for a real pull request — verdict Ready to merge, a note that a maintainer makes the merge click, an if-this-turns-out-wrong box describing what a revert leaves behind, and counters for the safety gate and findings.](deck-401-top.jpg)
 
 In the same stretch I asked my own tool, in all sincerity, "What's a canon map." It had invented a term and I was its first confused user.
 
@@ -55,7 +55,7 @@ Then at the end of July I caught the deeper version of the same mistake. Three w
 
 By late July the tool was working in the open under its own name: its reviews are posted with the footer "Drafted by lq-maintainer-agent; reviewed and posted by @houfu." The strangest one is the review it filed on my own pull request — a dependency-lockfile change, by far the largest change I've made to the repo. It verified that all 304 packages resolve with full hash coverage, flagged two pinned libraries carrying security advisories with no clean upgrade path, and ended with: over to you — land the lock now and track the upgrades, or hold until they can move together. The rule — recommend, never decide — isn't a sentence in a prompt; it's a mechanical hook that blocks any Claude session from touching the merge button. The hook has fired on the sessions researching this post, twice. And the tool and the governance work are one pipeline, not two projects: when a contribution raises a question the canon hasn't answered, the agent drafts the decision record for the committee to discuss — escalation produces a document, not a delay.
 
-![The deck's decision card — a conversation to have, not a decline; the agent has not merged, approved, closed or posted anything, and a human decides every time.](deck-441-decision.jpg)
+![The deck's decision card — nothing blocks merging, undoable with a leftover — followed by a record of what the maintainer decided, with a note that the ruling is the maintainer's and the agent only recorded it.](deck-401-decision.jpg)
 
 The repo's first formal approvals in its history are mine, from late July. A review loop that had never once closed in nearly 400 pull requests now closes routinely: one contributor's security fixes produced five reviewed merges over nine days, two of them full ask-and-fix cycles. The last took two rounds before I approved it on 3 August. I still can't read every line of those diffs. I can read whether a change honours the decisions the project already made — and ask for the test that settles what I can't verify myself.
 

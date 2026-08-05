@@ -511,3 +511,11 @@ Houfu asked whether the v7-era pictures survived — yes, in the old branch's hi
 **For issue #41 / the infra PR:** add these three converter behaviors (image-line trailing text → title; no bold before inline links; no blockquote support) to the known-quirks list, ideally with fixes.
 
 Republished with both images uploaded to Ghost. Lint clean. Preview unchanged.
+
+## 2026-08-05 — Session 4 (cont.): Deck images upgraded to agent v0.4.1
+
+Houfu spotted the old screenshots showed agent 0.4.0 and pointed at `~/Projects/lq-ai/.maintainer` for newer decks. Found today's freshest: **PR #401's deck (agent v0.4.1, generated 2026-08-05)**, rendered headlessly via Chrome and cropped with PIL.
+
+**The swap improves the story, not just the version number:** the 0.4.0 deck showed the over-cautious agent ("one specific question to settle first" on his own lockfile PR); the 0.4.1 deck shows the corrected posture — verdict "Ready to merge," the if-this-turns-out-wrong box framing reversibility ("a revert takes the code back, but something the change already did stays behind"), and a "What the maintainer decided" card that records his same-day rulings with the closing note "the ruling is theirs; the agent only recorded it." The images now demonstrate the §3 correction, not the pre-correction behavior.
+
+deck-441-*.jpg removed (recoverable from git history); deck-401-top.jpg and deck-401-decision.jpg committed; Ghost draft republished with both uploaded. Lint clean.
