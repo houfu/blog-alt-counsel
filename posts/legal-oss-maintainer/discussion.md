@@ -523,3 +523,19 @@ deck-441-*.jpg removed (recoverable from git history); deck-401-top.jpg and deck
 ## 2026-08-05 — Session 4 (cont.): LQ.AI home-screen shot added for unfamiliar readers
 
 Houfu supplied a CleanShot of the LQ.AI home screen (self-hosted, 127.0.0.1) to orient readers who don't know the platform. Placed directly after the beer-and-freedom paragraph — the shot substantiates "several cool features" (Skill Creator, Knowledge, Playbooks, Tabular Review, opt-in Autonomous) and the address bar plus the "your data: in your firm's stack" banner quietly prove the self-hosted claim. Resized 1654→1456px wide, JPG'd (239KB), uploaded to Ghost on republish. Post now carries three images. Lint clean.
+
+## 2026-08-06 — Session 4 (cont.): Scheduled; Ghost edits merged back; final sync
+
+**Houfu scheduled the post: 2026-08-06 09:00 SGT**, with an Unsplash cat as the feature image. `sync-ghost` pulled status/published_at/feature_image into frontmatter.
+
+**His post-scheduling Ghost edits, diffed via lexical-text comparison and merged into the local file (all logged in the Voice Guide Living Addendum):**
+1. "appointed me its founding member" → "appointed me **as one of its founding members**" — accuracy: not the sole founder of the committee.
+2. **Cut "And every merge since mid-July has been mine."** from the honesty paragraph — softening his own centrality; the counterweight now rests on the project facts alone.
+3. Quotes added around the agent's "over to you…" line; "And the tool" → "The tool"; the long §4 paragraph split after "under its own name:".
+4. **The GitHub "Behind the Scenes" footer was deleted on Ghost** for this post. github_folder stays in frontmatter, but any republish would re-add the footer and also clobber edits 5–6 — **do not run publish-lexical.js against this post again without re-merging.**
+5. The lq-maintainer-agent inline link was hand-upgraded to a bookmark card on Ghost (the converter can't make github.com cards yet — infra list).
+6. Ghost also fixed a converter rendering bug live: the missing space before an inline link ("titled\"Herding Cats\"") — converter drops the space preceding a link node; added to the issue #41 quirks list.
+
+**Flagged, not changed:** the custom excerpt still says "made me its founding member" (singular) — now inconsistent with his body edit. His call whether to align it in Ghost before 9am.
+
+**Final state:** local file matches the scheduled post's prose exactly (minus the footer difference noted above). Lint clean. Branch ready to push.

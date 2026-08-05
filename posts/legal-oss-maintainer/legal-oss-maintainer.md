@@ -9,13 +9,16 @@ tags:
   - AI
   - LegalTech
   - OpenSource
-status: draft
+status: scheduled
 featured: false
 github_folder: legal-oss-maintainer
 post_id: 6a6ac6b2e1ac4e0001e36a8f
+published_at: '2026-08-06T01:00:52.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDExfHxDYXR8ZW58MHx8fHwxNzg1OTE5MTM4fDA&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
-At the end of June, I joined a Sunday video call about LQ.AI, an open-source legal AI platform that had appeared in the LegalQuants community seven weeks earlier and grown faster than anyone was ready for. By the end of the call I had a job. The group had decided the project needed a review committee — people who decide what gets merged into the code — and appointed me its founding member. They also asked for something oddly specific: could someone build a coding agent to help review contributions against the principles the founder had written down?
+At the end of June, I joined a Sunday video call about LQ.AI, an open-source legal AI platform that had appeared in the LegalQuants community seven weeks earlier and grown faster than anyone was ready for. By the end of the call I had a job. The group had decided the project needed a review committee — people who decide what gets merged into the code — and appointed me as one of its founding members. They also asked for something oddly specific: could someone build a coding agent to help review contributions against the principles the founder had written down?
 
 I said yes to both, excited to get to work. What I didn't understand yet was the extent of the work. So let me be plain about the size of the yes: I'm going to spend the rest of 2026 on this project.
 
@@ -55,13 +58,15 @@ Then at the end of July I caught the deeper version of the same mistake. Three w
 
 ## The agent recommends; I decide, every time
 
-By late July the tool was working in the open under its own name: its reviews are posted with the footer "Drafted by lq-maintainer-agent; reviewed and posted by @houfu." The strangest one is the review it filed on my own pull request — a dependency-lockfile change, by far the largest change I've made to the repo. It verified that all 304 packages resolve with full hash coverage, flagged two pinned libraries carrying security advisories with no clean upgrade path, and ended with: over to you — land the lock now and track the upgrades, or hold until they can move together. The rule — recommend, never decide — isn't a sentence in a prompt; it's a mechanical hook that blocks any Claude session from touching the merge button. The hook has fired on the sessions researching this post, twice. And the tool and the governance work are one pipeline, not two projects: when a contribution raises a question the canon hasn't answered, the agent drafts the decision record for the committee to discuss — escalation produces a document, not a delay.
+By late July the tool was working in the open under its own name:
+
+its reviews are posted with the footer "Drafted by lq-maintainer-agent; reviewed and posted by @houfu." The strangest one is the review it filed on my own pull request — a dependency-lockfile change, by far the largest change I've made to the repo. It verified that all 304 packages resolve with full hash coverage, flagged two pinned libraries carrying security advisories with no clean upgrade path, and ended with: "over to you — land the lock now and track the upgrades, or hold until they can move together." The rule — recommend, never decide — isn't a sentence in a prompt; it's a mechanical hook that blocks any Claude session from touching the merge button. The hook has fired on the sessions researching this post, twice. The tool and the governance work are one pipeline, not two projects: when a contribution raises a question the canon hasn't answered, the agent drafts the decision record for the committee to discuss — escalation produces a document, not a delay.
 
 ![The deck's decision card — nothing blocks merging, undoable with a leftover — followed by a record of what the maintainer decided, with a note that the ruling is the maintainer's and the agent only recorded it.](deck-401-decision.jpg)
 
 The repo's first formal approvals in its history are mine, from late July. A review loop that had never once closed in nearly 400 pull requests now closes routinely: one contributor's security fixes produced five reviewed merges over nine days, two of them full ask-and-fix cycles. The last took two rounds before I approved it on 3 August. I still can't read every line of those diffs. I can read whether a change honours the decisions the project already made — and ask for the test that settles what I can't verify myself.
 
-Honesty requires the other column. The agent has zero stars; nobody is watching. The lq-ai repo has 73 open pull requests and hasn't shipped a release since 4 July. And every merge since mid-July has been mine.
+Honesty requires the other column. The agent has zero stars; nobody is watching. The lq-ai repo has 73 open pull requests and hasn't shipped a release since 4 July.
 
 ## What the rest of the year looks like
 
