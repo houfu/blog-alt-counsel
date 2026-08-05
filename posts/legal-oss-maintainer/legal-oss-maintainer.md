@@ -31,6 +31,8 @@ The metaphor isn't even mine to be flippant with: there is a research study of o
 
 It's a serious job wearing a flippant title. LQ.AI had several cool features, but it was deep, complex and free — both in terms of beer and freedom. In its own governance document's words, it "began as a founder-led project" that "has grown into a community effort carried by a committee of practicing lawyers and legal engineers." What it's trying to be — a truly community-led legal AI product — doesn't exist today. When I checked ten legal open-source repositories at the end of July, exactly one had published a governance document. This one.
 
+![LQ.AI's home screen, self-hosted at 127.0.0.1 — featured tools including Skill Creator, Knowledge, Playbooks, Tabular Review and an opt-in Autonomous mode, under a banner confirming your data stays in your firm's stack.](lq-ai-home.jpg)
+
 That writing-down is also why a non-coder can herd here at all. The docs folder alone holds 254 markdown files and 94,361 lines: 23 architecture decision records, and a requirements document that openly parks 244 ideas it hasn't built yet. Reading is the part of the job I was already qualified for.
 
 And the group had asked for a tool. So I put the fresh certification to work and built the coding agent they wanted: a Claude Code plugin that holds every incoming contribution against the project's own written decisions — and hands me the judgment call.

@@ -519,3 +519,7 @@ Houfu spotted the old screenshots showed agent 0.4.0 and pointed at `~/Projects/
 **The swap improves the story, not just the version number:** the 0.4.0 deck showed the over-cautious agent ("one specific question to settle first" on his own lockfile PR); the 0.4.1 deck shows the corrected posture — verdict "Ready to merge," the if-this-turns-out-wrong box framing reversibility ("a revert takes the code back, but something the change already did stays behind"), and a "What the maintainer decided" card that records his same-day rulings with the closing note "the ruling is theirs; the agent only recorded it." The images now demonstrate the §3 correction, not the pre-correction behavior.
 
 deck-441-*.jpg removed (recoverable from git history); deck-401-top.jpg and deck-401-decision.jpg committed; Ghost draft republished with both uploaded. Lint clean.
+
+## 2026-08-05 — Session 4 (cont.): LQ.AI home-screen shot added for unfamiliar readers
+
+Houfu supplied a CleanShot of the LQ.AI home screen (self-hosted, 127.0.0.1) to orient readers who don't know the platform. Placed directly after the beer-and-freedom paragraph — the shot substantiates "several cool features" (Skill Creator, Knowledge, Playbooks, Tabular Review, opt-in Autonomous) and the address bar plus the "your data: in your firm's stack" banner quietly prove the self-hosted claim. Resized 1654→1456px wide, JPG'd (239KB), uploaded to Ghost on republish. Post now carries three images. Lint clean.
