@@ -539,3 +539,11 @@ Houfu supplied a CleanShot of the LQ.AI home screen (self-hosted, 127.0.0.1) to 
 **Flagged, not changed:** the custom excerpt still says "made me its founding member" (singular) — now inconsistent with his body edit. His call whether to align it in Ghost before 9am.
 
 **Final state:** local file matches the scheduled post's prose exactly (minus the footer difference noted above). Lint clean. Branch ready to push.
+
+## 2026-08-06 — Session 4 (cont.): Published; PR opened; series closed out
+
+**Live at https://www.alt-counsel.com/official-cat-herder/ (published 2026-08-06 09:00 SGT, HTTP 200 verified).** Houfu had aligned the excerpt himself on Ghost ("one of its founding members") — synced down. Final sync complete; repo matches the published post.
+
+**The December appointment is now a public commitment:** the post promises the hour-a-day metric falls if the herding works — "Ask me in December." A follow-up post is expected around then.
+
+**Standing warning restated:** do not run publish-lexical.js against this post again without re-merging — it would restore the deleted GitHub footer and clobber the hand-made bookmark card.

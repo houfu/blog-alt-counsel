@@ -3,13 +3,13 @@ title: I'm the Official Cat Herder of a Legal AI Project
 slug: official-cat-herder
 custom_excerpt: >-
   A group of lawyers decided their open-source legal AI needed a review
-  committee, and made me its founding member. I can't write the code. I'm
-  herding these cats anyway — for the rest of 2026.
+  committee, and made me one of its founding members. I can't write the code.
+  I'm herding these cats anyway — for the rest of 2026.
 tags:
   - AI
   - LegalTech
   - OpenSource
-status: scheduled
+status: published
 featured: false
 github_folder: legal-oss-maintainer
 post_id: 6a6ac6b2e1ac4e0001e36a8f
