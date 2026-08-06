@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-08-04T22:50:25.216Z",
+    "verdict": "Post-audit draft still aligned with pitch: thesis/beats/emotional core unchanged by audit fixes; pitch edit only added declared solo-counsel voice move; lint thesis-presence clean",
+    "draft_sha": "39c580538b02",
+    "pitch_sha": "4baebd6e91d5"
+  },
+  "audit_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-04T22:40:52.438Z",
+      "draft_sha": "22afae35fe05",
+      "words": 1318,
+      "agents": [
+        "audit-substance",
+        "audit-tone"
+      ]
+    }
+  ],
+  "review_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-04T22:51:15.228Z",
+      "draft_sha": "39c580538b02",
+      "words": 1286,
+      "agents": [
+        "lawyer-coder-reviewer",
+        "legal-tech-blog-reviewer"
+      ]
+    }
+  ],
+  "length_audit": {
+    "at": "2026-08-04T23:01:54.299Z",
+    "draft_sha": "325b209af982"
+  },
+  "overrides": []
+}

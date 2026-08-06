@@ -79,3 +79,10 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
 - Load-bearing line named (protect through cuts): "The thing that most makes me *me* — I build — was the thing the exam had to drill out of me." Most-quotable: "That's not knowledge. That's a scar."
 - Standing asks raised: none — all pre-empted.
 - Settled/rejected: none this round.
+
+## 2026-08-05 — legal-oss-maintainer (rewrite, round 1)
+- Verdict: serves me — strongest draft of the three framings; commitment + verbatim-log vulnerability + counterweights all present and correctly sequenced.
+- Unique catches: (1) certification thread under-delivered the pitch's own thesis — the mandate-then-cert chronology needed one joining sentence (applied); (2) excerpt carried residue of rejected v7 documents-thesis — rewritten; (3) scope flag on the governance one-liner ("exactly one had published a governance document") — vote keep-and-bless, escalated to Houfu; (4) confirmed clean sequencing pass (promise early, re-asked, paid off after counterweights) unprompted; (5) old displacement-casualty ask finally answered ("part of why this post took longer to arrive") — closed, protected.
+- Load-bearing line (protect through cuts): "I had been terrified of coding in this big, foreign codebase, and I had built that fear into software." Secondary: "Reading is the part of the job I was already qualified for."
+- Standing ask raised and applied: reader on-ramp in the solo-counsel paragraph ("open its docs folder; if there's nothing to read, that's your answer").
+- Settled: title ("I'm the Official Cat Herder...", Houfu 2026-08-05, do not re-propose); cat-herder metaphor load-bearing by Houfu's own election (supersedes 2026-07-27 flippant-aside ruling); Houfu's triad rule: one tricolon per post, if that. Cut proposal on "LQ.AI had several cool features, but" DECLINED — the full sentence is Houfu's protected hand-written line (never smooth), though the LQ.AI/lq-ai casing question was passed to him.

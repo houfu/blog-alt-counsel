@@ -64,3 +64,9 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 - One writing-clarity note applied: the "stronger model" rebuttal conflated two failure modes (attention vs eviction) → reworded to "buried in the middle of the context… skims past it just the same" (one consistent mechanism).
 - **Process note (Houfu correction this round): reviewers are NOT fact-checkers. He wants reader-response — how it feels/reads, what lands — not verification. My verify-load-bearing-claims instinct was over-weighted here. Next time lead with the felt reaction; keep "did anything make me distrust the author?" as the only credibility angle.**
 - Standing asks: none — pre-empted. Settled/rejected: none.
+
+## 2026-08-05 — legal-oss-maintainer (rewrite, round 1)
+- Verdict: serves me — would forward to the community list; PR #441 scene, mechanical merge-block hook, and the specific fear diagnosis are what earned it.
+- Unique catches: (1) excerpt/body inconsistency ("committee of lawyers appointed me" vs group-forms-committee-and-names-him) — excerpt rewritten; (2) two unused research threads worth their words: §10.7 "the tool feeds the committee" pipeline line (applied) and §12.5 Herding Cats citation (offered to Houfu, pending).
+- Standing asks: none triggered — concrete examples, jargon, dual-audience all pre-empted this draft. "Canon map" deliberately undefined (the confusion is the scene) — do not raise as jargon.
+- Settled: differentiation question asked and answered at pitch stage for this post (mandate + a role lawyers can hold) — confirmed delivered in draft; do not re-ask on this post. Cut proposal on "both in terms of beer and freedom" DECLINED — it is Houfu's protected hand-written line (never smooth); recorded so it isn't re-raised.
