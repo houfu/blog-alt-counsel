@@ -248,6 +248,60 @@ Structure note: the opening states the payoff in the second paragraph ("the expl
 been done, three years earlier") rather than withholding it, per rule 1.1. The close is flat and
 slightly open — the domain renewal line — rather than a mic-drop, per 2.6.
 
+## Session 6: Pitch amended mid-draft — the dashboard angle (2026-08-15)
+
+### What happened
+
+Draft 1 was written and pushed. The user stopped the workflow before review and proposed a different
+subject: *"would a story about how I wrote sg law cookies (or what it is) be more interesting than
+what I see as a trend of legal dashboard. Previously dashboards ingested numerical data so it's easy
+to compare trends but cookies basically rewrote a legal article or development into a cookie or a
+smell and uses it to show change or development."*
+
+Pitch rewritten in place as v5. Draft 1 survives in git; roughly half its prose is reusable.
+
+### Which interrogation question should have caught this
+
+**Question 4, "whose subject is this?"** — and it very nearly did. The v4 pitch recorded the exact
+risk in writing: *"the user's suggested angle could promote the category to protagonist and demote
+Cookies to evidence."* Claude then resolved that tension unilaterally in favour of Cookies-as-subject
+and drafted on it, instead of putting the choice to the user. **The failure was not missing the
+question; it was answering it alone.** When interrogation surfaces a genuine fork about what the post
+is *about*, it belongs in front of the user before drafting, not in a frontmatter field.
+
+Secondary failure, question 2: v4's differentiation answer was biographical — "nobody else can write
+this, it's my three-year receipt trail." That is a reason the post is *authentic*, not a reason it is
+*useful*. v5's answer is a taxonomy the reader can apply to any legal dashboard they meet.
+
+### The user's question, and what changed because of it
+
+User asked whether cost is the only benefit of the collapse. Claude proposed four; three entered the
+pitch as a beat (the research skill's cap is three findings changing beats per session):
+
+1. **Answers the question you didn't know to ask.** Search needs a query. This is the sharp local
+   contrast with LawNet 4.0, which is SAL's AI *search* bet.
+2. **No triage.** "Every cookie is published" — editorial products must select because attention is
+   scarce; manufactured units have no such constraint, and the PRD says low significance is
+   "meaningful in aggregate."
+3. **Comparability across unlike sources.** A press release, an enforcement decision and a judgment
+   arrive in the same shape, which is what makes shared-doctrine adjacency computable.
+
+Fourth, logged but not a separate beat: **provenance is structural** — folded into beat 5 as one
+clause, supported by the `zeeker-judgements` table's own "indexed but not distributed" note.
+
+### The correction the draft must carry
+
+Research falsified the strong version of the novelty claim. RegTech has manufactured units from
+regulatory prose since 2013 (Corlytics: 120+ countries, 2,500+ regulators, AI classification and
+summarisation). The defensible claim is about **price, scope and intent**, not invention. Recorded in
+the pitch's diagnosis field because Marcus is primary audience and would catch an overclaim.
+
+### Audience routing change
+
+`primary_audience` stays **marcus** (he knows Lex Machina and would test the taxonomy). Secondary
+moves from **wei-lin to sarah**: the post is no longer about identity or the solo-builder struggle,
+and it now has a Monday-morning answer for a practitioner, which is Sarah's territory.
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).
