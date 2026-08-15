@@ -39,7 +39,7 @@ You can **borrow citations**. Case law is a network because judgments cite each 
 
 Or you can **manufacture obligations**, which is the one that matters. Regulatory change management firms have been converting regulatory text into trackable requirements for over a decade. Corlytics has done it since 2013, across 120 countries and 2,500 regulators, using AI for classification, summarisation and mapping. So no, turning legal prose into structured units is not new, and I'd rather say that plainly than pretend I invented it.
 
-What is new is the price and the purpose. That kind of platform starts in the low six figures a year, its unit is an obligation mapped to your internal controls, its buyer is a financial services compliance department, and its output is a queue of things to work through. None of which is wrong. It's just a different thing from what I wanted.
+What is new is the price and the purpose. Enterprise deployments of that kind run somewhere between $100,000 and $500,000 a year, the unit is an obligation mapped to your internal controls, the buyer is a compliance department, and the output is a queue of things to work through. Darrow does something adjacent for the plaintiffs' bar, reading filings and incident reports across dozens of exposure categories to find cases before they are filed. None of which is wrong. They are just pointed at different questions than mine — what must we comply with, and what can we sue over.
 
 ## The unit is the invention
 
@@ -79,9 +79,11 @@ The raw material has been sitting in the open for years. LawNet publishes free R
 
 [From One Source to Three: When the Right Agent Showed Up](https://www.alt-counsel.com/from-one-source-to-three/?ref=legal-dashboards-count-win-rates)
 
-And the query tool exists too. The Academy of Law launched LawNet 4.0 at TechLaw.Fest last year, with an AI search engine built with IMDA that answers questions with sources drawn from Singapore case law and legislation. It is a serious piece of work and I expect to use it.
+The institutions are also well past search. LawNet has been publishing AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports — catchwords, facts, holdings — using GPT-Legal, a model IMDA built for the job and which reaches something like three-quarters of the profession. Tribunal decisions were added at the start of this year, and LawNet 4.0 put an AI search engine on top. This is careful, well-governed work and I expect to keep using it.
 
-So we have the feeds, and we have the search. What nobody had built is the thing you look at — the surface that tells you there was something worth searching for.
+But look at the shape of it. A headnote is a document about a document: one judgment in, one summary out, sitting in a research platform you open when you already have a case in front of you. Ask LawNet about SGHC 166 and you get one excellent summary of SGHC 166. My counter got four cookies out of it and filed them under four different areas of law, next to a press release and an enforcement decision from the same morning.
+
+So we have the feeds, the summaries and the search. What nobody had built is the thing you look at — the surface that tells you there was something worth searching for.
 
 ## Neither one replaces the other
 

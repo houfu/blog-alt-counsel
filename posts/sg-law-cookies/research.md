@@ -149,6 +149,87 @@ components, JSON mesh, weekly Cloud Scheduler run, human accept/reject. Cited as
 Sun, R. (2026), *The Live and Breathing Essay*, v1.0, 3 August 2026. Still out of scope — the post
 takes the dashboard trend, not the architecture.
 
+## Deep pass with Jina (16 Aug 2026) — adversarial check on "nobody else is doing this"
+
+Ran deep passage-level search plus five parallel sweeps specifically trying to falsify the central
+claim. **It survived, but two findings change the draft and one widens the taxonomy.**
+
+### Correction 1 — Singapore is well past search 🔍 ✅ MUST FIX IN DRAFT
+
+The draft said Singapore has "feeds and search." That understates SAL/IMDA materially.
+
+- **LawNet AI Summaries** have been live since **October 2024** — AI-generated summaries of
+  *unreported* judgments, "with the same structure as headnotes found in the Singapore Law Reports,"
+  generated with IMDA's **GPT-Legal**.
+  ([LawNet release notes](https://release-notes.lawnet.com/2024/10/15/gen_ai))
+- GPT-Legal was built on AWS SageMaker and IMDA describes it as transforming legal research for
+  **75% of the country's legal professionals**, delivering summaries "in a specific format of
+  catchwords, facts and holdings."
+  ([AWS case study](https://aws.amazon.com/solutions/case-studies/imda-case-study))
+- **January 2026:** AI-generated summaries of *tribunal decisions* added.
+- LawNet AI's Q&A was independently tested by Resaro under the IMDA / AI Verify **Global AI Assurance
+  Sandbox**. ([Resaro](https://resaro.ai/insights/articles/resaro-sal-lawnet))
+
+**Why the claim still holds, but must be re-stated precisely.** A headnote-structured summary is a
+*document about a document*: one judgment in, one summary out, inside a research platform you open
+when you already have a case. It is not decoupled from its source and it is not a jurisdiction-wide
+daily surface. Ask LawNet about [2026] SGHC 166 and you get one excellent summary of SGHC 166;
+Cookies got **four** signals out of it and filed them under four different areas of law beside a
+press release and an enforcement decision from the same day. The contrast is now sharper than the
+draft's "they have search" version — and it avoids an error SAL would rightly object to.
+
+### Correction 2 — firm the pricing number ✅ FIXED IN DRAFT
+
+"Low six figures" was one weakly-sourced blog. Better sourced now:
+
+- Enterprise regulatory-change deployments run **$100,000–$500,000 per year**; for the opaque
+  vendors, "budget six figures and plan for a multi-month procurement cycle."
+  ([Changeflow, Apr 2026](https://changeflow.com/learn/regulatory-change-management-software-pricing))
+- MetricStream "starts at approximately $75,000/year for small enterprises and can exceed $1 million."
+  ([360Factors](https://www.360factors.com/blog/regulatory-change-management-solutions))
+- **Honest caveat the draft should not hide:** the category is not uniformly expensive. Monitoring-first
+  tools start around **$3K/yr**, and one vendor argues a monitoring approach "will cover 80% of what
+  you actually need at 10% of the cost."
+  ([Visualping, Apr 2026](https://visualping.io/blog/how-to-choose-regulatory-change-software))
+
+### A sixth family — manufactured exposure (Darrow) ✅ ADDED TO DRAFT
+
+The closest commercial analogue technically, aimed at a completely different question.
+
+- Darrow ingests regulatory filings, incident reports, litigation patterns and market activity across
+  **50+ legal exposure categories**, turning raw signals into "structured, meaningful intelligence,"
+  and claims **$17 billion** in surfaced exposure across 75+ organisations.
+  ([Darrow](https://www.darrow.ai/), [Tooliverse review](https://tooliverse.ai/tools/darrow))
+- **May 2026:** launched a platform to "identify, vet, and manage litigation like a portfolio," with
+  the whole docket on a single dashboard.
+  ([LawNext](https://www.lawnext.com/2026/05/darrow-the-ai-lab-for-legal-risk-launches-a-platform-to-let-plaintiffs-firms-manage-litigation-like-an-investment-portfolio.html))
+- **Unit:** a potential case. **Buyer:** plaintiffs' firms and insurers. **Output:** case memos,
+  valuation models, leads. Same machinery, pointed at finding you a case rather than telling you what
+  changed.
+
+### A seventh family — hand-curated topic trackers 🌍 (logged, not in draft)
+
+The deep pass surfaced these repeatedly and they are what most lawyers mean by "tracker": single-topic,
+human-maintained tables and maps. [Law360 Pulse AI tracker](https://www.law360.com/pulse/ai-tracker),
+[Orrick US AI Law Tracker](https://ai-law-center.orrick.com/us-ai-law-tracker-see-all-states),
+[White & Case AI Watch](https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states),
+MultiState. All are one hot topic, curated by lawyers, rendered as tables. They reinforce the point
+rather than complicate it, so they stay out of the draft for length.
+
+### FOLIO, grounded
+
+FOLIO is an **open, CC-BY 4.0** ontology from the ALEA Institute with **18,000+ concepts** covering
+areas of law, document types, legal entities, governmental bodies and courts; it shipped a free API
+and MCP server in March 2026, and Law.com reported AI-powered auto-tagging tools in the same month.
+([openlegalstandard.org](https://openlegalstandard.org/),
+[ALEA](https://aleainstitute.ai/blog/posts/folio-api-mcp-tools))
+
+### One more note on vocabulary
+
+In legal software, "dashboard" is largely taken by **matter management** — Bloomberg Law's product is
+literally called Dashboard Legal and is about tasks, documents and chat. Worth knowing that the word
+the post uses in the title means something else to most of the market.
+
 ## Statistics and data points
 
 | Data point | Value | Source |
