@@ -90,6 +90,27 @@ trend dashboards built on LLM-generated insight returned surveys of LLM legal *t
 summarisation, judgment prediction) and no dashboard category. Treat this as "not found," not as
 proof of absence — absence of evidence in four searches is weak evidence.
 
+## The catalogue Cookies bakes from (verified via Zeeker MCP, 15 Aug 2026)
+
+Queried live rather than taken from the PRD. These are the real numbers behind "processes the
+entire legal output of Singapore every day."
+
+| Database | Contents | Licence |
+|---|---|---|
+| `zeeker-judgements` | **10,765 judgments** (High Court, Court of Appeal, subordinate courts), plus paragraph-level fragments | CC-BY-4.0 |
+| `sglawwatch` | **927 headlines**, **263 commentaries**, **90 reference chapters** (+2,454 fragments) | CC-BY-4.0 |
+| `pdpc` | 6 tables — enforcement decisions and advisory guidelines | CC-BY-4.0 |
+| `sg-gov-newsrooms` | 8 tables — judiciary, AGC, MinLaw, CCCS, IPOS, PDPC, MOM press releases | All rights reserved |
+
+**Note for the draft:** the judgments table description states that full text is *"indexed for search
+but not distributed; read the full judgment at source_url."* That matches the v2 attribution posture
+in the PRD exactly — extraction only, never republication. Worth one sentence, because it is the
+answer to the obvious objection about summarising other people's copyrighted material.
+
+**Caveat:** full-text search through the MCP returned zero rows with `failed_tables` set on both
+attempts, so FTS was degraded at the time of checking. The table listings and row counts above came
+back clean.
+
 ## Statistics and data points
 
 | Data point | Value | Source |
