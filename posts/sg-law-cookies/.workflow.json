@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-08-15T15:37:35.714Z",
+    "verdict": "Draft v1 written against locked pitch v4: thesis (concept is the scarce input), emotional core (SCCE talk, asked how not what), idiom-came-first all present. Beats followed; 1443w vs 1900 budget. Open publish-gates: SCCE naming, counter-map screenshot, actual cost.",
+    "draft_sha": "430e096ec1e7",
+    "pitch_sha": "ec8bd7c564fe"
+  },
+  "audit_rounds": [],
+  "review_rounds": [],
+  "length_audit": null,
+  "overrides": []
+}

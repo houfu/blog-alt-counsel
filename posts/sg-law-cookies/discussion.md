@@ -219,6 +219,35 @@ Worth carrying into the draft as a defence of the method beat: the repo has **20
 alongside the 961-line PRD and 553-line pipeline pseudocode. The claim is not that the code wrote
 itself — it is that a carefully specified concept is what let generated code hold this much detail.
 
+## Session 5: Draft v1 (2026-08-15)
+
+**Voice reference:** `cowork-rugpull` — narrative-first pacing, plain first-person headings as claims,
+argument carried in prose rather than bullets, bookmark cards standing alone with no lead-in.
+
+Draft written to `sg-law-cookies.md`. **1,443 words against a 1,900 budget** — deliberately under.
+The Voice Guide's most reliable rule is that Houfu cuts, so the draft leaves room for the reviewer
+round rather than arriving at the cap.
+
+Declared voice moves and where they land:
+
+- *Specific numbers*: 22 March 2023, 516 weekdays, 30 April 2025, 961-line PRD, eight mockups,
+  twenty test files. All verified from the two repos; none estimated.
+- *Neither is wrong*: pure vibe coding versus pure specification, in the PRD section. A genuine
+  binary, so the move is earned rather than forced.
+- *Humour after the argument*: "No raisins, ever." lands after the encoding paragraph, not inside it.
+
+Deliberate omissions:
+
+- **No cost figure.** The PRD's $50–200/month is an estimate, not lived spend, and the Voice Guide
+  requires numbers Houfu can stand behind. Left out entirely rather than hedged.
+- **No image yet.** The counter-map screenshot is the natural anchor for the bakery section.
+- **Backlinks partial.** Two of three must_link cards placed (`when-building-gets-cheap`,
+  `from-one-source-to-three`); full curation belongs to the REVIEW phase.
+
+Structure note: the opening states the payoff in the second paragraph ("the explaining had already
+been done, three years earlier") rather than withholding it, per rule 1.1. The close is flat and
+slightly open — the domain renewal line — rather than a mic-drop, per 2.6.
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).
