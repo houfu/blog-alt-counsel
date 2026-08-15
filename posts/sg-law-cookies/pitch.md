@@ -3,14 +3,14 @@ word_budget: 1800
 budget_tolerance: 10
 primary_audience: marcus
 secondary_audience: [wei-lin]
-thesis_keywords: [high concept, incarnation, stable interface, zeeker]
+thesis_keywords: [cookie, metaphor, signal, FOLIO]
 protected_lines: []
 voice: {lane: learning-in-public, moves: [specific-numbers, neither-is-wrong, humour-after-the-argument]}
-interrogation: {diagnosis: "PROPOSED — see below", differentiation: "PROPOSED — see below", framing_risk: "PROPOSED — see below", subject: "PROPOSED — see below"}
+interrogation: {diagnosis: "see below", differentiation: "see below", framing_risk: "see below", subject: "see below"}
 must_link: [from-one-source-to-three, what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2, year-in-review-2025-ai-accountability]
 tags: [AI, LegalTech, zeeker, Singapore]
 target_date: ~
-status: DRAFT PITCH — awaiting user's emotional core and status confirmation
+status: DRAFT PITCH — awaiting user's emotional core
 ---
 
 # Pitch: sg-law-cookies
@@ -19,54 +19,63 @@ status: DRAFT PITCH — awaiting user's emotional core and status confirmation
 
 > Can you write a new post for me? I’m thinking about something I have stowed for a while, I.e. sg law cookies. It”s located at cookies.zeeker.sg and it’s a high concept front end to data.zeeker.sg
 
-**Title:** *Your Amicus Outlived the Stack* (working — alternates: *The Poem Was the Only Thing That Stayed*, *Two Incarnations of a Legal News Bot*)
-**Thesis:** The high concept — a persona and a poem — was the only stable thing about SG Law Cookies; everything underneath it was replaced at least once, and that's what made replacing it cheap.
-**Spine:** The concept was the interface. The stack was disposable.
-**Emotional core (user's words):** `[HOUFU: needed — what made you want to write about Cookies now? "Stowed" is doing a lot of work. Shelved, or quietly running and never written up?]`
+**Title:** *The Word Was the Spec* (working — alternates: *No Raisins, Ever*, *What a Cookie Turned Out to Mean*)
+**Thesis:** I picked "cookies" in 2023 because bite-sized legal news sounded cute; three years later the word is a formal unit of legal change, and the metaphor I chose casually ended up specifying the product.
+**Spine:** The name was the only thing I never rewrote, and it quietly became the design brief.
+**Emotional core (user's words):** `[HOUFU: needed — what made you want to write about Cookies now? "Stowed" is doing a lot of work.]`
 
 ## Pitch
 
-`[DRAFT — pending the emotional core, which will change the opening]`
-
-On 22 March 2023 I published the first SG Law Cookies: a bot called Your Amicus introducing itself as "your friendly little legal bot from the little island of Singapore." Two weeks later I made it open every digest with a six-line poem about the day's legal news — sentencing appeals, kickback prosecutions, money laundering, in verse. That was the whole high concept, and it has not changed since. Everything under it has. The summariser went from GPT-3.5 to GPT-4 to GPT-4o to GPT-4.1. The orchestration went from LangChain to a Rivet graph to Mirascope. Packaging went from Poetry to uv. The site went from Hugo to a rebuild in a different repo. The source went from scraping Singapore Law Watch's RSS directly to consuming my own API at data.zeeker.sg. Two years, 516 digests, and the only load-bearing decision I never revisited was the silly one. That's the argument: pick a concept narrow enough to survive its own implementation.
+In March 2023 I built a bot called Your Amicus that read Singapore Law Watch every weekday, summarised each article in 100 words, and — because it amused me — opened with a six-line poem about the day's sentencing appeals. I called it SG Law Cookies because the summaries were bite-sized. That was the whole reasoning. Since then I have replaced every part of it. The poem is gone, and so is Amicus. GPT-3.5 became GPT-4, then GPT-4o, then Claude and a local Qwen. LangChain became a Rivet graph became Mirascope. Hugo became a Python site generator. Scraping Singapore Law Watch's RSS became querying my own catalogue at data.zeeker.sg. Even the unit changed: a cookie is no longer a summary of an article but "the smallest unit of legal change" — FOLIO-tagged, priced by significance, act on or be aware of or track. The only thing I never rewrote was the word. And the word turned out to be the specification: pineapple tarts are high-significance signals, chocolate chips are legal concepts, hexagons are judgments. No raisins, ever.
 
 ## Beats
 
 - **Open — what I actually did** (~200w): the moment that made me pull Cookies back up. `[HOUFU: needed]`
-- **The first cookie** (~250w): 22 March 2023, Your Amicus, and the poem two weeks later. Quote a real digest — the migrant-worker kickback one reads well against its own verse.
-- **Everything I replaced** (~350w): the verified swap list (models, LangChain → Rivet → Mirascope, Poetry → uv, Hugo → v2, RSS → API). Each swap was cheap because the output contract never moved.
-- **Why the concept held** (~300w): a persona plus a fixed format is a spec. It's what let me change the engine without renegotiating what the thing *is* — and what kept generated output from drifting into slop.
-- **Neither is wrong** (~200w): infrastructure earns reuse; the concept earns the reader. `[HOUFU: v2 detail — what did the rebuild actually change?]`
-- **What I'd tell a solo builder** (~250w): decide the concept before the stack; the concept is the part you can't refactor.
-- **Close** (~200w): what happens to Cookies now. `[HOUFU: decision — revive, leave running, retire?]`
+- **The first cookie** (~250w): 22 Mar 2023, Your Amicus, the poem two weeks later. Quote the real verse; it's better evidence than describing it.
+- **Everything I replaced** (~300w): the dated swap list. Models, orchestration, packaging, site generator, data source — and then the unit itself. Two years, 516 digests, and none of it was the thing that lasted.
+- **What a cookie means now** (~350w): the v2 definition — signal not summary, three tiers, FOLIO grounding. The bakery is no longer decoration: significance is priced like a bake, chips encode doctrine, shape encodes source type, a red dot means still warm.
+- **Neither is wrong** (~250w): v1 was warm and read like a person; v2 is rigorous and reads like an instrument. The poem could not have survived FOLIO grounding, and FOLIO grounding could not have been built in 2023.
+- **What I'd tell a solo builder** (~250w): the metaphor is the cheapest durable decision you'll make, and the one you're least likely to revisit. Pick it like a spec, because it will become one.
+- **Close** (~200w): what happens to Cookies now. `[HOUFU: still publishing? what's next?]`
 
 ## Out of scope
 
-- A rebuild or roadmap for Cookies. This is a report, not an announcement.
+- A v2 architecture tour. The PRD is 961 lines; this post takes the design decision, not the pipeline.
 - Re-litigating the SMU / institutions decision — link `from-one-source-to-three` and move on.
-- A tutorial on the scraping stack. `zeeker-three-databases` covered the architecture.
-- Prompt-level detail on the summarisation chain unless one example proves the constraint point.
+- A FOLIO explainer beyond one sentence.
+- Anything about Zeeker's own roadmap. Cookies is the subject this time, not the infrastructure.
 
-## Interrogation (proposed answers — confirm or correct)
+## Interrogation
 
-1. **Diagnosis.** The first proposed diagnosis — "the small front end survived because it was left alone" — was **falsified by the git history**: the Hugo repo shows continuous maintenance (model migrations, two orchestration rewrites, a packaging move). It was never unattended. The surviving diagnosis is narrower and better evidenced: the *concept* was stable while the implementation churned. What would still contradict it: if the v2 rebuild in `zeeker-sg/cookies` changed the persona or dropped the poem, the concept wasn't stable after all — it was just the part I hadn't got to yet. **Needs v2 access to confirm.**
-2. **Differentiation.** Everyone has a "we built an AI news summariser" post. This one has a two-year receipt trail showing which decisions turned out to be load-bearing and which were disposable — with dated commits behind every swap. The evidence is the differentiator, not the summariser.
-3. **Framing risk.** Low. Named third parties: Singapore Law Watch / SAL as the upstream RSS source (describe accurately and generously — Cookies depends on that feed and republishes summaries of it), and ICYMI Law as the README's stated inspiration. Credit ICYMI explicitly rather than implying originality. One genuine sensitivity: the digests summarise real prosecutions and named defendants — quote the migrant-worker kickback example carefully.
-4. **Whose subject is this?** The original message's subject is *SG Law Cookies*, and the phrase used is "high concept". This pitch now makes the high concept itself the subject, which is closer to the opening message than the first draft was (that one made the data/app asymmetry the subject and Cookies the evidence). data.zeeker.sg is a foil in one beat only.
+1. **Diagnosis.** Two earlier diagnoses were falsified by evidence, in order. (a) *"The small front end survived because it was left alone"* — killed by the v1 git history, which shows continuous maintenance. (b) *"The high concept was the stable layer"* — killed by v2, where the persona and the poem are gone entirely (zero matches for "amicus" or "poem" in `zeeker-sg/sg-law-cookies`). What survives the evidence is narrower and truer: only the **name and its metaphor** persisted, and the metaphor became load-bearing. What would still contradict it: if the bakery framing in v2 was reverse-engineered to fit the domain name rather than genuinely constraining design choices — a question only Houfu can answer, and the eight mockups suggest it was a real search.
+2. **Differentiation.** Not "I built an AI news summariser." This is a three-year, two-incarnation record of one product where the naming decision outlasted every technical decision — with dated commits, a 961-line PRD, and eight rejected mockups as receipts. Nobody else can write it.
+3. **Framing risk.** Low. Third parties to treat generously: **Singapore Law Watch / SAL** (the v1 RSS source), **ICYMI Law** (the README's stated inspiration — credit explicitly), and **FOLIO**. Two live sensitivities: (a) digests summarise real prosecutions and named defendants, so quote the sample verse and the migrant-worker kickback cookie carefully; (b) the v2 attribution posture (catalogue, never republish, always link the original) is deliberate and should be stated accurately rather than glossed.
+4. **Whose subject is this?** The opening message's subject is SG Law Cookies, and its key phrase is "high concept". This pitch makes the high concept the subject and treats data.zeeker.sg as the supply line, matching the original framing. Earlier drafts drifted toward making the infrastructure the protagonist — the gravity of the four prior Zeeker posts. Watch for it.
 
-## Verified facts (git history, `houfu/sg_law_cookies`)
+## Verified facts
 
-- First commit **23 March 2023**; first digest dated **22 March 2023**. "Your Amicus" is present from day one.
-- The six-line poem starts **7 April 2023** — about two weeks in. Email newsletter added **28 March 2023**.
-- **516 digests**, weekdays only, last one **30 April 2025**. 576 commits total.
-- Model line: GPT-3.5-turbo-16k + GPT-4 (Apr 2024) → GPT-4 + GPT-4o-mini (Aug 2024) → GPT-4o (May 2025) → **GPT-4.1 / GPT-4.1-mini** (final state).
-- Orchestration: LangChain → "Basic rivet support" (**21 Sep 2023**) → **LangChain removed for Mirascope, 3 May 2025** — the repo's last substantive commit.
-- Packaging Poetry → **uv** (2 May 2025), alongside a directory restructure and a DigitalOcean deploy fix.
-- Final pipeline: two calls — a 100-word structured summary per article (temp 0.4) and one ≤6-line poem over the day's summaries (temp 0.8).
-- **v1 scraped `singaporelawwatch.sg` RSS directly.** It was never a front end to data.zeeker.sg — that is a v2 property.
+**v1 — `houfu/sg_law_cookies`** (public, cloned and unshallowed)
 
-## Open questions (max 3)
+- First commit **23 Mar 2023**; first digest **22 Mar 2023**. "Your Amicus" present on day one.
+- Six-line poem added **7 Apr 2023**; email newsletter **28 Mar 2023**.
+- **516 digests**, weekdays only, last one **30 Apr 2025**. 576 commits.
+- Models: GPT-3.5-turbo-16k + GPT-4 (Apr 2024) → GPT-4 + GPT-4o-mini (Aug 2024) → GPT-4o → **GPT-4.1 / GPT-4.1-mini**.
+- Orchestration: LangChain → Rivet (**21 Sep 2023**) → **Mirascope (3 May 2025**, the repo's last substantive commit).
+- Poetry → **uv** (2 May 2025). Final pipeline: 100-word structured summary per article (temp 0.4) + one ≤6-line poem over the day (temp 0.8).
+- **Scraped `singaporelawwatch.sg` RSS directly** — v1 was never a front end to data.zeeker.sg.
+
+**v2 — `zeeker-sg/sg-law-cookies`** (public; last commit 23 Jun 2026)
+
+- Repositioned in the PRD from a blog to a "legal signal platform": *"The blog becomes one output among many. The pipeline and the database are the product."*
+- **A cookie is "the smallest unit of legal change"** — explicitly *not* a summary. Tiers: act on / be aware of / track. Significance sorts, never suppresses: *"Every cookie is published."*
+- **FOLIO-grounded**; sources arrive only via data.zeeker.sg (`sglawwatch`, `sg-gov-newsrooms`, `zeeker-judgements`, `pdpc`).
+- LLM backends: **Anthropic `claude-sonnet-4-6`** primary (tool use forces schema conformance), **Ollama `qwen3:8b`** local alternative, with dual-host routing for news vs judgments.
+- **Eight mockups explored**: night-desk, morning-paper, atlas, bakery, bakery-shopfront, bakery-lovecon, skyline, counter-map. The shipped site is the shopfront plus counter map.
+- Visual encoding (About page): pineapple tart = ACT ON, $0.60 cookie = FRESH, $0.30 cookie = TRACKING, chocolate chips = FOLIO concepts, round = news, hexagonal = judgments, red dot = still warm, ochre threads = shared doctrine. *"No raisins, ever."*
+- PRD cost estimate **$50–200/month**; the local Ollama path exists to make runs cost-free. `[UNVERIFIED: actual spend]`
+
+## Open questions
 
 1. **Emotional core** — un-guessable, blocks the opening. What made you want to write this now?
-2. **v2 access** — `zeeker-sg/cookies` can't be reached from this session (see discussion.md). Need either a new session rooted on that repo, or you paste: what the rebuild changed, whether the persona and poem survived it, and its current publishing status.
-3. **Running cost and any readership signal** (newsletter subscribers, visits) — the numbers beats need at least one.
+2. **Actual running cost**, versus the PRD's $50–200/month estimate — and is it running on Claude or local Qwen day to day?
+3. **Images** — the counter-map screenshot needs to land in this folder as a file (under 500 KB) before publishing.

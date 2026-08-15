@@ -107,6 +107,70 @@ Live risk to the new thesis, recorded honestly: if the v2 rebuild changed the pe
 poem, the concept was not stable — it was merely the part not yet reached. This cannot be settled
 without v2 access.
 
+## Session 3: v2 found, and the second thesis dies too (2026-08-15)
+
+### The access problem was my error
+
+`zeeker-sg/cookies` does not exist. The repo is **`zeeker-sg/sg-law-cookies`**. GitHub answers a
+404 on a private-or-nonexistent path by prompting for credentials, and I read that prompt as "this
+repo is private" instead of checking the name. Listing the org's repos settled it in one call —
+nine public repos, all Python. Lesson for future sessions: when a clone asks for a username,
+enumerate the org before concluding anything about permissions. The `add_repo` cross-tier refusal
+was real but irrelevant; the anonymous git proxy clones public repos regardless.
+
+### Second thesis falsified
+
+Session 2's thesis was *the high concept was the only stable layer* — the persona and poem holding
+steady while the stack churned. v2 kills it: `grep -ril "amicus\|poem\|poet" src/` returns **zero
+matches**. Your Amicus is gone. The poem is gone. The one voice-y, human thing about v1 did not
+survive the rebuild.
+
+So: two theses proposed, two falsified by evidence, both before drafting. That is the pitch
+interrogation working as designed rather than failing — but it is worth noting that both wrong
+guesses shared a flaw, which was inferring a *reason for survival* before establishing *what had
+actually survived*.
+
+### What actually survived: the word
+
+Only the name and its metaphor persist from March 2023. And in v2 the metaphor stopped being
+decoration and became the information architecture:
+
+- A cookie is now formally *"the smallest unit of legal change"* — explicitly not a summary.
+- Significance is priced like a bakery: pineapple tart = ACT ON, $0.60 = FRESH, $0.30 = TRACKING.
+- Chocolate chips encode FOLIO concept count; round = news, hexagonal = judgments; a red dot means
+  "still warm"; ochre threads mean shared doctrine that week.
+- The About page tagline is *"signal, not summary — est. 2023, baked daily, no holidays"*, and the
+  footer promises *"No raisins, ever."*
+
+The eight mockups (`mockups/a-night-desk` … `h-counter-map`) show the design was genuinely searched
+rather than assumed — and the two that shipped are the two that lean hardest on the name chosen
+three years earlier.
+
+### Third thesis (current)
+
+**The word was the spec.** "Cookies" was picked in 2023 because bite-sized summaries sounded cute.
+It is now a defined unit of legal change, and the metaphor specifies the product's visual and
+sorting semantics. The naming decision outlived every technical decision — models, orchestration,
+packaging, site generator, data source, and the definition of the unit itself.
+
+This one is falsifiable in a way the user can settle: if the bakery framing was reverse-engineered
+to fit the domain name rather than genuinely driving design choices, the thesis is decoration. The
+eight mockups argue it was a real search, but Houfu knows.
+
+### v2 facts worth carrying into the draft
+
+Recorded in full under "Verified facts" in `pitch.md`. Notables: Anthropic `claude-sonnet-4-6` as
+primary backend with tool use forcing schema conformance, Ollama `qwen3:8b` as the local cost-free
+alternative, dual-host routing for news vs judgments, PRD cost estimate $50–200/month, and an
+attribution posture that mirrors Zeeker's — source text used for extraction only, never republished,
+every "read the source" link pointing at the original document rather than at Zeeker.
+
+### Screenshot
+
+User pasted the live counter-map view into chat (23 July, 17 cookies / 12 news / 5 judgments /
+3 still warm). It is not on disk. **Needs to be committed to this folder as a compressed file
+before publishing.**
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).
