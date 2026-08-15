@@ -302,6 +302,43 @@ the pitch's diagnosis field because Marcus is primary audience and would catch a
 moves from **wei-lin to sarah**: the post is no longer about identity or the solo-builder struggle,
 and it now has a Monday-morning answer for a practitioner, which is Sarah's territory.
 
+## Session 7: Draft v2 against pitch v5 (2026-08-15)
+
+**Voice reference:** `cowork-rugpull` again — narrative-first, plain first-person headings, argument
+in prose. New title and slug: *Legal Dashboards Count Win Rates. I Wanted One That Counts the Law.*
+(`legal-dashboards-count-win-rates`).
+
+**1,607 words against a 1,900 budget.** Under, deliberately, leaving room for the reviewer round.
+
+What survived from draft 1: the SCCE opening, the counter-map description, the bakery encoding, the
+protected idiom line, and the cookie-is-not-a-summary material — the last now promoted from a
+mid-post section to the structural centre.
+
+What was cut: the entire vibe-coding and PRD section, per the user's instruction that the post is not
+about architecture. Also the "eight mockups" detail, which only made sense as evidence for the
+design-process thesis.
+
+What was added:
+
+- The taxonomy beat — borrowed geography, borrowed citations, manufactured obligations — with all
+  three credited rather than strawmanned.
+- **The RegTech concession, placed early and stated flatly** ("So no, turning legal prose into
+  structured units is not new, and I'd rather say that plainly than pretend I invented it"). The
+  interrogation predicted Marcus would catch an overclaim; conceding it up front converts the
+  weakness into a credibility move.
+- The three benefits beyond cost, in prose rather than a list.
+- The Singapore beat: LawNet's free judgment RSS, LawNet 4.0's AI search, and the 10,765-judgment
+  catalogue figure pulled live from Zeeker.
+
+**Late catch worth recording.** The first pass of draft 2 dropped v1 entirely, which lost the best
+available evidence for the central claim. Restored as a short paragraph: 516 weekdays, the poem,
+"same corpus, same jurisdiction, same author. Prose out, because prose was the only thing I could
+make." The lint's thesis-keyword warning ("win rates" appearing once) is what surfaced the gap — the
+mechanical check caught a substantive thinness, which is the argument for keeping it.
+
+The pitch's spine now ships verbatim in the prose: *"Win rates were never what anyone actually
+wanted to know. They were what we could count."*
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).

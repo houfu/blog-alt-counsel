@@ -1,10 +1,10 @@
 {
   "version": 1,
   "pitch_checkpoint": {
-    "at": "2026-08-15T15:37:35.714Z",
-    "verdict": "Draft v1 written against locked pitch v4: thesis (concept is the scarce input), emotional core (SCCE talk, asked how not what), idiom-came-first all present. Beats followed; 1443w vs 1900 budget. Open publish-gates: SCCE naming, counter-map screenshot, actual cost.",
-    "draft_sha": "430e096ec1e7",
-    "pitch_sha": "ec8bd7c564fe"
+    "at": "2026-08-15T16:04:28.027Z",
+    "verdict": "Draft v2 rewritten against pitch v5 (dashboard angle). All seven beats present; RegTech conceded early per interrogation; v1 newsletter restored as lived evidence for the prose-only claim. 1,637w vs 1,900 budget.",
+    "draft_sha": "0892b3153a8d",
+    "pitch_sha": "a83d680cec40"
   },
   "audit_rounds": [],
   "review_rounds": [],
