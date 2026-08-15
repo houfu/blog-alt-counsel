@@ -111,6 +111,44 @@ answer to the obvious objection about summarising other people's copyrighted mat
 attempts, so FTS was degraded at the time of checking. The table listings and row counts above came
 back clean.
 
+## Live site verified first-hand (16 Aug 2026, via Jina from local session)
+
+Earlier sessions described the site from repo templates and one screenshot because the egress proxy
+blocked it. Read directly now. Corrections and additions:
+
+**The PRD's illustration is backwards in practice.** The PRD says a 40,000-word Court of Appeal
+judgment "might produce one cookie." The live site shows judgments are the *most* productive
+sources. On Fri 14 Aug 2026, **[2026] SGHC 166 produced four cookies across four areas of law**:
+
+- fraud and economic torts — silence and conduct can constitute fraudulent misrepresentation where a duty to correct exists
+- contract — damages for misrepresentation limited to reliance loss, not expectation loss
+- corporate — piercing the corporate veil requires formal control as shareholder or director, not de facto influence
+- fraud and economic torts — an individual's fraudulent misrepresentations can ground joint liability for unlawful means conspiracy with his company
+
+[2026] SGHC 167 similarly produced three (real property ×2, trusts ×1). News headlines produce one
+each. **Draft corrected** — the real cluster is far better evidence for source-decoupling than the
+PRD's hypothetical.
+
+**One day's actual output (Fri 14 Aug 2026):** oven opened 17:33 SGT; 13 cookies; 6 news, 7
+judgments; 1 pineapple tart (ACT ON), 10 fresh, 2 on the cooling rack. Busiest oven: public and
+administrative law ×4. Eleven areas of law active. Header furniture: "est. 2023 · baked daily, no
+holidays", "新加坡法律饼干店", "#01-LAW", "SELF SERVICE · 自助服务", "FRESH BATCH · 17:33 SGT",
+"NEW INGREDIENT: HC/ORC 1222/2025", "thank you — come again tomorrow".
+
+**The pineapple tart that day** was "SGX introduces Global Listing Board to facilitate dual listings
+with Nasdaq," with a why-it-matters line aimed at capital markets and IPO advisers.
+
+**Editorial call — one cookie deliberately not quoted.** The same day carried "Court of Three Judges
+strikes off Pritam Singh for dishonesty." It is accurate and public, but the post should not
+reproduce a disciplinary finding against a named individual as decoration for a technology argument.
+The SGHC 166 cluster makes the point better anyway, and its parties are unnamed. This is the
+named-parties sensitivity the pitch flagged, arriving in concrete form.
+
+**Ray Sun's paper read in full** (techieray.substack.com, via Jina): confirms the PDF. Five
+components, JSON mesh, weekly Cloud Scheduler run, human accept/reject. Cited as
+Sun, R. (2026), *The Live and Breathing Essay*, v1.0, 3 August 2026. Still out of scope — the post
+takes the dashboard trend, not the architecture.
+
 ## Statistics and data points
 
 | Data point | Value | Source |

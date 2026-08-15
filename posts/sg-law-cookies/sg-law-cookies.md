@@ -43,7 +43,11 @@ What is new is the price and the purpose. That kind of platform starts in the lo
 
 ## The unit is the invention
 
-A cookie is the smallest unit of legal change that someone might need to act on, be aware of, or track. It is deliberately not a summary. A summary tries to compress a source faithfully; a cookie extracts the signal and throws the rest away. A forty-thousand-word Court of Appeal judgment might yield exactly one. A single ministry press release might yield three. How many you get depends on how many distinct legal propositions are in there, not how long the document is.
+A cookie is the smallest unit of legal change that someone might need to act on, be aware of, or track. It is deliberately not a summary. A summary tries to compress a source faithfully; a cookie extracts the signal and throws the rest away, and how many you get depends on how many distinct legal propositions a document contains rather than how long it is.
+
+Take one judgment from last Friday. [2026] SGHC 166 came out of the oven as four separate cookies, sitting in four different areas of law: that silence and conduct can constitute fraudulent misrepresentation where a duty to correct exists; that damages for misrepresentation are limited to reliance loss rather than expectation loss; that piercing the corporate veil requires formal control as shareholder or director and not merely de facto influence; and that an individual's fraudulent misrepresentations can ground joint liability for unlawful means conspiracy with his company. One judgment, four propositions, four places on the counter.
+
+A newsletter would have given you one paragraph about a case.
 
 Every cookie carries the same fields, whatever it came from — a headline, why it matters, a significance, and a set of legal concepts drawn from a standard ontology rather than labels I made up. That uniformity is the whole trick. A press release, a data protection enforcement decision and a High Court judgment come out the same shape, which means they can sit on the same surface and be compared.
 
@@ -54,6 +58,8 @@ Mine has been a bakery since 2023. The idiom came first, before the scrapers, be
 So the homepage is a counter. Each area of law that saw activity is a kuih bangkit, sized by the day's bake. A red dot means still warm. Threads between them mean those areas shared doctrine that week. Significance is priced like a bakery prices things — a pineapple tart is something you may need to act on, a thirty-cent cookie is routine output that still counts. Round bakes are news, hexagonal ones are judgments, and the chocolate chips are legal concepts.
 
 No raisins, ever.
+
+Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news, seven from judgments, one pineapple tart, two left on the cooling rack. Busiest oven, public and administrative law, with four. That is the entire legal day, and reading it took me about as long as it took you to read this paragraph.
 
 ## What it buys beyond being cheap
 
