@@ -63,6 +63,50 @@ post is about coupling, not concept, and the thesis must be reworded.
 3. Running cost, readership signal, sample digest — needed for the numbers beats.
 4. Confirm the April 2023 origin date and the "front end came first" chronology.
 
+## Session 2: Correct repo, and a falsified thesis (2026-08-15)
+
+### User correction
+
+The repo I found is the **previous incarnation**. Current Cookies lives at `zeeker-sg/cookies`;
+`houfu/sg_law_cookies` is the Hugo blog that preceded it. User asked for the old incarnation as
+context, which turned out to be the most valuable source in the session.
+
+### Access blocker: zeeker-sg/cookies
+
+Cannot be reached from this session. `add_repo` refuses it: *"cross-tier adds are not supported in
+v1: requested zeeker-sg/cookies but session already has repos from owner(s) [houfu]"*. An anonymous
+clone also fails (prompts for credentials — it is private, or org-restricted). The stated remedies
+are (a) start a new session with `zeeker-sg/cookies` as the initial source, or (b) work from pasted
+material. Everything about **v2 is therefore unverified** and must not be asserted in prose.
+
+### What the Hugo history actually shows
+
+Cloned `houfu/sg_law_cookies` (public, anonymous read via the git proxy) and unshallowed it for
+history. Verified facts are listed in `pitch.md` under "Verified facts". The headline items:
+
+- 22 Mar 2023 first digest; **Your Amicus present from day one**; poem added 7 Apr 2023.
+- 516 digests, weekdays, ending 30 Apr 2025. 576 commits.
+- Continuous stack churn: GPT-3.5 → 4 → 4o → 4.1; LangChain → Rivet → Mirascope; Poetry → uv.
+- **v1 scraped Singapore Law Watch RSS directly** — it was never a front end to data.zeeker.sg.
+  That description applies to v2 only. Worth flagging to the user, since the original framing
+  message describes Cookies as "a high concept front end to data.zeeker.sg".
+
+### Thesis correction (the important one)
+
+Session 1's proposed thesis — *the small front end survived because it was left alone* — is
+**falsified**. The repo shows the opposite of neglect: two orchestration rewrites, four model
+migrations, a packaging move, a directory restructure. This is why Step 3.5 exists; the claim was a
+plausible hypothesis and the data killed it.
+
+Replacement thesis, better evidenced by the same history: **the high concept was the only stable
+layer.** The persona and the poem are unchanged from spring 2023 while every implementation detail
+underneath was replaced at least once. Pitch rewritten in place (the superseded version is in git,
+per the "one current contract" rule).
+
+Live risk to the new thesis, recorded honestly: if the v2 rebuild changed the persona or dropped the
+poem, the concept was not stable — it was merely the part not yet reached. This cannot be settled
+without v2 access.
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).
