@@ -171,6 +171,54 @@ User pasted the live counter-map view into chat (23 July, 17 cookies / 12 news /
 3 still warm). It is not on disk. **Needs to be committed to this folder as a compressed file
 before publishing.**
 
+## Session 4: The user's own framing lands the pitch (2026-08-15)
+
+### What the user supplied
+
+Three things Claude could not have reached, plus a proposed angle:
+
+1. **The idiom came first.** *"I've always wanted this site to be about cookies so that idiom so to
+   speak came first before anything. I wanted it to focus on the smell of the law, freshly baked
+   coming out of the kitchen. So if you're into it you know what it is about without diving deep
+   into it."* This **corrects Session 3's pitch**, which had guessed the name was picked casually
+   because "bite-sized sounded cute" and only later became a spec. It was deliberate from the
+   start. The design goal was instant legibility.
+2. **The moment (emotional core).** *"I showed it off at the SCCE talk and it was an eye opening aha
+   experience, quite a few people came up to me to ask how I did it."* Recorded verbatim in
+   pitch.md. The load-bearing detail: they asked **how**, not **what** — the concept had already
+   done the explaining.
+3. **Status.** Running about a month, deliberately unannounced, *"because it was meant to be a
+   workflow"* — built for himself, not shipped as a product.
+4. **Method.** *"I mostly vibe code it based on a PRD I had workshopped and carefully design. This
+   amount of detail can't be tuned based on a bakery, or a data website, or scruffing from a v1."*
+
+### Angle decision
+
+User proposed: *"I wonder if the way legal data will be turned into an application is a real
+interesting part of this story."* Adopted as the **argument**, with Cookies kept as the **subject** —
+the two are compatible, but the drift risk is recorded in the pitch's interrogation: the category
+could promote itself to protagonist and demote Cookies to evidence. Guard written into the pitch:
+every general claim must be earned from a specific Cookies decision, never the reverse.
+
+Final thesis: **turning legal data into an application is no longer a data problem or a coding
+problem — it is a concept problem, and the concept is the part you cannot vibe code.** This is the
+third thesis; the first two were falsified by evidence (see Sessions 2 and 3), and this one is the
+first to come from the user rather than from Claude's inference.
+
+### PDF
+
+User uploaded a Safari print of the 14 August 2026 daily page. **The body did not render** — only
+the disclaimer and footer chrome extracted, and page rasters are blank, so the JS-driven content
+was not captured. Usable facts from it: the page title format (*"Friday, 14 August 2026 — SG Law
+Cookies"*) and confirmation the site was live on 14 Aug 2026. A PNG screenshot is still needed for
+the post.
+
+### Evidence against "just vibe coded"
+
+Worth carrying into the draft as a defence of the method beat: the repo has **20 test files**
+alongside the 961-line PRD and 553-line pipeline pseudocode. The claim is not that the code wrote
+itself — it is that a carefully specified concept is what let generated code hold this much detail.
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).
