@@ -1,33 +1,40 @@
 ---
-title: "Come Into the Bakery: What I Did With All That Legal Data"
-slug: "come-into-the-bakery"
-tags: ["AI", "LegalTech", "zeeker", "Singapore"]
+title: 'Come Into the Bakery: What I Did With All That Legal Data'
+slug: come-into-the-bakery
+tags:
+  - AI
+  - LegalTech
+  - zeeker
+  - Singapore
 custom_excerpt: >-
   Legal data has meant win rates and disposition times — the machinery around
   the law, never what the law now says. So I baked Singapore's legal day into
   something you take in at a glance, and I'm still wondering what a glance can
   give you.
-status: draft
+status: scheduled
 featured: false
-github_folder: "sg-law-cookies"
-post_id: "6a81e4c75e82c50001b41c91"
+github_folder: sg-law-cookies
+post_id: 6a81e4c75e82c50001b41c91
+published_at: '2026-08-17T01:57:16.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1499889808931-317a0255c0e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDZ8fG92ZW58ZW58MHx8fHwxNzg2OTE3MzY1fDA&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
-I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put SG Law Cookies on the screen and let it do the explaining. It is free, with nothing to sign up for.
+I gave a talk at the SCCE Singapore Regional last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put SG Law Cookies on the screen and let it do the explaining. It is free, with nothing to sign up for.
 
-[SG Law Cookies](https://cookies.zeeker.sg)
+![The front-page of SG Law Cookies on 14 August 2026](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/CleanShot-2026-08-17-at-06.05.23.png)
 
-So: imagine a neighbourhood Singapore bakery from a bygone era. Cream and red, a shop sign in Chinese characters, a unit number over the door like an old shophouse. Established 2023, baked daily, no holidays. Every weekday morning the trays come out, and what is on them is yesterday's law.
+So: imagine a neighbourhood Singapore bakery from a bygone era. Cream and red, a shop sign in Chinese characters, a unit number over the door like an old shophouse. Established 2023, baked daily, no holidays. Every weekday morning the trays come out, and what is on them is yesterday's law. A sixty-cent cookie is worth knowing this week. A thirty-cent cookie is routine output that still counts, and it rests on the cooling rack.
 
-Round bakes are news. Hexagonal shortbread are judgments. A pineapple tart is something that may change what you do on Monday — a new test, a deadline, a precedent worth pleading around. A sixty-cent cookie is worth knowing this week. A thirty-cent cookie is routine output that still counts, and it rests on the cooling rack. The chocolate chips on each one are its legal concepts: more chips, more doctrine.
-
-No raisins, ever.
+![The counter map on 14 August 2026, showing the Kuih Bangkit display of cookies](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/CleanShot-2026-08-17-at-06.17.53.png)
 
 There is also a counter map, which is the part people lean in at. Every area of law that saw activity that day is pressed as a kuih bangkit, sized by how much the day produced. A red dot means it is still warm. Threads running between them mean those areas shared doctrine that week.
 
+No raisins, ever.
+
 Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news and seven from judgments — one of them a pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four. That was a quiet day — seventeen is nearer typical, and I expect it to climb as the extraction gets more thorough.
 
-Nobody in that room needed a legend. It was an aha moment for the audience, and quite a few people came up afterwards to ask how I did it.
+Nobody in that room needed a legend. It was an aha moment for the audience, and quite a few people came up after the talk to ask how I did it.
 
 ## The kitchen behind the shop
 
@@ -45,7 +52,9 @@ Legal data has mostly meant metrics. Win rates by counsel. Motion grant rates be
 
 Those are important numbers and I am not being sniffy about them. But look at what they describe. They describe the machinery around the law — how long it took, how often it worked, what it cost. Not one of them tells you what the law now says.
 
-For that we have always had prose. Newsletters, alerts, feeds, client updates. I ran one myself: the first version of SG Law Cookies was a newsletter that went out for 516 weekdays from March 2023, summarising each day's legal news and opening with a six-line poem about sentencing appeals and money laundering prosecutions, because that amused me at the time. Same corpus, same jurisdiction, same author. Prose out, because prose was the only thing I could make.
+For that we have always had prose. Newsletters, alerts, feeds, client updates. I ran one myself: the first version of SG Law Cookies was a newsletter that went out for 516 weekdays from March 2023, summarising each day's legal news and opening with a six-line poem about sentencing appeals and money laundering prosecutions, because that was what large language models were capable of at the time. Same corpus, same jurisdiction, same author. Prose out, because prose was the only thing I could make.
+
+![A daily digest from the first version of SG Law Cookies](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/CleanShot-2026-08-17-at-06.32.01.png)
 
 What has been missing is anything in between. No way to take the content of the law — not the case counts, the actual developments — and organise it systematically into a page you can comprehend at a glance.
 

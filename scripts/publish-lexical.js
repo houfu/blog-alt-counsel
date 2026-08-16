@@ -528,8 +528,14 @@ class MarkdownToLexical {
       
       // Inline link (not a bookmark card)
       if (linkMatch) {
-        if (linkMatch[1].trim()) {
-          children.push(createTextNode(linkMatch[1].trim()));
+        // Keep the space before the link. Trimming here glued the preceding word
+        // to the link text ("calledthe live and breathing essay"). Leading
+        // whitespace is only stripped at the very start of a paragraph.
+        const before = children.length === 0
+          ? linkMatch[1].replace(/^\s+/, '')
+          : linkMatch[1];
+        if (before) {
+          children.push(createTextNode(before));
         }
         const url = linkMatch[3];
         const linkText = linkMatch[2];
