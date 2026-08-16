@@ -464,6 +464,70 @@ wondering register.
 
 Also still open: SCCE naming and what people actually asked; the counter-map PNG for the folder.
 
+## Parallel branch: the cloud session's draft v3 (merged 2026-08-17)
+
+The notes below come from the cloud session that ran on this same branch before work moved to the
+local machine. It produced an alternative 1,405-word draft (commit `1e5f543`) built on concrete days
+rather than a dashboard survey. That draft was superseded by the five-beat bakery structure Houfu
+dictated on 16 August, and the merge keeps our file. The notes are preserved because the diagnosis
+they record — that a research-heavy draft had gone generic — is the same failure the local session
+hit independently, and because that draft found archive material worth revisiting: the 31 January
+2025 poem and the $396,000 kickback case beneath it.
+
+## Session 8: Draft v3 — user rejected v2 as generic (2026-08-15)
+
+### The user's call, and it was right
+
+*"i don't see how this article follows the pitch. it feels way too generic. i think you're overly
+focused on what you researched on dashboards."*
+
+Measured before rewriting, and the numbers confirmed it. Draft v2 section balance:
+
+| Section | Words |
+|---|---|
+| Opening (the talk) | 197 |
+| What dashboards measure | 261 |
+| Three ways around the problem | 275 |
+| The unit is the invention | 361 |
+| What it buys | 196 |
+| Singapore | 150 |
+| Close | 167 |
+
+**536 words about other people's products before Cookies was described** — and then described in PRD
+register ("every cookie carries the same fields"), never shown. The deeper defect: a 1,607-word post
+arguing that legal developments can be turned into comparable units contained **zero concrete
+examples of that happening**. No real day, no real cookie, no before-and-after.
+
+This is Voice Guide 2.5 exactly — expository "blog voice", analysis arranged as titled argument
+blocks instead of scene-before-analysis with the realization arriving along the way. It is listed in
+the guide as the *recurring* drafting failure, and it recurred.
+
+### What changed in v3
+
+Rebuilt around the two concrete artefacts already available and previously unused:
+
+1. **The 23 July counter**, from the screenshot the user pasted in session 4 — seventeen cookies,
+   twelve news, five judgments, three still warm, employment two, privacy two, criminal two,
+   telecommunications warm. The opening now describes a specific Thursday rather than a product.
+   Best line in the draft is the flat one after it: *"Nobody asked what a red dot meant."*
+2. **A real v1 digest**, quoted verbatim from the Hugo repo (31 January 2025) — the six-line poem
+   plus the $396,000 / 57 workers / 24 weeks kickback case it summarised. This is the before-and-after
+   in lived form: same corpus, same author, prose out because prose was all that could be made.
+
+The dashboard research is now **one paragraph** (~180 words) inside a section framed as the author's
+own wrong assumption ("I assumed for a long time that what stood between me and something better was
+data"), rather than a 536-word survey. The RegTech concession survives in a single sentence, which is
+all it needed.
+
+New balance: 1,405 words, ~60% Cookies-specific.
+
+### Still missing
+
+**A real v2 cookie.** The draft illustrates the unit with a hypothetical ("can come out as a single
+line about arbitral findings…") drawn from the PRD's own example, phrased hypothetically so it does
+not misrepresent a published cookie as real. One actual cookie — headline, why-it-matters, tier —
+pasted from the site would be the single highest-value addition left.
+
 ### Next steps
 
 - User answers the three open questions → finalise pitch (title, thesis, emotional core, tags).
