@@ -50,3 +50,22 @@ Persistent memory for the inhouse-lawyer-reviewer agent. **Read this before ever
 - **Greenlight: publish-ready for in-house segment.** Cost-chart verdict paragraph resolved the round-1 numbers concern within the author's one-paragraph-of-cost-honesty style — confirmed, not re-raised.
 - **New catch (one-line, applied):** the Singapore GenAI guidance (line 66) was named but unlinked — should name MinLaw's Guide and hyperlink it; a missed practical handoff to exactly this segment. Fixed this round.
 - Settled: chart-as-decision-tool / full pricing breakdown remains the author's deliberate choice to keep brief; not re-raised.
+
+### 2026-08-17 — sg-law-cookies (round 1)
+
+- **Verdict:** partly serves me — "the post doesn't hand me the on-ramp it spends five sections
+  describing."
+- **Unique catches:**
+  - **No hyperlink to cookies.zeeker.sg anywhere in the body**, while Raymond Sun's essay got a
+    proper link. The subject of the post was unclickable. Lost during a structural rewrite and
+    invisible to both audit agents and to the primary reviewer. Fixed — this is the catch that
+    justifies running Sarah on builder-showcase posts, not just budget/tool posts.
+  - The pitch's beat 1 assumed a counter-map screenshot; the shipped draft had no image at all.
+    Still open.
+- **Standing asks raised:** cost reality (the post never said the site is free — fixed, one clause in
+  the opening); failure modes ("the occasional burnt edge" is too vague to calibrate trust — referred
+  to Houfu, needs a real example rather than an invented one).
+- **Reader-response worth keeping:** she trusts the tentative close *because* it is tentative — "if
+  this had closed on confidence instead of a question, I'd have been more skeptical, not less."
+  Evidence for the wondering register as a trust device, not just a voice preference.
+- **Settled/rejected:** none this round.

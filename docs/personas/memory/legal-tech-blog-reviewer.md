@@ -70,3 +70,20 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 - Unique catches: (1) excerpt/body inconsistency ("committee of lawyers appointed me" vs group-forms-committee-and-names-him) — excerpt rewritten; (2) two unused research threads worth their words: §10.7 "the tool feeds the committee" pipeline line (applied) and §12.5 Herding Cats citation (offered to Houfu, pending).
 - Standing asks: none triggered — concrete examples, jargon, dual-audience all pre-empted this draft. "Canon map" deliberately undefined (the confusion is the scene) — do not raise as jargon.
 - Settled: differentiation question asked and answered at pitch stage for this post (mandate + a role lawyers can hold) — confirmed delivered in draft; do not re-ask on this post. Cut proposal on "both in terms of beer and freedom" DECLINED — it is Houfu's protected hand-written line (never smooth); recorded so it isn't re-raised.
+
+### 2026-08-17 — sg-law-cookies (round 1)
+
+- **Verdict:** serves me.
+- **Unique catches:**
+  - The RegTech line "a work queue behind a six-figure contract" omitted the cheaper-tier caveat that
+    the post's own research.md had flagged as "should not hide" — and the omission ran in the
+    direction that flattered the post's own cost-collapse thesis. Best catch of the round: not an
+    accuracy nit but a *direction-of-error* nit. Fixed.
+  - The generic AI-hype clause ("what can be achieved when AI is applied to a professional's
+    expertise, with a dash of flavour") was the one non-specific sentence in a specific post. Already
+    cut by Houfu before the review landed — third independent signal on the same clause.
+  - Raymond Sun's scale numbers (41,000+ users, 195+ jurisdictions) sat in research.md and never
+    reached the draft, weakening the fellow-traveller parallel. Fixed.
+- **Standing asks raised:** none — the SGHC 166/167 worked example pre-empted the concrete-example ask.
+- **Open, referred to Houfu:** whether the sample Friday was a typical day or the best one on hand.
+- **Settled/rejected:** none this round.
