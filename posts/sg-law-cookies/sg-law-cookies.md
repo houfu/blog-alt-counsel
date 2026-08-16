@@ -17,7 +17,7 @@ No raisins, ever.
 
 There is also a counter map, which is the part people lean in at. Every area of law that saw activity that day is pressed as a kuih bangkit, sized by how much the day produced. A red dot means it is still warm. Threads running between them mean those areas shared doctrine that week.
 
-Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news, seven from judgments, one pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four.
+Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news and seven from judgments — one of them a pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four.
 
 Nobody in that room needed a legend. It was an aha moment for the audience, and it shows what can be achieved when AI is applied to a professional's expertise, with a dash of flavour.
 
@@ -41,19 +41,21 @@ For that we have always had prose. Newsletters, alerts, feeds, client updates. I
 
 What has been missing is anything in between. No way to take the content of the law — not the case counts, the actual developments — and organise it systematically into a page you can comprehend at a glance.
 
+## The cookie as the unit
+
 That is what a cookie is for. A cookie is the smallest unit of legal change that someone might need to act on, be aware of, or track. It is deliberately not a summary. A summary tries to compress a document faithfully; a cookie takes the signal out and leaves the rest, and how many you get depends on how many distinct propositions are in there rather than how long the document is.
 
-Take one judgment from last Friday. [2026] SGHC 166 came out of the oven as four separate cookies, in four different areas of law: that silence and conduct can constitute fraudulent misrepresentation where a duty to correct exists; that damages for misrepresentation are limited to reliance loss rather than expectation loss; that piercing the corporate veil requires formal control as shareholder or director and not merely de facto influence; and that an individual's fraudulent misrepresentations can ground joint liability for unlawful means conspiracy with his company. One judgment, four propositions, four places on the counter.
+Take one judgment from last Friday. [2026] SGHC 166 came out of the oven as four separate cookies, in four different areas of law: that silence and conduct can constitute fraudulent misrepresentation where a duty to correct exists; that damages for misrepresentation are limited to reliance loss rather than expectation loss; that piercing the corporate veil requires formal control as shareholder or director and not merely de facto influence; and that an individual's fraudulent misrepresentations can ground joint liability for unlawful means conspiracy with his company. One judgment, four propositions, four places on the counter. [2026] SGHC 167, decided the same day, produced three more.
 
 Because every cookie has the same shape, a ministry press release, a data protection enforcement decision and a High Court judgment can sit side by side and be compared. That is the whole trick.
 
-Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about [2026] SGHC 166 and you get one excellent summary of [2026] SGHC 166.
+Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about [2026] SGHC 166 and you get one excellent summary of [2026] SGHC 166. Enterprise compliance platforms have been manufacturing units out of regulatory prose since 2013, too — but as a work queue behind a six-figure contract, not a page anyone glances at.
 
-The counter is not trying to make you read. It does not want you to dive deep. It shows you the shape of the day and gets out of the way, and every cookie links to the original for the one or two that turn out to matter to you. The design brief was the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
+The counter is not trying to make you read. It shows you the shape of the day and gets out of the way, and every cookie links to the original for the one or two that turn out to matter to you. The design brief was the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
 
 ## Raymond found a unit too
 
-Raymond Sun published something this month that I have not been able to stop thinking about, called the live and breathing essay.
+Raymond Sun published something this month that I have not been able to stop thinking about, called [the live and breathing essay](https://www.techieray.com/LiveAndBreathingEssay).
 
 His Global AI Regulation Tracker has a page on enforcement trends that reads like an ordinary essay. Behind it, every statement in that essay is stored as its own record, carrying the source it rests on, the date it was last tested against that source, and the subject it answers for. Once a week a scheduled job checks his tracker for new entries, works out which statements those entries affect, and proposes revisions to only those. He accepts or rejects each one. The date on the page is the date the essay was last checked against the evidence, not the date somebody wrote it.
 
