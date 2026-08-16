@@ -19,25 +19,23 @@ There is also a counter map, which is the part people lean in at. Every area of 
 
 Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news, seven from judgments, one pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four.
 
-Nobody in that room needed a legend. That was the point of showing it.
+Nobody in that room needed a legend. It was an aha moment for the audience, and it shows what can be achieved when AI is applied to a professional's expertise, with a dash of flavour.
 
 ## The kitchen behind the shop
 
-The bakery is the easy half. It only works because there is a kitchen behind it, and the kitchen is Zeeker, which took years.
+The bakery is the easy half. It only works because there is a kitchen behind it, and the kitchen is Zeeker, which took years and still is a work in progress.
 
 data.zeeker.sg curates Singapore's legal output every day — 10,765 judgments from the Supreme Court, the State Courts and below, 927 news headlines, 263 commentaries, 90 reference chapters, PDPC enforcement decisions, and the press releases coming out of the ministries and agencies. It indexes the full text of judgments for searching without republishing them, so every cookie points back at the original on the Judiciary's own site.
 
 [From One Source to Three: When the Right Agent Showed Up](https://www.alt-counsel.com/from-one-source-to-three/?ref=come-into-the-bakery)
 
-For a long time I could not answer the obvious question about any of it. What can I actually do with all this data now that I have it? A catalogue is not an answer. It is a shelf. Cookies is the Zeeker showcase — the thing that demonstrates what the shelf was for.
+Many peers have said to me that Singapore's legal data infrastructure leaves much to be desired. I agree, and I acted on it. But investment demands returns, and for a long time I could not answer the obvious question about any of it: what can I actually do with all this data now that I have it? A catalogue is not an answer. It is a shelf. SG Law Cookies is the Zeeker showcase — one of the ways I am using my own legal data, and I hope it advances the conversation on this issue rather than just adding to it.
 
 ## What legal data has meant until now
 
-Legal data has mostly meant metrics. Win rates by counsel. Motion grant rates before a particular judge. Time to disposition. Case counts broken down by subject matter. Settlement sums.
+Legal data has mostly meant metrics. Win rates by counsel. Motion grant rates before a particular judge. Time to disposition. Case counts broken down by subject matter. User satisfaction rates (are you happy with the court facilities or process even though you lost your case?).
 
-Those are important numbers and I am not being sniffy about them. If you are deciding whether to file in front of a particular judge, a grant rate is exactly what you want to know.
-
-But look at what they describe. They describe the machinery around the law — how long it took, how often it worked, what it cost. Not one of them tells you what the law now says.
+Those are important numbers and I am not being sniffy about them. But look at what they describe. They describe the machinery around the law — how long it took, how often it worked, what it cost. Not one of them tells you what the law now says.
 
 For that we have always had prose. Newsletters, alerts, feeds, client updates. I ran one myself: the first version of SG Law Cookies was a newsletter that went out for 516 weekdays from March 2023, summarising each day's legal news and opening with a six-line poem about sentencing appeals and money laundering prosecutions, because that amused me at the time. Same corpus, same jurisdiction, same author. Prose out, because prose was the only thing I could make.
 
@@ -63,14 +61,22 @@ He has done the same thing I did and arrived somewhere completely different. He 
 
 Neither is wrong, and neither of us picked a general-purpose answer. He wanted writing that stays true. I wanted a day you can take in without reading. The unit follows from that, not the other way round.
 
-## The future is this
+## I keep wondering what this gets us
 
 Not "AI will read the law for you." That framing has been around for a decade and it keeps producing tools that answer questions you already knew to ask.
 
-The interesting decision sits upstream of the technology, and it is a legal one: what counts as a unit of legal change in your world, and what it should turn into. A statement in a living document. A cookie on a counter. An obligation mapped to a control, which is what the compliance platforms have sold for years at six figures a year, and which is the right answer if a compliance department is who you serve.
+There is a kind of knowledge senior practitioners have that nobody teaches. A feel for where the law is moving — reading a new decision and sensing, before you have worked out why, that it sits oddly against something from two months ago. It comes from reading everything for years, which is why it tends to belong to people with either a long career or a research department behind them.
+
+What I have been wondering since the talk is whether a counter can hand you some of that cheaply.
+
+Not the knowledge. A sense. The design is built for it: the cooling rack keeps the routine decisions nobody would put in a newsletter, the weekly bake looks for doctrine that turned up in two unrelated places, and an area of law that stays warm several days running is visible without anyone having decided in advance that it mattered. Small things, individually not worth reporting, legible only in aggregate.
+
+[HOUFU: one real thing the weekly bake has actually surfaced, if anything has yet — a repeated doctrine, a run in one area, two sources touching the same concept in a week. If nothing has, say so plainly; that is a better sentence than a hypothetical.]
+
+A sense is not an opinion, and it is nowhere near advice. It tells you where to look, which is why every cookie links to the original and why the site says plainly that these are machine-made signals with the occasional burnt edge.
 
 [When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=come-into-the-bakery)
 
-For solo counsels and small teams, that is the encouraging part. You are not going to outbuild a vendor and you do not need to. But you know what the people you serve need to notice on a Tuesday morning, and that judgment is now most of the product rather than a garnish on top of it.
+One month is not much to go on. But if a deft sense of the law is something you can pick up by glancing rather than by reading for twenty years, that would matter most to the people who never had the reading time — which is most of us.
 
-Cookies has been running quietly every weekday for a month, and I still think of it as my own workflow more than anything else. After the talk, though, I keep wondering what it would take to make it something other people could rely on. The oven is on either way.
+I do not know yet. The oven is on either way.
