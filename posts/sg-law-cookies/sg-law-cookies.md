@@ -7,7 +7,7 @@ featured: false
 github_folder: "sg-law-cookies"
 ---
 
-I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code or taking the long technical way round, so I put [SG Law Cookies](https://cookies.zeeker.sg) on the screen and let it do the explaining. It is free to read and there is nothing to sign up for.
+I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put [SG Law Cookies](https://cookies.zeeker.sg) on the screen and let it do the explaining. It is free to read and there is nothing to sign up for.
 
 So: imagine a neighbourhood Singapore bakery from a bygone era. Cream and red, a shop sign in Chinese characters, a unit number over the door like an old shophouse. Established 2023, baked daily, no holidays. Every weekday morning the trays come out, and what is on them is yesterday's law.
 
@@ -17,7 +17,7 @@ No raisins, ever.
 
 There is also a counter map, which is the part people lean in at. Every area of law that saw activity that day is pressed as a kuih bangkit, sized by how much the day produced. A red dot means it is still warm. Threads running between them mean those areas shared doctrine that week.
 
-Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news and seven from judgments — one of them a pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four.
+Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news and seven from judgments — one of them a pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four. That was a quiet day — seventeen is nearer typical, and I expect it to climb as the extraction gets more thorough.
 
 Nobody in that room needed a legend. It was an aha moment for the audience, and quite a few people came up afterwards to ask how I did it.
 
@@ -47,11 +47,11 @@ That is what a cookie is for. A cookie is the smallest unit of legal change that
 
 Take one judgment from last Friday. [2026] SGHC 166 came out of the oven as four separate cookies, in four different areas of law: that silence and conduct can constitute fraudulent misrepresentation where a duty to correct exists; that damages for misrepresentation are limited to reliance loss rather than expectation loss; that piercing the corporate veil requires formal control as shareholder or director and not merely de facto influence; and that an individual's fraudulent misrepresentations can ground joint liability for unlawful means conspiracy with his company. One judgment, four propositions, four places on the counter. [2026] SGHC 167, decided the same day, produced three more — two in real property, one in trusts.
 
-Because every cookie has the same shape, a ministry press release, a data protection enforcement decision and a High Court judgment can sit side by side and be compared. That is the whole trick.
+Because every cookie has the same shape, a ministry press release, a data protection enforcement decision and a High Court judgment can sit side by side and be compared.
 
 Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about [2026] SGHC 166 and you get one excellent summary of [2026] SGHC 166. Compliance platforms have been manufacturing units out of regulatory prose for over a decade — Corlytics since 2013 — as a work queue for compliance departments. Enterprise deployments run to six figures a year, though monitoring-first tools start nearer three thousand. Either way it is a queue to work through, not a page anyone glances at.
 
-The counter is not trying to make you read. It shows you the shape of the day and gets out of the way, and every cookie links to the original for the one or two that turn out to matter to you. The design brief was the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
+The counter is not trying to make you read. It shows you the shape of the day and gets out of the way. The design brief was the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
 
 ## Raymond found a unit too
 
@@ -76,6 +76,8 @@ Not the knowledge. A sense. The design is built for it: the cooling rack keeps t
 A sense is not an opinion, and it is nowhere near advice. It tells you where to look, which is why every cookie links to the original and why the site says plainly that these are machine-made signals with the occasional burnt edge.
 
 Having operated the site for more than a month, I can see the methodology and the site still need some refinement. For example, the requirement to cover everything Zeeker collects creates an overview that might lack detail. Also, while FOLIO gives a nice framework for classifying news and issues by subject matter, it is built primarily around the United States, so some headers do not match.
+
+The subtler problem is not accuracy. Holdings come out of the text, so a cookie rarely overstates one. The question is whether the machine picked the findings that actually matter, and that is a matter of opinion — which is exactly what a project like this should be running evals on, and does not yet.
 
 [When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=come-into-the-bakery)
 
