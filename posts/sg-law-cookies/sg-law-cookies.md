@@ -19,7 +19,7 @@ There is also a counter map, which is the part people lean in at. Every area of 
 
 Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news and seven from judgments — one of them a pineapple tart, two left on the cooling rack. The busiest oven was public and administrative law, with four.
 
-Nobody in that room needed a legend. It was an aha moment for the audience, and it shows what can be achieved when AI is applied to a professional's expertise, with a dash of flavour.
+Nobody in that room needed a legend. It was an aha moment for the audience, and quite a few people came up afterwards to ask how I did it.
 
 ## The kitchen behind the shop
 
