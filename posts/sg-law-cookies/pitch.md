@@ -1,17 +1,17 @@
 ---
-word_budget: 1900
+word_budget: 1700
 budget_tolerance: 10
 primary_audience: marcus
 secondary_audience: [sarah]
-thesis_keywords: [dashboard, win rates, unit, glance]
+thesis_keywords: [cookie, unit, glance, Zeeker]
 protected_lines:
   - "the smell of the law, freshly baked coming out of the kitchen"
-voice: {lane: learning-in-public, moves: [specific-numbers, neither-is-wrong, humour-after-the-argument]}
-interrogation: {diagnosis: "see below", differentiation: "see below", framing_risk: "see below", subject: "see below"}
+voice: {lane: learning-in-public, moves: [specific-numbers, neither-is-wrong, solo-counsel-return]}
+interrogation: {diagnosis: "user-supplied structure, see below", differentiation: "see below", framing_risk: "see below", subject: "see below"}
 must_link: [when-building-gets-cheap-but-knowing-stays-expensive, from-one-source-to-three, year-in-review-2025-ai-accountability]
 tags: [AI, LegalTech, zeeker, Singapore]
 target_date: ~
-status: PITCH v5 — dashboard angle, awaiting approval
+status: PITCH v6 — user-dictated structure
 ---
 
 # Pitch: sg-law-cookies
@@ -20,9 +20,9 @@ status: PITCH v5 — dashboard angle, awaiting approval
 
 > Can you write a new post for me? I’m thinking about something I have stowed for a while, I.e. sg law cookies. It”s located at cookies.zeeker.sg and it’s a high concept front end to data.zeeker.sg
 
-**Title:** *Legal Dashboards Count Win Rates. I Wanted One That Counts the Law.*
-**Thesis:** Legal dashboards have always plotted the countable shell around the law — motions, durations, win rates — because a unit had to be countable to be plotted; an LLM can now manufacture a unit out of legal prose, which makes the substance of the law dashboardable for the first time.
-**Spine:** Win rates were never what anyone wanted to know. They were what we could count.
+**Title:** *Come Into the Bakery* (working — alternates: *A Snapshot of the Legal Day*, *What I Did With All That Data*)
+**Thesis:** Legal data has been metrics about the machinery of law; the content of the law stayed in prose, and the thing that was missing was a way to organise it systematically into a page you comprehend at a glance.
+**Spine:** Cookies is the answer to the question Zeeker left me holding — what can I actually do with all this data now that I have it?
 **Emotional core (user's words):**
 
 > "I showed it off at the SCCE talk and it was an eye opening aha experience, quite a few people came up to me to ask how I did it."
@@ -31,43 +31,33 @@ status: PITCH v5 — dashboard angle, awaiting approval
 
 ## Pitch
 
-Every legal dashboard I have ever used measures the machinery around the law rather than the law. Motion grant rates, time to disposition, settlement sums, win rates by counsel — all of it real, all of it useful, none of it telling you what the law now says. That was never a failure of imagination. A dashboard needs a unit it can count, and until recently the only countable things in law were procedural: dockets, dates, dollars. The substance stayed in prose, which is why it stayed in newsletters. What changed is that a model can now rewrite a judgment or a press release into a fixed shape — a headline, why it matters, a significance, a set of legal concepts — so that two unlike developments become comparable. Once every development has the same shape, you can plot it. That is what SG Law Cookies is: 10,765 judgments and counting, baked daily into a counter you read at a glance. The cheapest part was the code. The expensive part was deciding what a unit of legal change actually is.
+I showed SG Law Cookies at the SCCE talk last month because I wanted to establish a builder ethos without going into code. The room was compliance professionals there for compliance topics, not a programming audience and not a product demo, so the site had to do the explaining. It looks like a neighbourhood Singapore bakery from a bygone era, and every weekday it puts trays out: round bakes for news, hexagonal shortbread for judgments, a pineapple tart when something changes what you do on Monday. Behind that is the part that took years — data.zeeker.sg curating Singapore's legal output daily, and Cookies is its showcase, my answer to what I can actually do with all this data now that I have it. Legal data has mostly meant metrics: win rates, case counts by subject. Important numbers that say nothing about the content of the law. Past newsletters and feeds, we have had no way to organise that content systematically into a page this easy to take in — one that does not ask you to dive deep, and just shows you the day.
 
 ## Beats
 
-- **Open — the talk** (~250w): showing it, people asking how rather than what. Payoff stated: they were reading a dashboard nobody had to explain.
-- **What legal dashboards have always measured** (~300w): win rates, motion grant rates, durations, 3,124+ courts crawled. The container, not the contents — and why that was the only option.
-- **Three ways to cheat the problem** (~250w): borrow geography (Ray Sun, IAPP), borrow citations (EuCaseNet), or manufacture obligations (Corlytics, CUBE — low six figures a year). The honest precedent, credited properly.
-- **The unit is the invention** (~350w): a cookie is the smallest unit of legal change, not a summary. Tiers, FOLIO concepts, every cookie published. Then the space it sits in — kuih bangkit, warmth, threads — and why an invented space needs a metaphor people can already read.
-- **What it buys beyond being cheap** (~300w): answers the question you didn't know to ask; no triage, because attention is no longer the scarce input; comparability across unlike sources; provenance that links back to the original.
-- **Singapore has search and feeds, not a surface** (~250w): LawNet 4.0 is AI search; LawNet publishes three months of judgment RSS. The raw material and the query tool both exist. Nobody built the thing you look at.
-- **Close** (~200w): neither is wrong — search answers what you ask, a counter shows what you didn't. Flat, hopeful, no teaser.
+- **1. The bakery** (~400w): SCCE, compliance audience, builder ethos without code. Put the reader inside the shop — colours, trays, the counter map with areas of law pressed as kuih bangkit. One real day: Friday 14 August, thirteen cookies.
+- **2. The kitchen behind it** (~300w): Zeeker curates a range of Singapore legal data daily — 10,765 judgments and the rest. Cookies is the Zeeker showcase, answering what the data is *for*.
+- **3. The real innovation** (~450w): legal data as metrics vs the content of the law. Beyond newsletters and feeds, no systematic organisation into a comprehensible page. The cookie as unit; SGHC 166 producing four; deliberately shallow, a snapshot rather than an invitation to dive.
+- **4. Raymond found a unit too** (~300w): the live and breathing essay — statements wired to a dataset, refreshed weekly. Same move, different deliverable. Neither is wrong.
+- **5. The future is this** (~250w): the design decision — what counts as a unit, what deliverable it becomes — is the argument worth having. Solo counsel return. Close on hope.
 
 ## Out of scope
 
-- **The architecture.** Explicitly ruled out by the user. No component diagrams, no stack walkthrough.
-- The vibe-coding and PRD story. It was the centre of draft 1; it is now at most one clause.
-- Ray Sun's live-and-breathing-essay pattern as a subject. He appears once, generously, as a borrowed-axis example.
-- A FOLIO explainer beyond one sentence.
-- Re-litigating the SMU decision.
+- **The competitive taxonomy.** Six families of legal dashboard, Corlytics, Darrow, RegTech pricing. This was Claude's overreach in v5; at most one clause survives.
+- The architecture of either project. No components, no stack.
+- The vibe-coding and PRD story.
+- A FOLIO explainer beyond one clause.
 
 ## Interrogation
 
-1. **Diagnosis.** The user's diagnosis — dashboards ingested numerical data, cookies rewrite prose into a comparable unit — **survives checking, with one correction the draft must carry.** Manufacturing units from legal prose is not new: Corlytics has done exactly this since 2013 across 120+ countries and 2,500+ regulators, using AI for "document classification, summarisation, and mapping." What is new is the price (enterprise contracts start in the low six figures), the scope (all legal output, not just regulation), and the intent (a surface to look at, not a compliance queue). If the post claims novelty it did not earn, Marcus will catch it and be right to.
-2. **Differentiation.** Not "I built a thing." A taxonomy nobody has written down — legal dashboards sorted by the unit they plot — with a worked example, live numbers, and an honest account of the incumbent that got there first. The reader leaves with a way to classify any legal dashboard they meet.
-3. **Framing risk.** Moderate, and all manageable. **Ray Sun** must be credited generously and accurately — his tracker is a real achievement at 41,000+ users, and "borrowed geography" is a description of a sound design choice, not a criticism; wording matters. **Corlytics, CUBE, Ascent** must not be strawmanned: their unit fits their buyer. **SAL/LawNet** must be treated as complementary, not as a foil that failed — they published the feeds this project consumes. And **PDPC enforcement decisions and judgments concern named parties**, so any quoted cookie needs care.
-4. **Whose subject is this?** This is the change from v4, made deliberately with the user rather than by Claude. The subject is now **the category** — how legal data becomes something you look at — with Cookies as the worked example. The user's opening message named Cookies as the subject, so this is a genuine shift; it is sanctioned, not drift. Guard retained: every general claim must be earned from a specific Cookies decision.
+1. **Diagnosis.** The structure is the user's, given as five numbered points, so it is not Claude's inference to test. The one claim needing care is "we have no way of systematically organising such data into a page this comprehensible." Narrower than v5's "nobody manufactures units from prose," and better: it is about **comprehension**, not extraction. RegTech extracts obligations but delivers a work queue; LawNet summarises judgments but one document at a time. Both are consistent with the claim and each earns a clause, not a section.
+2. **Differentiation.** A working example anyone can open, plus the reason it exists — and a named peer arriving at the same insight by a different route. Not another "AI will read the law for you" piece.
+3. **Framing risk.** **Raymond Sun** is now a fellow traveller rather than a taxonomy entry; describe his work accurately and admiringly. **SAL/IMDA** must be credited for LawNet AI Summaries rather than written around. **Named parties**: the live site carried a disciplinary finding against a named individual on the sample day — not quoted. SGHC 166 and 167 are used instead; parties unnamed.
+4. **Whose subject is this?** Cookies is the subject again, with Zeeker as the kitchen behind it. v5 promoted the *category* to protagonist and buried Cookies under vendor analysis — the user's verdict was "I still hate it." Guard: if a paragraph could survive with Cookies deleted from it, it does not belong.
 
 ## Open questions
 
-1. `[HOUFU]` **SCCE** — full name, date, audience, and whether to print it. What did people actually ask?
-2. `[HOUFU]` **Actual monthly cost**, and whether daily runs use Claude or the local Qwen. Needed only if the post quotes a figure; it can ship without one.
-3. **Counter-map screenshot** as a PNG under 500 KB in this folder.
+1. `[HOUFU]` **SCCE** — full name and whether to print it; what people actually asked afterwards.
+2. `[HOUFU]` **Counter-map screenshot** as a PNG under 500 KB in this folder. This draft is written assuming one image in beat 1.
+3. `[HOUFU]` **kuih bangkit vs kuih lapis** — the site legend says bangkit; draft follows the site.
 
-## Key evidence (full detail in research.md)
-
-- Litigation analytics measures win rates, motion grant rates, durations; one vendor crawls 3,124+ courts across 13 countries.
-- Ray Sun's tracker: 195+ jurisdictions, 41,000+ users, built solo. IAPP's AI tracker: chart, map and directory, updated 3 Feb 2026.
-- Corlytics: since 2013, 120+ countries, 2,500+ regulators, "converts regulatory text into trackable requirements." Enterprise RegTech from low six figures a year.
-- data.zeeker.sg, queried live 15 Aug 2026: **10,765 judgments**, 927 headlines, 263 commentaries, 90 reference chapters, plus PDPC and government newsroom tables. Judgments are indexed but not redistributed.
-- SAL launched **LawNet 4.0** AI search at TechLaw.Fest 2025; LawNet publishes free RSS of the last three months of judgments.
