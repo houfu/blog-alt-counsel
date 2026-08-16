@@ -537,3 +537,65 @@ pasted from the site would be the single highest-value addition left.
 - Audience routing: `marcus` primary (open source project / post-mortem per the routing table),
   `wei-lin` secondary. Coverage note: all three reviewer memories were last touched within the same
   week, so no constituency is starved; routing is on content fit alone.
+
+## Session 10: Scheduled, synced, and merged (2026-08-17)
+
+### Published state
+
+Scheduled on Ghost for **2026-08-17T01:57:16Z**, post `6a81e4c75e82c50001b41c91`, slug
+`come-into-the-bakery`. Feature image is the Unsplash oven. Three screenshots added by Houfu in the
+editor: the front page and the counter map for 14 August, and a daily digest from the first version.
+
+### AUDIT TRAIL: republishing destroyed Houfu's screenshots
+
+Claude ran `publish-lexical.js` a second time to attach the excerpt. That call replaces the entire
+lexical body, which wiped the screenshots Houfu had added in the Ghost editor. He recovered them
+from Ghost's post history.
+
+**The rule this broke** is already in CLAUDE.md — *publish last, sync once; edit freely on Ghost
+after publishing.* The specific lesson to carry forward: **once a post exists on Ghost and has been
+edited there, never re-run the publisher to change metadata.** Excerpt, tags, feature image and
+schedule are all settable without touching the body. The body only goes up from markdown on a
+deliberate, announced republish, and only when every image already lives in the markdown.
+
+### Two converter bugs found by dry-running before publishing
+
+1. **Text before an inline bookmark-host link was silently deleted.** `createParagraph` keeps a
+   reference to the children array; the bookmark branch cleared that same array right after pushing
+   it. The opening sentence vanished from the lexical output. Any inline `alt-counsel.com` or
+   `zeeker.sg` link mid-paragraph had this effect — the "inline internal links mangle" symptom in
+   issue #41 is at least partly this.
+2. **The space before an inline link was trimmed**, gluing the preceding word to the link text. This
+   one reached the scheduled post as "calledthe live and breathing essay" and Houfu fixed it by hand.
+
+Both fixed with regression tests, each verified to fail without its fix. **The dry run is what caught
+them** — neither is visible in the markdown, only in what Ghost renders.
+
+### Ghost-side edits merged back
+
+SCCE named in full (**SCCE Singapore Regional**); the shapes-and-chips sentences dropped and the
+sixty/thirty-cent lines folded into the bakery paragraph, since the screenshots now do that work;
+no-raisins moved after the counter map; "afterwards" → "after the talk"; and the poem reframed as
+*"what large language models were capable of at the time"* rather than *"what amused me"* — which
+turns a whimsical aside into evidence for the argument. Houfu then restored the site link inline and
+added one for data.zeeker.sg, closing Sarah's on-ramp finding.
+
+**Voice note for the corpus:** his edits again ran toward accuracy over charm — the poem line, the
+full conference name, and cutting description the screenshots already carried.
+
+### Branches
+
+- `claude/sg-law-cookies-post-7bxr8n` — merged the cloud session's `1e5f543` (an alternative
+  1,405-word draft). Ours won the file; both session records kept in this log.
+- `fix/lexical-converter` — off main, three infra commits: the agent model-pin fix and the two
+  converter fixes. Kept off the blog branch per CLAUDE.md.
+
+### Still open
+
+- **Evals for the extraction**, named in the post itself as missing. The unresolved question is
+  whether the machine picks the findings that actually matter.
+- The cooling-rack sentence is missing its full stop on Ghost. Cosmetic.
+- The converter forces `zeeker.sg` links into bookmark cards, so a future republish would turn
+  Houfu's inline site links back into cards. Worth a converter option if inline links to those hosts
+  are wanted deliberately.
+

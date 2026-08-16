@@ -20,7 +20,7 @@ feature_image: >-
   https://images.unsplash.com/photo-1499889808931-317a0255c0e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDZ8fG92ZW58ZW58MHx8fHwxNzg2OTE3MzY1fDA&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
-I gave a talk at the SCCE Singapore Regional last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put SG Law Cookies on the screen and let it do the explaining. It is free, with nothing to sign up for.
+I gave a talk at the SCCE Singapore Regional last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put [SG Law Cookies](https://cookies.zeeker.sg) on the screen and let it do the explaining. It is free, with nothing to sign up for.
 
 ![The front-page of SG Law Cookies on 14 August 2026](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/CleanShot-2026-08-17-at-06.05.23.png)
 
@@ -40,7 +40,7 @@ Nobody in that room needed a legend. It was an aha moment for the audience, and 
 
 The bakery is the easy half. It only works because there is a kitchen behind it, and the kitchen is Zeeker, which took years and still is a work in progress.
 
-data.zeeker.sg curates Singapore's legal output every day — 10,765 judgments from the Supreme Court, the State Courts and below, 927 news headlines, 263 commentaries, 90 reference chapters, PDPC enforcement decisions, and the press releases coming out of the ministries and agencies. It indexes the full text of judgments for searching without republishing them, so every cookie points back at the original on the Judiciary's own site.
+[data.zeeker.sg](https://data.zeeker.sg) curates Singapore's legal output every day — 10,765 judgments from the Supreme Court, the State Courts and below, 927 news headlines, 263 commentaries, 90 reference chapters, PDPC enforcement decisions, and the press releases coming out of the ministries and agencies. It indexes the full text of judgments for searching without republishing them, so every cookie points back at the original on the Judiciary's own site.
 
 [From One Source to Three: When the Right Agent Showed Up](https://www.alt-counsel.com/from-one-source-to-three/?ref=come-into-the-bakery)
 
