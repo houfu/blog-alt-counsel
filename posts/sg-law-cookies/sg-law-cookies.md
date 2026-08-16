@@ -7,7 +7,7 @@ featured: false
 github_folder: "sg-law-cookies"
 ---
 
-I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. Not a programming audience, and not a product demo. I wanted to show them something about how I build without walking anyone through code or taking the long technical way round, so I put SG Law Cookies on the screen and let it do the explaining.
+I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code or taking the long technical way round, so I put SG Law Cookies on the screen and let it do the explaining.
 
 So: imagine a neighbourhood Singapore bakery from a bygone era. Cream and red, a shop sign in Chinese characters, a unit number over the door like an old shophouse. Established 2023, baked daily, no holidays. Every weekday morning the trays come out, and what is on them is yesterday's law.
 
@@ -47,7 +47,7 @@ Take one judgment from last Friday. [2026] SGHC 166 came out of the oven as four
 
 Because every cookie has the same shape, a ministry press release, a data protection enforcement decision and a High Court judgment can sit side by side and be compared. That is the whole trick.
 
-Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about SGHC 166 and you get one excellent summary of SGHC 166.
+Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about [2026] SGHC 166 and you get one excellent summary of [2026] SGHC 166.
 
 The counter is not trying to make you read. It does not want you to dive deep. It shows you the shape of the day and gets out of the way, and every cookie links to the original for the one or two that turn out to matter to you. The design brief was the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
 
@@ -67,16 +67,16 @@ Not "AI will read the law for you." That framing has been around for a decade an
 
 There is a kind of knowledge senior practitioners have that nobody teaches. A feel for where the law is moving — reading a new decision and sensing, before you have worked out why, that it sits oddly against something from two months ago. It comes from reading everything for years, which is why it tends to belong to people with either a long career or a research department behind them.
 
-What I have been wondering since the talk is whether a counter can hand you some of that cheaply.
+What I have been wondering, since the talk and while brainstorming novel uses of my data, is whether a counter can hand you some of that cheaply.
 
 Not the knowledge. A sense. The design is built for it: the cooling rack keeps the routine decisions nobody would put in a newsletter, the weekly bake looks for doctrine that turned up in two unrelated places, and an area of law that stays warm several days running is visible without anyone having decided in advance that it mattered. Small things, individually not worth reporting, legible only in aggregate.
 
-[HOUFU: one real thing the weekly bake has actually surfaced, if anything has yet — a repeated doctrine, a run in one area, two sources touching the same concept in a week. If nothing has, say so plainly; that is a better sentence than a hypothetical.]
-
 A sense is not an opinion, and it is nowhere near advice. It tells you where to look, which is why every cookie links to the original and why the site says plainly that these are machine-made signals with the occasional burnt edge.
+
+Having operated the site for more than a month, I can see the methodology and the site still need some refinement. For example, the requirement to cover everything Zeeker collects creates an overview that might lack detail. Also, while FOLIO gives a nice framework for classifying news and issues by subject matter, it is built primarily around the United States, so some headers do not match.
 
 [When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=come-into-the-bakery)
 
-One month is not much to go on. But if a deft sense of the law is something you can pick up by glancing rather than by reading for twenty years, that would matter most to the people who never had the reading time — which is most of us.
+So there’s still some work to do. But if a deft sense of the law is something you can pick up by glancing rather than by reading for twenty years, that would matter most to the people who never had the reading time — which is most of us.
 
 I do not know yet. The oven is on either way.
