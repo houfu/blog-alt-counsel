@@ -9,78 +9,75 @@ github_folder: "sg-law-cookies"
 
 I showed SG Law Cookies at the SCCE talk expecting to explain it. I had slides ready for that. I didn't need them. People looked at the screen and started asking how I had built it, rather than what it was.
 
-It took me a while to work out why that felt like something. They were reading a dashboard, and nobody had to teach them the legend.
+What was on the screen was a Thursday. Seventeen cookies, twelve from the news, five from judgments, three of them still warm. Employment had two. Privacy had two. Criminal had two. Telecommunications had one, and it had a red dot on it, which means it landed that morning. Corporate governance had one, also warm. Between the shapes ran a few faint threads, which is the site telling you those areas leaned on the same doctrine that week.
 
-The site has been running for about a month at [cookies.zeeker.sg](https://cookies.zeeker.sg), unannounced, because I built it as a workflow for myself rather than a product for anyone else. Every weekday it reads what Singapore's courts, regulators and ministries put out, and turns the day into something I can take in at a glance.
+Nobody asked what a red dot meant.
 
-The interesting part isn't the site. It's that a dashboard like this wasn't really possible until recently, and the reason has almost nothing to do with data or code.
+That is the part I have been turning over since. The site has been running for about a month at [cookies.zeeker.sg](https://cookies.zeeker.sg), unannounced, because I built it as a workflow for myself rather than a product for anyone else. But a room full of compliance people took in a day of Singapore law at a glance, off a screen, with no legend — and I don't think that was possible a couple of years ago.
 
-## Every legal dashboard I've used measures the machinery, not the law
+## I used to publish the same day as a poem
 
-Motion grant rates. Time to disposition. Settlement sums. Win rates by counsel, by court, by judge. One litigation analytics vendor advertises crawlers running across 3,124 courts in 13 countries, reconciled against the public docket systems.
+Here is the same idea, from the first version, on 31 January 2025:
 
-That work is real and I don't want to be sniffy about it. If you are deciding whether to file a motion in front of a particular judge, a grant rate is exactly what you want.
+> In courts where justice seeks its light,
+> Migrant voices rise against the night.
+> Kickbacks shadowed by greed's cruel hand,
+> Yet laws stand firm, a guiding strand.
+> Through vigilance and truth's embrace,
+> Hope for fairness finds its place.
 
-But notice what all of it is. It is the procedural shell around the law: how long things took, how often they succeeded, what they cost. Not one of those numbers tells you what the law now says. For that you still read a newsletter written by a person.
+Underneath it sat a hundred-word summary of each article — including the one that verse is about, a manager who collected roughly $396,000 in kickbacks from 57 migrant workers for renewing their work permits, and got 24 weeks' jail.
 
-Or in my case, by a bot. The first version of SG Law Cookies ran for 516 weekdays from March 2023, and it was a newsletter: a summary of each day's legal news, opened by a six-line poem about sentencing appeals and money laundering prosecutions, because that amused me at the time. Same corpus, same jurisdiction, same author. Prose out, because prose was the only thing I could make.
+That version ran for 516 weekdays. A bot called Your Amicus introduced itself every morning as your friendly little legal bot from the little island of Singapore, and I still think the poems were funny.
 
-That was never a failure of imagination. A dashboard needs a unit it can count, and until recently the only countable things in law were procedural. A docket entry is already structured — a date, a type, an outcome. A judgment is forty thousand words of prose that resists being turned into anything you can plot.
+Same corpus. Same jurisdiction. Same author. But prose came out, because prose was the only thing I could make. If you wanted to know whether anything happened in employment law that week, you read five newsletters and remembered.
 
-Win rates were never what anyone actually wanted to know. They were what we could count.
+## The reason wasn't the data
 
-## Three ways around the problem, and one of them is a real business
-
-People have found ways around this, and they are worth knowing before anyone claims novelty.
-
-You can **borrow geography**. Raymond Sun's Global AI Regulation Tracker maps AI regulation across 195 or so jurisdictions and has reached over 41,000 users, built solo, which is a genuinely impressive thing to have made. The IAPP does something similar for AI and privacy law with a chart, a map and a directory. The map already exists in the reader's head, so nothing needs explaining. The unit is a jurisdiction's status.
-
-You can **borrow citations**. Case law is a network because judgments cite each other, so you can draw the graph without inventing anything — one study of European human rights case law built a network of 9,777 judgments and nearly 40,000 links. But a citation is a fact about a document, not a judgment about what changed.
-
-Or you can **manufacture obligations**, which is the one that matters. Regulatory change management firms have been converting regulatory text into trackable requirements for over a decade. Corlytics has done it since 2013, across 120 countries and 2,500 regulators, using AI for classification, summarisation and mapping. So no, turning legal prose into structured units is not new, and I'd rather say that plainly than pretend I invented it.
-
-What is new is the price and the purpose. That kind of platform starts in the low six figures a year, its unit is an obligation mapped to your internal controls, its buyer is a financial services compliance department, and its output is a queue of things to work through. None of which is wrong. It's just a different thing from what I wanted.
-
-## The unit is the invention
-
-A cookie is the smallest unit of legal change that someone might need to act on, be aware of, or track. It is deliberately not a summary. A summary tries to compress a source faithfully; a cookie extracts the signal and throws the rest away. A forty-thousand-word Court of Appeal judgment might yield exactly one. A single ministry press release might yield three. How many you get depends on how many distinct legal propositions are in there, not how long the document is.
-
-Every cookie carries the same fields, whatever it came from — a headline, why it matters, a significance, and a set of legal concepts drawn from a standard ontology rather than labels I made up. That uniformity is the whole trick. A press release, a data protection enforcement decision and a High Court judgment come out the same shape, which means they can sit on the same surface and be compared.
-
-Then you have to decide where they sit, and this is where the countable-unit problem comes back in a different form. Geography is given. Citations are given. There is no natural map of doctrine — no agreed distance between employment law and privacy — so if you want a space, you have to invent one, and an invented space needs a metaphor the reader already knows.
-
-Mine has been a bakery since 2023. The idiom came first, before the scrapers, before the database, before I knew what would be in it: I wanted it to focus on the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
-
-So the homepage is a counter. Each area of law that saw activity is a kuih bangkit, sized by the day's bake. A red dot means still warm. Threads between them mean those areas shared doctrine that week. Significance is priced like a bakery prices things — a pineapple tart is something you may need to act on, a thirty-cent cookie is routine output that still counts. Round bakes are news, hexagonal ones are judgments, and the chocolate chips are legal concepts.
-
-No raisins, ever.
-
-## What it buys beyond being cheap
-
-The obvious benefit is that one person can now do this, and that's true — I'm one person, and so is Raymond. But cost is the least interesting of it.
-
-A dashboard answers the question you didn't know to ask. Search needs a query, and a practitioner opening a browser on Monday morning doesn't have one. They have a vague worry that something moved last week in an area they cover.
-
-It also removes the need to triage. Every cookie gets published; significance decides how prominent it is, never whether it appears. A human-edited digest has to select, because the editor's attention is the scarce input. A manufactured unit has no such constraint, and the routine output is where the patterns are — you only see a run of similar sentencing decisions if nobody quietly dropped them for being boring.
-
-And because each cookie carries its source, everything links back to the original judgment or announcement. The catalogue underneath indexes the full text of judgments but doesn't republish them. In law that matters more than it sounds: it's the difference between a toy and something you'd act on.
-
-[When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=legal-dashboards-count-win-rates)
-
-## Singapore has the feeds and the search. Nobody built the counter.
-
-The raw material has been sitting in the open for years. LawNet publishes free RSS of the last three months of judgments from the Supreme Court, the State Courts and the Family Courts. My own catalogue at data.zeeker.sg now holds 10,765 judgments, 927 headlines, 263 commentaries and 90 reference chapters, alongside enforcement decisions and government newsroom releases.
+I assumed for a long time that what stood between me and something better was data. Get the judgments, get the press releases, get them structured, and the rest follows. So I spent a couple of years on that, and now the catalogue behind this holds 10,765 judgments, 927 headlines, 263 commentaries and 90 reference chapters.
 
 [From One Source to Three: When the Right Agent Showed Up](https://www.alt-counsel.com/from-one-source-to-three/?ref=legal-dashboards-count-win-rates)
 
-And the query tool exists too. The Academy of Law launched LawNet 4.0 at TechLaw.Fest last year, with an AI search engine built with IMDA that answers questions with sources drawn from Singapore case law and legislation. It is a serious piece of work and I expect to use it.
+Having the data changed less than I expected. A database answers questions you already know to ask, and the reason legal dashboards look the way they do isn't scarcity of data either. It's that a dashboard needs something countable, and the only countable things in law were procedural.
 
-So we have the feeds, and we have the search. What nobody had built is the thing you look at — the surface that tells you there was something worth searching for.
+That's why every legal dashboard I've used measures the machinery rather than the law. Motion grant rates, time to disposition, settlement sums, win rates by counsel — one vendor crawls over three thousand courts to produce them. All real, all useful if you're deciding whether to file in front of a particular judge. None of it tells you what the law now says. A docket entry is already structured: a date, a type, an outcome. A judgment is forty thousand words that resist being turned into anything you can plot.
 
-## Neither one replaces the other
+Win rates were never what anyone actually wanted to know. They were what we could count.
 
-Search answers the question you bring it. A counter shows you the day you would not have thought to ask about. Neither is wrong, and I'd rather have both than argue about which is the real product.
+There are ways around this and I should be honest that people found them before me. You can borrow a map, the way Raymond Sun's Global AI Regulation Tracker does across 195 jurisdictions — impressive work, and geography means it needs no legend. You can borrow citations, because judgments already cite each other. Or you can pay for it: regulatory change management firms have been converting regulatory text into trackable obligations since 2013, across 120 countries, from around six figures a year. Turning legal prose into structured units is not new. It's just been expensive, aimed at compliance departments, and shaped like a work queue.
 
-For solo counsels and small teams, the practical version is this: you are not going to outspend a compliance platform, and you don't need to. The expensive part of a legal dashboard is no longer the data or the engineering. It's deciding what a unit of legal change is for the people you serve, and what it should look like when they glance at it. That's a judgment about practice, not about technology, and it happens to be the thing a working lawyer is best placed to make.
+## So the unit had to be invented
 
-Mine has been running quietly every weekday for a month. I still think of it as my workflow rather than a product, but after the talk I keep wondering what it would take to make it something other people could rely on.
+A cookie is the smallest unit of legal change that someone might need to act on, be aware of, or track. It is deliberately not a summary. A summary compresses a source faithfully; a cookie takes the signal and drops the rest. A forty-thousand-word Court of Appeal judgment can come out as a single line about arbitral findings grounding an abuse-of-process argument. A ministry press release might give three. What decides the number is how many distinct legal propositions are in there, not how long the document is.
+
+Once every development has that shape, the seventeen things that happened on a Thursday become comparable, whether they came from a court, a regulator or a newsroom.
+
+Then you have to decide where they sit, and the counting problem returns in a different form. Geography is given. Citation networks are given. There is no natural map of doctrine — nobody agrees how far employment law sits from privacy — so you have to invent the space, and an invented space only works if the reader already knows how to read it.
+
+Mine has been a bakery since 2023, before any of the code. I wanted it to focus on the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
+
+So each area of law is a kuih bangkit, sized by the day's bake, warm if it just landed. Significance is priced the way a bakery prices things: a pineapple tart is something you may need to act on, a thirty-cent cookie is routine output that still counts. Round bakes are news, hexagonal ones are judgments, and the chocolate chips are legal concepts.
+
+No raisins, ever.
+
+## What that Thursday gives me that a search box doesn't
+
+The obvious benefit is cost — one person can do this now, and I'm one person. But cost is the least of it.
+
+I didn't know to ask about telecommunications that morning. Nobody in that room did either, which is the point: a search box needs a question, and on a Monday you don't have one. You have a vague worry that something moved in an area you cover.
+
+It also means nothing gets triaged away. Every cookie is published; significance decides how prominent it is, never whether it appears. A person writing a digest has to select, because their attention is the scarce thing. That's how you lose the fourth similar sentencing decision in a month — individually boring, and the only way you'd ever notice the pattern.
+
+And every cookie links back to the original judgment or announcement. The catalogue indexes the full text but doesn't republish it. In law that matters more than it sounds.
+
+## Singapore has the feeds and the search. Nobody built the counter.
+
+None of the raw material is secret. LawNet has published free RSS of the last three months of judgments for years. The Academy of Law launched LawNet 4.0 at TechLaw.Fest with an AI search engine built with IMDA, and it's a serious piece of work I expect to use.
+
+So we have the feeds, and now we have the search. What nobody had built is the thing you look at — the surface that tells you there was something worth searching for in the first place.
+
+Neither replaces the other. Search answers the question you bring it; a counter shows you the day you wouldn't have thought to ask about.
+
+For solo counsels and small teams, the useful version is this. You are not going to outspend a compliance platform and you don't need to. The expensive part of a legal dashboard is no longer the data or the engineering — it's deciding what a unit of legal change is for the people you serve, and what it should look like when they glance at it. That's a judgment about practice rather than technology, which makes it the part a working lawyer is actually best placed to make.
+
+Mine still runs quietly every weekday, and I still think of it as my workflow. After that talk I keep wondering what it would take to make it something other people could rely on.
