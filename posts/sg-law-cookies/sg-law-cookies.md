@@ -7,7 +7,9 @@ featured: false
 github_folder: "sg-law-cookies"
 ---
 
-I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put [SG Law Cookies](https://cookies.zeeker.sg) on the screen and let it do the explaining. It is free to read and there is nothing to sign up for.
+I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put SG Law Cookies on the screen and let it do the explaining. It is free, with nothing to sign up for.
+
+[SG Law Cookies](https://cookies.zeeker.sg)
 
 So: imagine a neighbourhood Singapore bakery from a bygone era. Cream and red, a shop sign in Chinese characters, a unit number over the door like an old shophouse. Established 2023, baked daily, no holidays. Every weekday morning the trays come out, and what is on them is yesterday's law.
 
@@ -25,7 +27,7 @@ Nobody in that room needed a legend. It was an aha moment for the audience, and 
 
 The bakery is the easy half. It only works because there is a kitchen behind it, and the kitchen is Zeeker, which took years and still is a work in progress.
 
-[data.zeeker.sg](https://data.zeeker.sg) curates Singapore's legal output every day — 10,765 judgments from the Supreme Court, the State Courts and below, 927 news headlines, 263 commentaries, 90 reference chapters, PDPC enforcement decisions, and the press releases coming out of the ministries and agencies. It indexes the full text of judgments for searching without republishing them, so every cookie points back at the original on the Judiciary's own site.
+data.zeeker.sg curates Singapore's legal output every day — 10,765 judgments from the Supreme Court, the State Courts and below, 927 news headlines, 263 commentaries, 90 reference chapters, PDPC enforcement decisions, and the press releases coming out of the ministries and agencies. It indexes the full text of judgments for searching without republishing them, so every cookie points back at the original on the Judiciary's own site.
 
 [From One Source to Three: When the Right Agent Showed Up](https://www.alt-counsel.com/from-one-source-to-three/?ref=come-into-the-bakery)
 
@@ -49,7 +51,11 @@ Take one judgment from last Friday. [2026] SGHC 166 came out of the oven as four
 
 Because every cookie has the same shape, a ministry press release, a data protection enforcement decision and a High Court judgment can sit side by side and be compared.
 
-Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about [2026] SGHC 166 and you get one excellent summary of [2026] SGHC 166. Compliance platforms have been manufacturing units out of regulatory prose for over a decade — Corlytics since 2013 — as a work queue for compliance departments. Enterprise deployments run to six figures a year, though monitoring-first tools start nearer three thousand. Either way it is a queue to work through, not a page anyone glances at.
+Singapore already has good machinery on either side of this. LawNet has published AI-generated summaries of unreported judgments since 2024, structured like the headnotes in the Singapore Law Reports, built on a model IMDA made for the job, and it reaches most of the profession. But a headnote is a document about a document: one judgment in, one summary out, waiting in a research platform for the day you already have that case in front of you. Ask it about [2026] SGHC 166 and you get one excellent summary of [2026] SGHC 166.
+
+Compliance platforms have been manufacturing units out of regulatory prose for over a decade — Corlytics since 2013. Enterprise deployments run to six figures a year, though monitoring-first tools start nearer three thousand. Either way it is a queue to work through, not a page anyone glances at.
+
+[The Judgment, Not the Summary: How Zeeker MCP Can Change the Way you do Legal Research](https://www.alt-counsel.com/ect-no-lawyers-zeeker/?ref=come-into-the-bakery)
 
 The counter is not trying to make you read. It shows you the shape of the day and gets out of the way. The design brief was the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
 
