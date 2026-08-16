@@ -8,6 +8,9 @@
   },
   "audit_rounds": [],
   "review_rounds": [],
-  "length_audit": null,
+  "length_audit": {
+    "at": "2026-08-16T00:03:09.537Z",
+    "draft_sha": "f76b0851592a"
+  },
   "overrides": []
 }

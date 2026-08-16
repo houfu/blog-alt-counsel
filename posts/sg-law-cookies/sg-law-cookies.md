@@ -35,7 +35,7 @@ People have found ways around this, and they are worth knowing before anyone cla
 
 You can **borrow geography**. Raymond Sun's Global AI Regulation Tracker maps AI regulation across 195 or so jurisdictions and has reached over 41,000 users, built solo, which is a genuinely impressive thing to have made. The IAPP does something similar for AI and privacy law with a chart, a map and a directory. The map already exists in the reader's head, so nothing needs explaining. The unit is a jurisdiction's status.
 
-You can **borrow citations**. Case law is a network because judgments cite each other, so you can draw the graph without inventing anything — one study of European human rights case law built a network of 9,777 judgments and nearly 40,000 links. But a citation is a fact about a document, not a judgment about what changed.
+You can **borrow citations**. Judgments cite each other, so the graph draws itself — one study of European human rights case law mapped 9,777 judgments and nearly 40,000 links. But a citation is a fact about a document, not a judgment about what changed.
 
 Or you can **manufacture obligations**, which is the one that matters. Regulatory change management firms have been converting regulatory text into trackable requirements for over a decade. Corlytics has done it since 2013, across 120 countries and 2,500 regulators, using AI for classification, summarisation and mapping. So no, turning legal prose into structured units is not new, and I'd rather say that plainly than pretend I invented it.
 
@@ -51,7 +51,7 @@ A newsletter would have given you one paragraph about a case.
 
 Every cookie carries the same fields, whatever it came from — a headline, why it matters, a significance, and a set of legal concepts drawn from a standard ontology rather than labels I made up. That uniformity is the whole trick. A press release, a data protection enforcement decision and a High Court judgment come out the same shape, which means they can sit on the same surface and be compared.
 
-Then you have to decide where they sit, and this is where the countable-unit problem comes back in a different form. Geography is given. Citations are given. There is no natural map of doctrine — no agreed distance between employment law and privacy — so if you want a space, you have to invent one, and an invented space needs a metaphor the reader already knows.
+Then you have to decide where they sit. Geography is given. Citations are given. There is no natural map of doctrine — no agreed distance between employment law and privacy — so you have to invent the space, and an invented space needs a metaphor the reader already knows.
 
 Mine has been a bakery since 2023. The idiom came first, before the scrapers, before the database, before I knew what would be in it: I wanted it to focus on the smell of the law, freshly baked coming out of the kitchen, so that you know what it is about without diving deep into it.
 
@@ -59,7 +59,7 @@ So the homepage is a counter. Each area of law that saw activity is a kuih bangk
 
 No raisins, ever.
 
-Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news, seven from judgments, one pineapple tart, two left on the cooling rack. Busiest oven, public and administrative law, with four. That is the entire legal day, and reading it took me about as long as it took you to read this paragraph.
+Last Friday the oven opened at 5.33pm and turned out thirteen cookies: six from the news, seven from judgments, one pineapple tart, two left on the cooling rack. Busiest oven, public and administrative law, with four. That is the entire legal day.
 
 ## What it buys beyond being cheap
 
@@ -73,7 +73,7 @@ And because each cookie carries its source, everything links back to the origina
 
 [When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=legal-dashboards-count-win-rates)
 
-## Singapore has the feeds and the search. Nobody built the counter.
+## Singapore built everything except the thing you look at
 
 The raw material has been sitting in the open for years. LawNet publishes free RSS of the last three months of judgments from the Supreme Court, the State Courts and the Family Courts. My own catalogue at data.zeeker.sg now holds 10,765 judgments, 927 headlines, 263 commentaries and 90 reference chapters, alongside enforcement decisions and government newsroom releases.
 
