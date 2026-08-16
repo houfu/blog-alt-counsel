@@ -90,6 +90,10 @@ async function main() {
   check('mid-sentence link converted', links.includes('https://example.com/mid'));
   check('alt-counsel URL became a bookmark card', types['bookmark'] >= 1 && links.some((u) => u.includes('alt-counsel.com')));
   check('link text not leaked into plain text', !allText.includes('](https://example.com/leading'));
+  // Regression: createParagraph kept a reference to the children array, which was
+  // then cleared — the text before an inline bookmark-host link was silently dropped.
+  check('text before an inline bookmark link survives', allText.includes('Read this on'));
+  check('text after an inline bookmark link survives', allText.includes('for a bookmark card'));
 
   // GitHub footer from github_folder frontmatter
   check('GitHub footer heading appended', allText.includes('Behind the Scenes'));

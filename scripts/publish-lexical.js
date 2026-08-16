@@ -509,8 +509,14 @@ class MarkdownToLexical {
         const url = bookmarkMatch[3];
         const title = bookmarkMatch[2];
         
-        // Add bookmark card as separate node
-        this.nodes.push(createParagraph(children));
+        // Add bookmark card as separate node.
+        // Copy the children: createParagraph keeps a reference to the array, so
+        // clearing the live one would empty the paragraph just pushed and let
+        // later text leak into it. Symptom was a silently deleted sentence
+        // whenever an inline bookmark-host link sat mid-paragraph.
+        if (children.length) {
+          this.nodes.push(createParagraph(children.slice()));
+        }
         children.length = 0;
         
         this.nodes.push(createBookmark(url, title));
