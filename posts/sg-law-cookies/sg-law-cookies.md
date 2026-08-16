@@ -2,6 +2,11 @@
 title: "Come Into the Bakery: What I Did With All That Legal Data"
 slug: "come-into-the-bakery"
 tags: ["AI", "LegalTech", "zeeker", "Singapore"]
+custom_excerpt: >-
+  Legal data has meant win rates and disposition times — the machinery around
+  the law, never what the law now says. So I baked Singapore's legal day into
+  something you take in at a glance, and I'm still wondering what a glance can
+  give you.
 status: draft
 featured: false
 github_folder: "sg-law-cookies"
