@@ -5,6 +5,7 @@ tags: ["AI", "LegalTech", "zeeker", "Singapore"]
 status: draft
 featured: false
 github_folder: "sg-law-cookies"
+post_id: "6a81e4c75e82c50001b41c91"
 ---
 
 I gave a talk at the SCCE last month, to compliance professionals, on compliance topics. I wanted to show them something about how I build without walking anyone through code, so I put SG Law Cookies on the screen and let it do the explaining. It is free, with nothing to sign up for.
