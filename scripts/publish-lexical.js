@@ -509,8 +509,14 @@ class MarkdownToLexical {
         const url = bookmarkMatch[3];
         const title = bookmarkMatch[2];
         
-        // Add bookmark card as separate node
-        this.nodes.push(createParagraph(children));
+        // Add bookmark card as separate node.
+        // Copy the children: createParagraph keeps a reference to the array, so
+        // clearing the live one would empty the paragraph just pushed and let
+        // later text leak into it. Symptom was a silently deleted sentence
+        // whenever an inline bookmark-host link sat mid-paragraph.
+        if (children.length) {
+          this.nodes.push(createParagraph(children.slice()));
+        }
         children.length = 0;
         
         this.nodes.push(createBookmark(url, title));
@@ -522,8 +528,14 @@ class MarkdownToLexical {
       
       // Inline link (not a bookmark card)
       if (linkMatch) {
-        if (linkMatch[1].trim()) {
-          children.push(createTextNode(linkMatch[1].trim()));
+        // Keep the space before the link. Trimming here glued the preceding word
+        // to the link text ("calledthe live and breathing essay"). Leading
+        // whitespace is only stripped at the very start of a paragraph.
+        const before = children.length === 0
+          ? linkMatch[1].replace(/^\s+/, '')
+          : linkMatch[1];
+        if (before) {
+          children.push(createTextNode(before));
         }
         const url = linkMatch[3];
         const linkText = linkMatch[2];

@@ -90,6 +90,27 @@ async function main() {
   check('mid-sentence link converted', links.includes('https://example.com/mid'));
   check('alt-counsel URL became a bookmark card', types['bookmark'] >= 1 && links.some((u) => u.includes('alt-counsel.com')));
   check('link text not leaked into plain text', !allText.includes('](https://example.com/leading'));
+  // Regression: createParagraph kept a reference to the children array, which was
+  // then cleared — the text before an inline bookmark-host link was silently dropped.
+  check('text before an inline bookmark link survives', allText.includes('Read this on'));
+  check('text after an inline bookmark link survives', allText.includes('for a bookmark card'));
+  // Regression: trimming the text before an inline link glued the preceding word to
+  // the link text, shipping "calledthe live and breathing essay" to a live post.
+  // allText joins with spaces, so it can never see a missing one — concatenate a
+  // single paragraph's own nodes verbatim instead.
+  const paragraphText = [];
+  walk(lexical.root, (n) => {
+    if (n.type !== 'paragraph') return;
+    let t = '';
+    const flatten = (x) => {
+      if (x.text !== undefined) t += x.text;
+      (x.children || []).forEach(flatten);
+    };
+    (n.children || []).forEach(flatten);
+    paragraphText.push(t);
+  });
+  check('space before an inline link is preserved',
+    paragraphText.some((t) => t.includes('an inline mid-sentence link')));
 
   // GitHub footer from github_folder frontmatter
   check('GitHub footer heading appended', allText.includes('Behind the Scenes'));

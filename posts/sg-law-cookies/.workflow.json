@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-08-16T16:01:42.132Z",
+    "verdict": "Draft v5 vs pitch v6 after audit fixes: five beats intact and in order; thesis unchanged (metrics measured the machinery, the content stayed in prose, a manufactured unit makes a glanceable page); emotional core still the SCCE talk; close still wondering per beat 5; both protected lines present. Audit changes were additive concessions and one heading split, no scope drift. Subject remains SG Law Cookies per the original framing block.",
+    "draft_sha": "272c4b550eb7",
+    "pitch_sha": "608772f34e9d"
+  },
+  "audit_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-16T15:54:43.297Z",
+      "draft_sha": "03992fe5218a",
+      "words": 1707,
+      "agents": [
+        "audit-substance",
+        "audit-tone"
+      ]
+    }
+  ],
+  "review_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-16T16:04:03.573Z",
+      "draft_sha": "272c4b550eb7",
+      "words": 1747,
+      "agents": [
+        "legal-tech-blog-reviewer",
+        "inhouse-lawyer-reviewer"
+      ]
+    }
+  ],
+  "length_audit": {
+    "at": "2026-08-16T16:08:47.454Z",
+    "draft_sha": "60a9edbce62c"
+  },
+  "overrides": []
+}
