@@ -1,98 +1,129 @@
 # Research: Claude Watermarking
 
-**Last updated:** 2026-08-21
-**Status:** Pre-pitch research. Facts gathered via WebSearch only — direct fetches to anthropic.com, support.claude.com, techcrunch.com, forbes.com are blocked by this environment's egress proxy. **Every claim below needs a primary-source check against Anthropic's own pages before drafting.**
+**Last updated:** 2026-08-21 (session 2 — primary sources now VERIFIED)
+**Status:** Anthropic's own pages and the AI Act text have been read directly. Quotes below are verbatim from primary sources unless marked otherwise. One claim carried in the session-1 draft of this file was **wrong and has been corrected** — see "Correction" below.
 
 ## The news, in one line
 
-From **2 August 2026**, Claude models embed an invisible, machine-readable watermark in generated text, and signed C2PA provenance metadata in generated files. Announced publicly ~11 August 2026. No opt-out, on any plan, anywhere.
+From **2 August 2026**, Claude models embed an imperceptible, machine-readable watermark in generated text, and signed C2PA provenance metadata in generated image files. Announced publicly ~11 August 2026. No opt-out.
 
-## How it actually works (the part everyone gets wrong)
+## How it actually works
 
 Anthropic uses a version of Google DeepMind's **SynthID-Text** (published in *Nature*, 2024).
 
-**It is not hidden characters.** There are no zero-width spaces, no invisible Unicode, nothing a find-and-replace or a paste-into-Notepad will strip. Anthropic says so explicitly.
+**It is not hidden characters.** Anthropic, verbatim:
 
-**What it actually is:** a statistical bias in *which words the model picks*. The mechanism is **tournament sampling**:
+> "Nothing is added to the text and there are no hidden characters."
 
-1. At each token position, sample `2^m` candidate tokens from the model's normal probability distribution.
-2. Independent pseudorandom `g` functions assign each vocabulary token a binary score (0 or 1). The random seed is a hash of the last H tokens plus a secret watermarking key.
-3. Run the candidates through `m` layers of pairwise knockout rounds. In each pair, the higher `g` score advances (ties broken randomly).
-4. The survivor is the emitted token.
+**What it actually is — and Anthropic's framing is sharper than the press coverage.** It does not bias the model toward particular words. It changes *how the dice are rolled*:
 
-Over enough tokens, watermarked text carries systematically higher `g` values than unwatermarked text. Detection is a statistical test on that mean score — not a lookup of a hidden marker.
+> "instead of using an arbitrary random number generator to pick the next word, watermarking uses the key and a few words that come before to settle what word the model should pick."
 
-Consequences that matter:
-- The watermark lives **in the word choices themselves**, so it survives copy-paste, reformatting, and conversion to plain text.
-- It is **diffuse** — spread across the whole response, not localised. No single sentence "contains" it.
-- Detection is **probabilistic and length-dependent**. Short passages carry too little signal.
-- "To a reader, a watermarked response is indistinguishable from an unwatermarked one."
+Underneath, that is SynthID's **tournament sampling**: sample `2^m` candidates from the model's normal distribution; pseudorandom `g` functions (seeded by the watermark key plus the preceding H tokens) score each token 0/1; run `m` layers of pairwise knockouts; emit the survivor. Over enough tokens, watermarked text carries systematically higher `g` values. Detection is a statistical test on that mean — not a lookup for a marker.
 
-### Detection limits (all of these are load-bearing for the post)
+Consequences:
+- The mark lives **in the word choices themselves**, so it survives copy-paste, reformatting, and conversion to plain text.
+- It is **diffuse**. No single sentence "contains" it.
+- Detection is **probabilistic and length-dependent**.
+- To a reader, watermarked and unwatermarked responses are indistinguishable.
 
-| Survives | Does not survive |
-|---|---|
-| Copy-paste | Rewriting / paraphrasing |
-| Reformatting | Translation |
-| Conversion to plain text | Heavy editing |
-| Light editing (partially) | Blending with substantial human text |
+### The entropy insight — the best material in this file
 
-Also produces **no signal**: models released before 2026-08-02 (Claude 3.5 Sonnet, earlier Claude 4 — older-model support said to be "in progress"), very short passages, and files whose metadata was stripped by screenshot or format conversion.
+Anthropic's own stated limitations are, read together, one idea: **the watermark can only exist where the model had a choice.** Their list:
 
-### The killer caveat — what a positive result actually means
+- sparse watermarking on **factual passages**
+- poor effectiveness on **small samples**
+- minimal detection in **proofread text**
+- **negligible presence in code**
+- complete removal through **full rewrites**
 
-**A detected watermark means text was *produced by* Claude, not that Claude *authored* it.** Claude is heavily used to proofread, translate, summarise and copy-edit text humans wrote. Run your own paragraph through Claude for a grammar pass and the output can carry the mark.
+Factual passages, boilerplate and code are low-entropy — the next token is close to forced, so there is no freedom to encode a signal into. Free-flowing prose is high-entropy, and carries a strong mark.
 
-It also cannot tell you **what proportion** of a document is machine-written, and it carries **no identifying information** — Anthropic: it "doesn't say anything about ownership or authorship," "carries no identifying information, and cannot be traced to a specific person, organisation or chat."
+**The counterintuitive result for lawyers:** the watermark is *weakest* exactly where legal writing is most formulaic (a quoted statute, a standard indemnity, a definitions clause) and *strongest* exactly where the prose is most freely composed — the advocacy, the narrative, the client note. The signal tracks stylistic freedom, not legal substance. Worth stating plainly: watermark strength is a measure of how much room the model had, not of how much the model contributed.
 
-Note the unresolved statistical problem flagged in the academic literature: a Bayesian posterior score has no frequentist calibration, so there is no principled way to set a decision threshold guaranteeing, say, at most one false accusation in 10,000 documents. **Verify whether Anthropic publishes a calibrated false-positive rate.**
+*(No legal-sector piece found so far develops this. Artificial Lawyer mentions "reduced watermarking in factual passages" once, as an accuracy worry, and moves on.)*
 
-## Coverage
+### What a positive result actually means
 
-- **Surfaces:** reportedly every Claude product worldwide — Claude apps, Claude Code, Claude Cowork, **and the API**. *(Verify the API claim against primary sources — it is the single most consequential fact for lawyers using Claude inside other tools.)*
-- **Opt-out:** none, including enterprise plans.
-- **Models:** those released on/after 2026-08-02 carry it at launch.
-- **Files:** for generated `.svg`, `.png`, `.jpg`, Anthropic attaches digitally signed **C2PA** provenance metadata. Unlike the text watermark, this **is** strippable — format conversion, re-saving in a non-C2PA tool, or a screenshot removes it.
-- **Detection API:** promised, not yet shipped at announcement. Until it exists with published reliability thresholds, the mark is a transparency promise nobody outside Anthropic can exercise. **Check current status before drafting.**
+Anthropic, verbatim:
 
-## Why now: the EU AI Act
+> "It cannot distinguish 'Claude wrote this' from 'Claude heavily edited this.'"
 
-**Article 50** transparency obligations became applicable **2 August 2026** — the same date the marking starts, which is the whole explanation for the timing. Providers of generative AI must mark outputs in a machine-readable way.
+And from the Help Centre: a detected mark "provides a signal that content was processed by Claude, but is **not fully conclusive**" — while the *absence* of a mark does not establish that content wasn't AI-generated (heavy editing, older models).
 
-**The sharp end for lawyers:** Article 50 reportedly prohibits deliberately removing or altering AI markings. If accurate, that converts a passive fact into an affirmative act with intent — stripping a mark off a document you then file is a different kind of problem from merely having used AI. **This needs a primary-source check on the actual text of Art. 50 before it goes in the post — it is the strongest legal claim in the piece.**
+On identification, verbatim:
 
-Jurisdiction note: this is an **EU-driven** obligation applied globally. Singapore has no equivalent mandate. Flagged as EU-centric — the SG/ASEAN angle is that regional practitioners inherit an EU compliance artefact they had no say in.
+> "There's nothing in the watermark, or its key, that would allow anyone to recover any information about the user."
+
+The marks do not identify a specific individual, organisation or chat session.
+
+### Detection tooling — not shipped
+
+> "We will soon be offering a watermark detection API."
+
+Forthcoming, not available. **No false-positive rate is published on either page.** The academic literature flags this as unresolved: a Bayesian posterior score has no frequentist calibration, so there is no principled way to set a threshold guaranteeing, say, at most one false accusation in 10,000 documents.
+
+So today the mark is a transparency promise that nobody outside Anthropic can exercise.
+
+## Coverage — verified
+
+- **Surfaces (Help Centre, verbatim):** marking runs "across **Claude Platform (API)**, Claude, Claude Code, Claude Cowork, and Claude Tag", worldwide. **The API is explicitly included** — so every Claude-powered legal tool inherits this, whether or not its vendor mentions it.
+- **Models:** "Claude models launched on or after August 2, 2026 will support machine-readable marking at launch." Earlier models fall in an EU transition period; Anthropic says it is "working to add watermarking for those models as well."
+- **Opt-out:** neither primary page documents one. Press reporting says none exists on any plan including enterprise. *(Treat "no opt-out" as press-sourced, not Anthropic-stated.)*
+- **Files:** `.svg`, `.png`, `.jpg` get signed **C2PA** provenance metadata. Unlike the text watermark this **is** strippable — format conversion, re-saving in a non-C2PA tool, or a screenshot removes it.
+
+## Why now: the EU AI Act — and a correction
+
+The EU **Code of Practice** was signed July 2026; **Article 50** transparency obligations became applicable **2 August 2026**, the same day marking began. That timing is the whole explanation.
+
+**Article 50(2), verbatim:**
+
+> "Providers of AI systems, including general-purpose AI systems, generating synthetic audio, image, video or text content, shall ensure that the outputs of the AI system are marked in a machine-readable format and detectable as artificially generated or manipulated."
+
+### ⚠️ Correction to session 1
+
+Session 1 recorded, from a search-engine summary of legal-sector commentary, that "Article 50 prohibits deliberately removing or altering AI markings, so stripping a mark off something you file turns a passive fact into an affirmative act with intent." That was flagged as needing verification. **It does not survive verification.**
+
+Reading Article 50 directly: **it contains no prohibition on removing, altering or stripping AI markings.** It obliges *providers* to apply markings. It does not bind downstream users, and it does not address tampering with a mark once applied. A lawyer who strips a watermark is not breaching Article 50 — Article 50 does not speak to them at all.
+
+This is worth keeping in the post rather than quietly dropping: a confident, specific, legally-flavoured claim about the watermark, circulating in legal commentary, that is not in the text. It is the same failure mode as the consumer panic, wearing a suit.
+
+*(Fairness note: other duties may bite — Art. 50(4) deployer disclosure for deepfakes, professional conduct rules, candour to the court, client engagement terms. The narrow correct claim is only that **Art. 50 itself** imposes no anti-removal duty. Don't overclaim in the other direction.)*
+
+Also note Art. 50's exemptions from the marking duty: systems performing an "assistive function for standard editing" or not "substantially alter[ing] the input data".
+
+**Jurisdiction:** this is an EU-driven obligation applied globally. Singapore has no equivalent mandate. Flagged as EU-centric — the SG/ASEAN angle is that regional practitioners inherit an EU compliance artefact they had no say in, delivered through a US vendor.
 
 ## The backlash — a catalogue of misconceptions
 
-This is the raw material for the post's teaching structure. Each fear maps to a wrong mental model.
+Raw material for the teaching structure. Each fear maps to a wrong mental model.
 
 | What people said | What's actually true |
 |---|---|
-| "It's hidden characters — I'll strip them" | No characters to strip. It's in the word choices. Removal tools already exist and mostly work by *paraphrasing*, i.e. rewriting your text. |
-| "This is surveillance / traceable to me" | Carries no identifying information; can't be traced to a person, org or chat. |
-| "It'll catch me using AI at work or school" | It can flag AI *involvement*, including a proofread of your own writing. It can't show authorship or proportion. |
-| "Anthropic is policing users" | Framed as EU AI Act compliance, not enforcement. Anthropic ships no ability to see who generated what. |
-| "Detection = proof" | Detection is a statistical test with length limits, no published calibrated threshold, and no shipped public API yet. |
+| "It's hidden characters — I'll strip them" | Nothing is added; no characters exist to strip. Removal tools that appeared within days mostly work by *paraphrasing*, i.e. rewriting your text. |
+| "This is surveillance / traceable to me" | Nothing in the watermark or its key can recover information about the user. |
+| "It'll catch me using AI at work or school" | It flags Claude *involvement*, including a proofread of your own writing. It shows neither authorship nor proportion. |
+| "Anthropic is policing users" | It is EU AI Act compliance. Anthropic ships no ability to see who generated what. |
+| "Detection = proof" | "Not fully conclusive." Length-limited, no published calibration, and the detection API hasn't shipped. |
+| **"Stripping it breaches Art. 50"** *(the lawyers' version)* | **Art. 50 has no anti-removal provision. It binds providers, not users.** |
 
 Reaction coverage: TechCrunch (users angry it will "catch them" at jobs and classes), Inc. (subscriber backlash), The Next Web (removal tools spawned within days), kingy.ai ("Why I Cancelled Claude Over Its Invisible Watermark"), The New Stack ("survives copy-paste, but not the real dev workflow").
 
 ## Prior legal-sector coverage (the differentiation problem)
 
-Explainers already exist. A straight "what the watermark is" post will land as another one of these:
-
-- **Artificial Lawyer** — "Claude's Watermarks and their Legal Sector Impact" (2026-08-17)
+- **Artificial Lawyer** — "Claude's Watermarks and their Legal Sector Impact" (17 Aug 2026). *Read in full.* Angle: disclosure friction where clients ban AI or judges are sceptical; AI-driven pricing cuts becoming visible to opponents; watermark persistence as clauses are recycled into new contracts, producing mixed signatures across templates; unverified worry about whether word-choice changes hurt legal precision. Concludes watermarks are "largely benign" and shift responsibility to the model makers. **Does not** develop the entropy point, and **repeats** the Art. 50 removal error.
 - **Legal IT Insider** — "Claude's text watermark — Does it matter in an AI output world?"
 - **nonbillable.co.uk** — "Claude is getting a watermark. That could matter for every law firm using AI"
-- **smithstephen.com** — "The Claude Watermark Is Real. The Thing You're Worried About Isn't."
+- **smithstephen.com** — "The Claude Watermark Is Real. The Thing You're Worried About Isn't." Closest to a plain debunk; our post must go past that.
 
-That last headline is close to the obvious debunk angle, so the post needs to go further than "your fear is misplaced."
+**Where the gap is:** everyone has covered *what the watermark does to you*. Nobody has used it to explain *how the model works* — that sampling is probabilistic, that entropy is the medium the watermark is written in, and that this is why it behaves so unintuitively. That is the tutorial.
 
 ## Sources
 
-Primary (blocked in this environment — **fetch and verify before drafting**):
+Primary (verified this session):
 - Anthropic, "How Claude's text watermarking works" — https://www.anthropic.com/news/claude-text-watermark
 - Anthropic Help Centre, "How Claude marks AI-generated content" — https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content
+- EU AI Act Article 50 — https://artificialintelligenceact.eu/article/50/
 
 Technical:
 - "Scalable watermarking for identifying large language model outputs", *Nature* (2024) — https://www.nature.com/articles/s41586-024-08025-4
@@ -100,7 +131,7 @@ Technical:
 
 Press / reaction:
 - TechCrunch, 11 Aug 2026 — https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/
-- TechCrunch, 15 Aug 2026 (further detail) — https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/
+- TechCrunch, 15 Aug 2026 — https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/
 - TechCrunch, 12 Aug 2026 (backlash) — https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/
 - Fortune, 11 Aug 2026 — https://fortune.com/2026/08/11/anthropic-claude-watermark-ai-text-police-ai-slop/
 - Forbes (Roeloffs), 11 Aug 2026 — https://www.forbes.com/sites/maryroeloffs/2026/08/11/claude-will-put-invisible-watermarks-on-ai-text-and-images-and-the-internet-isnt-happy/
@@ -110,10 +141,11 @@ Legal sector:
 - Artificial Lawyer, 17 Aug 2026 — https://www.artificiallawyer.com/2026/08/17/claudes-watermarks-and-their-legal-sector-impact/
 - Legal IT Insider — https://legaltechnology.com/claudes-text-watermark-does-it-matter-in-an-ai-output-world/
 
-## Open questions to resolve before drafting
+## Open questions — status
 
-1. Is the **API** genuinely watermarked? (Decides whether every Claude-powered legal tool inherits this.)
-2. Has the **detection API** shipped? What false-positive rate, if any, is published?
-3. What does **Article 50** actually say about removing markings, and does it bind a Singapore lawyer filing in a Singapore court?
-4. Are **older models** covered yet?
-5. Does the watermark apply to Claude's output when it **edits** a user-supplied document (Claude for Word tracked changes), and if so how much of the resulting document carries signal?
+1. ~~Is the API watermarked?~~ **RESOLVED: yes, explicitly — "Claude Platform (API)".**
+2. ~~Detection API shipped? Published false-positive rate?~~ **RESOLVED: not shipped ("soon"); no rate published.**
+3. ~~Does Art. 50 prohibit removing markings?~~ **RESOLVED: no. Session-1 claim corrected above.**
+4. ~~Older models covered?~~ **RESOLVED: not yet; EU transition period, Anthropic "working to add" it.**
+5. **STILL OPEN:** what happens when Claude edits a user-supplied document (Claude for Word tracked changes)? Anthropic says proofread text carries minimal signal, which suggests light edits barely register — but the proportion question is unanswered and matters for the "did you use AI on this contract" scenario.
+6. **NEW:** does the watermark meaningfully degrade output quality? Artificial Lawyer raises it; no empirical evidence either way. Probably unanswerable — flag as unknown rather than speculate.
