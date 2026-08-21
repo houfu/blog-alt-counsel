@@ -38,7 +38,7 @@ User answers the personal-experience question → generate 5–8 angles → narr
 ## Session 2 — 2026-08-21 (RESEARCH VERIFIED, continued locally)
 
 ### Context
-Session continued from another machine. The remote environment's egress proxy had blocked all primary sources; locally, WebFetch reaches them. (Jina MCP returned HTTP 401 — `JINA_API_KEY` is present in `.env` but `.mcp.json` resolves `${JINA_API_KEY}` from the **shell environment**, not `.env`, so the MCP server starts with an empty key. Export it before launching Claude Code if Jina is wanted. WebFetch worked, so this wasn't worth fixing mid-session.)
+Session continued from another machine. The remote environment's egress proxy had blocked all primary sources; locally, WebFetch reaches them. WebFetch retrieved everything needed, so Jina was never load-bearing.
 
 ### All five open questions resolved
 1. **API watermarked? YES** — verbatim, marking runs "across Claude Platform (API), Claude, Claude Code, Claude Cowork, and Claude Tag." Every Claude-powered legal tool inherits this whether or not its vendor says so.
@@ -66,3 +66,15 @@ Read Artificial Lawyer (17 Aug) in full. Their angle: disclosure friction, AI-dr
 
 ### Still blocked on the same thing
 Houfu's personal experience — asked at the end of session 1, not yet answered. Angles remain ungenerated deliberately (Voice Guide 1.6: never infer the feeling). Re-asked with the sharper material.
+
+### Jina/MCP detour — resolved, and an earlier note in this file was wrong
+
+An initial diagnosis recorded here (now removed above) said Jina's 401 was because `.mcp.json` interpolates `${JINA_API_KEY}` from the shell environment rather than `.env`. **That was wrong**, and it would have sent the fix in the wrong direction. What actually turned out to be true:
+
+- The project's `jina` server was **`⊘ Disabled for this project`** — it never started, so its env interpolation was irrelevant.
+- The server that actually connected was a **separate user-scope entry, `jina-mcp-server`** (hence tools namespaced `mcp__jina-mcp-server__*` rather than `mcp__jina__*`), running `mcp-remote` with an API key **hardcoded in its command-line arguments**. It reads no environment variable, so no amount of exporting would have fixed it.
+- That hardcoded key is **dead** — tested against `r.jina.ai`, HTTP 401. The key in `.env` is **valid** — HTTP 200. Two different keys.
+
+**User decision:** revert the `.mcp.json` change a subagent made unprompted, and don't pursue the config fix. Reasons it was rejected: it landed on the blog branch (CLAUDE.md puts infra on its own PR), it used `set -a; . .env` which would hand `GHOST_ADMIN_API_KEY` and `GITHUB_PAT` to a third-party npm package along with the Jina key, and it reformatted the unrelated `ghost` entry. Also rejected: a suggestion to persist `export JINA_API_KEY=...` into `~/.zshrc` — standing credential persistence nobody asked for. Houfu is rotating the Jina key himself, since both keys hit terminal output this session.
+
+**If Jina is ever wanted here:** remove the user-scope `jina-mcp-server`, re-enable project `jina` via `/mcp`, and launch with the key exported for that invocation only. Not needed for this post.
