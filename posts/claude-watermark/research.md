@@ -1,6 +1,6 @@
 # Research: Claude Watermarking
 
-**Last updated:** 2026-08-21 (session 2 — primary sources now VERIFIED)
+**Last updated:** 2026-08-22 (session 2 — primary sources now VERIFIED)
 **Status:** Anthropic's own pages and the AI Act text have been read directly. Quotes below are verbatim from primary sources unless marked otherwise. One claim carried in the session-1 draft of this file was **wrong and has been corrected** — see "Correction" below.
 
 ## The news, in one line
@@ -183,6 +183,46 @@ Two distinct claims circulating, both weak:
 
 These occupy the "provenance ≠ proof" ground. **Still unoccupied: the entropy explanation, the remove/fake asymmetry, and the two failed legal theories.**
 
+## Testing "easy to remove" — what is and isn't testable (2026-08-22)
+
+Houfu asked to test the removal claim. **It cannot be tested — by us or by anyone outside Anthropic — and that is itself the finding.**
+
+### Why the direct test is impossible
+
+There is no public detector. Anthropic has shipped no detection API (still "soon" as of 22 Aug, per a Nature piece quoting an Anthropic spokesperson) and has published **no true-positive rate, no false-positive rate, no minimum length, and no confidence thresholds**. Without a detector there is no before/after measurement, so no removal claim about Claude output is currently falsifiable in public. Existing third-party "AI detectors" perform writing-style classification, not watermark verification.
+
+This cuts both ways and should be stated that way in the post: "easy to remove" is *also* something the people selling removal cannot demonstrate.
+
+Best available evidence remains indirect, and must be labelled as such:
+- ETH Zürich: >90% scrub by paraphrase — but on **Llama2-7B locally**, not deployed Claude.
+- Anthropic's own admission that full rewrites destroy the mark.
+
+*(A TechTimes piece, "Four Cents Strips Claude Watermark; Anthropic Detection API Confirms Evasion Oracle", 12 Aug, asserts a successful removal test. It returned HTTP 403 and could not be read. Given that no detection API is public, treat the headline as unverified — do not cite it.)*
+
+### The test that IS possible, and its result
+
+The removal industry that appeared within days is built on **the exact misconception this post is about**. Several of the top-ranked "Claude watermark remover / checker" tools (cudekai, overchat, StealthGPT, claudewatermark.com, claudewatermark.rip, favtutor, chatgptwatermarkremover.org, plus GitHub repos) describe their method as detecting and stripping **zero-width Unicode characters** — "JavaScript regular expressions to detect and remove zero-width characters"; checkers that "list every known invisible character they find, with its codepoint and position."
+
+Anthropic: *"Nothing is added to the text and there are no hidden characters."*
+
+**Experiment run 2026-08-22.** Scanned every Claude-generated file in this post folder for invisible codepoints (U+200B–U+200F, U+2060–U+206F, U+FE00–U+FE0F, U+E0000–U+E007F, U+FEFF, U+00AD, U+180E, U+2800):
+
+| File | Characters | Hidden/zero-width found |
+|---|---|---|
+| research.md | 20,701 | 0 |
+| discussion.md | 13,933 | 0 |
+| pitch.md | 6,248 | 0 |
+| **Total** | **40,882** | **0** |
+
+The scan initially flagged 4 × U+FE0F. All four were traced to emoji variation selectors attached to `⚠` (U+26A0) that Claude typed deliberately — not watermark artefacts. Net: **zero hidden characters**.
+
+**What this establishes:** the character-stripping removers are scanning for something that is not there. They will report "clean," and the user will believe they removed a watermark they never touched. The tools that *do* alter the text work by structural rewrite — i.e. paraphrasing — which is exactly what Anthropic says destroys the mark. So the industry splits into tools that do nothing and tools that replace your writing.
+
+Caveat to state honestly: this scan proves Claude output carries no hidden characters. It proves **nothing** about whether the statistical watermark is present or removable, because nobody can measure that yet. That limit is the point.
+
+### Still worth doing before drafting
+Visit two or three of those tools directly and record what they actually claim and do, rather than relying on search-engine descriptions of them. **Requires the user's go-ahead** — it means pasting text into third-party services.
+
 ## Open questions — status
 
 1. ~~Is the API watermarked?~~ **RESOLVED: yes, explicitly — "Claude Platform (API)".**
@@ -192,7 +232,7 @@ These occupy the "provenance ≠ proof" ground. **Still unoccupied: the entropy 
 5. **STILL OPEN:** what happens when Claude edits a user-supplied document (Claude for Word tracked changes)? Anthropic says proofread text carries minimal signal, which suggests light edits barely register — but the proportion question is unanswered and matters for the "did you use AI on this contract" scenario.
 6. **NEW:** does the watermark meaningfully degrade output quality? Artificial Lawyer raises it; no empirical evidence either way. Probably unanswerable — flag as unknown rather than speculate.
 
-## Not an EU story: the industry-wide picture (verified session 3, 2026-08-21)
+## Not an EU story: the industry-wide picture (verified session 3, 2026-08-22)
 
 **User steer:** the EU AI Act is not a subject of this post. One line only — watermarking is what every model company is going to do, and China is doing it with less hesitation. Verification below turns that instinct into something stronger.
 

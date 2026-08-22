@@ -16,8 +16,8 @@ interrogation:
   framing_risk: "Beat 5 can read as 'if this bothers you, you're just an AI sceptic' — unfair to lawyers whose constraint is contractual, not attitudinal (client AI bans, hostile judges, engagement terms). Mitigation: keep the user's own hedge, concede those cases explicitly, aim the observation at free-floating fretting. Separately: correct Artificial Lawyer's Art. 50 error as a claim, do not dunk on the outlet (Voice Guide 1.11)."
   subject: "Original message's subject — what the watermark reaction reveals about buried misconceptions — is still this pitch's subject. One deliberate change, made by the user: tutorial mode is demoted from the post's form to its evidence, with the standalone explainer reserved for a possible LinkedIn carousel. Subject intact."
 must_link: ["my-voice-worked", "lawyers-prompt-engineering-wrong"]
-tags: []
-target_date: ~
+tags: ["AI", "LegalTech", "Copyright", "Programming"]
+target_date: 2026-08-27
 ---
 
 # Pitch: claude-watermark

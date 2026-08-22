@@ -1,6 +1,6 @@
 # Discussion Log: claude-watermark
 
-## Session 1 — 2026-08-21 (RESEARCH + BRAINSTORM opened)
+## Session 1 — 2026-08-22 (RESEARCH + BRAINSTORM opened)
 
 ### Origin
 User: "I want to write an article about claude watermarking. it's an issue that highlights what people's buried misconceptions are like. it's a great tutorial i think to teach and figure out what's going on."
@@ -35,7 +35,7 @@ Per Voice Guide 1.6 and CLAUDE.md voice rule #8, the emotional opening must come
 ### Next step
 User answers the personal-experience question → generate 5–8 angles → narrow to 2–3 → pitch. Then verify the five open questions against primary sources before any drafting.
 
-## Session 2 — 2026-08-21 (RESEARCH VERIFIED, continued locally)
+## Session 2 — 2026-08-22 (RESEARCH VERIFIED, continued locally)
 
 ### Context
 Session continued from another machine. The remote environment's egress proxy had blocked all primary sources; locally, WebFetch reaches them. WebFetch retrieved everything needed, so Jina was never load-bearing.
@@ -79,7 +79,7 @@ An initial diagnosis recorded here (now removed above) said Jina's 401 was becau
 
 **If Jina is ever wanted here:** remove the user-scope `jina-mcp-server`, re-enable project `jina` via `/mcp`, and launch with the key exported for that invocation only. Not needed for this post.
 
-## Session 3 — 2026-08-21 (BRAINSTORM closed, PITCH written)
+## Session 3 — 2026-08-22 (BRAINSTORM closed, PITCH written)
 
 ### Houfu's real reaction (finally captured — this is the emotional core, verbatim in pitch.md)
 Three distinct reactions, all his own:
