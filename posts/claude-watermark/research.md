@@ -141,6 +141,48 @@ Legal sector:
 - Artificial Lawyer, 17 Aug 2026 — https://www.artificiallawyer.com/2026/08/17/claudes-watermarks-and-their-legal-sector-impact/
 - Legal IT Insider — https://legaltechnology.com/claudes-text-watermark-does-it-matter-in-an-ai-output-world/
 
+## Attack research — the asymmetry (verified against the primary source)
+
+Jovanović, Gloaguen & Vechev, **ETH Zürich SRI Lab**, 20 Dec 2024 — "Probing Google DeepMind's SynthID-Text Watermark" (https://www.sri.inf.ethz.ch/blog/probingsynthid).
+
+⚠️ **A search-engine summary of this work conflated two schemes and got it backwards.** The widely-repeated "80%+ success forging watermarks onto human text for under $50" figure is from watermark-*stealing* work against **standard Red-Green / KGW** schemes — **not** SynthID-Text. The actual SynthID-Text numbers are close to the opposite. Verified directly:
+
+| Attack | Against SynthID-Text | Against KGW / Red-Green |
+|---|---|---|
+| **Spoofing** (forge the mark onto human writing) | **4%** with 30k black-box queries; **15%** at 90k | 80%+ |
+| **Scrubbing** (remove the mark) | **>90%** by paraphrase alone; near-total with stealing assistance | lower — SynthID is *worse* here |
+
+Caveats the authors state: they "did not attempt to optimize the algorithm specifically for this case" for spoofing, and they tested on **Llama2-7B locally, not a deployed system**. So these are indicative, not measurements of Claude.
+
+**The asymmetry this establishes — probably the thesis of the post:**
+
+> The watermark is **easy to remove and hard to fake.**
+
+Which inverts the entire panic:
+- Anyone who actively wants to evade it can, trivially, by paraphrasing — and Anthropic itself says full rewrites destroy it.
+- Anyone afraid of being *framed* — human writing forced to test positive — is worrying about the attack that demonstrably doesn't work well against this scheme.
+
+So the watermark reliably catches exactly one group: **people who weren't trying to hide anything.** That is the signature of a compliance artifact, not an enforcement mechanism. Every fear in the backlash requires it to be the reverse.
+
+Note this is also *mechanically* downstream of the entropy point: paraphrasing works because it re-rolls every token choice the watermark was written into.
+
+## Copyright — the second ridiculous argument
+
+Two distinct claims circulating, both weak:
+
+**1. "The watermark proves it's AI, so you lose copyright."** The US Copyright Office's Part 2 report (Jan 2025) holds that copyrightability turns on **human authorship**, with wholly AI-generated material unprotectable. But the watermark cannot speak to the thing the test actually turns on: it shows *processing*, not authorship, cannot distinguish "Claude wrote this" from "Claude edited this," and says nothing about proportion. It is evidence of contact, offered against a question about contribution. Anthropic states it "says nothing about ownership or authorship and does not change a user's rights under the terms."
+
+**2. "Removing it violates DMCA §1202 (copyright management information)."** The mirror image of the Art. 50 error. Problems: §1202 CMI means information identifying the work's **title, author, copyright owner, terms** — and Anthropic is explicit that the watermark "carries no identifying information" and cannot be traced to any person or organisation. It identifies nobody, so it is hard to call it CMI. §1202(b) also requires knowing the removal will "induce, enable, facilitate, or conceal **infringement**" — and Anthropic assigns output rights to the user, so there is typically no infringement to conceal. Statutory damages are $2,500–$25,000 per violation, which is why the theory gets repeated despite being weak.
+
+**Pattern worth naming in the post:** the legal profession produced *two* confident, statute-citing prohibition theories — EU Art. 50 and DMCA §1202 — about removing a mark that identifies nobody and can be erased by paraphrase. Same failure mode as the consumer panic, better dressed.
+
+## Additional prior coverage found
+- Search Engine Journal — "What A Claude Watermark Can & Can't Tell You About Authorship" (covers the authorship point).
+- UNU C3 — "Provenance, Not Proof: What Claude's Watermark Actually Tells You" (closest framing found to the provenance/proof distinction).
+- Security Boulevard — "Claude's Watermark Won't Derank You. Bad Content Will."
+
+These occupy the "provenance ≠ proof" ground. **Still unoccupied: the entropy explanation, the remove/fake asymmetry, and the two failed legal theories.**
+
 ## Open questions — status
 
 1. ~~Is the API watermarked?~~ **RESOLVED: yes, explicitly — "Claude Platform (API)".**
@@ -149,3 +191,38 @@ Legal sector:
 4. ~~Older models covered?~~ **RESOLVED: not yet; EU transition period, Anthropic "working to add" it.**
 5. **STILL OPEN:** what happens when Claude edits a user-supplied document (Claude for Word tracked changes)? Anthropic says proofread text carries minimal signal, which suggests light edits barely register — but the proportion question is unanswered and matters for the "did you use AI on this contract" scenario.
 6. **NEW:** does the watermark meaningfully degrade output quality? Artificial Lawyer raises it; no empirical evidence either way. Probably unanswerable — flag as unknown rather than speculate.
+
+## Not an EU story: the industry-wide picture (verified session 3, 2026-08-21)
+
+**User steer:** the EU AI Act is not a subject of this post. One line only — watermarking is what every model company is going to do, and China is doing it with less hesitation. Verification below turns that instinct into something stronger.
+
+### Claude is late, not first
+
+**Google shipped SynthID-Text across Gemini on 23 October 2024** — nearly two years before Anthropic, using the same underlying technique Anthropic adopted. Reported at scale: across ~20 million Gemini responses, watermarked and unwatermarked outputs showed no significant difference in user thumbs-up/thumbs-down rates. The backlash Anthropic absorbed in August 2026 did not happen to Google in October 2024, for a mechanism of the same kind.
+
+*Post value: the outrage tracks the announcement, not the capability. People have been using watermarked model output for two years without noticing, which is itself evidence the mark is imperceptible — the exact claim they refuse to believe.*
+
+### OpenAI still hasn't shipped text watermarking
+
+As of August 2026: images only (SynthID plus C2PA Content Credentials, across ChatGPT, Codex and the API). Text watermarking researched, never deployed. So the field is genuinely split — not "everyone already does this."
+
+### China: mandated, and stronger than Anthropic's
+
+**Measures for Labeling AI-Generated Synthetic Content** — CAC with MIIT, Ministry of Public Security and NRTA — **effective 1 September 2025**, eleven months before Anthropic began marking. Covers text, image, video and audio. Two required layers:
+
+- **Explicit labels** — visible on-screen text or graphics.
+- **Implicit labels** — digital watermark or metadata embedded in the file, carrying **the service provider's name and a content identifier**.
+
+Distribution platforms (WeChat, Douyin, Weibo have implemented) must detect and reinforce labelling, classifying content as confirmed / possible / suspected AI-generated.
+
+**The beat this gives the post:** what users feared Claude's watermark was — an embedded identifier that ties content back to a source, with platforms scanning for it — is a real deployed regime. It is simply not this one. Anthropic's mark carries no recoverable information about the user; China's implicit label carries the provider name and a content ID by regulation. The fear is not paranoid in general. It is misaddressed.
+
+### Sources (this section)
+
+- China Law Translate, "Measures for Labeling of AI-Generated Synthetic Content" — https://www.chinalawtranslate.com/en/ai-labeling/
+- Loeb & Loeb, "China's AI-Labeling Measures and Mandatory National Standards Take Effect September 1" — https://www.loeb.com/en/insights/publications/2025/03/chinas-ai-labeling-measures-and-mandatory-national-standards-take-effect-september-1
+- Covington Inside Privacy, "China Releases New Labeling Requirements for AI-Generated Content" — https://www.insideprivacy.com/international/china/china-releases-new-labeling-requirements-for-ai-generated-content/
+- AI Weekly, "DeepMind's SynthID-Text watermark ran live across Gemini" — https://aiweekly.co/alerts/deepminds-synthid-text-watermark-ran-live-across-gemini
+- aidetectors.io, "Does ChatGPT Watermark Text? OpenAI's 2026 Status" — https://www.aidetectors.io/blog/chatgpt-digital-footprint-watermarks-2026
+
+*(Chinese-regime details are from English-language law-firm summaries and China Law Translate, not the Chinese original. Adequate for a one-paragraph comparison; do not build a compliance claim on it.)*

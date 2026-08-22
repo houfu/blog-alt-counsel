@@ -78,3 +78,36 @@ An initial diagnosis recorded here (now removed above) said Jina's 401 was becau
 **User decision:** revert the `.mcp.json` change a subagent made unprompted, and don't pursue the config fix. Reasons it was rejected: it landed on the blog branch (CLAUDE.md puts infra on its own PR), it used `set -a; . .env` which would hand `GHOST_ADMIN_API_KEY` and `GITHUB_PAT` to a third-party npm package along with the Jina key, and it reformatted the unrelated `ghost` entry. Also rejected: a suggestion to persist `export JINA_API_KEY=...` into `~/.zshrc` — standing credential persistence nobody asked for. Houfu is rotating the Jina key himself, since both keys hit terminal output this session.
 
 **If Jina is ever wanted here:** remove the user-scope `jina-mcp-server`, re-enable project `jina` via `/mcp`, and launch with the key exported for that invocation only. Not needed for this post.
+
+## Session 3 — 2026-08-21 (BRAINSTORM closed, PITCH written)
+
+### Houfu's real reaction (finally captured — this is the emotional core, verbatim in pitch.md)
+Three distinct reactions, all his own:
+1. **First instinct:** "people would try other models" — but any serious provider will do this, and "it's not a stretch that a weaker model would default to a more discernible pattern." Pushed further in the pitch: weaker models are lower-entropy and more stereotyped, so switching trades a cryptographic mark for a stylistic tell.
+2. **The reframe:** "it was always somewhat discernible but now Claude can help determine it." The watermark doesn't create exposure, it makes an existing one legible.
+3. **On copyright:** the Claude-as-copyright-holder question is "in fact an undecided," but — the sharpest line of the session — **"it was never gonna be decided just because you can tell when Claude wrote something."** Detection capability is not doctrinal movement. Marked as a `protected_line`.
+4. **The attitude observation (his, from coding):** Claude co-author trailers on GitHub are very prevalent. "This may be an attitude difference so if you're fretting I feel it's because you are not well disposed to the whole idea of Claude or AI co authoring your content."
+
+### Numbers verified for that last beat
+- **This repo: 132 of 290 commits (46%) carry a `Co-Authored-By: Claude` trailer**, unbroken since the initial commit 2025-09-17. Lived and provable.
+- **Public GitHub: ~4–4.5%** of all public commits (SemiAnalysis; 2.6M of 57.8M in the week of 16 Mar 2026), projected 20%+ by end-2026. **The 4% is a floor** — the trailer is opt-out and private repos aren't counted.
+- The contrast that makes the beat: the co-author trailer is **strippable and optional and developers attach it anyway**; the watermark is neither, and lawyers are alarmed.
+
+### ⚠️ Second research correction this post
+A search-engine summary reported the ETH Zürich work as "80%+ success forging watermarks onto human text for under $50." **Read against the SRI Lab source, that is a different scheme.** Against SynthID-Text specifically: spoofing **4%** (15% at 3× queries), scrubbing **>90%** by paraphrase alone. Caveats: authors didn't optimise the spoofing attack for this case, and tested Llama2-7B locally, not a deployed system.
+
+Nearly relayed the wrong version. Two factual corrections now in one post about misconceptions — worth remembering that search summaries conflate adjacent studies, and that this file should record the primary-source number, not the circulating one.
+
+### Decisions
+- **Structure C chosen by the user** from three options (A: pure entropy tutorial; B: pure asymmetry argument; C: fused, where the mechanism *is* the proof of the thesis). Rejected A as thin on stakes, B as argument-without-teaching.
+- **Tutorial demoted, by the user:** "I've been instructed to create a tutorial, maybe I should reserve that for a LinkedIn carousel." Agreed — and deliberately **not** designing the carousel now, per CLAUDE.md series discipline (detailed Part 2 plans here get made and never built). KIV only.
+- **Rejected angles** (recorded so they aren't re-proposed): a firm AI-policy checklist (what everyone else wrote; advice not framework), and a defence of Anthropic (makes the post about a vendor's virtue, invites the shill reading).
+- **Primary audience: marcus**, secondary wei-lin. Mechanism, the ETH figures and the GitHub commit data are Marcus's world; the attitude turn is Wei Lin's. Marcus's differentiation question was answered at pitch, as CLAUDE.md prescribes, rather than at draft.
+- **Voice contract:** news-commentary lane; moves = flat first-person opening, specific numbers as anchors, return to solo counsel. "Neither is wrong" deliberately **not** declared — it would compete with the close.
+- **Framing risk accepted and mitigated, not dropped:** beat 5 must concede lawyers whose constraint is contractual (client AI bans, hostile judges, engagement terms) before making the attitude point, and must correct Artificial Lawyer's Art. 50 error as a *claim* without dunking on the outlet.
+
+### Workflow note
+`workflow-state.js checkpoint` refuses to run without a main post file — it hashes the draft. So the pitch checkpoint gets recorded at the start of REVIEW, not now. Not a problem; the gate exists to bound reviewer rounds, which are post-draft.
+
+### Next step
+Two open questions to the user (tags intent, target date). Then WRITE — read the Voice Guide in full plus 1–2 recent published posts to sample live voice before drafting.
