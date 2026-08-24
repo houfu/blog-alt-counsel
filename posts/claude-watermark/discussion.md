@@ -432,3 +432,14 @@ Post scheduled for 2026-08-25T01:25:13Z (09:25 SGT). Houfu edited substantially 
 - **Alt text:** the entropy screenshot ships with empty alt in Ghost, and `feature_image_alt` is null. The local markdown carries descriptive alt so the linter passes; **Ghost and the repo diverge on this one field.**
 - **`?ref=` drift:** the prompt-engineering card has no `?ref=` (linter warns, line 81), and the MinLaw card carries `?ref=claude-watermark` — the *old* slug, from before the title change to `what-the-watermark-does`. Internal-traffic attribution for this post will be split across two values. **Lesson: a slug change invalidates every `?ref=` already placed in the draft.**
 - Four grammar slips introduced during the Ghost editing pass were reported before publish; the synced local file reproduces the live text as-is rather than silently correcting it, except for one double space.
+
+### Alt text closed (2026-08-25)
+
+Both images now carry alt text on Ghost and locally, so the divergence flagged above is resolved.
+
+- **Feature image:** *"'The weather today is cold and ____.' Three keyboard keys — overcast, dull, grey — all ranked equally good by the model, with 'dull' pressed down."* The cover states the post's whole argument, so the alt has to carry the argument, not just name the objects.
+- **Entropy screenshot:** *"Screenshot of an interactive explainer: a generated sentence with most words boxed as high-entropy, and below it three alternative continuations the model ranked at 40%, 33% and 27% — plus two at 0% labelled 'never on the shortlist — watermarking cannot add it'."*
+
+**A caught mistake worth recording:** the placeholder alt written during the sync ("a colour-coded passage of prose with most words highlighted as high-entropy") was **guessed from the caption without opening the image**, and it was wrong in the way that matters — the highlighted sentence is the *setup*, and the ranked alternatives below it (40/33/27%, plus two at 0% the watermark cannot reach) are the part that actually demonstrates the post's mechanism. A screen-reader user given the guessed alt would have missed the evidence entirely. **Rule: never write alt text for an image you haven't looked at, even when a caption is available — the caption describes why the image is there, not what is in it.**
+
+**Infra gap (belongs on a separate branch, per CLAUDE.md):** neither `publish-lexical.js` nor `sync-from-ghost.js` handles `feature_image_alt`, and the linter checks alt text on markdown images but has nothing to check for the feature image. The alt had to be set through the Admin API directly. `feature_image_alt` is now in local frontmatter for the record, but **nothing maintains it** — it will go stale silently if the cover changes. Three small fixes: teach the publish script to send it, teach the sync script to read it back, and have the linter warn when `feature_image` is present without `feature_image_alt`.

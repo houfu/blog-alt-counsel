@@ -12,6 +12,9 @@ post_id: 6a8c4ae500ae3500010e5cb4
 published_at: '2026-08-25T01:25:13.000Z'
 feature_image: >-
   https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/Watermark-cover.png
+feature_image_alt: >-
+  'The weather today is cold and ____.' Three keyboard keys — overcast, dull, grey
+  — all ranked equally good by the model, with 'dull' pressed down.
 custom_excerpt: >-
   Three camps argued about Claude's watermark in its first week, and each
   described a different imaginary object. Working out what it actually does
@@ -69,7 +72,7 @@ Once you have a sense of where the AI gets more freedom, certain jobs become mor
 
 Anthropic states this directly: the watermark runs "sparser on factual passages where there are fewer choices that can be made without decreasing the accuracy."
 
-![A colour-coded passage of prose with most words highlighted as high-entropy](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/CleanShot-2026-08-24-at-23.35.01.png)
+![Screenshot of an interactive explainer: a generated sentence with most words boxed as high-entropy, and below it three alternative continuations the model ranked at 40%, 33% and 27% — plus two at 0% labelled "never on the shortlist — watermarking cannot add it".](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/CleanShot-2026-08-24-at-23.35.01.png)
 
 *Creative prose shows a high concentration of high entropy words. (Source: the artifact referred to above)*
 
