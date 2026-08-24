@@ -266,3 +266,122 @@ Distribution platforms (WeChat, Douyin, Weibo have implemented) must detect and 
 - aidetectors.io, "Does ChatGPT Watermark Text? OpenAI's 2026 Status" — https://www.aidetectors.io/blog/chatgpt-digital-footprint-watermarks-2026
 
 *(Chinese-regime details are from English-language law-firm summaries and China Law Translate, not the Chinese original. Adequate for a one-paragraph comparison; do not build a compliance claim on it.)*
+
+## Anthropic's watermarking FAQ — verified primary source (added 2026-08-23)
+
+**Source:** https://www.anthropic.com/news/claude-text-watermark, published **14 Aug 2026**. Announced on X by @AnthropicAI on 14 Aug as "an FAQ to answer some of the questions we've received about watermarking." Fetched and read directly — not a search summary.
+
+**Why this page matters structurally:** Anthropic wrote a FAQ *because of the reaction*. The page is, in effect, the vendor's own catalogue of the misconceptions circulating — which makes it a primary source about the reaction, not only about the mechanism.
+
+### Verified quotes
+
+| Claim | Exact wording |
+|---|---|
+| Reason | "we, along with several other major AI providers, are implementing this change to comply with the EU AI Act" |
+| Instrument | Signed the **"EU Code of Practice on Transparency of AI-Generated Content" in July 2026**, with **"around 190 total signatories"** |
+| Quality | "does not have any practical impact on the quality or content of Claude's outputs" |
+| Perceptibility | "The difference between watermarked and un-watermarked text will not be distinguishable to readers" |
+| Hidden characters | "Nothing is added to the text and there are no hidden characters" |
+| Cost | "Watermarking doesn't require extra tokens, and will not be more expensive" |
+| Identification | carries "no identifying information and can't be traced to a specific person, organization, or chat" |
+| Not Claude-only | "Watermarking won't be specific to Claude" |
+| Mechanism | a version of **SynthID-Text** (Google DeepMind, Nature 2024); changes "the source of the randomness used to pick among words" |
+| Detector ceiling | "can only answer the question **'What is the likelihood this was partly written by Claude?'**"; "doesn't confirm whether the text was human-written"; "can't tell whether the text was written by a different AI" |
+| Entropy, in their words | "sparser on factual passages where there are fewer choices that can be made without decreasing the accuracy" |
+| Detection API | "We will soon be offering a watermark detection API. We're in the process of working out the details of its implementation." |
+| Removal | "Light editing probably won't remove the watermark completely; a complete rewrite where every word is replaced will." |
+
+### Two corrections to our own working assumptions
+
+**1. "Switch models" has a better answer than the one we had.** The locked pitch answered Houfu's first instinct with a stylistic conjecture — weaker models are lower-entropy and more stereotyped, so you trade a cryptographic mark for a stylistic tell. Plausible, but unevidenced. The actual answer is in the FAQ and is much stronger: **~190 signatories to a July 2026 EU Code of Practice, and "watermarking won't be specific to Claude."** There is no un-watermarked major provider to switch to. Prefer the evidenced answer; the stylistic-tell point can survive as a secondary line, labelled as conjecture.
+
+**2. "Easy to remove" needs narrowing.** Anthropic: "**Light editing probably won't remove the watermark completely**; a complete rewrite where every word is replaced will." ETH Zürich's >90% scrub figure is for **paraphrase**, on Llama2-7B, not deployed Claude. So the accurate claim is *rewriting* removes it, not *editing*. The old pitch's protected line "easy to remove and hard to fake" overstates the removal half and should not be carried forward unexamined.
+
+### Also new
+
+- The instrument is a **Code of Practice signed by ~190 parties**, not only Art. 50 itself. This is the evidenced form of the user's earlier steer that "watermarking is what every model company is going to do" — keep it to a line, per that steer.
+- Detector ceiling is "**partly** written by Claude" — the vendor's own words cap what any future detection API can deliver. This is the strongest available refutation of the vindication reaction, and it needs no argument from us.
+
+## Thariq Shihipar's explainer artifact — provenance (added 2026-08-23)
+
+- **"Same Words, Different Dice"** — https://claude.ai/code/artifact/803916fd-3bc1-465f-8738-d4ece6fc5071
+- **Author:** Thariq Shihipar (@trq212), who **works at Anthropic** (his own announcement: joined to build "demos and prototypes that highlight new capabilities").
+- **Source post:** https://x.com/trq212/status/2088721023223132213 — 4:14 AM, **16 Aug 2026**, ~1.7M views, quote-tweeting Anthropic's FAQ announcement. His framing is modest and should be honoured: *"Watermarking without quality loss is a bit unintuitive, doesn't feel like it should work. I made this artifact with Claude to help me understand how it works, sharing in case it's helpful."*
+- **Content seen so far** (rendered in browser; full text not extractable — cross-origin sandboxed iframe): header "Why Watermarking doesn't affect quality"; section 01 "Claude doesn't generate the same output for the same input" — Claude writes a word at a time, and where several continuations are equally good (a **high-entropy** choice) a random number decides; each decision becomes context, so an early fork sends the whole answer down a different path. Interactive: *Generate again* shows the split; clicking a highlighted choice shows the roads not taken. Explorer modes include **Creative prose** and **Factual recall**.
+- **Status caveat — important.** claude.ai's own banner reads "Content is user-generated and unverified." It is one Anthropic employee's personal learning aid, not Anthropic documentation, and its headline claim (no quality impact) is a claim made by someone at the company that shipped the feature. **Use it to teach the intuition; cite the Gemini ~20M-response data to evidence the quality claim.** A post about people over-reading signals must not promote a demo into evidence.
+
+### A third reaction pole, found in the replies
+
+Responses to the FAQ and the artifact include people asserting the watermark visibly degrades output:
+- Nick Dobos (https://x.com/NickADobos/status/2088350712359256440), on Anthropic's quality claim: "This is a lie. You literally say you change the wording"
+- Shane Killian (https://x.com/shanedk/status/2089117409143566745): "I really don't get how anyone can't immediately see that the watermarked version is quite definitively worse"
+
+**Unverified — read via search results, thread replies not yet fetched directly. Do not quote in the draft until read in the thread itself** (this post has already taken two corrections from search-summary conflation).
+
+**Why it matters:** a third pole alongside dread and glee — people who look at two samples drawn from equally-ranked continuations and confidently see one as worse. **But be fair:** "equally good by the model's own scoring" is not identical to "equally good to a human reader," so the objection is arguable, not merely ignorant. And these are named real people — per the CLAUDE.md framing-risk rule, characterise the reaction without making specimens of individuals.
+
+## Verified 2026-08-24 (session 6 — two citations the draft was relying on without sources)
+
+### 1. The Co-Authored-By floor: 4% of public GitHub commits
+- **Source:** SemiAnalysis, "Claude Code is the Inflection Point" — https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point
+- **Figure:** Claude Code accounted for **~4% of all public GitHub commits**, measured by the `Co-Authored-By: Claude` trailer, tracked through **2 February 2026** (~135,000 commits/day). SemiAnalysis projects 20%+ of daily commits by end-2026.
+- **Explicitly a floor, in the source's own framing:** the trailer is opt-out (many developers disable it) and private repositories are not measured. The draft's "called that a floor" is the source's characterisation, not ours.
+- **⚠️ Staleness caveat:** later third-party trackers (coremention.com, serpsculpt.com — both low-quality, not primary) put the share nearer **9.7% by mid-2026**. The draft therefore dates the figure ("SemiAnalysis put it at 4% in February") rather than presenting it as current. Do not un-date it. If a fresher SemiAnalysis number appears before publish, use it.
+- Note: this is a DIFFERENT 4% from the one already in this file's removal/spoofing table (4% spoofing success at 30k black-box queries). Do not conflate.
+
+### 2. Anthropic's support article contradicts the announcement page
+- **Source:** https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content (fetched 2026-08-24)
+- **Verbatim:** "When a supported Claude model generates text, it weaves an imperceptible watermark directly into the text itself."
+- **Verbatim:** "You won't see it, and it doesn't change the meaning, quality, or readability of Claude's response."
+- **Verbatim:** "Because the watermark is part of the text, it will travel with the text when it's copied and pasted elsewhere, and may persist through some editing."
+- **Why it matters:** this is the added-object reading, published by Anthropic, and it sits against the announcement page's "Nothing is added to the text and there are no hidden characters." The support page never states the mechanism. Beat 6 now uses this as a fairness concession — people who landed on the hidden-tag picture may well have read a real Anthropic page and drawn the reasonable conclusion from it.
+
+## Re-verification sweep 2026-08-24 (Jina key rotated; all load-bearing claims re-checked against primary sources)
+
+**Everything the draft relies on held. No corrections needed.** Details:
+
+### Anthropic announcement — all five quotes re-confirmed verbatim (live page, re-fetched)
+https://www.anthropic.com/news/claude-text-watermark — "Nothing is added to the text and there are no hidden characters"; "no identifying information and can't be traced to a specific person, organization, or chat"; "one can only answer the question 'What is the likelihood this was partly written by Claude?'"; "sparser on factual passages where there are fewer choices"; "Light editing probably won't remove the watermark completely; a complete rewrite where every word is replaced will." The mechanism sentence the draft quotes ("instead of using an arbitrary random number generator... uses the key and a few words that come before") is also verbatim.
+
+### Gemini / SynthID-Text quality claim — corroborated by three independent sources
+Nature, "Scalable watermarking for identifying large language model outputs," 23 Oct 2024 (https://www.nature.com/articles/s41586-024-08025-4), plus IEEE Spectrum and MIT Technology Review same-day. ~20 million Gemini responses; no significant difference in thumbs-up/thumbs-down between watermarked and unwatermarked. Oct 2024 → Aug 2026 = **22 months**, so the draft's arithmetic is right. This is the best-sourced claim in the post and correctly carries the degradation refutation.
+
+### SemiAnalysis 4% — confirmed as a February 2026 figure, correctly dated in the draft
+"Claude Code is the Inflection Point," published **5 Feb 2026**. No credible newer SemiAnalysis number exists; the ~9.7% figure circulating traces only to low-quality third-party trackers (coremention, serpsculpt) and should not be used. Note the figure is publicly contested (r/ClaudeCode "calling bull" thread argues it overstates productive impact) — the draft's framing survives this, because it attributes the number and uses it only as an opt-out floor, not as a productivity claim.
+
+### ⚠️ NEW — a limitation the draft does not currently mention: detection needs length
+From the same announcement page, verbatim: *"Detecting a watermark also doesn't work well on small samples, where there are fewer word choices and thus less information to go on. As a passage increases in length, confidence about Claude's involvement increases too."*
+
+And on proofreading, verbatim: *"If you hand Claude a piece of writing and ask it to edit only the grammar and punctuation and nothing else, the watermark can only live in the handful of corrections, which might be too few to register."*
+
+**Why this matters for the draft.** The post tells the reader the detector returns a probability, but never that the probability depends on passage length. For the glee pole this is a second, independent reason the capability isn't what people celebrated — a short email or a paragraph may simply be too small to register. It is also the direct answer to a practitioner question the post currently leaves open ("can this catch my three-sentence email?" — no). Suggested as a ~25-word addition to the glee pass; not applied, flagged for the user's decision. Headroom exists (draft 1,926 of a 2,145 ceiling).
+
+**Note:** this corrects a widely-repeated assumption that any Claude involvement, even a spellcheck pass, leaves a usable mark. Anthropic says the opposite. Do not let the draft imply otherwise.
+
+### Session-5 open item CLOSED: the Shihipar artifact is not obtainable by tooling
+`Artifact action:"read"` on https://claude.ai/code/artifact/803916fd-3bc1-465f-8738-d4ece6fc5071 now returns a definitive reason rather than failing silently: *"this artifact is served to you as a public (non-member) reader, and reading public artifacts that way is not enabled yet."* This is a platform limitation, not a fetch problem — stop retrying it. If the content is ever wanted, Houfu must open it and save it manually. Per the pitch's evidence rules the artifact is a teaching aid and never evidence, and the Gemini data already carries the quality claim, so **this is not a blocker and the post does not need it.**
+
+## Two independent sources found 2026-08-24 (Jina restored) — both corroborate, neither contradicts
+
+### Sebastian Raschka, "How Claude Watermarks AI-Generated Text" (22 Aug 2026)
+https://magazine.sebastianraschka.com/p/claude-watermarking — 52 slides + 48-minute walkthrough by a serious ML author.
+
+**Independently validates the draft's mechanism explanation, in the same shape the draft uses.** Text → logits → sampling, with the sampling step controlled by the watermarking key; his worked example is two interchangeable tokens ("gray" vs "overcast") decided by key-derived scores — which is precisely the draft's "words the model was already willing to write, decided by a loaded coin." He names the algorithm **tournament sampling**, and confirms detection "requires the secret key and the watermarking functions," corroborating the draft's no-public-detector position.
+
+**Use:** this is the answer if a technical reader challenges beat 4. It is also the citation for Marcus's OUT-of-scope wish to name "tournament sampling" — the term is now attested outside the DeepMind paper.
+
+### andrea saez, "Putting Claude's watermarking to the test" (17 Aug 2026)
+https://dreasays.substack.com/p/putting-claudes-watermarking-to-the
+
+**This is the strong evidence for the length-dependency point flagged earlier today.** Verbatim:
+- "The statistical confidence behind watermark detection depends on having enough tokens with real candidate diversity to build a pattern from. **Short outputs don't provide enough volume**, and shorter content often has only one plausible next token at each step."
+- "**Short outputs, a tweet, a headline, a two-sentence reply, simply don't give the statistics room to work.** You need volume for the pattern to become improbable-by-chance rather than merely unusual."
+- "**Low-entropy content (like short LinkedIn posts) is watermark-resistant almost by accident.**"
+- "**Long-form content is where this works best.**"
+- On removal, consistent with the draft's Anthropic ceiling: getting below threshold "generally takes rewriting most of the piece, translating it, or otherwise touching a large share of the actual word choices, not just light copyediting."
+- On detectors: "Anthropic hasn't published the exact scheme... there is no way of currently building a viable detector."
+
+**Why this matters beyond the length point:** saez arrives independently at the draft's central thesis — that the mark exists only where entropy does — and reaches it by testing rather than by reading. "Watermark-resistant almost by accident" is the same insight the post builds its refutations on, from a different direction. Corroboration, not competition.
+
+### ⚠️ Honest note on the pitch's differentiation claim
+`interrogation.differentiation` (written 23 Aug) claims the entropy explanation as unoccupied territory — "existing coverage all occupies 'provenance is not proof'." **That is now only partly true, and both of these pre-date the pitch** (17 and 22 Aug); the first research sweep simply missed them. Raschka is a technical teardown for ML readers; saez is a practitioner stress-test. **Neither does what this post does** — the misreading as the specimen, aimed at lawyers, with AI literacy as the payload — so the differentiation holds. But the post is no longer the only place to learn the mechanism, and any claim to be *first* or *only* on the mechanism would now be wrong. The draft makes no such claim; keep it that way.

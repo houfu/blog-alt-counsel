@@ -87,3 +87,32 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 - **Standing asks raised:** none — the SGHC 166/167 worked example pre-empted the concrete-example ask.
 - **Open, referred to Houfu:** whether the sample Friday was a typical day or the best one on hand.
 - **Settled/rejected:** none this round.
+
+### 2026-08-24 — claude-watermark (round 1, secondary audience)
+- **Verdict:** serves me. "The tutorial section alone clears my bar for 'has this person actually
+  shipped something real.'"
+- **Unique catches (the round's value):**
+  - **Entropy is scored per-token, not per-sentence.** The draft pitched it at sentence granularity
+    ("where a sentence has real freedom... entropy is high") when a single sentence swings from
+    near-zero to high entropy and back. He explicitly judged this a *granularity simplification, not
+    an error*, and said he would not want it fixed at the cost of making beat 4 heavier. Applied as
+    one clause. **This is the calibration to expect from him: he distinguishes "wrong" from
+    "simplified for the audience" and tells you which.**
+  - **Front-loaded payoff in paragraph 2.** The opening previewed both the dread and glee
+    refutations, so beat 5 read as confirmation rather than reveal. Applied as a pure cut.
+  - **He verified the load-bearing structural claim and it held.** The refutations rest on
+    mechanism-first reasoning, with the vendor quote second and control-group data third. His words:
+    that ordering "is what separates this from 'provenance is not proof,' which is where every other
+    piece on this topic stopped." He set a KEEP on it — do not let a copy-edit pass collapse
+    mechanism-then-quote into quote-then-mechanism.
+- **Standing asks raised: NONE.** He recorded concrete examples, jargon-defined-on-first-use, and
+  dual-audience structure as all pre-empted in the draft as written. First round on record where his
+  template was fully absorbed at WRITE time. **This is the target state — pre-empt his four standing
+  asks and his round buys real technical verification instead.**
+- **Differentiation question (his highest-value historical catch, asked at pitch time per CLAUDE.md):**
+  he judged that the DRAFT delivers the differentiation the pitch claimed, not just asserts it.
+  Asking it at pitch rather than at draft worked — no late angle pivot was needed on this post.
+- **OUT-of-scope want, not applied:** name the algorithm ("tournament sampling") so a technical
+  reader has an anchor term to look up. He tagged it OUT himself against the pitch's beat 4, which
+  promises only "the source of randomness." Referred to Houfu as follow-up material.
+- **Settled/rejected:** none this round.

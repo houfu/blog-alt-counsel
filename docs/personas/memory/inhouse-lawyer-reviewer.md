@@ -69,3 +69,32 @@ Persistent memory for the inhouse-lawyer-reviewer agent. **Read this before ever
   this had closed on confidence instead of a question, I'd have been more skeptical, not less."
   Evidence for the wondering register as a trust device, not just a voice preference.
 - **Settled/rejected:** none this round.
+
+### 2026-08-24 — claude-watermark (round 1)
+- **Verdict:** serves me. Primary audience for this post.
+- **Unique catches (the round's value):**
+  - **The friction gap in the closing ask.** The post asks the reader to "read what the provider
+    actually claimed before arguing with it" and calls it a cheap habit — but never concedes that on
+    a 50-hour week you don't reliably notice the story reached your desk at all. Her framing: this is
+    the difference between "a habit I admire" and "a habit I'll build." Applied — the close now says
+    you won't do it for everything, only for what actually lands on your desk. **This is not her
+    templated cost/time ask; there is no product in this post. It is a post-specific catch about
+    whether an behavioural ask is survivable, and it is the shape to expect from her on commentary
+    posts that ask the reader to change something.**
+  - Missing bridge into the copyright sentence in the glee pass — she re-read it once. Independently
+    flagged by audit-substance the same round, which recommended *cutting* it; cutting was wrong
+    (it is the antecedent of the post's protected line), so a bridging clause was added instead.
+    **Two independent readers stumbling on one sentence = real defect; but the reviewer's fix and the
+    auditor's fix can differ, and the auditor is not automatically right.**
+- **Standing asks raised:** security/compliance — she confirmed it was already satisfied by the
+  engagement-letter / judge's-AI-ban concession and explicitly declined to re-raise it. Cost, licence
+  tiers, implementation time: correctly not raised, because the post has no product. Pre-emption at
+  WRITE worked; her round was spent entirely on post-specific findings.
+- **Reader-response worth keeping:** the concession paragraph ("That's not paranoia. That's a
+  contract.") is what stopped the post reading as "everyone who reacted is a fool" — she believed the
+  author had actually looked at an engagement letter. Naming the reader's real paperwork beats
+  gesturing at their feelings.
+- **KEEP flags she set (protect through any trim):** the engagement-letter concession; the
+  "cheaper than a policy memo" solo-counsel line; and beat 4, the entropy explainer — which she
+  expected to skim and didn't. Her note: if anyone proposes trimming it as "setup," don't.
+- **Settled/rejected:** none this round.
