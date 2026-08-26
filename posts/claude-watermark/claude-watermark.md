@@ -5,7 +5,7 @@ tags:
   - AI
   - LegalTech
   - Programming
-status: scheduled
+status: published
 featured: false
 github_folder: claude-watermark
 post_id: 6a8c4ae500ae3500010e5cb4
@@ -13,8 +13,8 @@ published_at: '2026-08-25T01:25:13.000Z'
 feature_image: >-
   https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/Watermark-cover.png
 feature_image_alt: >-
-  'The weather today is cold and ____.' Three keyboard keys — overcast, dull, grey
-  — all ranked equally good by the model, with 'dull' pressed down.
+  'The weather today is cold and ____.' Three keyboard keys — overcast, dull,
+  grey — all ranked equally good by the model, with 'dull' pressed down.
 custom_excerpt: >-
   Three camps argued about Claude's watermark in its first week, and each
   described a different imaginary object. Working out what it actually does
