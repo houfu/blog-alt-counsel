@@ -443,3 +443,107 @@ Both images now carry alt text on Ghost and locally, so the divergence flagged a
 **A caught mistake worth recording:** the placeholder alt written during the sync ("a colour-coded passage of prose with most words highlighted as high-entropy") was **guessed from the caption without opening the image**, and it was wrong in the way that matters — the highlighted sentence is the *setup*, and the ranked alternatives below it (40/33/27%, plus two at 0% the watermark cannot reach) are the part that actually demonstrates the post's mechanism. A screen-reader user given the guessed alt would have missed the evidence entirely. **Rule: never write alt text for an image you haven't looked at, even when a caption is available — the caption describes why the image is there, not what is in it.**
 
 **Infra gap (belongs on a separate branch, per CLAUDE.md):** neither `publish-lexical.js` nor `sync-from-ghost.js` handles `feature_image_alt`, and the linter checks alt text on markdown images but has nothing to check for the feature image. The alt had to be set through the Admin API directly. `feature_image_alt` is now in local frontmatter for the record, but **nothing maintains it** — it will go stale silently if the cover changes. Three small fixes: teach the publish script to send it, teach the sync script to read it back, and have the linter warn when `feature_image` is present without `feature_image_alt`.
+
+## Session 9 — 2026-08-25: LinkedIn carousel built (the KIV'd tutorial, finally spent)
+
+> **Superseded by Session 10.** The deck described below was built against the wrong competitive set — all of LinkedIn, rather than Houfu's own connections. Kept as written because the mistake is the lesson. The research method, the format find and the design vocabulary all survived the rebuild; the angle did not.
+
+Post is merged and scheduled; this session was pure repurposing. Session 3 recorded Houfu's call — *"I've been instructed to create a tutorial, maybe I should reserve that for a LinkedIn carousel"* — and deliberately did **not** design it then, per CLAUDE.md series discipline. That KIV is now cashed in. The tutorial that got demoted out of the post is the carousel's whole spine (pages 5–7).
+
+### User decisions
+
+**1. Page count raised mid-turn: 3 → 6–9.** Opened with "about 3 pages"; corrected to "not 3 pages but 6-9" while the LinkedIn research was running. Landed on **9**. Three pages could only have carried the verdict; nine carries the mechanism, which is the point of the exercise.
+
+**2. Canva MCP rejected outright.** Asked how to produce the slides (Canva MCP / design canvas artifact / local HTML→PDF / copy only). Answer: *"Design outline. (Maybe via canvas?) then i transpose it to canva. Canva is terrible at making anything through MCP."* So the deliverable is a **layout spec**, not a finished asset — the canvas exists to be read off and rebuilt by hand. That constraint shaped the design: flat rectangles, two type weights, no CSS effect that can't be redrawn in Canva. **Rule for future visual work: Canva MCP is not a production path; design for hand-transposition.**
+
+**3. Browser research was requested up front** — *"maybe you can control my claude and see what people have already done in linked in"* — rather than designing blind. It changed the outcome (see below), so it was the right sequencing.
+
+### What the LinkedIn scan found (2026-08-25, ~11 days post-announcement)
+
+Searched `Claude watermark` sorted by recency, then `watermark entropy Claude`, then Houfu's own recent activity. The topic is **saturated** — new posts arriving every few minutes. Three lanes already occupied:
+
+- **Mechanism explainers.** Raj Mehta, Xin-Chi Chung, David Villegas all have the "no hidden characters, it changes the source of the randomness" post. Accurate, engineer-facing. Noah M. Kenney went further: a controlled study on 686 synonym substitutions across SynthID-Text and KGW, published as a **9-page LinkedIn document carousel** — high-entropy edits cost ~3× the detector score of low-entropy ones. So the entropy point itself is **not** unoccupied, contrary to what I assumed before looking.
+- **The lawyer angle.** Celia Reinsvold (Product & Commercial Counsel, ex-Activision Blizzard) posted the closest thing to our patch: litigation evidence, IP authorship, AI governance, engagement-letter risk. She explains the mechanism correctly and stops before the consequence.
+- **Content/SEO workflow** (Grace Leung) and **moralising about removal threads** (Aditya Nugraha).
+
+**The actual gap, revised after looking:** nobody has mapped entropy onto *legal work product* — that a persuasive letter carries a strong mark while a quoted statute, a boilerplate indemnity and compiling code carry almost none. The engineers say "code carries less watermark"; none of them say what that means for a lawyer's drafts. That became **page 7**, and it's flagged on the canvas as the page not to cut.
+
+**Live confirmation of the post's own thesis:** a Chief AI Officer posted today that the watermark exists to stop models training on their own output, and that "Anthropic is exploring" it. It shipped on 14 August, for EU transparency reasons. The panic is still producing specimens.
+
+**Format find worth keeping.** Robin Lee's post about Houfu's SCCE session: *"One sentence per slide. That's it. I honestly lost count of how many slides there were, but it worked brilliantly."* Third-party evidence of what Houfu's visual register actually is. The carousel is built to it — one idea per page, no page carrying two arguments.
+
+### Design decisions
+
+- **Visual vocabulary lifted from the post's own cover image rather than invented.** Sampled the exact colours off `Watermark-cover.png`: keycap face `#BBDDFF`, side `#8AC0DD`, pressed face `#9B9A8F`, side `#6F6C66`, logo keycap `#F4F3EF`, pure white paper, black ink. Archivo Black over Archivo (both in Canva). Page 6 rebuilds the cover image as a slide — deliberate, so the carousel and the post read as one object. Flagged to Houfu as the one call worth vetoing if it feels repetitive.
+- **1080×1350 (4:5)**, the tallest ratio LinkedIn allows — maximum feed height.
+- **Original data promoted to slides:** the 40,882-character scan (page 4) and the "the mark tracks how much freedom the model had, not how much you leaned on it" formulation (page 7). Neither exists anywhere else in the LinkedIn corpus.
+- **46% co-author-trailer stat left off the slides** — it's a good number but it belongs to the *glee* argument, which the carousel compresses. Offered to Houfu for the post caption instead.
+
+### Files
+
+- `carousel.md` — the 9-page copy, page by page.
+- `carousel/` — `Main.dc.html` + `P2`–`P9`, `canvas.json`, and the seeded canvas. Keep these; edits re-seed from them.
+- Canvas: https://claude.ai/code/artifact/bf5f8f36-7b8a-4c5d-8bb0-0608ca23860c
+
+### Open
+
+Post caption not written. Pending Houfu's call on whether it carries the 46% figure.
+
+## Session 10 — 2026-08-26: carousel rebuilt on a new angle, transposed, shipped
+
+Four corrections from Houfu, each one killing something already built. Recorded in order because each was catchable earlier and the workflow should learn from all four.
+
+### 1. Differentiation is measured against your own network, not the platform
+
+*"the search should priotise my connections. so i am thinking of angles which my circle might not have seen, not what actually exists."*
+
+Session 9's scan searched all of LinkedIn. Re-run with `postedBy=["first"]`, the picture inverted:
+
+- **Roxana Sharifi (CMS)** had already shipped a **10-page carousel** on the mechanism — 178 reactions. Directly competing with the deck as built.
+- Six 1st-degree connections — Bhavya Sharma (Freshfields), Sergii Shcherbak, Dillon Harindiran, Mauro Messias, Marco Rossi, Parth Sagdeo — had explained the mechanism **correctly**, within a week of the announcement.
+
+So the post's own "three camps misread it" frame, carried straight into the carousel, was **false for this audience and condescending to named connections**. It had to go.
+
+**Rule worth keeping:** when repurposing for LinkedIn, run the competitive scan filtered to 1st connections *before* designing. The feed the post lands in is not the platform; it is the circle. A gap that exists platform-wide can be closed inside the circle, and vice versa.
+
+**Angle chosen by Houfu** from four candidates: **"Equally good ≠ legally equal."** A model ranks probability; a lawyer ranks effect. Unoccupied in-circle and in the wider corpus.
+
+**Not used, deliberately.** The sharpest specimen found was a named 1st connection who asked exactly the right question — real Italian legal doublets, *who decides a choice is genuinely low legal risk?* — and was then talked out of it by an answer to a different question. Naming him would have made a specimen of a connection (CLAUDE.md framing-risk rule). The correction survived as the abstract point on page 6; the person is nowhere in the deck. **The question resolved itself by deletion when the deck was cut down.**
+
+### 2. "The cipher hook" meant the title, not the picture
+
+Houfu asked whether the cipher hook still worked. I read it as the keycap visual and built a visual-rhyme structure on that reading. He meant the post's own framing: *"tell me what you think about the watermark, and it tells me how much you know about how LLMs really work."* Cover reworked to carry it — and the logic inverted, since this circle **passed** that test. Lesson: when a user refers to "the hook", ask which one before building on the answer.
+
+### 3. *"It seems too wordy. I want it dumbed down, less arguing more educating."*
+
+The governing instruction. Full rewrite, 847 words → 419, and a rule written into the spec:
+
+> **Teach, don't argue.** No qualifiers, no "I think", no rebuttals. The point lands by sequence. The reader draws the conclusion; the deck doesn't state it. Under 35 words a page.
+
+Everything phrased as argument came out. The conclusion is now carried by running order alone — page 4 shows where the mark lives, page 5 shows the same picture inside a contract, page 6 names the difference. Nothing tells the reader what to think.
+
+### 4. The closing page: a takeaway is not the same as a reason to click
+
+Three attempts. First a takeaway ("check the terms of art") — flat, and it told the reader they already knew how to do it. Second attempt collided two calls to action on one page ("read the operative terms" against "read the full post"). Houfu's diagnosis was the one that mattered:
+
+*"perhaps the issue is that you have to find a gap between what the carousel is now, and what the post covers."*
+
+Correct, and it generalises. **A carousel that gives away the post's explanatory core must close on what the post still owns.** The deck teaches the mechanism for free, so the last page became **"Three things this doesn't settle"** — the engagement-letter exposure, the contradiction between Anthropic's two pages, and the 46% co-author-trailer figure. All three are in the post and none are in the deck. It also disposed of the caption's open question: the 46% number found its home on a slide after all.
+
+### Transposition: 9 pages in, 8 pages out
+
+Houfu rebuilt the deck in Canva by hand, on the alt-counsel purple rather than the artboards' white, and made copy edits that are now the text of record — *"The lawyer makes a judgement"* (better than "ranks effect"), *"Does it look the same to you?"* (asks the reader rather than telling), `void ≠ voidable` cut, "its endeavours".
+
+**One page was cut: "Nothing was added" — the 40,882-character scan.** It was the only original empirical work in the deck and the page that answered the most common fear. As shipped, page 3 says a hidden key steers the picks and nothing afterwards says nothing was inserted. Recorded in `carousel.md` as the page to restore in any v2. Houfu confirmed the cut stands.
+
+`carousel.md` was rewritten to describe what shipped rather than what was specced, including a standing list of fixes outstanding in the Canva file (broken URL on the last page, two white strips where the purple field misses the edge, cloud graphics eating the display type on page 7).
+
+### Files
+
+- `carousel.md` — 8-page spec, as published.
+- `carousel/` — `Main.dc.html` + `P2`–`P8`, `canvas.json`, seeded canvas, and `claude-watermark-carousel.pdf` (the Canva export that went up).
+- Canvas: https://claude.ai/code/artifact/bf5f8f36-7b8a-4c5d-8bb0-0608ca23860c
+
+### Status
+
+Post published; carousel published. **This post is closed.** The KIV from Session 3 is spent.

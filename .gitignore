@@ -23,3 +23,5 @@ temp/*
 
 # Claude Code hook state (session-wrap)
 .claude/state/
+# Seeded design-canvas payloads (regenerable from the .dc.html artboards)
+posts/**/carousel/*-carousel.html
