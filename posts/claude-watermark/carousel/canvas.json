@@ -1,0 +1,102 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1350,
+      "title": "1 — Cover",
+      "print": "fixed"
+    },
+    {
+      "file": "P2.dc.html",
+      "x": 1220,
+      "y": 0,
+      "w": 1080,
+      "h": 1350,
+      "title": "2 — How a model picks a word",
+      "print": "fixed"
+    },
+    {
+      "file": "P3.dc.html",
+      "x": 2440,
+      "y": 0,
+      "w": 1080,
+      "h": 1350,
+      "title": "3 — What watermarking changed",
+      "print": "fixed"
+    },
+    {
+      "file": "P4.dc.html",
+      "x": 0,
+      "y": 1560,
+      "w": 1080,
+      "h": 1350,
+      "title": "4 — The mark needs choices to hide in",
+      "print": "fixed"
+    },
+    {
+      "file": "P5.dc.html",
+      "x": 1220,
+      "y": 1560,
+      "w": 1080,
+      "h": 1350,
+      "title": "5 — Same picture, inside a contract",
+      "print": "fixed"
+    },
+    {
+      "file": "P6.dc.html",
+      "x": 2440,
+      "y": 1560,
+      "w": 1080,
+      "h": 1350,
+      "title": "6 — “Equally good” to the model",
+      "print": "fixed"
+    },
+    {
+      "file": "P7.dc.html",
+      "x": 0,
+      "y": 3120,
+      "w": 1080,
+      "h": 1350,
+      "title": "7 — What the watermark can't do",
+      "print": "fixed"
+    },
+    {
+      "file": "P8.dc.html",
+      "x": 1220,
+      "y": 3120,
+      "w": 1080,
+      "h": 1350,
+      "title": "8 — In the post",
+      "print": "fixed"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "specs",
+      "x": -560,
+      "y": 0,
+      "w": 460,
+      "text": "TRANSPOSING TO CANVA\n\nCanvas: 1080 x 1350 (4:5 — tallest LinkedIn allows).\nMargins: 84px all round.\n\nType\n· Display: Archivo Black\n· Body: Archivo (400 / 600)\nBoth in Canva.\n\nColours — AS PUBLISHED the deck runs on the alt-counsel purple, not the\nwhite of these artboards. Purple fields: cover, 3, 6, 8. White fields:\n2, 4, 5, 7. Reverse the type on the purple pages.\n· Ink #000000\n· Body grey #3A3A38\n· Caption grey #6F6C66\n· Keycap face #BBDDFF\n· Keycap side #8AC0DD\n· Pressed face #9B9A8F\n· Pressed side #6F6C66\n· Warm off-white #F4F3EF\n\nKeycap = two rounded rects (radius 18, 4px black outline), darker one offset 18px down. A pressed key sits 14px lower than its neighbours."
+    },
+    {
+      "id": "rule",
+      "x": -560,
+      "y": 1560,
+      "w": 460,
+      "text": "THE RULE FOR THIS DECK: TEACH, DON'T ARGUE.\n\nUnder 35 words a page. No 'I think', no rebuttals, no qualifiers. If a page needs a paragraph, it's two pages.\n\nThe point lands by SEQUENCE, not by assertion: page 4 shows where the mark lives, page 5 shows the same picture in a contract, page 6 names why that matters. The reader draws the conclusion. The deck never states it.\n\nIf you add words back, add them to the caption, not the slides."
+    },
+    {
+      "id": "rhyme",
+      "x": -560,
+      "y": 3120,
+      "w": 460,
+      "text": "PAGES 2 AND 5 MUST MATCH EXACTLY.\n\nSame keycap size, same spacing, same pressed key. Page 2 is harmless (the weather). Page 5 is a contract clause.\n\nThe whole deck turns on the reader recognising the second picture as the first. If you restyle the keys on one page, restyle both."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
