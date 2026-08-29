@@ -492,3 +492,44 @@ edits cut flourishes rather than add them.
 Two items before WRITE: the dirty `subject_tags` (fix at ingest, or keep a generic tolerant-matching
 line with no number), and `failed_tables: 1` (publish blocker, not a draft blocker). Re-run every
 figure in research.md at draft.
+
+### Session 4, fifth pass: failed_tables diagnosed (2026-08-29)
+
+### Context
+User asked whether `failed_tables: 1` might be transient. Tested against the live server rather
+than reasoned about.
+
+### What Claude Did
+Probed mcp.zeeker.sg and data.zeeker.sg directly over JSON-RPC and Datasette JSON.
+
+- **Isolated the table.** 26 tables exist; 18 report hits on an unscoped search. Scoping the search
+  per database put `failed_tables: 1` in `zeeker-judgements` alone, and within it only
+  `judgments_fragments` fails — `judgments` and `_zeeker_provenance` both return 200.
+- **Reproduced the failure and its cure.** Direct FTS on `judgments_fragments` returns HTTP 400
+  "SQL query took too long" on a cold index, failing in 1.1–1.9s, then 200 in 0.05–0.4s once warm.
+  Ruled out page size (`_size=20` warm is fine) and the row count (`_nocount=1` made no difference).
+  After the index was thoroughly warm, cold search terms that had failed began succeeding.
+- **Confirmed end to end.** With the index warm, the MCP's own unscoped search returned
+  `failed_tables: 0` and 19 tables reporting, `judgments_fragments` among them with 113 hits. One
+  run in the same batch failed again after a pause — warmth decays.
+
+### Finding
+Not a data or schema defect. A cold-index interaction with Datasette's SQL time limit, on exactly
+one table. Transient in the precise sense that it clears when the index is cached and returns when
+it is not — which means it will show up most mornings, because a briefing runs once a day on a cold
+index.
+
+### Outcomes
+- ✅ No longer a publish blocker. Routed to the zeeker-mcp side (candidate fixes: raise
+  `sql_time_limit_ms`, warm the FTS index on deploy or schedule, or drop fragments tables from
+  unscoped search). Infra work stays off this branch per the standing rule.
+- ✅ **The post does not mention it.** Beat 5 teaches the mechanism generically; naming an open
+  defect on the author's own server is exactly what the user ruled out.
+- ⚠ **Accuracy constraint for drafting:** this failure would never reach the daily briefing, because
+  the brief sweeps with `query_table` and confines `search` to topical asks. Beat 5 must not imply
+  that the briefing was silently short because of it. The clause is justified by sweeps being able
+  to half-succeed in general, not by this instance.
+
+### Next Steps
+One open item before WRITE: the dirty `subject_tags`. Then re-run every figure in research.md and
+draft.

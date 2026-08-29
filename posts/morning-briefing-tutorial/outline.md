@@ -204,9 +204,14 @@ Sections sum to 2,800.
 1. **The dirty `subject_tags`.** Fix it at ingest and drop it from the post entirely, or keep a
    generic tolerant-matching line with no audit behind it? Recommend: fix, and keep the one-line
    clause. The number does not survive either way.
-2. **`failed_tables: 1` on unscoped search — fix before publishing?** §5 teaches `failed_tables` as
-   an honesty mechanism, which reads oddly if the server has an open one. Not a blocker for
-   drafting; is a blocker for publishing.
+2. **`failed_tables: 1` — DIAGNOSED 2026-08-29, no longer a publish blocker.** It is transient: a
+   cold-index timeout on `zeeker-judgements.judgments_fragments` only. Cold, Datasette's SQL time
+   limit kills the FTS query at ~1.1–1.9s; warm, the same query returns in 0.05–0.4s and
+   `failed_tables` goes to 0 with the table reporting 113 hits. Warmth decays. Routed to the
+   zeeker-mcp task, not to this post. **The post does not mention it** — §5 teaches the mechanism
+   generically, which is enough. Accuracy note for drafting: this particular failure would never
+   hit the daily briefing, because the brief sweeps with `query_table` and confines `search` to
+   topical asks. Do not imply otherwise.
 3. **Budget: 2,800 holds.** The 3,200 raise proposed last pass is withdrawn — losing the defect tour
    freed the room, and the sections above sum to 2,800 exactly.
 
