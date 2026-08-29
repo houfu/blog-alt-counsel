@@ -85,8 +85,7 @@ target_date: ~
 > connect to an external source like Zeeker MCP (it is roughly the same thrust as the SLG article).
 > This is not a product demo. We are teaching lawyers to build against MCPs
 
-**Title:** [UNSETTLED — "Write the Brief. Swap the Source." is retired; the swap is not the subject.
-Needs a title naming the MCP lesson. Houfu's to settle.]
+**Title:** Read the Server Before You Draft  [SETTLED by Houfu 2026-08-29]
 **Thesis:** An MCP does not just give your skill a better source. It gives it tools to choose
 between, live infrastructure to be careful with, and status to report — so the brief grows clauses a
 feed-reading skill never needed.

@@ -445,3 +445,50 @@ Two open items, then WRITE. (1) Fix or leave the dirty `subject_tags` — if fix
 generic matching line still stands. (2) `failed_tables: 1` is a publish blocker, not a draft
 blocker, since beat 5 teaches `failed_tables` as an honesty mechanism. Title still unsettled and
 Houfu's. Re-run every figure in research.md before drafting.
+
+### Session 4, fourth pass: title settled (2026-08-29)
+
+### Context
+Spine and outline approved by the user. He then asked to brainstorm the title. Brainstorming skill
+invoked; the retired working title was "Write the Brief. Swap the Source."
+
+### What Claude Did
+Went wide with eight angles before narrowing, including two deliberately weak ones. Sampled all 25
+published titles first, which corrected a wrong assumption: **Houfu's titles do use imperatives**
+("Come Into the Bakery", "Tell Me What the Watermark Does"), so an imperative title is house style,
+not preachy. His most distinctive pattern is the two-part declarative with a hard stop ("AI Won't
+Replace You. Someone Who Decides Will.").
+
+Rejected on the way, with reasons worth keeping:
+- **"How to Build a Legal Morning Briefing Skill with MCP"** — the generic register the blog exists
+  to avoid; it will always be "another MCP tutorial" (Marcus's differentiation question).
+- **"I Don't Run My Own Tutorial Anymore"** — the best hook on the list, and it promises the post
+  the user already rejected. Disposability is an opening admission, not the thesis; the title would
+  be writing a cheque beat 1 does not cash.
+
+### User Decisions
+1. **"Read the Server Like a Precedent"** — thrust approved, phrasing rejected: *"the main thrust is
+   what i appreciated, but at first glance, it sounded kinda corny"*.
+2. Diagnosis confirmed as **the simile**, not "read the server": *"it's the similie"*.
+3. **TITLE SETTLED: "Read the Server Before You Draft."**
+
+**Rationale:** the thrust he wanted is the continuity with the Law Gazette article — read the source
+before you draft the contract, with the source now a live server. "Like a precedent" asked the
+reader to accept a comparison before knowing what it was for, which is the clever-clever
+construction the Voice Guide deletes on sight. The settled title is that same sentence with the
+flourish cut off.
+
+**Voice rule confirmed by this exchange:** similes and comparisons in titles read as corny to him.
+Plain statement of the move beats the figure of speech. Consistent with the corpus finding that his
+edits cut flourishes rather than add them.
+
+### Outcomes
+- ✅ Title written into pitch.md and outline.md. Open decisions on the outline reduced to the two
+  Zeeker items.
+- Noted, not asked as a blocker: the title does no discovery work — it names neither MCP nor
+  briefings. A colon subtitle is available if he wants it later; several of his titles use one.
+
+### Next Steps
+Two items before WRITE: the dirty `subject_tags` (fix at ingest, or keep a generic tolerant-matching
+line with no number), and `failed_tables: 1` (publish blocker, not a draft blocker). Re-run every
+figure in research.md at draft.

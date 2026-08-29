@@ -1,6 +1,7 @@
-# Outline: morning-briefing-tutorial
+# Outline: Read the Server Before You Draft
 
 Revised 2026-08-29 (Session 4, third pass). Working document — not published content.
+Title settled by Houfu 2026-08-29.
 
 **Subject, set by the user:** teaching lawyers to build skills against MCP servers. Zeeker MCP is
 the worked example, not the subject. Same thrust as the Law Gazette article — read the source
@@ -206,9 +207,7 @@ Sections sum to 2,800.
 2. **`failed_tables: 1` on unscoped search — fix before publishing?** §5 teaches `failed_tables` as
    an honesty mechanism, which reads oddly if the server has an open one. Not a blocker for
    drafting; is a blocker for publishing.
-3. **Title.** "Write the Brief. Swap the Source." is now clearly wrong — the swap is not the
-   subject. Something naming the MCP lesson. Houfu's to settle.
-4. **Budget: 2,800 holds.** The 3,200 raise proposed last pass is withdrawn — losing the defect tour
+3. **Budget: 2,800 holds.** The 3,200 raise proposed last pass is withdrawn — losing the defect tour
    freed the room, and the sections above sum to 2,800 exactly.
 
 ## Standing risks carried into the draft
