@@ -140,6 +140,8 @@ In December 2026, I'll publish the scorecard: what I predicted vs. what actually
 
 I'll publish updates as blog posts tagged #2026Predictions, with raw data tracked publicly on [Github PR #8](https://github.com/houfu/blog-alt-counsel/pull/8). Throughout 2026, I'll commit updates showing contract review results, usage percentages, hallucination workflow tests, and theater vs. innovation callouts. If you're running similar experiments, share your results—email, blog comments, or PR submissions all work. December 2026, I'll compile findings with full attribution.
 
+{{< bookmark url="https://www.alt-counsel.com/2026-predictions-six-month-update/" title="Half-Time on My 2026 Predictions: My Confidence Was Inverted" description="Six months in, my January confidence ranking is almost perfectly inverted. The two predictions I was surest of are my worst calls." >}}
+
 **Where I'm probably wrong:** Prediction #1 (agentic AI working feels too optimistic) and #5 (no framework yet for spotting theater).
 
 Which prediction will age worst? Where am I too conservative or too optimistic? What am I missing?

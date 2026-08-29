@@ -571,3 +571,11 @@ caught:
 `npm run lint-posts prompt-engineering-wrong` is clean at the error level (0 errors, 4 pre-existing
 warnings: two un-ref'd internal links, a bookmark lead-in-sentence style warning, one 7-item list, and
 the empty alt text on the term-sheet screenshot — all faithful to what's actually live, left as-is).
+
+## Forward link to the term-sheet anecdote's sequel (2026-08-29)
+
+Added a bookmark link right after the 2024 M&A term-sheet / prompt-competition paragraph, pointing to
+[When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/)
+— the later post that reopens this exact anecdote to ask whether the output actually served a client
+better. User-requested as part of a "next chapter" forward-linking cleanup. This local edit needs to be
+added to the live Ghost post separately to take effect.

@@ -2,9 +2,9 @@
 title: "Two Files, One Workflow. No Code. Just Cowork."
 slug: "two-files-one-workflow-no-code-just-cowork"
 tags: ["LegalTech", "AI", "OpenSource", "Tutorial"]
-status: scheduled
+status: published
 published_at: "2026-02-24T01:29:09.000Z"
-ghost_id: 6995e87d7d346400014549a1
+post_id: 6995e87d7d346400014549a1
 featured: false
 github_folder: "connect-codraft-article"
 ---
@@ -162,3 +162,5 @@ The contract review summary example is deliberately simple — a starting point,
 Enterprise contract management systems exist for a reason. Large teams with complex approval workflows, DMS (Document Management System) integrations, and compliance requirements need purpose-built tools. Two text files in a folder won't replace that. Neither approach is wrong — it depends on what you're building and what you'll actually use.
 
 What workflow would you automate first? A contract review checklist? A standard response library? A playbook for recurring tasks? For resource-constrained practitioners, two text files might be enough to get started.
+
+[I Got Rugpulled by Cowork. The Meter Is the Best Thing to Happen to Lawyer-Builders.](https://www.alt-counsel.com/rugpulled-by-cowork/?ref=two-files-one-workflow-no-code-just-cowork)

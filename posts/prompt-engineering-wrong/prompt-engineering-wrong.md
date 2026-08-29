@@ -57,6 +57,8 @@ I wrote this for a 2024 SAL/Microsoft prompt writing competition—a diligent st
 
 [Introducing: Prompt Engineering for Lawyers](https://www.alt-counsel.com/introducing-prompt-engineering-for-lawyers/)
 
+[When Building Gets Cheap But Knowing Stays Expensive](https://www.alt-counsel.com/when-building-gets-cheap-but-knowing-stays-expensive/?ref=lawyers-prompt-engineering-wrong)
+
 ### 2025: The Reusable Skill
 
 Now I have a "Generate a pitch" skill (one of many). It's 45 lines defining principles and process:

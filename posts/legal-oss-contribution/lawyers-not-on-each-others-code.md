@@ -157,3 +157,5 @@ I've spent this post laying out the diagnosis: the Mike pattern, the shape acros
 What I haven't said yet is what works. We have good examples in `docassemble` and `courtlistener` to look at, and I think my own experience maintaining `redlines` provides a useful counterpart to what does and doesn't work.
 
 For now, I will keep thinking back to that small group of lawyers I met who found freedom in AI and code, and wonder if they can sustain it. As someone who has walked that path before, it's going to be difficult but I hope the community we have today has a better chance of making it.
+
+[I'm the Official Cat Herder of a Legal AI Project](https://www.alt-counsel.com/official-cat-herder/?ref=lawyers-not-on-each-others-code)

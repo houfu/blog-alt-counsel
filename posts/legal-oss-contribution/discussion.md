@@ -598,3 +598,7 @@ Phase 2 of the sync sweep (phase 1 fixed frontmatter only). Fetched the live pos
 - **Table right-alignment on the Count column** preserved to match the original table styling.
 
 No frontmatter touched. `npm run lint-posts legal-oss-contribution` is clean of errors (3 pre-existing warnings remain: main-file-name-mismatch, missing `?ref=` on 4 internal links, and empty alt text on the 3 images — all reflect genuine current state, not introduced by this pass).
+
+## Forward link to Part 2 (2026-08-29)
+
+Added a bookmark link at the very end of the post, right after the "What's coming in Part 2" closing paragraph, pointing to [I'm the Official Cat Herder of a Legal AI Project](https://www.alt-counsel.com/official-cat-herder/) — the actual Part 2 this post promised, now published. User-requested as part of a "next chapter" forward-linking cleanup. This local edit needs to be added to the live Ghost post separately to take effect.

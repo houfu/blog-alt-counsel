@@ -867,3 +867,7 @@ Fixed:
 - Two section headings were retitled in the Ghost editor after publish and pulled back into local: "The confession: Prediction 3, where I was surest and most wrong" → "I was certainly wrong about my legal work"; "The idea I lived with all year: Prediction 1, human out of Word" → "The Word Plugin troubled me most".
 - Added the `<!--members-only-->` paywall marker, which exists on the live post right after the "work log of my actual AI usage" paragraph but was missing locally.
 - Rest of the body (all five prediction sections, the scorecard table, closing) matched the live lexical word-for-word.
+
+## Forward link to the half-time update (2026-08-29)
+
+Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) to `2026-legal-ai-predictions.md`, right after the "I'll publish updates as blog posts tagged #2026Predictions..." sentence, pointing to the [Half-Time on My 2026 Predictions](https://www.alt-counsel.com/2026-predictions-six-month-update/) update. User-requested as part of a "next chapter" forward-linking cleanup — the original January post had no way of pointing readers to the July check-in. This local edit needs to be added to the live Ghost post separately to take effect.
