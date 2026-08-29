@@ -388,3 +388,60 @@ words, rather than why is it interesting.* Recorded as a pattern, not a one-off.
 Houfu's call on budget and title. Then WRITE. Re-run every number in research.md first — every
 figure in beats 3–6 is dated 2026-08-29 and the corpus grows daily. Diagnose or disclose the open
 `failed_tables: 1`, since beat 6 cites `failed_tables` as an honesty mechanism.
+
+### Session 4, third pass: subject settled — building against MCPs (2026-08-29)
+
+**User Decision (verbatim):**
+> we shouldnt be trying to expose zeeker's weaknesses. my attitude is that there's a bug then we
+> should fix it. but perhaps what this tutorial should teach is that skills are different when they
+> connect to an external source like Zeeker MCP (it is roughly the same thrust as the SLG article).
+> This is not a product demo. We are teaching lawyers to build against MCPs
+
+**Rationale (his):** bugs get fixed, not published. And the transferable lesson is not "look at a
+rich database" but "here is what changes when your skill talks to a live server".
+
+### What Claude Got Wrong
+The second outline organised the post around five observed defects, three of them Zeeker's, on the
+theory that a tutorial spending a third of its length on the author's own database failing could
+not be read as a demo. That was an anti-demo *device* substituting for a subject — and it still
+made Zeeker the subject, just in the negative. The user supplied the actual subject.
+
+**Pattern, now three passes running:** Claude keeps reaching for a structural gimmick (the redline,
+the seam, the defect tour) where the user keeps supplying a plain subject. The unasked question is
+the same each time: what should a reader be able to DO afterwards. Logged alongside the Session 2
+and Session 3 entries, which record the same failure with different names.
+
+### What Claude Did
+- Rewrote `outline.md` around **six differences between a feed-reading skill and an MCP-connected
+  one**, each a property of MCPs generally, each demonstrated on Zeeker, each producing a clause:
+  you interrogate the schema rather than read it; the source has several verbs answering different
+  questions; structured data lets Definitions name a field; you are querying live infrastructure so
+  every query must be constrained; a sweep can half-succeed and one server fronts several publishing
+  rhythms; provenance and citations arrive with the data.
+- Amended `pitch.md` again: diagnosis, differentiation, framing_risk, subject, thesis, the pitch
+  paragraph and all beats. Added the standing instruction to `framing_risk` and an explicit
+  "Exposing Zeeker's weaknesses" entry to Out of scope so no reviewer round reopens it.
+- Lowered `framing_risk` MEDIUM → LOW. Demo risk is now answered by what the post is about rather
+  than by self-criticism.
+- **Withdrew the 3,200 budget request.** Losing the defect tour freed the room; beats sum to 2,800.
+
+### Material now cut
+- The 19% unparseable `subject_tags` audit — fixable at ingest, so it is a bug to fix. At most a
+  generic tolerant-matching line survives, with no number attached.
+- `failed_tables: 1` on unscoped search — the mechanism is taught, the open defect is not published.
+- The whole "three of five defects are Zeeker's own" anti-demo device.
+
+### Outcomes
+- ✅ Subject is now the user's and stated in his own words in pitch.md.
+- ✅ The RSS material becomes load-bearing rather than nostalgic: it is the baseline every difference
+  is measured against, which is also why it survives at 300 words.
+- ✅ Budget question closed at 2,800.
+- ⚠ New diagnosis risk recorded: if the six differences turn out to be true of any external data
+  source rather than of MCPs specifically, the post is about calling APIs and the framing must
+  follow the truth. Watch for this at draft.
+
+### Next Steps
+Two open items, then WRITE. (1) Fix or leave the dirty `subject_tags` — if fixed at ingest the
+generic matching line still stands. (2) `failed_tables: 1` is a publish blocker, not a draft
+blocker, since beat 5 teaches `failed_tables` as an honesty mechanism. Title still unsettled and
+Houfu's. Re-run every figure in research.md before drafting.
