@@ -277,3 +277,60 @@ pitch.md rewritten in place to the source-agnostic thesis (see AUDIT TRAIL above
 170-word pitch paragraph, beats summing to 2,800. Title still PROVISIONAL — user's to settle.
 Next: WRITE. Read the Voice Guide and 1-2 recent published posts before drafting; re-run the
 research.md numbers at final draft.
+
+## Session 4: Spine and outline drafted (2026-08-29)
+
+### Context
+Session opened with a repo-wide status gather. User chose the next move himself: *"yup we're here
+to draft morning briefing. draft the spine and the outline, and i'll feedback to you what we need
+to do."* Deliverable is the outline, not the draft.
+
+### What Claude Did
+- Read the full pitch, research.md, both SKILL versions, the 24 Jul Gazette draft,
+  source-three-failures-arc.md, the whole discussion.md, and the Voice Guide.
+- Voice reference: `come-into-the-bakery` — sampled for narrative-first pacing and for how it
+  carries teaching material inside the story rather than in titled argument blocks.
+- Wrote `outline.md`: spine, 8 sections with word budgets, material sources per section, and the
+  standing risks carried into the draft.
+- Proposed three changes to the pitch and flagged two defects in it. All five are OPEN — put to
+  the user, not decided.
+
+### Claude's Recommendations (all awaiting user decision)
+1. **Sharpen the spine.** Protected line stays ("The Definitions clause is the constant. Everything
+   else is plumbing."), but it only carries the portability limb. Proposed join: *Definitions says
+   what you care about; Standard of Performance says what counts as an honest answer; everything
+   between is plumbing.* Earned by the v1→v2 diff — Definitions barely moved between substrates,
+   the Standard of Performance clause grew from three clauses to six. The finding: a richer source
+   charges for its depth in honesty clauses.
+2. **Reorder to a chronological spine.** The pitch's seven beats are topical (contract / substrate
+   one / substrate two / new failures / seam) — the expository arrangement Voice Guide §2.5 names
+   as the recurring drafting failure, and the same shape that keeps the pitch's own diagnosis risk
+   alive. Chronology makes the two substrates share one argument structurally, because the argument
+   is discovered in act one and tested in act two. Consequences: "substrate two" and "the new
+   failures" collapse into one section; pitch beat 6 ("Swap the source, keep the contract", 400
+   words) is deleted as a section and its thesis moves to the hinge as realisation.
+3. **Print one skill file, not two** — Zeeker's SKILL.md in full, RSS shown only as the clauses
+   under discussion.
+
+### Defects found in the pitch
+- **"Both versions failed, five years of tooling apart" — the number is wrong.** The two skills
+  were written five *weeks* apart (24 Jul, 29 Aug); RSS 2.0 dates to 2002 and MCP to Nov 2024,
+  which is 22 years. No reading supports "five". Voice Guide §1.3 requires defensible numbers.
+- **"In exactly the same way: silently" is only clean for two of the three RSS failures.** The
+  vague brief flagged everything — that is noise, not silence. Proposed replacement through-line:
+  *a briefing you cannot audit by reading it*, which covers all six defects across both builds
+  honestly, with vagueness demoted to the setup's "before" state.
+
+### User Decisions
+None yet — the five open questions (spine, through-line, one skill file or two, the "five years"
+number, and the title) were put to the user at the end of the turn and are awaiting his feedback.
+
+### Outcomes
+- ✅ `outline.md` written; no draft started, no pitch edited. Pitch amendments 1–3 are proposals
+  only and must not be applied to pitch.md until the user rules on them.
+- ⚠ Open and unresolved, neither blocking the draft: research.md's numbers need re-running at final
+  draft (the corpus grows daily), and `failed_tables: 1` on unscoped search is still undiagnosed.
+
+### Next Steps
+Await feedback on the five open decisions. Then amend pitch.md to whatever survives (logging which
+pitch-time check would have caught each), and WRITE.
