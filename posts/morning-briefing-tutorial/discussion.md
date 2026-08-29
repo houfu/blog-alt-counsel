@@ -554,3 +554,54 @@ consistent with the standing instruction that the post is not an audit of Zeeker
 ### Next Steps
 WRITE. Read the Voice Guide and `come-into-the-bakery` before drafting; 2,800 words across the
 eight beats in pitch.md.
+
+## Session 5: First draft written (2026-08-29)
+
+### Context
+User cleared the draft with one steer: *"go ahead. remember this is a tutorial. not a narrative
+story or an opinion."*
+
+### How that changed the drafting
+The outline had been written with narrative pacing in mind — Voice Guide §2.5, analysis arriving as
+realisation. That guidance is for the argumentative lanes, not this one. The draft was written in
+tutorial register instead, modelled on the Gazette piece's own structure: second person for
+instruction, first person only for what was actually done and found, procedure in bullets where
+bullets belong, and no story arc. The emotional core ("I don't run the first one anymore") is two
+sentences of context in the opening rather than a frame.
+
+### Figures re-verified live before drafting
+Every number in the post was re-run against mcp.zeeker.sg and data.zeeker.sg on 2026-08-29, not
+taken from research.md:
+- judgments row count 10,804 — confirmed via `describe_table`.
+- Most recent judgment 2026-08-28; most recent PDPC enforcement decision 2026-08-05 (24 days) —
+  both confirmed via `query_table`.
+- The stale-`search` example reproduced exactly: `search("enforcement")` unscoped returns
+  2026-06-11, 2022-09-13, **2010-11-23** (AGC media brief on contempt of court proceedings),
+  2026-07-13, 2026-05-18. The 2010 item is the third result. Real and reproducible today.
+- Real `subject_tags` strings, a real `_citation`, and the actual `search` and `query_table` tool
+  descriptions pulled from `tools/list` rather than paraphrased.
+- Five databases, not four (the `list_databases` tool description says four — a stale doc string on
+  the Zeeker side, deliberately not mentioned in the post).
+
+### Length
+First pass came in at 2,031 words against a 2,800 budget — below the 2,520 floor. The gaps were in
+the sections a tutorial reader needs most, and the fix was content rather than padding: the six
+tools were never actually named, the five databases and their differing licences were missing, the
+"perform the clause yourself before trusting it" habit was missing, and the standard-of-performance
+walkthrough had been compressed to a single sentence. Final: **2,731 words**, lint clean.
+
+### Outcomes
+- ✅ Draft at `morning-briefing-tutorial.md`. `npm run lint-posts`: 0 errors, 0 warnings.
+- ✅ Both protected lines placed: "I rewrote each time." stands alone in §2; "The Definitions clause
+  is the constant. Everything else is plumbing." closes §6 where the 3→6 clause growth is stated.
+- ✅ Bookmark cards placed with no lead-in narration (R2): Gazette and `come-into-the-bakery` in the
+  opening, `ect-no-lawyers-zeeker` at the end of §3, `skillsbench-analysis` in §7.
+- ✅ Standing instruction honoured — no Zeeker defect appears. The `search` mis-selection is written
+  as a drafting error ("the tool did exactly what its description says"), and the subject_tags
+  inconsistency appears as a matching-clause instruction with no number and no audit.
+- Trimmed the pitch paragraph twice to satisfy the ≤200-word contract.
+
+### Next Steps
+REVIEW, in order: pitch checkpoint, then the two audit agents in one message (audit-substance and
+audit-tone), then reviewers per `primary_audience: wei-lin`, then the length audit before applying
+any additive fixes, then backlinks and tag validation.

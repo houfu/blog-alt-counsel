@@ -95,18 +95,17 @@ feed-reading skill never needed.
 ## Pitch
 
 A morning briefing skill is a plain-text file that says what your practice is and what counts as
-done. I wrote one for the Law Gazette against Singapore Law Watch's RSS feed, for an audience of
-lawyers generally, which meant leaving out how you actually build the thing. This is the version
-with the building left in, and it connects to an MCP server instead of reading a feed — which
-turned out to change the brief more than the change of source did. A feed has one verb: fetch. A
-server has several that look interchangeable and are not, so the brief has to say which tool serves
-which obligation; I got that wrong first time and was served a 2010 decision as this morning's news.
-A feed either arrives or it doesn't, but a sweep across a server can half-succeed, so the brief has
-to make the skill say when it only got part of the picture. One server can front sources that
-publish on different rhythms, so one window starves the slow ones and nothing about the output says
-so. And provenance and citations arrive with the data, so the brief can forbid the skill from ever
-constructing one. Six differences, six clauses. The Definitions clause — the part that is actually
-your practice — barely moves.
+done. I wrote one for the Law Gazette against Singapore Law Watch's RSS feed, for lawyers
+generally, which left out how you actually build it. This is the version with the
+building left in, and it connects to an MCP server rather than reading a feed — which changes the
+brief more than the change of source does. A feed has one verb: fetch. A server has several that
+look interchangeable and are not, so the brief must say which tool serves which obligation; I got
+that wrong and was served a 2010 decision as this morning's news. A feed arrives or it doesn't, but
+a sweep can half-succeed, so the brief must make the skill say when it only got part of the
+picture. One server fronts sources on different rhythms, so a single window starves the slow ones
+and nothing in the output says so. And provenance and citations arrive with the data, so the brief
+can forbid the skill from ever constructing one. Six differences, six clauses. The Definitions
+clause — the part that is actually your practice — barely moves.
 
 ## Beats
 
