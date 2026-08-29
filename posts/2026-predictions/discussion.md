@@ -857,3 +857,13 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 - `2026-legal-ai-predictions.md` frontmatter was missing `custom_excerpt` and `feature_image`, both of which are set on the live Ghost record (id `695e594d8be18900017b93d4`, the original January predictions post — not the 6-month-update draft above). Added both to match Ghost exactly; title, slug, status, tags, published_at, post_id and featured were already correct.
 - Body content compared against the live lexical export: no drift detected, prose matches word-for-word.
 - Found via an automated Ghost sync sweep, not a manual editing session.
+
+## 2026-08-29 (later same day) — Found and fixed a second stale post in this folder
+
+The original sweep above only checked `2026-legal-ai-predictions.md` and missed that this folder holds a SECOND post file, `6-month-update.md` ("Half-Time on My 2026 Predictions"). Per the Session 2026-07-03 notes, it went to Ghost and published on 2026-07-04, but its local frontmatter still said `status: scheduled`.
+
+Fixed:
+- `status: scheduled` → `status: published` (all other frontmatter — slug, tags, custom_excerpt, post_id, published_at, feature_image — already matched Ghost).
+- Two section headings were retitled in the Ghost editor after publish and pulled back into local: "The confession: Prediction 3, where I was surest and most wrong" → "I was certainly wrong about my legal work"; "The idea I lived with all year: Prediction 1, human out of Word" → "The Word Plugin troubled me most".
+- Added the `<!--members-only-->` paywall marker, which exists on the live post right after the "work log of my actual AI usage" paragraph but was missing locally.
+- Rest of the body (all five prediction sections, the scorecard table, closing) matched the live lexical word-for-word.

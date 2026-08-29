@@ -6,7 +6,7 @@ tags:
   - LegalTech
   - Singapore
   - 2026Predictions
-status: scheduled
+status: published
 custom_excerpt: >-
   In January I ranked how confident I was in each of five predictions. Six
   months in, that ranking is almost perfectly inverted — the two I was surest of
@@ -27,7 +27,9 @@ Six months in, that ranking is almost perfectly inverted. The two I was surest o
 
 That inversion — not any single grade — is what this halfway post is really about. First, a confession: I promised to track all of this publicly, month by month, in a repo anyone could watch. I didn't keep that log. Twenty-two published posts since January turned out to be a serviceable audit trail anyway — and the one log I *did* keep, a work log of my actual AI usage at the office, is where we have to start.
 
-## The confession: Prediction 3, where I was surest and most wrong
+<!--members-only-->
+
+## I was certainly wrong about my legal work
 
 **The bet:** meaningful AI use across my legal work would stay **under 20%**. Friction is real, I said; the adoption headlines were inflated.
 
@@ -41,7 +43,7 @@ You can be right that adoption claims are hype *and* run AI in half your tasks. 
 
 Why is this the confession and not the headline? Because being wrong that AI usage would stay low, in 2026, is the least surprising way to be wrong. The [8am 2026 report](https://www.lawnext.com/2026/03/ai-adoption-among-legal-professionals-has-more-than-doubled-in-a-year-new-8am-report-finds-but-firms-lag-far-behind-individual-practitioners.html) has adoption at 69%; [Harvey](https://www.harvey.ai/blog/harvey-releases-study-on-how-mobile-and-ai-are-transforming-legal-work) reports 80% weekly usage. I doubted the trend and became a data point for it. Humbling — but not the interesting story.
 
-## The idea I lived with all year: Prediction 1, human out of Word
+## The Word Plugin troubled me most
 
 **The bet:** by year's end I'd complete routine contract reviews using only AI and agents, never opening Word.
 
