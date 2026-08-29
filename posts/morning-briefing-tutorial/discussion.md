@@ -533,3 +533,24 @@ index.
 ### Next Steps
 One open item before WRITE: the dirty `subject_tags`. Then re-run every figure in research.md and
 draft.
+
+### Session 4, sixth pass: last open item closed (2026-08-29)
+
+**User Decision:** on the dirty `subject_tags` — *"leave it"*. Not normalising separators at ingest.
+
+**Consequence for the post:** the tags stay inconsistent, so the matching clause in beat 5 has to
+cope with them, and it is written as ordinary care with hand-written data — compare
+case-insensitively, do not assume a separator, match on the leading subject words, treat an
+unparseable tag as UNCERTAIN rather than excluded. **No number, no audit, no count of what fails**,
+consistent with the standing instruction that the post is not an audit of Zeeker.
+
+### Outcomes
+- ✅ PITCH phase complete. Spine and outline approved, title settled, both blockers closed
+  (`failed_tables` diagnosed as a transient cold-index timeout and routed off this branch;
+  `subject_tags` left as is). Nothing outstanding before WRITE.
+- research.md figures are stamped 2026-08-29 and are current as of today; re-verify if drafting
+  slips to another day.
+
+### Next Steps
+WRITE. Read the Voice Guide and `come-into-the-bakery` before drafting; 2,800 words across the
+eight beats in pitch.md.

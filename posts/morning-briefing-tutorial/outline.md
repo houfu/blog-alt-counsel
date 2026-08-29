@@ -201,9 +201,12 @@ Sections sum to 2,800.
 
 ## Open decisions
 
-1. **The dirty `subject_tags`.** Fix it at ingest and drop it from the post entirely, or keep a
-   generic tolerant-matching line with no audit behind it? Recommend: fix, and keep the one-line
-   clause. The number does not survive either way.
+1. **The dirty `subject_tags` — SETTLED 2026-08-29, "leave it".** Not being normalised at ingest, so
+   the tags stay inconsistent and the matching clause has to cope. The post keeps the generic
+   tolerant-matching line in §5 — compare case-insensitively, do not assume a separator, match on
+   the leading subject words, treat an unparseable tag as UNCERTAIN rather than excluded. **No
+   number, no audit, no count of what fails.** The clause is written as ordinary care with
+   hand-written data, which is what it is.
 2. **`failed_tables: 1` — DIAGNOSED 2026-08-29, no longer a publish blocker.** It is transient: a
    cold-index timeout on `zeeker-judgements.judgments_fragments` only. Cold, Datasette's SQL time
    limit kills the FTS query at ~1.1–1.9s; warm, the same query returns in 0.05–0.4s and
