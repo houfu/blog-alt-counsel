@@ -245,3 +245,11 @@ way for exam-confidentiality reasons):**
 - Repo now mirrors the published post. Preparing PR to main.
 - Reminder still open: the issue-#41 publish-lexical.js infra fixes belong on a
   SEPARATE branch, not this content PR.
+
+### 2026-08-29 — Automated Ghost sync sweep
+
+Frontmatter already matched Ghost exactly (title, slug, status, tags, excerpt,
+post_id, published_at, feature_image) — no changes made. Content-drift check
+confirms the Session 3 "some0ne" typo is still live on Ghost (local still has
+the correct "someone"); no other prose drift found. Found via an automated
+Ghost sync sweep, not a manual review.

@@ -501,3 +501,73 @@ After manual editing in Ghost, the published version had three key differences:
 **Ghost post ID:** 68f386ab49c45f0001131422 (original draft, unable to programmatically update)
 
 **Local file updated** to match published version with all changes documented.
+
+## Discussion - 2026-08-29 (Automated Ghost sync sweep)
+
+Local frontmatter had drifted badly from the live post — it still read `status: draft` with the
+2024-era tag set (`legal-tech`, `AI`, `Singapore`, `prompt-engineering`, `agents`) even though the
+post has been live since October 2025. Ghost is the source of truth, so frontmatter was corrected to:
+`status: published`, `tags: [LegalTech, AI, Article]`, `featured: true`, plus the fields Ghost carries
+that were missing locally — `custom_excerpt`, `feature_image`, `published_at`
+(2025-10-18T15:09:15Z), and `post_id` (68f386ab49c45f0001131422). `github_folder` was preserved.
+
+Content drift beyond what this file already tracked: the "Why Agents Change Everything" section now
+opens with an extra sentence ("With everything being called an agent, it might be confusing why this
+is a big deal.") before the Harvey/ChatGPT point; the "blog-drafting workflow" example and its
+"Why this matters for legal work" lead-in were cut entirely, so the section now jumps straight from
+the general "you control the decision-making logic" point to a directly-renamed "**Example: Reviewing
+an NDA**" bullet list; the Practical Guidance numbered list was reordered (the low-risk-use-cases
+bullet moved up before the confidentiality-obligations one) and its confidentiality bullet now also
+flags "API-only and consumer access," not just "API-only access"; and the conclusion's "Singapore's
+legal establishment" was broadened to "The legal establishment." None of this touches the thesis —
+Houfu tightened the middle section and generalized one line — but it means the local markdown is
+narrower than what is actually live. Found via an automated Ghost sync sweep on 2026-08-29; body not
+edited as part of this sweep.
+
+## Discussion - 2026-08-29 (Pulled live Ghost content into local markdown)
+
+Phase 2 of the sync sweep: fully rebuilt the body from a fresh `ghost_post_get` fetch of the live
+lexical content (frontmatter untouched, already fixed in the prior sweep). Confirmed and applied
+every drift the frontmatter-sweep note above flagged, plus several more the earlier pass hadn't
+caught:
+
+- Dropped the local-only opening (`# Lawyers Got Prompt Engineering Wrong...` H1, the bracketed
+  "LinkedIn image" placeholder line, and the "This isn't about productivity tips..." lead sentence)
+  — none of it exists in the published lexical; Ghost's title is a separate field and current repo
+  convention (e.g. `sg-law-cookies.md`) doesn't repeat it in the body.
+- Added the Table of Contents toggle Houfu built in the Ghost editor. It's a lexical `toggle` node
+  with no local markdown equivalent, so it's now a numbered list of anchor links under an HTML
+  comment noting it renders as a collapsible toggle on Ghost.
+- Confirmed the "With everything being called an agent..." lead-in, the cut "blog-drafting workflow"
+  example / "Why this matters for legal work" heading in favour of "*Example: Reviewing an NDA*", the
+  Practical Guidance reorder, the expanded confidentiality bullet, and "Singapore's legal
+  establishment" → "The legal establishment" — all exactly as the prior sweep's note described.
+- New finds beyond that note: the closing sentence "Don't use custom skills for everything. Use them
+  where the risk/reward makes sense for your practice." (old end of the Trade-Offs section) and the
+  two paragraphs "Let's address the elephant in the room..." / "The trade-off: ..." under Security and
+  Compliance are gone from the live post — Houfu trimmed both in the editor after publishing.
+- The entire local-only "## References" section (8 numbered citations) has no counterpart in the
+  live lexical at all and was removed. Flagging this one for a human check — it's a bigger loss than
+  a line-edit and worth confirming Houfu meant to drop the citation list from the published page
+  rather than it just never having made it into Ghost.
+- The Simon Willison and Anthropic Agent Skills links were bookmark-card nodes in Ghost on
+  non-allowed domains (`simonwillison.net`, `anthropic.com`), so per this repo's markdown
+  conventions they're now inline links folded into their surrounding sentences rather than
+  standalone bookmark lines. The two `alt-counsel.com` bookmarks (Prompt Engineering for Lawyers,
+  Beyond the Harvey Drama) kept their own-line bookmark-card form.
+- A Ghost-native newsletter signup card (between the NDA skill example and "The Trade-Offs") has no
+  local equivalent either; represented as a one-line HTML comment plus a plain paragraph carrying its
+  header/subheader text so nothing is silently lost.
+- Preserved two dropped-content notes rather than fixing them: the caption on the 2024 term-sheet
+  screenshot ("The output from Claude using my 3 page prompt. An illustrated deal timeline...") and
+  the caption on the "Introducing: Prompt Engineering for Lawyers" bookmark ("I had written about
+  these frameworks before...") both have no local caption syntax and were dropped per the sync
+  conventions — flagging here since the second one is a real editorial aside, not throwaway text.
+- One typo-preservation exception: the live NDA Quick Review code block's raw text ends with a
+  stray extra ` ``` ` baked into the code content itself (a paste artifact, not intentional style).
+  Kept the local file's existing clean closing fence instead of reproducing the artifact — worth a
+  quick check/fix on the Ghost side too.
+
+`npm run lint-posts prompt-engineering-wrong` is clean at the error level (0 errors, 4 pre-existing
+warnings: two un-ref'd internal links, a bookmark lead-in-sentence style warning, one 7-item list, and
+the empty alt text on the term-sheet screenshot — all faithful to what's actually live, left as-is).

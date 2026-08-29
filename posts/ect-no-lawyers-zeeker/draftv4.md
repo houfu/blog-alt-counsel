@@ -2,7 +2,7 @@
 title: "The Judgment, Not the Summary: How Zeeker MCP Can Change the Way you do Legal Research"
 slug: "ect-no-lawyers-zeeker"
 tags: ["Law", "LegalTech", "Singapore", "zeeker"]
-status: scheduled
+status: published
 visibility: public
 featured: false
 github_folder: "ect-no-lawyers-zeeker"
@@ -24,13 +24,13 @@ The facts of [2026] SGECT 1 are simple enough: employees claimed medical benefit
 
 The legal landscape around that outcome is not simple.
 
-Four days before the ECT judgment was issued, the High Court struck out a separate wrongful dismissal claim in *Seng Hock Chye Daniel v Denso International Asia Pte Ltd* [2026] SGHCR 14. The claimant had worked for Denso for nearly 19 years. He believed the Tripartite Guidelines on Wrongful Dismissal protected him. The court disagreed: those guidelines guide the ECT but do not create enforceable civil rights. The claim had no legal foundation and was dismissed without a trial. The registrar's closing note directed employees to the ECT as the proper statutory channel.
+Four days before the ECT judgment was issued, the High Court struck out a separate wrongful dismissal claim in **Seng Hock Chye Daniel v Denso International Asia Pte Ltd** [2026] SGHCR 14. The claimant had worked for Denso for nearly 19 years. He believed the Tripartite Guidelines on Wrongful Dismissal protected him. The court disagreed: those guidelines guide the ECT but do not create enforceable civil rights. The claim had no legal foundation and was dismissed without a trial. The registrar's closing note directed employees to the ECT as the proper statutory channel.
 
 In the same week: a civil court said go to ECT, and an ECT judgment explained at 414 paragraphs why the law there is layered and unsettled. [Nicholas Ngo](https://www.linkedin.com/posts/ngonicholas_togiveornottogive-employmentlaw-singapore-activity-7462337801586593792-JbIc), who commented on both decisions, captured it directly: in civil court you must plead a recognised legal basis; in the ECT, the statutory test is different and the doctrine is still being worked out.
 
 That distinction is invisible unless you can read what the courts are actually saying.
 
-*Note: the employer has filed applications for leave to appeal all six decisions. Check the appeal status before relying on the outcome in your own matter.*
+**Note: the employer has filed applications for leave to appeal all six decisions. Check the appeal status before relying on the outcome in your own matter.**
 
 ## What the ECT was built for
 
@@ -53,17 +53,15 @@ Someone who just received a dismissal letter and wants to understand what they w
 
 What they find by Googling: MOM guidance, HR blog posts, a [CNA article](https://www.channelnewsasia.com/singapore/6-people-wrongfully-dismissed-medical-benefit-claim-win-compensation-company-6127921) about skincare. None of that is the tribunal speaking in its own voice.
 
-Zeeker — a Singapore legal database I built — closes that gap. And the way it does it is specific.
-
-[When Institutions Enter Your Passion Project Space](https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/)
-
-<!--members-only-->
-
 ## What you can actually ask
 
 The Zeeker MCP (Model Context Protocol) server connects Singapore legal data to an AI workspace you already have open — Claude, ChatGPT, or any MCP-capable client. MCP is a connector standard that lets AI tools query external databases directly, without copying and pasting documents. The queries are in plain language. The answers land in plain language.
 
+[When Institutions Enter Your Passion Project Space](https://www.alt-counsel.com/when-institutions-enter-your-passion-project-space/)
+
 Here is what the workflow actually looks like, starting from the citation. Once the connector is set up — a one-time step that takes about five minutes — the research workflow itself runs in under fifteen.
+
+<!--members-only-->
 
 **Installing the connector**
 
@@ -81,11 +79,9 @@ Once you have access to Zeeker MCP, you can use natural language to search the d
 I'm trying to get the case with the citation [2026] SGECT 1 on zeeker.
 ```
 
-The quality of results depends on the model you use. Claude Sonnet — available on the standard $20/month Claude plan — handles citation lookups and fragment retrieval well. Claude Opus performs better on complex multi-step reasoning, such as comparing several cases and synthesising an argument across them.
+The quality of results depends on the model you use. Claude Sonnet — available on the standard $20/month Claude plan — handles citation lookups and fragment retrieval well. Claude Opus, performs better on complex multi-step reasoning, such as comparing several cases and synthesising an argument across them.
 
 What comes back: case name (JGP v JGQ), case number (ECT/11019/2024), decision date (15 May 2026), subject tags (disciplinary procedures, discretionary bonuses, wrongful dismissal), a source URL, and 414 fragments. Zeeker breaks each judgment into numbered fragments — roughly paragraph-aligned chunks — which makes targeted retrieval possible without feeding the entire document to the model at once.
-
-[Building data.zeeker.sg: Technical Architecture](https://www.alt-counsel.com/data-zeeker-sg-part-2a-architecture/)
 
 ![Zeeker citation lookup result for JGP v JGQ [2026] SGECT 1](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/zeeker-citation-lookup-1.png)
 
@@ -95,7 +91,8 @@ Once the data is available in Claude.ai or another MCP-capable client, it is str
 
 ![Claude presenting the case data in a readable summary](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/claude-case-summary-display.png)
 
-> 😅 **What's Longitude 101 doing there?** Judgement summarising is a complex problem with various solutions. For now, [there's a bug report](https://github.com/zeeker-sg/judgements/issues/1).
+<!-- Ghost editor: rendered as a callout box; no local markdown equivalent -->
+😅 **What's Longitude 101 doing there?** Judgement summarising is a complex problem with various solutions. For now, [there's a bug report](https://github.com/zeeker-sg/judgements/issues/1).
 
 **Ask what the employer needed to prove**
 
@@ -111,19 +108,19 @@ A potential litigant who encounters this judgment may want to get straight to th
 
 ![Claude's assessment of how the case applies to a potential claimant](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/claude-case-helpfulness-analysis.png)
 
-Two things stand out in the response. First, Claude defers parts of the analysis to "a lawyer or employment law specialist." Zeeker includes a disclaimer that its content is not legal advice; Claude adds its own. This is appropriate — knowing what the tribunal decided is not the same as knowing whether you will win. Second, the response flags a "practical reality": the monetary remedy for wrongful dismissal at the ECT is capped and may be limited. That is worth knowing before filing, and it has not changed with this judgment.
+Two things stand out in the response. First, Claude defers parts of the analysis to “a lawyer or employment law specialist.” Zeeker includes a disclaimer that its content is not legal advice; Claude adds its own. This is appropriate — knowing what the tribunal decided is not the same as knowing whether you will win. Second, the response flags a “practical reality”: the monetary remedy for wrongful dismissal at the ECT is capped and may be limited. That is worth knowing before filing, and it has not changed with this judgment.
 
 **Ask what adjacent cases look like**
 
-A single judgment, however detailed, is not the whole picture. A key legal research skill is locating similar cases and reasoning about them — applying the precedent, or distinguishing it. From a claimant's perspective, this all feeds one underlying question: will I win?
+A single judgment, however detailed, is not the whole picture. A key legal research skill is locating similar cases and reasoning about them — applying the precedent, or distinguishing it. From a claimant’s perspective, this all feeds one underlying question: will I win?
 
-Zeeker can surface similar cases through natural language. I asked: "Are there any other materials similar to this case that might be helpful to my situation?"
+Zeeker can surface similar cases through natural language. I asked: “Are there any other materials similar to this case that might be helpful to my situation?”
 
 ![Similar wrongful dismissal cases surfaced by Zeeker](https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/05/zeeker-similar-cases-search.png)
 
 Zeeker returned five recent cases relating to wrongful and unfair dismissal, plus recent law firm commentary on the area. After a follow-up prompt asking for a direct comparison to my hypothetical, the AI worked through the cases and offered a structured assessment — which arguments were likely to succeed, and which faced headwinds. These are not predictions. They are the right questions to bring into the first hour of any ECT matter.
 
-## Comparing Zeeker with what's out there
+## Comparing Zeeker with what’s out there
 
 **Paid databases like LawNet, WestLaw, LexisNexis**
 
@@ -133,13 +130,13 @@ What Zeeker has that LawNet does not: MCP access. There is currently no way to c
 
 Zeeker is also free. LawNet requires either a subscription or a trip to a public library. Zeeker is a proof of concept and pricing has not been decided — free for now because it is still being built.
 
-[What I Learned at SMU's Legal Database Launch (And My Decision About zeeker.sg)](https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/)
+[What I Learned at SMU’s Legal Database Launch (And My Decision About zeeker.sg)](https://www.alt-counsel.com/what-i-learned-at-smus-legal-database-launch-and-my-decision-about-data-zeeker-sg-2/)
 
 **Searching the web**
 
 Claude and ChatGPT can search the open web directly. For basic context — news coverage, MOM guidance, law firm articles — that works. For legal reasoning, it tends to go wrong.
 
-The web search does not understand court hierarchy, how to resolve conflicts between cases, or what *stare decisis* means in practice. If you use a web search to construct legal arguments, it is easy to end up with authoritative-sounding claims a court would not accept. Zeeker is a curated index of sources selected for authority — judgments, practice directions, and legal commentary. It is far from complete. But it has a better chance of giving you the right legal landscape than a general web search, and that gap will widen as Zeeker's coverage grows.
+The web search does not understand court hierarchy, how to resolve conflicts between cases, or what **stare decisis** means in practice. If you use a web search to construct legal arguments, it is easy to end up with authoritative-sounding claims a court would not accept. Zeeker is a curated index of sources selected for authority — judgments, practice directions, and legal commentary. It is far from complete. But it has a better chance of giving you the right legal landscape than a general web search, and that gap will widen as Zeeker’s coverage grows.
 
 ## Access isn't just entry to the room
 
@@ -153,4 +150,5 @@ For solo counsels and small legal teams, the first pass on a dense new judgment 
 
 What you do with the map still needs a lawyer. What you do with the blank page no longer does.
 
-> 🆘 **Interested to try out Zeeker MCP?** If you need help to install or work your way around it, feel free to comment on this post or reach out to me via email. I am also interested to find out what you've tried and how it has worked out for you!
+<!-- Ghost editor: rendered as a callout box; no local markdown equivalent -->
+🆘 **Interested to try out Zeeker MCP?** If you need help to install or work your way around it, feel free to comment on this post or reach out to me via email. I am also interested to find out what you've tried and how it has worked out for you!

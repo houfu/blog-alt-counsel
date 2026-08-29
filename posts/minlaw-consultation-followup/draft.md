@@ -2,9 +2,11 @@
 title: "From Draft to Final: What Changed in MinLaw's AI Guide (And What It Means for You)"
 slug: "minlaw-ai-guide-draft-to-final"
 tags: ["AI", "LegalTech", "Singapore", "Government"]
-status: scheduled
+status: published
 featured: true
 custom_excerpt: "I submitted feedback on MinLaw's draft AI guide expecting nothing. Six months later, the final guide adopted both recommendations near-verbatim. Here's what changed and what it means for solo counsel."
+feature_image: "https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/03/photo-1721132537184-5494c01ed87f.jpeg"
+published_at: "2026-03-09T00:51:43.000Z"
 post_id: "69ac4d6a1fe4720001852e6b"
 github_folder: "minlaw-consultation-followup"
 ---

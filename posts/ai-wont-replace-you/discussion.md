@@ -233,3 +233,29 @@ All three originate from the same talk prep, but the talk itself probably only s
 - TWS comic: could not verify exact "plagiarised imagery" wording from full comic text (only LinkedIn snippet available)
 - Post scheduled for 19 March 2026
 - Two follow-up post threads identified but not yet pitched
+
+## 2026-08-29 — Automated Ghost sync sweep
+
+- **Status**: frontmatter said `scheduled`; Ghost has had it as `published` since its 19 March 2026 go-live. Updated locally to `published`. All other frontmatter fields (title, slug, tags, custom_excerpt, feature_image, published_at, post_id, featured) already matched Ghost.
+- **Content drift found**: the live post now carries several elements not in the local markdown — an opening callout/disclaimer box ("This is an unusual post… I'll be happy if you decide to engage with them!"), a member paywall marker after the first paragraph, two embedded images (the TWS comic panel, and the Zhang eyes-closed/eyes-open comparison photo), and a pull-quote aside (the IBM 1979 "a computer can never be held accountable" line). These read as further hand-edits made directly in the Ghost editor after the Session 4–5 sync already recorded above — not reflected here since. Body prose itself still matches word-for-word elsewhere.
+- Not editing the markdown body per sync-sweep scope (frontmatter-only); flagging here so a future session can decide whether to pull these additions back into the repo copy.
+- Found via an automated Ghost sync sweep on 2026-08-29.
+
+## 2026-08-29 (session 2): Pulled live Ghost content into local markdown
+
+Phase 2 of the sync sweep above — full body rebuild from the live lexical content (frontmatter untouched). Fetched the published post via `ghost_post_get` and walked all 45 `root.children` nodes to reconstruct the body:
+
+- **Callout box** (⭐, blue): "This is an unusual post…" — rendered as a plain paragraph prefixed with `<!-- Ghost editor: rendered as a callout box (⭐, blue background) -->` (no local syntax for callouts).
+- **Members paywall**: added `<!--members-only-->` right after the opening paragraph, matching its live position.
+- **Two images**: the TWS comic panel (with its full alt text) and the Zhang eyes-closed/eyes-open comparison photo. The Zhang image has no alt text on Ghost — reproduced as `![]()`; flagging so someone can add alt text there.
+- **IBM 1979 pull-quote aside** ("A computer can never be held accountable…") — rendered as a plain paragraph prefixed with `<!-- Ghost editor: rendered as a pull-quote aside -->`, bold preserved on the emphasised words.
+- **New bullet list** under "How you save yourself" (template / AI draft / compliance checklist examples) that existed live but was missing from local entirely — not mentioned in the earlier sweep's hint.
+- **Emphasis style change**: four words that were `**bold**` in the old local file ("is", "into", "are", "labelled"/"in the work") are now `*italic*` on Ghost — treated as a deliberate editorial change and adopted from Ghost, not a typo.
+- **Straits Times bookmark** (Edwin Tong article): domain isn't in the bookmark-card whitelist, so rendered as a plain-paragraph link rather than an isolated bookmark line — per the accepted limitation for non-whitelisted domains.
+- **Three alt-counsel.com bookmarks** (Budget 2026, Legal AI Autonomy, When AI Makes You Look Busy) reproduced as proper `[title](url)`-alone bookmark lines.
+- **Dropped the local-only `# ` H1 title line** at the top of the body — it isn't a lexical node on Ghost (the theme renders the title separately), and matches the precedent set in `posts/skillsbench-analysis` after its own Ghost sync.
+- No trailing `call-to-action` node was present in the live content, so nothing needed to be stripped there.
+
+**Typo-preservation exception applied** (per sync-sweep rule 4): live Ghost text reads "In March 2026,The Woke Salayman published a comic..." — missing the space after the comma and misspelling "Salaryman" as "Salayman." The local file already had these correct, so kept the correct spelling/spacing while still adopting Ghost's genuine edit of widening the link to cover the whole clause ("...published a comic that crystallises this pattern."), rather than the old local's narrower link boundary. Flagging so Houfu can fix the spelling/spacing on the live Ghost post too.
+
+`npm run lint-posts -- ai-wont-replace-you` came back clean: 0 errors, 3 pre-existing warnings (main file not named after the folder, 3 internal links missing `?ref=` params, empty alt text on the Zhang image) — none of these are new from this change.

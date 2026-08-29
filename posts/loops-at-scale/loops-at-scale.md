@@ -4,7 +4,7 @@ slug: thinking-in-loops-frontier-budget
 tags:
   - AI
   - LegalTech
-status: scheduled
+status: published
 featured: false
 github_folder: loops-at-scale
 post_id: 6a32122639186c0001eab9af

@@ -851,3 +851,9 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 ### Published
 - Draft → Ghost post 6a47d32fbf2af40001c0095f; user set cover (AI-generated vintage half-time scoreboard, from prompt option 1) and **scheduled for 2026-07-04T01:00Z (9am SGT)**. Synced back (status, published_at, feature_image) at 80174e2.
 - Remaining for CHECK: after it goes live + any Ghost polish, final sync-ghost + live-vs-local content diff before closing PR #44; log notable Ghost edits here as voice decisions.
+
+## 2026-08-29 — Automated Ghost sync sweep
+
+- `2026-legal-ai-predictions.md` frontmatter was missing `custom_excerpt` and `feature_image`, both of which are set on the live Ghost record (id `695e594d8be18900017b93d4`, the original January predictions post — not the 6-month-update draft above). Added both to match Ghost exactly; title, slug, status, tags, published_at, post_id and featured were already correct.
+- Body content compared against the live lexical export: no drift detected, prose matches word-for-word.
+- Found via an automated Ghost sync sweep, not a manual editing session.

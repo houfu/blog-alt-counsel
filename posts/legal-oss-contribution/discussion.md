@@ -571,3 +571,30 @@ User opened the session with the post folder still untracked on `blog/legal-oss-
 - Schedule publication when ready
 - `npm run sync-ghost lawyers-not-on-each-others-code` once and add `post_id` to frontmatter
 - Part 2 KIV (what `docassemble`/`courtlistener` do differently + lessons from `redlines`)
+
+### 2026-08-29 — Automated Ghost sync sweep
+
+Found via an automated Ghost sync sweep, not a live editing session.
+
+**Frontmatter changed**
+- `status`: local said `scheduled`; Ghost shows `published` (published_at unchanged at 2026-05-11T01:15:11.000Z).
+- `featured`: local said `false`; Ghost shows `true` — the post was made a featured post on Ghost at some point after scheduling. Both fields corrected in `lawyers-not-on-each-others-code.md` frontmatter. Title, slug, tags, custom_excerpt, feature_image, and post_id all still match.
+
+**Content drift detected** (read-only finding, body not edited):
+- The live post opens with a callout not present in the local file: "📊 This post features data visualisations. They are best viewed on the website where you can zoom." — added directly in the Ghost editor, presumably once the SVG/PNG data-viz assets were in place.
+- The "quick primer on terms used for contributing to open source" (star/watch/fork/PR/merge definitions) is a collapsed toggle/accordion on Ghost; locally it's still a plain "To explain briefly:" bullet list. Editorial formatting choice made post-publish.
+- Small wording edit in "Why this might be happening": local reads "It appears law firms and other employers jealously guard their employee's contributions..."; the live post has the hedge dropped: "Law firms and other employers jealously guard their employee's contributions...". Worth pulling this phrasing back into the local draft.
+
+### 2026-08-29 — Session 6: Pulled live Ghost content into local markdown
+
+Phase 2 of the sync sweep (phase 1 fixed frontmatter only). Fetched the live post via `ghost_post_get` and rebuilt the body from its lexical content, confirming and applying the three items flagged by the read-only phase-1 finding above, plus a few more the fresh fetch turned up:
+
+- **Opening callout restored.** Added the dropped-in-Ghost callout as a plain paragraph with a leading HTML comment noting it renders as a callout box on Ghost: "This post features data visualisations. They are best viewed on the [website](...) where you can zoom." (no local callout syntax exists).
+- **"Quick primer" toggle reconstructed as a bullet list.** Ghost stores it as a collapsed toggle titled "A quick primer on terms used for contributing to open source"; rebuilt as that heading line followed by an HTML comment flagging the lost toggle behaviour, then the same 4-item star/watch/fork/pull-request/merge list (previously "To explain briefly:" in the local draft — that lead-in text no longer exists on Ghost, replaced by the toggle's own heading).
+- **Hedge dropped per Ghost.** "It appears law firms and other employers jealously guard..." → "Law firms and other employers jealously guard...", matching the live wording (this reads as a deliberate tightening Houfu made in the editor, not a typo).
+- **"Open Source theatre" formatting matches Ghost exactly.** Live text is bold-only, no surrounding quotes ("**Open Source theatre**"); the local draft had it as bold+italic with quotes (`***"Open Source theatre"***`) — corrected to match Ghost, since this reads as an intentional simplification rather than an error.
+- **Two bookmark link texts corrected to the live post's actual titles**: "Open source ai and why october matters" → "Open Source, AI, and Why October Matters"; "Tool vs infrastructure mindset" → "I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing." (both are alt-counsel.com bookmarks, so kept as bare `[title](url)` lines per this repo's bookmark convention).
+- **Images given real filenames/URLs.** The three data-viz placeholders (`mike-fork-mosaic.svg`, the forest PNG, `lawyer-coder-pr-beeswarm.svg`) were bare filename text locally; replaced with the actual `![](https://storage.ghost.io/...)` markdown pointing at the uploaded images (none of the three carry alt text or captions on Ghost, so none was invented).
+- **Table right-alignment on the Count column** preserved to match the original table styling.
+
+No frontmatter touched. `npm run lint-posts legal-oss-contribution` is clean of errors (3 pre-existing warnings remain: main-file-name-mismatch, missing `?ref=` on 4 internal links, and empty alt text on the 3 images — all reflect genuine current state, not introduced by this pass).

@@ -3,6 +3,8 @@ title: "My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)"
 slug: "my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom"
 tags: ["AI", "LegalTech", "Singapore", "2026Predictions"]
 status: published
+custom_excerpt: "Stanford predicts AI's measurement era, Forbes predicts transformation, Above the Law warns about hallucinations. Nobody's predicting what will actually happen for resource-constrained practitioners. Here are five testable predictions with public accountability."
+feature_image: "https://images.unsplash.com/photo-1758844898878-d7565be617a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDMxfHwyMDI2JTIwY2VsZWJyYXRpb258ZW58MHx8fHwxNzY3NzkxMzkzfDA&ixlib=rb-4.1.0&q=80&w=2000"
 published_at: "2026-01-08T00:33:52.000Z"
 post_id: "695e594d8be18900017b93d4"
 visibility: public

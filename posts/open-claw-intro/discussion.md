@@ -383,3 +383,33 @@ Notably, Daimon Legal was added per Marcus Tan's feedback, then cut in the lengt
 - Commit and push
 - Publish to Ghost
 - Sync metadata back via npm run sync-ghost
+
+## Session 6: Ghost Sync Sweep (2026-08-29)
+
+### Context
+Automated Ghost sync sweep comparing the local file against the live Ghost record (`openclaw-field-notes-lawyer`).
+
+### Findings
+- Frontmatter: no changes — title, slug, status, tags, custom_excerpt, feature_image, published_at, post_id, and featured all matched Ghost exactly.
+- Content drift detected: Houfu added a mid-post image ("A typical Sunday for my Zeekerbot.") in the Ghost editor after the "quiet, frustrating ways" paragraph — not present in the local markdown. He also appears to have inserted a members-only paywall marker right before the "Step 1: Audit what harness you already have" heading, gating the framework section for members. No other prose rewrites detected — the rest of the body matches word-for-word.
+
+### Next Steps
+- Consider pulling the Zeekerbot screenshot and paywall placement back into the local markdown at the next real editing pass on this post.
+
+## Session 7: Pulled Live Ghost Content Into Local Markdown (2026-08-29)
+
+### Context
+Phase 2 of the sync sweep (frontmatter was already handled in Session 6). Fetched the full lexical body of `openclaw-field-notes-lawyer` from Ghost and rebuilt the local markdown body node-by-node to match what's actually live, rather than patching only the two diffs Session 6 flagged.
+
+### What Changed
+- **Confirmed both Session 6 findings** and applied them: inserted the Zeekerbot image (`image-1.png`, empty alt on Ghost, caption "A typical Sunday for my Zeekerbot." — caption dropped, no local syntax for it) right after the "quiet, frustrating ways" paragraph; inserted the `<!--members-only-->` paywall marker right before "Step 1: Audit what harness you already have."
+- **Removed a bookmark card that no longer exists on Ghost.** The local file had a bookmark to "Why Prompt Engineering Felt Wrong" in the skills-system paragraph — Ghost's live content has that same sentence as plain prose with no bookmark/link at all. Dropped it to match.
+- **Converted the two blockquote-style callouts and the one pull-quote to plain paragraphs with an HTML comment noting the Ghost card type.** The local file used `> ` blockquote syntax for these, which `publish-lexical.js` doesn't actually parse (confirmed by reading the converter — no blockquote handling exists), so republishing this file as-is would have leaked literal `>` characters into the post. Fixed as a side effect of this sync.
+- **Promoted "Step 1 / Step 2 / Step 3" from bold paragraph text to real `###` headings** — Ghost's lexical structure has these as actual `extended-heading` (h3) nodes, not bold text.
+- **Matched formatting changes Houfu made in the Ghost editor**: "Where do you install it?", "Which model do you connect?", and "What do you actually use it for?" are italic on Ghost (local had them bold); "harness decisions" in the pull-quote is italic on Ghost (local had it bold); italics were removed from "see" (first paragraph), "real" ("the real decisions come next"), and "want"/"got" (Step 1 paragraph) — Ghost's copy is now plain there.
+- Left the two internal bookmark cards (data.zeeker.sg architecture, tool-vs-infrastructure-mindset) and all external links unchanged — Ghost's copy matches Session 5's original placement.
+
+### Caveats for a Human to Check
+- One formatting oddity in Ghost's raw lexical: "And then there's stability" is italic but the following period is bold (a split that looks like an editing artifact, not a typo) — reproduced faithfully (`*And then there's stability***.**`) rather than normalized, since it's a formatting quirk and not a textual typo. Worth a quick look on Ghost's side.
+- The Zeekerbot image's Ghost caption ("A typical Sunday for my Zeekerbot.") has no local markdown equivalent and was dropped per the sync conventions — mentioning here so it isn't lost track of.
+- `npm run lint-posts open-claw-intro` passes with 0 errors, 4 pre-existing warnings (filename-vs-folder mismatch, two internal links missing `?ref=`, one bookmark lead-in sentence, one image with empty alt — all pre-existing patterns, none introduced by this sync).
