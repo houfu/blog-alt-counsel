@@ -334,3 +334,57 @@ number, and the title) were put to the user at the end of the turn and are await
 ### Next Steps
 Await feedback on the five open decisions. Then amend pitch.md to whatever survives (logging which
 pitch-time check would have caught each), and WRITE.
+
+### Session 4 addendum: framing reset, pitch amended (2026-08-29)
+
+### Context
+User rejected the premise the first outline was built on.
+
+**User Decision (verbatim):**
+> the SLG article had different purposes: it was written for the general public of lawyers, so
+> diving into something overly technical like how to actually build the thing was not included.
+> this time we're going to dive deep into how to actually build the skill, but instead of using a
+> boring thing like singaporelawwatch rss (which i chose because many lawyers in singapore are
+> familiar with it) we're going to pick zeeker, a far richer and my own database
+
+**Rationale (his):** the Gazette article's omissions were audience choices, not gaps. SLW's RSS was
+picked for familiarity, not merit. The differentiator for this post is technical depth; the
+substrate change follows from it, because a four-field feed cannot reward depth and 10,804
+judgments can.
+
+### What Claude Got Wrong
+The first outline made the *seam* between two substrates the argument — RSS act one, Zeeker act
+two, source-swapping as the point. That was Claude's differentiation answer, not the user's. The
+recorded `differentiation` field said "this teaches the SEAM"; the user's actual answer is "the
+Gazette couldn't go technical and this does."
+
+**Which pitch-time check would have caught it:** DIFFERENTIATION again — and this is now the third
+time on this pitch that Claude built on its own framing rather than the user's (Session 2 logged
+"Claude let a serviceable answer stand"; Session 3 logged "Claude twice built on its own problem
+framing"). The unasked question each time is the same one: *why is the user writing this, in his
+words, rather than why is it interesting.* Recorded as a pattern, not a one-off.
+
+### What Claude Did
+- Rewrote `outline.md` to the deep-build shape: 8 sections, RSS demoted from act one to 250 words
+  of compressed context that exists to make the Zeeker clauses legible.
+- Amended `pitch.md` in place: `differentiation`, `framing_risk`, `subject`, `diagnosis`, the pitch
+  paragraph, all beats, and two new Out-of-scope entries. Both protected lines survive and are
+  placed. `word_budget` left at 2,800 — Houfu approved that figure and it is not Claude's to raise.
+- Raised `framing_risk` LOW → MEDIUM. A Zeeker-only build is much closer to a product demo. Answered
+  structurally: limits stated before Zeeker does argumentative work, three of five defects are
+  Zeeker's own and carry ~1,000 words, and the final section hands the method to a reader with no
+  Zeeker and no Singapore practice.
+
+### Outcomes
+- ✅ Beats re-cut to the build: reading the schema, `search` vs `query_table`, the Definitions clause
+  against a dirty taxonomy, per-source cadences, the honesty clauses.
+- ✅ Resolved from the earlier open list: the RSS/Zeeker structure question, three-failures-or-two
+  (RSS compresses to the two attested failures), and one skill file printed rather than two.
+- ✅ Cut "five years of tooling apart" to Out of scope — unsupportable on any reading.
+- ⚠ Still open: word budget (2,800 held vs 3,200 proposed for the build sections), the title, and
+  whether Marcus rises to co-primary now the post is a technical build with three observed defects.
+
+### Next Steps
+Houfu's call on budget and title. Then WRITE. Re-run every number in research.md first — every
+figure in beats 3–6 is dated 2026-08-29 and the corpus grows daily. Diagnose or disclose the open
+`failed_tables: 1`, since beat 6 cites `failed_tables` as an honesty mechanism.
