@@ -664,3 +664,53 @@ cuts or the pitch gets amended. Never smooth a passage he hand-wrote.
 ### Next Steps
 REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
 length audit before applying any additive fixes, then backlinks and tags.
+
+## Session 7: Reframed to how agentic building actually works (2026-08-30)
+
+**User Decision (verbatim):**
+> the tutorial explains every step in detail, but is that how agentic coding will go? what actually
+> will happen is that the user will provide a prompt, and we will see what is going underneath it
+
+### The problem, accepted
+The draft read like a manual — run `list_databases`, then `describe_table`, then send this
+`query_table` payload — which is not what anyone does. In practice the lawyer writes a sentence, the
+agent decides which tools to call, and the work is reading what came back.
+
+Evidence the critique was right, from the draft itself: exactly one paragraph already had the
+correct model ("Ask the assistant to run that obligation and show you the raw rows"). Everything
+around it had drifted into manual mode. The fix was to make the post consistent with that paragraph
+rather than treat it as an exception. His own hand-written opening had already set the frame —
+*"for an article that tries to extol the virtues of agentic coding, no coding actually takes place"*.
+
+### What changed
+Prompt-first across the build sections. Prompts go in fenced blocks, so they cost nothing against
+the word budget; the prose around them was rewritten in place rather than added to.
+
+- **Heading:** "You interrogate an MCP; you don't read it" → **"Send the agent in first"**. The old
+  heading asserted the manual model in three words.
+- **Survey step** is now a plain-English prompt, with the three discovery tools described as what
+  runs *underneath* it and never appears in the finished brief.
+- **The tool-selection lesson got stronger, not weaker.** You are not choosing between `search` and
+  `query_table` each morning — your brief chooses once, in writing, and the agent obeys it for as
+  long as you leave it there. "A badly drafted clause is not a mistake you catch in the moment. It
+  is a standing instruction." The 2010 result is now the agent faithfully executing a bad clause.
+- **The verification habit is promoted to the section's spine** and given its own prompt: make the
+  agent show every tool call and the raw rows before it writes anything. Closing line names what the
+  skill actually is — "you are not writing code, you are reading a transcript and asking whether it
+  is what you asked for."
+- **Cadence discovery** became one sentence to the agent instead of four hand-written queries.
+
+### Outcomes
+- ✅ 3,061 words, inside the 3,080 cap. Lint clean. Held in budget by trimming the provenance
+  paragraph and the "reproduce by hand" aside, both of which had gone slack.
+- ✅ The reframe sharpens the pitch's differentiation rather than departing from it: almost no skill
+  tutorial shows the loop of prompt → read the transcript → amend the clause.
+- ⚠ **19 words of headroom.** Any additive reviewer fix now requires cuts found first. The
+  length-audit-first rule is fully binding.
+- Left alone deliberately: his hand-written passages, and the six-moves list in the adaptation
+  section, which already reads correctly in the agentic frame ("interrogate the schema", "ask each
+  source") and did not need touching.
+
+### Next Steps
+REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
+length audit before any additive fix, then backlinks and tags.

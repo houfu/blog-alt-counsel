@@ -7,11 +7,11 @@ featured: false
 github_folder: "morning-briefing-tutorial"
 ---
 
-I was pretty chuffed when the I saw my article was published in the August version of the Singapore Law Gazette. It was about building your own morning briefing: I wanted to introduce agentic coding to a wider range of lawyers and showed them what was possible with AI today. So I went for the simplest, most familiar slice possible: a plain-text skill file that tells an AI assistant what your practice is and what counts as done. It ran against Singapore Law Watch's RSS feed, because most Singapore lawyers already know that feed.
+I was pretty chuffed when my article was published in the August version of the Singapore Law Gazette. I wanted to introduce agentic coding to a wider range of lawyers and showed them what was possible with AI today. So I went for the simplest, most familiar slice possible: a plain-text skill file that tells an AI assistant what your practice is and what counts as done, then creates a morning briefing out of that. It ran against Singapore Law Watch's RSS feed, because most Singapore lawyers already know that feed.
 
 [Breakfast, Eventually: Why Lawyers Should Build Their Own Tools](https://lawgazette.com.sg/practice/tech-talk/breakfast-eventually-why-lawyers-should-build-their-own-tools/)
 
-Strangely, for an article that tries to extol the virtues of agentic coding, no coding actually takes place. If you read this blog regularly enough, you would guess that running a text file skill against an RSS file seems pretty quaint. The scent that my ambitions went far beyond that were wafting through the pages when I introduced SG Law Cookies. Beyond creating a traditional Singaporean bakery that baked *kuih bangkit* based on the significance of the legal update, it also connects through Zeeker’s rich and varied data repository.  
+Strangely, for an article that tries to extol the virtues of agentic coding, no coding actually takes place. If you read this blog regularly enough, you would guess that running a text file skill against an RSS file seems pretty quaint to me. The scent that my ambitions went far beyond that were wafting between the lines when I introduced SG Law Cookies. Beyond creating a traditional Singaporean bakery that baked *kuih bangkit* based on the significance of the legal update, it also connects through Zeeker’s rich and varied data repository of the latest legal information.  
 
 [Come Into the Bakery: What I Did With All That Legal Data](https://www.alt-counsel.com/come-into-the-bakery/?ref=read-the-server-before-you-draft)
 
@@ -31,9 +31,9 @@ In the SLG article, the agent rewrote each time.
 
 Both fixes landed in the same two clauses. Uncertain items go in a "Possibly relevant" line with one sentence of doubt, rather than disappearing. Summaries must be supportable from the title and description alone. Nothing I amended was ever about RSS.
 
-## You interrogate an MCP; you don't read it
+## Send the agent in first
 
-To proceed on this tutorial, you’re going to need a skill reading, MCP connecting client. Claude Code obviously works and so does Codex. The desktop versions should be able to do so with some configuration. If you want to know whether your AI client supports it or how to set it up, you should just ask it. 
+To proceed on this tutorial, you’re going to need a skill reading, MCP connecting client. Claude Code works and so does Codex. The desktop versions of these tools can connect to the MCP with some configuration. If you want to know whether your AI client supports it or how to set it up, you should just ask it. 
 
 Connecting is the short part. For Claude Code:
 
@@ -43,11 +43,19 @@ claude mcp add --transport http zeeker https://mcp.zeeker.sg/mcp
 
 Other clients take the same URL in their MCP settings. For zeeker, there is no sign-up and no API key; you are rate-limited to 60 calls a minute, which no briefing will ever approach.
 
-Now stop. Before you write a single clause, ask the server what it has. This is the same move as reading a precedent before you draft from it, and it is the step people skip. Three of the six tools exist only for this: `list_databases`, `list_tables` and `describe_table`.
+Now stop. Before you write a single clause, find out what the server actually has. This is the same move as reading a precedent before you draft from it, and it is the step people skip.
 
-Asking what is there at all returns five databases: court judgments, PDPC enforcement decisions and guidance, newsroom releases from eight ministries and agencies, Singapore Law Watch headlines and commentaries, and the daily extractions behind SG Law Cookies.
+You will not be typing any of it yourself. That is the thing a step-by-step manual gets wrong about building this way: you write a sentence in English, the agent decides which tools to call, and the work you are actually doing is reading what comes back. So the first move is a prompt, not a command:
 
-Then go down a level. `list_tables` gives you row counts and a one-line description per table, and `describe_table` gives you the schema. Asking about the judgments table returns, among other things:
+```text
+You're connected to the zeeker MCP. Before I write anything, show me what is
+in there — the databases, the tables in each, and the full schema of the
+judgments table. List the columns; don't summarise them.
+```
+
+Underneath that sentence, three of the six tools do all the work, and they exist only for this moment: `list_databases`, `list_tables` and `describe_table`. They never appear in the finished brief, because surveying the ground is not the same job as producing a briefing.
+
+What comes back first is five databases: court judgments, PDPC enforcement decisions and guidance, newsroom releases from eight ministries and agencies, Singapore Law Watch headlines and commentaries, and the daily extractions behind SG Law Cookies. Then, one level down, the part worth slowing over — the judgments schema:
 
 ```json
 {
@@ -96,18 +104,18 @@ Zeeker, for the avoidance of doubt, is a Singapore legal database I maintain and
 
 A feed has one verb: fetch. This server has six, and knowing which is which is most of the drafting:
 
-- `list_databases`, `list_tables` and `describe_table` tell you what exists and what shape it is in. You use them while writing the brief, not while running it.
+- `list_databases`, `list_tables` and `describe_table` say what exists and what shape it is in. They get used while you are surveying, not while the briefing runs.
 - `query_table` retrieves rows by filter and sort. Thirteen operators, including `gte` and `lte` on a date, `contains` and `startswith` on text.
 - `search` runs full-text search across every indexed table at once.
 - `fetch` returns a single row when you already have its URL.
 
-Two of those look like they do the same job. Choosing wrong is the mistake I actually made, and it is the one worth your attention, because the output does not look like an error. It looks like a briefing.
+Two of those look like they do the same job, and here is the part that matters: you are not the one choosing between them each morning. Your brief chooses, once, in writing, and the agent then does exactly what the brief says for as long as you leave it there. A badly drafted clause is not a mistake you catch in the moment. It is a standing instruction.
 
 The first version of my brief said: use `search`, scoped to the PDPC database, for enforcement decisions in the last three days. That reads like a reasonable instruction. Here is what `search` says about itself:
 
 > Results are relevance-ranked: BM25 scoring within each source table, then reciprocal-rank fusion merges the per-table rankings into one list.
 
-No date parameter. There never was one. Ask it for enforcement and it returns, in this order:
+No date parameter. There never was one. So the agent, obeying my clause to the letter, called `search` and got back, in this order:
 
 ```text
 2026-06-11   Tanjong Katong Road South Sinkhole: Enforcement Actions To Be Taken
@@ -117,11 +125,9 @@ No date parameter. There never was one. Ask it for enforcement and it returns, i
 2026-05-18   Three Online Retailers Caught Using False Urgency Tactics
 ```
 
-Third result: a media brief from November 2010, ready to be served as this morning's news. The tool did exactly what its description says it does. I had read that description and still wrote a clause that assumed a filter which was never there.
+Third result: a media brief from November 2010, ready to be served as this morning's news. Nothing there is broken. Relevance ranking is what full-text search is for, and the tool did exactly what its description says. I had read that description and still wrote a clause assuming a filter which was never there.
 
-Nothing there is broken. Relevance ranking is what full-text search is for, and if you ask "has anything ever been said about enforcement", that list is a good answer. It is simply not the question a briefing asks.
-
-The rule that went into the brief, and the one I would put in yours: **`search` answers "about what"; `query_table` answers "since when". A briefing is a "since when" question.** Keep `search` for the topical asks you make by hand — "anything on directors' duties this year?" — and sweep with `query_table`, which takes filters and a sort:
+The rule that went into the brief, and the one I would put in yours: **`search` answers "about what"; `query_table` answers "since when". A briefing is a "since when" question.** Keep `search` for the topical asks you make by hand, and sweep with `query_table`. Amend the clause and the agent's call changes shape underneath it:
 
 ```json
 {
@@ -133,9 +139,16 @@ The rule that went into the brief, and the one I would put in yours: **`search` 
 }
 ```
 
-This is a clause type a feed-reading brief never needed. When the source has one verb, the obligation is just "fetch the feed". When it has six, the brief has to allocate obligations to tools, obligation by obligation, and say which tool is wrong for which job.
+This is a clause type a feed-reading brief never needed. One verb, and the obligation is just "fetch the feed". Six, and the brief has to allocate obligations to tools and say which tool is wrong for which job.
 
-There is a habit worth forming here, and it is the only reason I caught this at all. Before you trust a clause, perform it yourself once. Ask the assistant to run that obligation and show you the raw rows, then look at the dates. Not the summaries, not whether the items seem plausible — the dates. A wrongly drafted sweep returns real cases with real citations about the right subject, and the only thing marking it out is that one of them is from 2010. Every check that matters here is that boring: are these the right dates, are these all the sources, is this everything.
+Which brings me to the habit, and it is the only reason I caught any of this. The agent will not tell you it was handed a bad instruction; it will carry one out and hand you a tidy document. So make it show its work:
+
+```text
+Before you write the briefing, show me every tool call you're about to make
+and what each one returned. Just the calls and the raw rows.
+```
+
+Then look at the dates. Not the summaries, not whether the items seem plausible — the dates, the sources, the count. A wrongly drafted sweep returns real cases with real citations about the right subject, and the only thing marking it out is that one of them is from 2010. This is the whole skill, and it is unglamorous: you are not writing code, you are reading a transcript and asking whether it is what you asked for.
 
 ## You are querying live infrastructure
 
@@ -143,18 +156,17 @@ A feed is a file you download. A server is something you ask, and it can be aske
 
 Constrain every query. An unbounded request against 10,804 rows is not a bigger version of a small one; it is a request that does not come back. So the first obligation in the brief is that no table is ever queried without a date filter.
 
-Done properly, a morning briefing is a handful of calls: one per source, each returning a few dozen rows of light columns. That is why the rate limit never comes near mattering, and it is also the shape you want for a different reason. A small, dated, explicit query is one you can reproduce by hand when the output looks wrong, which you will want to do in the first week.
+Done properly, a morning briefing is a handful of calls: one per source, each returning a few dozen rows of light columns. Small, dated and explicit is also the shape you want when you make the agent show its work, because a call you can read in four lines is one you can check.
 
 Then there is the rhythm problem, which is the one that cost me a working briefing without ever looking broken. Judgments arrive most days — the most recent when I built this was dated 28 August, the day before. PDPC enforcement decisions do not. The most recent was 5 August, twenty-four days earlier. A single three-day window across both sources means the PDPC section returns nothing every single morning, and nothing about the output tells you that. An omitted section and a quiet section produce the same document.
 
-You find this out by asking each source, before you set any window at all, when it last published anything:
+You find this out before you set any window at all, and again it is one sentence:
 
-```json
-{"database": "pdpc", "table": "enforcement_decisions",
- "sort": "-decision_date", "limit": 3}
+```text
+For each source I'm about to sweep, tell me the date of its most recent item.
 ```
 
-Three rows, no filter, sorted newest first. Do it once per source and write the answers down; it takes about two minutes and it is the difference between a window you chose and a window you assumed.
+The agent runs four unfiltered, three-row, newest-first queries and hands you four dates. It takes a minute, and it is the difference between a window you chose and a window you assumed.
 
 So "The Window" stops being one period and becomes four: judgments over three days, PDPC over sixty, government newsrooms over fourteen, Singapore Law Watch over three. Then the clause that makes the difference visible — an empty source is named, with the date of its most recent item. "PDPC: nothing since 5 August" is a sentence you can act on. An absent section is not.
 
@@ -171,7 +183,7 @@ Reformd Pte Ltd v Kopigi Pte Ltd [2026] SGHC 175 (SGHC, 2026-08-28)
 
 Nothing about an RSS feed does this, and for a lawyer it is the strongest practical argument for building against an MCP rather than scraping a website. The citation is not something your assistant assembles from parts it half-remembers. It arrives with the row. So the brief can forbid the assembly outright: cite using the string exactly as returned, never construct, reformat or complete one.
 
-The provenance block does the same job one level up. It names the source, the licence and the required attribution on every response, which means that when a summary from a morning briefing ends up in a note to a client, you already know the terms it came under and whether it can be quoted. Note also what the table description said: the full judgment text is indexed for search but not distributed. Your briefing links to the Judiciary's own copy rather than passing around someone else's. That is a good property to inherit and a bad one to lose, and it is the kind of thing you only find out by reading the schema first.
+The provenance block does the same job one level up, naming the source, the licence and the required attribution on every response — so when a line from a briefing ends up in a note to a client, you know the terms it came under. Note too what the schema said: full judgment text is indexed but not distributed, so your briefing links to the Judiciary's own copy rather than passing around someone else's. That is a good property to inherit, and you only find it by reading the schema first.
 
 That clause sits alongside the rest of the standard of performance, and each of the others answers a specific way the output can go quietly wrong. Every item must come from a call made today, because an assistant that knows a great deal about Singapore company law can furnish a plausible morning briefing without querying anything at all. Summaries must be supportable from what the tools actually returned, because asked for eight items on a thin day it will find eight — the same reason entire agreement clauses exist. And if no source can be reached, it should say exactly that and stop, rather than falling back on general knowledge, which is the failure that looks most like success.
 
