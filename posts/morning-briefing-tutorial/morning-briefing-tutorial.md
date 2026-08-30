@@ -42,7 +42,7 @@ Connecting is the short part. For Claude Code:
 claude mcp add --transport http zeeker https://mcp.zeeker.sg/mcp
 ```
 
-Other clients take the same URL in their MCP settings. For zeeker, there is no sign-up and no API key; you are rate-limited to 60 calls a minute, which no briefing will ever approach.
+Other clients take the same URL in their MCP settings. Zeeker is a Singapore legal database I maintain, and it is public and free: no sign-up, no API key, 60 calls a minute, which no briefing will ever approach. Both clients above need a paid plan of their own, though — that is the only thing here that costs anything.
 
 Now stop. Before you write a single instruction, find out what the server actually has. This is the step people skip.
 
@@ -99,8 +99,6 @@ other item:
 
 Those tags are written by hand, one judgment at a time, and they are not uniform. Some use an em dash, some an en dash, some no separator at all, and a few run to several paragraphs. Your matching rule should compare case-insensitively, match on the leading subject words rather than splitting on a separator, and treat a tag it cannot parse as uncertain rather than excluded. That is ordinary care with hand-written data.
 
-Zeeker, by the way, is a Singapore legal database I maintain. It is public and free.
-
 [The Judgment, Not the Summary: How Zeeker MCP Can Change the Way you do Legal Research](https://www.alt-counsel.com/ect-no-lawyers-zeeker/?ref=read-the-server-before-you-draft)
 
 ## The tools answer different questions
@@ -128,7 +126,7 @@ No date parameter. There never was one. So the agent, obeying my instruction to 
 2026-05-18   Three Online Retailers Caught Using False Urgency Tactics
 ```
 
-Third result: a media brief from November 2010, ready to be served as this morning's news. Nothing there is broken. Relevance ranking is what full-text search is for, and the tool did exactly what its description says. I had read that description and still wrote an instruction assuming a filter which was never there.
+Third result: a media brief from November 2010, ready to be served as this morning's news. The tool did exactly what its description says. I had read that description and still wrote an instruction assuming a filter which was never there.
 
 The rule that went into the brief, and the one I would put in yours: **`search` answers "about what"; `query_table` answers "since when". A briefing is a "since when" question.** Keep `search` for the topical asks you make by hand, and sweep with `query_table`. Amend the instruction and the agent's call changes shape underneath it:
 
@@ -173,7 +171,7 @@ The agent runs four unfiltered, three-row, newest-first queries and hands you fo
 
 So "The Window" stops being one period and becomes four: judgments over three days, PDPC over sixty, government newsrooms over fourteen, Singapore Law Watch over three. Then the line that makes the difference visible — an empty source is named, with the date of its most recent item. "PDPC: nothing since 5 August" is a sentence you can act on.
 
-The same reasoning covers partial failure. Every response from this server carries a count of the tables it could not reach, so a sweep across four sources can succeed on three and look completely normal. The brief has to say what to do about that: name the source that failed and state that the briefing is partial. So the brief must name the failure rather than just returning a shorter list.
+The same reasoning covers partial failure. Every response from this server carries a count of the tables it could not reach, so a sweep across four sources can succeed on three and look completely normal. The brief has to say what to do about that: name the source that failed, and say the briefing is partial.
 
 ## Provenance comes with the data
 
@@ -184,11 +182,11 @@ Reformd Pte Ltd v Kopigi Pte Ltd [2026] SGHC 175 (SGHC, 2026-08-28)
   — https://www.elitigation.sg/gd/s/2026_SGHC_175
 ```
 
-Nothing about an RSS feed does this, and for a lawyer it is the strongest practical argument for building against an MCP rather than scraping a website. The citation is not something your assistant assembles from parts it half-remembers. It arrives with the row. So the brief can forbid the assembly outright: cite using the string exactly as returned, never construct, reformat or complete one.
+Nothing about an RSS feed does this. For a lawyer it is the strongest practical argument for building against a server that bundles provenance with the row, rather than scraping a site and assembling the reference yourself. The citation is not something your assistant assembles from parts it half-remembers. It arrives with the row. So the brief can forbid the assembly outright: cite using the string exactly as returned, never construct, reformat or complete one.
 
 The provenance block does the same job one level up, naming the source, the licence and the required attribution on every response — so when a line from a briefing ends up in a note to a client, you know the terms it came under. Note too what the schema said: full judgment text is indexed but not distributed, so your briefing links to the Judiciary's own copy rather than passing around someone else's. That is a good property to inherit, and you only find it by reading the schema first.
 
-That sits alongside the others governing what counts as an honest answer, and each of them answers a specific way the output can go quietly wrong. Every item must come from a call made today, because an assistant that knows a great deal about Singapore company law can furnish a plausible morning briefing without querying anything at all. Summaries must be supportable from what the tools actually returned, because asked for eight items on a thin day it will find eight. And if no source can be reached, it should say exactly that and stop, rather than falling back on general knowledge.
+The other rules about honesty answer the same shape of problem: an assistant that knows a great deal about Singapore company law can furnish a plausible briefing without querying anything, and asked for eight items on a thin day it will find eight.
 
 Which is where the comparison lands. In the feed version, three instructions covered what counted as an honest answer. Here it takes six, and the three new ones all follow from talking to a live server rather than reading a file: name empty sources, report incomplete sweeps, cite what you were given.
 
@@ -319,17 +317,7 @@ testing a tag against Practice Interests:
   from general knowledge.
 ```
 
-The columns named for `pdpc`, `sg-gov-newsrooms` and `sglawwatch` came from the same survey, run once per database. Save the file in your client's skills folder, open the client, and ask for your morning briefing.
-
-## Making it yours
-
-Everything with your name on it lives in one place, so adapting this is a substitution exercise. A construction lawyer would define `Practice Interests` around adjudication under the Security of Payment Act, defects and delay claims, BCA announcements and standard-form revisions, would move `Excluded Matters` to cover corporate and commercial news, and would tighten the urgency ranking, because adjudication timelines are measured in days rather than weeks. Nothing else changes at all.
-
-If your server is not this one, the six moves are still the same. Interrogate the schema before you draft. Find out which tool answers "since when" and which answers "about what". Constrain every query. Ask each source when it last published anything, before you decide how far back to look. Make the brief report a partial sweep. Take the citations the server gives you instead of letting them be assembled. Then write down what you actually care about, which is the part no model can write for you.
-
-[What 7,308 Agent Runs Taught Me About Writing Better Skills](https://www.alt-counsel.com/skillsbench-analysis/?ref=read-the-server-before-you-draft)
-
-One note on confidentiality. All of this runs on public data. The databases are public, the skill file holds your professional interests rather than your clients' affairs, and no matter name or document goes near the workflow. The Law Society's advisory of 2 April 2026 warns against feeding client information into publicly available AI tools, and a briefing skill never needs to. Build first where the stakes are breakfast.
+The columns named for `pdpc`, `sg-gov-newsrooms` and `sglawwatch` came from the same survey, run once per database. Save the file in your client's skills folder — `~/.claude/skills/` for Claude Code — then open the client and ask for your morning briefing.
 
 ## The same server carries two layers
 
@@ -343,10 +331,20 @@ That is the trade, and the question to ask of any derived layer anywhere: how mu
 
 If you want the finer unit without inheriting the ratings, `folio_areas` is the middle path. It carries FOLIO identifiers — an open legal taxonomy rather than anything of mine — so what you count as relevant can match on a standard that will outlive any one database.
 
+## Making it yours
+
+Everything with your name on it lives in one place, so adapting this is a substitution exercise. A construction lawyer would define `Practice Interests` around adjudication under the Security of Payment Act, defects and delay claims, BCA announcements and standard-form revisions, would move `Excluded Matters` to cover corporate and commercial news, and would tighten the urgency ranking, because adjudication timelines are measured in days rather than weeks. Nothing else changes at all.
+
+If your server is not this one, the six moves are still the same. Interrogate the schema before you draft. Find out which tool answers "since when" and which answers "about what". Constrain every query. Ask each source when it last published anything, before you decide how far back to look. Make the brief report a partial sweep. Take the citations the server gives you instead of letting them be assembled. Then write down what you actually care about, which is the part no model can write for you.
+
+[What 7,308 Agent Runs Taught Me About Writing Better Skills](https://www.alt-counsel.com/skillsbench-analysis/?ref=read-the-server-before-you-draft)
+
+One note on confidentiality. All of this runs on public data. The databases are public, the skill file holds your professional interests rather than your clients' affairs, and no matter name or document goes near the workflow. [The Law Society's advisory of 2 April 2026](https://www.lawsociety.org.sg/law-society-advisory-on-the-use-of-publicly-available-ai-tools-pdf-link) warns against feeding client information into publicly available AI tools, and a briefing skill never needs to. Build first where the stakes are breakfast.
+
 ## What you end up with
 
 The first briefing you get will be wrong somewhere. That is the useful part, and it is why the rules about reporting gaps matter more than they look: a briefing that reports its own gaps can be corrected in ten seconds over coffee, and one that does not can only be trusted or ignored.
 
 Run it for a week. Each time it is wrong, ask which instruction failed and amend that one rather than the whole document. After three or four amendments the file goes quiet and simply works, and what you are left with is a precise written record of your own editorial judgment — which you have probably never had to set down before, because no junior ever asked you to.
 
-Mine is retired now, and I still think it was worth the fortnight.
+Mine is retired now — Cookies does that job for me — and I still think it was worth the fortnight it took to write.

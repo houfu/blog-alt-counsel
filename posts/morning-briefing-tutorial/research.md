@@ -139,3 +139,18 @@ agc_news, ccs_news, ipos_news, judiciary_news, mlaw_news, mom_news, pdpc_news.
 **Still unverified, and the one real gap:** "The Law Society's advisory of 2 April 2026 warns against
 feeding client information into publicly available AI tools." Carried over from Houfu's Law Gazette
 tutorial. No source located; needs either a link or his confirmation before publishing.
+
+**Thirteen filter operators** (flagged by Marcus as the one untraced figure). `query_table`'s
+`filters[].op` enum, from `tools/list`, has exactly 13 members: exact, not, contains, startswith,
+endswith, gt, gte, lt, lte, in, notin, isnull, notnull. The draft is correct.
+
+**"Reformd Pte Ltd v Kopigi Pte Ltd [2026] SGHC 175"** (flagged by Wei Lin as reading invented). Real.
+https://www.elitigation.sg/gd/s/2026_SGHC_175 returns HTTP 200, page title "[2026] SGHC 175",
+S Mohan J, a retail fit-out dispute over a Cineleisure unit. The case name came verbatim from
+Zeeker's `_citation` field, which is the post's own point. No change made.
+
+**Law Society advisory — RESOLVED 2026-08-30.** "Law Society Advisory on the Use of Publicly Available
+AI Tools", dated 2 April 2026, listed on lawsociety.org.sg's front page and corroborated by Legal500's
+Singapore AI chapter. Linked in the draft:
+https://www.lawsociety.org.sg/law-society-advisory-on-the-use-of-publicly-available-ai-tools-pdf-link
+This was the last unverified claim in the post.
