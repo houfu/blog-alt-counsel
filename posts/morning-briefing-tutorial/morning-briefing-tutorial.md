@@ -44,7 +44,7 @@ claude mcp add --transport http zeeker https://mcp.zeeker.sg/mcp
 
 Other clients take the same URL in their MCP settings. For zeeker, there is no sign-up and no API key; you are rate-limited to 60 calls a minute, which no briefing will ever approach.
 
-Now stop. Before you write a single clause, find out what the server actually has. This is the step people skip.
+Now stop. Before you write a single instruction, find out what the server actually has. This is the step people skip.
 
 You will not be typing any of it yourself. You write a sentence in English, the agent decides which tools to call, and your actual work is reading what comes back. So the first move is a prompt, not a command:
 
@@ -73,7 +73,7 @@ What comes back first is five databases: court judgments, PDPC enforcement decis
 }
 ```
 
-Three things in that output change how you draft. There are 10,804 judgments, so any obligation that says "look at everything" is already wrong. There is a light column set distinct from the available set, so you can ask for the nine columns a briefing needs and leave the full judgment text where it is. And there is a column called `subject_tags`.
+Three things in that output change how you draft. There are 10,804 judgments, so anything that tells the agent to "look at everything" is already wrong. There is a light column set distinct from the available set, so you can ask for the nine columns a briefing needs and leave the full judgment text where it is. And there is a column called `subject_tags`.
 
 That column is the reason to build here rather than on a feed. It carries the subject in the court's own words:
 
@@ -83,7 +83,7 @@ That column is the reason to build here rather than on a feed. It carries the su
 "Contract — Termination"
 ```
 
-The feed's `category` told you who was speaking. This tells you what the case is about. So the Definitions clause stops guessing and starts matching a field:
+The feed's `category` told you who was speaking. This tells you what the case is about. So what you count as relevant stops guessing and starts matching a field:
 
 ```markdown
 "Practice Interests" means any of the following subject areas, as they appear
@@ -95,7 +95,7 @@ other item:
 (d) Arbitration.
 ```
 
-Those tags are written by hand, one judgment at a time, and they are not uniform. Some use an em dash, some an en dash, some no separator at all, and a few run to several paragraphs. Your matching clause should compare case-insensitively, match on the leading subject words rather than splitting on a separator, and treat a tag it cannot parse as uncertain rather than excluded. That is ordinary care with hand-written data.
+Those tags are written by hand, one judgment at a time, and they are not uniform. Some use an em dash, some an en dash, some no separator at all, and a few run to several paragraphs. Your matching rule should compare case-insensitively, match on the leading subject words rather than splitting on a separator, and treat a tag it cannot parse as uncertain rather than excluded. That is ordinary care with hand-written data.
 
 Zeeker, for the avoidance of doubt, is a Singapore legal database I maintain and it is public and free.
 
@@ -110,13 +110,13 @@ A feed has one verb: fetch. This server has six, and knowing which is which is m
 - `search` runs full-text search across every indexed table at once.
 - `fetch` returns a single row when you already have its URL.
 
-Two of those look like they do the same job, and here is what matters: you are not the one choosing between them each morning. Your brief chooses, once, in writing, and the agent does exactly what it says for as long as you leave it there. A badly drafted clause is not a mistake you catch in the moment. It is a standing instruction.
+Two of those look like they do the same job, and here is what matters: you are not the one choosing between them each morning. Your brief chooses, once, in writing, and the agent does exactly what it says for as long as you leave it there. A badly written instruction is not a mistake you catch in the moment. It is a standing instruction.
 
 The first version of my brief said: use `search`, scoped to the PDPC database, for enforcement decisions in the last three days. That reads like a reasonable instruction. Here is what `search` says about itself:
 
 > Results are relevance-ranked: BM25 scoring within each source table, then reciprocal-rank fusion merges the per-table rankings into one list.
 
-No date parameter. There never was one. So the agent, obeying my clause to the letter, called `search` and got back, in this order:
+No date parameter. There never was one. So the agent, obeying my instruction to the letter, called `search` and got back, in this order:
 
 ```text
 2026-06-11   Tanjong Katong Road South Sinkhole: Enforcement Actions To Be Taken
@@ -126,9 +126,9 @@ No date parameter. There never was one. So the agent, obeying my clause to the l
 2026-05-18   Three Online Retailers Caught Using False Urgency Tactics
 ```
 
-Third result: a media brief from November 2010, ready to be served as this morning's news. Nothing there is broken. Relevance ranking is what full-text search is for, and the tool did exactly what its description says. I had read that description and still wrote a clause assuming a filter which was never there.
+Third result: a media brief from November 2010, ready to be served as this morning's news. Nothing there is broken. Relevance ranking is what full-text search is for, and the tool did exactly what its description says. I had read that description and still wrote an instruction assuming a filter which was never there.
 
-The rule that went into the brief, and the one I would put in yours: **`search` answers "about what"; `query_table` answers "since when". A briefing is a "since when" question.** Keep `search` for the topical asks you make by hand, and sweep with `query_table`. Amend the clause and the agent's call changes shape underneath it:
+The rule that went into the brief, and the one I would put in yours: **`search` answers "about what"; `query_table` answers "since when". A briefing is a "since when" question.** Keep `search` for the topical asks you make by hand, and sweep with `query_table`. Amend the instruction and the agent's call changes shape underneath it:
 
 ```json
 {
@@ -140,7 +140,7 @@ The rule that went into the brief, and the one I would put in yours: **`search` 
 }
 ```
 
-This is a clause type a feed-reading brief never needed. One verb, and the obligation is just "fetch the feed". Six, and the brief has to allocate obligations to tools and say which tool is wrong for which job.
+This is a kind of instruction a feed-reading brief never needed. One verb, and it is just "fetch the feed". Six, and the brief has to say which tool serves which job, and which tool is wrong for it.
 
 Which brings me to the habit, and it is the only reason I caught any of this. The agent will not tell you it was handed a bad instruction; it will carry one out and hand you a tidy document. So make it show its work:
 
@@ -155,7 +155,7 @@ Then look at the dates. Not the summaries, not whether the items seem plausible 
 
 A feed is a file you download. A server is something you ask, and it can be asked badly.
 
-Constrain every query. An unbounded request against 10,804 rows is not a bigger version of a small one; it is a request that does not come back. So the first obligation in the brief is that no table is ever queried without a date filter.
+Constrain every query. An unbounded request against 10,804 rows is not a bigger version of a small one; it is a request that does not come back. So the first thing the brief says is that no table is ever queried without a date filter.
 
 Done properly, a morning briefing is a handful of calls: one per source, a few dozen rows of light columns each. That is also the shape you want when you make the agent show its work, because a call you can read in four lines is one you can check.
 
@@ -169,7 +169,7 @@ For each source I'm about to sweep, tell me the date of its most recent item.
 
 The agent runs four unfiltered, three-row, newest-first queries and hands you four dates. It takes a minute, and it is the difference between a window you chose and a window you assumed.
 
-So "The Window" stops being one period and becomes four: judgments over three days, PDPC over sixty, government newsrooms over fourteen, Singapore Law Watch over three. Then the clause that makes the difference visible — an empty source is named, with the date of its most recent item. "PDPC: nothing since 5 August" is a sentence you can act on. An absent section is not.
+So "The Window" stops being one period and becomes four: judgments over three days, PDPC over sixty, government newsrooms over fourteen, Singapore Law Watch over three. Then the line that makes the difference visible — an empty source is named, with the date of its most recent item. "PDPC: nothing since 5 August" is a sentence you can act on. An absent section is not.
 
 The same reasoning covers partial failure. Every response from this server carries a count of the tables it could not reach, so a sweep across four sources can succeed on three and look completely normal. The brief has to say what to do about that: name the source that failed and state that the briefing is partial. A short briefing and a broken briefing are the same document unless the brief makes the assistant tell you which one you are reading.
 
@@ -186,11 +186,11 @@ Nothing about an RSS feed does this, and for a lawyer it is the strongest practi
 
 The provenance block does the same job one level up, naming the source, the licence and the required attribution on every response — so when a line from a briefing ends up in a note to a client, you know the terms it came under. Note too what the schema said: full judgment text is indexed but not distributed, so your briefing links to the Judiciary's own copy rather than passing around someone else's. That is a good property to inherit, and you only find it by reading the schema first.
 
-That clause sits alongside the rest of the standard of performance, and each of the others answers a specific way the output can go quietly wrong. Every item must come from a call made today, because an assistant that knows a great deal about Singapore company law can furnish a plausible morning briefing without querying anything at all. Summaries must be supportable from what the tools actually returned, because asked for eight items on a thin day it will find eight. And if no source can be reached, it should say exactly that and stop, rather than falling back on general knowledge, which is the failure that looks most like success.
+That sits alongside the others governing what counts as an honest answer, and each of them answers a specific way the output can go quietly wrong. Every item must come from a call made today, because an assistant that knows a great deal about Singapore company law can furnish a plausible morning briefing without querying anything at all. Summaries must be supportable from what the tools actually returned, because asked for eight items on a thin day it will find eight. And if no source can be reached, it should say exactly that and stop, rather than falling back on general knowledge, which is the failure that looks most like success.
 
-Which is where the comparison lands. In the feed version the standard of performance ran to three clauses; here it runs to six, and the three new ones all follow from talking to a live server rather than reading a file: name empty sources, report incomplete sweeps, cite what you were given. The Definitions clause — the part that is actually your judgment — barely moved.
+Which is where the comparison lands. In the feed version, three instructions covered what counted as an honest answer. Here it takes six, and the three new ones all follow from talking to a live server rather than reading a file: name empty sources, report incomplete sweeps, cite what you were given. The part that carries your judgment barely moved.
 
-The Definitions clause is the constant. Everything else is plumbing.
+Your judgment is the constant. Everything else is plumbing.
 
 Here is the whole file.
 
@@ -319,11 +319,11 @@ testing a tag against Practice Interests:
 
 Save it as `SKILL.md` in your client's skills folder, open the client, and ask for your morning briefing.
 
-## Writing your own Definitions clause
+## Making it yours
 
-Everything with your name on it lives in one clause, so adapting this is a substitution exercise. A construction lawyer would define Practice Interests around adjudication under the Security of Payment Act, defects and delay claims, BCA announcements and standard-form revisions, would move Excluded Matters to cover corporate and commercial news, and would tighten the urgency ranking, because adjudication timelines are measured in days rather than weeks. The obligations do not change at all.
+Everything with your name on it lives in one place, so adapting this is a substitution exercise. A construction lawyer would define Practice Interests around adjudication under the Security of Payment Act, defects and delay claims, BCA announcements and standard-form revisions, would move Excluded Matters to cover corporate and commercial news, and would tighten the urgency ranking, because adjudication timelines are measured in days rather than weeks. Nothing else changes at all.
 
-If your server is not this one, the six moves are still the same. Interrogate the schema before you draft. Find out which tool answers "since when" and which answers "about what". Constrain every query. Ask each source when it last published anything, before you decide how far back to look. Make the brief report a partial sweep. Take the citations the server gives you instead of letting them be assembled. Then put your own judgment in Definitions, which is the part no model can write for you.
+If your server is not this one, the six moves are still the same. Interrogate the schema before you draft. Find out which tool answers "since when" and which answers "about what". Constrain every query. Ask each source when it last published anything, before you decide how far back to look. Make the brief report a partial sweep. Take the citations the server gives you instead of letting them be assembled. Then write down what you actually care about, which is the part no model can write for you.
 
 [What 7,308 Agent Runs Taught Me About Writing Better Skills](https://www.alt-counsel.com/skillsbench-analysis/?ref=read-the-server-before-you-draft)
 
@@ -335,16 +335,16 @@ There is a second decision hiding in all of this, and it is worth making on purp
 
 Everything above points the brief at raw judgments, where you own the relevance test and the agent writes the "so what" from a summary. But the same server carries the `sg-law-cookies` database, the layer behind the bakery: each row is a single proposition rather than a whole case, arriving with `significance` already rated and a `why_it_matters` already written. Both sit outside the light column set, so you name them in `columns` to get them — the same allow-list you met in the judgments schema.
 
-Point your brief there and two things change at once. The unit gets finer, so one judgment can surface as three propositions and only the one touching your practice reaches you. And the calls you had been writing clauses to make — is this significant, why does it matter — are inherited rather than made.
+Point your brief there and two things change at once. The unit gets finer, so one judgment can surface as three propositions and only the one touching your practice reaches you. And the calls you had been writing instructions to make — is this significant, why does it matter — are inherited rather than made.
 
 That is the trade, and the question to ask of any derived layer anywhere: how much of the judgment am I delegating, and am I comfortable with who made it? Neither answer is wrong. The one thing I would not do is choose without noticing you chose.
 
-If you want the finer unit without inheriting the ratings, `folio_areas` is the middle path. It carries FOLIO identifiers — an open legal taxonomy rather than anything of mine — so your Definitions clause can match on a standard that will outlive any one database.
+If you want the finer unit without inheriting the ratings, `folio_areas` is the middle path. It carries FOLIO identifiers — an open legal taxonomy rather than anything of mine — so what you count as relevant can match on a standard that will outlive any one database.
 
 ## What you end up with
 
-The first briefing you get will be wrong somewhere. That is the useful part, and it is why the standard of performance clause matters more than it looks: a briefing that reports its own gaps can be corrected in ten seconds over coffee, and one that does not can only be trusted or ignored.
+The first briefing you get will be wrong somewhere. That is the useful part, and it is why the rules about reporting gaps matter more than they look: a briefing that reports its own gaps can be corrected in ten seconds over coffee, and one that does not can only be trusted or ignored.
 
-Run it for a week. Each time it is wrong, ask which clause failed and amend that clause rather than the whole document. After three or four amendments the file goes quiet and simply works, and what you are left with is a precise written record of your own editorial judgment — which you have probably never had to set down before, because no junior ever asked you to.
+Run it for a week. Each time it is wrong, ask which instruction failed and amend that one rather than the whole document. After three or four amendments the file goes quiet and simply works, and what you are left with is a precise written record of your own editorial judgment — which you have probably never had to set down before, because no junior ever asked you to.
 
 Mine is retired now, and I still think it was worth the fortnight.

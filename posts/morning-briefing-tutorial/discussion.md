@@ -766,3 +766,55 @@ hand-written line wins, the pitch follows.
 ### Next Steps
 REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
 length audit, then backlinks and tags.
+
+## Session 9: Artifact names excised from the prose (2026-08-30)
+
+**User Decision (verbatim):**
+> Don't touch my intro bullets, but excise the "artifcat names", even if we had used them in a skill.
+> I mentioned in my intro that choice of words is important, but to an agent, i believe the
+> definitions, obligations stuff have limited impact. perhaps which should strenghtened what i am
+> trying to say there.
+> You don't need to rewrite the skill even if it uses legal drafting terms
+
+### Rationale (his)
+The words you choose matter to an agent; the legal document *structure* — labelling sections
+Definitions, Obligations, Standard of Performance — probably does not. It was presentation for
+lawyer readers of the SLG piece. Prose that leans on that structure as if it were doing work
+undercuts the point his intro is making about specificity.
+
+### What was done
+Twenty-two replacements across the body, none inside his intro bullets and none inside the SKILL.md
+listing, which he explicitly exempted. The listing keeps its legal headings; only the prose stopped
+borrowing them.
+
+- "the Definitions clause" → "what you count as relevant" / "the part that carries your judgment"
+- "clause" → instruction, rule, line, depending on what it actually is
+- "obligation" → what the brief says
+- "the standard of performance" → "what counts as an honest answer" / "the rules about reporting gaps"
+- Heading "Writing your own Definitions clause" → **"Making it yours"**
+
+### The 3→6 finding got truer
+It had been counting *clauses*, which is structural — exactly the thing he says does not reach the
+agent. Restated as substance: "In the feed version, three instructions covered what counted as an
+honest answer. Here it takes six." Same finding, no longer resting on section labels.
+
+### Protected line and spine amended (third amendment)
+The spine line was "The Definitions clause is the constant. Everything else is plumbing." — it could
+not survive the instruction, since it is built entirely on an artifact name. Amended to:
+
+> **Your judgment is the constant. Everything else is plumbing.**
+
+Plainer, and it says what the original meant without the scaffolding. `thesis_keywords` updated from
+"Definitions" to "judgment", since the former no longer appears in the prose. Recorded here because
+this is the pitch's declared spine, not just a line — if he wants it back in some other form, this
+is the entry to argue with.
+
+### Outcomes
+- ✅ 22/22 replacements applied; zero artifact names left in prose; SKILL.md listing untouched.
+- ✅ Lint clean, inside budget.
+- Kept, as before and still flagged: "because no junior ever asked you to" in the close. Not an
+  artifact name and not a legal-term comparison.
+
+### Next Steps
+REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
+length audit, then backlinks and tags.

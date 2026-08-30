@@ -4,10 +4,11 @@ budget_approved_by: houfu  # 2026-08-29: "it's a tutorial. so loosen word count 
 budget_tolerance: 10
 primary_audience: wei-lin
 secondary_audience: [marcus]
-thesis_keywords: ["morning briefing", "skill", "Definitions", "MCP"]
+thesis_keywords: ["morning briefing", "skill", "judgment", "MCP"]
 protected_lines:
   - "Every time we encountered a problem, the agent rewrote it."  # tracks Houfu's hand edits, 2026-08-30
-  - "The Definitions clause is the constant. Everything else is plumbing."
+  - "Your judgment is the constant. Everything else is plumbing."  # was "The Definitions clause is
+  # the constant" — artifact names excised from prose on Houfu's instruction, 2026-08-30
 voice:
   lane: learning-in-public
   moves: [uncomfortable-admission, specific-numbers, framework-presentation]
@@ -89,7 +90,7 @@ target_date: ~
 **Thesis:** An MCP does not just give your skill a better source. It gives it tools to choose
 between, live infrastructure to be careful with, and status to report — so the brief grows clauses a
 feed-reading skill never needed.
-**Spine:** The Definitions clause is the constant. Everything else is plumbing.
+**Spine:** Your judgment is the constant. Everything else is plumbing.
 **Emotional core (user's words):** "I don't run this skill because I have cookies."
 
 ## Pitch
