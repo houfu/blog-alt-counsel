@@ -1,16 +1,22 @@
 ---
-title: "Read the Server Before You Draft"
-slug: "read-the-server-before-you-draft"
-tags: ["LegalTech", "AI", "Tutorial", "Singapore"]
-status: draft
+title: Read the Server Before You Draft
+slug: read-the-server-before-you-draft
+tags:
+  - LegalTech
+  - AI
+  - Tutorial
+  - Singapore
+status: scheduled
 featured: false
-github_folder: "morning-briefing-tutorial"
 custom_excerpt: >-
   I wrote a morning briefing skill for the Law Gazette and left out the part
   where you actually build it. Here it is with the building left in — pointed at
-  a live legal database instead of an RSS feed, which changed the brief more than
-  the change of source did.
-post_id: "6a93e23074db8900012210c7"
+  a live legal database instead of an RSS feed, which changed the brief more
+  than the change of source did.
+post_id: 6a93e23074db8900012210c7
+published_at: '2026-08-31T01:18:31.000Z'
+feature_image: >-
+  https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/08/photo-1643015682161-f75db8688988.jpeg
 ---
 
 I was pretty chuffed when my article was published in the August version of the Singapore Law Gazette. I wanted to introduce agentic coding to a wider range of lawyers and showed them what was possible with AI today. So I went for the simplest, most familiar slice possible: a plain-text skill file that tells an AI assistant what your practice is and what counts as done, then creates a morning briefing out of that. It ran against Singapore Law Watch's RSS feed, because most Singapore lawyers already know that feed.
@@ -27,20 +33,20 @@ So *this* tutorial had to be written.
 
 ## What a feed-reading brief looked like
 
-A skill is a plain-text file, conventionally named `SKILL.md`, that the assistant reads before it starts work. Read it as a short services contract. Definitions, so the terms mean something. For the sake of simplicity, I borrowed many well known legal terms to explain the process to lawyers who read the SLG.
+A skill is a plain-text file, conventionally named `SKILL.md`, that the assistant reads before it starts work. For the sake of simplicity, I borrowed many well known legal terms to explain the process to the lawyers who read the SLG.
 
 * Think of a skill like a short services contract. The skill tells the agent what you are providing and what you need the agent to get, and then the output you expect the AI agent to get.
 * This is a tad underrated. Like a contract, the terms or words used in a skill are very important. Large language models are able to read and self correct typos in your prompts, but frontier models take your instructions very seriously.
 * Specificity is a crucial element. "Relevant to my practice" is as useless in a skill as "reasonable endeavours" is without context, so you write it out in limbs: companies and directors' duties, insolvency, commercial contract, arbitration, employment where the employer is a company. Then the proviso every corporate lawyer knows — criminal law is excluded, except when it is your client's director in the dock.
 * As much as the previous, restraint is becoming a special skill in providing instructions to an agent. Telling an agent to find 8 articles on a slow news day might seem an impossible task. An agent might be forced to come up with *anything*, that is hallucinate, just to fulfil an instruction. The best contract drafters know how to employ ambiguity strategically. Your goal is not just to constrain the agent, but to lead it to produce its best work.
 
-Every time we encountered a problem, the agent rewrote it. The promise of agentic coding is that you don’t need to read code, and at some level, database and API schemas fade into the background too. Hence, we focused on what we need to provide the agent — our judgement. 
+Every time we encountered a problem, the agent rewrote it. The promise of agentic coding is that you don’t need to read code, and database and API schemas fade into the background too. Hence, we focused on what we need to provide the agent — our judgement. 
 
-*Fun behind the scenes facts*: To write the SLG article, I tried several techniques about working with agents which I acquired over the last few months. Obvious things first, I didn’t write any code. I pointed an agent to the task to create a Singapore Law Watch reading skill. Then I asked it to review its work and draw out lessons. Have it run a few times, and I had a verifiable narrative describing the trials of writing this skill. A loop, neat! 
+> 💡 **Fun behind the scenes facts**: To write the SLG article, I tried several techniques about working with agents which I acquired over the last few months. Obvious things first, I didn’t write any code. I pointed an agent to the task to create a Singapore Law Watch reading skill. Then I asked it to review its work and draw out lessons. Have it run a few times, and I had a verifiable narrative describing the trials of writing this skill. A loop, neat! 
 
 ## Send the agent in first
 
-To proceed on this tutorial, you’re going to need a skill reading, MCP connecting client. Claude Code works and so does Codex. The desktop versions of these tools can connect to the MCP with some configuration. If you want to know whether your AI client supports it or how to set it up, you should just ask it. 
+To follow this tutorial, you’re going to need a skill reading, MCP connecting client. Claude Code works and so does Codex. The desktop versions of these tools can connect to the MCP with some configuration. If you want to know whether your AI client supports it or how to set it up, you should just ask it. 
 
 Connecting is the short part. For Claude Code:
 

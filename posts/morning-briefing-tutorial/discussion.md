@@ -1051,3 +1051,56 @@ Three options put to him, recommendation first:
    Warmest of the three and the weakest fit: this post is not about breakfast.
 
 Recommendation is (1); (2) is the one to pick if the LinkedIn post and the cover should visibly match.
+
+## Session 13: CHECK — synced, editor edits merged back (2026-08-30)
+
+**Scheduled: 2026-08-31T01:18:31Z (09:18 SGT).** Feature image set by Houfu (Unsplash, hosted on
+Ghost storage). Metadata synced via `npm run sync-ghost read-the-server-before-you-draft`.
+
+### Where he put the public preview break
+**Node 46 — inside "You are querying live infrastructure", just after the heading.** Claude had
+recommended the end of the previous section, at "You are not writing code here. You are reading a
+transcript." He went one section further in. The free preview therefore covers: the opening, the
+contract anatomy, connecting and reading the schema, and the whole `search`-vs-`query_table` lesson
+including the 2010 result and the verification habit. Members get the windows, the honesty rules, the
+complete SKILL.md and both adaptation sections.
+
+Reading of the choice: he gave away the entire teaching payload and gated the **deliverable plus the
+operational detail**. That is the split Claude argued for as the paywall option, arrived at from the
+other direction.
+
+### Editor edits merged back — three prose changes, all cuts
+1. **Cut "Read it as a short services contract. Definitions, so the terms mean something."** The
+   bullets immediately below already say it. He deleted the summary and kept the working version.
+2. **Cut "at some level,"** from "you don't need to read code, and at some level, database and API
+   schemas fade into the background". Hedge removed from a claim about the world — consistent with
+   Voice Guide 1.12 directional hedging: harden claims about the world, soften claims about himself.
+3. **"To proceed on this tutorial" → "To follow this tutorial."** Plainer verb.
+
+Also "to lawyers who read the SLG" → "to **the** lawyers who read the SLG".
+
+### Three structural edits, and two of them are converter gaps
+- **Hand-carded the Law Gazette link.** Predicted last session: `publish-lexical.js` only cards hosts
+  on its allowlist and `lawgazette.com.sg` is not on it. He fixed it by hand, exactly as he did with
+  the repo link on legal-oss-maintainer (Living Addendum, 2026-08-06). **Second occurrence — this is
+  now a pattern, not an incident.**
+- **Hand-converted the `search` description to a blockquote.** NEW converter gap: markdown `>`
+  blockquotes come through as plain paragraphs, not `extended-quote` nodes. Not previously logged.
+- **Turned the behind-the-scenes paragraph into a 💡 yellow callout.** Marked in the markdown as
+  `> 💡 **Fun behind the scenes facts**:` so a future publish run does not silently flatten it.
+
+### He deleted the GitHub footer again
+Removed the auto-generated "Behind the Scenes" heading and its bookmark card, and `github_folder` has
+been dropped from the local frontmatter to match. **Second time** (legal-oss-maintainer was the
+first). Worth treating as a standing preference rather than a per-post decision.
+
+Note the interaction: Claude had argued against a paywall partly because the GitHub footer made any
+gate trivially circumventable — the skill file sits in the public repo. He removed the footer and set
+a preview break. Whether or not that was the reason, the two decisions fit together.
+
+### Infra follow-ups — SEPARATE BRANCH, not this content PR
+1. Add `lawgazette.com.sg` to the bookmark-card host allowlist in `publish-lexical.js` (2 hand fixes).
+2. Convert markdown `>` blockquotes to `extended-quote` nodes (currently silently flattened).
+3. Consider whether the GitHub footer should be opt-in rather than default, given two deletions.
+4. **A publish re-run would destroy the paywall node, the callout and the hand-made cards.** There is
+   no markdown representation for a paywall. Do not re-run `publish-lexical.js` on this post.
