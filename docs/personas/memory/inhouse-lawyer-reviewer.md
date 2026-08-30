@@ -98,3 +98,27 @@ Persistent memory for the inhouse-lawyer-reviewer agent. **Read this before ever
   "cheaper than a policy memo" solo-counsel line; and beat 4, the entropy explainer — which she
   expected to skim and didn't. Her note: if anyone proposes trimming it as "setup," don't.
 - **Settled/rejected:** none this round.
+
+### 2026-08-30 — morning-briefing-tutorial, round 1
+
+**Verdict: partly serves me.** Not the declared audience — she was run because Houfu wants all three
+reviewers on every post. Skimmed the JSON blocks, would not build it, said so plainly.
+
+**Unique catch:** computed the actual subscription gate. The post's "free, no sign-up" language covers
+only the Zeeker database, not the AI client, and a budget-conscious reader could over-read that as
+"this costs nothing". **Adopted** — the client's paid plan is now named at the connect step. Wei Lin
+raised the same gap independently from the opposite direction (zero budget for side projects), which
+is what carried it.
+
+**Named the bridge for non-builders:** the "make the agent show its work, then check the dates not the
+summaries" habit is the one thing in the post she can use on AI output she already receives, with
+zero setup. Protected through the cuts.
+
+**Standing asks:** cost raised (and adopted). Time and Monday-morning CTA both assessed as
+pre-empted. Security/compliance raised only as a minor gap (vendor handling of practice-area queries)
+and self-marked as likely declined.
+
+**Out of scope, reported for the record, not adopted:** an early "this is a build tutorial" signal so
+non-builders self-select out; vendor data-handling analysis; a Zeeker single-maintainer continuity
+note. Houfu declined further additions on 2026-08-30: *"we don't need to overcorrect this."* The
+first of these is genuinely good and is logged as follow-up material rather than rejected on merit.

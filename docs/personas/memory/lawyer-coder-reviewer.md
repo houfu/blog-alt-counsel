@@ -86,3 +86,29 @@ Persistent memory for the lawyer-coder-reviewer agent. **Read this before every 
 - Load-bearing line (protect through cuts): "I had been terrified of coding in this big, foreign codebase, and I had built that fear into software." Secondary: "Reading is the part of the job I was already qualified for."
 - Standing ask raised and applied: reader on-ramp in the solo-counsel paragraph ("open its docs folder; if there's nothing to read, that's your answer").
 - Settled: title ("I'm the Official Cat Herder...", Houfu 2026-08-05, do not re-propose); cat-herder metaphor load-bearing by Houfu's own election (supersedes 2026-07-27 flippant-aside ruling); Houfu's triad rule: one tricolon per post, if that. Cut proposal on "LQ.AI had several cool features, but" DECLINED — the full sentence is Houfu's protected hand-written line (never smooth), though the LQ.AI/lq-ai casing question was passed to him.
+
+### 2026-08-30 — morning-briefing-tutorial, round 1
+
+**Verdict: serves me.** First post here he finished with a runnable artifact and a convergence
+expectation rather than an argument he agreed with.
+
+**Unique catches:**
+- Answered a direct question put to him: the "I don't run this" admission does NOT belong earlier in
+  a tutorial — "in a narrative post it is the engine, here it is a brake." But found the inverse
+  defect: the close was a payoff with no setup, and "fortnight" was the post's ONLY time cost,
+  appearing in the last five words. Adopted.
+- **Sequencing again, his sharpest lens** (cf. legal-oss-contribution's 23-month gap): the "Zeeker is
+  a database I maintain" disclosure sat 600 words AFTER the schema walkthrough and after the claim
+  that this source beats a feed. Same catch shape: disclosure earns the right BEFORE the data.
+  Adopted; moved to the connect step.
+- Named the load-bearing line — "You are not writing code here. You are reading a transcript and
+  checking it against what you asked for" — as the imposter-syndrome answer delivered with no pep
+  talk. Protected through the cuts.
+- Second-ending slump: confidentiality note sitting between the two adaptation sections. Adopted via
+  a reorder that also satisfied Marcus.
+- Flagged "Kopigi Pte Ltd" as reading invented inside a post whose rule is "never construct a
+  citation". Verified real. **The flicker itself was the useful datum** — worth him knowing a
+  sympathetic reader paused there.
+
+**New preference observed:** prompts-in-fenced-blocks (the session-7 agentic reframe) is the single
+decision that made this buildable for him. Carry to future tutorials.

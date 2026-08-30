@@ -347,4 +347,6 @@ The first briefing you get will be wrong somewhere. That is the useful part, and
 
 Run it for a week. Each time it is wrong, ask which instruction failed and amend that one rather than the whole document. After three or four amendments the file goes quiet and simply works, and what you are left with is a precise written record of your own editorial judgment — which you have probably never had to set down before, because no junior ever asked you to.
 
+[I Build Infrastructure. Jamie Vibe Codes Tools. Here's What I'm Missing.](https://www.alt-counsel.com/tool-vs-infrastructure-mindset/?ref=read-the-server-before-you-draft)
+
 Mine is retired now — Cookies does that job for me — and I still think it was worth the fortnight it took to write.

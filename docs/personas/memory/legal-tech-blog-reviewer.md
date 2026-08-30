@@ -116,3 +116,32 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
   reader has an anchor term to look up. He tagged it OUT himself against the pitch's beat 4, which
   promises only "the source of randomness." Referred to Houfu as follow-up material.
 - **Settled/rejected:** none this round.
+
+### 2026-08-30 — morning-briefing-tutorial, round 1
+
+**Verdict: partly serves me.** Technical substance and honesty earn a forward; he would raise the
+framing gap in the room.
+
+**Unique catches:**
+- **Triggered the pitch's own recorded contradiction condition.** Four of the six lessons the post
+  teaches — tool ambiguity, timeouts on unbounded queries, partial-failure telemetry, differing
+  source cadences — are properties of any live multi-endpoint API and would survive verbatim if the
+  server dropped MCP for REST. Noted the prose mostly says "server" and only reaches for "MCP" in the
+  framing lines. This is his best catch and it is the kind that belongs at PITCH, not draft.
+- Identified the post's single most overstated claim: provenance/citation bundling attributed to MCP
+  as a protocol property when it is the server's own schema choice. **Adopted** — reworded to credit
+  "a server that bundles provenance with the row".
+- Placement: the two-layers section (highest concentration of the author's own proper nouns) sat
+  after the guard beat built to prevent a portfolio-tour reading. Adopted via reorder.
+- Caught the one figure not traceable to research.md ("thirteen operators"). Verified correct, and
+  written back.
+- Direct answer on demo risk: "mostly no" — the one bug shown is attributed to the author's own
+  brief-writing rather than to the server, which he called the right call.
+
+**Standing asks:** none raised. Concrete examples, jargon-on-first-use and dual-audience structure all
+pre-empted at draft time.
+
+**Settled disagreement — do not re-raise.** His IF ONE THING was to make the title and thesis earn
+"MCP" specifically by naming the live-discovery mechanism. Houfu declined on 2026-08-30: *"we don't
+need to overcorrect this."* The factual half (the provenance misattribution) was fixed; the framing
+stands as written. The general lesson is logged for future pitches, not for this draft.

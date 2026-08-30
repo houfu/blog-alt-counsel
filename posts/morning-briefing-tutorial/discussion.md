@@ -928,3 +928,47 @@ and the audit fixes had changed it. Working as designed. Re-checkpointed against
 (no structural change; the audit fixes were word-level) and relaunched. Wei Lin, Marcus and Sarah
 running, each briefed on what is out of scope and each asked for cuts alongside any addition. Wei Lin
 is additionally asked to rule on whether the displaced emotional core costs the post anything.
+
+### Reviewer round 1 synthesised and closed (2026-08-30)
+
+**Verdicts:** Wei Lin (primary) **serves me**; Marcus **partly**; Sarah **partly**. No reviewer raised
+a standing ask — all three reported their template concerns pre-empted at draft time, so the whole
+round was post-specific. That is the WRITE-phase pre-emption paying off for the first time.
+
+**Applied, net −48 words (3,004 → 2,956):** disclosure of Zeeker ownership moved from 600 words into
+the walkthrough up to the connect step (Wei Lin's sequencing lens, the same catch shape as his
+23-month-gap catch on legal-oss-contribution); the close given its setup so "worth the fortnight"
+lands on stated ground; two-layers moved ahead of "Making it yours" — one move that resolved Wei Lin's
+and Marcus's competing reorders rather than averaging them; provenance no longer attributed to MCP as
+a protocol property; client subscription cost named; skills-folder path given; the server-exculpation
+before the 2010 admission cut so the confession lands clean.
+
+**User Decision (verbatim):** *"we don't need to overcorrect this. let's push on."*
+
+Declines Marcus's IF ONE THING — adding a sentence naming the live-discovery mechanism so the title
+and thesis earn "MCP" specifically. **The factual half was already fixed** (the provenance
+misattribution); the framing stands as written. Recorded in his memory file under settled
+disagreements so it is not re-raised on this draft. The general lesson — that most "MCP differences"
+are really live-server differences — is logged for future PITCH interrogation, which is where Marcus's
+best catches belong anyway.
+
+Also declined by the same instruction: Sarah's early build-tutorial signal, vendor data-handling, and
+Zeeker continuity note; Wei Lin's "the survey alone is a 20-minute win" and Marcus's API-key sentence.
+All logged as follow-up material rather than rejected on merit.
+
+**Round 1 of 2 used. No round 2 planned.**
+
+### Backlinks and tags
+`tool-vs-infrastructure-mindset` was in `must_link` and absent from the draft — caught by Wei Lin, not
+by Claude. Placed at the close beside the retirement line, which is where he argued it belongs: the
+disposable-tool position is one Houfu has already earned across posts, so linking it makes "worth the
+fortnight" a settled position rather than an aside. Five links total, all internal ones carrying
+`?ref=`. No fresh backlink sweep was run — the pitch's must_link list plus the reviewer catch covered
+it, and a full sweep now would be exactly the overcorrection ruled out.
+
+Tags validated against the canonical registry: LegalTech, AI, Tutorial, Singapore — all four
+canonical, no sprawl. `zeeker` deliberately not added; it is not in the registry.
+
+### State
+2,956 words against a 3,080 cap. Lint clean, 0 errors 0 warnings. Every figure traces to research.md.
+No unverified claims remain. **Ready for POST.**
