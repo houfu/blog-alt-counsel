@@ -1008,3 +1008,46 @@ Per the workflow — publish last, sync once. Do NOT run `sync-ghost` per edit. 
 scheduled and Houfu has finished polishing in the Ghost editor, run `npm run sync-ghost
 read-the-server-before-you-draft` **once**, diff the live content against the local file, merge his
 editor edits back, and log notable ones as voice decisions.
+
+## Session 12: Excerpt, carousel, cover (2026-08-30)
+
+**User asks:** an excerpt; a LinkedIn carousel in broad beats, big text, possibly with screenshots;
+and a cover photo idea — with the prediction that Claude would derive the cover from the carousel.
+
+### Excerpt
+Added as `custom_excerpt` — 259 chars, inside Ghost's 300-char validation cap (claude-architect-cert
+failed publish at >300 and had to be trimmed; worth remembering). Subject-led rather than bug-led:
+it says what the post IS, which the title does not. A bug-led alternative was drafted and offered.
+
+### Carousel — `carousel.md`, 8 pages
+Follows the watermark deck's structure and its stated design rule, "teach, don't argue", because that
+deck's mechanism transfers exactly. There, pages 2 and 5 had to match so the reader recognised the
+second picture as the first. Here, **pages 4 and 5 must be laid out identically**: page 4 is clean
+subject-tag output, page 5 is the same shape of output containing a 2010 contempt-of-court item in a
+list of 2026 enforcement decisions.
+
+**Design decision worth keeping: page 5 gets no highlight, no arrow, no red circle.** The post's turn
+works because the output looks completely normal; circling the date does the reader's work and the
+page stops teaching.
+
+**On screenshots:** the user asked whether screenshots were needed. Three pages carry real tool
+output, but the recommendation is to set them as styled mono blocks in Canva rather than screenshot a
+terminal — consistent type, and the deck stays on-brand. Every line given in carousel.md is real,
+verified output from 2026-08-30, not paraphrase.
+
+### Cover photo — the prediction was right, and here is the reasoning
+He guessed Claude would lead on from the carousel. Correct, but not because the cover should reuse a
+carousel panel. It is because deciding the deck's hinge forced the question of what this post is
+actually ABOUT in one image — and the answer is not "AI" or "legal data". It is **looking something
+up before you take it out.**
+
+Three options put to him, recommendation first:
+1. **A card catalogue drawer pulled open** — the schema-reading move, literally: you consult the index
+   before you fetch the document. Analogue and warm, consistent with the bakery cover on
+   come-into-the-bakery, and it avoids the blue-circuitry AI cliché entirely.
+2. **One yellowed newspaper in a stack of fresh ones** — the carousel's hinge as a photograph. Strong
+   and specific, but it makes the post look like it is about a failure, which it is not.
+3. **A breakfast table with a newspaper** — continuity with the Gazette piece, "Breakfast, Eventually".
+   Warmest of the three and the weakest fit: this post is not about breakfast.
+
+Recommendation is (1); (2) is the one to pick if the LinkedIn post and the cover should visibly match.

@@ -5,6 +5,11 @@ tags: ["LegalTech", "AI", "Tutorial", "Singapore"]
 status: draft
 featured: false
 github_folder: "morning-briefing-tutorial"
+custom_excerpt: >-
+  I wrote a morning briefing skill for the Law Gazette and left out the part
+  where you actually build it. Here it is with the building left in — pointed at
+  a live legal database instead of an RSS feed, which changed the brief more than
+  the change of source did.
 post_id: "6a93e23074db8900012210c7"
 ---
 
