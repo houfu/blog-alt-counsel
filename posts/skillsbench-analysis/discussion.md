@@ -219,3 +219,18 @@ Post was published to Ghost between sessions. User returned to sync local markdo
 ### Next Steps
 - Create PR for main skillsbench feature branch (`claude/skillsbench-analysis-post-dYVDG`) → master
 - Merge when ready
+
+## Session 4: Automated Ghost Sync Sweep (2026-08-29)
+
+### Context
+Routine automated sync sweep comparing local frontmatter/content against the live Ghost record.
+
+### What Changed
+- `feature_image` was pointing at the custom domain (`www.alt-counsel.com/content/images/...`); Ghost's canonical record returns the `storage.ghost.io` CDN URL for the same file. Updated frontmatter to match Ghost exactly.
+- Content drift (informational, body left untouched): Houfu has since inserted a **paywall marker** in the Ghost editor, right after the "skills add the most value where models have the weakest priors" paragraph (before the "Legal work maps closer to healthcare..." paragraph). This splits the post into a free preview and members-only continuation — not reflected in the local markdown, which has no concept of a paywall. Everything else in the live prose still matches the local body word-for-word (including the full 7-row model table and the 8-item framework list).
+
+### Outcome
+Frontmatter fixed; no body edits made (per sync procedure, content drift is reported only, not applied to markdown).
+
+### Follow-up (same day)
+User asked to pull live content back into local markdown across the sweep. Since the only drift here was the paywall marker's exact position (already pinpointed above), applied it directly: inserted `<!--members-only-->` between the "weakest priors" paragraph and the "Legal work maps closer to healthcare..." paragraph, matching the live post exactly.

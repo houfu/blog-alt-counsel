@@ -7,7 +7,7 @@ tags:
   - Law
   - LegalTech
   - Compliance
-status: scheduled
+status: published
 featured: false
 github_folder: cna-ai-advice-from-lawyers
 post_id: 6a1d364cb509320001938862

@@ -547,3 +547,27 @@ Houfu supplied a CleanShot of the LQ.AI home screen (self-hosted, 127.0.0.1) to 
 **The December appointment is now a public commitment:** the post promises the hour-a-day metric falls if the herding works — "Ask me in December." A follow-up post is expected around then.
 
 **Standing warning restated:** do not run publish-lexical.js against this post again without re-merging — it would restore the deleted GitHub footer and clobber the hand-made bookmark card.
+
+## 2026-08-29 — Session 5: Automated Ghost sync sweep — further post-publish edits found
+
+Found via an automated Ghost sync sweep (read-only comparison of the live post against the local file). Frontmatter (title, slug, status, tags, custom_excerpt, feature_image, published_at, post_id, featured) all still match Ghost exactly — no frontmatter changes needed.
+
+**Content drift detected — Houfu has kept editing in the Ghost editor since the 2026-08-06 sync, and these edits aren't reflected locally (not applied here, per the sync procedure — read-only report only):**
+1. **The "agent recommends" paragraph is now a 4-item bullet list on Ghost.** The local file still carries it as one flowing paragraph starting "its reviews are posted with the footer…" through "…escalation produces a document, not a delay." Live, it's split into four bullets (footer credit / the lockfile-review anecdote / the recommend-never-decide hook / the agent-drafts-ADRs pipeline).
+2. **"LQ.AI," in the opening paragraph is now a link** to `https://github.com/LegalQuants/lq-ai` — plain text locally.
+3. **The LQ.AI home-screen screenshot gained a caption**, "The LQ.AI web interface." — no caption locally.
+
+Not treated as drift (expected/structural, per the sync procedure): bookmark card titles/captions, and the missing GitHub footer (already flagged in the 2026-08-06 entry as deliberately deleted on Ghost).
+
+## 2026-08-29 — Session 6: Pulled live Ghost content into local markdown
+
+Phase 2 of the sync sweep (phase 1 fixed frontmatter only, already done). Fetched the live post via `ghost_post_get`, walked the lexical tree node by node, and rebuilt the body — confirming all three items flagged by Session 5's read-only report:
+
+- **"Agent recommends" paragraph converted to a 4-item bullet list**, matching Ghost exactly: footer credit ("Drafted by lq-maintainer-agent; reviewed and posted by @houfu.") / the lockfile-review anecdote (304 packages, two pinned-library advisories) / the recommend-never-decide mechanical hook / the agent-drafts-ADRs pipeline line.
+- **"LQ.AI," in the opening paragraph is now a link** to `https://github.com/LegalQuants/lq-ai`, matching Ghost.
+- **LQ.AI home-screen image caption dropped, noted, not reproduced.** Ghost's caption "The LQ.AI web interface." has no local markdown equivalent (per this repo's conventions, image captions are silently dropped on the local side) — flagged here rather than invented.
+- **The lq-maintainer-agent link stayed inline prose, not a bare bookmark line.** Ghost stores it as a bookmark node, but github.com isn't one of this repo's bookmark-card-eligible domains, so per convention it's written as a normal `[metadata.title](url)` link using the GitHub repo's actual title/description line, not the shorter "lq-maintainer-agent on GitHub" text the local file had before.
+- **Two alt-counsel.com bookmarks (Part 1 backlink and "Unexpected Joys" backlink) kept as bare `[title](url)` lines**, updated to the exact live metadata titles — the Part 1 link picked up its real title "Lawyers Are Building. Just Not On Each Other's Code." (previously a paraphrase, "I Said Lawyers Don't Work on Each Other's Code," in the local file). Note: that same Part-1 bookmark carries a caption on Ghost ("In May, I studied and wrote that open source legal projects are a series of single founder archipelagos. Things (especially Mike) look better these days, but it's still a challenge.") that also has no local equivalent and was not reproduced.
+- Everything else (headings, image alt text, the three deck screenshots, prose) matched the local file already and was carried over unchanged.
+
+No frontmatter touched. `npm run lint-posts legal-oss-maintainer` is clean — 0 errors, 0 warnings.

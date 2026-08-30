@@ -120,3 +120,17 @@ User uploaded 4 PDFs. Now VERIFIED full text: Artificial Lawyer "token price pro
   3. Curran quote → pull-aside (rendered as blockquote in md).
   4. Weijtmans link inlined on his name; standalone Substack bookmark card removed.
 - **User removed the GitHub "Behind the Scenes" footer** on Ghost. Body matches (footer is auto-injected, not in md); github_folder left in frontmatter and FLAGGED — a re-publish would re-add the footer. Preference signal: this post ships without the GitHub footer.
+
+## Session 8 — 2026-08-29 (Automated Ghost sync sweep)
+- Found via automated Ghost sync sweep: frontmatter `status` had drifted to `scheduled` while Ghost shows `published`; `published_at` also updated to the live value (`2026-06-27T02:47:21.000Z`, was `2026-06-27T02:04:58.000Z`). Both corrected locally.
+- Content drift detected: two paragraphs present in the local markdown after the Shawn Curran blockquote — the *The Lawyer* "Law's AI honeymoon is over" reference and the "I think that read is short-sighted" follow-up — are no longer in the live Ghost body. Houfu appears to have cut them post-publish. Not restored; body left untouched per sync procedure, flagged here for awareness.
+
+## Session 9 — 2026-08-29 (Pulled live Ghost content into local markdown)
+- Full body rebuild from the live Ghost lexical record (slug `rugpulled-by-cowork`), replacing the local body wholesale rather than patching known diffs, per established practice.
+- Confirmed and applied the Session 8 finding: dropped the *The Lawyer* "Law's AI honeymoon is over" paragraph and the following "I think that read is short-sighted" paragraph — neither exists in the live body.
+- Found two more paragraphs cut from the live body that Session 8 didn't catch: "I've written before that AI made building cheap but never made knowing what to build cheap..." (used to sit right before the "When Building Gets Cheap But Knowing Stays Expensive" bookmark) and "I argued a while back that AI won't replace you — someone who decides will..." (used to sit right before the "AI Won't Replace You" bookmark). On Ghost, both bookmarks now follow directly from the prior paragraph with no lead-in sentence.
+- Dropped the standalone paragraph that restated the Legal Nodes chart's caption ("Cost per task, same model across three platforms. Source: Legal Nodes scaffold study, via Artificial Lawyer.") — on Ghost this text lives inside the image node's `caption` field, not as body text, and this project's local markdown has no caption syntax.
+- Re-rendered the Shawn Curran quote: Ghost stores it as a pull-quote "aside" card (not a blockquote — this project's converter has no `>` blockquote support at all, so the old `>` rendering here would not round-trip cleanly on a future republish). Replaced with a plain paragraph plus an HTML comment noting it's a Ghost pull-quote aside.
+- Picked up one wording edit made on Ghost: "The answer came back that *they would rather keep Cowork*" is now bold on Ghost, not italic. Updated locally to match.
+- Preserved local's correct spacing around the MinLaw guide link ("legal sector — [MinLaw's Guide...") — the live Ghost paragraph is missing the space before the link (an editor artifact from turning the phrase into a link, not a deliberate edit). Flagging so Houfu can add the space back on Ghost's side too.
+- `npm run lint-posts cowork-rugpull` is clean of errors (one pre-existing warning about internal links lacking `?ref=` query params, unrelated to this sync).

@@ -544,3 +544,72 @@ User reading through draft, pushed back on opener "I've never really announced d
 - Per user's stated request: "note up then compare"
 - Open question for next session: prose polish on new "When we go high" section (a few typos: "Datatsette", "designed for text-heavy, legal workloads" reads inverted, "all them" → "all of them")
 - Decide whether changes warrant Round 2 audit (memory rule: 2-round cap; Session 3 already burned Round 1)
+
+### Session 5: Automated Ghost sync sweep (2026-08-29)
+
+Local frontmatter still said `status: scheduled`; Ghost shows `status: published`. Updated the one
+field. Every other frontmatter field checked against Ghost — title, slug, tags, custom_excerpt,
+feature_image, published_at, post_id, featured — already matched.
+
+Content check found real post-publish drift in the Ghost editor, beyond cosmetic rewording: the
+OpenClaw paragraph in "What Shape of Agent Absorbs the Pressure" was rewritten and its two following
+sentences ("OpenClaw isn't wrong...That's a different shape.") were cut; the "Operationally, NanoClaw
+runs inside a Docker container..." paragraph was removed entirely; the first NanoClaw bullet's closing
+line was rewritten ("the answer, as I explain more below, was that you should use the interface that
+suits the task best" replacing "for Zeeker, the answer was simpler"); the "What's Live Now" section was
+restructured from prose into list items, the beginner's-guide sentence was trimmed, and a new bullet
+("Single row pages for particular data types...") was added; the standalone SMU/SOLID backlink line was
+merged into the surrounding sentence as an inline link; a typo was fixed in an image caption ("Discourse"
+→ "Discord"); a new bookmark card to "Building data.zeeker.sg: Technical Architecture" was added after
+the Split section's opening paragraph; and a new side-by-side screenshot gallery ("headlines table"
+comparison) was added near the end. None of this was applied to the local markdown body per sync
+instructions — noting it here so a future edit doesn't silently overwrite Houfu's live revisions. Found
+via an automated Ghost sync sweep on 2026-08-29.
+
+### Session 6: Pulled live Ghost content into local markdown (2026-08-29)
+
+Phase 2 of the sync sweep: rebuilt the entire local markdown body from a fresh fetch of the live
+lexical content (frontmatter untouched — phase 1 already handled that). Walked all 68 root nodes and
+applied every drift Session 5 had only flagged, plus a few Session 5 didn't call out:
+
+- OpenClaw paragraph in "What Shape of Agent Absorbs the Pressure" rewritten to the single sentence
+  Houfu shipped ("However it was clear to me that it wasn't suitable for the task I wanted it to do."),
+  dropping the old "neither is wrong" two-sentence close and the entire "Operationally, NanoClaw runs
+  inside a Docker container..." paragraph — both confirmed gone from the live lexical.
+- First NanoClaw bullet's closing line now reads "...the answer, as I explain more below, was that you
+  should use the interface that suits the task best."
+- "What's Live Now" converted from prose to a bullet list (7 items, flattened — Ghost stored it as a
+  nested list with a sub-list for the three databases, but this repo's markdown→lexical converter has no
+  nested-list support, so I flattened it to a single level rather than inventing unsupported syntax; the
+  new "Single row pages for particular data types..." bullet is included). The beginner's-guide sentence
+  is now just "I'm particularly proud of the beginner's guide I wrote for lawyers using the data." — the
+  two follow-on sentences about the idea germinating pre-genAI are gone from Ghost.
+- The four "What's Live Now" screenshots are now a Ghost gallery card; rendered here as four consecutive
+  image lines (this repo's converter has no gallery syntax — each markdown image line becomes its own
+  lexical image node, which is the closest available representation). Only the first image kept alt
+  text ("Zeeker SQL editor with schema sidebar..." — note this text visually describes the *second*
+  screenshot from the old layout, so Ghost's gallery conversion seems to have shuffled the alt text
+  across images); the other three lost their alt text entirely. Flagging for Houfu to re-add alt text
+  on Ghost's side.
+- SMU/SOLID backlink is now an inline link inside the "In November, I wrote that..." sentence, not a
+  standalone bookmark-card line.
+- Wiki-agent screenshot caption confirmed fixed on Ghost's side: "Discord conversation" (was
+  "Discourse" locally before this sync).
+- New bookmark card to "Building data.zeeker.sg: Technical Architecture" added right after the Split
+  section's opening paragraph (it carries a Ghost-only caption — "In the original post, I discussed
+  more about the architectural background..." — which the local bookmark syntax can't reproduce;
+  dropped per the members-only-caption convention, noting it here).
+- New side-by-side screenshot gallery near the end (rendered as two consecutive image lines); it also
+  carries a Ghost-only caption ("A side by side comparison of the headlines table") that's dropped for
+  the same reason.
+- The GitHub-PR reference at the very end is no longer a bare "[7](url)" link — Ghost now wraps the
+  descriptive sentence "It was that coding agents made the work tractable." in the link instead.
+- Typo-preservation exception applied once: live Ghost text reads "...is [NanoClaw](url)— specifically,
+  a fork..." with no space before the em dash. The local body already had this fixed correctly (space
+  present), so I kept the local wording rather than reintroducing the missing space. Flagging so Houfu
+  can fix the same spot in the Ghost editor.
+
+`npm run lint-posts zeeker-three-databases` came back clean (0 errors, 4 warnings — filename-vs-folder
+mismatch, missing `?ref=` on 3 internal links, the 7-item flattened list, and empty alt text on 7
+images). All four warnings are pre-existing conditions or direct artifacts of the live Ghost content
+pulled in above, not new problems introduced by this edit.

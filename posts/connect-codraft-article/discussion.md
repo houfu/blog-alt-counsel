@@ -582,3 +582,9 @@ Post was scheduled in Ghost with major edits made in the Ghost editor (screensho
 - ✅ Local markdown updated to match Ghost version
 - ✅ discussion.md updated with Session 5
 - ✅ Files staged for commit (user to review before committing)
+
+## Session 6: Stale status fix + forward link to "next chapter" (2026-08-29)
+
+Found while doing forward-link cleanup across the blog: this post's frontmatter still said `status: scheduled` even though it went live on Ghost on 2026-02-24 (post_id and published_at were already present). Fixed the status, and also renamed the local-only `ghost_id` field to `post_id` to match this repo's convention (`sync-from-ghost.js` always writes `post_id`).
+
+Added a forward link at the end of the post to [I Got Rugpulled by Cowork](https://www.alt-counsel.com/rugpulled-by-cowork/) (2026-06-27) — the later post about Cowork's usage-based pricing meter, at the user's request as part of a "feature forward-looking next-chapter links" cleanup pass. This local edit needs to be republished/re-added on the live Ghost post to take effect; it hasn't been pushed live.

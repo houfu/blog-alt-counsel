@@ -116,3 +116,6 @@ User feedback after reading the draft: (1) reads like a diary (fine) but under-e
 
 - 2026-06-10: Structure locked (C→A→B). Pitch approved by user. Adeu attribution correction recorded.
 - 2026-06-10: Round-1 reviewer essentials applied (drafting-regression caveat, solo-constraints beat). Review stopped at round 1. Two-week token-quota cost grounded. Closing question locked (harness-centric). Operational/scorer material deferred to follow-up post.
+
+## Session 3 — 2026-08-29 (Automated Ghost sync sweep)
+- Found via automated Ghost sync sweep: frontmatter `status` had drifted to `scheduled` while Ghost shows `published`, and `featured` had drifted to `false` while Ghost shows `true`. Both corrected locally. No content drift detected — live body matches the local markdown (aside from a trivial double-space typo in the "It wasn't the model" heading paragraph, not worth correcting).

@@ -294,3 +294,27 @@ Post was scheduled for publication this session.
 - Includes explicit comparison: Zeeker vs. paid databases (LawNet/WestLaw/Lexis) vs. web search
 - Backlinks to three existing alt-counsel posts already embedded
 - Appeal disclaimer at the end (employer filed for leave to appeal all six decisions)
+
+### Session 9: Automated Ghost sync sweep (2026-08-29)
+
+Found via an automated Ghost sync sweep, not a live editing session.
+
+- **Frontmatter**: `status` was still `scheduled` locally; Ghost shows the post as `published` (published_at unchanged at 2026-05-28T00:28:55.000Z). Updated `draftv4.md` frontmatter to `status: published`. All other synced fields (title, slug, tags, custom_excerpt, feature_image, post_id, featured) already matched.
+- **Content drift detected** between the live Ghost post and `draftv4.md`'s body (read-only finding, body not edited):
+  - The sentence "Zeeker — a Singapore legal database I built — closes that gap. And the way it does it is specific." (local, just before the "When Institutions Enter Your Passion Project Space" bookmark) does not appear anywhere in the live post.
+  - The backlink to "Building data.zeeker.sg: Technical Architecture" (local, after the fragment-retrieval explanation) is missing from the live post entirely — no bookmark for that URL exists on Ghost.
+  - The live post still has the typo "Claude Opus,performs better" (missing space after comma); the local draft already has this fixed as "Claude Opus performs better."
+  - These look like edits made directly in the Ghost editor after scheduling/publishing that were never pulled back into the local draft (or, for the typo, a local fix never pushed up). Worth reconciling by hand before treating `draftv4.md` as authoritative again.
+
+### Session 10: Pulled live Ghost content into local markdown (2026-08-29)
+
+Full body rebuild of `draftv4.md` from the live Ghost lexical record (slug `ect-no-lawyers-zeeker`), reconstructing node-by-node rather than patching only the Session 9 findings. Frontmatter untouched.
+
+- Confirmed and applied both Session 9 findings: dropped the "Zeeker — a Singapore legal database I built — closes that gap..." sentence and the "Building data.zeeker.sg: Technical Architecture" backlink — neither exists in the live body.
+- Confirmed the "Claude Opus,performs better" typo is still live on Ghost. Kept the local draft's already-correct "Claude Opus, performs better" per the sync instructions' typo-preservation exception — **flagging again for Houfu to fix the comma spacing on the Ghost side.**
+- **Found the members-only paywall is positioned differently on Ghost than in the old local draft.** Live, the paywall sits right before "**Installing the connector**" — the "What you can actually ask" heading, the Zeeker MCP explainer paragraph, the "When Institutions Enter Your Passion Project Space" bookmark, and the "Here is what the workflow actually looks like..." paragraph are all free content. The old local draft had the paywall marker earlier (right after that bookmark, before the heading), which paywalled more than what's actually live. Moved the marker to match Ghost.
+- Converted the two blockquote-style callouts (Longitude 101 bug note, "Interested to try out Zeeker MCP?") from `>` blockquote syntax to a plain paragraph with an HTML comment noting they're Ghost callout-box cards — this project's markdown-to-lexical converter has no blockquote support at all, so the old `>` rendering would not have round-tripped cleanly on a future republish.
+- Picked up wording/formatting edits made on Ghost since original publish: `Seng Hock Chye Daniel v Denso...` is now bold (was italic locally); the "Note: the employer has filed applications..." disclaimer is now bold (was italic); "stare decisis" is now bold (was italic).
+- Found one more image/caption issue beyond the known typo: the citation-lookup screenshot's Ghost `alt` field is empty, and its caption text is garbled ("...SGECT 1i wi"). Kept the local draft's existing clean alt text ("Zeeker citation lookup result for JGP v JGQ [2026] SGECT 1") under the typo-preservation exception rather than reproducing the empty alt / garbled caption — **flag this for Houfu to fix on Ghost** (add real alt text, fix the caption).
+- Dropped the Add-MCP.gif and citation-lookup/other screenshot captions per the sync conventions (no local caption syntax) — none of the other image captions carried meaningful text beyond what the alt/body already says.
+- `npm run lint-posts ect-no-lawyers-zeeker` shows 0 errors, 5 pre-existing warnings unrelated to this change (main-file naming, pitch.md missing a word budget/`## Pitch` section, two oversized images).

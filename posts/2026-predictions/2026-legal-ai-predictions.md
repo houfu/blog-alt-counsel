@@ -3,6 +3,8 @@ title: "My 2026 Legal AI Predictions (From the Trenches, Not the Boardroom)"
 slug: "my-2026-legal-ai-predictions-from-the-trenches-not-the-boardroom"
 tags: ["AI", "LegalTech", "Singapore", "2026Predictions"]
 status: published
+custom_excerpt: "Stanford predicts AI's measurement era, Forbes predicts transformation, Above the Law warns about hallucinations. Nobody's predicting what will actually happen for resource-constrained practitioners. Here are five testable predictions with public accountability."
+feature_image: "https://images.unsplash.com/photo-1758844898878-d7565be617a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDMxfHwyMDI2JTIwY2VsZWJyYXRpb258ZW58MHx8fHwxNzY3NzkxMzkzfDA&ixlib=rb-4.1.0&q=80&w=2000"
 published_at: "2026-01-08T00:33:52.000Z"
 post_id: "695e594d8be18900017b93d4"
 visibility: public
@@ -137,6 +139,8 @@ In December 2026, I'll publish the scorecard: what I predicted vs. what actually
 ## Your Turn
 
 I'll publish updates as blog posts tagged #2026Predictions, with raw data tracked publicly on [Github PR #8](https://github.com/houfu/blog-alt-counsel/pull/8). Throughout 2026, I'll commit updates showing contract review results, usage percentages, hallucination workflow tests, and theater vs. innovation callouts. If you're running similar experiments, share your results—email, blog comments, or PR submissions all work. December 2026, I'll compile findings with full attribution.
+
+{{< bookmark url="https://www.alt-counsel.com/2026-predictions-six-month-update/" title="Half-Time on My 2026 Predictions: My Confidence Was Inverted" description="Six months in, my January confidence ranking is almost perfectly inverted. The two predictions I was surest of are my worst calls." >}}
 
 **Where I'm probably wrong:** Prediction #1 (agentic AI working feels too optimistic) and #5 (no framework yet for spotting theater).
 

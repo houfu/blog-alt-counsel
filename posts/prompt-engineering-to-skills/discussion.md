@@ -339,3 +339,39 @@ Search terms suggested for Unsplash:
 - "blueprint" or "framework structure" (systems thinking)
 
 **Newsletter Complete and Scheduled for Publication**
+
+---
+
+## Session 4: Ghost Sync Sweep (2026-08-29)
+
+### Context
+Automated Ghost sync sweep flagged this post as high-priority: local frontmatter still said `status: draft` with no `slug`, even though the newsletter has actually been live on Ghost since October 2025 under slug `why-prompt-engineering-felt-wrong-and-what-skills-changed`.
+
+### Frontmatter Fixed
+Updated `posts/prompt-engineering-to-skills/newsletter.md` frontmatter to match the live Ghost record: added `slug`, `tags` (LegalTech, AI, newsletter), `post_id` (68f63f362794b400011def6e), `published_at` (2025-10-21T00:42:48.000Z), `feature_image`, and `custom_excerpt`; changed `status` from `draft` to `published`. `type: newsletter` was kept as a local-only field.
+
+### Content Drift Detected
+The live version has diverged from the local body in ways that go beyond formatting:
+- Two internal bookmark cards were added directly in the Ghost editor that don't exist in the local markdown at all: one for "Introducing: Prompt Engineering for Lawyers" after the 3-page-prompt paragraph, and one for "Singapore Court Rules on AI Hallucination" after the "persist what the agent knows" question.
+- The Simon Willison mention ("agents that work in loops") is now a hyperlink to his September 2025 post on Ghost; locally it's still plain text.
+- The closing italic line — "*This newsletter supports the full article... published at alt-counsel.com.*" — that exists at the end of the local file is absent from the live post.
+- No other prose rewrites detected; the rest of the body text matches word-for-word.
+
+### Next Steps
+- At the next real editing pass, consider pulling the two added backlinks and the Simon Willison hyperlink back into the local markdown so the source file matches what's actually published.
+
+## Session 5: Pulled Live Ghost Content Into Local Markdown (2026-08-29)
+
+### Context
+Phase 2 of the sync sweep (frontmatter was already handled in Session 4). Fetched the full lexical body of `why-prompt-engineering-felt-wrong-and-what-skills-changed` from Ghost and rebuilt the local markdown body node-by-node to match what's actually live.
+
+### What Changed
+- Confirmed and applied both Session 4 findings: added the two internal bookmark cards ("Introducing: Prompt Engineering for Lawyers" after the 3-page-prompt paragraph; "Singapore Court Rules on AI Hallucination: A Reality Check for Small Firms" after the "follows my workflows precisely" question), and turned the Simon Willison mention into a live hyperlink to his September 2025 post (`simonwillison.net` isn't on the bookmark-card domain allowlist, so it's a normal inline link, not a card).
+- Dropped the closing italic line ("*This newsletter supports the full article...*") — confirmed absent from the live post, matching the Session 4 finding.
+- Removed the redundant `# Why Prompt Engineering Felt Wrong (And What Skills Changed)` H1 at the top of the body — Ghost's lexical content has no such heading; the title lives only in the post's title field, not duplicated in the body.
+- Turned the plain-text "Read: Lawyers Got Prompt Engineering Wrong (And Why That Matters) →" line into a real bookmark card matching Ghost's actual node (title without the "Read:" prefix or arrow, since that's what the live bookmark's title field is).
+- Merged two local paragraphs ("I wrote a long article..." and "**You'll get three things:**") into one, matching Ghost's structure — Ghost stores this as a single paragraph, italicized throughout (not bold), not two separate sentences.
+
+### Caveats for a Human to Check
+- Both new bookmark cards carry a dropped caption from Ghost that has no local markdown equivalent: "Back in 2023, I even created a set of tutorials on prompt engineering for lawyers—convinced this was the future." (on the Prompt Engineering for Lawyers card) and "Reliability concerns remain important issues in the legal context." (on the Singapore Court Rules card). Worth re-adding on Ghost's side if those captions mattered.
+- `npm run lint-posts prompt-engineering-to-skills` passes with 0 errors, 3 pre-existing warnings (filename-vs-folder mismatch, `newsletter` tag not in the canonical registry, three internal links missing `?ref=` — all pre-existing, none introduced by this sync).

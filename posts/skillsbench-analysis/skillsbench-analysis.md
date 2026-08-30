@@ -8,7 +8,7 @@ github_folder: "skillsbench-analysis"
 custom_excerpt: "SkillsBench tested 84 tasks across 7,308 agent runs and found curated skills boost performance by 16pp — but 19% of tasks got worse. It is a great backdrop to the things I have learnt too."
 post_id: "69a6d5c6a327510001324998"
 published_at: "2026-03-04T04:05:06.000Z"
-feature_image: "https://www.alt-counsel.com/content/images/2026/03/photo-1554825959-e9a6670d4f18.jpeg"
+feature_image: "https://storage.ghost.io/c/33/4e/334edc26-d66c-4112-a0d8-6528c3cd17c4/content/images/2026/03/photo-1554825959-e9a6670d4f18.jpeg"
 ---
 
 I thought I was getting good at writing skills. I’d built nine for this blog already and they were buzzing along nicely.
@@ -34,6 +34,8 @@ SkillsBench tested each task under three conditions: no skills, curated skills, 
 *Curated skills help — but not universally.* The average gain is +16.2pp, but that average hides enormous variation. Healthcare tasks improved by +51.9pp. Software engineering tasks? Just +4.5pp. For 16 tasks, skills actively hurt performance, with the worst case dropping 39.3pp.
 
 The pattern matters: skills add the most value where models have the weakest priors. Healthcare has specialized workflows and brittle formats that models haven't seen enough of. Software engineering? Models have strong priors from massive training data — skills are more likely to conflict than help. 
+
+<!--members-only-->
 
 Legal work maps closer to healthcare on this axis. Contract review against jurisdiction-specific statutes, PDPA compliance checks, document classification for Singapore regulatory filings — these are exactly the domains where models lack strong priors and a focused skill can add the most value.
 

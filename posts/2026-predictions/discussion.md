@@ -851,3 +851,23 @@ Failing to keep the tracking log is *itself* a finding: tracking has friction to
 ### Published
 - Draft → Ghost post 6a47d32fbf2af40001c0095f; user set cover (AI-generated vintage half-time scoreboard, from prompt option 1) and **scheduled for 2026-07-04T01:00Z (9am SGT)**. Synced back (status, published_at, feature_image) at 80174e2.
 - Remaining for CHECK: after it goes live + any Ghost polish, final sync-ghost + live-vs-local content diff before closing PR #44; log notable Ghost edits here as voice decisions.
+
+## 2026-08-29 — Automated Ghost sync sweep
+
+- `2026-legal-ai-predictions.md` frontmatter was missing `custom_excerpt` and `feature_image`, both of which are set on the live Ghost record (id `695e594d8be18900017b93d4`, the original January predictions post — not the 6-month-update draft above). Added both to match Ghost exactly; title, slug, status, tags, published_at, post_id and featured were already correct.
+- Body content compared against the live lexical export: no drift detected, prose matches word-for-word.
+- Found via an automated Ghost sync sweep, not a manual editing session.
+
+## 2026-08-29 (later same day) — Found and fixed a second stale post in this folder
+
+The original sweep above only checked `2026-legal-ai-predictions.md` and missed that this folder holds a SECOND post file, `6-month-update.md` ("Half-Time on My 2026 Predictions"). Per the Session 2026-07-03 notes, it went to Ghost and published on 2026-07-04, but its local frontmatter still said `status: scheduled`.
+
+Fixed:
+- `status: scheduled` → `status: published` (all other frontmatter — slug, tags, custom_excerpt, post_id, published_at, feature_image — already matched Ghost).
+- Two section headings were retitled in the Ghost editor after publish and pulled back into local: "The confession: Prediction 3, where I was surest and most wrong" → "I was certainly wrong about my legal work"; "The idea I lived with all year: Prediction 1, human out of Word" → "The Word Plugin troubled me most".
+- Added the `<!--members-only-->` paywall marker, which exists on the live post right after the "work log of my actual AI usage" paragraph but was missing locally.
+- Rest of the body (all five prediction sections, the scorecard table, closing) matched the live lexical word-for-word.
+
+## Forward link to the half-time update (2026-08-29)
+
+Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) to `2026-legal-ai-predictions.md`, right after the "I'll publish updates as blog posts tagged #2026Predictions..." sentence, pointing to the [Half-Time on My 2026 Predictions](https://www.alt-counsel.com/2026-predictions-six-month-update/) update. User-requested as part of a "next chapter" forward-linking cleanup — the original January post had no way of pointing readers to the July check-in. This local edit needs to be added to the live Ghost post separately to take effect.

@@ -268,3 +268,8 @@ Houfu edited the post directly in Ghost and scheduled it. Changes made:
 ### Repo Sync
 - Synced local `draft.md` to match Ghost version
 - Committed and pushed to `blog/minlaw-consultation-followup` branch
+
+## Session 5 — 2026-08-29
+
+### Automated Ghost Sync Sweep
+Found via automated Ghost sync sweep. Live Ghost record now shows `status: published` (local frontmatter still said `scheduled` — the scheduled publish went out). Also backfilled `feature_image` and `published_at`, which Ghost had but local frontmatter was missing. No content drift detected — body text matches the live Ghost lexical content essentially verbatim.

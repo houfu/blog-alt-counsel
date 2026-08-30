@@ -599,3 +599,13 @@ full conference name, and cutting description the screenshots already carried.
   Houfu's inline site links back into cards. Worth a converter option if inline links to those hosts
   are wanted deliberately.
 
+## Session 11: Automated Ghost sync sweep (2026-08-29)
+
+Local frontmatter still said `status: scheduled`; Ghost now shows `status: published` (the
+2026-08-17T01:57:16Z scheduled time has since passed and the post went live). Updated the one field.
+Every other frontmatter field checked against Ghost — title, slug, tags, custom_excerpt,
+feature_image, published_at, post_id, featured — already matched. Content check found no drift beyond
+what Session 10 already logged (the apostrophe-style and missing-full-stop items noted there are
+still the only cosmetic differences from the local markdown). Found via an automated Ghost sync sweep
+on 2026-08-29.
+

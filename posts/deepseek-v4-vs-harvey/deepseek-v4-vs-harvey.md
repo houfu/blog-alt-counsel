@@ -5,8 +5,8 @@ tags:
   - AI
   - LegalTech
   - OpenSource
-status: scheduled
-featured: false
+status: published
+featured: true
 github_folder: deepseek-v4-vs-harvey
 post_id: 6a2983d681ce1e000152d0e3
 published_at: '2026-06-11T00:28:56.000Z'

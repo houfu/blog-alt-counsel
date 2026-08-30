@@ -11,7 +11,7 @@ custom_excerpt: >-
   the law, never what the law now says. So I baked Singapore's legal day into
   something you take in at a glance, and I'm still wondering what a glance can
   give you.
-status: scheduled
+status: published
 featured: false
 github_folder: sg-law-cookies
 post_id: 6a81e4c75e82c50001b41c91

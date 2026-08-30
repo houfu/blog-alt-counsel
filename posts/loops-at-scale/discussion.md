@@ -419,3 +419,9 @@ audit/reviews.
 - Set `feature_image_alt` (awaiting user go / or they paste in editor).
 - Screenshot stays 769 KB (user's choice).
 - After go-live, this PR can be merged; converter fixes (#41) are a separate branch.
+
+## Session 6: Automated Ghost sync sweep — status corrected to published (2026-08-29)
+
+Found via an automated Ghost sync sweep. The post went live as scheduled and local frontmatter still said `status: scheduled` — updated to `status: published` (all other frontmatter fields — title, slug, tags, custom_excerpt, feature_image, published_at, post_id, featured — already matched Ghost).
+
+No further content drift detected: the live lexical content matches the local body prose paragraph-for-paragraph. Only differences were the expected ones (the GitHub footer CTA, bookmark-card caption text, and a `?ref=loops-article` param on one bookmark URL) — none of which are body-prose changes.

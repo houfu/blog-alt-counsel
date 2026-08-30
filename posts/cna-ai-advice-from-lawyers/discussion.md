@@ -277,3 +277,13 @@ so the source/Ghost divergence is intentional and documented.
 
 **Next:** commit + PR to `main`. Infra TODO (local-image upload in
 publish-lexical.js) stays off this branch — separate infra PR.
+
+### 2026-08-29 — Automated Ghost sync sweep
+
+**Status changed: `scheduled` → `published`** (the scheduled 2026-06-02 send has
+since gone out; frontmatter updated to match). No other frontmatter fields
+differed. Content-drift check found no new prose changes beyond the manual
+merge already recorded above on 2026-06-01 — the members paywall break, the
+two-guiding-lights image caption, and `visibility: members` remain the only
+known Ghost-only elements not represented in `draft.md`, as previously
+documented. Found via an automated Ghost sync sweep.

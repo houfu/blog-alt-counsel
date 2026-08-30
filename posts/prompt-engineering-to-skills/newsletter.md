@@ -1,10 +1,23 @@
 ---
 title: "Why Prompt Engineering Felt Wrong (And What Skills Changed)"
+slug: why-prompt-engineering-felt-wrong-and-what-skills-changed
 type: newsletter
-status: draft
+tags:
+  - LegalTech
+  - AI
+  - newsletter
+status: published
+featured: false
+post_id: 68f63f362794b400011def6e
+published_at: '2025-10-21T00:42:48.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1719902950722-0bac4cdc837a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDEzfHxwZXJzb24lMjB0aGlua2luZyUyMGFsb25lJTIwc2luZ2Fwb3JlfGVufDB8fHx8MTc2MDk3MDY3OHww&ixlib=rb-4.1.0&q=80&w=2000
+custom_excerpt: >-
+  I sat in a standing-room-only prompt engineering workshop feeling
+  anxious—not because I was behind, but because I don't use any of these
+  frameworks. Turns out my instinct was right. That same month, the
+  technology shifted from prompts to persistent agent skills
 ---
-
-# Why Prompt Engineering Felt Wrong (And What Skills Changed)
 
 Standing room only at TechLawFest 2025. Everyone was learning COSTAR and GCES—popular frameworks for writing better prompts. I sat there feeling anxious. Not because I was struggling to keep up, but because I don't use any of this.
 
@@ -17,6 +30,8 @@ Turns out, that same month—September 2025—the technology was shifting. Skill
 ## The Year Before
 
 2024 was my rock bottom with prompt engineering. I entered a prompt writing competition. Spent weeks crafting a 3-page prompt for generating M&A term sheets. Six major sections. Step-by-step instructions. GCES framework. Elaborate formatting requirements.
+
+[Introducing: Prompt Engineering for Lawyers](https://www.alt-counsel.com/introducing-prompt-engineering-for-lawyers/)
 
 I was so proud of the detail. So convinced it would showcase what I knew.
 
@@ -32,9 +47,11 @@ After TechLawFest ended, I returned to my actual work problems. The ones that ke
 
 **How do I ensure the agent follows my workflows precisely?** Sometimes it would skip steps. Sometimes it would improvise. I needed reliability, not creativity.
 
+[Singapore Court Rules on AI Hallucination: A Reality Check for Small Firms](https://www.alt-counsel.com/singapore-court-rules-on-ai-hallucination-a-reality-check-for-small-firms/)
+
 **How do I scale this?** Each project needed different workflows. Contract review. Research summaries. Document generation. My prompts were getting longer and longer, trying to cram everything into context.
 
-That's when I found Simon Willison documenting something new—agents that work in loops. GitHub repos exploring persistent skill systems. Tools that could encode workflows once and run them autonomously.
+That's when I found [Simon Willison documenting something new](https://simonwillison.net/2025/Sep/18/agents/)—agents that work in loops. GitHub repos exploring persistent skill systems. Tools that could encode workflows once and run them autonomously.
 
 I realized: These systems solve the problems that made prompt engineering feel wrong.
 
@@ -50,9 +67,7 @@ Here's what I learned: If you felt like prompt engineering frameworks didn't fit
 
 Not because prompt engineering is wrong—it still works for chat tools like ChatGPT. But because in September 2025, we got access to something different. Agent skills that encode your judgment as reusable systems, not one-time prompts.
 
-I wrote a long article explaining what changed, why it matters, and what resource-constrained legal teams should do about it.
-
-**You'll get three things:**
+*I wrote a long article explaining what changed, why it matters, and what resource-constrained legal teams should do about it. You'll get three things:*
 
 **1. A working NDA review skill** you can adapt for your practice. If you can write a checklist in markdown format, you can build a skill.
 
@@ -60,9 +75,6 @@ I wrote a long article explaining what changed, why it matters, and what resourc
 
 **3. A decision framework** to evaluate whether this approach fits your practice. When to use chat tools, vendor tools, or custom skills—including security considerations, time investment, and when vendor tools make more sense than DIY.
 
-[Read: Lawyers Got Prompt Engineering Wrong (And Why That Matters) →](https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/)
+[Lawyers Got Prompt Engineering Wrong (And Why That Matters)](https://www.alt-counsel.com/lawyers-prompt-engineering-wrong/)
 
 Maybe you don't need to learn what everyone else is learning. Maybe your instinct that "this doesn't solve my real problems" was right all along.
-
-
-*This newsletter supports the full article "Lawyers Got Prompt Engineering Wrong (And Why That Matters)" published at alt-counsel.com.*
