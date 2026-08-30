@@ -972,3 +972,39 @@ canonical, no sprawl. `zeeker` deliberately not added; it is not in the registry
 ### State
 2,956 words against a 3,080 cap. Lint clean, 0 errors 0 warnings. Every figure traces to research.md.
 No unverified claims remain. **Ready for POST.**
+
+## Session 11: POST — Ghost draft created (2026-08-30)
+
+**User Decision:** *"POST"*.
+
+Dry run first, then published as a **draft** (not live) via `scripts/publish-lexical.js`, per the
+standing workflow: he polishes and schedules in the Ghost editor himself.
+
+- Post ID `6a93e23074db8900012210c7`, written back to frontmatter by the script.
+- Admin: https://alt-counsel.ghost.io/ghost/#/editor/post/6a93e23074db8900012210c7
+
+**Conversion verified on the dry run before any API call.** 89 top-level nodes: 9 headings, 11 code
+blocks with languages preserved (bash/text/json/markdown), 2 lists, 5 bookmark cards, and — the thing
+that matters — zero horizontal rules. The 5,949-character SKILL.md listing survived as a single
+`codeblock` node.
+
+**One conversion gap found, and it is an infra issue, not a post issue.** `publish-lexical.js` decides
+bookmark cards from a hardcoded host allowlist (`alt-counsel.com`, `zeeker.sg`, `mlaw.gov.sg`,
+`sal.org.sg`, a few others). `lawgazette.com.sg` is not on it, so the Law Gazette link in the opening
+rendered as an inline paragraph link rather than a bookmark card, where the pitch had specified a
+card. The four internal backlinks all carded correctly.
+
+Deliberately NOT fixed here — the standing rule is that script changes belong on their own branch and
+their own PR, never on the blog PR (PR #26 is the precedent). Two ways forward, Houfu's call: add
+`lawgazette.com.sg` to the allowlist on a separate infra branch and re-run, or upgrade it by hand in
+the Ghost editor, which is what he did on legal-oss-maintainer (Living Addendum, 2026-08-06).
+
+**Credentials note:** `.env` is gitignored and therefore absent from this worktree. Sourced from the
+main checkout into the process environment for the single publish call; nothing copied or written.
+Worth knowing for any future publish run from a worktree.
+
+### Next: CHECK
+Per the workflow — publish last, sync once. Do NOT run `sync-ghost` per edit. When the post is
+scheduled and Houfu has finished polishing in the Ghost editor, run `npm run sync-ghost
+read-the-server-before-you-draft` **once**, diff the live content against the local file, merge his
+editor edits back, and log notable ones as voice decisions.

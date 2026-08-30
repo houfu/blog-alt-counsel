@@ -5,6 +5,7 @@ tags: ["LegalTech", "AI", "Tutorial", "Singapore"]
 status: draft
 featured: false
 github_folder: "morning-briefing-tutorial"
+post_id: "6a93e23074db8900012210c7"
 ---
 
 I was pretty chuffed when my article was published in the August version of the Singapore Law Gazette. I wanted to introduce agentic coding to a wider range of lawyers and showed them what was possible with AI today. So I went for the simplest, most familiar slice possible: a plain-text skill file that tells an AI assistant what your practice is and what counts as done, then creates a morning briefing out of that. It ran against Singapore Law Watch's RSS feed, because most Singapore lawyers already know that feed.
