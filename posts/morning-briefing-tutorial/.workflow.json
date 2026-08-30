@@ -1,9 +1,9 @@
 {
   "version": 1,
   "pitch_checkpoint": {
-    "at": "2026-08-30T07:29:37.904Z",
-    "verdict": "Pitch was the defective artifact, not the draft. Three divergences, all downstream of Houfu's deliberate direction in sessions 5-9: (1) voice.lane still said learning-in-public after he ruled the post a tutorial — would have made audit-tone flag the tutorial register as a defect and wasted the single audit round; (2) beats listed 8 sections under stale titles, draft has 9; (3) thesis used 'clauses', now excised vocabulary. Pitch amended to match on all three. Subject and scope unchanged — still building against MCPs with Zeeker as the worked source, no drift from the Original framing. Flagged to Houfu rather than fixed: the declared emotional core has moved from the opening to one line at the close.",
-    "draft_sha": "173bd6fbe77d",
+    "at": "2026-08-30T07:38:55.353Z",
+    "verdict": "Re-checkpointed after audit round 1 (previous checkpoint invalidated by the audit fixes). Re-compared against pitch.md: thesis, scope and subject unchanged — still building against MCPs with Zeeker as the worked source, no drift from the Original framing. The audit fixes were word-level only: a legal boilerplate phrase excised from the body, four instances of a reversal-punch tic flattened, three restatements of the same idea reduced to one, an aphoristic kicker cut, and a bridging sentence added for columns that were asserted rather than derived. None touched structure or argument. Nine beats still match nine sections. Voice contract (lane: tutorial) verified as current. Emotional core still displaced from the opening to one line at the close — deliberately unresolved and put to Wei Lin as the primary audience's question.",
+    "draft_sha": "8c995a2d68f0",
     "pitch_sha": "a74d62829b47"
   },
   "audit_rounds": [
@@ -18,7 +18,22 @@
       ]
     }
   ],
-  "review_rounds": [],
-  "length_audit": null,
+  "review_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-30T07:39:26.346Z",
+      "draft_sha": "8c995a2d68f0",
+      "words": 3019,
+      "agents": [
+        "lawyer-coder-reviewer",
+        "legal-tech-blog-reviewer",
+        "inhouse-lawyer-reviewer"
+      ]
+    }
+  ],
+  "length_audit": {
+    "at": "2026-08-30T07:38:00.984Z",
+    "draft_sha": "8c995a2d68f0"
+  },
   "overrides": []
 }

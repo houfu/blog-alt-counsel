@@ -106,3 +106,36 @@ recent item: "PDPC: nothing since 5 August".
 the undated search, the permanently-empty source. None of them announces itself; each produces a
 briefing that looks fine. That is the through-line from the RSS skill's silent discard, and it is
 the post's argument.
+
+## Figures used in the draft, verified live (2026-08-30)
+
+Added after the audit round flagged that several figures in the draft had no entry here. All
+re-confirmed against mcp.zeeker.sg on 2026-08-30. research.md is the declared source of every figure
+in this post; anything the draft asserts should appear below.
+
+**The `search` example (the post's one admission).** `search("enforcement")`, unscoped, limit 6.
+Returned in this order:
+
+| # | date | item |
+|---|---|---|
+| 1 | 2026-06-11 | Tanjong Katong Road South Sinkhole: Enforcement Actions To Be Taken (mom_news) |
+| 2 | 2022-09-13 | Reply to Parliamentary Question on strengthening disclosure (acra_news) |
+| 3 | **2010-11-23** | **Media Brief - Contempt of Court Proceedings against Mr Alan Sh… (agc_news)** |
+| 4 | 2026-07-13 | Antitrust developments and enforcement activity in South-east Asia (commentaries) |
+| 5 | 2026-05-18 | Three Online Retailers Caught Using False Urgency Tactics (ccs_news) |
+| 6 | 2025-09-08 | VIETNAM NATIONAL INDUSTRY – ENERGY GROUP v JOINT STOCK COMPANY (judgments) |
+
+**The 2010 item is the THIRD result.** The draft is correct. Note for future audits: the four-date
+list recorded earlier under "The build: v1 failures" describes a *different* call — `search` scoped
+to `pdpc`, phrased around the last three days — and is not the same query. Two different calls, both
+real; do not reconcile one against the other.
+
+**Rate limit.** "Rate limits: 20/burst, 60/minute, 5000/day per IP" — stated verbatim in every tool
+description returned by `tools/list`. The draft's "60 calls a minute" is accurate.
+
+**Eight ministries and agencies.** `list_tables("sg-gov-newsrooms")` returns exactly 8: acra_news,
+agc_news, ccs_news, ipos_news, judiciary_news, mlaw_news, mom_news, pdpc_news.
+
+**Still unverified, and the one real gap:** "The Law Society's advisory of 2 April 2026 warns against
+feeding client information into publicly available AI tools." Carried over from Houfu's Law Gazette
+tutorial. No source located; needs either a link or his confirmation before publishing.

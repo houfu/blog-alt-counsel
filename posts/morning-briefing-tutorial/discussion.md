@@ -878,3 +878,53 @@ a quoted cut.
 
 ### Next
 Apply audit fixes, then all three reviewers, then synthesis with the length gate.
+
+### Audit round 1 applied (2026-08-30)
+
+Both agents returned. Fourteen fixes applied, net **−71 words** (3,075 → 3,004), so the round bought
+headroom rather than spending it. Length audit recorded.
+
+**audit-tone's IF ONE THING was right and it was about Claude's prose, not Houfu's.** A recurring
+"X is not Y; it is Z" reversal-punch appeared four times in seven paragraphs, nearly all of it
+introduced in the session-7 agentic reframe. One instance reads as voice; four reads as a tic, and
+it is the documented aphoristic-kicker anti-pattern (nine corpus deletions). All four flattened.
+
+Also caught, and Claude should have found it: **"Zeeker, for the avoidance of doubt, is…"** — legal
+drafting boilerplate sitting in the body, which survived both excision passes because Claude grepped
+for *comparisons* rather than for stock phrases. Lesson for the next excision: grep the phrasebook,
+not just the analogies.
+
+Other tone fixes: an aphoristic kicker cut from the honest-answer paragraph; three restatements of
+"an empty section looks like a working one" reduced to one; `Practice Interests` / `Excluded Matters`
+backticked so they read as file fields rather than legal terms.
+
+**Disagreed with audit-tone on one point:** it claimed "standing instruction" reintroduces legal
+vocabulary. It does not — that is general business usage, not drafting boilerplate. The sentence was
+rewritten for the tic, not for the vocabulary. Recorded so the same objection is not re-raised.
+
+**audit-substance's IF ONE THING was WRONG, and checking it mattered.** It claimed the `search`
+example contradicted research.md — wrong ordinal, fabricated fifth row. Re-ran the call live: the
+draft is exactly right, the 2010 contempt-of-court brief IS the third result, and the antitrust row
+is real. The agent had compared against a *different* call documented earlier in research.md (the
+v1 clause, scoped to `pdpc`). Two real calls, not one contradiction.
+
+But its underlying observation was correct and worth acting on: **figures verified live had never
+been written back to research.md**, which the post declares as the source of every figure. Fixed —
+research.md now carries the full search result table, the rate limit string, and the eight-table
+newsroom count, with a note warning future audits not to reconcile the two different calls.
+
+Also from audit-substance: a bridging sentence added for the `pdpc` / `sg-gov-newsrooms` /
+`sglawwatch` columns, which the finished file names but the walkthrough never derived on screen; and
+a note marking the mid-walkthrough Definitions snippet as abridged.
+
+**The one real gap neither Claude nor the verification could close:** "The Law Society's advisory of
+2 April 2026 warns against feeding client information into publicly available AI tools." Carried
+over from Houfu's Gazette tutorial, no source located. Needs a link or his confirmation before
+publishing. Logged in research.md under "Still unverified".
+
+### Reviewer round 1 launched — all three
+Blocked on first attempt: the workflow gate invalidates the pitch checkpoint when the draft changes,
+and the audit fixes had changed it. Working as designed. Re-checkpointed against the current draft
+(no structural change; the audit fixes were word-level) and relaunched. Wei Lin, Marcus and Sarah
+running, each briefed on what is out of scope and each asked for cuts alongside any addition. Wei Lin
+is additionally asked to rule on whether the displaced emotional core costs the post anything.

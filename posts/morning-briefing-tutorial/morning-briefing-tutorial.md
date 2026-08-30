@@ -93,11 +93,13 @@ other item:
 (b) Insolvency Law, including bankruptcy, judicial management and winding up;
 (c) Contract, where a commercial party is involved;
 (d) Arbitration.
+
+(Abridged — the finished file below runs to eight limbs plus exclusions.)
 ```
 
 Those tags are written by hand, one judgment at a time, and they are not uniform. Some use an em dash, some an en dash, some no separator at all, and a few run to several paragraphs. Your matching rule should compare case-insensitively, match on the leading subject words rather than splitting on a separator, and treat a tag it cannot parse as uncertain rather than excluded. That is ordinary care with hand-written data.
 
-Zeeker, for the avoidance of doubt, is a Singapore legal database I maintain and it is public and free.
+Zeeker, by the way, is a Singapore legal database I maintain. It is public and free.
 
 [The Judgment, Not the Summary: How Zeeker MCP Can Change the Way you do Legal Research](https://www.alt-counsel.com/ect-no-lawyers-zeeker/?ref=read-the-server-before-you-draft)
 
@@ -110,7 +112,7 @@ A feed has one verb: fetch. This server has six, and knowing which is which is m
 - `search` runs full-text search across every indexed table at once.
 - `fetch` returns a single row when you already have its URL.
 
-Two of those look like they do the same job, and here is what matters: you are not the one choosing between them each morning. Your brief chooses, once, in writing, and the agent does exactly what it says for as long as you leave it there. A badly written instruction is not a mistake you catch in the moment. It is a standing instruction.
+Two of those look like they do the same job, and here is what matters: you are not the one choosing between them each morning. Your brief chooses, once, in writing, and the agent does exactly what it says for as long as you leave it there. A badly written instruction does not fail once. It runs again every morning until you notice.
 
 The first version of my brief said: use `search`, scoped to the PDPC database, for enforcement decisions in the last three days. That reads like a reasonable instruction. Here is what `search` says about itself:
 
@@ -149,15 +151,15 @@ Before you write the briefing, show me every tool call you're about to make
 and what each one returned. Just the calls and the raw rows.
 ```
 
-Then look at the dates. Not the summaries, not whether the items seem plausible — the dates, the sources, the count. A wrongly drafted sweep returns real cases with real citations about the right subject, and the only thing marking it out is that one is from 2010. This is the whole skill: you are not writing code, you are reading a transcript and asking whether it is what you asked for.
+Then look at the dates. Not the summaries, not whether the items seem plausible — the dates, the sources, the count. A wrongly drafted sweep returns real cases with real citations about the right subject, and the only thing marking it out is that one is from 2010. You are not writing code here. You are reading a transcript and checking it against what you asked for.
 
 ## You are querying live infrastructure
 
 A feed is a file you download. A server is something you ask, and it can be asked badly.
 
-Constrain every query. An unbounded request against 10,804 rows is not a bigger version of a small one; it is a request that does not come back. So the first thing the brief says is that no table is ever queried without a date filter.
+Constrain every query. An unbounded request against 10,804 rows simply times out. So the first thing the brief says is that no table is ever queried without a date filter.
 
-Done properly, a morning briefing is a handful of calls: one per source, a few dozen rows of light columns each. That is also the shape you want when you make the agent show its work, because a call you can read in four lines is one you can check.
+Done properly, a morning briefing is a handful of calls: one per source, a few dozen rows of light columns each.
 
 Then there is the rhythm problem, which is the one that cost me a working briefing without ever looking broken. Judgments arrive most days — the most recent when I built this was dated 28 August, the day before. PDPC enforcement decisions do not. The most recent was 5 August, twenty-four days earlier. A single three-day window across both sources means the PDPC section returns nothing every single morning, and nothing about the output tells you that. An omitted section and a quiet section produce the same document.
 
@@ -169,9 +171,9 @@ For each source I'm about to sweep, tell me the date of its most recent item.
 
 The agent runs four unfiltered, three-row, newest-first queries and hands you four dates. It takes a minute, and it is the difference between a window you chose and a window you assumed.
 
-So "The Window" stops being one period and becomes four: judgments over three days, PDPC over sixty, government newsrooms over fourteen, Singapore Law Watch over three. Then the line that makes the difference visible — an empty source is named, with the date of its most recent item. "PDPC: nothing since 5 August" is a sentence you can act on. An absent section is not.
+So "The Window" stops being one period and becomes four: judgments over three days, PDPC over sixty, government newsrooms over fourteen, Singapore Law Watch over three. Then the line that makes the difference visible — an empty source is named, with the date of its most recent item. "PDPC: nothing since 5 August" is a sentence you can act on.
 
-The same reasoning covers partial failure. Every response from this server carries a count of the tables it could not reach, so a sweep across four sources can succeed on three and look completely normal. The brief has to say what to do about that: name the source that failed and state that the briefing is partial. A short briefing and a broken briefing are the same document unless the brief makes the assistant tell you which one you are reading.
+The same reasoning covers partial failure. Every response from this server carries a count of the tables it could not reach, so a sweep across four sources can succeed on three and look completely normal. The brief has to say what to do about that: name the source that failed and state that the briefing is partial. So the brief must name the failure rather than just returning a shorter list.
 
 ## Provenance comes with the data
 
@@ -186,9 +188,9 @@ Nothing about an RSS feed does this, and for a lawyer it is the strongest practi
 
 The provenance block does the same job one level up, naming the source, the licence and the required attribution on every response — so when a line from a briefing ends up in a note to a client, you know the terms it came under. Note too what the schema said: full judgment text is indexed but not distributed, so your briefing links to the Judiciary's own copy rather than passing around someone else's. That is a good property to inherit, and you only find it by reading the schema first.
 
-That sits alongside the others governing what counts as an honest answer, and each of them answers a specific way the output can go quietly wrong. Every item must come from a call made today, because an assistant that knows a great deal about Singapore company law can furnish a plausible morning briefing without querying anything at all. Summaries must be supportable from what the tools actually returned, because asked for eight items on a thin day it will find eight. And if no source can be reached, it should say exactly that and stop, rather than falling back on general knowledge, which is the failure that looks most like success.
+That sits alongside the others governing what counts as an honest answer, and each of them answers a specific way the output can go quietly wrong. Every item must come from a call made today, because an assistant that knows a great deal about Singapore company law can furnish a plausible morning briefing without querying anything at all. Summaries must be supportable from what the tools actually returned, because asked for eight items on a thin day it will find eight. And if no source can be reached, it should say exactly that and stop, rather than falling back on general knowledge.
 
-Which is where the comparison lands. In the feed version, three instructions covered what counted as an honest answer. Here it takes six, and the three new ones all follow from talking to a live server rather than reading a file: name empty sources, report incomplete sweeps, cite what you were given. The part that carries your judgment barely moved.
+Which is where the comparison lands. In the feed version, three instructions covered what counted as an honest answer. Here it takes six, and the three new ones all follow from talking to a live server rather than reading a file: name empty sources, report incomplete sweeps, cite what you were given.
 
 Your judgment is the constant. Everything else is plumbing.
 
@@ -317,11 +319,11 @@ testing a tag against Practice Interests:
   from general knowledge.
 ```
 
-Save it as `SKILL.md` in your client's skills folder, open the client, and ask for your morning briefing.
+The columns named for `pdpc`, `sg-gov-newsrooms` and `sglawwatch` came from the same survey, run once per database. Save the file in your client's skills folder, open the client, and ask for your morning briefing.
 
 ## Making it yours
 
-Everything with your name on it lives in one place, so adapting this is a substitution exercise. A construction lawyer would define Practice Interests around adjudication under the Security of Payment Act, defects and delay claims, BCA announcements and standard-form revisions, would move Excluded Matters to cover corporate and commercial news, and would tighten the urgency ranking, because adjudication timelines are measured in days rather than weeks. Nothing else changes at all.
+Everything with your name on it lives in one place, so adapting this is a substitution exercise. A construction lawyer would define `Practice Interests` around adjudication under the Security of Payment Act, defects and delay claims, BCA announcements and standard-form revisions, would move `Excluded Matters` to cover corporate and commercial news, and would tighten the urgency ranking, because adjudication timelines are measured in days rather than weeks. Nothing else changes at all.
 
 If your server is not this one, the six moves are still the same. Interrogate the schema before you draft. Find out which tool answers "since when" and which answers "about what". Constrain every query. Ask each source when it last published anything, before you decide how far back to look. Make the brief report a partial sweep. Take the citations the server gives you instead of letting them be assembled. Then write down what you actually care about, which is the part no model can write for you.
 
@@ -337,7 +339,7 @@ Everything above points the brief at raw judgments, where you own the relevance 
 
 Point your brief there and two things change at once. The unit gets finer, so one judgment can surface as three propositions and only the one touching your practice reaches you. And the calls you had been writing instructions to make — is this significant, why does it matter — are inherited rather than made.
 
-That is the trade, and the question to ask of any derived layer anywhere: how much of the judgment am I delegating, and am I comfortable with who made it? Neither answer is wrong. The one thing I would not do is choose without noticing you chose.
+That is the trade, and the question to ask of any derived layer anywhere: how much of the judgment am I delegating, and am I comfortable with who made it? Both are defensible. The one thing I would not do is choose without noticing you chose.
 
 If you want the finer unit without inheriting the ratings, `folio_areas` is the middle path. It carries FOLIO identifiers — an open legal taxonomy rather than anything of mine — so what you count as relevant can match on a standard that will outlive any one database.
 
