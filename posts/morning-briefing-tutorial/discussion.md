@@ -818,3 +818,16 @@ is the entry to argue with.
 ### Next Steps
 REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
 length audit, then backlinks and tags.
+
+### Settled: the "junior" line stays (2026-08-30)
+
+**User Decision:** *"you can leave the junior thing alone."*
+
+The close keeps "…a precise written record of your own editorial judgment — which you have probably
+never had to set down before, because no junior ever asked you to." Raised twice by Claude during
+the two excision passes and declined both times. SETTLED — reviewers should not re-open it.
+
+Boundary this establishes, worth carrying to future posts: the objection was to **borrowed legal
+vocabulary doing explanatory work** — precedents, headnotes, entire agreement clauses, Definitions
+and Obligations as section labels. An observation drawn from how practice actually works is not the
+same thing and stays.
