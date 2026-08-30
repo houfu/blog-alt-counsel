@@ -605,3 +605,62 @@ walkthrough had been compressed to a single sentence. Final: **2,731 words**, li
 REVIEW, in order: pitch checkpoint, then the two audit agents in one message (audit-substance and
 audit-tone), then reviewers per `primary_audience: wei-lin`, then the length audit before applying
 any additive fixes, then backlinks and tag validation.
+
+## Session 6: Cookies layer section added; protected line amended (2026-08-30)
+
+### Context
+User asked which was more interesting — interrogating the whole Zeeker MCP (as drafted) or pointing
+the brief at the `sg-law-cookies` database to recreate the Cookies experience — for a lay lawyer and
+for his own objectives.
+
+### What Claude Did
+Read the source before answering, per the post's own advice, and found a blocking fact: the
+`sg-law-cookies` database on the MCP held 45 cookies spanning 26 May to 8 June 2026, while
+cookies.zeeker.sg served a front page dated 29 August with judgments through the 28th. The live
+bakery was current; the MCP's copy had stopped in June. A learner following a cookies-only tutorial
+would have built a briefing that returned nothing on day one.
+
+### Claude's Recommendation
+Keep the whole-MCP interrogation as the spine; give cookies a short closing section. Reasons given:
+- **Lay-lawyer interest favours cookies** — `significance` and `why_it_matters` already exist as
+  columns, so the two judgement calls the brief currently drafts clauses to make are handed over;
+  the unit is finer (one judgment surfaces as several propositions); and the bakery image has
+  already landed with an audience.
+- **His objectives favour the raw layer**, and the argument came from his own hand edit: he had
+  written that Cookies "is pretty much a showcase of Zeeker's dataset… That doesn't make sense to a
+  lawyer trying to mould the data into a service he can appreciate." Closing that gap by pointing
+  the tutorial at the showcase works against him, and narrows transferability toward a product demo.
+
+### User Decisions
+1. **Keep the short closing section.** *"let's keep the short closing section."*
+2. **He is fixing the cookies sync himself** — *"i am actually fixing it now anyway"*. Consistent
+   with the standing rule that bugs get fixed rather than published.
+
+### What went into the post
+New section, "The same server carries two layers" (291 words), placed between the Definitions
+adaptation and the close. It carries **no volatile figures** — no row counts, no date ranges —
+because the underlying data was being changed as it was written. It describes schema, which is
+stable: `significance` and `why_it_matters` sit outside the light column set, so they must be named
+in `columns`, which reinforces the light/available lesson from beat 3. The framing is a design
+question rather than a second tutorial: how much judgment are you delegating to the source, and are
+you comfortable with who made it. `folio_areas` is offered as the middle path because FOLIO is an
+open standard and therefore transfers off Zeeker entirely.
+
+Deliberately omitted: the staleness, and the count of cookies with no `primary_area`. Both are audit
+numbers about the author's own database, which the standing instruction rules out — and the first
+would have been false by publication anyway.
+
+### Protected line amended
+Houfu's hand edits changed "I rewrote each time." to "In the SLG article, the agent rewrote each
+time." The post-edit lint hook caught the divergence and blocked. Resolved the correct way round:
+**his edit stands and pitch.md was amended** to match, per the rule that protected lines survive all
+cuts or the pitch gets amended. Never smooth a passage he hand-wrote.
+
+### Outcomes
+- ✅ 3,036 words, inside the 2,800 +/-10% budget (ceiling 3,080). Lint clean.
+- ⚠ Close to the ceiling. Any additive reviewer fix now needs cuts found first — which is the
+  standing ordering rule, and it now genuinely binds.
+
+### Next Steps
+REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
+length audit before applying any additive fixes, then backlinks and tags.

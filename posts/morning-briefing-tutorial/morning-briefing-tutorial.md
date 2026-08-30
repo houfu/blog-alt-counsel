@@ -7,19 +7,17 @@ featured: false
 github_folder: "morning-briefing-tutorial"
 ---
 
-Earlier this year I wrote a tutorial for the Singapore Law Gazette on building your own morning briefing: a plain-text file that tells an AI assistant what your practice is and what counts as done. It ran against Singapore Law Watch's RSS feed, because most Singapore lawyers already know that feed. It was written for lawyers generally, so it stopped short of how you actually build the thing.
+I was pretty chuffed when the I saw my article was published in the August version of the Singapore Law Gazette. It was about building your own morning briefing: I wanted to introduce agentic coding to a wider range of lawyers and showed them what was possible with AI today. So I went for the simplest, most familiar slice possible: a plain-text skill file that tells an AI assistant what your practice is and what counts as done. It ran against Singapore Law Watch's RSS feed, because most Singapore lawyers already know that feed.
 
 [Breakfast, Eventually: Why Lawyers Should Build Their Own Tools](https://lawgazette.com.sg/practice/tech-talk/breakfast-eventually-why-lawyers-should-build-their-own-tools/)
 
-This is the version with the building left in. It connects to an MCP server rather than reading a feed, and that changes the brief more than the change of source does.
-
-I don't run the first one anymore. SG Law Cookies took over that job in my actual morning.
+Strangely, for an article that tries to extol the virtues of agentic coding, no coding actually takes place. If you read this blog regularly enough, you would guess that running a text file skill against an RSS file seems pretty quaint. The scent that my ambitions went far beyond that were wafting through the pages when I introduced SG Law Cookies. Beyond creating a traditional Singaporean bakery that baked *kuih bangkit* based on the significance of the legal update, it also connects through Zeeker’s rich and varied data repository.  
 
 [Come Into the Bakery: What I Did With All That Legal Data](https://www.alt-counsel.com/come-into-the-bakery/?ref=read-the-server-before-you-draft)
 
-You need an AI client that speaks MCP — Claude Code, Claude Desktop, Cowork and Codex all do — and the ability to save a text file. No programming. By the end you will have one file that produces a morning briefing from Singapore court judgments, PDPC enforcement decisions, government newsroom releases and Singapore Law Watch, filtered to a single practice.
+The main thesis of my Singapore Law Gazette article in my view was that lawyers should build, and pay attention, to hyper-local, hyper-personal AI services. SG Law Cookies is pretty much a showcase of Zeeker’s dataset, so it emphasises its range. That doesn’t make sense to a lawyer trying to mould the data into a service he can appreciate, so there’s also a gap here. 
 
-What arrives when you run it is a page with today's date, at most eight items, and for each one a case name, a court and a single sentence on why it matters to you rather than a restatement of the headline. Under that, anything the assistant was unsure about, with its reason. Under that, a line naming any source that had nothing to say and when it last did. That last line is the one that took the longest to earn, and most of this tutorial is about why.
+So *this* tutorial had to be written. 
 
 ## What a feed-reading brief looked like
 
@@ -29,23 +27,25 @@ Definitions is the clause that carries your practice. "Relevant to my practice" 
 
 The feed version had to work with what RSS warrants: a title, a link, a description, a `category` and a publication date. The `category` is a trap. It names the newspaper or the firm supplying the item, not the subject. So the brief could only guess relevance from a headline, and it guessed badly twice. First it dropped a Business Times opinion piece on a financial services gap, because "opinion" sounded like commentary rather than law; silence, the skill had decided, meant discard. Then, on a thin news day, asked for eight items, it found eight — asserting a corporate significance the description never supported.
 
-I rewrote each time.
+In the SLG article, the agent rewrote each time.
 
 Both fixes landed in the same two clauses. Uncertain items go in a "Possibly relevant" line with one sentence of doubt, rather than disappearing. Summaries must be supportable from the title and description alone. Nothing I amended was ever about RSS.
 
 ## You interrogate an MCP; you don't read it
 
-Connecting is the short part. In Claude Code:
+To proceed on this tutorial, you’re going to need a skill reading, MCP connecting client. Claude Code obviously works and so does Codex. The desktop versions should be able to do so with some configuration. If you want to know whether your AI client supports it or how to set it up, you should just ask it. 
+
+Connecting is the short part. For Claude Code:
 
 ```bash
 claude mcp add --transport http zeeker https://mcp.zeeker.sg/mcp
 ```
 
-Other clients take the same URL in their MCP settings. There is no sign-up and no API key; you are rate-limited to 60 calls a minute, which no briefing will ever approach.
+Other clients take the same URL in their MCP settings. For zeeker, there is no sign-up and no API key; you are rate-limited to 60 calls a minute, which no briefing will ever approach.
 
 Now stop. Before you write a single clause, ask the server what it has. This is the same move as reading a precedent before you draft from it, and it is the step people skip. Three of the six tools exist only for this: `list_databases`, `list_tables` and `describe_table`.
 
-Asking what is there at all returns five databases: court judgments, PDPC enforcement decisions and guidance, newsroom releases from eight ministries and agencies, Singapore Law Watch headlines and commentaries, and the daily extractions behind SG Law Cookies. Each comes with its own licence, and they are not the same — the judgments are CC-BY-4.0, the government newsroom releases are all rights reserved. Read that before you build anything that republishes rather than links.
+Asking what is there at all returns five databases: court judgments, PDPC enforcement decisions and guidance, newsroom releases from eight ministries and agencies, Singapore Law Watch headlines and commentaries, and the daily extractions behind SG Law Cookies.
 
 Then go down a level. `list_tables` gives you row counts and a one-line description per table, and `describe_table` gives you the schema. Asking about the judgments table returns, among other things:
 
@@ -315,6 +315,18 @@ If your server is not this one, the six moves are still the same. Interrogate th
 [What 7,308 Agent Runs Taught Me About Writing Better Skills](https://www.alt-counsel.com/skillsbench-analysis/?ref=read-the-server-before-you-draft)
 
 One note on confidentiality. All of this runs on public data. The databases are public, the skill file holds your professional interests rather than your clients' affairs, and no matter name or document goes near the workflow. The Law Society's advisory of 2 April 2026 warns against feeding client information into publicly available AI tools, and a briefing skill never needs to. Build first where the stakes are breakfast.
+
+## The same server carries two layers
+
+There is a second decision hiding in all of this, and it is worth making on purpose rather than by default.
+
+Everything above points the brief at raw judgments, where you own the relevance test and the assistant writes the "so what" from a summary. But the same server also carries the `sg-law-cookies` database, which is the layer behind the bakery: each row is a single proposition rather than a whole case, and it arrives with `significance` already rated and a `why_it_matters` already written. Both of those sit outside the light column set, so you have to name them in `columns` to get them — the same allow-list you met when reading the judgments schema.
+
+Point your brief there instead and two things change at once. The unit gets finer, so one judgment can surface as three propositions and only the one that touches your practice reaches you. And the judgement calls you had been drafting clauses to make — is this significant, why does it matter — are inherited rather than made.
+
+That is the trade, and it is the question to ask of any derived layer anywhere: how much of the judgment am I delegating to the source, and am I comfortable with who made it? Where the raw layer costs you drafting effort, the baked layer costs you a say. Neither is wrong. The one thing I would not do is choose without noticing you chose.
+
+If you want the finer unit without inheriting the ratings, `folio_areas` is the middle path. It carries FOLIO identifiers — an open legal taxonomy rather than anything of mine — so your Definitions clause can match on a standard that will outlive any one database.
 
 ## What you end up with
 
