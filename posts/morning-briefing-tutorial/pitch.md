@@ -2,6 +2,7 @@
 word_budget: 2800
 budget_approved_by: houfu  # 2026-08-29: "it's a tutorial. so loosen word count requirements"
 budget_tolerance: 10
+# 2026-08-30: draft sits at 3,075 against a 3,080 cap. Additive fixes need cuts found first.
 primary_audience: wei-lin
 secondary_audience: [marcus]
 thesis_keywords: ["morning briefing", "skill", "judgment", "MCP"]
@@ -10,8 +11,18 @@ protected_lines:
   - "Your judgment is the constant. Everything else is plumbing."  # was "The Definitions clause is
   # the constant" — artifact names excised from prose on Houfu's instruction, 2026-08-30
 voice:
-  lane: learning-in-public
-  moves: [uncomfortable-admission, specific-numbers, framework-presentation]
+  lane: tutorial  # re-declared 2026-08-30. NOT one of the Voice Guide's two documented lanes.
+  moves: [specific-numbers, framework-presentation, uncomfortable-admission]
+  contract: >-
+    Set by Houfu 2026-08-30: "remember this is a tutorial. not a narrative story or an opinion."
+    Second person for instruction; first person only for what the author did and found. Bullets are
+    permitted for procedure and inventory (Voice Guide 2.1). No narrative arc, no
+    analysis-as-realisation, no opinion register. THE NARRATIVE-PACING GUIDANCE IN VOICE GUIDE 2.5
+    DOES NOT APPLY TO THIS POST and must not be used to judge it. One uncomfortable admission only
+    — the mis-drafted `search` instruction — stated plainly, not performed. Borrowed legal
+    vocabulary is confined to the intro, which explains it as a past device for the Gazette's
+    audience; the body must not borrow it. The SKILL.md listing keeps its own legal headings by the
+    author's explicit decision and is out of scope for voice review.
 interrogation:
   diagnosis: >-
     Tested and revised four times. "Fuller tutorial" did not mean more detail (a complete 1,900-word
@@ -88,10 +99,14 @@ target_date: ~
 
 **Title:** Read the Server Before You Draft  [SETTLED by Houfu 2026-08-29]
 **Thesis:** An MCP does not just give your skill a better source. It gives it tools to choose
-between, live infrastructure to be careful with, and status to report — so the brief grows clauses a
-feed-reading skill never needed.
+between, live infrastructure to be careful with, and status to report — so the brief needs
+instructions a feed-reading one never did.
 **Spine:** Your judgment is the constant. Everything else is plumbing.
 **Emotional core (user's words):** "I don't run this skill because I have cookies."
+[MOVED 2026-08-30 — Houfu's rewritten opening drops the admission; the retirement now appears only
+at the close as "Mine is retired now, and I still think it was worth the fortnight." Flagged to him
+and left to the reviewer round rather than restored by Claude: whether its near-absence costs the
+post anything is exactly Wei Lin's question to answer.]
 
 ## Pitch
 
@@ -110,45 +125,31 @@ clause — the part that is actually your practice — barely moves.
 
 ## Beats
 
-- **Open — why there is a second version.** The Gazette piece was for lawyers generally, so it
-  stopped short of the build, and it ran on SLW's RSS because they already know that feed. Both
-  deliberate. This one builds against an MCP server, and connecting to a live source changed the
-  brief more than the change of source did. "I don't run this skill because I have cookies", stated
-  once and immediately given its meaning. BOOKMARK CARDS, no lead-in sentences (R2). (250 words)
-- **The baseline: what a feed-reading brief looked like.** Load-bearing, because every later
-  difference is measured against it. The contract anatomy in one pass. RSS warrants four fields and
-  `category` names the speaker, not the subject, so relevance had to be guessed from a headline —
-  planted for beat 3 to resolve. The two failures that shaped the clauses. "Every time we
-  encountered a problem, the agent rewrote it."
-  (300 words)
-- **You interrogate an MCP; you don't read it.** Connecting to mcp.zeeker.sg. `list_databases` →
-  `list_tables` → `describe_table` with real output — the same read-the-precedent move, new
-  instrument. Typed columns, row counts, and `subject_tags` carrying the subject in the court's own
-  words, so Definitions can name a field and MATCH rather than guess. Show the clause beside the RSS
-  one it replaces. Depth and personalisation turn out not to be opposed. (450 words)
-- **The tools answer different questions.** Six tools; two look like they do the same job. `search`
-  is relevance-ranked and takes no date — by design, and its description says so. Asked for three
-  days of enforcement it returned 2026-06-11, 2026-05-18, 2022-09-13 and 2010-11-23, a
-  sixteen-year-old contempt-of-court media brief. The admission is about the drafter, not the
-  server: I had read both descriptions and still wrote a clause assuming a date filter that was
-  never there. `search` answers "about what"; `query_table` answers "since when". The new clause
-  type: allocating obligations to tools. (500 words)
-- **You are querying live infrastructure.** Constrain every query — an unbounded ask against a real
-  database is a request that does not come back. A sweep can half-succeed, so the brief must make
-  the skill name a partial sweep: a short briefing and a broken briefing look identical otherwise.
-  And one server fronts sources on different rhythms, so a single window leaves the slow ones empty
-  every morning with nothing to show for it. Ask each source for its most recent item before setting
-  its window. (450 words)
-- **Provenance comes with the data, so forbid inventing it.** A provenance block on every response,
-  a `_citation` on every row. The clause: cite exactly what is returned, never construct or complete
-  one — the strongest lawyerly argument for building against an MCP rather than scraping. The rest
-  of the Standard of Performance clause, each line paired with the failure it answers. The finding:
-  on RSS this clause was three lines, here it is six, and Definitions barely moved. Complete
-  SKILL.md as a fenced block. (500 words)
-- **Your own Definitions clause.** ONE worked substitution, in prose. The transfer to a reader with
-  a different server and a different practice — the same six moves. Public data only and the Law
-  Society advisory, in two or three sentences. (200 words)
-- **Close.** Soft, flat or hopeful. (150 words)
+Retitled 2026-08-30 to track the draft. Nine units, not eight — "The same server carries two
+layers" was added in session 6 and had no beat until now.
+
+- **Open (untitled).** Houfu's own prose: the Gazette publication, agentic coding introduced with no
+  coding in it, SG Law Cookies as a showcase of range rather than a personal service, and the gap
+  that leaves. BOOKMARK CARDS, no lead-in sentences (R2).
+- **What a feed-reading brief looked like.** Houfu's four bullets on skills as short services
+  contracts: word choice, specificity, restraint. "Every time we encountered a problem, the agent
+  rewrote it." Plus the behind-the-scenes note on how the Gazette skill was actually built.
+- **Send the agent in first.** Connecting; then the survey as a PROMPT, not a command, with the
+  three discovery tools described as what runs underneath. Five databases, then the judgments
+  schema. `subject_tags` lets relevance match instead of guess.
+- **The tools answer different questions.** Six tools, two that look alike. Your brief chooses once
+  and the agent obeys it — a badly written instruction is a standing instruction. The 2010 media
+  brief. The admission. Then the habit: make the agent show its work.
+- **You are querying live infrastructure.** Constrain every query. Sources publish on different
+  rhythms, so one window starves the slow ones. Ask each source when it last published.
+- **Provenance comes with the data.** Citations and licence arrive with the row, so the brief can
+  forbid constructing them. Three instructions become six. "Your judgment is the constant.
+  Everything else is plumbing." Complete SKILL.md as a fenced block.
+- **Making it yours.** One worked substitution. The transfer to a different server. Public data and
+  the Law Society advisory.
+- **The same server carries two layers.** Raw versus derived: how much judgment you delegate to the
+  source. FOLIO as the middle path.
+- **Close.** Soft and flat. The retirement lands here rather than in the opening.
 
 ## Out of scope
 

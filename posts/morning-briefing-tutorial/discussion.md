@@ -831,3 +831,50 @@ Boundary this establishes, worth carrying to future posts: the objection was to 
 vocabulary doing explanatory work** — precedents, headnotes, entire agreement clauses, Definitions
 and Obligations as section labels. An observation drawn from how practice actually works is not the
 same thing and stays.
+
+## Session 10: Pitch checkpoint, audit round begins (2026-08-30)
+
+**User Decision:** *"review now. we always need more than 2 audience reviewers"* — all three reviewers
+this round, overriding CLAUDE.md's "default to 1-2, all 3 only when the content addresses all three
+segments". Recorded as a standing preference, not a one-off.
+
+### Pitch checkpoint: the PITCH was the defective artifact
+
+Three divergences, all downstream of Houfu's own direction across sessions 5–9, so the draft is
+right and the pitch had not kept up:
+
+1. **`voice.lane` still said `learning-in-public`** after he ruled the post a tutorial in session 5.
+   This was the consequential one. audit-tone judges the draft against the declared contract, so it
+   would have flagged the tutorial register itself as a voice failure and burned the single audit
+   round on a defect that is not one. Re-declared as `lane: tutorial` with an explicit `contract`
+   field spelling out second person for instruction, bullets permitted for procedure, one
+   uncomfortable admission only, and — stated in capitals — that Voice Guide 2.5 narrative pacing
+   does not apply to this post.
+2. **Beats listed eight sections under stale titles.** The draft has nine; "The same server carries
+   two layers" was added in session 6 and never got a beat. Retitled all nine to match.
+3. **Thesis still used "clauses"**, excised vocabulary since session 9. Reworded.
+
+Subject and scope: **no drift.** Still building against MCPs with Zeeker as the worked source,
+consistent with the Original framing block.
+
+**Which check would have caught it:** none of the three interrogation questions — the pitch was sound
+when written. The real lesson is narrower and worth carrying: **when the user changes the register of
+a post, re-declare `voice.lane` in the same edit.** Beats and framing were amended in session 5; the
+voice contract was not, and it sat wrong for five sessions.
+
+### Flagged, not fixed: the emotional core has moved
+pitch.md declares "I don't run this skill because I have cookies" as the emotional core and beat 1
+had it opening the post. Houfu's rewritten opening drops the admission entirely; the retirement now
+survives as one line at the close — "Mine is retired now, and I still think it was worth the
+fortnight." Deliberately NOT restored by Claude. Whether its near-absence costs the post anything is
+precisely Wei Lin's question, so it goes to the reviewer round rather than being pre-empted.
+
+### Audit round 1 launched
+audit-substance and audit-tone in one message, per the rule. Both briefed on what is out of scope so
+the round is not spent on settled ground: Houfu's hand-written opening and bullets, the SKILL.md
+listing and its legal headings, the excised legal vocabulary, and the settled "junior" line. Both
+told the draft sits at 3,075 words against a 3,080 cap, so every proposed addition must arrive with
+a quoted cut.
+
+### Next
+Apply audit fixes, then all three reviewers, then synthesis with the length gate.

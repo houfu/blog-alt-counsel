@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-08-30T07:29:37.904Z",
+    "verdict": "Pitch was the defective artifact, not the draft. Three divergences, all downstream of Houfu's deliberate direction in sessions 5-9: (1) voice.lane still said learning-in-public after he ruled the post a tutorial — would have made audit-tone flag the tutorial register as a defect and wasted the single audit round; (2) beats listed 8 sections under stale titles, draft has 9; (3) thesis used 'clauses', now excised vocabulary. Pitch amended to match on all three. Subject and scope unchanged — still building against MCPs with Zeeker as the worked source, no drift from the Original framing. Flagged to Houfu rather than fixed: the declared emotional core has moved from the opening to one line at the close.",
+    "draft_sha": "173bd6fbe77d",
+    "pitch_sha": "a74d62829b47"
+  },
+  "audit_rounds": [
+    {
+      "n": 1,
+      "at": "2026-08-30T07:30:10.190Z",
+      "draft_sha": "173bd6fbe77d",
+      "words": 3090,
+      "agents": [
+        "audit-substance",
+        "audit-tone"
+      ]
+    }
+  ],
+  "review_rounds": [],
+  "length_audit": null,
+  "overrides": []
+}
