@@ -6,7 +6,7 @@ primary_audience: wei-lin
 secondary_audience: [marcus]
 thesis_keywords: ["morning briefing", "skill", "Definitions", "MCP"]
 protected_lines:
-  - "In the SLG article, the agent rewrote each time."  # amended by Houfu's hand edit 2026-08-30
+  - "Every time we encountered a problem, the agent rewrote it."  # tracks Houfu's hand edits, 2026-08-30
   - "The Definitions clause is the constant. Everything else is plumbing."
 voice:
   lane: learning-in-public
@@ -117,8 +117,8 @@ clause — the part that is actually your practice — barely moves.
 - **The baseline: what a feed-reading brief looked like.** Load-bearing, because every later
   difference is measured against it. The contract anatomy in one pass. RSS warrants four fields and
   `category` names the speaker, not the subject, so relevance had to be guessed from a headline —
-  planted for beat 3 to resolve. The two failures that shaped the clauses. "In the SLG article,
-  the agent rewrote each time."
+  planted for beat 3 to resolve. The two failures that shaped the clauses. "Every time we
+  encountered a problem, the agent rewrote it."
   (300 words)
 - **You interrogate an MCP; you don't read it.** Connecting to mcp.zeeker.sg. `list_databases` →
   `list_tables` → `describe_table` with real output — the same read-the-precedent move, new

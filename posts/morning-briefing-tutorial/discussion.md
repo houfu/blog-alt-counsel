@@ -714,3 +714,55 @@ the word budget; the prose around them was rewritten in place rather than added 
 ### Next Steps
 REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
 length audit before any additive fix, then backlinks and tags.
+
+## Session 8: Legal comparisons excised from the body (2026-08-30)
+
+**User Decision (verbatim):**
+> excise the corny comparisons to legal terms scattered throughout the tutorial. i explained why i
+> used it in the SLG, which was part of the narratove but not so much the tutorial. there's no need
+> to repeat it here except the intro
+
+### Rationale
+His rewritten intro now owns the device explicitly — "For the sake of simplicity, I borrowed many
+well known legal terms to explain the process to lawyers who read the SLG" — and treats it as a past
+choice being explained. Repeating the analogy downstream was the corniness.
+
+### What was cut (four, the complete set)
+Grepped the body for legal-analogy constructions and found exactly four:
+1. "This is the same move as reading a precedent before you draft from it" — the survey step.
+2. "and you would extend the same courtesy to a headnote" — the tag-matching paragraph.
+3. "— the same reason entire agreement clauses exist" — the standard-of-performance walkthrough.
+4. "exactly as you would adapt a precedent for a new client" — the adaptation section.
+
+### What was deliberately kept
+- **The intro bullets** (his), untouched — the carve-out he named.
+- **Artifact names**, which are not comparisons: Definitions, Obligations, Standard of performance,
+  "clause", "the brief". These are what the parts of a SKILL.md are actually called in this post.
+- **"whole headnotes running to several paragraphs"** inside the SKILL.md listing — literal and
+  accurate; the courts' `subject_tags` genuinely are headnotes, not a simile.
+- **"because no junior ever asked you to"** in the close — an analogy to supervising a junior rather
+  than a legal-term comparison, so outside the instruction as given. Flagged to him rather than cut
+  unilaterally.
+
+### Length
+His new intro material (the four bullets plus the behind-the-scenes paragraph) pushed the draft to
+3,199 words, well past the 3,080 cap. The four excisions recovered ~40. The remaining ~90 were taken
+out of **Claude's prose, not his** — tightening in the survey step, the verification habit, the
+handful-of-calls paragraph, the three-to-six comparison and the two-layers section. Final: 3,096,
+inside cap.
+
+### Protected line re-synced (second time)
+His §2 rewrite changed the line again — "In the SLG article, the agent rewrote each time." became
+"Every time we encountered a problem, the agent rewrote it." The lint hook blocked; pitch.md was
+amended to track the hand edit, same resolution as last session. The rule is holding: the draft's
+hand-written line wins, the pitch follows.
+
+### Outcomes
+- ✅ 3,096 words, inside cap. Lint clean.
+- ⚠ Budget is now structurally tight. Twice in two sessions his additions have pushed past the cap
+  and been absorbed by trimming Claude's prose. There is not a third round of that available —
+  the next addition needs either a real cut elsewhere or an amended `word_budget`, which is his.
+
+### Next Steps
+REVIEW: pitch checkpoint, then audit-substance and audit-tone in one message, then Wei Lin, then the
+length audit, then backlinks and tags.
