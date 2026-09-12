@@ -181,3 +181,91 @@ That version survives contact with the CJ's speeches. It is also more interestin
 3. Your own hands-on experience of LawNet 4.0 being "clogged and dense" — a concrete task that took too long.
 4. Whether you spoke to any juniors at TLF, and what they said.
 5. Whether current LawNet pricing should be printed (needs re-verification).
+
+## 6. Round 2 (2026-09-12) — "Has anyone written about LawNet?" and "Do peer jurisdictions do this?"
+
+Two questions from Houfu. Both go to differentiation. Both have clear answers.
+
+### 6a. Who has written critically about Singapore LawNet? Almost nobody.
+
+Searched from several angles (criticism, pricing, usability, academic, monopoly/essential-facility). The
+field is close to empty. What exists:
+
+- **[tomoe.asia, Jan 2023](https://tomoe.asia/posts/2023-01-10-free-access-to-case-law-in-singapore)** —
+  *"Getting judgments for free in Singapore, or: It shouldn't cost 9 Filet-o-Fish meals to access State
+  Court judgments on LawNet."* The only real popular-register critique found. Pricing/A2J angle, not
+  strategy. **Worth reading and linking — it is the closest prior art that exists.**
+- **Loo & Findlay (2022), "Digitised Justice: The New Two Tiers?"** *Criminal Law Forum* 33(1):1–38,
+  cited 18×. Critique of digitised justice against access to justice, Singapore court process as case
+  study. Not about LawNet specifically, but the framing ancestor.
+  ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8882232))
+- An SAL Journal article invoking the **"essential facility"** doctrine with reference to lawnet.com.sg —
+  i.e. a competition-law framing of LawNet as essential infrastructure. Useful vocabulary if wanted.
+- Everything else is announcement coverage: SAL press, IMDA factsheets, Singapore Business Review,
+  Dollars and Sense, library research guides. Descriptive, never evaluative.
+
+**Telling detail:** searches for criticism of LawNet are dominated by `ir.lawnet.fordham.edu` — Fordham
+Law School's repository URL scheme. The critical literature on Singapore's LawNet is so thin that an
+unrelated American URL pattern outranks it.
+
+**Conclusion: this post would be close to the first strategic critique of LawNet in public.** That is
+the differentiation answer, and it is a strong one.
+
+### 6b. Do peer jurisdiction-specific providers have the same strategy? No — and this reframes the critique.
+
+Every comparable national legal-information provider has responded to AI. **None responded with corpus
+expansion.** They took one of three routes:
+
+| Jurisdiction | Provider | Nature | AI-era response |
+|---|---|---|---|
+| **UK** | Find Case Law (National Archives) | State | **Open the data.** Free judgments, a documented [public API](https://nationalarchives.github.io/ds-find-caselaw-docs/public), and an [Open Justice Licence v2.0](https://caselaw.nationalarchives.gov.uk/open-justice-licence/version/2) permitting computational use. The state publishes; others build. |
+| **Australia** | AustLII | Non-profit charity, UTS-hosted | **Partner for capability.** [LexisNexis agreement, 29 Jul 2026](https://www.prnewswire.com/apac/news-releases/lexisnexis-announces-agreement-with-austlii-to-advance-the-rule-of-law-and-access-to-justice-in-the-ai-era-302836195.html) to build AI research capability on AustLII's data while keeping it free. |
+| **Canada** | CanLII | Non-profit, profession-funded | **Build it.** [Search+](https://www.lawsociety.sk.ca/2026/03/11/canlii-launches-search-to-support-legal-research) AI tool launched Mar 2026; AI plain-language summaries funded by the Law Foundation of Ontario; a [published generative-AI policy](https://www.canlii.org/info/generative-ai.html) framed on equitable access. |
+| **Hong Kong** | HKLII (HKU) | University | Built an AI module; ML/NLP query classification. |
+| **India** | SCC Online | Commercial | Azure-OpenAI conversational assistant over 4M+ judgments, ~150,000 users. |
+| **Korea** | LBox | Commercial | Restructuring into a legal **workflow** platform (Jun 2026), despite only 0.08% of Korean decisions being public. |
+| **Singapore** | **LawNet (SAL)** | Statutory body | **Expand the corpus.** Books, ten statutes, podcasts, India cases, bulk download. |
+
+**🔑 This reframes the whole critique, and makes it fairer and harder to rebut.**
+
+The weak version of the argument is "LawNet should have built CoCounsel." LawNet can answer that easily:
+we are a national utility, not a vendor; Thomson Reuters employs thousands of engineers; different
+mission, different budget. Fair.
+
+The strong version is: **the peer group is not Thomson Reuters. It is AustLII and CanLII.** Both are
+non-profits. Both are poorer than LawNet, which has IMDA's backing, ~10,000 paying users and 75%+ of the
+private profession. Both found a route — one by partnership, one by building. And the UK simply opened
+the data and let everyone else build. **LawNet had three exits available and took none of them.**
+
+Quotable, from AustLII's Executive Director Prof Andrew Mowbray AM:
+
+> "'Free access to law' means something different in 2026 than it meant 30 years ago when we started
+> AustLII. Our users have an expectation that AI will be used to enhance the research that they do."
+
+### 6c. The Singapore-internal comparator is sharper still
+
+The open-data route **is** being taken in Singapore — just not by LawNet:
+
+- **SOLID** (Singapore Open Legal Informatics Database), SMU Centre for Computational Law, **supported by
+  MinLaw**, announced Nov 2025: a three-year project for "freely accessible, research-ready data through
+  a public website and **API**." ([SMU](https://news.smu.edu.sg/news/2025/11/18/smu-build-open-legal-database-support-ministry-law), [CDL](https://cdl.smu.edu.sg/projects/singapore-open-legal-informatics-database-solid))
+- **9 Sep 2026** — during TechLaw.Fest week — SMU's Yong Pung How School of Law partnered with **Legora**
+  to bring **agentic AI** to the law school, first in Asia. ([Legora](https://legora.com/newsroom/singapore-management-university-partners-with-legora-to-bring-agentic-ai-to-its-law-school))
+
+So within one jurisdiction, in one week: a university ships open legal data with an API and agentic AI in
+the classroom, while the national utility ships books and ten statutes. **Same country, same ministry
+ecosystem, opposite bets.** Note this also updates the Budget 2026 post, which had SOLID as "two years
+away" — it is now moving.
+
+### 6d. Fairness check on the comparison
+
+- CanLII is not saintly: it litigated against **Caseway AI** over scraping (2024, settled early 2026)
+  ([Chambers](https://practiceguides.chambers.com/practice-guides/artificial-intelligence-2026/canada/trends-and-developments)).
+  Corpus protectiveness is not unique to LawNet. Say so — it strengthens the piece.
+- AustLII's route required a **commercial vendor's money**. That is not obviously a better answer for a
+  national utility, and LawNet's existing content partnerships (LexisNexis, Thomson Reuters, vLex, Legora,
+  and now LegalOn) are arguably the same instinct pointed outward instead of inward.
+- LawNet carries statutory obligations and a paying profession that AustLII and CanLII do not.
+
+The honest claim is therefore about **direction of travel**, not competence: three peers moved capability
+toward the user; LawNet moved content toward the shelf.

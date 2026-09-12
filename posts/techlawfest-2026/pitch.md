@@ -1,80 +1,181 @@
 ---
-word_budget: 2000
+word_budget: 1800
 budget_tolerance: 10
 primary_audience: marcus
 secondary_audience: [sarah, wei]
-thesis_keywords: [bookcase, judgment, juniors, LawNet, verifiability]
+thesis_keywords: [bookcase, LawNet, peers, verifiability, exits]
 protected_lines: []
 voice: {lane: news-commentary, moves: [neither-is-wrong, specific-numbers, solo-counsel-return]}
-interrogation: {diagnosis: "RESOLVED — pastoral vs operational gap", differentiation: "release-note forensics", framing_risk: "RESOLVED — strategy critique with receipts", subject: "beats 3 and 4 kept balanced"}
+interrogation: {diagnosis: "RESOLVED — peer group is AustLII/CanLII, not Thomson Reuters", differentiation: "RESOLVED — near-empty field; see prior art", framing_risk: "RESOLVED — strategy critique with receipts", subject: "LawNet only; juniors split out"}
 must_link: [lawyers-prompt-engineering-wrong, budget-2026-lawyers-ai-drivers-seat, ect-no-lawyers-zeeker]
 tags: [TechLawFest, LegalTech, AI, Singapore, Law]
 target_date: ~
-status: PITCH v2 — scope decisions locked; awaiting Houfu's lived detail
+status: PITCH v3 — LawNet-only. Scope and argument locked. Houfu structures the draft.
 ---
 
 # Pitch: techlawfest-2026
+
+> **Note on this document.** Houfu is writing this one himself and will decide the structure. This pitch
+> deliberately contains **no beat-by-beat outline**. It fixes the thesis, the scope and the guardrails,
+> and then hands over an organised evidence inventory. Sequence it however it wants to be sequenced.
 
 ## Original framing (verbatim, never edited)
 
 > 11 years in, TLF remains strong and I have taken real value in meeting friends new and old. However, I have 2 "dark" takeaways to explore. The excitement and fascination has moved on, as more people move on to adoption, several dangers to technology adoption are starting to surface for me. 1. junior lawyers are in danger of being left behind as focus remains on personal productivity, ROI and security/harm prevention; 2. My most controversial take: LawNet 4.0 sucks. I've waited for years for them to figure out how to respond to AI. In the few years it had a Q&A and adding more sources, it's become clogged and dense, doubling down on the more sources. Somebody had a chance to rethink LawNet's strategy and it turned out to be more of the same. This has real A2J concerns as LawNet used to be a local LexisNexis/WestLaw thing. While the big global companies moved on to Protege and CoCounsel, LawNet is still aiming to be a bigger book case.
 
-**Working title:** *Eleven Years In, Two Things Are Bothering Me*
-Alternates: *The Bigger Bookcase* · *From Foundation to Frontier, Except Here* · *The Year the Fascination Wore Off*
+**Scope change, 2026-09-12:** takeaway 1 (juniors) is split into its own future post. This post is LawNet
+only. Reason recorded in discussion.md.
 
-**Thesis:** The conference's theme was "From Foundation to Frontier" — and in the year Singapore's legal tech conversation moved from fascination to adoption, two foundations quietly stopped being tended: the way juniors acquire judgment, and the national legal research utility's strategy. Nobody owns either problem, because both fall in the gap between the pastoral conversation and the operational one.
+## Title
 
-**Spine:** Adoption is the good news and the problem. Once everyone is adopting, the questions that get asked are the ones adoption creates — personal productivity, ROI, security — and the questions that get dropped are the ones about who the profession is *for* and what its infrastructure is *for*.
+**Working:** *The Bigger Bookcase*
+Alternates: *LawNet Had Three Exits* · *A One-Year Report Card* · *What a National Law Database Is For*
 
-**Emotional core:** ⚠️ `[HOUFU]` **Placeholder — must be replaced with your real experience.** Working stand-in to react against, not to use: *"I had a genuinely good time. I saw friends new and old, and I left in a good mood. That's what's bothering me."*
+## Thesis
 
-## Pitch
+LawNet 4.0 was unveiled at TechLaw.Fest 2025. A year later, from the same podium, its second act turned
+out to be more content: books, ten statutes, podcasts, bulk downloads. Every comparable national legal
+information provider met the AI era differently — the UK opened its data, AustLII partnered for
+capability, CanLII built its own. **LawNet had three exits available and took none of them**, and because
+it is the national utility rather than a vendor, that choice sets the ceiling for what an ordinary
+Singapore practitioner can do.
 
-TechLaw.Fest turned eleven this year — 9 and 10 September, Sands Expo, 2,000-odd people, the bicentenary of Singapore's modern legal system in the background, and a theme about holding onto foundations while reaching for the frontier. It was a good event. I met friends new and old and I got real value out of it. And somewhere between the booths and the coffee, I noticed the excitement had gone. Not disappeared — converted. Everyone has moved to adoption, and adoption asks its own narrow set of questions: how much time did this save me, what's the ROI, is it secure. Those are reasonable questions. They are also the only questions, and two things are falling into the space where the other questions used to be. The first is junior lawyers — not because nobody is talking about them, because the Chief Justice talks about them constantly, but because the conversation about juniors is pastoral and the conversation about AI is operational, and nothing joins them. The second is LawNet. A year after LawNet 4.0 launched at this same conference, its 2026 shipping record is books, ten statutes, podcasts and bulk downloads. Somebody had a chance to rethink what a national legal research utility is for, and chose to build a bigger bookcase.
+## The argument in one paragraph
 
-## Beats
+A year ago LawNet 4.0 launched at this conference and I was ready to be convinced. This year, from the
+same stage, SAL announced what a year of work produced: the AI Q&A now covers all areas of law instead of
+just contract, Academy Publishing books are in the search index, ten statutes have been marked up,
+there's an annotations feature, a LegalOn partnership and a sentencing repository coming. Five of those
+six are more content. In the same twelve months LexisNexis shipped Protégé Work and Thomson Reuters
+shipped a fully agentic CoCounsel — but that comparison is unfair, and it is not the one that matters.
+The fair comparison is to LawNet's actual peers, the other national legal information providers, and it
+is worse. AustLII is a charity hosted by a university and it signed a deal with LexisNexis in July to
+build AI research capability on its own data while keeping it free. CanLII is a non-profit and it shipped
+an AI research tool in March and plain-language summaries funded by a law foundation. The UK National
+Archives just published the judgments with an open API and a licence permitting computational use, and
+let other people build. LawNet is better resourced than AustLII and CanLII, it has IMDA behind it and
+three quarters of the private profession paying for it, and what it built was a bigger bookcase.
 
-**1. Eleven years, and a good time** (~275w)
-`[HOUFU]` Your real opening. The friends, the floor, the flat reaction. The theme stated plainly ("From Foundation to Frontier: The Role of Law Amidst Change"). Name the shift: fascination → adoption. State both takeaways up front — news-commentary lane pays off early.
-**One line on LegalWeek Asia** (decision, 2026-09-12): announced on day two, from September 2027 TechLaw.Fest becomes "an anchor to the core program" inside Law.com/ALM's LegalWeek Asia. Used only to sharpen "eleven years in and still strong" — one line, no section, no argument built on it.
+## Evidence inventory
 
-**2. What adoption asks about** (~300w)
-The three questions that dominate: personal productivity, ROI, security/harm prevention. `[HOUFU]` needs specifics — which sessions, which booths. Then the honest complication: these are the right questions for someone who has to justify a purchase. Useful data if wanted: ACC/Everlaw — 52% of in-house teams use AI, only 7% have seen cost reductions.
+Organised by what each piece supports. Sequence as you like; everything below is verified and sourced in
+`research.md`.
 
-**3. The juniors gap** (~400w) — *diagnosis locked 2026-09-12: pastoral vs operational*
-It is **not** that nobody is thinking about juniors, and the post must say so plainly and early — that concession is what makes the rest credible. CJ Menon and Minister Tong co-lead an attrition-and-AI committee (Jan 2026); his Mass Call address in April was titled "Preparing and Supporting the Next Generation"; 1 in 3 new lawyers may quit within three years; 92% of new lawyers already use AI. The gap is that the juniors conversation is about *retention and wellbeing* and the AI conversation is about *throughput*, and **nobody owns the question of how a junior acquires judgment when the work that used to build it is the work being automated.** Neither-is-wrong lands here: Thomson Reuters Institute argues "AI will eliminate junior training" is a category error; Axios and Chambers argue the pipeline is narrowing. Neither is wrong. The nuance that matters: the trainable work isn't gone, it moved, and no one has volunteered to redesign the apprenticeship.
+### A. What LawNet actually shipped — the receipts
 
-**4. The bigger bookcase** (~500w) — *intensity locked 2026-09-12: strategy critique with receipts*
-Give LawNet its due first, then dissent. What SAL announced from the TLF 2026 podium: Q&A extended from contract law to all areas, Academy Publishing books into search, ten statutes, AI annotations, a LegalOn partnership, a sentencing repository next year. Five of six are corpus. The 2026 release notes say the same: books, podcasts, India Supreme Court cases, bulk download of 50 documents at a time. Meanwhile, in the same twelve months, Lexis shipped Protégé Work and Thomson Reuters shipped a fully agentic CoCounsel. **In 2026 LawNet added books to its search box; the vendors made their products do the work.**
-The credit that must be paid, and paid first: LawNet's AI summaries flag low-confidence paragraphs in yellow and unsourced terms in red, with footnotes back to source; Search Logs exist because the team admits the AI is non-deterministic. That is better hallucination engineering than the vendors show. **Neither is wrong — LawNet optimised for verifiability, the vendors optimised for doing the work.** But only one of those compounds.
-**Rule for this beat:** every criticism cites SAL's own podium or LawNet's own release notes. The target is the strategy — never the execution, never the team. No adjectives doing work a citation should do.
+**From SAL's own TLF 2026 podium** (Justice Kwek Mean Luck, Day 2): Q&A extended from contract law to all
+areas · Academy Publishing books into Classic Search and AI Q&A · legislation extended to ten key
+statutes (incl. Penal Code, Evidence Act) · AI-generated annotations of statutory provisions · LegalOn
+Technologies partnership · revamped Sentencing Information and Research Repository next year.
+**Five of six are corpus expansion or corpus organisation. None is workflow, drafting or agentic.**
 
-**5. Why this is an A2J problem** (~350w)
-LawNet is not a vendor, it is the national utility — ~10,000 users, 75%+ of Singapore lawyers in private practice. When Westlaw and Lexis go agentic and LawNet goes encyclopaedic, the local practitioner gets the worse tool by default. The sharpest detail, from LawNet's own release notes: AI Search now draws on Academy Publishing books, but "access to the full book content requires a valid purchase of the digital book or an Academy Library subscription." **The AI shows you the shelf and locks the book.** Solo counsel return lands here: for a small team, a bigger bookcase is not help, it's more to read.
+**From LawNet's own 2026 release notes:** Sept — ten legislation, annotations (Companies Act only), books
+in AI Search, downloadable book pages. May — bulk download of up to 50 documents, Regional Counsel
+Podcasts, two more statutes, a book reading interface. Dec 2025 — journals/notices/commentaries in
+Classic Search, books, **India Supreme Court cases** via SCC Online, AI summaries for tribunal decisions.
 
-**6. Close** (~175w)
-Soft, flat, not a mic-drop. `[HOUFU]`. Candidate landing: the theme said foundation *to* frontier. Foundations only count as foundations if something gets built on them.
+**The single sharpest detail** — LawNet's own September release note, on books now feeding AI Search:
+
+> "access to the full book content requires a valid purchase of the digital book or an Academy Library
+> subscription"
+
+The AI grounds its answers in sources the reader may not be able to open. A bigger bookcase with some
+shelves locked.
+
+### B. The credit that must be paid first
+
+This is the load-bearing fairness move, not a courtesy. Pay it properly and the critique becomes
+unrebuttable; skip it and the piece reads as a hit.
+
+- AI summaries flag **low-confidence paragraphs in yellow** and **terms absent from the source in red**,
+  with paragraph footnotes back to source. That is better-surfaced hallucination engineering than either
+  global vendor shows a user.
+- **Search Logs** exist because the team states plainly that the AI "may produce different responses to
+  similar queries" — an honest admission of non-determinism with an audit trail attached.
+- AI search is **bundled into the basic subscription**, not sold as an AI upsell.
+- Search is genuinely ~10× faster than 3.0; 95% of results inside two seconds.
+
+**The neither-is-wrong formulation:** LawNet optimised for verifiability. The vendors optimised for doing
+the work. Neither is wrong. But only one of those bets compounds — and a national utility that optimises
+for verifiability while charging for access has to answer a question the vendors don't.
+
+### C. The peer comparison — the part nobody else has assembled
+
+| Who | What they are | What they did about AI |
+|---|---|---|
+| Find Case Law (UK National Archives) | State | Opened the data: free judgments, public API, Open Justice Licence permitting computational use |
+| AustLII | Non-profit charity, UTS-hosted | Partnered — LexisNexis agreement (29 Jul 2026) to build AI capability on its own data, kept free |
+| CanLII | Non-profit, profession-funded | Built it — Search+ AI tool (Mar 2026), AI plain-language summaries, published GenAI policy |
+| HKLII | University (HKU) | Built an AI module, ML/NLP query classification |
+| SCC Online (India) | Commercial | Conversational assistant over 4M+ judgments |
+| LBox (Korea) | Commercial | Restructured into a workflow platform |
+| **LawNet** | **Statutory body** | **Expanded the corpus** |
+
+Prof Andrew Mowbray AM, AustLII's Executive Director, worth quoting:
+
+> "'Free access to law' means something different in 2026 than it meant 30 years ago when we started
+> AustLII. Our users have an expectation that AI will be used to enhance the research that they do."
+
+**And the Singapore-internal comparator, which is sharper than any of them:** SMU's SOLID — MinLaw-
+supported, open data, public API — and on 9 September 2026, during TechLaw.Fest week, SMU partnered with
+Legora to put agentic AI in the law school. Same country, same week, opposite bets. This also updates
+`budget-2026-lawyers-ai-drivers-seat`, which had SOLID as two years away.
+
+### D. Why it is an A2J problem and not a product review
+
+LawNet is not a vendor you can decline. ~10,000 users; **75%+ of Singapore lawyers in private practice**.
+When Westlaw and Lexis go agentic and LawNet goes encyclopaedic, the local practitioner gets the weaker
+tool by default, and the small shop gets it worst — a bigger bookcase is not help to a solo, it is more
+to read. Prior art worth acknowledging: [tomoe.asia (2023)](https://tomoe.asia/posts/2023-01-10-free-access-to-case-law-in-singapore)
+on what it costs to read a State Court judgment.
+
+### E. Optional — the prompt-engineering thread
+
+July 2026: LawNet ran a training workshop teaching "prompt engineering techniques for legal research."
+January 2026: Thomson Reuters put agentic AI into 200+ law schools under the line *"120,000+ future
+lawyers shouldn't meet agentic AI on their first day at work."* One clause, earns the backlink to
+`lawyers-prompt-engineering-wrong`. **Do not expand into a section** — that is the other post.
 
 ## Out of scope
 
-- **A LawNet feature review.** This is a strategy critique, not a UX teardown. Resist listing annoyances.
-- **LegalWeek Asia as an argument.** One line in beat 1 only. No section, no thesis weight. Flagged in discussion.md as a candidate future post.
-- **A prompt-engineering rerun.** One clause linking back to `lawyers-prompt-engineering-wrong`, not a recap.
-- **Solving the juniors problem.** Name the gap; do not prescribe an apprenticeship model.
-- **Zeeker / Cookies as the answer.** At most one clause. This post is not a product pitch.
+- **Juniors.** Split into its own post. Logged in discussion.md.
+- **A UX teardown.** "Clogged and dense" is a real reaction but a list of annoyances is a different,
+  smaller piece. Use your own experience as one concrete illustration, not as the argument.
+- **LegalWeek Asia.** At most one line if the opening needs it. No argument built on it.
+- **A prompt-engineering rerun.** One clause, per E.
+- **Zeeker / Cookies as the answer.** One clause at most. The post loses its standing the moment it reads
+  as a pitch for your own thing.
 
-## Interrogation
+## Guardrails
 
-1. **Test the diagnosis. — RESOLVED.** Takeaway 1 as originally framed was rebuttable in one sentence (the CJ gave three major speeches on juniors in 2026). Refined to the pastoral-vs-operational gap and confirmed by Houfu on 2026-09-12. The concession must appear *in the draft*, not just in the pitch — a reader who can rebut the premise in paragraph three stops reading.
-2. **Differentiation.** Every attendee writes a reflections post. The differentiated asset here is **release-note forensics** — reading LawNet's own 2026 changelog against Lexis's and Thomson Reuters's, and quoting SAL's own TLF podium announcement back. Nobody else is doing that. If the LawNet section becomes vibes instead of receipts, the post loses its reason to exist.
-3. **Framing risk — RESOLVED (rated HIGH).** "LawNet 4.0 sucks" targets a small, named, identifiable team. Precedent in this repo: `prompt-engineering-wrong` drew reviewer feedback that the TLF critique "borders on too critical," and the title was broadened from *TechLawFest Got Prompt Engineering Wrong* to *Lawyers Got Prompt Engineering Wrong*. Houfu's call on 2026-09-12: **strategy critique with receipts** — lead with credit, source every criticism to SAL's own published material, keep the heat but move the target. The verdict stays sharp; the phrasing carries evidence rather than adjectives.
-4. **Whose subject is this?** Risk: the LawNet section eats the post and the juniors takeaway becomes throat-clearing. Guard: beats 3 and 4 stay roughly balanced (400 / 500), and the close must land on both. If beat 4 runs past 600 words, split the post.
+1. **Differentiation — resolved, and it is the reason to publish.** There is almost no critical writing
+   about LawNet anywhere. The only popular-register prior art found is the 2023 tomoe.asia piece on
+   pricing. Searches for LawNet criticism are dominated by Fordham Law's repository URLs. **This would be
+   close to the first public strategic critique of LawNet.** The differentiated asset is the release-note
+   forensics plus the peer table — if either becomes vibes instead of receipts, the post loses its reason
+   to exist.
+2. **Framing risk — HIGH, handled by construction.** LawNet is a small, named, publicly identifiable
+   team. Repo precedent: `prompt-engineering-wrong` drew "borders on too critical" feedback and the title
+   was broadened off TechLawFest. Rules: credit first and properly (section B); every criticism cites
+   SAL's podium or LawNet's release notes; **the target is the strategy, never the execution and never
+   the people**; no adjective doing work a citation should do.
+3. **The fair-comparison rule.** Do not argue LawNet should have built CoCounsel — it has an easy answer
+   ("different mission, thousands of engineers"). Argue against AustLII and CanLII, which are *poorer*
+   than LawNet and found a route. That version has no easy answer.
+4. **Concede what is true.** CanLII sued Caseway AI over scraping, so corpus protectiveness is not unique
+   to LawNet. AustLII's route needed a commercial vendor's money. LawNet carries statutory obligations
+   its peers don't. Saying this costs three sentences and buys the whole argument.
 
 ## Open questions for Houfu
 
-Scope questions are resolved. These four need your lived experience and cannot be drafted without it:
-
-1. `[HOUFU]` **The emotional opening.** Beat 1 cannot be written without your real reaction. What did the floor actually feel like this year compared to last? The Voice Guide is explicit that this comes from you, not from me.
-2. `[HOUFU]` **Specifics for beat 2** — which sessions or booths gave you the productivity / ROI / security impression? Named specifics beat characterisation, and protect you from "that's just your vibe."
-3. `[HOUFU]` **Your own LawNet experience** — one concrete task that took too long would carry beat 4 better than any release note I can cite.
-4. `[HOUFU]` **Print LawNet pricing?** The SGD 206.92/month figure in the repo is from 2023 and must be re-verified before it appears anywhere.
+1. `[HOUFU]` **The opening.** Yours to write, and per the Voice Guide it has to come from your actual
+   experience — I've left no placeholder to lean on. The natural hook is that you were in the room in
+   2025 when 4.0 launched and in the room in 2026 when the sequel was announced, but only you know what
+   that felt like.
+2. `[HOUFU]` **One concrete LawNet task that took too long.** This is the piece I cannot supply and the
+   post is materially weaker without it — it is what turns "clogged and dense" from an adjective into
+   evidence.
+3. `[HOUFU]` **Print pricing?** The SGD 206.92/month figure in the repo is from 2023 and must be
+   re-verified before it appears.
+4. `[HOUFU]` **Read the tomoe.asia piece?** It is the only real prior art. Worth linking, and worth
+   knowing what it already said so you don't repeat it.

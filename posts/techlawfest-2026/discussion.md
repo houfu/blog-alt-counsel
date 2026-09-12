@@ -106,3 +106,76 @@ took too long, and whether to print LawNet pricing (2023 figure, must be re-veri
 Law.com's LegalWeek Asia (28–29 Sep 2027, Sands, 4,000+ expected). A regional conference built over
 eleven editions and 26,000 participants being folded into a US event brand is its own argument about
 what happens to local legal tech institutions at scale. Not this post.
+
+## Session 2026-09-12 (cont.) — Descope to LawNet-only; peer-group research
+
+**Houfu's question:** as a reader, should the post carry both takeaways or focus on LawNet?
+
+**Recommendation given, and accepted: LawNet only.** Reasoning recorded because it should inform future
+pitches:
+
+1. **The two halves are not equally his.** The LawNet argument rests on evidence nobody else has
+   assembled — SAL's own podium announcement read against LawNet's own changelog and its peers'. That is
+   reporting. The juniors argument is assembled from the CJ's speeches, Axios and Chambers — sources any
+   commentator can reach. Combining them means the weaker half borrows credibility from the stronger and
+   the stronger pays in room.
+2. **Cutting juniors makes the TechLaw.Fest framing load-bearing rather than decorative.** LawNet 4.0 was
+   unveiled at TLF 2025; its second act was announced from the same podium at TLF 2026. The conference
+   becomes the clock — a one-year report card — and Houfu is one of the few people who was in both rooms.
+3. **The controversial take needs room to be fair.** Framing risk was rated HIGH and the chosen approach
+   is strategy-critique-with-receipts, which only works if the credit section is genuinely paid. At 500
+   words shared with another argument that credit reads as throat-clearing before the knife; at ~1,400 it
+   reads as someone who actually looked. The fairness *is* the rhetorical strategy, and fairness costs
+   words.
+4. **Reader test:** a week later you remember "added books to its search box while the vendors made their
+   products do the work," and the AI citing books you must buy to open. You do not remember the juniors
+   section.
+
+Houfu will structure the draft himself. Pitch v3 therefore carries **no beat-by-beat outline** — thesis,
+scope, guardrails and an organised evidence inventory only. Noted as a preference worth repeating: when
+he says he is writing it himself, hand over evidence and constraints, not a shape.
+
+### Research round 2 — his two questions, both of which changed the argument
+
+**"How many people have ever written about Singapore LawNet?"** Almost nobody. The only popular-register
+critique found is [tomoe.asia (Jan 2023)](https://tomoe.asia/posts/2023-01-10-free-access-to-case-law-in-singapore)
+on the cost of reading a State Court judgment. Academic ancestor: Loo & Findlay, "Digitised Justice: The
+New Two Tiers?" (2022). Everything else is announcement coverage. Searches for LawNet criticism are
+dominated by Fordham Law's `ir.lawnet.fordham.edu` repository URLs — the field is empty enough that an
+unrelated American URL scheme outranks it. **This post would be close to the first public strategic
+critique of LawNet.** That settles the differentiation question decisively.
+
+**"Do other jurisdiction-specific apps have this strategy?"** No — and this reframed the critique. Every
+comparable national provider responded to AI, none with corpus expansion:
+
+- **UK Find Case Law** (National Archives) — opened the data: public API, Open Justice Licence permitting
+  computational use.
+- **AustLII** — non-profit charity; signed a LexisNexis agreement (29 Jul 2026) to build AI capability on
+  its own data while keeping it free.
+- **CanLII** — non-profit; shipped Search+ (Mar 2026) and AI plain-language summaries, with a published
+  generative-AI policy framed on equitable access.
+- **HKLII**, **SCC Online**, **LBox** — built or moved to workflow.
+
+**Why this matters:** the weak argument is "LawNet should have built CoCounsel," which LawNet can rebut
+in one sentence (different mission, thousands of engineers). The strong argument is that **LawNet's peer
+group is AustLII and CanLII — both non-profits, both poorer, both of which found a route.** LawNet had
+three exits and took none. That version has no easy answer, and it is fairer.
+
+**Sharpest comparator is domestic:** SMU's SOLID (MinLaw-supported, open data, public API) and SMU's
+Legora partnership for agentic AI in the law school, announced 9 Sep 2026 — TechLaw.Fest week. Same
+country, same week, opposite bets. Also updates `budget-2026-lawyers-ai-drivers-seat`, which had SOLID
+as two years away.
+
+**Fairness checks recorded in the pitch:** CanLII litigated against Caseway AI over scraping, so corpus
+protectiveness is not unique to LawNet; AustLII's route needed a vendor's money; LawNet carries statutory
+obligations its peers do not.
+
+### Candidate future post (2) — the juniors gap
+
+The pastoral-vs-operational split: institutions talk about juniors constantly (CJ Menon's attrition
+committee Jan 2026, the Mass Call address Apr 2026, the Legal Profession Symposium Jul 2026; 1 in 3 may
+quit within three years; 92% already use AI), but that conversation is about retention and wellbeing
+while the AI conversation is about throughput, and nobody owns how a junior acquires judgment when the
+judgment-building work is what is being automated. **Wei Lin post, not a Marcus post** — identity and who
+the profession is for. Research already gathered in `research.md` §3. Per series discipline, this is a
+logged candidate, not a planned Part 2.
