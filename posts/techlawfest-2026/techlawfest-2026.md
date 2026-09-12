@@ -1,5 +1,5 @@
 ---
-title: "The Bigger Bookcase"
+title: “Will LawNet become Just A Bigger Bookcase?"
 slug: "the-bigger-bookcase"
 tags: ["TechLawFest", "LegalTech", "AI", "Singapore", "Law"]
 status: draft
@@ -7,17 +7,13 @@ featured: false
 github_folder: "techlawfest-2026"
 ---
 
-<!-- [HOUFU] OPENING — yours to write, and it has to be.
+I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community. TechLaw.Fest is also important for meeting old friends, and this friend is a really old one. Someone I knew fondly since I was a law student and who stood shoulder to shoulder with me as I battled large local law firms with their army of interns and litigants in person. We stopped going out when I left practice. As such, TechLaw.Fest is the only time I get to check on how he or she or it is doing. 
 
-What's needed: you were in the room at TechLaw.Fest 2025 when LawNet 4.0 was
-unveiled, and in the room at TechLaw.Fest 2026 when the sequel was announced.
-Two or three sentences on what that felt like — expectation in 2025, and what
-replaced it this year. Flat and first-person. State the verdict early; this is
-the news-commentary lane, so the payoff goes up front, not at the end.
+LawNet is the Singapore Academy of Law’s national legal research service. It started in 1990 as a dial up network (what in the world is that?) and has roughly 10,000 users, including more than 75% of Singapore lawyers in private practice. It’s roughly what I would call the LexisNexis or WestLaw of Singapore, covering judgements, legislation and secondary materials. Even though it runs by subscription (you can check it out on demand at a counter in the National Library), it is as close to what you can call the national infrastructure for Singapore law.
 
-Delete this comment block and the placeholder paragraph below once written. -->
+I dare say it punched above its weight. If you only practiced Singapore law, as many lawyers in small and medium sized law firms here do, you only needed to subscribe to LawNet. It implemented boolean search, natural language search, results from multiple databases (What in the world is that?) and so on. No more trips to the library searching for cases or figuring out where some law students were hiding important books in the law library. (What’s a book?)
 
-I have been waiting a few years to see how LawNet would answer AI. This year I got the answer, and the answer was a bigger bookcase.
+Obviously, the world has moved on a lot. I have been waiting a few years to see how LawNet would answer AI. This year I got the answer, and the answer was a bigger bookcase.
 
 ## What a year produced
 
@@ -56,22 +52,10 @@ Three routes were available: open the data, partner for capability, or build it 
 
 LawNet had three exits and took none of them.
 
-<!-- [HOUFU] The sharpest comparator is domestic, if you want it: SMU's SOLID is
-MinLaw-supported open legal data with a public API, and SMU partnered with Legora
-to put agentic AI in the law school — announced 9 September 2026, during
-TechLaw.Fest week. Same country, same week, opposite bets. Cut if it crowds. -->
+## The Strategy is right in front of us
 
-## What LawNet got right
-
-This is where I have to be fair, because there is something real here that the vendors do not do as well.
-
-LawNet's AI summaries flag low-confidence paragraphs in yellow, and highlight in red any term that does not appear in the source document. Every summary paragraph footnotes back to the paragraph it came from. Search Logs exist because the team says openly that the AI may give different answers to similar questions, so you can go back and see exactly what was asked, what came back, and which sources were used.
-
-That is honest engineering. It treats hallucination as a standing condition to be surfaced rather than a bug to be denied, and I have not seen either global vendor show a user that much of its own uncertainty. The AI search is also bundled into the basic subscription rather than sold as an upgrade, which is not nothing.
-
-So the two strategies are legible. LawNet optimised for verifiability. The vendors optimised for doing the work. Neither is wrong.
-
-But only one of those compounds. Verifiability is a property of a document you have already found. Capability is what gets you to the document, drafts around it, and checks your own argument against it. A year of verifiability improvements leaves you exactly where you started, holding a more trustworthy version of the same shelf.
+* An overemphasis on content, verifiability, the amount of disclaimers — lack of confidence in the product
+* The density of imformation is becoming thicker more overloaded. From reading a statute, do I really need to know annotates on cases? Giving practitioners more to read sounds great, but I am doubtful about this in practice.
 
 ## Why this is about access, not taste
 

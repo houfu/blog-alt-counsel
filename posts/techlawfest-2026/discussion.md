@@ -212,3 +212,56 @@ the `## Pitch` heading and trimmed it to the one-paragraph, ≤200-word contract
 done now, since the checkpoint keys to draft content hash and his edits would invalidate it immediately.
 Then lint, one audit round (audit-substance + audit-tone in one message), then reviewers. Per his
 standing preference, all three reviewers, not the CLAUDE.md default of 1–2.
+
+## Session 2026-09-12 (cont.) — Conference slides transcribed; LawNet 3.0 screenshot hunt
+
+**Screenshot hunt — partial result.**
+
+- **LawNet 4.0: solved.** LawNet's own release notes host 38 public screenshots and GIFs of the 4.0
+  interface, covering search, results listing, preview, document details, references panel, AI summaries
+  and the Q&A. No login needed.
+- **LawNet 3.0 home pages: solved.** Wayback has 238 captures of lawnet.sg (Oct 2015 – May 2026). The
+  Jan 2025 capture shows the pre-4.0 portal with two separate login boxes on one page. A 2011 capture
+  carries the banner *"A Fresh New Look! LawNet — Providing Precedents, Pushing Frontiers"* — worth
+  noting against TLF 2026's "From Foundation to **Frontier**" theme.
+- **LawNet 3.0 search and judgment display: NOT available.** Houfu correctly identified these as the
+  surfaces that matter. They were always behind a login, so Wayback never captured them. The library
+  guides that documented them put their screenshots inside PowerPoint files — SMU's three `ld.php`
+  content guides and NUS's `lib.nus.edu.sg/ilp/llb/*.pps` tutorials — and **none of those files are
+  archived**. Only the guide pages are, and they carry no inline screenshots.
+- **Consolation finding, and a usable one.** NUS's 2018 guide *describes* 3.0's judgment display in
+  prose: case treatment was "indicated just above the case name by the words 'Following', 'Referring',
+  'Distinguishing', etc.", with "Case References" on the left panel. In 4.0 the same information is five
+  colour-coded numeric counters on the result card. Words to five coloured counters is a documented
+  before/after supporting the density argument — in prose rather than pixels, but citable.
+
+**Rights position on the images:** all are SAL copyright (both the Wayback captures of lawnet.sg and
+LawNet's own release-note images). Use in a critical piece is an ordinary fair-dealing-for-criticism-
+and-review case, but the call is Houfu's. Nothing committed to the repo; JPEGs held in session scratchpad.
+
+**Conference slides.** Houfu added 9 photos to `photos/`, all taken 10 Sep 2026 between 15:47 and 15:59
+— Day 2, one session, a research-backed proposal on practitioner sustainability. Transcribed in full to
+`conference-slides.md` (slides 5, 6, 7, 12, 14, 15, 17, 18, 19).
+
+Two findings change what is available to the posts:
+
+1. **Slide 14 — independent evidence, from SAL's own stage.** "A number of interviewees had never heard
+   of or accessed LawNet.com and LawNet AI." A year after the 4.0 launch. This converts "the strategy
+   isn't landing" from Houfu's opinion into someone else's research finding, presented at TechLaw.Fest.
+   The proposed remedy is a *communications* strategy — demos, how-to guides, incentives — which is
+   itself telling: market the bookcase harder rather than ask what is on the shelves.
+2. **Slides 18–19 — a capability roadmap written for LawNet by someone else.** Review/verify near-term,
+   recommend edits, generate first draft long-term; plus a citation checker and a contract-review tool
+   built on LawNet's existing Precedents function. The "three exits" argument arriving from the floor
+   rather than the podium. Lets the post be constructive without demanding LawNet become CoCounsel.
+
+**Slide 17** (junior lawyer training: 3-stage framework, training audit questionnaire, living
+compendium) belongs to candidate post #2 and usefully complicates it — someone *does* own the question,
+which is a better post than "nobody is thinking about this."
+
+⚠️ **Attribution unknown.** No title slide or presenter name in the photos, and not guessed. Must be
+established before anything is quoted — it matters for accuracy and for the framing-risk rule about not
+criticising named people.
+
+⚠️ **Survey numbers are unsafe to convert to percentages.** Sample size, population and methodology are
+not visible in the photos.
