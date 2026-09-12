@@ -54,14 +54,35 @@ LawNet had three exits and took none of them.
 
 ## The Strategy is right in front of us
 
-* An overemphasis on content, verifiability, the amount of disclaimers — lack of confidence in the product
-* The density of imformation is becoming thicker more overloaded. From reading a statute, do I really need to know annotates on cases? Giving practitioners more to read sounds great, but I am doubtful about this in practice.
+You can read the strategy off the product. There is an overemphasis on content, on verifiability, and on the sheer number of disclaimers, and what it adds up to is a lack of confidence in the product. A tool that trusted itself would not need to caveat this much.
 
-## Why this is about access, not taste
+The density is getting thicker, not thinner. Reading a statute, do I really need annotations on cases pulled into the margin? Giving practitioners more to read sounds generous. In practice I doubt it. Every addition is defensible on its own and the sum is a page you have to fight.
+
+<!-- [HOUFU] your two bullets are preserved in git if you prefer them; the paragraphs above
+are the same points in prose. The "lack of confidence" line is the sharpest thing in the
+section — it might deserve to be the section's first sentence. -->
+
+I want to be careful here, because none of this is for lack of effort. People worked very hard on 4.0. They ran feedback sessions and bought lunch to get practitioners into a room and listening. There are people inside LawNet who are genuinely invested in it succeeding, and I do not doubt any of that.
+
+That is exactly why the strategy worries me. Hard work in the wrong direction still arrives somewhere. I think this one drives LawNet into a ravine.
+
+## The world already moved
+
+While LawNet was adding shelves, the pipeline changed hands.
+
+In June, NUS Law became the first law school in Singapore to partner with Harvey. On 9 September, the opening day of TechLaw.Fest, SMU's Yong Pung How School of Law joined Legora's Legal AI Scholars Program, the first in Asia. Both Singapore law schools, three months apart, training students on tools built by people who have never had to care about Singapore law.
+
+This is not an accident of procurement. Reuters described it plainly in April: AI startups are courting law students in the fight for the lawyer market. Free access and free training now, habits later. Legora's own pitch to law schools is that it reduces the training burden on firms and accelerates new hires, which is a promise made to the employer about the student.
+
+The incumbents are not standing still here either. Lexis+ with Protégé launched in Singapore and Malaysia and took an AI award at the Singapore Business Review's 2026 technology awards. Thomson Reuters has a strategic collaboration with WongPartnership on AI across South East Asia, and launched Practical Law Asia. Both of them are pushing into this market, with agentic products, while LawNet catalogues.
+
+## What is actually at stake
 
 If LawNet were a vendor, none of this would matter much. You would buy something else.
 
 It isn't. Around ten thousand users, including more than seventy-five per cent of Singapore lawyers in private practice. For most of the profession here, LawNet is not one option among several. It is the floor and the ceiling. When Westlaw and Lexis go agentic and LawNet goes encyclopaedic, the ordinary Singapore practitioner gets the weaker tool by default, and has no say in it.
+
+And the next generation will not even experience it as a default. A law student who learns research on Harvey at NUS or Legora at SMU, and then joins a firm that buys Lexis or Westlaw, will meet LawNet as the place you go when you need the actual Singapore Law Reports citation. Not as where the work happens. That is a generation growing up with the national legal infrastructure as a footnote.
 
 There is a detail in the September release notes that stayed with me. The AI now draws on Academy Publishing books when it generates an answer, which sounds like a straightforward improvement. Then the note adds that reading the full book requires buying the digital copy or holding an Academy Library subscription.
 

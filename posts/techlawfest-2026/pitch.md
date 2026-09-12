@@ -3,14 +3,14 @@ word_budget: 1800
 budget_tolerance: 10
 primary_audience: marcus
 secondary_audience: [sarah, wei]
-thesis_keywords: [bookcase, LawNet, peers, verifiability, exits]
+thesis_keywords: [bookcase, LawNet, peers, pipeline]
 protected_lines: []
 voice: {lane: news-commentary, moves: [neither-is-wrong, specific-numbers, solo-counsel-return]}
 interrogation: {diagnosis: "RESOLVED — peer group is AustLII/CanLII, not Thomson Reuters", differentiation: "RESOLVED — near-empty field; see prior art", framing_risk: "RESOLVED — strategy critique with receipts", subject: "LawNet only; juniors split out"}
 must_link: [lawyers-prompt-engineering-wrong, budget-2026-lawyers-ai-drivers-seat, ect-no-lawyers-zeeker]
 tags: [TechLawFest, LegalTech, AI, Singapore, Law]
 target_date: ~
-status: PITCH v3 — LawNet-only. Scope and argument locked. Houfu structures the draft.
+status: PITCH v4 — amended to follow Houfu's draft (2026-09-12). The draft leads.
 ---
 
 # Pitch: techlawfest-2026
@@ -28,8 +28,8 @@ only. Reason recorded in discussion.md.
 
 ## Title
 
-**Working:** *The Bigger Bookcase*
-Alternates: *LawNet Had Three Exits* · *A One-Year Report Card* · *What a National Law Database Is For*
+**Houfu's title (draft, authoritative):** *Will LawNet Become Just a Bigger Bookcase?*
+(Earlier working titles kept for reference only: *The Bigger Bookcase* · *LawNet Had Three Exits*.)
 
 ## Thesis
 
@@ -167,3 +167,38 @@ lawyers shouldn't meet agentic AI on their first day at work."* One clause, earn
    re-verified before it appears.
 4. `[HOUFU]` **Read the tomoe.asia piece?** It is the only real prior art. Worth linking, and worth
    knowing what it already said so you don't repeat it.
+
+## Amendment log
+
+### v4 — 2026-09-12: the pitch follows the draft
+
+Houfu wrote the opening and set the arc. The pitch is amended to match the draft, not the other way
+round. What changed:
+
+1. **Title is his:** *Will LawNet Become Just a Bigger Bookcase?* The question form is better than the
+   flat noun phrase — it grants that the answer isn't settled, which is the fair version of the
+   argument.
+2. **The opening is the "old friend" conceit** — LawNet as someone he knew as a law student, who stood
+   with him against large firms with armies of interns, and whom he now only sees once a year at
+   TechLaw.Fest. This does the work the old scaffold's placeholder could not, and it sets up the ravine
+   line later: you only worry like this about someone you like.
+3. **Credit has moved, not disappeared.** The scaffold paid credit to the *product* (yellow/red
+   hallucination flagging, Search Logs). Houfu cut that and repurposed verifiability into the
+   **diagnosis** — "an overemphasis on content, verifiability, the amount of disclaimers — lack of
+   confidence in the product." Credit is now paid to **effort and intent** instead: people worked very
+   hard on 4.0, ran feedback sessions, bought lunch to get practitioners in a room, and are genuinely
+   invested. The framing-risk guardrail is therefore **still satisfied**, by a different and arguably
+   better route — the piece is kind about the people and hard on the strategy, which is exactly the
+   split it needed.
+4. **New arc, replacing the scaffold's:** strategy → emotional (hard work, the lunch, the ravine) →
+   the world already moved (NUS/Harvey, SMU/Legora, Lexis and Westlaw pushing into Singapore) → what is
+   at stake (succession, not cost).
+5. **The A2J argument is re-aimed.** It was about a solo not affording the better tool. It is now about
+   **succession**: a generation that learns research on Harvey or Legora and meets LawNet only as the
+   place you fetch an SLR citation. This folds the abandoned juniors takeaway back in as the *stake*,
+   which is a better structure than the original two-takeaway pitch.
+6. **thesis_keywords** updated to `[bookcase, LawNet, peers, pipeline]`. "verifiability" and "exits"
+   were thin in the draft and "pipeline" is now load-bearing.
+
+**Still open:** the concrete LawNet task that took too long (partially filled by the statute-annotations
+observation in the strategy section), and whether to print pricing.

@@ -265,3 +265,45 @@ criticising named people.
 
 ⚠️ **Survey numbers are unsafe to convert to percentages.** Sample size, population and methodology are
 not visible in the photos.
+
+## Session 2026-09-12 (cont.) — Houfu sets the arc; pipeline research; pitch v4
+
+**Houfu's direction:** emphasise the strategy, then go to the emotional. "People have worked very hard
+at 4.0. They managed to buy lunch for people to provide feedback... Clearly there are people invested in
+LawNet's success, but the world has changed. Law schools will now use Harvey or Legora. Lexis and
+Westlaw may push even harder." Final part: what is at stake from an access-to-justice viewpoint, where
+young lawyers grow up in a world where LawNet is irrelevant.
+
+**Research verdict: the prediction is already past tense, and it is Singapore-specific.**
+
+- **June 2026** — NUS Law becomes the **first law school in Singapore to partner with Harvey**.
+- **9 September 2026** — SMU's Yong Pung How School of Law joins **Legora's Legal AI Scholars Program**,
+  first in Asia, announced on the **opening day of TechLaw.Fest 2026**.
+
+Both Singapore law schools, three months apart. Every Singapore law student now trains on Harvey or
+Legora, not on LawNet. Reuters (7 Apr 2026) reported the strategy as what it is: "AI startups court law
+students in fight for lawyer market." Legora's own pitch to schools is that it reduces the training
+burden on firms — a promise made to the employer about the student.
+
+Incumbents confirmed pushing into Singapore too: Lexis+ with Protégé launched in Singapore and Malaysia
+and won AI–Legal at the Singapore Business Review awards 2026; Thomson Reuters has a WongPartnership
+collaboration across South East Asia plus Practical Law Asia.
+
+**Why this matters structurally:** it converts the A2J argument from *cost* to *succession*. Not "can a
+solo afford the better tool" but "a generation learns research on Harvey or Legora and meets LawNet only
+as the place you fetch an SLR citation." **This folds the abandoned juniors takeaway back in as the
+stake rather than as a second argument** — a better structure than the original two-takeaway pitch, and
+arrived at by Houfu, not by the workflow.
+
+**Drafted into his arc:** the strategy section (his two bullets turned to prose, originals preserved in
+git), the emotional beat from his material, a new "The world already moved" section, and the A2J section
+re-aimed at succession. Draft now **1,690 words against an 1,800 budget**, 0 lint errors.
+
+**Pitch amended to v4 to follow the draft**, per the standing rule that his hand edits win. Recorded
+there: his title is authoritative; credit has *moved* rather than disappeared (from product credit to
+credit for effort and intent — the lunch, the feedback sessions), so the framing-risk guardrail is still
+satisfied by a better route; thesis_keywords updated to `[bookcase, LawNet, peers, pipeline]`.
+
+**Flagged to Houfu, not changed:** the title in frontmatter has a mismatched quote pair
+(`“Will LawNet become Just A Bigger Bookcase?"` — curly open, straight close), which would publish both
+characters literally.

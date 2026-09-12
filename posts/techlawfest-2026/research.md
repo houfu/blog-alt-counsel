@@ -269,3 +269,47 @@ away" — it is now moving.
 
 The honest claim is therefore about **direction of travel**, not competence: three peers moved capability
 toward the user; LawNet moved content toward the shelf.
+
+## 7. Round 3 (2026-09-12) — the pipeline. Verifying "law schools will use Harvey or Legora"
+
+Houfu's framing was predictive. **It is already past tense, and it happened at both Singapore law
+schools within three months.**
+
+| Date | What happened |
+|---|---|
+| **June 2026** | **NUS Law becomes the first law school in Singapore to partner with Harvey.** ([NUS Law](https://www.facebook.com/NUS.Law/posts/1607216901405613)) |
+| **9 September 2026** | **SMU's Yong Pung How School of Law joins Legora's Legal AI Scholars Program — first in Asia.** Announced on the **opening day of TechLaw.Fest 2026**. ([SMU](https://news.smu.edu.sg/news/2026/09/09/singapore-management-university-partners-legora-bring-agentic-ai-its-law-school), [Legora](https://legora.com/newsroom/singapore-management-university-partners-with-legora-to-bring-agentic-ai-to-its-law-school), [Legal Technology](https://legaltechnology.com/smus-yong-pung-how-school-of-law-becomes-first-in-asia-to-join-legoras-ai-scholar-program)) |
+
+Every Singapore law student now trains on Harvey or Legora. Not on LawNet.
+
+### It is a deliberate market-capture play, and it is reported as one
+
+- **Reuters, 7 April 2026:** *"AI startups court law students in fight for lawyer market."* Legora
+  supplies free training and access to nine US law schools. ([Reuters](https://www.reuters.com/legal/legalindustry/ai-startups-court-law-students-fight-lawyer-market-2026-04-07))
+- **Harvey's law school program:** launched Aug 2025 with Stanford, NYU, Michigan, UCLA, Texas, Notre
+  Dame; expanded Sept 2025 and to the UK in Nov 2025; a self-paced *Harvey Law Schools: Preparing for
+  Legal Work* course on Harvey Academy.
+- **Legora's Legal AI Scholars Program:** launched 25 Mar 2026 with nine US law schools (Cornell,
+  Stanford, Vanderbilt, Northwestern among them). Its pitch: the programme "reduce[s] the training
+  burden on law firms and accelerate[s] new hire" readiness — **a promise made to the employer about
+  the student**, which is worth noticing.
+
+### The incumbents are pushing into Singapore too
+
+- **Lexis+ with Protégé** launched in Singapore and Malaysia (launch event Oct 2025); LexisNexis
+  Southeast Asia won **AI – Legal at the Singapore Business Review Technology Excellence Awards 2026**
+  (Apr 2026); Skills in Lexis+ with Protégé launched in Malaysia Sept 2026 and Hong Kong.
+- **Thomson Reuters**: strategic collaboration with **WongPartnership** on AI across South East Asia;
+  a Singapore CoCounsel product page advertising local support; **Practical Law Asia** launched Nov 2025;
+  next-gen agentic CoCounsel GA Aug 2026 with a Westlaw Brief Builder.
+
+### Why this matters to the argument
+
+It converts the A2J section from a claim about *cost* into a claim about *succession*. The question is
+no longer whether a solo can afford the better tool. It is that a law student who learns research on
+Harvey at NUS or Legora at SMU, then joins a firm on Lexis or Westlaw, will encounter LawNet only as
+the place you fetch an SLR citation — never as where the work happens. The national legal
+infrastructure becomes a footnote to the generation that inherits it.
+
+This also reunites the juniors thread with the LawNet post as the **stake** rather than as a second
+takeaway, which is a better structure than the original two-takeaway pitch.
