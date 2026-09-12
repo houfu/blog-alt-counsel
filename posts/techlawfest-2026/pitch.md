@@ -40,21 +40,9 @@ capability, CanLII built its own. **LawNet had three exits available and took no
 it is the national utility rather than a vendor, that choice sets the ceiling for what an ordinary
 Singapore practitioner can do.
 
-## The argument in one paragraph
+## Pitch
 
-A year ago LawNet 4.0 launched at this conference and I was ready to be convinced. This year, from the
-same stage, SAL announced what a year of work produced: the AI Q&A now covers all areas of law instead of
-just contract, Academy Publishing books are in the search index, ten statutes have been marked up,
-there's an annotations feature, a LegalOn partnership and a sentencing repository coming. Five of those
-six are more content. In the same twelve months LexisNexis shipped Protégé Work and Thomson Reuters
-shipped a fully agentic CoCounsel — but that comparison is unfair, and it is not the one that matters.
-The fair comparison is to LawNet's actual peers, the other national legal information providers, and it
-is worse. AustLII is a charity hosted by a university and it signed a deal with LexisNexis in July to
-build AI research capability on its own data while keeping it free. CanLII is a non-profit and it shipped
-an AI research tool in March and plain-language summaries funded by a law foundation. The UK National
-Archives just published the judgments with an open API and a licence permitting computational use, and
-let other people build. LawNet is better resourced than AustLII and CanLII, it has IMDA behind it and
-three quarters of the private profession paying for it, and what it built was a bigger bookcase.
+A year ago LawNet 4.0 launched at this conference and I was ready to be convinced. This year, from the same stage, SAL announced what a year of work produced: the AI Q&A now covers all areas of law instead of just contract, Academy Publishing books are in the search index, ten statutes have been marked up, plus an annotations feature, a LegalOn partnership and a sentencing repository coming. Five of those six are more content. In the same twelve months LexisNexis shipped Protégé Work and Thomson Reuters shipped a fully agentic CoCounsel — but that comparison is unfair, and it is not the one that matters. The fair comparison is to LawNet's peers, the other national legal information providers, and it is worse. AustLII is a charity and it partnered with LexisNexis to build AI capability on its own data. CanLII is a non-profit and it shipped an AI research tool in March. The UK published its judgments with an open API and let others build. LawNet is better resourced than any of them, and what it built was a bigger bookcase.
 
 ## Evidence inventory
 

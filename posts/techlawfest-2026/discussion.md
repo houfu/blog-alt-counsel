@@ -179,3 +179,36 @@ while the AI conversation is about throughput, and nobody owns how a junior acqu
 judgment-building work is what is being automated. **Wei Lin post, not a Marcus post** — identity and who
 the profession is for. Research already gathered in `research.md` §3. Per series discipline, this is a
 logged candidate, not a planned Part 2.
+
+## Session 2026-09-12 (cont.) — Draft scaffold
+
+Houfu asked for a small post to edit himself. Written to `techlawfest-2026.md`, **1,357 words against an
+1,800 budget** — deliberately short, leaving ~450 words of room for the two things only he can write.
+
+**What the scaffold does and does not do:**
+
+- Writes out everything the receipts support: the six TLF 2026 announcements, the 2026 release-note
+  pattern, the unfair-vs-fair comparison, the peer routes (UK / AustLII / CanLII / HKLII / SCC Online /
+  LBox), the credit section, the A2J argument and the locked-shelf detail.
+- **Does not write the opening.** Left as a marked HTML comment naming exactly what is needed — he was in
+  the room in 2025 when 4.0 launched and in the room in 2026 for the sequel, and only he knows what that
+  felt like. Voice Guide principle 8: the emotional core comes from him, and inventing it is the failure
+  mode. A single flat placeholder line sits under the comment so the file reads, and carries the "bigger
+  bookcase" thesis early.
+- **Does not invent the lived evidence.** A marked gap where one concrete LawNet task that took too long
+  should go. Flagged in-file as the thing that turns "clogged and dense" from an adjective into evidence.
+- Three other HTML comments mark optional material (the SMU/SOLID domestic comparator), the close as a
+  candidate rather than a fixed landing, and the backlink placement.
+
+**Lint:** 0 errors, strict mode. Two advisory warnings remain and are structurally deliberate —
+"verifiability" first appears at 62% depth because that is where the credit section sits, and "exits" at
+47% because it is the payoff line. Both will move when he edits. `--fix` appended `?ref=` to the two
+internal backlinks; those use full alt-counsel.com URLs so they render as bookmark cards per house style.
+
+**Also fixed:** pitch.md v3 had renamed its contract section, so the linter could not locate it. Restored
+the `## Pitch` heading and trimmed it to the one-paragraph, ≤200-word contract.
+
+**Next:** Houfu edits. After his pass, record the pitch checkpoint (`workflow-state.js checkpoint`) — not
+done now, since the checkpoint keys to draft content hash and his edits would invalidate it immediately.
+Then lint, one audit round (audit-substance + audit-tone in one message), then reviewers. Per his
+standing preference, all three reviewers, not the CLAUDE.md default of 1–2.
