@@ -307,3 +307,43 @@ satisfied by a better route; thesis_keywords updated to `[bookcase, LawNet, peer
 **Flagged to Houfu, not changed:** the title in frontmatter has a mismatched quote pair
 (`“Will LawNet become Just A Bigger Bookcase?"` — curly open, straight close), which would publish both
 characters literally.
+
+## Session 2026-09-12 (cont.) — JLC attribution confirmed; both inserts written
+
+**Attribution resolved.** Houfu identified the photos as the JLC presentation; the TechLaw.Fest 2026
+programme (agenda rendered in an iframe, read via the browser) confirms:
+
+> **"The Impact of AI On Legal Practice by JLC Honorary Team"** — Thursday 10 September 2026, 15:45 SGT,
+> Tech Bytes Stage (Hibiscus Jr), Level 3. Speakers two presenters (names withheld), Justices' Law
+> Clerks, Supreme Court of Singapore.
+
+**JLC = Justices' Law Clerks**, not Junior Lawyers Committee — worth recording, since the obvious guess
+is wrong. Session start 15:45 matches the photo timestamps 15:47–15:59, so the attribution is solid.
+
+**Programme detail worth having:** LawNet Technology Services ran "Unlocking Deeper Legal Insights with
+LawNet AI" on that same Tech Bytes Stage **twice** that afternoon — 14:00 (Kenta Kusano, Chief
+Executive, as moderator) and 16:05 — with the JLC findings delivered in between. The finding that
+practitioners had never heard of LawNet AI was sandwiched between two sessions about LawNet AI. Used as
+one restrained sentence in the strategy section; it is structural irony, not mockery, and it makes the
+point better than any adjective.
+
+**Two inserts written, per Houfu's go-ahead:**
+
+1. **Strategy section** — the JLC finding plus its proposed remedy (an *enhanced communications
+   strategy*: demos, how-to guides, incentives), landing on "when the product is not landing, the
+   instinct is to market the bookcase harder rather than ask what is on the shelves." This is the
+   section's own title made literal.
+2. **The close** — replaced the shrug ending. "Somebody did ask, as it turns out": the JLC roadmap
+   (review/verify, recommend edits, generate first draft; citation checker then contract review on
+   LawNet's Precedents function), followed by the distinction that the photos made available —
+   **LawNet's verifiability is aimed at itself; a citation checker is aimed at you.** The close now
+   lands on "the plan exists, two law clerks presented it on a side stage" rather than on a shrug.
+
+⚠️ **Framing guard added to `conference-slides.md`:** The presenters are junior members of
+the profession making a constructive proposal. The post credits them; their research must never be used
+to embarrass them or their employer, and all criticism stays aimed at LawNet's strategy.
+
+⚠️ **LENGTH: the draft is now 1,967 words against a 1,980 cap.** Thirteen words of headroom, and the
+concrete-LawNet-task insert is still outstanding. This needs a decision before more is added: either
+raise `word_budget` in pitch.md (and record why here) or find cuts first. Per the workflow's own rule,
+the length audit comes *before* additive fixes, so flagged to Houfu rather than resolved unilaterally.

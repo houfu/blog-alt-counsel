@@ -6,9 +6,29 @@
 findings, then three proposal areas, then a product roadmap.
 **Deck:** slides captured are numbered 5, 6, 7, 12, 14, 15, 17, 18, 19, so the deck ran to at least 19.
 
-⚠️ **`[HOUFU]` Attribution unknown.** The photos contain no title slide, presenter name or session
-title, and I have not guessed. Before any of this is quoted in a post, the session and speaker(s) need
-naming — it matters for accuracy and for the framing-risk rule about not criticising named people.
+**Session (confirmed from the TechLaw.Fest 2026 programme, 2026-09-12):**
+
+> **"The Impact of AI On Legal Practice by JLC Honorary Team"**
+> Thursday 10 September 2026, **15:45 SGT**, Tech Bytes Stage (Hibiscus Jr), Level 3
+> Listed under Singapore Academy of Law
+> Speakers: two presenters (names withheld), Justices' Law Clerks, Supreme Court of Singapore
+
+**JLC = Justices' Law Clerks.** The session start (15:45) matches the photo timestamps (15:47–15:59)
+exactly, so the attribution is solid.
+
+**Context from the same stage that afternoon** — LawNet Technology Services ran
+**"Unlocking Deeper Legal Insights with LawNet AI"** on the Tech Bytes Stage **twice**, at **14:00**
+(Kenta Kusano, Chief Executive, LawNet Technology Services, as moderator) and again at **16:05**. The
+JLC findings — including that a number of interviewees had never heard of LawNet.com or LawNet AI —
+were delivered between the two.
+
+Also on Day 2: a **Harvey Product Demo (In-House)** at 13:50 on the Tech Talk Stage (Adrian Jordan,
+Legal Engineer, Harvey), who also sat as a competition judge in the MinLaw / Law Society "Lion's Pit"
+session. Harvey was demoing and judging at TechLaw.Fest.
+
+⚠️ **Framing note:** The presenters are junior members of the profession making a
+constructive proposal. The post credits them; it must never use their research to embarrass them or
+their employer. All criticism stays aimed at LawNet's strategy.
 
 ## The slides
 

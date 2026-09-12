@@ -62,6 +62,12 @@ The density is getting thicker, not thinner. Reading a statute, do I really need
 are the same points in prose. The "lack of confidence" line is the sharpest thing in the
 section — it might deserve to be the section's first sentence. -->
 
+There is a harder version of this, and it came from the floor of the same conference. On the Tech Bytes Stage on day two, two Justices' Law Clerks presented research for the JLC Honorary Team on how AI is changing legal practice. One of their findings was blunt: a number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI.
+
+Their proposed fix was an enhanced communications strategy. More demonstration sessions with firms, accessible how-to guides, incentives to engage.
+
+That is the strategy in one slide. When the product is not landing, the instinct is to market the bookcase harder rather than to ask what is on the shelves. The same stage ran a session called "Unlocking Deeper Legal Insights with LawNet AI" twice that afternoon, at two o'clock and again at five past four, with the JLC findings delivered in between.
+
 I want to be careful here, because none of this is for lack of effort. People worked very hard on 4.0. They ran feedback sessions and bought lunch to get practitioners into a room and listening. There are people inside LawNet who are genuinely invested in it succeeding, and I do not doubt any of that.
 
 That is exactly why the strategy worries me. Hard work in the wrong direction still arrives somewhere. I think this one drives LawNet into a ravine.
@@ -101,7 +107,11 @@ I did not want LawNet to become CoCounsel. It can't, and it shouldn't try.
 
 I wanted somebody to ask what a national legal research utility is actually for in 2026, and to answer with something other than more of what it already had. The bicentenary framing was right there. So was the conference theme, about moving from foundation to frontier.
 
-The foundation got another storey. Nobody went to the frontier.
+Somebody did ask, as it turns out. The same JLC presentation ended with a roadmap: review and verify first, recommend edits next, generate a first draft as the long-term goal. Concretely, a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function, using local precedents and local drafting styles.
+
+Notice which way that points. LawNet's verifiability is aimed at itself, telling you how far to trust its own output. A citation checker is aimed at you. The profession is not asking for a tool that hedges about itself. It is asking for one that checks the lawyer.
+
+The plan exists. Two law clerks presented it on a side stage. The foundation, meanwhile, got another storey.
 
 <!-- [HOUFU] CLOSE — soft and flat, no mic-drop. The paragraph above is a
 candidate landing, not a fixed one. Backlinks below are bookmark cards; move
