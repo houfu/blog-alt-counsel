@@ -81,3 +81,28 @@ opening, which per the Voice Guide must come from his real experience and was de
 marked placeholder rather than invented.
 
 **Next:** Houfu answers the open questions, pitch is locked, then WRITE.
+
+### Decisions — 2026-09-12 (Houfu, on the three scope questions)
+
+1. **Takeaway 1 framing: pastoral vs operational gap.** Accepted the refinement. The post will concede
+   plainly and early that the institutions *are* talking about juniors, then locate the gap in the
+   disconnect rather than in absence. Added guard: the concession must appear in the draft itself, not
+   only in the pitch — a reader who can rebut the premise by paragraph three stops reading.
+2. **LawNet intensity: strategy critique with receipts.** The heat stays, the target moves. Lead with
+   genuine credit (the yellow/red hallucination flagging, Search Logs), then dissent, with every
+   criticism sourced to SAL's own podium or LawNet's own release notes. Rule recorded in beat 4: no
+   adjectives doing work a citation should do.
+3. **LegalWeek Asia: one line in the opening.** Sharpens "eleven years in and still strong" without
+   spending budget or turning the post into three arguments. Explicitly out of scope as an argument;
+   noted below as a candidate future post.
+
+**Pitch is now v2** — scope locked, four `[HOUFU]` open questions remaining, all of which need lived
+experience rather than research: the emotional opening, beat 2 specifics, a concrete LawNet task that
+took too long, and whether to print LawNet pricing (2023 figure, must be re-verified).
+
+### Candidate future post
+
+**LegalWeek Asia / the ALM partnership.** From Sept 2027 TechLaw.Fest becomes an anchor track inside
+Law.com's LegalWeek Asia (28–29 Sep 2027, Sands, 4,000+ expected). A regional conference built over
+eleven editions and 26,000 participants being folded into a US event brand is its own argument about
+what happens to local legal tech institutions at scale. Not this post.
