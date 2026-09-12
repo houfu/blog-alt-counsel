@@ -62,7 +62,7 @@ The density is getting thicker, not thinner. Reading a statute, do I really need
 are the same points in prose. The "lack of confidence" line is the sharpest thing in the
 section — it might deserve to be the section's first sentence. -->
 
-There is a harder version of this, and it came from the floor of the same conference. On the Tech Bytes Stage on day two, two Justices' Law Clerks presented research for the JLC Honorary Team on how AI is changing legal practice. One of their findings was blunt: a number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI.
+There is a harder version of this, and it came from the floor of the same conference. On the Tech Bytes Stage on day two, a team of Justices' Law Clerks presented research on how AI is changing legal practice. One of their findings was blunt: a number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI.
 
 Their proposed fix was an enhanced communications strategy. More demonstration sessions with firms, accessible how-to guides, incentives to engage.
 

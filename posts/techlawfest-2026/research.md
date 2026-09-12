@@ -313,3 +313,75 @@ infrastructure becomes a footnote to the generation that inherits it.
 
 This also reunites the juniors thread with the LawNet post as the **stake** rather than as a second
 takeaway, which is a better structure than the original two-takeaway pitch.
+
+## 8. Round 4 (2026-09-12) — "Is LawNet 4.0 the same as LawNet.com?" No. And it matters.
+
+Houfu's question. Checked live, 2026-09-12.
+
+| Thing | What it actually is | Live status |
+|---|---|---|
+| **LawNet 4.0** | The *version* of the legal research platform, launched at TLF 2025. SAL uses it as a product name ("this feature is available exclusively on LawNet 4.0"). | — |
+| **lawnet.com** | The *domain* 4.0 runs on. Also hosts **Academy Library**, the store, and **OpenLaw**. Page title is "Welcome • Academy Library". | 200 |
+| **lawnet.sg** | The **old** platform (3.0 era). **Still live, still serving, no redirect to lawnet.com.** | 200 at `/lawnet/web/lawnet/home` |
+| **lawnet.com/migrate** | Account migration from lawnet.sg to lawnet.com. | 200 — still an open task |
+| **lawnet.gov.sg** | **Does not resolve.** | DNS failure |
+
+### 8a. Consequence 1 — a fairer reading of the JLC finding
+
+The JLC slide said interviewees "had never heard of or accessed **LawNet.com** and LawNet AI" — their
+words, not "LawNet 4.0". Since **lawnet.sg is still live and still works**, a practitioner who never
+migrated would never have seen 4.0 at all. Part of the awareness gap is a **migration gap**.
+
+That is fairer than "they failed to market it" and it still indicts the strategy: a year after launch,
+two platforms are running in parallel and a chunk of the profession is on the old one. Worth one clause
+in the draft; the current text quotes the JLC wording correctly, so nothing is wrong, only incomplete.
+
+### 8b. Consequence 2 — ⚠️ OpenLaw complicates the "locked bookcase" line, and must be addressed
+
+Per [NUS Libraries, Aug 2026](https://libguides.nus.edu.sg/Singaporelaw/databases):
+
+- **LawNet: OpenLaw** — free access to **Singapore court judgments from 1965**.
+  `https://www.lawnet.com/openlaw/singapore/judgments/supreme-court`
+- **LawNet Free Resources** — free judgments from Supreme Court, State Courts and Family Justice Courts
+  for the **last 3 months**.
+
+So LawNet does **not** hoard the raw judgments. A reader who knows this will rebut "bigger bookcase with
+locked shelves" in one line unless the draft is precise.
+
+**The precision makes the argument better, not worse.** What is free is the *content* (judgments). What
+is paywalled is the *capability* (AI Search, AI summaries) plus the secondary layer (SLR, books,
+journals, the legislation module). And there is still **no public API** — which is Houfu's own published
+position, see 8d.
+
+Restated: LawNet came closest of anyone to the UK's open-data exit and then stopped halfway. Free to
+read, nothing to build against. That is a **half exit**, which is a sharper charge than "none of the
+three" and survives contact with OpenLaw.
+
+### 8c. Consequence 3 — another free Singapore comparator: Pair Search
+
+**Pair Search**, built by **Open Government Products** out of *Hack for Public Good*: free search across
+**all Supreme Court written judgments since 2000**, **all Hansard from 1955**, and **all Current Acts and
+Subsidiary Legislation**. The Judiciary's own site promotes it: "Try the **AI Pair Search prototype** for
+Supreme Court judgments." ([SG Courts](https://www.judiciary.gov.sg/judgments/judgments-case-summaries),
+[NUS](https://libguides.nus.edu.sg/Singaporelaw/databases))
+
+A government product team shipped free AI-ish search across judgments, Hansard and legislation. The
+national legal utility charges for its AI. Another domestic comparator, and a cheap one to deploy in
+a clause.
+
+### 8d. Houfu is already on record — self-citation available
+
+**"Breakfast, Eventually: Why Lawyers Should Build Their Own Tools"**, Singapore Law Gazette
+([link](https://lawgazette.com.sg/feature/breakfast-eventually-why-lawyers-should-build-their-own-tools)),
+sources accessed 26–27 July 2026. Houfu's own — it cites Zeeker and SG Law Cookies as "the author's".
+
+It already states the position this post extends:
+
+> "Open Singapore legal data remains scarcer than it should be: LawNet … **has no public interface to
+> build against**, and the Singapore Open Legal Informatics Database (SOLID) project at SMU's Centre for
+> Digital Law targets **full launch only in Q1 2028**."
+
+Two uses: a backlink that shows he has been consistent rather than opportunistic, and a **correction to
+§6c of this file** — SOLID's full launch is **Q1 2028**, roughly 18 months out. My earlier note that
+SOLID "is now moving" overstated it. The SMU/Legora partnership (9 Sep 2026) is a separate thing from
+SOLID shipping.

@@ -347,3 +347,34 @@ to embarrass them or their employer, and all criticism stays aimed at LawNet's s
 concrete-LawNet-task insert is still outstanding. This needs a decision before more is added: either
 raise `word_budget` in pitch.md (and record why here) or find cuts first. Per the workflow's own rule,
 the length audit comes *before* additive fixes, so flagged to Houfu rather than resolved unilaterally.
+
+## Session 2026-09-12 (cont.) — Houfu's accuracy check on LawNet 4.0 vs LawNet.com
+
+He asked whether LawNet 4.0 and LawNet.com are the same thing. They are not, and checking it turned up
+three things that bear on the draft plus one error in a **published** post. Full detail in research.md §8.
+
+- **4.0 is the version; lawnet.com is the domain** (which also carries Academy Library, the store and
+  OpenLaw). **lawnet.sg is still live and does not redirect** — two platforms in parallel a year on, and
+  `lawnet.com/migrate` is still up.
+- **This gives a fairer read of the JLC finding.** They said interviewees had never accessed
+  "LawNet.com" — if you never migrated off lawnet.sg you never saw 4.0. Part of the awareness gap is a
+  migration gap. Fairer than "they failed to market it", and still an indictment of the strategy.
+- ⚠️ **OpenLaw complicates the "locked bookcase" line.** LawNet: OpenLaw gives **free access to
+  Singapore judgments from 1965**, and Free Resources gives the last 3 months across three court levels.
+  LawNet does not hoard judgments. The draft needs one sentence of precision or a reader rebuts it in a
+  line. The precision *strengthens* the argument: content is free, **capability** is paywalled, and
+  there is still no API — a **half exit** toward the UK route rather than none of the three.
+- **Pair Search** (Open Government Products, Hack for Public Good): free search over all Supreme Court
+  judgments since 2000, all Hansard since 1955 and all current legislation, promoted by the Judiciary as
+  an "AI Pair Search prototype". Another free domestic comparator.
+- **Houfu is already on record** in the Singapore Law Gazette, "Breakfast, Eventually: Why Lawyers
+  Should Build Their Own Tools", that LawNet "has no public interface to build against". Backlink
+  candidate, and it shows consistency rather than opportunism.
+- **Correction to research.md §6c:** SOLID's full launch is **Q1 2028**, per Houfu's own article. My
+  earlier "it is now moving" overstated it; the SMU/Legora partnership is a separate thing.
+- ⚠️ **Error in a published post:** `budget-2026-lawyers-ai-drivers-seat` cites LawNet as
+  `https://www.lawnet.gov.sg/`. That domain **does not resolve**. Live broken citation, worth fixing on
+  Ghost independently of this post.
+
+Not changed in the draft — the OpenLaw fix is a judgment call on a section Houfu owns, and the length
+budget is already at 1,967 of 1,980.
