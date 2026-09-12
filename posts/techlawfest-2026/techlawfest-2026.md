@@ -1,5 +1,5 @@
 ---
-title: “Will LawNet become Just A Bigger Bookcase?"
+title: "Will LawNet become Just A Bigger Bookcase?"
 slug: "the-bigger-bookcase"
 tags: ["TechLawFest", "LegalTech", "AI", "Singapore", "Law"]
 status: draft
