@@ -202,3 +202,28 @@ round. What changed:
 
 **Still open:** the concrete LawNet task that took too long (partially filled by the statute-annotations
 observation in the strategy section), and whether to print pricing.
+
+### v5 — 2026-09-14: ending restructured at Houfu's request
+
+Houfu said he had lost the plot at the ending and was recycling points. Diagnosis and fix:
+
+1. **Orphaned payoffs.** Cutting the strategy section removed the JLC introduction and the disclaimers
+   critique, but the close still said "the same JLC presentation" and "verifiability aimed at itself".
+   The close now introduces the law clerks itself, and the payoff is re-anchored on his own density
+   paragraph: everything LawNet added gives the lawyer more to read; a citation checker reads the
+   lawyer's work.
+2. **The ending abandoned the opening's frame.** The stake section is rebuilt on his "old friend" image:
+   LawNet was the small firm's equaliser against large firms with armies of interns; AI is the new army,
+   bought by the large firms from Lexis, Westlaw and Harvey. That is the access-to-justice argument, in
+   his own terms, without restating the pipeline.
+3. **Recycled points cut:** the second next-generation paragraph (his early-career line stays), the
+   repeated agentic-versus-encyclopaedic line, the repeated 10,000-users figure, the locked-books
+   paragraph (a sixth bookcase image, and rebuttable via OpenLaw), and the trailing backlink lead-ins.
+4. **OpenLaw handled precisely, in the peers section:** LawNet got closest on the open-data route
+   (free judgments from 1965) but has no public API, so it is half of one route and none of the other two.
+   Replaces the "three exits, took none" kicker, which OpenLaw made inaccurate.
+5. **Close is an appointment, not a mic-drop:** back at TechLaw.Fest next year to check on the old friend.
+6. **Restored, flagged for his decision:** the lunch/feedback-sessions paragraph he explicitly asked for
+   in the previous round, which went out with the strategy section.
+
+Draft now ~1,640 words against 1,800. Thesis keywords unchanged.

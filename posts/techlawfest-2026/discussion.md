@@ -378,3 +378,46 @@ three things that bear on the draft plus one error in a **published** post. Full
 
 Not changed in the draft — the OpenLaw fix is a judgment call on a section Houfu owns, and the length
 budget is already at 1,967 of 1,980.
+
+## Session 2026-09-14 — Straightening the ending
+
+**Houfu:** "i've edited the post but i feel that i lost the plot at the ending and we are recycling
+points. can you review it and straighten it out?"
+
+His edits (committed verbatim first as `fb56ab2`): split the opening, rewrote the strategy reveal as
+"LawNet will become a bookcase, nothing more, nothing less", moved the interface-density point up into
+the year-of-shelving section, cut the whole strategy section, added the scraping-moat paragraph ("one guy
+and his claw") and the early-career line.
+
+**Diagnosis — why it lost the plot (a pattern worth remembering):**
+
+1. **Deleting a section orphaned two payoffs.** The close still cited "the same JLC presentation" and
+   "LawNet's verifiability is aimed at itself" after both setups were deleted. When Houfu cuts a whole
+   section, scan the rest of the post for references into it.
+2. **The ending walked away from the opening.** His opening frame — LawNet as the old friend who stood
+   with him against large firms and their armies of interns — never came back. That image *is* the
+   access-to-justice argument; the ending was reaching for it with borrowed language instead.
+3. **Recycling:** next generation twice, vendors-agentic-vs-LawNet-catalogues three times, 10,000 users
+   twice, the bookcase image six times.
+
+**Verified before editing:** "these products were shown off at TechLaw.Fest" — true. LexisNexis had
+Protégé live at Booth A05 with two sessions; Thomson Reuters demoed Westlaw Singapore with Deep Research
+and CoCounsel Legal on 10 Sep. Accuracy nudge: Protégé predates the twelve-month window, so "shipped
+Protégé" became "shipped a new generation of Protégé". "Claw" = OpenClaw (his agent, used on Zeeker);
+linked to the published field notes post.
+
+**Changes:** stake section rebuilt on the equaliser/army-of-interns frame; JLC re-introduced inside the
+close; payoff re-anchored on his density paragraph; OpenLaw handled precisely in the peers section (half
+of one route, none of the other two) replacing a kicker OpenLaw had made inaccurate; trailing backlink
+lead-ins removed (API backlink moved into the peers section); close is now an appointment. Draft went
+from 1,825 to ~1,640 words, resolving the open length decision without raising the budget.
+
+**Flagged to Houfu, not changed:**
+- **Restored** the lunch/feedback-sessions paragraph he explicitly asked for last round; it went out with
+  the strategy section. Marked with a comment; his call whether the cut was deliberate.
+- **Dropped "forcibly"** from "forcibly scraping legal materials off the official web pages". Zeeker's
+  own documentation describes its collection as scraping, and "one guy and his claw" is him — "forcibly"
+  would describe his own project as adversarial. One-word change to his prose, flagged for veto.
+- **Lost:** the prompt-engineering backlink (it was a tacked-on lead-in with a recycled point). Easy to
+  reinstate as a clause if he wants it.
+- "judgements" in his opening — house/legal usage is "judgment". Left for him.

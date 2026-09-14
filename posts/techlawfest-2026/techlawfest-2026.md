@@ -38,7 +38,7 @@ You don’t have to read release documents or attend TechLaw.Fest every year to 
 
 ## The comparison that isn't fair, and the one that is
 
-The easy move here is to line LawNet up against the global vendors. In the same twelve months LexisNexis shipped Protégé, and Thomson Reuters shipped a fully agentic CoCounsel. These products were shown off at TechLaw.Fest. In 2026, LawNet added books to its search box while the vendors made their products do the work.
+The easy move here is to line LawNet up against the global vendors. In the same twelve months LexisNexis shipped a new generation of Protégé, and Thomson Reuters shipped a fully agentic CoCounsel. These products were shown off at TechLaw.Fest. In 2026, LawNet added books to its search box while the vendors made their products do the work.
 
 But that comparison lets LawNet off. Thomson Reuters employs thousands of engineers and sells to the world. LawNet is a statutory body serving one small jurisdiction. Different mission, different budget, and the answer writes itself.
 
@@ -54,7 +54,7 @@ Hong Kong's HKLII built an AI module. India's SCC Online put a conversational as
 
 Three routes were available: open the data, partner for capability, or build it yourself. Every one of these peers took one. AustLII and CanLII are non-profits, and both are poorer than LawNet, which has IMDA behind it and three quarters of the private profession paying for it.
 
-LawNet had three exits and took none of them.
+LawNet got closest on the first route. OpenLaw puts Singapore judgments from 1965 online for free, and that deserves credit. But there is still no public API, which [I have complained about before](https://alt-counsel.com/budget-2026-lawyers-ai-drivers-seat/?ref=the-bigger-bookcase), so nobody can build on it. It did not pursue the other two routes at all.
 
 ## The world already moved
 
@@ -66,45 +66,24 @@ This is not an accident of procurement. Reuters described it plainly in April: A
 
 The incumbents are not standing still here either. Lexis+ with Protégé launched in Singapore and Malaysia and took an AI award at the Singapore Business Review's 2026 technology awards. Thomson Reuters has a strategic collaboration with WongPartnership on AI across South East Asia, and launched Practical Law Asia. Both of them are pushing into this market, with agentic products, while LawNet catalogues. 
 
-If anyone believed that Singapore law was a durable moat for LawNet, they are ignoring how other solutions have been forcibly scraping legal materials off the official web pages. The task is not insurmountable; it can be done with one guy and his claw. Quality might be an issue, but faced with a tool that gets the job done and another tool which forces you to read every page, I am putting my money on lawyers preferring the former.
+If anyone believed that Singapore law was a durable moat for LawNet, they are ignoring how other solutions have been scraping legal materials off the official web pages. The task is not insurmountable; it can be done with [one guy and his claw](https://alt-counsel.com/openclaw-field-notes-lawyer/?ref=the-bigger-bookcase). Quality might be an issue, but faced with a tool that gets the job done and another tool which forces you to read every page, I am putting my money on lawyers preferring the former.
 
 When students and lawyers are pushed to choose between LawNet and every other provider in this manner at the early part of their career, few would become skilled lawyers knowing how to use LawNet. 
 
 ## What is actually at stake
 
-If LawNet were a vendor, none of this would matter much. You would buy something else.
+I said at the start that LawNet stood shoulder to shoulder with me against large firms and their armies of interns. That was not nostalgia. For a small firm, LawNet was the equaliser. The big firm had more people to read the cases. The small firm had the same cases, and a search box.
 
-It isn't. Around ten thousand users, including more than seventy-five per cent of Singapore lawyers in private practice. For most of the profession here, LawNet is not one option among several. It is the floor and the ceiling. When Westlaw and Lexis go agentic and LawNet goes encyclopaedic, the ordinary Singapore practitioner gets the weaker tool by default, and has no say in it.
-
-And the next generation will not even experience it as a default. A law student who learns research on Harvey at NUS or Legora at SMU, and then joins a firm that buys Lexis or Westlaw, will meet LawNet as the place you go when you need the actual Singapore Law Reports citation. Not as where the work happens. That is a generation growing up with the national legal infrastructure as a footnote.
-
-There is a detail in the September release notes that stayed with me. The AI now draws on Academy Publishing books when it generates an answer, which sounds like a straightforward improvement. Then the note adds that reading the full book requires buying the digital copy or holding an Academy Library subscription.
-
-So the AI reasons over a source, shows you the extract it used, and tells you the rest is behind another payment. A bigger bookcase, with some of the shelves locked.
-
-For solo counsels and small teams this is the part that bites. A bigger bookcase is not help. It is more to read, by someone who already has no time to read, and the tools that would actually compress that reading went to the firms who could buy them elsewhere.
-
-<!-- [HOUFU] EVIDENCE GAP — the post needs one concrete task of your own here:
-something you tried to do on LawNet 4.0 that took too long, with the actual
-steps. This is what turns "clogged and dense" from an adjective into evidence,
-and it is the one thing I can't supply. Two or three sentences is enough. -->
+AI is the new army of interns, and the large firms are buying theirs from Lexis, Westlaw and Harvey. What the small firm and the solo counsel get from the national legal research service is a bigger bookcase. Reading the judgments is not the problem. Doing something with them is. That is where the new gap in access to justice opens up.
 
 ## What I wanted
 
-I did not want LawNet to become CoCounsel. It can't, and it shouldn't try.
+<!-- [HOUFU] The lunch paragraph is restored from the strategy section you cut last round; you had asked for this beat. Delete it if the cut was deliberate. -->
 
-I wanted somebody to ask what a national legal research utility is actually for in 2026, and to answer with something other than more of what it already had. The bicentenary framing was right there. So was the conference theme, about moving from foundation to frontier.
+I did not want LawNet to become CoCounsel. I wanted it to find its own answer, and it is not for lack of effort that it hasn't. People worked very hard on 4.0. They ran feedback sessions and bought lunch to get practitioners into a room. There are people at LawNet who clearly want it to succeed.
 
-Somebody did ask, as it turns out. The same JLC presentation ended with a roadmap: review and verify first, recommend edits next, generate a first draft as the long-term goal. Concretely, a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function, using local precedents and local drafting styles.
+Part of an answer was presented at the same conference. On day two, on a side stage, two Justices' Law Clerks presented the JLC Honorary Team's research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
 
-Notice which way that points. LawNet's verifiability is aimed at itself, telling you how far to trust its own output. A citation checker is aimed at you. The profession is not asking for a tool that hedges about itself. It is asking for one that checks the lawyer.
+Everything LawNet added this year gives the lawyer more to read. A citation checker reads the lawyer's work instead.
 
-The plan exists. Two law clerks presented it on a side stage. The foundation, meanwhile, got another storey.
-
-<!-- [HOUFU] CLOSE — soft and flat, no mic-drop. The paragraph above is a
-candidate landing, not a fixed one. Backlinks below are bookmark cards; move
-them into the body where they earn their place. -->
-
-I wrote last year about [lawyers learning prompt engineering at the moment the tools moved past it](https://alt-counsel.com/lawyers-prompt-engineering-wrong/?ref=the-bigger-bookcase). In July, LawNet ran a training workshop teaching prompt engineering techniques for legal research.
-
-I also asked earlier this year whether [Singapore's lawyers are in the driver's seat on AI](https://alt-counsel.com/budget-2026-lawyers-ai-drivers-seat/?ref=the-bigger-bookcase), and complained that LawNet had no public API for anyone to build on. That is still true.
+I will be back at TechLaw.Fest next year to check on my old friend. I hope it takes the law clerks up on it.
