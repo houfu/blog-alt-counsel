@@ -7,13 +7,15 @@ featured: false
 github_folder: "techlawfest-2026"
 ---
 
-I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community. TechLaw.Fest is also important for meeting old friends, and this friend is a really old one. Someone I knew fondly since I was a law student and who stood shoulder to shoulder with me as I battled large local law firms with their army of interns and litigants in person. We stopped going out when I left practice. As such, TechLaw.Fest is the only time I get to check on how he or she or it is doing. 
+I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community. 
+
+TechLaw.Fest is also important for meeting old friends, and this friend is a really old one. Someone I knew fondly since I was a law student and who has stood shoulder to shoulder with me as I battled large local law firms with their army of interns and litigants in person. We stopped meeting each other when I left practice. As such, TechLaw.Fest is the only time I get to check on how he or she or it is doing. 
 
 LawNet is the Singapore Academy of Law’s national legal research service. It started in 1990 as a dial up network (what in the world is that?) and has roughly 10,000 users, including more than 75% of Singapore lawyers in private practice. It’s roughly what I would call the LexisNexis or WestLaw of Singapore, covering judgements, legislation and secondary materials. Even though it runs by subscription (you can check it out on demand at a counter in the National Library), it is as close to what you can call the national infrastructure for Singapore law.
 
-I dare say it punched above its weight. If you only practiced Singapore law, as many lawyers in small and medium sized law firms here do, you only needed to subscribe to LawNet. It implemented boolean search, natural language search, results from multiple databases (What in the world is that?) and so on. No more trips to the library searching for cases or figuring out where some law students were hiding important books in the law library. (What’s a book?)
+I dare say it punched above its weight. If you only practiced Singapore law, as many lawyers in small and medium sized law firms here do, LawNet was all you need. It implemented boolean search, natural language search, results from multiple databases (What in the world is that?) and so on. No more trips to the library searching for cases or figuring out where some law students were hiding important books in the law library. (What’s a book?)
 
-Obviously, the world has moved on a lot. I have been waiting a few years to see how LawNet would answer AI. This year I got the answer, and the answer was a bigger bookcase.
+Obviously, the world has moved on a lot. I have long been curious how LawNet would respond to AI with every TechLaw.Fest. It’s become clear to me what the strategy is this year. LawNet will become a bookcase, nothing more, nothing less. 
 
 ## What a year produced
 
@@ -32,9 +34,11 @@ The release notes say the same thing in more detail. In December, journals and c
 
 That is a year of shelving.
 
+You don’t have to read release documents or attend TechLaw.Fest every year to see what is happening. Compare the interface from before and after LawNet 4.0, and you can see the density of the screen is getting thicker, not thinner. That’s what it looks like when the bookcase is expanding. Do I really need to read dozens of annotations from cases on whatever provision there is on a statute? And now books? Are blogs next?
+
 ## The comparison that isn't fair, and the one that is
 
-The easy move here is to line LawNet up against the global vendors. In the same twelve months LexisNexis shipped Protégé Work, and Thomson Reuters shipped a fully agentic CoCounsel. In 2026, LawNet added books to its search box while the vendors made their products do the work.
+The easy move here is to line LawNet up against the global vendors. In the same twelve months LexisNexis shipped Protégé, and Thomson Reuters shipped a fully agentic CoCounsel. These products were shown off at TechLaw.Fest. In 2026, LawNet added books to its search box while the vendors made their products do the work.
 
 But that comparison lets LawNet off. Thomson Reuters employs thousands of engineers and sells to the world. LawNet is a statutory body serving one small jurisdiction. Different mission, different budget, and the answer writes itself.
 
@@ -52,26 +56,6 @@ Three routes were available: open the data, partner for capability, or build it 
 
 LawNet had three exits and took none of them.
 
-## The Strategy is right in front of us
-
-You can read the strategy off the product. There is an overemphasis on content, on verifiability, and on the sheer number of disclaimers, and what it adds up to is a lack of confidence in the product. A tool that trusted itself would not need to caveat this much.
-
-The density is getting thicker, not thinner. Reading a statute, do I really need annotations on cases pulled into the margin? Giving practitioners more to read sounds generous. In practice I doubt it. Every addition is defensible on its own and the sum is a page you have to fight.
-
-<!-- [HOUFU] your two bullets are preserved in git if you prefer them; the paragraphs above
-are the same points in prose. The "lack of confidence" line is the sharpest thing in the
-section — it might deserve to be the section's first sentence. -->
-
-There is a harder version of this, and it came from the floor of the same conference. On the Tech Bytes Stage on day two, a team of Justices' Law Clerks presented research on how AI is changing legal practice. One of their findings was blunt: a number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI.
-
-Their proposed fix was an enhanced communications strategy. More demonstration sessions with firms, accessible how-to guides, incentives to engage.
-
-That is the strategy in one slide. When the product is not landing, the instinct is to market the bookcase harder rather than to ask what is on the shelves. The same stage ran a session called "Unlocking Deeper Legal Insights with LawNet AI" twice that afternoon, at two o'clock and again at five past four, with the JLC findings delivered in between.
-
-I want to be careful here, because none of this is for lack of effort. People worked very hard on 4.0. They ran feedback sessions and bought lunch to get practitioners into a room and listening. There are people inside LawNet who are genuinely invested in it succeeding, and I do not doubt any of that.
-
-That is exactly why the strategy worries me. Hard work in the wrong direction still arrives somewhere. I think this one drives LawNet into a ravine.
-
 ## The world already moved
 
 While LawNet was adding shelves, the pipeline changed hands.
@@ -80,7 +64,11 @@ In June, NUS Law became the first law school in Singapore to partner with Harvey
 
 This is not an accident of procurement. Reuters described it plainly in April: AI startups are courting law students in the fight for the lawyer market. Free access and free training now, habits later. Legora's own pitch to law schools is that it reduces the training burden on firms and accelerates new hires, which is a promise made to the employer about the student.
 
-The incumbents are not standing still here either. Lexis+ with Protégé launched in Singapore and Malaysia and took an AI award at the Singapore Business Review's 2026 technology awards. Thomson Reuters has a strategic collaboration with WongPartnership on AI across South East Asia, and launched Practical Law Asia. Both of them are pushing into this market, with agentic products, while LawNet catalogues.
+The incumbents are not standing still here either. Lexis+ with Protégé launched in Singapore and Malaysia and took an AI award at the Singapore Business Review's 2026 technology awards. Thomson Reuters has a strategic collaboration with WongPartnership on AI across South East Asia, and launched Practical Law Asia. Both of them are pushing into this market, with agentic products, while LawNet catalogues. 
+
+If anyone believed that Singapore law was a durable moat for LawNet, they are ignoring how other solutions have been forcibly scraping legal materials off the official web pages. The task is not insurmountable; it can be done with one guy and his claw. Quality might be an issue, but faced with a tool that gets the job done and another tool which forces you to read every page, I am putting my money on lawyers preferring the former.
+
+When students and lawyers are pushed to choose between LawNet and every other provider in this manner at the early part of their career, few would become skilled lawyers knowing how to use LawNet. 
 
 ## What is actually at stake
 
