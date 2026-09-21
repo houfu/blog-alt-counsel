@@ -3,7 +3,7 @@ word_budget: 1800
 budget_tolerance: 10
 primary_audience: marcus
 secondary_audience: [wei-lin]
-thesis_keywords: ["environment", "Cowork", "risk tier", "skill"]
+thesis_keywords: ["environment", "Cowork", "artifact", "skill"]
 protected_lines: []
 voice:
   lane: learning-in-public
@@ -33,7 +33,7 @@ target_date: ~
 **Title:** Good Skills Know Where They Live
 **Thesis:** A legal AI skill is not a clever prompt — it is an agreement with an environment, and the five I admire are the ones that make that agreement explicitly enough to survive being moved.
 **Spine:** A skill that only runs in one host isn't a skill, it's a feature.
-**Emotional core (user's words):** "In a builder and I build. So it was a moment with all these other lawyers and they were really high quality." [HOUFU: which room, roughly when — a residency call, a review, a demo? One concrete scene.]
+**Emotional core (user's words):** "In a builder and I build. So it was a moment with all these other lawyers and they were really high quality." Plus, on the follow-up: *"I have tried it to be honest"* — he has run the skills himself, `read-redline` and the companion-shaped ones (`wiki` / `my-lq-moment`), in his own setup. [HOUFU: what read-redline caught, and what is in the wiki — marked in the draft, never invented.]
 
 ## Pitch
 

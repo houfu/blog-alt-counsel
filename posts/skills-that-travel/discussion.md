@@ -42,6 +42,19 @@ Name him and disclose; Houfu has written about Jamie before (`tool-vs-infrastruc
 
 **Outcome:** ✅ Close beat is an invitation, and the same honesty supplies the post's counter-evidence beat.
 
+### Decision: Emotional core moved from watching to first-hand use (2026-09-21, Session 1)
+
+**Claude's Analysis:**
+Step 1.7 asks for the genuine experience. Claude asked it as a multiple-choice question; Houfu picked "watching them get built" from the offered options. Two exchanges later, unprompted: *"I have tried it to be honest."* He had run the skills himself — `read-redline` and the companion-shaped ones.
+
+**User Decision:** The opening is first-hand use, not spectating.
+
+**Rationale:** He ran them; the admiration is a user's, and that is stronger ground than a spectator's.
+
+**Outcome:**
+✅ pitch.md emotional core amended in place before drafting, so no draft was lost.
+⚠️ **Lesson for the pitch workflow:** the vulnerability question should be asked open-ended. Offering four plausible options pulled him toward the most plausible one rather than the true one. Step 1.7 says "ask ONE question" — it does not say "offer options", and options are the failure mode here.
+
 ## WHAT CLAUDE DID (Contributions)
 
 ### Research
@@ -67,25 +80,29 @@ Name him and disclose; Houfu has written about Jamie before (`tool-vs-infrastruc
 
 ## SESSIONS (Chronological Detail)
 
-## Session 1: Brainstorm and pitch (2026-09-21)
+## Session 1: Brainstorm, pitch and first draft (2026-09-21)
 
 ### Context
 Houfu proposed a post on the five LQ plugin skills he admires, plus an invitation to try the Cowork plugins he released.
 
 ### What Claude Did
-- Research: located the five skills, verified counts against `lq-plugin-cowork`, checked authorship, read prior-post pitches for overlap.
+- Research: located the five skills, verified counts against `lq-plugin-cowork`, checked authorship, read prior-post pitches for overlap, searched the disk for artifacts from his runs (none found).
 - Analysis: 8 angles → 3 shortlisted → user redirect → 6 readings of "environment" → thesis.
-- Writing: `pitch.md` (title *Good Skills Know Where They Live*, budget 1800, primary audience marcus, secondary wei-lin).
+- Writing: `pitch.md` (title *Good Skills Know Where They Live*, budget 1800, marcus primary / wei-lin secondary), then the first draft at 1,445 words.
+- Voice prep: Voice Guide Part 0/1/4 plus openings of `official-cat-herder` and `rugpulled-by-cowork`.
 
 ### User Decisions
 - Angle #3, refocused on environment (D+B and F+A).
 - Name Jamie Tso; disclose the LQ Residency mentor role.
 - Testers-wanted close, stated plainly.
+- Post lives on its own branch (`skills-that-travel`, off `main`), not on `techlawfest-2026` — avoids a second unrelated post in that PR.
 
 ### Outcomes
-- ✅ Pitch written with verified numbers and all four interrogation questions answered.
-- ⚠️ Open: the opening scene is still `[HOUFU: which room, roughly when]` — the emotional core is the user's words but lacks one concrete scene.
-- Files modified: `posts/skills-that-travel/pitch.md`, `posts/skills-that-travel/discussion.md`.
+- ✅ Draft written, lint clean (0 errors, 0 warnings after `--fix` appended `?ref=` to two backlinks).
+- ✅ Beat 4 keeps the counter-evidence: 14 of 31 skills re-scoped at a risk tier, `read-redline` probe-gated on P3. The thesis is argued and then strained on purpose.
+- ⚠️ Draft is 1,445 of 1,800 words. The gap is where Houfu's lived facts go — two `[HOUFU: …]` markers, deliberately not invented: the opening scene, and what `read-redline` caught on his run.
+- 🔧 `thesis_keywords` swapped "risk tier" → "artifact": the linter flagged risk tier appearing once at 70% depth, and on inspection it is evidence in one beat, not what the post is about. "Artifact" is the load-bearing term.
+- Files modified: `pitch.md`, `skills-that-travel.md`, `discussion.md`.
 
 ### Next Steps
-Get the concrete scene, then WRITE. Draft reads the Voice Guide plus 1–2 recent published posts; pre-empts the standing reviewer asks (Marcus: differentiation and jargon defined; Wei Lin: honest admission and a concrete next step).
+Houfu fills the two markers. Then REVIEW in order: `npm run lint-posts`, one audit round (audit-substance + audit-tone in a single message), then all three reviewers per his standing preference, then length audit before applying additive fixes, backlinks, tags.
