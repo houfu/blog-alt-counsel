@@ -102,6 +102,7 @@ Houfu proposed a post on the five LQ plugin skills he admires, plus an invitatio
 - ✅ Beat 4 keeps the counter-evidence: 14 of 31 skills re-scoped at a risk tier, `read-redline` probe-gated on P3. The thesis is argued and then strained on purpose.
 - ⚠️ Draft is 1,445 of 1,800 words. The gap is where Houfu's lived facts go — two `[HOUFU: …]` markers, deliberately not invented: the opening scene, and what `read-redline` caught on his run.
 - 🔧 `thesis_keywords` swapped "risk tier" → "artifact": the linter flagged risk tier appearing once at 70% depth, and on inspection it is evidence in one beat, not what the post is about. "Artifact" is the load-bearing term.
+- 🔍 Claude searched the local disk for artifacts from his skill runs and found none; Houfu: *"they're on my work computer"*. Turned into material rather than a dead end — the draft now names the managed work machine as the real environment (no installs, output must open for colleagues), and the solo-counsel beat gained the same concrete frame. Draft 1,445 → 1,533 words.
 - Files modified: `pitch.md`, `skills-that-travel.md`, `discussion.md`.
 
 ### Next Steps

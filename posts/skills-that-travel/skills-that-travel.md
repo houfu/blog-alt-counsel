@@ -29,7 +29,7 @@ That is an agreement with an environment, and most legal tech refuses to make it
 
 ## Five that hold up their end
 
-**read-redline** is the one I have run most, and the step that earns its place is the one before the work starts. It refuses to extract anything from a compare PDF until it has shown you the colour-to-role table and you have confirmed it — because, as the skill says plainly, a wrong role silently inverts every change. Then it writes that confirmation to disk as `calibration.confirmed.json`, hashed against the extract it approved. A confirmed calibration is an artifact, not a memory. A bare "continue" is not approval. Both the annotated copy and the issues list refuse to build without it. [HOUFU: what it caught on your run.]
+**read-redline** is the one I have run most, and the step that earns its place is the one before the work starts. It refuses to extract anything from a compare PDF until it has shown you the colour-to-role table and you have confirmed it — because, as the skill says plainly, a wrong role silently inverts every change. Then it writes that confirmation to disk as `calibration.confirmed.json`, hashed against the extract it approved. A confirmed calibration is an artifact, not a memory. A bare "continue" is not approval. Both the annotated copy and the issues list refuse to build without it. I have run it on my work laptop, which is the only honest test of any of this: a managed machine where I do not get to install what I like, and where the output has to be something a colleague can open. [HOUFU: one line on what the calibration table showed you — a colour you would have read backwards, or a confirmation that it was right.]
 
 **wiki** draws a line I have not seen a vendor knowledge base draw: record reusable law and method, never the matter. No client facts, no party names, no matter numbers, not even matter-document titles. What you keep is the law you worked out and the method you used to work it out. It is ordinary markdown plus a small sidecar, readable in any editor and, in the skill's own words, useful without a particular host. If a registered wiki has moved, it tells you to reconnect it rather than quietly building a replacement — which is the behaviour of something that knows it is a guest on your disk.
 
@@ -55,7 +55,7 @@ So no, these skills did not sail into a new environment untouched. That was neve
 
 ## For solo counsels, and an ask
 
-If you have an IT department, environment is an abstraction. If you are the legal department, it is the whole game. You are the person who discovers that the workspace you built your review process in has changed its pricing, or its retention, or its owner. Skills that keep the work in your own files and leave artifacts you can read without them are not a philosophical preference. They are the difference between switching tools and starting over.
+If you have an IT department, environment is an abstraction. If you are the legal department, it is the whole game. It is a managed laptop you cannot install software on, a document store somebody else administers, and a licence renewal you find out about in an email. You are the person who discovers that the workspace you built your review process in has changed its pricing, or its retention, or its owner. Skills that keep the work in your own files and leave artifacts you can read without them are not a philosophical preference. They are the difference between switching tools and starting over.
 
 Which brings me to the ask, and I would rather be plain about it than sell you something.
 
