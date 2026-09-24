@@ -34,15 +34,15 @@ You don’t have to read release documents or attend TechLaw.Fest every year to 
 
 ## What I wanted
 
-I did not want LawNet to turn into one of the global vendors. I wanted it to find its own answer, and it is not for lack of effort that it hasn't. People worked very hard on 4.0. They ran feedback sessions and bought lunch to get practitioners into a room. There are people at LawNet who clearly want it to succeed.
+I am not interested in whether LawNet turns into one of the global vendors. I wanted it to find its own answer, and it is not for lack of effort that it hasn't. People worked very hard on 4.0 and continue to do so. They ran feedback sessions and bought lunch to get practitioners into a room. There are people at LawNet who clearly want it to succeed. There may also be more passionate users of LawNet than the team expects.
 
-Part of an answer was presented at the same conference. On day two, on a side stage, two Justices' Law Clerks presented the JLC Honorary Team's research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
+Part of an answer was presented at the same conference. On day two, on a side stage, a team of Justices' Law Clerks presented the JLC Honorary Team's research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
 
 Everything LawNet added this year gives the lawyer more to read. A citation checker reads the lawyer's work instead.
 
 ## Haves and have-nots
 
-I said at the start that LawNet stood shoulder to shoulder with me against large firms and their armies of interns. That was not nostalgia. For a small firm, LawNet was the equaliser. The big firm had more people to read the cases. The small firm had the same cases, and a search box.
+I said at the start that LawNet stood shoulder to shoulder with me against large firms and their armies of interns. That was not nostalgia. For a small firm, LawNet was the equaliser. I was up against a law firm and their army of interns. Whatever point I thought of, they could find more cases to cite, or even cases to override my point. I could never match their output. But what I couldn't match in productivity required me to be more efficient and effective. This almost certainly needed me to be a deft user of LawNet, and I appreciated its citator functions. Sometimes I won the case and sometimes I lost, but it was never because I couldn't put my best case forward.
 
 AI is the new army of interns. In the twelve months that LawNet spent adding books to its search box, LexisNexis shipped a new generation of Protégé and Thomson Reuters shipped a fully agentic CoCounsel. Both were shown off at TechLaw.Fest. These are agentic workspaces. They don’t just find the case for you; they do the work with it.
 
@@ -52,6 +52,8 @@ They will also find it harder to hire. In June, NUS Law became the first law sch
 
 When students and lawyers are pushed to choose between LawNet and every other provider in this manner at the early part of their career, few would become skilled lawyers knowing how to use LawNet.
 
+There is another piece of irony. As smaller firms struggle to pick up legal AI tools, litigants in person will have no qualms using consumer tools like ChatGPT to do their work before the courts. What difference does a litigant in person with ChatGPT have with a firm that uses ChatGPT? I am sure the legal fraternity and the courts know the answer to that, but a prospective buyer of a law firm's service will not.
+
 If this is the direction LawNet is going to take, it will clearly be left behind. The firms that depend on it will be left behind with it, and we will have a profession of haves and have-nots, where what a lawyer can do for a client depends on what the firm can afford. That is a foreboding future, not just for LawNet but for legal practice in general.
 
-I will be back at TechLaw.Fest next year to check on my old friend. I hope it takes the law clerks up on it.
+I will be back at TechLaw.Fest next year to check on my old friend. I always wonder if it will be the last.

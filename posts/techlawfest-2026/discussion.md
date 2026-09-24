@@ -440,3 +440,17 @@ from 1,825 to ~1,640 words, resolving the open length decision without raising t
 - 1,071 words vs 1,400 budget. Lint: 0 errors; advisory that "haves" first appears at 69% depth, which is by design (warm first, firm last).
 
 **Still open for Houfu:** one real story of LawNet standing with him against a bigger firm (the opening's image has no scene yet); lunch paragraph keep/cut (doc comment); "judgements" spelling; title stays his unless he wants a warmer one.
+
+## Session 2026-09-25 (cont.): Houfu's doc edits merged, branch cleaned, into review
+
+**Branch:** the main checkout (on `skills-that-travel`, a different post) had an untracked `posts/techlawfest-2026/` holding the nine HEIC originals and a .DS_Store. Moved the HEICs into this branch's `photos/` (gitignored here via `*.HEIC`), removed the stray folder; the main checkout is clean. Post work lives in the worktree `.claude/worktrees/techlawfest-2026`.
+
+**Doc → repo merge (doc rev 441), Houfu's own edits, kept verbatim:**
+- The equaliser scene: up against a firm and its army of interns; "I could never match their output"; being a deft LawNet user, its citator functions; "it was never because I couldn't put my best case forward." This answers the long-open ask for a real story.
+- New irony paragraph: litigants in person using ChatGPT; a prospective buyer cannot tell a litigant with ChatGPT from a firm with ChatGPT.
+- "I am not interested in whether LawNet turns into one of the global vendors"; "and continue to do so".
+- Law clerks anonymised: "a team of Justices' Law Clerks" (names removed — his call, consistent with the framing guard in conference-slides.md).
+- Close: "I always wonder if it will be the last." (replaces "I hope it takes the law clerks up on it").
+- Via comment thread: added "There may also be more passionate users of LawNet than the team expects." to the lunch paragraph (his idea, near his words). Lunch paragraph kept — flag resolved.
+
+1,232 words vs 1,400. Lint 0 errors; "haves" first at 61% depth (by design). Pitch v6.1 amended to follow.

@@ -24,6 +24,7 @@ status: PITCH v6 — reframed 2026-09-25 from critique to an emotional piece wit
 **Spine:** LawNet was the small firm's equaliser against big firms and their armies of interns; AI is the new army of interns, and only the haves can buy it.
 **Emotional core (user's words):**
 > "Someone I knew fondly since I was a law student and who has stood shoulder to shoulder with me as I battled large local law firms with their army of interns and litigants in person." (draft)
+> "I was up against a law firm and their army of interns. Whatever point I thought of, they could find more cases to cite, or even cases to override my point. I could never match their output. [...] Sometimes I won the case and sometimes I lost, but it was never because I couldn't put my best case forward." (doc, 2026-09-25 — the scene the opening needed)
 > "People have worked very hard at 4.0. They managed to buy lunch for people to provide feedback." (2026-09-12)
 > "Firms able to afford the prices of the likes of Harvey and the now probably more expensive CoCounsel or Protege will be fine, but the have not will rely on meat computers and be less able to attract younger talent because they are used to certain tools. All this is a foreboding future not just for LawNet but legal practice in general." (2026-09-25)
 
@@ -37,7 +38,8 @@ I have known LawNet since I was a law student, and I check on it once a year at 
 - **What a year produced** (~300) — the six podium announcements, "more content, not capability", his density paragraph. Facts, not forensics.
 - **The people, and one way forward** (~280) — hard work, the lunch, the JLC law clerks' roadmap (citation checker, then contract review on Precedents). The hope lives here.
 - **Haves and have-nots** (~440) — the equaliser callback; agentic workspaces as the new army of interns; the firms that can pay are fine; meat computers; the talent pipeline (NUS–Harvey, SMU–Legora); firm verdict: on this direction LawNet is left behind; foreboding for legal practice.
-- **Close** (~40) — appointment: back next year to check on the old friend. Never a mic-drop.
+- **The irony** (~70) — Houfu's addition: litigants in person will use ChatGPT without qualms; a buyer of legal services cannot tell a litigant with ChatGPT from a firm with ChatGPT.
+- **Close** (~25) — appointment, now Houfu's own line: back next year to check on the old friend, "I always wonder if it will be the last." Never a mic-drop.
 
 ## Out of scope
 
@@ -63,3 +65,7 @@ Full history for v1–v5 is in discussion.md. v5 is preserved at the end of rese
 Houfu read the draft in a Claude Doc and wanted the emotional appeal to lead rather than the comparison and the criticism, but insisted the ending still says firmly that on this direction LawNet will be left behind, and that agentic workspaces will split practice into haves and have-nots.
 
 **Why the pitch was wrong, and which check would have caught it:** framing risk. At pitch time I offered "strategy critique with receipts" as the recommended option and resolved the risk by construction (credit first, receipts for every claim). I never asked the prior question: does Houfu want to be the person who publishes the first public strategic critique of LawNet? A critique built on a peer table reads as a case against the institution; what he wanted was a friend's worry that ends firmly. Lesson: when the subject is a named institution the author has affection for, ask about the author's relationship to it before choosing the register, not just how to make the criticism fair.
+
+### v6.1 — 2026-09-25: the pitch follows Houfu's doc edits
+
+He wrote the equaliser scene himself (the story the opening needed), added the litigant-in-person/ChatGPT irony before the verdict, anonymised the law clerks ("a team of Justices' Law Clerks"), softened "I did not want" to "I am not interested in whether", added "and continue to do so", and changed the close to "I always wonder if it will be the last." Beats amended to match. 1,232 words.
