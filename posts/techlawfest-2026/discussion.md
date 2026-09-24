@@ -421,3 +421,22 @@ from 1,825 to ~1,640 words, resolving the open length decision without raising t
 - **Lost:** the prompt-engineering backlink (it was a tacked-on lead-in with a recycled point). Easy to
   reinstate as a clause if he wants it.
 - "judgements" in his opening — house/legal usage is "judgment". Left for him.
+
+## Session 2026-09-25: Claude Doc, and the reframe from critique to a friend's worry
+
+**Working copy moved to a Claude Doc** at Houfu's request: https://claude.ai/code/artifact/d059b4f1-4941-415f-8784-b73844738b56 . Edits there must be merged back into `techlawfest-2026.md` before audit/review. The lunch-paragraph flag moved from an HTML comment to a doc comment.
+
+**User decision (reframe):** after reading the doc, Houfu wanted the emotional appeal to lead rather than "a comparison and a criticism of the direction it is going", and asked for the pitch to be reviewed before any change. On review he added that the critique must stay, firmly, at the end: "if this is the direction lawnet is going to take, it will clearly be left behind"; agentic AI workspaces create haves and have-nots; firms that can afford Harvey and "the now probably more expensive CoCounsel or Protege" will be fine, the have-nots "will rely on meat computers and be less able to attract younger talent"; "a foreboding future not just for LawNet but legal practice in general."
+
+**Pitch v6** (rewritten into the generate_a_pitch fixed shape; v5 evidence inventory and guardrails parked in research.md §9): budget 1400; primary wei-lin, secondary sarah + marcus (all three still review); thesis keywords [LawNet, friend, bookcase, haves]; must_link cleared (both links went with the cut sections).
+
+**Why the pitch was wrong / which check missed it:** framing risk. I recommended "strategy critique with receipts" and resolved the risk by construction, without asking whether Houfu wanted to be the one publishing the first public strategic critique of LawNet. For a named institution the author is fond of, ask about the relationship before picking the register.
+
+**Draft changes (doc and repo file, identical):**
+- Cut: release-notes paragraph, "That is a year of shelving.", the whole peers section (vendor comparison, UK/AustLII/CanLII/HKLII/SCC/LBox, three routes, OpenLaw/API + budget-2026 link), "The world already moved" (Reuters, incumbents, scraping moat + OpenClaw link), and the old stake section.
+- Kept untouched: Houfu's opening, density paragraph, his early-career line (moved into the ending), the lunch paragraph, the JLC roadmap, the appointment close.
+- "I did not want LawNet to become CoCounsel" → "turn into one of the global vendors" (CoCounsel is now introduced later).
+- New section **Haves and have-nots**, built from his dictated words: equaliser callback; AI as the new army of interns (Protégé, agentic CoCounsel, both at TLF); firms that can pay will be fine, have-nots rely on meat computers (his phrase, kept); harder to hire (NUS–Harvey June, SMU–Legora 9 Sept); conditional firm verdict; foreboding for legal practice in general. Price claim kept hedged ("probably"), as he said it.
+- 1,071 words vs 1,400 budget. Lint: 0 errors; advisory that "haves" first appears at 69% depth, which is by design (warm first, firm last).
+
+**Still open for Houfu:** one real story of LawNet standing with him against a bigger firm (the opening's image has no scene yet); lunch paragraph keep/cut (doc comment); "judgements" spelling; title stays his unless he wants a warmer one.
