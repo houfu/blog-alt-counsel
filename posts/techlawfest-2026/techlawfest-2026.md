@@ -1,10 +1,11 @@
 ---
 title: "Will LawNet become Just A Bigger Bookcase?"
 slug: "the-bigger-bookcase"
-tags: ["TechLawFest", "LegalTech", "AI", "Singapore", "Law"]
+tags: ["TechLawFest", "LegalTech", "AI", "Singapore"]
 status: draft
 featured: false
 github_folder: "techlawfest-2026"
+post_id: "6ab5e0a3cf68ca000174f477"
 ---
 
 I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community.

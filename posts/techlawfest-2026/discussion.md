@@ -498,3 +498,10 @@ Media:
 - In-post image: IMG_1787, the law clerks' slide 19 "Citation checking first. Support for contract review next." after the JLC paragraph. No names on the slide, consistent with his anonymising the clerks. Caption to set in Ghost (the publisher does not carry captions).
 - Feature image and LawNet before/after screenshots: options put to Houfu, not decided.
 Dry-run conversion OK (3 bookmarks + 1 image + GitHub footer). Lint 0 errors.
+
+## Session 2026-09-25 (cont.): tags, Ghost draft, cover
+
+- **Feature image (user decision):** Houfu prefers Unsplash to AI-generated; picked option 2 of three — Robert Anasch's wall of books stacked sideways (Unsplash McX3XuJRsUM). Set on Ghost with alt text and the standard "Photo by Robert Anasch / Unsplash" credit caption (via Admin API; the publisher does not set covers). Runners-up: Eugenio Mazzone's blue door in a wall of books (6ywyo2qtaZ8), Ashim D'Silva's crammed shelf (P8gLaJ-PZL0, portrait).
+- **Tags:** registry check — all five valid, but guidance is 3–4; dropped `Law` (LegalTech is the core topic). Now TechLawFest, LegalTech, AI, Singapore. "Access to Justice" exists on Ghost but not in the registry; not added.
+- **Ghost draft created** with publish-lexical.js: post 6ab5e0a3cf68ca000174f477, slug the-bigger-bookcase, status draft; IMG_1787 uploaded. Editor: https://alt-counsel.ghost.io/ghost/#/editor/post/6ab5e0a3cf68ca000174f477
+- **For Houfu in the Ghost editor:** caption on the roadmap slide (e.g. "From the Justices' Law Clerks' session at TechLaw.Fest 2026"); excerpt/meta; schedule. From here Ghost is the working copy (doc edits after this point need merging manually). Final sync once at PR close.

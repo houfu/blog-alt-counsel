@@ -8,7 +8,7 @@ protected_lines: []
 voice: {lane: news-commentary, moves: [specific-numbers, solo-counsel-return]}
 interrogation: {diagnosis: "RESOLVED — LawNet's direction is more content, not capability", differentiation: "RESOLVED — almost nobody writes about LawNet at all; a friend's worry is rarer still", framing_risk: "RESOLVED v6 — warm about the friend and the people, firm about the direction, only at the end", subject: "LawNet only; juniors folded in as the talent stake"}
 must_link: []   # both v5 links (budget-2026, openclaw) left with the cut sections; re-curate at the backlink stage
-tags: [TechLawFest, LegalTech, AI, Singapore, Law]
+tags: [TechLawFest, LegalTech, AI, Singapore]
 target_date: ~
 status: PITCH v6 — reframed 2026-09-25 from critique to an emotional piece with a firm ending. The draft leads.
 ---
