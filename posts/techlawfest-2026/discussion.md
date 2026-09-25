@@ -509,3 +509,18 @@ Dry-run conversion OK (3 bookmarks + 1 image + GitHub footer). Lint 0 errors.
 ## Session 2026-09-25 (cont.): LawNet 4.0 screenshot
 
 Houfu asked for a 4.0 page showing information density; chose the judgment page over the results page. `photos/lawnet-4-judgment-page.png` (1920×994, 226 KB) is the first frame of `10_View_all_references_V1.gif` from LawNet's public May 2026 release notes (https://release-notes.lawnet.com/2026/05/19/may-2026-lawnet-release/): Fantom Foundation v Multichain Foundation [2024] SGHC 173 — five treatment counters, details, catchwords, AI summary with disclaimer and "Fact Score", references panel. SAL copyright; used as commentary. Houfu is pasting it into Ghost himself, after the density paragraph; not added to the markdown (Ghost is the working copy). Suggested caption: "LawNet 4.0's judgment page, from LawNet's May 2026 release notes."
+
+## Session 2026-09-25 (cont.): scheduled; final sync from Ghost
+
+Houfu scheduled the post: **2026-09-28 01:14 UTC (Mon 28 Sep, 9:14am SGT)**. `sync-from-ghost` pulled status, published_at, feature_image, custom_excerpt (he used excerpt option 1 verbatim) and tag order (Singapore now first, i.e. the primary tag).
+
+Houfu's Ghost edits merged back into the markdown (voice signals for future drafts):
+- Cut "No more trips to the library... (What's a book?)" — the last of the three joke asides went too; he kept only "(what in the world is that?)" on dial-up.
+- "On day two of TechLaw.Fest 2026" → "At TechLaw.Fest 2026 one year later" — the anniversary framing over the programme detail.
+- "citator functions" → "citator functions, among others" — he hedges his own lived detail rather than over-claiming one feature.
+- Split the JLC paragraph: "They did not stop at the diagnosis..." now its own paragraph.
+- Close: "if it will be the last" → "if it will be **our** last" — the friendship made explicit in the final word.
+- Pasted `photos/lawnet-4-judgment-page.png` after the density paragraph (caption "LawNet 4.0's judgment page, from LawNet's May 2026 release notes."); added the IMG_1787 caption "From the Justices' Law Clerks' session at TechLaw.Fest 2026."
+Local markdown now matches Ghost. Lint 0 errors.
+
+**Blocking merge:** the history scrub (clerks' names and eight slide photos) still hasn't run — the auto-mode classifier denied `git filter-branch` and the tip cleanup. Houfu to run it or allow it; then force-push, merge, before 28 Sep.

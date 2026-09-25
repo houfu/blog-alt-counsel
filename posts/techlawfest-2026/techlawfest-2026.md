@@ -1,11 +1,22 @@
 ---
-title: "Will LawNet become Just A Bigger Bookcase?"
-slug: "the-bigger-bookcase"
-tags: ["TechLawFest", "LegalTech", "AI", "Singapore"]
-status: draft
+title: Will LawNet become Just A Bigger Bookcase?
+slug: the-bigger-bookcase
+tags:
+  - Singapore
+  - TechLawFest
+  - LegalTech
+  - AI
+status: scheduled
 featured: false
-github_folder: "techlawfest-2026"
-post_id: "6ab5e0a3cf68ca000174f477"
+github_folder: techlawfest-2026
+post_id: 6ab5e0a3cf68ca000174f477
+published_at: '2026-09-28T01:14:08.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1533669955142-6a73332af4db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000
+custom_excerpt: >-
+  I have known LawNet since law school, and I check on it every year at
+  TechLaw.Fest. This year I came away worried. If it only becomes a bigger
+  bookcase, it will be left behind, and so will the small firms that rely on it.
 ---
 
 I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community.
@@ -16,13 +27,13 @@ TechLaw.Fest is also important for meeting old friends, and this friend is a rea
 
 LawNet is the Singapore Academy of Law’s national legal research service. It started in 1990 as a dial up network (what in the world is that?) and has roughly 10,000 users, including more than 75% of Singapore lawyers in private practice. It’s roughly what I would call the LexisNexis or WestLaw of Singapore, covering judgments, legislation and secondary materials. Even though it runs by subscription (you can check it out on demand at a counter in the National Library), it is as close to what you can call the national infrastructure for Singapore law.
 
-I dare say it punched above its weight. If you only practiced Singapore law, as many lawyers in small and medium sized law firms here do, LawNet was all you need. It implemented boolean search, natural language search, results from multiple databases and so on. No more trips to the library searching for cases or figuring out where some law students were hiding important books in the law library. (What’s a book?)
+I dare say it punched above its weight. If you only practiced Singapore law, as many lawyers in small and medium sized law firms here do, LawNet was all you need. It implemented boolean search, natural language search, results from multiple databases and so on.
 
 Obviously, the world has moved on a lot. I have long been curious how LawNet would respond to AI with every TechLaw.Fest. This year I started to worry that the answer is a bookcase, nothing more, nothing less. 
 
 ## What a year produced
 
-LawNet 4.0 launched at TechLaw.Fest 2025. On day two of TechLaw.Fest 2026, from the same podium, the Singapore Academy of Law set out what the year since had produced.
+LawNet 4.0 launched at TechLaw.Fest 2025. At TechLaw.Fest 2026 one year later, from the same podium, the Singapore Academy of Law set out what the year since had produced.
 
 - The AI Q&A, originally tuned for contract law, now covers all areas of Singapore law
 - Academy Publishing books are now searched alongside cases and legislation
@@ -35,19 +46,23 @@ Five of those six are more content, or content arranged more neatly. None of the
 
 You don’t have to read release documents or attend TechLaw.Fest every year to see what is happening. Compare the interface from before and after LawNet 4.0, and you can see the density of the screen is getting thicker, not thinner. That’s what it looks like when the bookcase is expanding. Do I really need to read dozens of annotations from cases on whatever provision there is on a statute? And now books?
 
+![LawNet 4.0's judgment page: five treatment counters, case details, catchwords, an AI summary with a disclaimer and a fact score, and a references panel](photos/lawnet-4-judgment-page.png)
+
 [Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?](https://www.alt-counsel.com/budget-2026-lawyers-ai-drivers-seat/?ref=the-bigger-bookcase)
 
 ## What I wanted
 
 I am not interested in whether my old friend turns into one of the global vendors. I wanted it to find its own answer, and it is not for lack of effort that it hasn't. People worked very hard on 4.0 and continue to do so. They ran feedback sessions and bought lunch to get practitioners into a room. There are people at LawNet who clearly want it to succeed. There may also be more passionate users of LawNet than the team expects.
 
-Part of an answer was presented at the same conference. On day two, on a side stage, a team of Justices' Law Clerks presented their research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI, the platform that came with 4.0. The old LawNet site is still running, which may explain some of that. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
+Part of an answer was presented at the same conference. On day two, on a side stage, a team of Justices' Law Clerks presented their research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI, the platform that came with 4.0. The old LawNet site is still running, which may explain some of that.
+
+They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
 
 ![Slide from the Justices' Law Clerks' TechLaw.Fest 2026 session: product roadmap, citation checking first, support for contract review next](photos/IMG_1787.jpg)
 
 ## Haves and have-nots
 
-For a small firm, LawNet was the equaliser. I was up against a law firm and their army of interns. Whatever point I thought of, they could find more cases to cite, or even cases to override my point. I could never match their output. But what I couldn't match in productivity required me to be more efficient and effective. This needed me to be a deft user of LawNet, and I appreciated its citator functions. Sometimes I won the case and sometimes I lost, but it was never because I couldn't put my best case forward.
+For a small firm, LawNet was the equaliser. I was up against a law firm and their army of interns. Whatever point I thought of, they could find more cases to cite, or even cases to override my point. I could never match their output. But what I couldn't match in productivity required me to be more efficient and effective. This needed me to be a deft user of LawNet, and I appreciated its citator functions, among others. Sometimes I won the case and sometimes I lost, but it was never because I couldn't put my best case forward.
 
 AI is the new army of interns. In the twelve months that LawNet spent adding books to its search box, LexisNexis shipped a new generation of Protégé and Thomson Reuters shipped what it calls a fully agentic CoCounsel. Both were shown off at TechLaw.Fest. Start-ups like Harvey and Legora sell the same kind of tool. These are agentic workspaces. They don’t just find the case for you; they do the work with it.
 
@@ -61,4 +76,4 @@ There is an irony here. As smaller firms struggle to pick up legal AI tools, tho
 
 If this is the direction LawNet is going to take, it will clearly be left behind. The firms that depend on it will be left behind with it, and we will have a profession of haves and have-nots, where what a lawyer can do for a client depends on what the firm can afford. That is a foreboding future, not just for LawNet but for legal practice in general.
 
-I will be back at TechLaw.Fest next year to check on my old friend. I always wonder if it will be the last.
+I will be back at TechLaw.Fest next year to check on my old friend. I always wonder if it will be our last.
