@@ -478,3 +478,10 @@ Applied (Claude-drafted sentences only):
 
 Put to Houfu (his prose): para 5 verdict → question (Wei Lin IF ONE THING); cut "few would become skilled lawyers..." (Wei Lin + Marcus); irony paragraph bridge + "another piece of irony" + "have with" (Wei Lin, Sarah, substance audit); second "(What in the world is that?)" (all three); "Are blogs next?" (Wei Lin); "friend" once mid-post; "almost certainly" in the scene; "judgements".
 OUT / follow-up: locked-shelf books detail and verifiability counter-case (Marcus); builder angle and Feb "impressive" continuity (Wei Lin); Harvey/CoCounsel prices (Sarah, unverified). Memory files updated.
+
+**User decision: "apply all"** (round-1 findings on his prose). Applied in doc and repo:
+- Para 5: "It's become clear... LawNet will become a bookcase" → "This year I started to worry that the answer is a bookcase, nothing more, nothing less." (Wei Lin IF ONE THING — the verdict now lands first at the end.)
+- Cut "When students and lawyers are pushed to choose... few would become skilled lawyers knowing how to use LawNet."
+- Irony paragraph: "There is an irony here. As smaller firms struggle to pick up legal AI tools, those that do reach for AI will reach for consumer tools like ChatGPT, the same tools litigants in person have no qualms using..."; "What difference is there between..."; "a first-time client will not."
+- Cut second "(What in the world is that?)" and "Are blogs next?"; "whether my old friend turns into one of the global vendors"; dropped "almost certainly"; "judgements" → "judgments".
+- Houfu's own edit in the doc meanwhile: opening now "stood shoulder to shoulder with me as an associate." — the army of interns first appears in his scene, so "AI is the new army of interns" calls back to the scene, not the opening.
