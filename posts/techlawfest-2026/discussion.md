@@ -485,3 +485,16 @@ OUT / follow-up: locked-shelf books detail and verifiability counter-case (Marcu
 - Irony paragraph: "There is an irony here. As smaller firms struggle to pick up legal AI tools, those that do reach for AI will reach for consumer tools like ChatGPT, the same tools litigants in person have no qualms using..."; "What difference is there between..."; "a first-time client will not."
 - Cut second "(What in the world is that?)" and "Are blogs next?"; "whether my old friend turns into one of the global vendors"; dropped "almost certainly"; "judgements" → "judgments".
 - Houfu's own edit in the doc meanwhile: opening now "stood shoulder to shoulder with me as an associate." — the army of interns first appears in his scene, so "AI is the new army of interns" calls back to the scene, not the opening.
+
+## Session 2026-09-25 (cont.): backlinks and media
+
+Backlinks (bookmark cards, no lead-ins, ?ref=the-bigger-bookcase; all return 200; placed in doc and repo):
+- three-things-techlawfest-2021 — after the opening's first paragraph (he is a regular attendee; the 2021 debrief is the proof).
+- budget-2026-lawyers-ai-drivers-seat — end of "What a year produced". Continuity: in Feb he called LawNet 4.0's AI search "impressive" but noted no public API; the card lets readers see the earlier view without a narrated lead-in (Wei Lin's continuity note).
+- beyond-the-harvey-drama-the-real-lessons-for-solo-counsel — after "meat computers" (haves and have-nots, solo counsel).
+Considered, not placed: ect-no-lawyers-zeeker (LawNet has no MCP; risks reading as a pitch for his own tool, the old guardrail), come-into-the-bakery (LawNet AI summaries), lawyers-prompt-engineering-wrong (thread cut in v6), openclaw-field-notes-lawyer (moat paragraph cut).
+
+Media:
+- In-post image: IMG_1787, the law clerks' slide 19 "Citation checking first. Support for contract review next." after the JLC paragraph. No names on the slide, consistent with his anonymising the clerks. Caption to set in Ghost (the publisher does not carry captions).
+- Feature image and LawNet before/after screenshots: options put to Houfu, not decided.
+Dry-run conversion OK (3 bookmarks + 1 image + GitHub footer). Lint 0 errors.

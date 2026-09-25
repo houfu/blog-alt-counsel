@@ -7,7 +7,9 @@ featured: false
 github_folder: "techlawfest-2026"
 ---
 
-I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community. 
+I have been a regular TechLaw.Fest attendee for many years. This year I have been gratified to meet new friends, especially from the LegalQuants community.
+
+[Three Things: TechLawFest 2021](https://www.alt-counsel.com/three-things-techlawfest-2021/?ref=the-bigger-bookcase) 
 
 TechLaw.Fest is also important for meeting old friends, and this friend is a really old one. Someone I knew fondly since I was a law student and who has stood shoulder to shoulder with me as an associate. We stopped meeting each other when I left practice. As such, TechLaw.Fest is the only time I get to check on how he or she or it is doing. 
 
@@ -32,11 +34,15 @@ Five of those six are more content, or content arranged more neatly. None of the
 
 You don’t have to read release documents or attend TechLaw.Fest every year to see what is happening. Compare the interface from before and after LawNet 4.0, and you can see the density of the screen is getting thicker, not thinner. That’s what it looks like when the bookcase is expanding. Do I really need to read dozens of annotations from cases on whatever provision there is on a statute? And now books?
 
+[Budget 2026 Tells Lawyers to Use AI. But Are We in the Driver's Seat?](https://www.alt-counsel.com/budget-2026-lawyers-ai-drivers-seat/?ref=the-bigger-bookcase)
+
 ## What I wanted
 
 I am not interested in whether my old friend turns into one of the global vendors. I wanted it to find its own answer, and it is not for lack of effort that it hasn't. People worked very hard on 4.0 and continue to do so. They ran feedback sessions and bought lunch to get practitioners into a room. There are people at LawNet who clearly want it to succeed. There may also be more passionate users of LawNet than the team expects.
 
 Part of an answer was presented at the same conference. On day two, on a side stage, a team of Justices' Law Clerks presented their research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI, the platform that came with 4.0. The old LawNet site is still running, which may explain some of that. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
+
+![Slide from the Justices' Law Clerks' TechLaw.Fest 2026 session: product roadmap, citation checking first, support for contract review next](photos/IMG_1787.jpg)
 
 ## Haves and have-nots
 
@@ -45,6 +51,8 @@ For a small firm, LawNet was the equaliser. I was up against a law firm and thei
 AI is the new army of interns. In the twelve months that LawNet spent adding books to its search box, LexisNexis shipped a new generation of Protégé and Thomson Reuters shipped what it calls a fully agentic CoCounsel. Both were shown off at TechLaw.Fest. Start-ups like Harvey and Legora sell the same kind of tool. These are agentic workspaces. They don’t just find the case for you; they do the work with it.
 
 Firms that can afford Harvey, or CoCounsel and Protégé at what are now probably higher prices, will be fine. The have-nots will rely on meat computers.
+
+[Beyond the Harvey Drama: The Real Lessons for Solo Counsel](https://www.alt-counsel.com/beyond-the-harvey-drama-the-real-lessons-for-solo-counsel/?ref=the-bigger-bookcase)
 
 They will also find it harder to hire. In June, NUS Law became the first law school in Singapore to partner with Harvey. On 9 September, the opening day of TechLaw.Fest, SMU’s Yong Pung How School of Law joined Legora’s Legal AI Scholars Program. The next lawyers are learning their craft on these tools, and they will expect to find them at work. A firm that can offer them only a bigger bookcase will struggle to attract them.
 
