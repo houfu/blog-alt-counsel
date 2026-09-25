@@ -467,3 +467,14 @@ audit-substance + audit-tone, one message. Applied critical fixes only, all to C
 
 Held for reviewers / Houfu: irony paragraph's link to the have-nots argument (substance IF ONE THING — his paragraph); glossing Harvey/CoCounsel/Protégé for non-specialists; "What I wanted" heading; lawnet.sg migration-gap clause for fairness; "judgements"; "What difference does ... have with".
 1,180 words. Lint 0 errors.
+
+## Session 2026-09-25 (cont.): reviewer round 1 (Wei Lin primary; Sarah, Marcus secondary)
+
+Verdicts: all three "partly". Wei Lin — the emotion is real and the ending mostly earns it; verdict comes too early; builder angle absent (cut by design). Sarah — felt targeted not lectured; Harvey/Legora ungrounded. Marcus — differentiated and accurate (podium list verified); warm reframe costs the verdict some earned weight; the ChatGPT irony is the most original idea.
+
+Applied (Claude-drafted sentences only):
+- JLC line: "...LawNet.com and LawNet AI, the platform that came with 4.0. The old LawNet site is still running, which may explain some of that." (Marcus IF ONE THING; resolves Wei Lin's 75%-vs-never-heard contradiction; tone audit fairness note.)
+- "Start-ups like Harvey and Legora sell the same kind of tool." (Sarah IF ONE THING; substance audit.)
+
+Put to Houfu (his prose): para 5 verdict → question (Wei Lin IF ONE THING); cut "few would become skilled lawyers..." (Wei Lin + Marcus); irony paragraph bridge + "another piece of irony" + "have with" (Wei Lin, Sarah, substance audit); second "(What in the world is that?)" (all three); "Are blogs next?" (Wei Lin); "friend" once mid-post; "almost certainly" in the scene; "judgements".
+OUT / follow-up: locked-shelf books detail and verifiability counter-case (Marcus); builder angle and Feb "impressive" continuity (Wei Lin); Harvey/CoCounsel prices (Sarah, unverified). Memory files updated.
