@@ -454,3 +454,16 @@ from 1,825 to ~1,640 words, resolving the open length decision without raising t
 - Via comment thread: added "There may also be more passionate users of LawNet than the team expects." to the lunch paragraph (his idea, near his words). Lunch paragraph kept — flag resolved.
 
 1,232 words vs 1,400. Lint 0 errors; "haves" first at 61% depth (by design). Pitch v6.1 amended to follow.
+
+## Session 2026-09-25 (cont.): audit round 1 (the only one)
+
+audit-substance + audit-tone, one message. Applied critical fixes only, all to Claude-drafted sentences:
+- Cut the read/reads chiasmus ("Everything LawNet added... A citation checker reads the lawyer's work instead.") — a second jab before the final beat, breaking "warm first, firm last" (tone audit's IF ONE THING).
+- Tricolon merged: "...content arranged more neatly. None of them does a piece of work for you."
+- Cut Claude's "I said at the start... That was not nostalgia." lead-in — it duplicated Houfu's own "army of interns" line (flagged by both audits). His scene now follows "For a small firm, LawNet was the equaliser." directly.
+- "the JLC Honorary Team's research" → "their research" (redundant acronym).
+- "what it calls a fully agentic CoCounsel" — attributes vendor language.
+- Verified "started in 1990 as a dial up network" against SAL's own 2007 article (research.md §10). No change.
+
+Held for reviewers / Houfu: irony paragraph's link to the have-nots argument (substance IF ONE THING — his paragraph); glossing Harvey/CoCounsel/Protégé for non-specialists; "What I wanted" heading; lawnet.sg migration-gap clause for fairness; "judgements"; "What difference does ... have with".
+1,180 words. Lint 0 errors.

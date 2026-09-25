@@ -28,7 +28,7 @@ LawNet 4.0 launched at TechLaw.Fest 2025. On day two of TechLaw.Fest 2026, from 
 - A partnership with LegalOn Technologies to push Singapore corporate content into other platforms
 - A revamped Sentencing Information and Research Repository, coming next year
 
-Five of those six are more content, or content arranged more neatly. Not one of them is a capability. Nothing in that list does a piece of work for you.
+Five of those six are more content, or content arranged more neatly. None of them does a piece of work for you.
 
 You don’t have to read release documents or attend TechLaw.Fest every year to see what is happening. Compare the interface from before and after LawNet 4.0, and you can see the density of the screen is getting thicker, not thinner. That’s what it looks like when the bookcase is expanding. Do I really need to read dozens of annotations from cases on whatever provision there is on a statute? And now books? Are blogs next?
 
@@ -36,15 +36,13 @@ You don’t have to read release documents or attend TechLaw.Fest every year to 
 
 I am not interested in whether LawNet turns into one of the global vendors. I wanted it to find its own answer, and it is not for lack of effort that it hasn't. People worked very hard on 4.0 and continue to do so. They ran feedback sessions and bought lunch to get practitioners into a room. There are people at LawNet who clearly want it to succeed. There may also be more passionate users of LawNet than the team expects.
 
-Part of an answer was presented at the same conference. On day two, on a side stage, a team of Justices' Law Clerks presented the JLC Honorary Team's research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
-
-Everything LawNet added this year gives the lawyer more to read. A citation checker reads the lawyer's work instead.
+Part of an answer was presented at the same conference. On day two, on a side stage, a team of Justices' Law Clerks presented their research on how AI is changing legal practice. A number of the practitioners they interviewed had never heard of or accessed LawNet.com and LawNet AI. They did not stop at the diagnosis. They proposed a roadmap: a citation checker that tells you whether a case is being cited for the proposition you are citing it for, and then contract review built on LawNet's own Precedents function.
 
 ## Haves and have-nots
 
-I said at the start that LawNet stood shoulder to shoulder with me against large firms and their armies of interns. That was not nostalgia. For a small firm, LawNet was the equaliser. I was up against a law firm and their army of interns. Whatever point I thought of, they could find more cases to cite, or even cases to override my point. I could never match their output. But what I couldn't match in productivity required me to be more efficient and effective. This almost certainly needed me to be a deft user of LawNet, and I appreciated its citator functions. Sometimes I won the case and sometimes I lost, but it was never because I couldn't put my best case forward.
+For a small firm, LawNet was the equaliser. I was up against a law firm and their army of interns. Whatever point I thought of, they could find more cases to cite, or even cases to override my point. I could never match their output. But what I couldn't match in productivity required me to be more efficient and effective. This almost certainly needed me to be a deft user of LawNet, and I appreciated its citator functions. Sometimes I won the case and sometimes I lost, but it was never because I couldn't put my best case forward.
 
-AI is the new army of interns. In the twelve months that LawNet spent adding books to its search box, LexisNexis shipped a new generation of Protégé and Thomson Reuters shipped a fully agentic CoCounsel. Both were shown off at TechLaw.Fest. These are agentic workspaces. They don’t just find the case for you; they do the work with it.
+AI is the new army of interns. In the twelve months that LawNet spent adding books to its search box, LexisNexis shipped a new generation of Protégé and Thomson Reuters shipped what it calls a fully agentic CoCounsel. Both were shown off at TechLaw.Fest. These are agentic workspaces. They don’t just find the case for you; they do the work with it.
 
 Firms that can afford Harvey, or CoCounsel and Protégé at what are now probably higher prices, will be fine. The have-nots will rely on meat computers.
 

@@ -501,3 +501,8 @@ lawyers shouldn't meet agentic AI on their first day at work."* One clause, earn
    to LawNet. AustLII's route needed a commercial vendor's money. LawNet carries statutory obligations
    its peers don't. Saying this costs three sentences and buys the whole argument.
 
+
+## §10 LawNet origin (verified 2026-09-25)
+
+- SAL, "CJ Launches New Legal Research Portal" (5 Jul 2007): "LawNet started in 1990 as a simple dial up network integrating various information services from the legal sector." https://sal.org.sg/articles/cj-launches-new-legal-research-portal — supports the opening's "started in 1990 as a dial up network".
+- Law Gazette (Nov 2001): LawNet "launched on 7 July 1990". https://v1.lawgazette.com.sg/2001-11/Nov01-focus2.htm
