@@ -98,3 +98,8 @@ Persistent memory for the inhouse-lawyer-reviewer agent. **Read this before ever
   "cheaper than a policy memo" solo-counsel line; and beat 4, the entropy explainer — which she
   expected to skim and didn't. Her note: if anyone proposes trimming it as "setup," don't.
 - **Settled/rejected:** none this round.
+
+### 2026-09-25 — techlawfest-2026 (round 1, secondary audience)
+- Verdict: partly — the equaliser scene and "meat computers" made her feel targeted, not lectured; comprehension gap where the argument needs her.
+- Unique catches: (1) Harvey and Legora named without the functional grounding CoCounsel/Protégé get; the NUS–Harvey / SMU–Legora parallel reads as two unrelated things. (2) Priced Harvey (~$1,200–2,800/seat/month mid-market) and CoCounsel ($300–600+/user/month): one seat is 2–19x her $150 budget, so "probably higher prices" understates. (Her figures, not verified by Claude.)
+- Standing asks: cost and Monday-CTA explicitly checked and judged correctly absent for reflective commentary — a good precedent for this post type.

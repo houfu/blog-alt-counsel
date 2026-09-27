@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-09-25T00:04:23.400Z",
+    "verdict": "Post-audit draft vs pitch v6.1: unchanged thesis and shape; audit fixes were cuts to Claude-drafted sentences only.",
+    "draft_sha": "0941566cc1a8",
+    "pitch_sha": "f25cdacffbea"
+  },
+  "audit_rounds": [],
+  "review_rounds": [],
+  "length_audit": null,
+  "overrides": []
+}

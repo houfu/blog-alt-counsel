@@ -116,3 +116,10 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
   reader has an anchor term to look up. He tagged it OUT himself against the pitch's beat 4, which
   promises only "the source of randomness." Referred to Houfu as follow-up material.
 - **Settled/rejected:** none this round.
+
+### 2026-09-25 — techlawfest-2026 (round 1, secondary audience)
+- Verdict: partly — differentiated and sound where it goes; the warm reframe costs the verdict some earned weight for a reader who has seen research.md.
+- Unique catches: (1) JLC "never heard of LawNet.com" omits the lawnet.sg migration gap from the post's own research — direction-of-error omission that flatters the thesis (same pattern as sg-law-cookies). (2) Litigant-in-person/ChatGPT irony judged the most original idea in the piece — protect it.
+- Verified: six-item podium list and "none of them does a piece of work for you" accurate against Justice Kwek's Day 2 speech and release notes.
+- Follow-up material (OUT): the "locked shelf" books detail and the verifiability counter-case — parked research.md §9.
+- Settled: peer comparison/vendor forensics cut is Houfu's pitch v6 decision; not to be re-raised for this post.
