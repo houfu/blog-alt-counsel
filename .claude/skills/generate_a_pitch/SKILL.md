@@ -39,7 +39,7 @@ The human partner has suggested an idea which is suitable for developing a pitch
 
 Read `/docs/Houfu_Voice_Guide.md` — the dosage preamble and Part 4 (Templates). Then pick, with the user if unclear:
 
-- **Lane:** news-commentary or learning-in-public
+- **Lane:** news-commentary or learning-in-public. Two further lanes exist as DRAFTS awaiting Houfu's hand — lens-piece and guide (Voice Guide Part 4) — pick one of those only when he asks for it
 - **Moves:** the 2–3 voice patterns THIS material genuinely supports (not all of them — a post that uses every pattern reads as parody)
 
 Record both in pitch.md frontmatter (`voice:`). audit-tone checks the draft against this contract, not against the whole guide.
@@ -58,6 +58,19 @@ Wait for the user's answer. This response is the source for the emotional core.
 From the idea, generate a pitch. Imagine we are in an elevator with our readers: limited time to persuade them the post is worth their day. Present a draft title and pitch and ask: "Does it look alright?"
 
 **Declare the primary audience.** Choosing reviewers is choosing who the post is for, and it happens here, not at review time. Pick from the three constituencies (wei-lin / sarah / marcus) per the CLAUDE.md routing table, check the audience-coverage picture (which constituency has waited longest — a neglected audience can tip a close call), and record `primary_audience` (plus optional secondary) in pitch.md frontmatter. `/feedback` reads this field.
+
+### Step 2.5: Strategy fields (all optional)
+
+The 2027 brand strategy tracks each piece by a few fields kept with the piece. Record whichever are known in pitch.md frontmatter; leave the rest out. **Nothing here is required, and none of it gates the draft.**
+
+- `mode` — lens | commentary | field-note | guide | collaboration
+- `framework_action` — the framework action this piece belongs to, if any
+- `origin` — planned | reactive (reactive = answering a Singapore development; it unlocks the short path in CLAUDE.md)
+- `illustration` — fill in only when the piece has one. An illustration supports the content; it is never a requirement
+- `carried_to` — where the piece went after the blog (e.g. linkedin, a talk). Filled in at CHECK
+- `brain` — names of the second-brain notes the piece builds on, if any
+
+`lint-posts.js` warns only when `mode` or `origin` holds a value outside the lists above.
 
 ### Step 3: Authenticity Check
 
@@ -124,6 +137,13 @@ protected_lines: []        # exact strings that survive every cut (lint-checked)
 voice: {lane: learning-in-public, moves: []}   # 2-3 moves from the Voice Guide
 interrogation: {diagnosis: "", differentiation: "", framing_risk: "", subject: ""}
 must_link: []              # 2-3 prior post slugs
+# Optional strategy fields (Step 2.5) — include only the ones that are known:
+# mode: lens               # lens | commentary | field-note | guide | collaboration
+# framework_action: ""     # the framework action this piece belongs to
+# origin: planned          # planned | reactive
+# illustration: ""         # only when the piece has one
+# carried_to: []           # e.g. [linkedin, talk] — filled in at CHECK
+# brain: []                # second-brain note names this piece builds on
 tags: []
 target_date: ~
 ---

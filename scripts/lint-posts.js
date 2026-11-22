@@ -401,6 +401,17 @@ function checkPitchContract(folderPath, folder, status) {
     }
   }
 
+  // Optional strategy fields (generate_a_pitch Step 2.5). Never required;
+  // warn only when a value falls outside the documented set.
+  const MODES = ['lens', 'commentary', 'field-note', 'guide', 'collaboration'];
+  const ORIGINS = ['planned', 'reactive'];
+  if (fm.mode !== undefined && fm.mode !== null && !MODES.includes(String(fm.mode))) {
+    warn(folder, `pitch.md mode "${fm.mode}" is not one of: ${MODES.join(', ')}`);
+  }
+  if (fm.origin !== undefined && fm.origin !== null && !ORIGINS.includes(String(fm.origin))) {
+    warn(folder, `pitch.md origin "${fm.origin}" is not one of: ${ORIGINS.join(', ')}`);
+  }
+
   const totalWords = proseWords(content);
   if (totalWords > 2500) {
     warn(folder, `pitch.md is ${totalWords} words overall — superseded versions and research belong in git history / research.md`);
