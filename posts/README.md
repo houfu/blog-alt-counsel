@@ -8,8 +8,11 @@ posts/{post-short-title}/
 ├── discussion.md           ← session notes, decisions, audit trail
 ├── pitch.md                ← the approved pitch (the contract for the draft)
 ├── research.md             ← sources and citations (optional)
+├── linkedin.md             ← the LinkedIn version of the post (optional)
 └── *.png / *.jpg           ← images, compressed to under 500 KB
 ```
+
+`linkedin.md` holds the LinkedIn version of the post, so the carry is kept with the piece. If the post has an illustration, its file lives in the same folder and is named in the pitch's optional `illustration` field. Both are optional: a post without either is complete.
 
 ## Rules
 
