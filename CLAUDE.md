@@ -25,6 +25,7 @@ alt-counsel.com offers **alternative perspectives on legal technology and practi
     - `{post-short-title}.md` - The post content with YAML frontmatter. **New posts: name the main file after the folder.** (Older posts vary; the linter warns on mismatches.)
     - `discussion.md` - This file stores the memories of claude involved in writing the post
     - `pitch.md` - This file stores the pitch of the post used to create the post.
+    - `linkedin.md` - Optional: the LinkedIn version of the post (see `/posts/README.md`)
     - It also contains images, research documents and others relating to this post.
 - `/docs/` - Documentation and analysis
   - `/docs/personas/` - Full persona documents for the three audience reviewer agents
@@ -399,6 +400,17 @@ An evidence audit of every recorded review found ~70% of reviewer advice is temp
    - **Publish last, sync once.** Edit freely on Ghost after publishing; run `sync-ghost` only once when closing the PR. Avoid per-edit sync-back commits (four of the last five PRs had this churn).
    - **Expect post-scheduling Ghost edits.** Houfu routinely polishes prose in the Ghost editor after scheduling. At the final sync, also diff the live content against the local file, merge the edits back so the repo matches what's published, and log notable edits in discussion.md as user decisions (they reveal voice preferences future drafts should follow).
    - **Don't skip the final sync.** Several older posts (prompt-engineering-wrong, redlines-top-10-percent, ai-tools-for-agents) were published on Ghost months ago but their local frontmatter still says draft or is missing — making them look abandoned. The repo should always know a post's true status.
+
+### Short path for reactive commentary
+
+Applies **only** when pitch.md frontmatter declares `origin: reactive` — a piece answering a Singapore development while it is still current. Everything else takes the full workflow above.
+
+1. **PITCH** — still one paragraph under 200 words with a word budget; the interrogation questions still apply.
+2. **WRITE** — as usual, voice guide first.
+3. **REVIEW** — lint, then **one** reviewer (the pitch's `primary_audience`) for **one** round. No audit round, no second reviewer round. The pitch checkpoint the workflow gate requires still applies.
+4. **POST and CHECK** — as usual.
+
+If the piece stops being time-bound, or the one round surfaces a framing problem, it leaves the short path: set `origin: planned` and run the full workflow.
 
 ### Commit discipline
 

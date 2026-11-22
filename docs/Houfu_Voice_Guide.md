@@ -227,6 +227,41 @@ Blockquotes for quotes; bold for key terms on first use and voice labels; italic
 [Close: hope, appointment, or invitation]
 ```
 
+### Blog Post: "Lens Piece" (DRAFT lane — awaiting Houfu's hand)
+
+> **DRAFT.** Proposed for the 2027 strategy; not yet tested on a published post and not yet edited by Houfu. Every rule in Parts 0–3 still applies. **Open question, his to settle:** what supplies the lived part of an action piece when the case itself cannot be shown?
+
+```
+[Opening: the situation, stated generically — one a small legal team actually faces. Payoff stated early]
+
+[The borrowed idea: what it means in plain words, in 2-3 sentences]
+
+[The action: what to do in that situation]
+
+[The reasoning: why this action, argued in prose]
+
+[A check the reader can run on their own desk]
+
+[Close: soft/flat/invitation — never a mic-drop]
+```
+
+### Blog Post: "Guide" (DRAFT lane — awaiting Houfu's hand)
+
+> **DRAFT.** Same status and same open question as the Lens Piece above.
+
+```
+[Opening: the situation, stated generically, and what the reader will be able to do by the end]
+
+[The action, as steps the reader can follow]
+1. [Step — one action each]
+
+[The reasoning: why the steps are in this shape, kept short]
+
+[A check the reader can run to tell whether it worked]
+
+[Close: flat line or invitation]
+```
+
 ### LinkedIn Post
 
 ```

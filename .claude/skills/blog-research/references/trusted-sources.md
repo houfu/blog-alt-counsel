@@ -16,6 +16,16 @@ This file lists prioritized sources for researching legal technology topics for 
 - **Singapore Courts** - Court digitization and technology updates
 - **ASEAN Legal Information Network** - Regional legal developments
 - **Infocomm Media Development Authority (IMDA)** - Singapore tech policy and initiatives
+- **Ministry of Law (MinLaw)** - Legal sector policy, consultations and guides (including guidance on AI use in the legal sector)
+- **Personal Data Protection Commission (PDPC)** - Enforcement decisions, advisory guidelines and data protection guidance
+- **Singapore Academy of Law (SAL)** - LawNet, legal technology initiatives and publications
+- **Law Society of Singapore** - Practice directions, guidance notes and profession-wide announcements
+
+### Toyota Production System (public sources only)
+When a post uses the Toyota Production System as a lens, draw only on material anyone can read:
+- **Toyota's own public pages** on the Toyota Production System (find the current page; do not cite a remembered URL)
+- **Published books**, such as Taiichi Ohno's *Toyota Production System* and Jeffrey Liker's *The Toyota Way*
+- Cite the source for each TPS idea used. Nothing from inside any company is a source.
 
 ## Priority 2: Global Legal Tech Sources
 
