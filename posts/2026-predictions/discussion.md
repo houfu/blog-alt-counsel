@@ -918,3 +918,8 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - Research launched in four parallel strands (Singapore; rest of ASEAN; H2 2026 adoption reports vs the Salesforce leapfrog claim; global theatre-vs-innovation). Output: `research-scorecard-p5.md` (kept separate from January `research.md`).
 - Research done → `research-scorecard-p5.md`. **All findings unverified** (page fetches blocked by the session's network allowlist; search summaries only) — verify each figure before drafting.
 - Headline: hunch half right — nothing *measured* happened; plenty was announced/regulated. P5 holds; anti-leapfrog bet stronger than at half-time (ASEAN H2 = rules, risk, training). Cross-notes: Copilot Cowork now edits Word (P1); fake-citation decisions still rising ~150/month (tension with P4 "far more manageable").
+
+### User decision — Prediction 5 HOLDING
+- Verdict: holding (main thesis + ASEAN anti-leapfrog bet).
+- Signals framework: **not delivered this year**; user unsure it's still useful. Treatment TBD (retire honestly like P2's framework vs a short in-post version).
+- User: "Maybe it's time to mention Marshall as well." No mention of Marshall found in the repo or any Ghost post/draft — asked user who/what Marshall is.
