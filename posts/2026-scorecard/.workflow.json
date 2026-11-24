@@ -18,7 +18,18 @@
       ]
     }
   ],
-  "review_rounds": [],
+  "review_rounds": [
+    {
+      "n": 1,
+      "at": "2026-11-24T11:01:54.436Z",
+      "draft_sha": "abeb4ed72668",
+      "words": 1677,
+      "agents": [
+        "lawyer-coder-reviewer",
+        "legal-tech-blog-reviewer"
+      ]
+    }
+  ],
   "length_audit": null,
   "overrides": []
 }
