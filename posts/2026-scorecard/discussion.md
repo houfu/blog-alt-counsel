@@ -28,3 +28,6 @@
 - **[HOUFU] placeholder:** LinkedIn launch post URL.
 - Deliberately NOT used: model names "Fable / Astral / Sol / Sonnet" from Houfu's P2 comment (unverified; written as "the frontier ones… and the open-weight ones"). Qwen 3.8 kept (from his own LinkedIn post).
 - Check with Houfu: Marshall line "by my own second signal, I can't prove Marshall is more than a demo either" — he never explicitly answered the "own app fails own test" framing question.
+
+## 2026-11-24 — "What do others think?" research back
+- Saved to `research.md` (unverified, search summaries only). Aligns on P1 and P5; mixed on P2, P3, P4. Strongest disagreement: Mollick (Nov 9) — jaggedness persists in taste/judgment (P2). Business users running the agent themselves: no external examples (Houfu is ahead/alone). Top 3 candidates to fold in offered to Houfu: Salesforce MD quote (P5), Mollick counterweight (P2), Law.com clients-want-their-data-back (through-line). Draft not yet changed.
