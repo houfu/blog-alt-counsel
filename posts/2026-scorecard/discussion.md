@@ -51,3 +51,9 @@
 - Declined: Marcus's cut of the Cowork/Spellbook sentence (declared fact-then-undercut move); Marcus's cut of "it was a roller coaster" (Houfu's emotional-core words).
 - Open for Houfu: P1 and P4 placeholders; Marshall against his own standards (unevaluated / signal 1 / grading own project); Marshall post status; can readers try it; "decided" vs "launched" a week later.
 - Reviewer MEMORY_UPDATE blocks appended to both memory files.
+
+## 2026-11-24 — Draft pushed to Ghost
+- User decision: acknowledge Marshall is a work in progress → added "Marshall is still a work in progress, and I haven't written evals for it yet." Other open questions (P1/P4 placeholders, Marshall post status, try-it, decided vs launched) deferred; user: "let's try to push a draft to ghost".
+- Ghost **draft** created: post_id 6b05724feba174000154bf66 (slug 2026-predictions-full-time). Status draft — not scheduled. [VERIFY] and [HOUFU] markers are visible in the Ghost draft on purpose.
+- Infra gotcha: publish-lexical.js's axios 1.12.2 (via @tryghost/admin-api) gets 405 from the cloud-session egress proxy; worked after `npm install --no-save axios@1.16.1` (local node_modules only, no package.json change). Proper fix belongs on a separate infra branch.
+- Before publishing: verify every [VERIFY], fill [HOUFU] placeholders (P1 status, P4 example, LinkedIn URL), backlink pass, feature image + excerpt check, then schedule (late November).

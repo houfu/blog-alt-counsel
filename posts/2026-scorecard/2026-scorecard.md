@@ -6,6 +6,7 @@ status: draft
 featured: false
 github_folder: "2026-scorecard"
 custom_excerpt: "In January I made five legal AI predictions and promised a December scorecard. Three were wrong, one came right in a way I didn't plan, and one held. The best evidence I have for the year isn't a prediction at all."
+post_id: "6b05724feba174000154bf66"
 ---
 
 In January I made five predictions about legal AI, gave each one a success criterion, and promised a scorecard in December. If I chickened out, $500 would go to a legal aid organisation in Singapore.
@@ -108,7 +109,7 @@ Legal open source has looked like a federation of solo-author archipelagos: lawy
 
 [Lawyers Are Building. Just Not On Each Other's Code.](https://www.alt-counsel.com/lawyers-not-on-each-others-code/?ref=2026-predictions-full-time)
 
-About 3,000 people saw the LinkedIn post and roughly 10 asked to try it, so I put the app on a Google Drive for them to install. I have no usage numbers beyond that. I was supposed to write a post about it. It got overtaken by events.
+About 3,000 people saw the LinkedIn post and roughly 10 asked to try it, so I put the app on a Google Drive for them to install. I have no usage numbers beyond that. Marshall is still a work in progress, and I haven't written evals for it yet. I was supposed to write a post about it. It got overtaken by events.
 
 ## The final scorecard
 
