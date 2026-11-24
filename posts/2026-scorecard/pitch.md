@@ -7,7 +7,7 @@ thesis_keywords: [scorecard, context, Marshall, Word]
 protected_lines: []
 voice: {lane: learning-in-public, moves: [vulnerable-admission-once, specific-lived-numbers, fact-then-undercut]}
 interrogation:
-  diagnosis: "'AI work drifts to whoever holds the context' explains P1 (business users), P3 (usage leaves my desk), P4 (context management) and Marshall (open legal data as context). It does NOT explain P2 — models just got better. Say so in the post rather than force P2 into the pattern."
+  diagnosis: "'AI work drifts to whoever holds the context' explains P1 (business users), P3 (usage leaves my desk), P4 (context management) and Marshall (open legal data as context). P2 is driven by model improvement instead — user: no need to apologise for it in the post; just don't force P2 into the pattern."
   differentiation: "Most prediction posts are never revisited. This is the third instalment with receipts: three misses admitted, a tracking gap owned, and a built artefact (Marshall, ~$25 of weekend tests on an open-weight model) as evidence — from a resource-constrained practitioner, not a vendor."
   framing_risk: "SAL/LawNet — Marshall began as a reaction to the 'bigger bookcase' post; be generous (note SAL's partner API pilot, praise the people working on 4.0). Salesforce — bet was against its claim; grade it on evidence, no sneer. Harvey/Legora/Microsoft — label their numbers as company-sourced, don't call them theatre by name. Joshua Ng, Yu Chou Teo, LegalQuants — credited via the LinkedIn launch post."
   subject: "Original message: the yearly review, prediction by prediction. Still the subject. Marshall is the climax of P5, not the subject of the post; 2027 and the personal reflection are separate posts."
@@ -17,8 +17,8 @@ must_link:
   - the-bigger-bookcase
 mode: field-note
 origin: planned
-tags: [AI, LegalTech, Singapore, 2026Predictions]   # provisional — validate with tag-registry after approval
-target_date: "[HOUFU: ASAP — propose Tue 2026-12-01, 9am SGT, to honour 'December']"
+tags: [AI, LegalTech, Singapore, 2026Predictions]   # validated against tag-registry 2026-11-24
+target_date: "late November 2026 (ASAP; user OK with pre-December)"
 ---
 
 # Pitch: 2026-scorecard
@@ -27,7 +27,7 @@ target_date: "[HOUFU: ASAP — propose Tue 2026-12-01, 9am SGT, to honour 'Decem
 
 > It's almost the end ofthe year, so i want to work on that yearly review post. can you locate my goal setting one, gather some context from this blog, and we will go through each of the four predictions one by one
 
-**Title:** Full-Time on My 2026 Predictions: Even My Half-Time Lesson Didn't Survive *(working — alternatives in discussion.md)*
+**Title:** Full-Time: The Year My Predictions Rode a Roller Coaster (SETTLED)
 **Thesis:** My 2026 scorecard swung so hard that even July's lesson didn't hold, but one pattern did: AI work drifted to whoever held the context.
 **Spine:** The work went to whoever had the context — and most of the time, that wasn't me.
 **Emotional core (user's words):** "It's been a rollicking year, and I'm impressed I managed to write this post. Looking at how it progressed, it's been a roller coaster ride."
