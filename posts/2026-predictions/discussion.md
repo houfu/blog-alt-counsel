@@ -912,3 +912,7 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - Why: **context management got better.** Models improved *and* "our programs also got better" — both at once.
 - Lawyers became more aware too, and thought more about making sure models get the information they need.
 - Note: not the three January structures (RAG-citations / two-pass / locked templates) — the thing that worked was context. Cross-links P1 (business users supply context the lawyer lacks). Verdict wording still to confirm; no concrete failure/near-miss example given yet.
+
+### Prediction 5 — user asked for deep web research first (ASEAN focus)
+- User's hunch: "nothing interesting happened" since July. P4 follow-up checks (is "unsolved" still true; concrete example) left unanswered — revisit at drafting.
+- Research launched in four parallel strands (Singapore; rest of ASEAN; H2 2026 adoption reports vs the Salesforce leapfrog claim; global theatre-vs-innovation). Output: `research-scorecard-p5.md` (kept separate from January `research.md`).
