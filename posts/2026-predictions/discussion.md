@@ -923,3 +923,9 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - Verdict: holding (main thesis + ASEAN anti-leapfrog bet).
 - Signals framework: **not delivered this year**; user unsure it's still useful. Treatment TBD (retire honestly like P2's framework vs a short in-post version).
 - User: "Maybe it's time to mention Marshall as well." No mention of Marshall found in the repo or any Ghost post/draft — asked user who/what Marshall is.
+
+### User decisions (2026-11-24)
+- **Signals framework:** include a short version in the P5 section built from the research (success measured by access; pilot-rich/readiness-poor; private evaluations) — "we've done some research, so I think there is something to share."
+- **2027 goes in a separate post.** Scorecard ends on 2026; 2027 questions (P1 business-user use, P2 evals, P3 outsourced-usage metric) are parked for that post. Per series discipline: publish the scorecard first.
+- **$500 stake:** user asked whether he has to pay. Stake triggers only on chickening out of the December scorecard — publishing it in December means no payout. Risk: it must actually publish in December 2026.
+- Marshall: still waiting on who/what it is.
