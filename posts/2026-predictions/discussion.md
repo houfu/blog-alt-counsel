@@ -906,3 +906,9 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - Usage has **hovered at ~50%–66%** (work log continued after July). Verdict unchanged: decisive miss.
 - Agrees personal usage may go *down* as he outsources AI use from himself to others (business users running his agent). Metric was only ever about personal use — how to measure the outsourced kind is a 2027 question.
 - Candidate closing line (user's): "this is what it means when the future of law shifts from high touch personal service to product." User asked if it's a great ending — undecided, revisit after P4/P5.
+
+### Houfu's comments — Prediction 4 (hallucination manageable)
+- **"Far more manageable than I expected."** July pessimism reversed.
+- Why: **context management got better.** Models improved *and* "our programs also got better" — both at once.
+- Lawyers became more aware too, and thought more about making sure models get the information they need.
+- Note: not the three January structures (RAG-citations / two-pass / locked templates) — the thing that worked was context. Cross-links P1 (business users supply context the lawyer lacks). Verdict wording still to confirm; no concrete failure/near-miss example given yet.
