@@ -940,3 +940,10 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
   - Runs on **Qwen 3.8 27B**. Local needs ~SGD 6k MacBook Pro; alternatively "I also haven't spent more than $25 on OpenRouter running evals and tests all weekend."
   - Distribution: Electron desktop app, "DM me if you want to give this a go!" → explains no usage stats (no telemetry, DM-gated).
 - Implications flagged to user: (1) P2 — he *did* run evals (~$25, one weekend), which softens "no receipts"; (2) P5 — Marshall is built ON other lawyers' code (Zeeker + Statutes MCP + Hansard gateway + LQ.AI), a counterpoint to his May "solo-author archipelagos" verdict; (3) contrast with SAL's LawNet partner API pilot for selected platforms.
+
+### User decisions — Marshall
+- Numbers: **~3k LinkedIn views; ~10 people requested** it → shared via Google Drive for install. No install/usage data beyond that. A dedicated Marshall post was planned but "got overtaken by events."
+- Placement: Marshall = **climax of P5** (answer to "nothing interesting happened"); its future goes in the separate 2027 post.
+- The $25 OpenRouter weekend = **tests, not evals.** Keep P2 "no receipts" honest; evals are next ("I want to do evals next").
+- Credits: link/share the LinkedIn launch post, which carries the credits (Joshua Ng, Yu Chou Teo, LegalQuants).
+- Walkthrough of all five predictions complete → next: pitch.
