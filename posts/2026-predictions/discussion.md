@@ -884,3 +884,14 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - Still uses Word to *read* documents; when he needs AI, uses the panel inside Word.
 - **Shift from half-time:** the blocker is no longer validation — "AI tools tend to get it right." The real blocker is **infrastructure inertia and convenience**. The agent-instead-of-Word workflow "hasn't really established."
 - **Reframe (forward-looking):** he's become more interested in moving his legal tools out of personal/legal-only use to **client and business-user use**. Believes that's where the prediction's kind of use will actually happen. "Still an exciting question even if I would now reframe it."
+
+### User decision — Prediction 1 graded a plain FAIL (no partial credit for the reframe)
+- Reframe detail: the real use lies with **business users using it with Word**, not him. He has let other users run a **legal agent inside their Copilot**. He still reads the document in Word, but the review is done elsewhere and he verifies it.
+- Why he thinks it's more effective: business users have **more context** (they know the deal, have the emails), so they can help the agent more than he can by asking it to read the emails.
+- Treatment in scorecard: plain fail on P1; reframe presented as a 2027 open question, not a revised prediction.
+
+### Houfu's comments — Prediction 2 (jagged frontier)
+- **Less important than in July.** Model advances (Fable and Astral, which also lifted Sol and Sonnet) — and local models are "so much better and predictable" (favourite: Qwen 3.8).
+- Consequence: it has become **worth it to write your own evals**. That's "the next stage" — with evals you can be rigorous about the harness and the other components of the build.
+- NB: this partly reverses the half-time reasoning (framework retired because a rigorous benchmark was out of reach for a resource-constrained practitioner). Verdict wording still to confirm.
+- TODO before drafting: verify model names/release timing (Fable, Astral, Sol, Sonnet, Qwen 3.8) — do not state from memory.
