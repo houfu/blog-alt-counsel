@@ -32,3 +32,15 @@
 ## 2026-11-24 — "What do others think?" research back
 - Saved to `research.md` (unverified, search summaries only). Aligns on P1 and P5; mixed on P2, P3, P4. Strongest disagreement: Mollick (Nov 9) — jaggedness persists in taste/judgment (P2). Business users running the agent themselves: no external examples (Houfu is ahead/alone). Top 3 candidates to fold in offered to Houfu: Salesforce MD quote (P5), Mollick counterweight (P2), Law.com clients-want-their-data-back (through-line). Draft not yet changed.
 - **User decision:** add the first two only — Salesforce MD quote (P5 ASEAN paragraph) and Mollick counterweight (P2, replacing the "cheap enough to measure" closing line, which read as a kicker). Law.com through-line support not used. Both marked [VERIFY]. User clarified the research ask was about *alignment* of views, not year-end lists.
+
+## 2026-11-24 — REVIEW: pitch checkpoint + audit round (1 of 1)
+- Pitch checkpoint: aligned (recorded via workflow-state).
+- Audit (audit-substance + audit-tone, one round). Critical fixes applied → draft v2, 1,742 words:
+  - Fairness: dropped "third vendor in five months" / "without published targets" (NUS/SMU/AIxLegal); "Even Salesforce…" → neutral; sourced stats labelled (Microsoft, AmCham); added the generous LawNet line (Houfu's own words from the bigger-bookcase post); signal 3 de-sneered.
+  - Inferred opinion removed: "a year of watching left me with three signals"; "The tools I was waiting for even arrived"; Marshall "by my own second signal, I can't prove…" (also mis-numbered) → his facts only; "at all"; "again".
+  - Kickers cut: "It would mean the work moved"; "Manageable, then… Not yet for everyone"; "even the inversion had inverted"; "My confidence ended up predicting nothing"; "You don't need to wait to be given access".
+  - Overclaims fixed: "Context, not structure" → models + context management together; "weekend budget" (was the $25 tests, not the build); "built almost entirely on other lawyers' code" → two parts mine (Zeeker, LQ.AI), two others' (Statutes MCP, Hansard gateway).
+  - Moved the bigger-bookcase card from P4 to Marshall; "complaining about" → "writing about"; Zeeker glossed in P2; P2 half-time retelling cut to one line; ASEAN para trimmed (DEFA cut); AmCham stat moved into signal 2.
+  - New [HOUFU] placeholders: P1 current status of the business-user agent after the Cowork pricing change; P4 one lived example of context fixing a failure.
+- **Pitch amendment (spine):** "The work went to whoever had the context — and most of the time, that wasn't me" → "The work went to whoever had the context." Both audits: the "wasn't me" half is contradicted by P3 (his own usage at 50–66%). Pitch-time check that would have caught it: (1) test the diagnosis.
+- Held for reviewers (judgment): P2 verdict rests on impression vs Mollick; "**The bet:** / **Full-time:**" template repeated ×5; Marshall as its own H2 vs inside P5; table vs intro tally repetition; whether to point to the reflection piece in the close (voice guide says no teasers — left out).

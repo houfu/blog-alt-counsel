@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "pitch_checkpoint": {
+    "at": "2026-11-24T11:01:37.401Z",
+    "verdict": "Draft v2 (post-audit) aligned with pitch; spine amended to drop 'that wasn't me' (contradicted by P3) — logged in discussion.md.",
+    "draft_sha": "abeb4ed72668",
+    "pitch_sha": "d0028838cd70"
+  },
+  "audit_rounds": [
+    {
+      "n": 1,
+      "at": "2026-11-24T10:59:22.459Z",
+      "draft_sha": "feb3abcf5c55",
+      "words": 1783,
+      "agents": [
+        "audit-substance",
+        "audit-tone"
+      ]
+    }
+  ],
+  "review_rounds": [],
+  "length_audit": null,
+  "overrides": []
+}

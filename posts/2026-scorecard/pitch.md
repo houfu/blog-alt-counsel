@@ -29,7 +29,7 @@ target_date: "late November 2026 (ASAP; user OK with pre-December)"
 
 **Title:** Full-Time: The Year My Predictions Rode a Roller Coaster (SETTLED)
 **Thesis:** My 2026 scorecard swung so hard that even July's lesson didn't hold, but one pattern did: AI work drifted to whoever held the context.
-**Spine:** The work went to whoever had the context — and most of the time, that wasn't me.
+**Spine:** The work went to whoever had the context.
 **Emotional core (user's words):** "It's been a rollicking year, and I'm impressed I managed to write this post. Looking at how it progressed, it's been a roller coaster ride."
 
 ## Pitch
