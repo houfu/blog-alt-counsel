@@ -1,12 +1,22 @@
 ---
-title: "Full-Time: The Year My Predictions Rode a Roller Coaster"
-slug: "2026-predictions-full-time"
-tags: ["AI", "LegalTech", "Singapore", "2026Predictions"]
-status: draft
+title: 'Full-Time: The Year My Predictions Rode a Roller Coaster'
+slug: 2026-predictions-full-time
+tags:
+  - AI
+  - LegalTech
+  - Singapore
+  - 2026Predictions
+status: scheduled
 featured: false
-github_folder: "2026-scorecard"
-custom_excerpt: "In January I made five legal AI predictions and promised a December scorecard. Three were wrong, one came right in a way I didn't plan, and one held. The best evidence I have for the year isn't a prediction at all."
-post_id: "6b05724feba174000154bf66"
+github_folder: 2026-scorecard
+custom_excerpt: >-
+  In January I made five legal AI predictions and promised a December scorecard.
+  Three were wrong, one came right in a way I didn't plan, and one held. The
+  best evidence I have for the year isn't a prediction at all.
+post_id: 6b05724feba174000154bf66
+published_at: '2026-11-25T01:26:00.000Z'
+feature_image: >-
+  https://images.unsplash.com/photo-1671466787226-5f893457a278?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDZ8fHN0YWRpdW0lMjBzY29yZWJvYXJkJTIwc3Vuc2V0fGVufDB8fHx8MTc5NTUyOTc1Mnww&ixlib=rb-4.1.0&q=80&w=2000
 ---
 
 In January I made five predictions about legal AI, gave each one a success criterion, and promised a scorecard in December. If I chickened out, $500 would go to a legal aid organisation in Singapore.
@@ -33,13 +43,9 @@ So, the final count: three wrong, one right in a way I didn't plan, one holding.
 
 In July, I said the blocker was validation. I opened Word because I didn't trust the agent's work enough not to check it. That blocker has mostly gone. In my own checking, AI tools tend to get it right now.
 
-I still open Word anyway. When I want to read a document, I read it in Word. When I need an AI tool, I use the panel in Word. Claude, Copilot and most of the major legal tech tools built their way into Word this year, and it's simply convenient to stay there. The workflow where I rely on agents instead of Word never really established itself.
+I still open Word anyway. When I want to read a document, I read it in Word. When I need an AI tool, I use the panel in Word. Claude, Copilot and most of the major legal tech tools built their way into Word this year, and it's simply convenient to stay there. The workflow where I rely on agents instead of Word never really established full time.
 
-Copilot Cowork can now edit Word files, and Spellbook's autonomous contract product went on general release in October. [VERIFY] I still read in Word.
-
-There is one thing I did differently, and it's where this question gets interesting again. I've let business users run a legal agent in their own Copilot. The review happens there, and I read the result in Word and verify it. They have the context — the deal, the emails, the history — so they help the agent more than I can by asking it to read their emails. [HOUFU: one line on where this stands now, after the Cowork pricing change in the post below]
-
-[I Got Rugpulled by Cowork](https://www.alt-counsel.com/rugpulled-by-cowork/?ref=2026-predictions-full-time)
+There is one thing I did differently, and it's where this question gets interesting again. I've let business users run a legal agent in their own Copilot. The review happens there, and I read the final result, Word or PDF, and verify it. They have the context — the deal, the emails, the history — so they help the agent more than I can by asking it to read their emails. While the imposition of charges on Copilot use certainly accelerated the conversation, but passing the cost of legal review to the real users is now my target, not my own tool use.
 
 That's not the prediction I made, so it doesn't get partial credit.
 
@@ -55,13 +61,13 @@ Then the models got better. The frontier ones did, and so did the open-weight on
 
 I don't have any receipts. In July, my one rigorous run took two weeks and my entire compute quota. This autumn, a weekend of tests on OpenRouter cost me no more than $25. Those were tests, not evals. Evals are what I want to do next, and I've been nudging the lawyers I mentor to think about it more rigorously. There's an obvious one sitting in Zeeker, my collection of Singapore legal data: can an agent find the right sources of Singapore law?
 
-Not everyone thinks the frontier got smoother. Ethan Mollick, who helped name the jagged frontier, wrote in November that the errors have shrunk but the jaggedness has moved into taste and judgment, where benchmarks can't see it. [VERIFY] If he's right, that's one more reason to write your own evals.
+Not everyone thinks the frontier got smoother. Ethan Mollick, who helped name the jagged frontier, wrote in November that the errors have shrunk but the jaggedness has moved into taste and judgment, where benchmarks can't see it. If he's right, that's one more reason to write your own evals.
 
 ## My usage stayed high, and might fall for a good reason
 
 **The bet:** my meaningful AI use would stay under 20% of my legal work.
 
-**Full-time: decisively wrong.** Since May, my work log has hovered between 50% and 66% of tasks, on the same strict bar as before: AI doing substantive work I would otherwise have done myself.
+**Full-time: decisively wrong.** Since May, my work log has hovered around 50% of tasks, on the same strict bar as before: AI doing substantive work I would otherwise have done myself.
 
 What's changed since July is what the number means. This metric only ever counted my own desk. As I hand more of the AI work to the people who hold the context, like those business users running a legal agent in their own Copilot, my personal number may well go down.
 
@@ -75,9 +81,7 @@ I never ran those three tests. At half-time I was pessimistic: the more I leaned
 
 What changed was context. At the same time the models got better, our programs got better at managing context, which means feeding the model the right documents and facts for the task instead of hoping it knows them. Lawyers got better at it too. With more awareness, we started thinking about what information a model actually needs before asking it anything.
 
-[HOUFU: one lived example — a task that used to go wrong and stopped once the agent was given the right material]
-
-There's a caveat, and it isn't small. Courts are still seeing more fake citations, not fewer — one public database of AI hallucination decisions passed 2,200 by October, most of them from people representing themselves. [VERIFY] So my verdict holds for people who can manage the context, not for everyone.
+There's a caveat, and it isn't small. Courts are still seeing more fake citations, not fewer — one public database of AI hallucination decisions passed 2,200 by October, most of them from people representing themselves.  So my verdict holds for people who can manage the context, not for everyone.
 
 ## The theatre held, and ASEAN wrote rules
 
@@ -87,29 +91,25 @@ There's a caveat, and it isn't small. Courts are still seeing more fake citation
 
 My hunch going in was that nothing interesting happened after July. Quite a lot happened. Very little of it was measured.
 
-ASEAN didn't leapfrog. It regulated. Vietnam's list of high-risk AI systems came into force in August, and Malaysia's Chief Justice promised rules on lawyers' AI use after convincing-but-inaccurate AI submissions. [VERIFY] Salesforce's regional managing director said in September that outside Singapore, "the cost of human labour is cheaper than the cost of AI." [VERIFY]
+ASEAN didn't leapfrog. It regulated. Vietnam's list of high-risk AI systems came into force in August, and Malaysia's Chief Justice promised rules on lawyers' AI use after convincing-but-inaccurate AI submissions. Salesforce's regional managing director said in September that outside Singapore, "the cost of human labour is cheaper than the cost of AI."
 
-In Singapore, NUS Law and SMU both joined AI vendor programmes. SAL opened a pilot API to LawNet for selected legal tech platforms, and the people working on LawNet clearly want it to succeed. [VERIFY]
+In Singapore, NUS Law and SMU both joined AI vendor programmes. SAL opened a pilot API to LawNet for selected legal tech platforms, and the people working on LawNet clearly want it to succeed.
 
 I never wrote the signals framework I promised. Reading this year's announcements, three patterns stood out:
 
 - **Success measured by access.** Licences handed out and programmes launched, rather than a problem solved.
-- **Pilot-rich, readiness-poor.** In an AmCham Singapore survey, 87% of large companies in the region had AI agents in a pilot or in production, and 7% were ready to scale them. [VERIFY]
+- **Pilot-rich, readiness-poor.** In an AmCham Singapore survey, 87% of large companies in the region had AI agents in a pilot or in production, and 7% were ready to scale them.
 - **The evaluation stays private.** When a pilot ends, the reasons often aren't published.
 
 ## Then I built Marshall
 
 A week after writing about LawNet's direction, I decided to walk the talk. Marshall is a proof of concept that you can build your very own Harvey or Legora, focused on Singapore law. It runs research, redline and review on its own. I had no access to LawNet's content API, so I built it from open source legal technology. Zeeker is mine, which I've been curating for nearly a year. The spine is LegalQuants' LQ.AI, which I help maintain, with selected skills from its plugins. The other two parts came from other lawyers: Joshua Ng's Statutes MCP and Yu Chou Teo's Hansard gateway. It runs on Qwen 3.8 27B, locally if you have a SGD 6,000 MacBook Pro, or through OpenRouter if you don't.
 
-[Will LawNet become Just A Bigger Bookcase?](https://www.alt-counsel.com/the-bigger-bookcase/?ref=2026-predictions-full-time)
-
-[HOUFU: LinkedIn launch post URL — carries the credits]
+[Marshall launch post on LinkedIn](https://lnkd.in/p/gryuBSC2)
 
 Legal open source has looked like a federation of solo-author archipelagos: lawyers build, but not on each other's code. Marshall is built on other lawyers' code as well as mine.
 
-[Lawyers Are Building. Just Not On Each Other's Code.](https://www.alt-counsel.com/lawyers-not-on-each-others-code/?ref=2026-predictions-full-time)
-
-About 3,000 people saw the LinkedIn post and roughly 10 asked to try it, so I put the app on a Google Drive for them to install. I have no usage numbers beyond that. Marshall is still a work in progress, and I haven't written evals for it yet. I was supposed to write a post about it. It got overtaken by events.
+Over 2,000 people saw the LinkedIn post and roughly 10 asked to try it, so I put the app on a Google Drive for them to install. I have no usage numbers beyond that. Marshall is still a work in progress, and I haven't written evals for it yet. I was supposed to write a post about it. It got overtaken by events.
 
 ## The final scorecard
 

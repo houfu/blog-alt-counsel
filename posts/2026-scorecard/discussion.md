@@ -57,3 +57,17 @@
 - Ghost **draft** created: post_id 6b05724feba174000154bf66 (slug 2026-predictions-full-time). Status draft — not scheduled. [VERIFY] and [HOUFU] markers are visible in the Ghost draft on purpose.
 - Infra gotcha: publish-lexical.js's axios 1.12.2 (via @tryghost/admin-api) gets 405 from the cloud-session egress proxy; worked after `npm install --no-save axios@1.16.1` (local node_modules only, no package.json change). Proper fix belongs on a separate infra branch.
 - Before publishing: verify every [VERIFY], fill [HOUFU] placeholders (P1 status, P4 example, LinkedIn URL), backlink pass, feature image + excerpt check, then schedule (late November).
+
+## 2026-11-24 — CHECK: scheduled + final sync
+- Houfu set the cover (Unsplash stadium scoreboard at sunset — continues the half-time scoreboard look) and scheduled for **2026-11-25 01:26 UTC (09:26 SGT)**. `sync-ghost` pulled status, published_at, feature_image.
+- Live-vs-local diff merged back so the repo matches Ghost. **Houfu's Ghost edits (voice decisions):**
+  - Cut the Cowork/Spellbook "tools arrived, I still read in Word" sentence — sided with Marcus over the declared fact-then-undercut move.
+  - Rewrote the business-user paragraph: reads "the final result, Word or PDF"; replaced the P1 placeholder with a forward-looking line — passing the cost of legal review to the real users is now his target, not his own tool use (the Copilot charges accelerated that conversation). Removed the Rugpulled-by-Cowork bookmark.
+  - **Rounded numbers down:** usage "between 50% and 66%" → "around 50%"; LinkedIn views "About 3,000" → "Over 2,000".
+  - Dropped the P4 lived-example placeholder (no example added).
+  - Removed all [VERIFY] markers (verified on his side).
+  - Replaced the bigger-bookcase and lawyers-not-on-each-others-code bookmarks with a bookmark to the LinkedIn launch post (lnkd.in/p/gryuBSC2). Locally kept as a markdown link (lnkd.in isn't on the converter's bookmark allowlist).
+  - Deleted the auto-generated GitHub "Behind the Scenes" footer again (same as legal-oss-maintainer); `github_folder` kept in frontmatter per that precedent.
+  - "never really established itself" → "never really established full time".
+- Flagged to Houfu before go-live: table still says "Wrong (50–66%)" while the P3 text now says "around 50%"; "While … , but …" grammar in the new P1 sentence; "established full time" (intended pun?); a double space before "So my verdict".
+- `tracking-2026.md` updated with the full-time verdicts; the 2026 run is closed there.
