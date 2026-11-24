@@ -929,3 +929,9 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - **2027 goes in a separate post.** Scorecard ends on 2026; 2027 questions (P1 business-user use, P2 evals, P3 outsourced-usage metric) are parked for that post. Per series discipline: publish the scorecard first.
 - **$500 stake:** user asked whether he has to pay. Stake triggers only on chickening out of the December scorecard — publishing it in December means no payout. Risk: it must actually publish in December 2026.
 - Marshall: still waiting on who/what it is.
+
+### Marshall (user's app) — what's known so far
+- User: Marshall is an app he created; released it, "got some eyeballs" but no usage stats received.
+- GitHub `houfu/marshall` (private): "LQ.AI with the brakes taken off: a single-user desktop PoC that runs research, redline and review autonomously on one open-weight model." Created 2026-10-03; last push 2026-11-21; packaged as a desktop app 4–5 Oct (roadmap phase 5, Windows smoke tests).
+- Repo docs seen by filename only (could not read contents — session lacks access to the private repo; search API then rate-limited): HONEST-STATE.md, marshall/evals.md, marshall/UAT.md, comparison.md, word-addin.md, playbooks.md, tabular-review.md, skills/sgcite/SKILL.md.
+- Possible ties: P5 (own pocket of innovation; and by the new signals, "eyeballs, no usage stats" is attention not outcomes), P1 (Word add-in), P2 (evals.md — check against "no receipts"), P4 (sgcite, autonomous on one open-weight model).
