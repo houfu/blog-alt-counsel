@@ -916,3 +916,5 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 ### Prediction 5 — user asked for deep web research first (ASEAN focus)
 - User's hunch: "nothing interesting happened" since July. P4 follow-up checks (is "unsolved" still true; concrete example) left unanswered — revisit at drafting.
 - Research launched in four parallel strands (Singapore; rest of ASEAN; H2 2026 adoption reports vs the Salesforce leapfrog claim; global theatre-vs-innovation). Output: `research-scorecard-p5.md` (kept separate from January `research.md`).
+- Research done → `research-scorecard-p5.md`. **All findings unverified** (page fetches blocked by the session's network allowlist; search summaries only) — verify each figure before drafting.
+- Headline: hunch half right — nothing *measured* happened; plenty was announced/regulated. P5 holds; anti-leapfrog bet stronger than at half-time (ASEAN H2 = rules, risk, training). Cross-notes: Copilot Cowork now edits Word (P1); fake-citation decisions still rising ~150/month (tension with P4 "far more manageable").
