@@ -18,3 +18,13 @@
 - Through-line accepted: AI work drifts to whoever holds the context.
 - User curious how other people's year-end conclusions align with his → background research launched (others' 2026 retrospectives vs his five conclusions); drafting proceeds concurrently.
 - Tags validated against registry: AI, LegalTech (core), Singapore (regional), 2026Predictions (series).
+
+## 2026-11-24 — Draft v1 written (WRITE)
+- `2026-scorecard.md`, 1,795 prose words (budget 1,900). Lint clean. Slug proposed: `2026-predictions-full-time`; `?ref=` set accordingly on all internal links.
+- Voice reference: `rugpulled-by-cowork` (plain register, lived workplace detail) and `my-voice-worked` (opening). Headings are plain first-person claims; the only list is the three signals (inventory).
+- Kept the `<!--members-only-->` marker after the intro, matching the half-time post — Houfu to confirm.
+- Added must-links beyond the pitch: `rugpulled-by-cowork` (P1: the non-lawyer contract reviewer on Copilot Cowork is the business-user agent) and `lawyers-not-on-each-others-code` (P5: the "archipelagos" contrast).
+- **[VERIFY] markers** (from unverified search summaries — confirm or cut before review/publish): Cowork Word editing + Spellbook ACM GA (P1); Charlotin database ~2,200 by Oct, mostly self-represented (P4); Vietnam high-risk list / Malaysia CJ / DEFA, Microsoft diffusion 64% vs 33% / 13–28%, AmCham 87% / 7% (P5 ASEAN); NUS third vendor, SMU–Legora, AIxLegal, courts disregarding AI evidence, LawNet partner API pilot (P5 Singapore).
+- **[HOUFU] placeholder:** LinkedIn launch post URL.
+- Deliberately NOT used: model names "Fable / Astral / Sol / Sonnet" from Houfu's P2 comment (unverified; written as "the frontier ones… and the open-weight ones"). Qwen 3.8 kept (from his own LinkedIn post).
+- Check with Houfu: Marshall line "by my own second signal, I can't prove Marshall is more than a demo either" — he never explicitly answered the "own app fails own test" framing question.
