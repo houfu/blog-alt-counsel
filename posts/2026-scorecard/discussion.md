@@ -31,3 +31,4 @@
 
 ## 2026-11-24 — "What do others think?" research back
 - Saved to `research.md` (unverified, search summaries only). Aligns on P1 and P5; mixed on P2, P3, P4. Strongest disagreement: Mollick (Nov 9) — jaggedness persists in taste/judgment (P2). Business users running the agent themselves: no external examples (Houfu is ahead/alone). Top 3 candidates to fold in offered to Houfu: Salesforce MD quote (P5), Mollick counterweight (P2), Law.com clients-want-their-data-back (through-line). Draft not yet changed.
+- **User decision:** add the first two only — Salesforce MD quote (P5 ASEAN paragraph) and Mollick counterweight (P2, replacing the "cheap enough to measure" closing line, which read as a kicker). Law.com through-line support not used. Both marked [VERIFY]. User clarified the research ask was about *alignment* of views, not year-end lists.

@@ -54,7 +54,7 @@ Then the models got better. The frontier ones did, and so did the open-weight on
 
 I'll be honest about the receipts. I don't have any. The closest I came was a weekend of tests on OpenRouter that cost me no more than $25. Those were tests, not evals. Evals are what I want to do next, and I've been nudging the lawyers I mentor to think about it more rigorously. There's an obvious one sitting in Zeeker: can an agent find the right sources of Singapore law?
 
-So the frontier is still there. It just got cheap enough to measure, which is the opposite of what I predicted.
+Not everyone thinks the frontier got smoother. Ethan Mollick, who helped name the jagged frontier, wrote in November that the errors have shrunk but the jaggedness has moved into taste and judgment, where benchmarks can't see it. [VERIFY] If he's right, that's one more reason to write your own evals.
 
 ## My usage stayed high, and might fall for a good reason
 
@@ -88,7 +88,7 @@ There's a caveat, and it isn't small. Courts are still seeing more fake citation
 
 My hunch going in was that nothing interesting happened after July. Quite a lot happened. Very little of it was measured.
 
-ASEAN didn't leapfrog. It regulated. Vietnam's list of high-risk AI systems came into force in August, Malaysia's Chief Justice promised rules on lawyers' AI use after convincing-but-inaccurate AI submissions, and ASEAN signed its first binding digital economy agreement in November. [VERIFY] The data tells the same story. Singapore is a genuine outlier, with about 64% of working-age people using generative AI against 33% in the US, but most of the rest of Southeast Asia sits between 13% and 28%. [VERIFY] Among large companies in the region, 87% have AI agents in a pilot or in production, and 7% say they're ready to scale them. [VERIFY]
+ASEAN didn't leapfrog. It regulated. Vietnam's list of high-risk AI systems came into force in August, Malaysia's Chief Justice promised rules on lawyers' AI use after convincing-but-inaccurate AI submissions, and ASEAN signed its first binding digital economy agreement in November. [VERIFY] Even Salesforce's regional managing director said in September that outside Singapore, "the cost of human labour is cheaper than the cost of AI." [VERIFY] The data tells the same story. Singapore is a genuine outlier, with about 64% of working-age people using generative AI against 33% in the US, but most of the rest of Southeast Asia sits between 13% and 28%. [VERIFY] Among large companies in the region, 87% have AI agents in a pilot or in production, and 7% say they're ready to scale them. [VERIFY]
 
 Singapore had access deals rather than outcomes. NUS Law signed up with its third AI vendor in five months, SMU joined Legora's programme, and new AI training tracks for lawyers launched without published targets. The interesting moves came from institutions: courts disregarding evidence when a party couldn't explain how much it relied on AI, and SAL opening a pilot API to LawNet. [VERIFY]
 
