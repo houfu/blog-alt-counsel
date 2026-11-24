@@ -895,3 +895,14 @@ Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) 
 - Consequence: it has become **worth it to write your own evals**. That's "the next stage" — with evals you can be rigorous about the harness and the other components of the build.
 - NB: this partly reverses the half-time reasoning (framework retired because a rigorous benchmark was out of reach for a resource-constrained practitioner). Verdict wording still to confirm.
 - TODO before drafting: verify model names/release timing (Fable, Astral, Sol, Sonnet, Qwen 3.8) — do not state from memory.
+
+### User decision — Prediction 2 graded WRONG BY YEAR-END
+- "Wrong by year end is the right way to look at it." (Right at half-time; overturned by model advances in H2.)
+- **No receipts** — hasn't written his own evals yet. Has big datasets and thinks there's something to build ("watch this space?").
+- Has been encouraging lawyers he mentors to think more rigorously about evals. Ideas: with several runs now, check what's good and what can be better; with **Zeeker**, design an eval of whether an agent can find the right sources of Singapore law.
+- Evals = **a 2027 thing**, not a 2026 deliverable.
+
+### Houfu's comments — Prediction 3 (usage under 20%)
+- Usage has **hovered at ~50%–66%** (work log continued after July). Verdict unchanged: decisive miss.
+- Agrees personal usage may go *down* as he outsources AI use from himself to others (business users running his agent). Metric was only ever about personal use — how to measure the outsourced kind is a 2027 question.
+- Candidate closing line (user's): "this is what it means when the future of law shifts from high touch personal service to product." User asked if it's a great ending — undecided, revisit after P4/P5.
