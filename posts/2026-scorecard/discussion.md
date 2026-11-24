@@ -44,3 +44,10 @@
   - New [HOUFU] placeholders: P1 current status of the business-user agent after the Cowork pricing change; P4 one lived example of context fixing a failure.
 - **Pitch amendment (spine):** "The work went to whoever had the context — and most of the time, that wasn't me" → "The work went to whoever had the context." Both audits: the "wasn't me" half is contradicted by P3 (his own usage at 50–66%). Pitch-time check that would have caught it: (1) test the diagnosis.
 - Held for reviewers (judgment): P2 verdict rests on impression vs Mollick; "**The bet:** / **Full-time:**" template repeated ×5; Marshall as its own H2 vs inside P5; table vs intro tally repetition; whether to point to the reflection piece in the close (voice guide says no teasers — left out).
+
+## 2026-11-24 — REVIEW round 1: Wei Lin (primary) + Marcus (secondary)
+- Verdicts: both **partly serves me**. Not a framing failure — gaps are one-sentence fixes plus lived facts only Houfu has.
+- Applied (draft v3, 1,740 words): intro confession moved before the count; "log stopped on 2 July" → "the last entry is the back-fill… I never wrote another"; P1 "in my own checking"; P2 causal fix + July loop (two weeks/whole quota → $25 weekend of tests); P4 landing restored as a plain sentence; cut Microsoft diffusion stat, courts line, training-tracks clause, "pocket of innovation… prediction" line, trailing "Plain fail."; Marshall: what it does (repo description), LQ.AI no longer filed as "mine", local vs OpenRouter; close: "two of the four I ranked"; close hinge — Singapore law's context no longer only behind LawNet.
+- Declined: Marcus's cut of the Cowork/Spellbook sentence (declared fact-then-undercut move); Marcus's cut of "it was a roller coaster" (Houfu's emotional-core words).
+- Open for Houfu: P1 and P4 placeholders; Marshall against his own standards (unevaluated / signal 1 / grading own project); Marshall post status; can readers try it; "decided" vs "launched" a week later.
+- Reviewer MEMORY_UPDATE blocks appended to both memory files.

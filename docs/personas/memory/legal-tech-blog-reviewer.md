@@ -123,3 +123,9 @@ Persistent memory for the legal-tech-blog-reviewer agent. **Read this before eve
 - Verified: six-item podium list and "none of them does a piece of work for you" accurate against Justice Kwek's Day 2 speech and release notes.
 - Follow-up material (OUT): the "locked shelf" books detail and the verifiability counter-case — parked research.md §9.
 - Settled: peer comparison/vendor forensics cut is Houfu's pitch v6 decision; not to be re-raised for this post.
+
+### 2026-11-24 — 2026-scorecard (round 1 of 2, secondary audience)
+
+- Verdict: partly serves me (honesty real; Marshall claims run ahead of the evidence).
+- Unique catches: Marshall unevaluated while the post preaches evals and criticises private evaluation — raised to Houfu; P2 causal logic inverted ("predictable enough that evals worth it") — ADOPTED as "predictable enough, and cheap enough to test"; hosted vs local ambiguity — ADOPTED (local on a SGD 6k MacBook Pro, or OpenRouter); "AI tools tend to get it right" too flat — ADOPTED as "in my own checking"; "many of them made by other lawyers" overcounts — ADOPTED (LQ.AI reframed, close rewritten); grading own prediction with own project — raised to Houfu; Marshall on Google Drive undercuts "build on each other's code" — raised to Houfu (repo is private).
+- Cuts adopted: Microsoft diffusion stat, courts-disregarding-evidence line, training-tracks clause. Declined: cutting the Cowork/Spellbook sentence (it is a declared fact-then-undercut voice move); cutting "it was a roller coaster" from the intro (Houfu's own emotional-core words).
