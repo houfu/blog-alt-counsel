@@ -871,3 +871,16 @@ Fixed:
 ## Forward link to the half-time update (2026-08-29)
 
 Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) to `2026-legal-ai-predictions.md`, right after the "I'll publish updates as blog posts tagged #2026Predictions..." sentence, pointing to the [Half-Time on My 2026 Predictions](https://www.alt-counsel.com/2026-predictions-six-month-update/) update. User-requested as part of a "next chapter" forward-linking cleanup — the original January post had no way of pointing readers to the July check-in. This local edit needs to be added to the live Ghost post separately to take effect.
+
+## Session: 2026-11-23/24 — December scorecard, walking through predictions one by one
+
+### Context gathered
+- Goal-setting post = January predictions post (5 predictions; user referred to "four" — flagged, proceeding with all five unless told otherwise).
+- `tracking-2026.md` not updated since 2026-07-02 despite the July promise of per-post entries. Half-time post closed with "See you in December with the data. All of it this time." — scorecard must own this.
+- Posts since half-time (Ghost API; Ghost MCP down this session): every-answer-was-correct (Jul 14), official-cat-herder (Aug 6), come-into-the-bakery (Aug 17), what-the-watermark-does (Aug 25), read-the-server-before-you-draft (Aug 31, not in local repo), the-bigger-bookcase (Sep 28). Nothing published Oct–Nov.
+
+### Houfu's comments — Prediction 1 (human out of Word)
+- **Verdict: soured — FAIL.** Major legal tech tools (Claude, Copilot) built integrations *into* Word. "It's hard to get rid of Word."
+- Still uses Word to *read* documents; when he needs AI, uses the panel inside Word.
+- **Shift from half-time:** the blocker is no longer validation — "AI tools tend to get it right." The real blocker is **infrastructure inertia and convenience**. The agent-instead-of-Word workflow "hasn't really established."
+- **Reframe (forward-looking):** he's become more interested in moving his legal tools out of personal/legal-only use to **client and business-user use**. Believes that's where the prediction's kind of use will actually happen. "Still an exciting question even if I would now reframe it."
