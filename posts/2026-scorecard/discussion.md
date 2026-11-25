@@ -81,3 +81,4 @@
 - User asked for a LinkedIn post plus a video script for HyperFrames (HeyGen's open-source HTML-to-MP4 framework for agents). Saved both in `linkedin.md`.
 - Post text follows the Voice Guide's LinkedIn template (flat hook, arrow bullets for the five verdicts, solo-counsel implication, link). Uses the live post's numbers ("around 50%", no view count).
 - Video: 4:5, ~36 s, silent with on-screen text; scoreboard look to match the cover; roller-coaster line motif; nine timed scenes. Verdicts match the post exactly.
+- **User revision (video):** walk through each prediction in short phrases (what it was, whether it held), fixed at ~3 minutes. Rewritten as: 18 s intro → five 28 s prediction segments on one template (header, bet, Jan/July confidence chips, three "what happened" phrases, verdict stamp) → 22 s full-time board and close = 180 s. Roller-coaster track now has five stations, one per prediction.
