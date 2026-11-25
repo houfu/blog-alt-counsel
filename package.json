@@ -27,7 +27,7 @@
     "url": "https://github.com/houfu/blog-alt-counsel/issues"
   },
   "dependencies": {
-    "@tryghost/admin-api": "^1.14.4",
+    "@tryghost/admin-api": "^1.14.16",
     "gray-matter": "^4.0.3"
   },
   "engines": {
@@ -37,5 +37,8 @@
     "dotenv": "^17.2.4",
     "marked": "^17.0.1",
     "node-fetch": "^3.3.2"
+  },
+  "overrides": {
+    "axios": "^1.16.1"
   }
 }
