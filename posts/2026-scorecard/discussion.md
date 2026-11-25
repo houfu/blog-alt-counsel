@@ -76,3 +76,8 @@
 - Went live on schedule 2026-11-25 01:26 UTC (09:26 SGT): https://www.alt-counsel.com/2026-predictions-full-time/
 - Live-vs-local diff: no content changes since the 2026-11-24 sync (only the known LinkedIn bookmark-card and deleted-footer differences). The four flagged nits (table "50–66%" vs "around 50%", "While … but", "established full time", double space) went live unchanged — Houfu's call.
 - `sync-ghost` run once at close: status → published. PR ready to merge.
+
+## 2026-11-25 — LinkedIn carry
+- User asked for a LinkedIn post plus a video script for HyperFrames (HeyGen's open-source HTML-to-MP4 framework for agents). Saved both in `linkedin.md`.
+- Post text follows the Voice Guide's LinkedIn template (flat hook, arrow bullets for the five verdicts, solo-counsel implication, link). Uses the live post's numbers ("around 50%", no view count).
+- Video: 4:5, ~36 s, silent with on-screen text; scoreboard look to match the cover; roller-coaster line motif; nine timed scenes. Verdicts match the post exactly.
