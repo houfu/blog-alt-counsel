@@ -25,7 +25,7 @@ I didn't chicken out, so the $500 stays put. Full scorecard here: https://www.al
 
 ## Video (v2, alt+counsel visual style)
 
-Built to `docs`-level brand rules in the alt+counsel visual style file (paper `#F4F3EF`, ink, purple `#330066` as the only accent, keycap motif, rise-and-settle motion, no music). 1080 × 1350, 30 fps, **94 s**.
+Follows the alt+counsel visual style file (paper `#F4F3EF`, ink, purple `#330066` as the only accent, keycap motif, rise-and-settle motion, no music). 1080 × 1350, 30 fps, **94 s**.
 
 | Part | Time | On screen |
 |---|---|---|
