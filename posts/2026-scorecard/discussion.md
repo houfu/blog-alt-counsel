@@ -71,3 +71,8 @@
   - "never really established itself" → "never really established full time".
 - Flagged to Houfu before go-live: table still says "Wrong (50–66%)" while the P3 text now says "around 50%"; "While … , but …" grammar in the new P1 sentence; "established full time" (intended pun?); a double space before "So my verdict".
 - `tracking-2026.md` updated with the full-time verdicts; the 2026 run is closed there.
+
+## 2026-11-25 — Published; closing sync
+- Went live on schedule 2026-11-25 01:26 UTC (09:26 SGT): https://www.alt-counsel.com/2026-predictions-full-time/
+- Live-vs-local diff: no content changes since the 2026-11-24 sync (only the known LinkedIn bookmark-card and deleted-footer differences). The four flagged nits (table "50–66%" vs "around 50%", "While … but", "established full time", double space) went live unchanged — Houfu's call.
+- `sync-ghost` run once at close: status → published. PR ready to merge.

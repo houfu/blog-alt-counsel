@@ -6,7 +6,7 @@ tags:
   - LegalTech
   - Singapore
   - 2026Predictions
-status: scheduled
+status: published
 featured: false
 github_folder: 2026-scorecard
 custom_excerpt: >-
