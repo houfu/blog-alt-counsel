@@ -90,6 +90,22 @@ For the first six months I did **not** keep *this file* up to date. Most entries
 - **ASEAN-leapfrog sub-bet (bet AGAINST Salesforce):** region-wide leapfrog hasn't materialised — SEA still early, Singapore a standout while the rest lags advanced markets 2–3 years; North America still leads absolute maturity; APAC only fastest-*growing*. The barriers cited (54% no training, 43% no policy, governance/readiness lagging) are the non-legacy constraints I predicted. Twist: Singapore leaping while the rest lags IS my "isolated pockets" thesis. Caveat: "leapfrog" = grow-fastest (APAC yes) vs overtake-the-West (no, the version Salesforce sold). Sources: [8am 2026](https://www.lawnext.com/2026/03/ai-adoption-among-legal-professionals-has-more-than-doubled-in-a-year-new-8am-report-finds-but-firms-lag-far-behind-individual-practitioners.html), [FULCRUM SEA governance](https://fulcrum.sg/what-is-shaping-artificial-intelligence-ai-governance-policies-in-southeast-asia/).
 - **Six-month read:** Holding. Theatre is loud; real iteration is rare and usually solo. The theatre-vs-innovation signals framework is the one deliverable I still intend to write (a few months left).
 
+## Full-time scorecard (2026-11-25)
+
+**Post:** [Full-Time: The Year My Predictions Rode a Roller Coaster](https://www.alt-counsel.com/2026-predictions-full-time/) — scheduled 2026-11-25 09:26 SGT. Source folder: `posts/2026-scorecard/`.
+
+| # | Prediction | January confidence | Half-time | Full-time |
+|---|---|---|---|---|
+| 1 | Contract review without Word | Optimistic stretch | Fail, still fighting | **Fail** — validation stopped being the blocker; Word's convenience won. Business users now run a legal agent in their own Copilot (no partial credit). |
+| 2 | Jagged frontier won't improve | Most likely to fail | Confirmed | **Wrong** — models (incl. open-weight, e.g. Qwen 3.8) got predictable and cheap enough to test; own evals are next. ~$25 of weekend tests, no evals yet. |
+| 3 | Usage stays under 20% | Most confident | Wrong | **Wrong** — work log around 50% of tasks; may fall as AI work moves to the people who hold the context. |
+| 4 | Hallucinations manageable | Most confident | Half wrong | **Right, unexpectedly** — none of the three planned structures; better models + context management. Fake-citation court decisions still rising for people who can't manage context. |
+| 5 | Mostly theatre | Most likely to fail | Holding | **Holding** — ASEAN regulated rather than leapfrogged; Singapore had access deals, not outcomes. Signals framework replaced by three patterns. Marshall (work in progress) as the year's pocket of innovation. |
+
+**Tracking honesty:** after the 2026-07-02 back-fill, this file got no further per-post entries until this scorecard. The work usage log was kept throughout.
+
+**Accountability:** scorecard published, so the $500 stake was not triggered.
+
 ## How to Follow Along
 
 **This Repository:**
@@ -115,8 +131,8 @@ For the first six months I did **not** keep *this file* up to date. Most entries
 
 ---
 
-**Last Updated:** 2026-07-02 (six-month checkpoint, reconstructed)
-**Next Update:** Per-post entries as predictions are touched; full scorecard December 2026
+**Last Updated:** 2026-11-24 (full-time scorecard)
+**Next Update:** None — the 2026 run is closed. 2027 questions go to a separate post.
 
 ---
 

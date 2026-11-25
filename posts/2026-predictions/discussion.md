@@ -871,3 +871,79 @@ Fixed:
 ## Forward link to the half-time update (2026-08-29)
 
 Added a `{{< bookmark >}}` shortcode (matching this file's existing convention) to `2026-legal-ai-predictions.md`, right after the "I'll publish updates as blog posts tagged #2026Predictions..." sentence, pointing to the [Half-Time on My 2026 Predictions](https://www.alt-counsel.com/2026-predictions-six-month-update/) update. User-requested as part of a "next chapter" forward-linking cleanup — the original January post had no way of pointing readers to the July check-in. This local edit needs to be added to the live Ghost post separately to take effect.
+
+## Session: 2026-11-23/24 — December scorecard, walking through predictions one by one
+
+### Context gathered
+- Goal-setting post = January predictions post (5 predictions; user referred to "four" — flagged, proceeding with all five unless told otherwise).
+- `tracking-2026.md` not updated since 2026-07-02 despite the July promise of per-post entries. Half-time post closed with "See you in December with the data. All of it this time." — scorecard must own this.
+- Posts since half-time (Ghost API; Ghost MCP down this session): every-answer-was-correct (Jul 14), official-cat-herder (Aug 6), come-into-the-bakery (Aug 17), what-the-watermark-does (Aug 25), read-the-server-before-you-draft (Aug 31, not in local repo), the-bigger-bookcase (Sep 28). Nothing published Oct–Nov.
+
+### Houfu's comments — Prediction 1 (human out of Word)
+- **Verdict: soured — FAIL.** Major legal tech tools (Claude, Copilot) built integrations *into* Word. "It's hard to get rid of Word."
+- Still uses Word to *read* documents; when he needs AI, uses the panel inside Word.
+- **Shift from half-time:** the blocker is no longer validation — "AI tools tend to get it right." The real blocker is **infrastructure inertia and convenience**. The agent-instead-of-Word workflow "hasn't really established."
+- **Reframe (forward-looking):** he's become more interested in moving his legal tools out of personal/legal-only use to **client and business-user use**. Believes that's where the prediction's kind of use will actually happen. "Still an exciting question even if I would now reframe it."
+
+### User decision — Prediction 1 graded a plain FAIL (no partial credit for the reframe)
+- Reframe detail: the real use lies with **business users using it with Word**, not him. He has let other users run a **legal agent inside their Copilot**. He still reads the document in Word, but the review is done elsewhere and he verifies it.
+- Why he thinks it's more effective: business users have **more context** (they know the deal, have the emails), so they can help the agent more than he can by asking it to read the emails.
+- Treatment in scorecard: plain fail on P1; reframe presented as a 2027 open question, not a revised prediction.
+
+### Houfu's comments — Prediction 2 (jagged frontier)
+- **Less important than in July.** Model advances (Fable and Astral, which also lifted Sol and Sonnet) — and local models are "so much better and predictable" (favourite: Qwen 3.8).
+- Consequence: it has become **worth it to write your own evals**. That's "the next stage" — with evals you can be rigorous about the harness and the other components of the build.
+- NB: this partly reverses the half-time reasoning (framework retired because a rigorous benchmark was out of reach for a resource-constrained practitioner). Verdict wording still to confirm.
+- TODO before drafting: verify model names/release timing (Fable, Astral, Sol, Sonnet, Qwen 3.8) — do not state from memory.
+
+### User decision — Prediction 2 graded WRONG BY YEAR-END
+- "Wrong by year end is the right way to look at it." (Right at half-time; overturned by model advances in H2.)
+- **No receipts** — hasn't written his own evals yet. Has big datasets and thinks there's something to build ("watch this space?").
+- Has been encouraging lawyers he mentors to think more rigorously about evals. Ideas: with several runs now, check what's good and what can be better; with **Zeeker**, design an eval of whether an agent can find the right sources of Singapore law.
+- Evals = **a 2027 thing**, not a 2026 deliverable.
+
+### Houfu's comments — Prediction 3 (usage under 20%)
+- Usage has **hovered at ~50%–66%** (work log continued after July). Verdict unchanged: decisive miss.
+- Agrees personal usage may go *down* as he outsources AI use from himself to others (business users running his agent). Metric was only ever about personal use — how to measure the outsourced kind is a 2027 question.
+- Candidate closing line (user's): "this is what it means when the future of law shifts from high touch personal service to product." User asked if it's a great ending — undecided, revisit after P4/P5.
+
+### Houfu's comments — Prediction 4 (hallucination manageable)
+- **"Far more manageable than I expected."** July pessimism reversed.
+- Why: **context management got better.** Models improved *and* "our programs also got better" — both at once.
+- Lawyers became more aware too, and thought more about making sure models get the information they need.
+- Note: not the three January structures (RAG-citations / two-pass / locked templates) — the thing that worked was context. Cross-links P1 (business users supply context the lawyer lacks). Verdict wording still to confirm; no concrete failure/near-miss example given yet.
+
+### Prediction 5 — user asked for deep web research first (ASEAN focus)
+- User's hunch: "nothing interesting happened" since July. P4 follow-up checks (is "unsolved" still true; concrete example) left unanswered — revisit at drafting.
+- Research launched in four parallel strands (Singapore; rest of ASEAN; H2 2026 adoption reports vs the Salesforce leapfrog claim; global theatre-vs-innovation). Output: `research-scorecard-p5.md` (kept separate from January `research.md`).
+- Research done → `research-scorecard-p5.md`. **All findings unverified** (page fetches blocked by the session's network allowlist; search summaries only) — verify each figure before drafting.
+- Headline: hunch half right — nothing *measured* happened; plenty was announced/regulated. P5 holds; anti-leapfrog bet stronger than at half-time (ASEAN H2 = rules, risk, training). Cross-notes: Copilot Cowork now edits Word (P1); fake-citation decisions still rising ~150/month (tension with P4 "far more manageable").
+
+### User decision — Prediction 5 HOLDING
+- Verdict: holding (main thesis + ASEAN anti-leapfrog bet).
+- Signals framework: **not delivered this year**; user unsure it's still useful. Treatment TBD (retire honestly like P2's framework vs a short in-post version).
+- User: "Maybe it's time to mention Marshall as well." No mention of Marshall found in the repo or any Ghost post/draft — asked user who/what Marshall is.
+
+### User decisions (2026-11-24)
+- **Signals framework:** include a short version in the P5 section built from the research (success measured by access; pilot-rich/readiness-poor; private evaluations) — "we've done some research, so I think there is something to share."
+- **2027 goes in a separate post.** Scorecard ends on 2026; 2027 questions (P1 business-user use, P2 evals, P3 outsourced-usage metric) are parked for that post. Per series discipline: publish the scorecard first.
+- **$500 stake:** user asked whether he has to pay. Stake triggers only on chickening out of the December scorecard — publishing it in December means no payout. Risk: it must actually publish in December 2026.
+- Marshall: still waiting on who/what it is.
+
+### Marshall (user's app) — what's known so far
+- User: Marshall is an app he created; released it, "got some eyeballs" but no usage stats received.
+- GitHub `houfu/marshall` (private): "LQ.AI with the brakes taken off: a single-user desktop PoC that runs research, redline and review autonomously on one open-weight model." Created 2026-10-03; last push 2026-11-21; packaged as a desktop app 4–5 Oct (roadmap phase 5, Windows smoke tests).
+- Repo docs seen by filename only (could not read contents — session lacks access to the private repo; search API then rate-limited): HONEST-STATE.md, marshall/evals.md, marshall/UAT.md, comparison.md, word-addin.md, playbooks.md, tabular-review.md, skills/sgcite/SKILL.md.
+- Possible ties: P5 (own pocket of innovation; and by the new signals, "eyeballs, no usage stats" is attention not outcomes), P1 (Word add-in), P2 (evals.md — check against "no receipts"), P4 (sgcite, autonomous on one open-weight model).
+- **LinkedIn launch post (screenshot shared by user, ~1 month ago, early Oct):** written "one week after complaining about LawNet's direction" — walking the talk. Marshall = PoC that "it's possible to create your very own Harvey or Legora focused on Singapore law."
+  - Built **without LawNet content API access**, from open source: Zeeker (curated ~1 year), Joshua Ng's Statutes MCP, Yu Chou Teo's Hansard gateway; spine = LegalQuants' LQ.AI (security/transparency harness; he's a maintainer) + selected OSS skills from LQ.AI plugins. "Great (proprietary) content might be great, but I'm sure Marshall punches harder than it should."
+  - Runs on **Qwen 3.8 27B**. Local needs ~SGD 6k MacBook Pro; alternatively "I also haven't spent more than $25 on OpenRouter running evals and tests all weekend."
+  - Distribution: Electron desktop app, "DM me if you want to give this a go!" → explains no usage stats (no telemetry, DM-gated).
+- Implications flagged to user: (1) P2 — he *did* run evals (~$25, one weekend), which softens "no receipts"; (2) P5 — Marshall is built ON other lawyers' code (Zeeker + Statutes MCP + Hansard gateway + LQ.AI), a counterpoint to his May "solo-author archipelagos" verdict; (3) contrast with SAL's LawNet partner API pilot for selected platforms.
+
+### User decisions — Marshall
+- Numbers: **~3k LinkedIn views; ~10 people requested** it → shared via Google Drive for install. No install/usage data beyond that. A dedicated Marshall post was planned but "got overtaken by events."
+- Placement: Marshall = **climax of P5** (answer to "nothing interesting happened"); its future goes in the separate 2027 post.
+- The $25 OpenRouter weekend = **tests, not evals.** Keep P2 "no receipts" honest; evals are next ("I want to do evals next").
+- Credits: link/share the LinkedIn launch post, which carries the credits (Joshua Ng, Yu Chou Teo, LegalQuants).
+- Walkthrough of all five predictions complete → next: pitch.
