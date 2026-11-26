@@ -132,6 +132,8 @@ The script handles:
 
 Ensure your `.env` file has: `GHOST_SITE_URL`, `GHOST_ADMIN_API_KEY`, `GHOST_API_VERSION`
 
+**`405 Method Not Allowed` in a Claude Code cloud session** means an old axios (<1.16.1) is talking to the egress proxy over plain HTTP instead of CONNECT. `package.json` pins axios ≥1.16.1 via `overrides`; if you see this, run `npm install` and check `npm ls axios`.
+
 ### After running
 
 The script outputs the post ID and admin URL. Update the post's markdown frontmatter with the returned `post_id`.
