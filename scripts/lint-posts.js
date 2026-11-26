@@ -29,6 +29,8 @@
  *   - internal alt-counsel.com links missing ?ref=<slug> (measured adherence
  *     before this check: 3 of 25 links)
  *   - banned phrases (clichés / AI slop, ported from the audit-tone wordlist)
+ *   - pitch.md sets framework_action but its "## Beats" do not name the four
+ *     parts (situation, action, reasoning, check). Never an error.
  *   - prose mechanics: undescriptive link text, bare-URL link text, unlabeled
  *     code fences, malformed tables (ported from audit-accessibility /
  *     audit-readability, which are retired as agents)
@@ -86,6 +88,10 @@ const BANNED_PHRASES = [
   /delve into/i,
   /revolutioniz/i,
 ];
+
+// The four parts every framework piece carries (Voice Guide Part 4, DRAFT
+// Lens Piece and Guide templates). Checked against the pitch's beats.
+const FOUR_PARTS = ['situation', 'action', 'reasoning', 'check'];
 
 const BAD_LINK_TEXT = /^(click here|here|read more|this link|link|this)$/i;
 
@@ -410,6 +416,30 @@ function checkPitchContract(folderPath, folder, status) {
   }
   if (fm.origin !== undefined && fm.origin !== null && !ORIGINS.includes(String(fm.origin))) {
     warn(folder, `pitch.md origin "${fm.origin}" is not one of: ${ORIGINS.join(', ')}`);
+  }
+
+  // Four-part check (2027 strategy): a piece that names a framework_action
+  // carries the situation, the action, the reasoning and a check the reader
+  // can run. The DRAFT Lens Piece / Guide templates define those as beats,
+  // not headings, so the check reads the pitch's "## Beats" list rather than
+  // guessing at prose. Advisory only — never an error, and it runs only when
+  // framework_action is set.
+  if (typeof fm.framework_action === 'string' && fm.framework_action.trim()) {
+    const bIdx = heads.findIndex((h) => /^Beats\s*$/i.test(h[1].trim()));
+    if (bIdx === -1) {
+      warn(folder, 'pitch.md sets framework_action but has no "## Beats" section — a framework piece names its four parts there (situation, action, reasoning, check)');
+    } else {
+      const bStart = heads[bIdx].index + heads[bIdx][0].length;
+      const bEnd = bIdx + 1 < heads.length ? heads[bIdx + 1].index : content.length;
+      const beats = content.slice(bStart, bEnd);
+      const missing = FOUR_PARTS.filter((part) => !new RegExp(`\\b${part}`, 'i').test(beats));
+      if (missing.length > 0) {
+        warn(
+          folder,
+          `pitch.md sets framework_action but its "## Beats" do not name: ${missing.join(', ')} — a framework piece carries all four parts (situation, action, reasoning, check)`
+        );
+      }
+    }
   }
 
   const totalWords = proseWords(content);

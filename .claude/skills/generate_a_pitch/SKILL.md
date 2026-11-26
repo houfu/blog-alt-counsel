@@ -53,6 +53,10 @@ Wait for the user's answer. This response is the source for the emotional core.
 
 **Do NOT invent a vulnerability hook, and do NOT infer feelings the user hasn't stated.** The mined edit corpus (docs/voice-edit-corpus-2026-08.md, rule R3) shows every inferred emotion gets corrected or deleted — one inferred "I hesitated" was factually wrong and shipped to a Ghost draft. If the answer is vague, ask a follow-up. If part of the story is missing, mark it `[HOUFU: …]` rather than filling it in.
 
+### Step 1.8: Open the second-brain notes first (when there are any)
+
+If the idea touches a topic Houfu keeps a second-brain note on, read that note before drafting the pitch: it holds the history, his earlier positions and his open ideas. The notes live in his Personal Coach project under `Brain/` (archived to the Drive folder `06 Personal Coach/Brain/`; start from `Brain/index.md`). Read them if they are reachable from this session; if they are not, say so in one line and carry on without them. Record the notes you used in the `brain` field (Step 2.5).
+
 ### Step 2: Develop the pitch
 
 From the idea, generate a pitch. Imagine we are in an elevator with our readers: limited time to persuade them the post is worth their day. Present a draft title and pitch and ask: "Does it look alright?"
@@ -70,7 +74,9 @@ The 2027 brand strategy tracks each piece by a few fields kept with the piece. R
 - `carried_to` — where the piece went after the blog (e.g. linkedin, a talk). Filled in at CHECK
 - `brain` — names of the second-brain notes the piece builds on, if any
 
-`lint-posts.js` warns only when `mode` or `origin` holds a value outside the lists above.
+`lint-posts.js` warns when `mode` or `origin` holds a value outside the lists above.
+
+**The four parts.** When `framework_action` is set, the piece carries four parts: the situation, the action, the reasoning, and a check the reader can run (Voice Guide Part 4, the DRAFT Lens Piece and Guide templates). Name each of the four in the `## Beats` list, in those words, one beat or more per part. `lint-posts.js` warns when a beat for any of the four is missing. It is a warning, never an error, and it does not run when `framework_action` is left out.
 
 ### Step 3: Authenticity Check
 
@@ -139,7 +145,7 @@ interrogation: {diagnosis: "", differentiation: "", framing_risk: "", subject: "
 must_link: []              # 2-3 prior post slugs
 # Optional strategy fields (Step 2.5) — include only the ones that are known:
 # mode: lens               # lens | commentary | field-note | guide | collaboration
-# framework_action: ""     # the framework action this piece belongs to
+# framework_action: ""     # the framework action this piece belongs to (then Beats name: situation, action, reasoning, check)
 # origin: planned          # planned | reactive
 # illustration: ""         # only when the piece has one
 # carried_to: []           # e.g. [linkedin, talk] — filled in at CHECK
